@@ -161,6 +161,40 @@ bdi{unicode-bidi:isolate}
   .art{margin:0}
 }
 
+/* photo accent: 3D deck of real photos (deck.js) */
+.pdeck{position:relative;width:100%;max-width:360px;margin:0 auto;user-select:none;-webkit-user-select:none}
+.pdeck-stage{position:relative;height:208px;perspective:900px;perspective-origin:50% 30%;touch-action:pan-y;cursor:grab}
+.pdeck.grab .pdeck-stage{cursor:grabbing}
+.pdeck-tilt{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+.pcard{position:absolute;left:50%;top:6px;width:150px;margin:0 0 0 -75px;aspect-ratio:4/5;border-radius:14px;overflow:hidden;background:var(--sand);border:5px solid var(--paper);box-shadow:0 22px 34px -18px rgba(51,35,26,.55),0 0 0 1px rgba(201,151,63,.35);transition:transform .55s cubic-bezier(.2,.8,.2,1),filter .4s;will-change:transform;backface-visibility:hidden}
+.pcard.fly{transition:transform .38s cubic-bezier(.5,0,.7,.4)}
+.pcard img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;border-radius:9px}
+.pcard .glare{position:absolute;inset:0;background:linear-gradient(125deg,rgba(255,255,255,.35),transparent 40%);mix-blend-mode:soft-light;pointer-events:none}
+.pcard.front{box-shadow:0 30px 44px -20px rgba(51,35,26,.65),0 0 0 1px rgba(201,151,63,.55)}
+.pdeck-cap{margin:4px 0 0;text-align:center;font:italic 600 15px/1.3 var(--serif);color:var(--ink);min-height:2.6em}
+.pdeck-cap small{display:block;font:500 11.5px/1.4 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-style:normal}
+[dir=rtl] .pdeck-cap{font-style:normal;font-size:17px}[dir=rtl] .pdeck-cap small{letter-spacing:0;font-size:13px;text-transform:none}
+@media (min-width:900px){
+  .art .pdeck{position:absolute;top:-6%;inset-inline-start:-13%;width:46%;max-width:none;z-index:3}
+  .art .pdeck-stage{height:250px}
+  .art .pcard{width:168px;margin-inline-start:-84px}
+  .art .pdeck-cap{font-size:14px}
+}
+/* place section */
+.place-grid{display:grid;gap:24px;align-items:center;grid-template-columns:minmax(0,1fr)}.place-grid>*{min-width:0}
+@media (min-width:900px){.place-grid{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:56px}}
+.place-photo{margin:0;border-radius:24px;overflow:hidden;aspect-ratio:4/5;max-width:440px;border:6px solid var(--paper);box-shadow:0 40px 70px -40px rgba(51,35,26,.6),0 0 0 1px rgba(201,151,63,.4);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.place-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.05);border-radius:18px}
+.place-txt .sub{max-width:34em}
+.pstrip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:28px 0 0;padding:0 0 6px;scrollbar-width:none}
+.pstrip::-webkit-scrollbar{display:none}
+.pstrip figure{flex:0 0 auto;width:min(62vw,240px);margin:0;scroll-snap-align:start}
+.pstrip img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;display:block;box-shadow:0 20px 40px -26px rgba(51,35,26,.55)}
+.pstrip figcaption{font:italic 500 14px/1.3 var(--serif);color:var(--muted);margin-top:8px}
+[dir=rtl] .pstrip figcaption{font-style:normal;font-size:16px}
+.credit{font-size:12.5px;color:var(--muted);margin:10px 0 0}
+@media (min-width:900px){.place-txt .pstrip{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible}.place-txt .pstrip figure{width:auto}}
+
 /* marquee ribbon */
 .mq{background:var(--pist);color:#F4F1E0;overflow:hidden;border-block:1px solid var(--pist-d)}
 .mq-track{display:flex;width:max-content;animation:mq 38s linear infinite}
@@ -358,7 +392,7 @@ bdi{unicode-bidi:isolate}
 <main id="top">
   <section class="hero lattice" id="hero">
     <div class="wrap">
-      <div>
+      <div class="hero-txt">
         <p class="kicker"><span data-t="kick1">Манежная площадь, 1с2</span><span class="dm"></span><span id="kickMetro"></span></p>
         <h1 class="h1" id="h1"></h1>
         <p class="whose" data-t="whose">так написал гость в отзыве на Яндекс Картах</p>
@@ -481,6 +515,23 @@ bdi{unicode-bidi:isolate}
     </div>
   </section>
 
+  <section class="sec" id="place" aria-labelledby="plH">
+    <div class="wrap place-grid">
+      <figure class="place-photo"><img src="img/coffee-sand.webp" data-t-alt="plAlt" alt="Латунная жаровня с песком для кофе" loading="lazy" decoding="async"></figure>
+      <div class="place-txt">
+        <p class="eyebrow" data-t="plEy">Прилавок</p>
+        <h2 class="h2" id="plH" data-t-html="plH">Настоящий прилавок <em>на Манежной</em></h2>
+        <p class="sub" data-t="plP"></p>
+        <div class="pstrip" aria-label="Фото прилавка" data-t-aria="plStrip">
+          <figure><img src="img/shopfront.webp" alt="" loading="lazy" decoding="async"><figcaption data-t="plC1">витрина</figcaption></figure>
+          <figure><img src="img/shop.webp" alt="" loading="lazy" decoding="async"><figcaption data-t="plC2">полки с кофе и сладостями</figcaption></figure>
+          <figure><img src="img/pastry.webp" alt="" loading="lazy" decoding="async"><figcaption data-t="plC3">сладость с фисташкой</figcaption></figure>
+        </div>
+        <p class="credit" data-t="plCr">фото с Яндекс Карт</p>
+      </div>
+    </div>
+  </section>
+
   <section class="sec" id="reviews" aria-labelledby="rvH">
     <div class="wrap">
       <div class="rv-head">
@@ -569,6 +620,9 @@ ru: {
   h1: '<span>Уголок</span><span>Сирии <em>на</em></span><span><em>Манежной</em></span>',
   whose: 'так гость назвал это место в отзыве на Яндекс Картах',
   lead: 'Пахлава, сирийские сладости и <b>кофе с кардамоном, сваренный на песке</b>. Точка в 64 метрах от метро «Охотный Ряд», каждый день 10:00–22:00.',
+  plEy: 'Прилавок', plH: 'Настоящий прилавок <em>на Манежной</em>',
+  plP: 'Небольшая точка у метро «Охотный Ряд»: полки с кофе и сладостями и латунная жаровня с песком, на которой варят кофе. Это настоящие фото из карточки на Яндекс Картах.',
+  plAlt: 'Латунная жаровня с песком для кофе', plStrip: 'Фото прилавка', plC1: 'витрина', plC2: 'полки с кофе и сладостями', plC3: 'сладость с фисташкой', plCr: 'фото с Яндекс Карт',
   cta1: 'Собрать поднос', call: 'Позвонить', hint: 'нажмите на джезву', cezveAria: 'Сварить кофе на песке',
   modEy: 'Отложить к приходу',
   modH: 'Соберите поднос — <em>цену скажут</em> в WhatsApp',
@@ -642,6 +696,9 @@ ar: {
   h1: '<span>ركنٌ من <em>سوريا</em></span><span>في ساحة مانيجنايا</span>',
   whose: 'هكذا وصف أحد الزوار المكان على خرائط ياندكس',
   lead: 'بقلاوة وحلويات سورية و<b>قهوة بالهيل تُحضَّر على الرمل</b>. على بعد 64 مترًا من مترو «Охотный Ряд»، يوميًا من 10:00 إلى 22:00.',
+  plEy: 'المحل', plH: 'المحل الحقيقي <em>في ساحة مانيجنايا</em>',
+  plP: 'نقطة صغيرة قرب مترو «Охотный Ряд»: رفوف القهوة والحلويات وموقد نحاسي بالرمل تُحضَّر عليه القهوة. صور حقيقية من بطاقة المحل على خرائط ياندكس.',
+  plAlt: 'موقد نحاسي بالرمل لتحضير القهوة', plStrip: 'صور المحل', plC1: 'الواجهة', plC2: 'رفوف القهوة والحلويات', plC3: 'حلوى بالفستق', plCr: 'صور من خرائط ياندكس',
   cta1: 'جهّز صينيتك', call: 'اتصال', hint: 'اضغط على الركوة', cezveAria: 'تحضير القهوة على الرمل',
   modEy: 'احجز قبل وصولك',
   modH: 'جهّز صينيتك — <em>والسعر</em> عبر واتساب',
@@ -968,6 +1025,10 @@ function setLang(l) {
   try { localStorage.setItem('ssl-lang', lang); } catch (e) {}
   $$('[data-t]').forEach(function (el) { var v = t(el.getAttribute('data-t')); if (typeof v === 'string') el.textContent = v; });
   $$('[data-t-html]').forEach(function (el) { el.innerHTML = t(el.getAttribute('data-t-html')); });
+  $$('[data-t-alt]').forEach(function (el) { el.alt = t(el.getAttribute('data-t-alt')); });
+  $$('[data-t-aria]').forEach(function (el) { el.setAttribute('aria-label', t(el.getAttribute('data-t-aria'))); });
+  $$('.pstrip figure').forEach(function (f) { f.querySelector('img').alt = f.querySelector('figcaption').textContent; });
+  try { document.dispatchEvent(new Event('langchange')); } catch (e) {}
   var lb = $('#langBtn'); lb.textContent = t('langBtn'); lb.lang = t('langAttr'); lb.setAttribute('aria-label', t('langAria'));
   ['#heroCall', '#modCall', '#barCall'].forEach(function (s) { $(s).href = 'tel:' + BIZ.phone; });
   $('#modCall').setAttribute('aria-label', t('callAria')); $('#barCall').setAttribute('aria-label', t('callAria'));
@@ -1016,6 +1077,8 @@ setLang(initial);
 setInterval(renderStatus, 60000);
 })();
 </script>
+<script src="deck.js"></script>
+<script>(function(){var f=document.querySelector('.place-photo');if(!f||matchMedia('(prefers-reduced-motion: reduce)').matches)return;f.addEventListener('pointermove',function(e){var r=f.getBoundingClientRect();f.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*10+'deg');f.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*8+'deg');});f.addEventListener('pointerleave',function(){f.style.setProperty('--ry','0deg');f.style.setProperty('--rx','0deg');});})();</script>
 <script src="../map-fix.js" defer></script>
 </body>
 </html>

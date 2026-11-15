@@ -335,6 +335,52 @@ h1 .h-b em::after{content:"";position:absolute;left:-.04em;right:-.04em;bottom:.
   *,*::before,*::after{transition:none!important;animation:none!important}
   .anim .rv:not(.in){opacity:1;transform:none}
 }
+
+/* photo hero: real photos from the Yandex card, swapped by a measuring tape that wipes across the frame */
+.hero-art{display:block;position:relative;margin:4px 0 6px}
+.hero-art .tw-roll{display:none}
+.tw{position:relative;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.tw-3d{position:relative;perspective:1200px;perspective-origin:50% 30%}
+.tw-frame{position:relative;aspect-ratio:5/4;border-radius:6px;overflow:hidden;background:#2c3756;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty,0px));transform-origin:50% 100%;will-change:transform;box-shadow:0 0 0 1.5px var(--ink),0 30px 50px -26px rgba(40,25,5,.85);cursor:grab}
+.tw.grab .tw-frame{cursor:grabbing}
+.tw-ph{position:absolute;inset:0;margin:0;overflow:hidden;visibility:hidden}
+.tw-ph.on,.tw-ph.nx{visibility:visible}
+.tw-ph.nx{z-index:2}
+.tw-in{position:absolute;inset:0;will-change:transform}
+.tw-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;transform-origin:60% 45%}
+.tw-ph.on img{animation:twKB 9s ease-out both}
+@keyframes twKB{from{transform:scale(1.02)}to{transform:scale(1.12)}}
+.tw-frame::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(180deg,rgba(20,37,77,0) 55%,rgba(20,37,77,.45)),radial-gradient(120% 80% at var(--gx,30%) 0%,rgba(255,240,200,.18),transparent 60%)}
+.tw-tape{position:absolute;top:-6%;bottom:-6%;left:0;width:30px;margin-left:-15px;z-index:4;pointer-events:none;opacity:0;transform:translateX(-40px);will-change:transform;
+  background:repeating-linear-gradient(180deg,transparent 0 9px,rgba(42,34,8,.8) 9px 10.6px) left/12px 100% no-repeat,repeating-linear-gradient(180deg,transparent 0 4px,rgba(58,46,5,.5) 4px 5px) left/7px 100% no-repeat,#f3c623;
+  box-shadow:6px 0 14px rgba(20,12,0,.45),-2px 0 0 rgba(0,0,0,.08)}
+.tw-tape.go{opacity:1}
+.tw-credit{position:absolute;right:10px;bottom:10px;z-index:5;font:500 11px/1 var(--mono);letter-spacing:.06em;color:rgba(255,255,255,.85);text-shadow:0 1px 3px rgba(0,0,0,.5)}
+.tw-tag{position:absolute;left:12px;bottom:12px;z-index:5;display:flex;align-items:center;gap:8px;padding:7px 12px 7px 9px;background:var(--kraft-2);color:var(--ink);border-radius:3px 12px 12px 3px;font:600 12.5px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;box-shadow:0 8px 16px -10px rgba(0,0,0,.7);pointer-events:none;transform:translateY(var(--ty,0px))}
+.tw-tag::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 2px var(--paper)}
+.tw-tag b{font-weight:700;color:var(--red)}
+.tw-ruler{display:grid;grid-template-columns:repeat(4,1fr);margin-top:10px;border-radius:4px;background:var(--tape);box-shadow:inset 0 -3px 0 rgba(0,0,0,.12),0 8px 14px -10px rgba(40,25,5,.6);overflow:hidden}
+.tw-ruler button{position:relative;min-height:44px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:7px;font:600 12px/1 var(--mono);color:#2a2208;background:repeating-linear-gradient(90deg,rgba(42,34,8,.6) 0 1px,transparent 1px 8px) top/100% 9px no-repeat;box-shadow:inset -1px 0 0 rgba(42,34,8,.55)}
+.tw-ruler button:last-child{box-shadow:none}
+.tw-ruler button i{position:absolute;left:0;top:0;bottom:0;width:0;background:rgba(20,37,77,.16)}
+.tw-ruler button[aria-current=true]{color:var(--red)}
+.tw-ruler button[aria-current=true] i{width:var(--p,0%)}
+.tw-ruler button:focus-visible{outline-offset:-3px}
+@media (max-width:899px){.hero-grid{display:flex;flex-direction:column}.hero-grid>.hero-art{order:-1;margin:0 0 8px}.tw-frame{aspect-ratio:4/3.1}.hero .kicker{margin-top:6px}}
+@media (min-width:900px){.tw-ruler{margin-left:64px}.hero-art .tw-roll{display:block;position:absolute;left:-46px;bottom:-34px;width:118px;height:118px;z-index:6;filter:drop-shadow(0 10px 14px rgba(40,25,5,.45))}.hero-art{margin:0;padding:0 0 0 18px}.tw-frame{aspect-ratio:1/1.02}}
+@media (prefers-reduced-motion:reduce){.tw-ph.on img{animation:none;transform:scale(1.04)}}
+/* the way in: real photos of the house, entrance and door */
+.way-grid{display:grid;gap:22px;align-items:center}
+.way-photo{margin:0;position:relative;max-width:420px;aspect-ratio:4/5;border-radius:6px;overflow:hidden;box-shadow:0 0 0 1.5px var(--ink),0 30px 50px -30px rgba(40,25,5,.8);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.way-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.05)}
+.way-photo figcaption,.way-strip figcaption{position:absolute;left:10px;bottom:10px;display:flex;align-items:center;gap:7px;padding:6px 10px 6px 7px;background:var(--kraft-2);border-radius:3px 10px 10px 3px;font:600 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--ink)}
+.way-photo figcaption b,.way-strip figcaption b{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--ink);color:var(--tape);font-size:11px}
+.way-credit{margin-top:14px;font:500 12px/1 var(--mono)!important;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-dim)}
+.way-strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:26px;padding:2px 2px 8px;scrollbar-width:none;overscroll-behavior-x:contain}
+.way-strip::-webkit-scrollbar{display:none}
+.way-strip figure{position:relative;flex:0 0 auto;margin:0;width:min(60vw,250px);aspect-ratio:4/5;border-radius:6px;overflow:hidden;scroll-snap-align:start;box-shadow:0 0 0 1.5px var(--ink),0 18px 30px -22px rgba(40,25,5,.7)}
+.way-strip img{width:100%;height:100%;object-fit:cover;display:block}
+@media (min-width:900px){.way-grid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px}}
 </style>
 </head>
 <body>
@@ -372,38 +418,29 @@ h1 .h-b em::after{content:"";position:absolute;left:-.04em;right:-.04em;bottom:.
           </div>
         </div>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <svg viewBox="0 0 520 470">
-          <!-- pattern piece: bodice front on kraft -->
-          <g transform="rotate(-4 260 230)">
-            <path d="M120 40 L210 28 Q250 70 300 30 L380 44 L404 150 Q392 210 410 262 L430 420 L110 430 L128 262 Q146 206 110 150 Z" fill="#f1e5cc" stroke="#14254d" stroke-width="2.5" stroke-linejoin="round"/>
-            <path d="M134 56 L212 46 Q250 86 298 48 L366 60 L388 152 Q376 210 394 264 L412 404 L128 413 L144 264 Q160 206 126 152 Z" fill="none" stroke="#14254d" stroke-width="1.6" stroke-dasharray="7 6" opacity=".55"/>
-            <path d="M206 160 l20 0 M300 160 l20 0" stroke="#14254d" stroke-width="2"/>
-            <path d="M222 196 L262 330 L302 196" fill="none" stroke="#14254d" stroke-width="1.8" stroke-dasharray="3 5"/>
-            <path d="M262 110 V380 M252 124 l10 -14 10 14 M252 366 l10 14 10 -14" fill="none" stroke="#14254d" stroke-width="2" stroke-linecap="round"/>
-            <text x="276" y="250" font-family="IBM Plex Mono,monospace" font-size="13" font-weight="600" fill="#14254d" letter-spacing="1.5">ПЕРЕД</text>
-            <text x="276" y="270" font-family="IBM Plex Mono,monospace" font-size="11" fill="#2c3756" letter-spacing="1">1 дет. со сгибом</text>
-            <text x="150" y="398" font-family="IBM Plex Mono,monospace" font-size="11" fill="#2c3756" letter-spacing="1">припуск 1,5 см</text>
-            <path d="M110 150 l-12 -4 M128 262 l-12 0 M404 150 l12 -4 M410 262 l12 0" stroke="#14254d" stroke-width="2.5"/>
+      <div class="hero-art">
+        <div class="tw" id="tw" role="region" aria-roledescription="галерея" aria-label="Фото мастерской с Яндекс Карт">
+          <div class="tw-3d" id="tw3d">
+            <div class="tw-frame" id="twFrame">
+              <figure class="tw-ph on"><div class="tw-in"><img src="img/workshop.webp" style="object-position:30% 50%" alt="Мастерская: швейные машины, оверлок и джинсовая куртка на манекене" width="1200" height="814" fetchpriority="high" draggable="false"></div></figure>
+              <figure class="tw-ph"><div class="tw-in"><img src="img/darn.webp" alt="Штопка на ткани крупным планом" width="748" height="760" loading="lazy" decoding="async" draggable="false"></div></figure>
+              <figure class="tw-ph"><div class="tw-in"><img src="img/room.webp" alt="Комната ателье: стол, кресло, манекен у окна" width="1000" height="460" loading="lazy" decoding="async" draggable="false"></div></figure>
+              <figure class="tw-ph"><div class="tw-in"><img src="img/jeans-seam.webp" alt="Шов на джинсах крупным планом" width="456" height="1000" loading="lazy" decoding="async" draggable="false"></div></figure>
+              <div class="tw-tape" aria-hidden="true"></div>
+              <span class="tw-credit">фото с Яндекс Карт</span>
+            </div>
+            <p class="tw-tag"><b id="twNum">01</b><span id="twCap">мастерская</span></p>
+          </div>
+          <div class="tw-ruler" id="twRuler">
+            <button type="button" aria-label="Фото 1: мастерская" aria-current="true"><i></i>01</button><button type="button" aria-label="Фото 2: штопка"><i></i>02</button><button type="button" aria-label="Фото 3: комната ателье"><i></i>03</button><button type="button" aria-label="Фото 4: шов на джинсах"><i></i>04</button>
+          </div>
+        </div>
+        <svg class="tw-roll" viewBox="0 0 140 140" aria-hidden="true">
+          <g id="roll" transform="translate(70 70)">
+            <circle r="62" fill="#e0b21a"/><circle r="58" fill="#f3c623"/>
+            <circle r="46" fill="none" stroke="#c4980e" stroke-width="1.4"/><circle r="34" fill="none" stroke="#c4980e" stroke-width="1.4"/><circle r="22" fill="none" stroke="#c4980e" stroke-width="1.4"/>
+            <circle r="11" fill="#14254d"/><circle r="4" fill="#f3c623"/>
           </g>
-          <!-- pins -->
-          <g stroke="#14254d" stroke-width="2.4" stroke-linecap="round">
-            <path d="M156 92 l46 26"/><path d="M370 330 l-40 34"/>
-          </g>
-          <circle cx="154" cy="91" r="7" fill="#b3261e"/><circle cx="372" cy="329" r="7" fill="#14254d"/>
-          <!-- tailor chalk -->
-          <g transform="rotate(18 440 110)"><path d="M408 92 h64 l-12 34 h-40z" fill="#14254d"/><path d="M420 104 h40" stroke="#f1e5cc" stroke-width="1.5" opacity=".5"/></g>
-          <!-- tape roll -->
-          <g id="roll" transform="translate(96 392)">
-            <circle r="62" fill="#e0b21a"/>
-            <circle r="58" fill="#f3c623"/>
-            <circle r="46" fill="none" stroke="#c4980e" stroke-width="1.4"/>
-            <circle r="34" fill="none" stroke="#c4980e" stroke-width="1.4"/>
-            <circle r="22" fill="none" stroke="#c4980e" stroke-width="1.4"/>
-            <circle r="11" fill="#14254d"/>
-            <circle r="4" fill="#f3c623"/>
-          </g>
-          <circle id="rollOut" cx="140" cy="440" r="1" fill="none"/>
         </svg>
       </div>
     </div>
@@ -450,6 +487,25 @@ h1 .h-b em::after{content:"";position:absolute;left:-.04em;right:-.04em;bottom:.
       <li><b>Мастер отвечает</b><span>как лучше сделать и сколько это стоит</span></li>
       <li><b>Приносите на Гончарную</b><span id="howHours">в будни, 11:00–19:00</span></li>
     </ol>
+  </section>
+
+  <section class="wrap sec railed" id="way" aria-labelledby="wayH">
+    <div class="way-grid">
+      <figure class="way-photo"><img src="img/door6.webp" alt="Деревянная дверь подъезда № 6 в доме на Гончарной" width="900" height="1200" loading="lazy" decoding="async"><figcaption><b>2</b>подъезд № 6</figcaption></figure>
+      <div class="sec-h rv">
+        <span class="cm" data-cm>отметка</span>
+        <h2 id="wayH">Ателье — внутри дома</h2>
+        <p>Мастерская — в доме 26к1: вход через подъезд № 6, дальше по лестнице до двери с табличкой «Ателье». Вот вся дорога на настоящих фото — чтобы не искать.</p>
+        <p class="way-credit">фото с Яндекс Карт</p>
+      </div>
+    </div>
+    <div class="way-strip" aria-label="Дорога до ателье в фотографиях">
+      <figure><img src="img/building.webp" alt="Жёлтый дом на Гончарной улице" width="1200" height="900" loading="lazy" decoding="async"><figcaption><b>1</b>дом 26к1</figcaption></figure>
+      <figure><img src="img/stairs.webp" alt="Лестница в подъезде" width="1200" height="900" loading="lazy" decoding="async"><figcaption><b>3</b>лестница</figcaption></figure>
+      <figure><img src="img/door-sign.webp" alt="Белая дверь с табличкой «Ателье на Гончарной»" width="1000" height="666" loading="lazy" decoding="async"><figcaption><b>4</b>дверь с табличкой</figcaption></figure>
+      <figure><img src="img/atelier-door.webp" alt="Открытая дверь в ателье" width="900" height="1200" loading="lazy" decoding="async"><figcaption><b>5</b>вход в ателье</figcaption></figure>
+      <figure><img src="img/coat.webp" alt="Пальто на манекене" width="236" height="605" loading="lazy" decoding="async"><figcaption><b>✂</b>в мастерской</figcaption></figure>
+    </div>
   </section>
 
   <section class="wrap sec railed" id="reviews" aria-labelledby="revH">
@@ -929,6 +985,7 @@ function boot() {
 if (BIZ.name) boot();
 })();
 </script>
+<script src="tapewipe.js" defer></script>
 <script src="../map-fix.js" defer></script>
 </body>
 </html>

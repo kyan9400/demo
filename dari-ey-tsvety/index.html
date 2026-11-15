@@ -122,6 +122,25 @@ h1 i{display:block;color:var(--rose-ink);padding-left:.42em}
 .legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13.5px;color:var(--dim)}
 .legend b{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;border:1px solid var(--ink-2);font-size:11px;font-weight:600;color:var(--ink);margin-right:5px}
 .plate-tag{position:absolute;top:18px;right:18px;font:italic 400 13px/1 var(--f-d);color:var(--dim);letter-spacing:.06em}
+.hero.has-deck .plate{display:none}
+.deck-wrap{position:relative;display:grid;justify-items:center;gap:14px;padding:6px 0 4px}
+.deck{position:relative;width:min(72vw,380px);aspect-ratio:4/5.35;perspective:1100px;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.deck:active{cursor:grabbing}
+.deck-tilt{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+.dk{position:absolute;inset:0;margin:0;background:var(--card);border:1px solid var(--edge);padding:9px 9px 0;display:flex;flex-direction:column;transform-origin:50% 88%;will-change:transform;box-shadow:0 calc(30px * var(--sh,1)) 50px -30px rgba(29,51,40,.55),0 2px 0 rgba(255,255,255,.6) inset;backface-visibility:hidden}
+.dk-in{position:relative;flex:1;border:1px solid var(--line-2);overflow:hidden;background:var(--paper-2)}
+.dk img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;filter:saturate(.92) contrast(1.02)}
+.dk-in::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 6px rgba(251,247,239,.18),inset 0 0 40px rgba(29,51,40,.18);pointer-events:none}
+.dk-n{position:absolute;top:10px;left:10px;font:italic 400 13px/1 var(--f-d);color:var(--ink);background:rgba(251,247,239,.88);padding:6px 9px;letter-spacing:.04em}
+.dk figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 4px 11px}
+.dk figcaption i{font:italic 400 18px/1.15 var(--f-d);color:var(--rose-ink)}
+.dk figcaption span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);white-space:nowrap}
+.dk:not(.top) figcaption{opacity:.55}
+.deck-foot{position:relative;z-index:60;margin-top:10px;display:flex;align-items:center;gap:14px;font:italic 400 14px/1.2 var(--f-d);color:var(--dim)}
+.deck-next{min-height:44px;padding:0 16px;border:1px solid var(--line-2);border-radius:999px;font:500 14px/1 var(--f-b);color:var(--ink);background:var(--card)}
+.deck-next:hover{border-color:var(--ink)}
+@media(max-width:899.98px){.hero.has-deck .deck-wrap{order:-1;margin-top:-8px}.hero.has-deck .hero-in{padding-top:18px}.deck{width:min(66vw,290px)}.dk figcaption i{font-size:16px}.dk figcaption span{display:none}}
+@media(min-width:900px){.deck{width:min(100%,400px)}.deck-wrap{padding-right:20px}}
 .draw .s{stroke-dasharray:1;stroke-dashoffset:0;animation:draw 2.6s cubic-bezier(.5,0,.3,1) both}
 .draw .w,.draw .lf,.draw .wo,.draw .wd,.draw .wl{animation:wash 1.6s 1.4s ease both}
 @keyframes draw{from{stroke-dashoffset:1}}
@@ -341,6 +360,17 @@ h2 i{color:var(--rose-ink)}
 .bq .pp{fill:var(--paper-2)}
 .bq .dk{fill:var(--ink)}
 .bq .num{font:600 11px var(--f-b);fill:var(--ink)}
+.live-grid{display:grid;gap:26px;align-items:center}@media(min-width:900px){.live-grid{grid-template-columns:.85fr 1.15fr;gap:64px}}
+.live-photo{margin:0;max-width:430px;background:var(--card);border:1px solid var(--edge);padding:10px;box-shadow:0 40px 70px -40px rgba(29,51,40,.55);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg)) rotate(-1.2deg);transition:transform .2s}
+.live-photo div{border:1px solid var(--line-2);overflow:hidden;aspect-ratio:4/5}
+.live-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.05)}
+.live-photo figcaption{font:italic 400 15px/1.2 var(--f-d);color:var(--dim);padding:10px 4px 2px;display:flex;justify-content:space-between}
+.live .credit{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-top:12px}
+.strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:34px;padding:4px 2px 8px;scrollbar-width:none;overscroll-behavior-x:contain}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 auto;margin:0;width:min(60vw,250px);scroll-snap-align:start;background:var(--card);border:1px solid var(--edge);padding:7px}
+.strip img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.strip figcaption{font:italic 400 14px/1.2 var(--f-d);color:var(--dim);padding:8px 2px 2px}
 </style>
 </head>
 <body>
@@ -484,6 +514,27 @@ h2 i{color:var(--rose-ink)}
     <div class="extra">
       <div><span class="eyebrow">Кроме букетов</span><h3 style="margin-top:8px">Что ещё есть в магазине</h3></div>
       <div class="tags" id="tags"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec live" id="live" aria-labelledby="h-live" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="live-grid">
+      <figure class="live-photo"><div><img src="img/lush-bouquet.webp" alt="Пышный букет из роз, гортензии и эустомы на тёмном фоне" loading="lazy"></div><figcaption><span>с натуры</span><span>№ 1</span></figcaption></figure>
+      <div class="sec-h" style="margin:0">
+        <span class="eyebrow">Живые экземпляры</span>
+        <h2 id="h-live">Атлас нарисован, <i>а это — с натуры</i></h2>
+        <p>Таблицы выше мы рисуем тушью по составу. А вот как букеты магазина выглядят в жизни — настоящие фото из его карточки. Составы и цены ищите в атласе.</p>
+        <p class="credit">фото с Яндекс Карт</p>
+      </div>
+    </div>
+    <div class="strip" aria-label="Фото букетов магазина">
+      <figure><img src="img/pastel-bouquet.webp" alt="Пастельный букет в крафте" loading="lazy"><figcaption>пастельный букет</figcaption></figure>
+      <figure><img src="img/chrysanthemums.webp" alt="Бордовые хризантемы" loading="lazy"><figcaption>бордовые хризантемы</figcaption></figure>
+      <figure><img src="img/hydrangea.webp" alt="Букет с розовой гортензией" loading="lazy"><figcaption>розовая гортензия</figcaption></figure>
+      <figure><img src="img/pink-white.webp" alt="Бело-розовый букет" loading="lazy"><figcaption>бело-розовый букет</figcaption></figure>
+      <figure><img src="img/red-orange.webp" alt="Большой красно-оранжевый букет" loading="lazy"><figcaption>красно-оранжевый</figcaption></figure>
     </div>
   </div>
 </section>
@@ -1082,5 +1133,7 @@ if (!reduced && 'IntersectionObserver' in window) {
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="deck.js"></script>
+<script>(function(){var f=document.querySelector('.live-photo');if(!f||matchMedia('(prefers-reduced-motion: reduce)').matches)return;f.addEventListener('pointermove',function(e){var r=f.getBoundingClientRect();f.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*10+'deg');f.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*8+'deg');});f.addEventListener('pointerleave',function(){f.style.setProperty('--ry','0deg');f.style.setProperty('--rx','0deg');});})();</script>
 </body>
 </html>

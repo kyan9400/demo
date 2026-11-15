@@ -122,13 +122,42 @@ h1,h2,h3{margin:0;font-weight:400}
 .mdot{width:10px;height:10px;border-radius:50%;flex:none;display:inline-block}
 .mm{display:inline-flex;gap:3px}
 .hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-.hero-art{position:relative;margin:0 auto -14px;width:min(82%,330px)}
-.hero-art svg{width:100%;height:auto;overflow:hidden}
+/* photo hero: cinematic full-bleed — real dishes from the café's Yandex card, slow Ken Burns + crossfade */
+.hero{touch-action:pan-y}
+.hcine{--ph:min(66vw,46svh);position:absolute;left:0;right:0;top:0;height:calc(var(--ph) + 120px);overflow:hidden;z-index:0;user-select:none;-webkit-user-select:none;
+  -webkit-mask-image:linear-gradient(180deg,#000 calc(100% - 210px),rgba(0,0,0,.35) calc(100% - 90px),transparent);mask-image:linear-gradient(180deg,#000 calc(100% - 210px),rgba(0,0,0,.35) calc(100% - 90px),transparent)}
+.hc-move{position:absolute;inset:-4% 0 0 0;will-change:transform}
+.hc-s{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.4s ease;will-change:opacity,transform}
+.hc-s.on{opacity:1;animation:kb 9s ease-out both}
+.hc-s:nth-child(2n).on{animation-name:kb2}
+.hcine.hold .hc-s.on,.hcine.hold .hc-ticks .cur i::after{animation-play-state:paused}
+@keyframes kb{from{transform:scale(1.14) translate3d(-1.5%,1.5%,0)}to{transform:scale(1.02) translate3d(0,0,0)}}
+@keyframes kb2{from{transform:scale(1.02) translate3d(1.5%,0,0)}to{transform:scale(1.15) translate3d(-1%,-2%,0)}}
+.hc-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,21,19,.6) 0,rgba(22,21,19,0) 90px);pointer-events:none}
+.hc-ui{position:absolute;left:0;right:0;top:0;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding:6px var(--pad) 0;z-index:2}
+.hc-cap{margin:0;padding-top:8px;display:flex;flex-direction:column;gap:3px;min-width:0;text-shadow:0 1px 10px rgba(0,0,0,.6)}
+.hc-cap b{font:400 15px/1.2 var(--head);color:var(--cream);letter-spacing:.01em}
+.hc-cap span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#D9D0C4}
+.hc-ticks{display:flex;flex:none}
+.hc-ticks button{width:32px;height:44px;padding:0 3px;border:0;background:none;cursor:pointer;display:flex;align-items:center}
+.hc-ticks i{display:block;width:100%;height:3px;border-radius:2px;background:rgba(244,238,227,.35);overflow:hidden}
+.hc-ticks i::after{content:"";display:block;height:100%;width:0;background:var(--saf)}
+.hc-ticks .done i::after{width:100%}
+.hc-ticks .cur i::after{animation:tick var(--dur,6s) linear both}
+.hcine.still .hc-ticks .cur i::after{animation:none;width:100%}
+@keyframes tick{to{width:100%}}
+.hero .soup{position:relative;z-index:1}
+.hero>.wrap{z-index:1;align-content:start;padding-top:calc(min(66vw,46svh) - 10px);min-height:0}
+.hero h1,.hero-k,.hero-p{text-shadow:0 2px 18px rgba(22,21,19,.7)}
 @media (min-width:900px){
-  .hero>.wrap{grid-template-columns:1.05fr .95fr;align-items:center;gap:40px;padding-top:40px;padding-bottom:56px;min-height:min(820px,calc(100svh - 100px))}
-  .hero-art{order:2;width:100%;max-width:540px;margin:0}
+  .hcine{left:34%;height:100%;-webkit-mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.55) 22%,#000 46%);mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.55) 22%,#000 46%)}
+  .hc-shade{background:linear-gradient(180deg,rgba(22,21,19,.3),rgba(22,21,19,0) 30%,rgba(22,21,19,0) 66%,rgba(22,21,19,.65))}
+  .hc-ui{top:auto;bottom:74px;left:auto;right:0;padding:0 max(var(--pad),calc((100vw - 1240px)/2 + var(--pad))) 0 0;flex-direction:column-reverse;align-items:flex-end;text-align:right;gap:2px}
+  .hc-cap{align-items:flex-end}.hc-cap b{font-size:18px}
+  .hero>.wrap{grid-template-columns:minmax(0,.62fr) .38fr;align-items:center;align-content:center;gap:40px;padding-top:40px;padding-bottom:56px;min-height:min(820px,calc(100svh - 100px))}
   .table-wrap{position:sticky;top:84px}
 }
+@media (prefers-reduced-motion:reduce){.hc-s.on{animation:none}}
 .steam path{fill:none;stroke:#F4EEE3;stroke-width:5;stroke-linecap:round;opacity:0;animation:steam 4.2s ease-in-out infinite}
 .steam path:nth-child(2){animation-delay:1.4s}.steam path:nth-child(3){animation-delay:2.8s}
 @keyframes steam{0%{opacity:0;transform:translateY(24px)}35%{opacity:.34}100%{opacity:0;transform:translateY(-46px)}}
@@ -295,6 +324,18 @@ h1,h2,h3{margin:0;font-weight:400}
 .occ .chips{display:flex;flex-wrap:wrap;gap:8px}
 @media (min-width:900px){.occ{grid-template-columns:1fr auto;align-items:center;padding:32px 36px}.occ .chips{grid-column:1}}
 
+/* real place */
+.place{border-top:1px solid var(--line)}
+.pl-grid{display:grid;gap:24px;align-items:center}
+@media (min-width:900px){.pl-grid{grid-template-columns:.8fr 1.2fr;gap:56px}}
+.pl-photo{margin:0;border-radius:20px;overflow:hidden;aspect-ratio:4/5;max-width:440px;background:var(--g2);box-shadow:0 40px 70px -40px rgba(22,21,19,.7),0 0 0 6px var(--paper),0 0 0 7px var(--line);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.pl-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.06)}
+.pl-credit{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin:16px 0 0}
+.pl-strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;max-width:1240px;margin:32px auto 0;padding:0 var(--pad) 8px;scroll-padding:0 var(--pad);scrollbar-width:none}
+.pl-strip::-webkit-scrollbar{display:none}
+.pl-strip figure{flex:0 0 auto;width:min(62vw,250px);margin:0;scroll-snap-align:start}
+.pl-strip img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;background:var(--g2);box-shadow:0 20px 40px -26px rgba(22,21,19,.6)}
+.pl-strip figcaption{font-size:13.5px;color:var(--mut);margin-top:8px}
 /* find */
 .find{display:grid;gap:22px}
 @media (min-width:980px){.find{grid-template-columns:1fr 1fr;gap:40px}}
@@ -388,46 +429,21 @@ h1,h2,h3{margin:0;font-weight:400}
 
 <main>
 <section class="hero" id="hero">
-  <div class="wrap">
-    <div class="hero-art" aria-hidden="true">
-      <svg viewBox="0 0 600 560" id="kazan">
-        <defs>
-          <linearGradient id="cuG" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#6E3214"/><stop offset=".28" stop-color="#C46E36"/><stop offset=".5" stop-color="#E39A5E"/><stop offset=".72" stop-color="#B8622D"/><stop offset="1" stop-color="#5C2A10"/></linearGradient>
-          <linearGradient id="cuV" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></linearGradient>
-          <radialGradient id="riceG" cx=".45" cy=".25" r=".9"><stop offset="0" stop-color="#FFD98A"/><stop offset=".55" stop-color="#F0B24A"/><stop offset="1" stop-color="#C98522"/></radialGradient>
-          <clipPath id="domeClip"><path d="M100 300C120 200 210 150 300 150S480 200 500 300z"/></clipPath>
-        </defs>
-        <g class="ring" fill="none" stroke="#B8642F" stroke-opacity=".5">
-          <circle cx="300" cy="300" r="268" stroke-width="1.5" stroke-dasharray="2 10"/>
-          <circle cx="300" cy="300" r="246" stroke-width="1"/>
-          <g id="ringDia"></g>
-        </g>
-        <g class="steam"><path d="M240 150c-18-26 18-40 0-68s16-40 4-62"/><path d="M300 138c-18-26 18-40 0-68s16-40 4-62"/><path d="M360 150c-18-26 18-40 0-68s16-40 4-62"/></g>
-        <!-- fire -->
-        <g transform="translate(0 4)">
-          <path class="flame" d="M210 540c-10-30 4-50 18-70 4 22 18 36 10 70z" fill="#B8642F"/>
-          <path class="flame" d="M250 540c-14-40 6-66 26-92 4 30 24 50 12 92z" fill="#F2A93B"/>
-          <path class="flame" d="M296 540c-14-44 8-74 30-104 4 34 26 58 12 104z" fill="#FFC15E"/>
-          <path class="flame" d="M340 540c-12-36 6-60 24-84 4 28 20 46 10 84z" fill="#F2A93B"/>
-          <path class="flame" d="M378 540c-8-26 4-44 16-60 4 20 14 32 8 60z" fill="#B8642F"/>
-        </g>
-        <rect x="150" y="534" width="300" height="10" rx="5" fill="#3A3530"/>
-        <!-- handles -->
-        <path d="M108 318c-40 0-52 34-30 52" fill="none" stroke="#7A3816" stroke-width="12" stroke-linecap="round"/>
-        <path d="M492 318c40 0 52 34 30 52" fill="none" stroke="#7A3816" stroke-width="12" stroke-linecap="round"/>
-        <!-- body -->
-        <path d="M84 300h432c0 110-96 190-216 190S84 410 84 300z" fill="url(#cuG)"/>
-        <path d="M84 300h432c0 110-96 190-216 190S84 410 84 300z" fill="url(#cuV)"/>
-        <g id="hammer" fill="#FFE2C0" fill-opacity=".14"></g>
-        <path d="M120 360c40 60 110 92 180 92" fill="none" stroke="#FFE2C0" stroke-opacity=".22" stroke-width="6" stroke-linecap="round"/>
-        <!-- dome of plov -->
-        <path d="M100 300C120 200 210 150 300 150S480 200 500 300z" fill="url(#riceG)"/>
-        <g clip-path="url(#domeClip)" id="dome"></g>
-        <!-- rim -->
-        <ellipse cx="300" cy="300" rx="222" ry="16" fill="#8E4219"/>
-        <path d="M78 300h444" stroke="#E9A06A" stroke-width="5" stroke-linecap="round"/>
-      </svg>
+  <div class="hcine" id="hcine" aria-roledescription="слайд-шоу" aria-label="Настоящие фото блюд кафе">
+    <div class="hc-move" id="hcMove">
+      <img class="hc-s on" src="img/plov.webp" alt="Плов с говядиной и морковью на тарелке" fetchpriority="high" decoding="async" data-cap="плов с говядиной">
+      <img class="hc-s" data-src="img/shashlik.webp" alt="Шашлык на лепёшке с овощами и соусом" decoding="async" data-cap="шашлык на лепёшке">
+      <img class="hc-s" data-src="img/borsch.webp" alt="Борщ со сметаной и чёрным хлебом на доске" decoding="async" data-cap="борщ со сметаной">
+      <img class="hc-s" data-src="img/wrap.webp" alt="Ролл в лаваше с гриля в разрезе" decoding="async" data-cap="ролл в лаваше с гриля">
+      <img class="hc-s" data-src="img/bakery.webp" alt="Свежая выпечка-улитки на витрине" decoding="async" data-cap="выпечка своей пекарни">
     </div>
+    <div class="hc-shade" aria-hidden="true"></div>
+    <div class="hc-ui">
+      <p class="hc-cap"><b id="hcCap">плов с говядиной</b><span>фото кафе с Яндекс Карт</span></p>
+      <div class="hc-ticks" id="hcTicks" role="group" aria-label="Выбрать фото"></div>
+    </div>
+  </div>
+  <div class="wrap">
     <div>
       <p class="hero-k" id="heroK">Кафе · Садовая-Триумфальная, 4-10</p>
       <h1>Про <em>Плов</em> и Мясо<small>Плов, люля и манты в 248&nbsp;м от «Маяковской»</small></h1>
@@ -566,6 +582,29 @@ h1,h2,h3{margin:0;font-weight:400}
       </div>
       <div class="chips" id="occ"></div>
     </div>
+  </div>
+</section>
+
+<section class="sec place" id="place" aria-labelledby="placeH">
+  <div class="wrap">
+    <div class="pl-grid">
+      <figure class="pl-photo"><img src="img/hall.webp" alt="Зал кафе: деревянные столы, светлые стены и стойка с меню" loading="lazy" decoding="async"></figure>
+      <div>
+        <span class="eyebrow">Кафе внутри</span>
+        <h2 class="h2" id="placeH" style="margin-top:12px">Дерево, кирпич и&nbsp;плов на столе</h2>
+        <p class="lead">Зал во дворе на Садовой-Триумфальной: светлые стены, деревянные столы, витрина с выпечкой и меню над стойкой. Ниже — вход, двор и то, что приносят к столу, на фото кафе и гостей.</p>
+        <p class="pl-credit">фото с Яндекс Карт</p>
+      </div>
+    </div>
+  </div>
+  <div class="pl-strip" aria-label="Фото кафе «Про Плов и Мясо»">
+    <figure><img src="img/entrance.webp" alt="Вход в кафе с вывеской «Про Плов и Мясо»" loading="lazy" decoding="async"><figcaption>вход с вывеской</figcaption></figure>
+    <figure><img src="img/courtyard.webp" alt="Двор дома на Садовой-Триумфальной, вход в кафе вдали" loading="lazy" decoding="async"><figcaption>двор вечером</figcaption></figure>
+    <figure><img src="img/hall-2.webp" alt="Зал с мягким диваном и деревянными столами" loading="lazy" decoding="async"><figcaption>зал</figcaption></figure>
+    <figure><img src="img/showcase.webp" alt="Витрина с выпечкой и напитками" loading="lazy" decoding="async"><figcaption>витрина</figcaption></figure>
+    <figure><img src="img/soup.webp" alt="Суп с лепёшкой на деревянной доске" loading="lazy" decoding="async"><figcaption>суп с лепёшкой</figcaption></figure>
+    <figure><img src="img/salad.webp" alt="Салат с зеленью и укропом в чёрной миске" loading="lazy" decoding="async"><figcaption>салат с зеленью</figcaption></figure>
+    <figure><img src="img/coffee-cake.webp" alt="Капучино и кусок торта на столе" loading="lazy" decoding="async"><figcaption>кофе и десерт</figcaption></figure>
   </div>
 </section>
 
@@ -807,37 +846,7 @@ $('#revs').innerHTML = pickRev.map(function (n) { return BIZ.reviews.filter(func
   return '<figure class="rev"><q>' + esc(r.x) + '</q><footer><span class="st" aria-label="5 из 5">★★★★★</span><b>' + esc(r.a) + '</b>отзыв на Яндекс Картах · ' + esc(r.d) + '</footer></figure>';
 }).join('');
 
-/* ---------- hero kazan art ---------- */
 var seed = 7; var rnd = function () { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
-(function () {
-  var g = '', i;
-  // rice grains
-  for (i = 0; i < 260; i++) {
-    var x = 100 + rnd() * 400, y = 150 + rnd() * 150, cx = 300, top = 150 + Math.pow(Math.abs(x - cx) / 200, 2) * 145;
-    if (y < top) continue;
-    g += '<ellipse cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" rx="5.2" ry="1.9" transform="rotate(' + (rnd() * 180).toFixed(0) + ' ' + x.toFixed(1) + ' ' + y.toFixed(1) + ')" fill="' + (rnd() > .5 ? '#FFF1CF' : '#FFE0A0') + '" opacity=".85"/>';
-  }
-  // yellow & orange carrot sticks
-  for (i = 0; i < 46; i++) {
-    var x2 = 120 + rnd() * 360, y2 = 170 + rnd() * 125, t2 = 150 + Math.pow(Math.abs(x2 - 300) / 200, 2) * 145; if (y2 < t2 + 4) continue;
-    var a2 = rnd() * 180; g += '<rect x="' + (x2 - 9).toFixed(1) + '" y="' + (y2 - 2).toFixed(1) + '" width="18" height="4" rx="2" fill="' + (rnd() > .4 ? '#F7C531' : '#E9792A') + '" transform="rotate(' + a2.toFixed(0) + ' ' + x2.toFixed(1) + ' ' + y2.toFixed(1) + ')"/>';
-  }
-  // chickpeas
-  for (i = 0; i < 18; i++) { var x3 = 140 + rnd() * 320, y3 = 190 + rnd() * 100, t3 = 150 + Math.pow(Math.abs(x3 - 300) / 200, 2) * 145; if (y3 < t3 + 6) continue; g += '<circle cx="' + x3.toFixed(1) + '" cy="' + y3.toFixed(1) + '" r="5" fill="#E6C690" stroke="#B9935A" stroke-width="1"/>'; }
-  // raisins
-  for (i = 0; i < 22; i++) { var x4 = 130 + rnd() * 340, y4 = 185 + rnd() * 105, t4 = 150 + Math.pow(Math.abs(x4 - 300) / 200, 2) * 145; if (y4 < t4 + 6) continue; g += '<ellipse cx="' + x4.toFixed(1) + '" cy="' + y4.toFixed(1) + '" rx="4.5" ry="3.2" fill="#4A2316"/>'; }
-  // beef on the top
-  [[262, 176, 20], [300, 166, 24], [338, 178, 19], [284, 196, 17], [322, 198, 18]].forEach(function (m) { g += '<rect x="' + (m[0] - m[2]) + '" y="' + (m[1] - m[2] * .6) + '" width="' + m[2] * 2 + '" height="' + m[2] * 1.2 + '" rx="' + m[2] * .5 + '" fill="#7A3A1E"/><rect x="' + (m[0] - m[2] * .7) + '" y="' + (m[1] - m[2] * .5) + '" width="' + m[2] * 1.1 + '" height="' + m[2] * .32 + '" rx="3" fill="#A65A33"/>'; });
-  // quail egg halves
-  [[196, 236], [404, 236], [250, 262], [352, 264], [300, 238]].forEach(function (e) { g += '<ellipse cx="' + e[0] + '" cy="' + e[1] + '" rx="13" ry="9" fill="#FFFDF6" stroke="#E2D6BC" stroke-width="1"/><circle cx="' + e[0] + '" cy="' + e[1] + '" r="5" fill="#F2A93B"/>'; });
-  // whole garlic head
-  g += '<path d="M300 134c-16 0-24 12-22 24 3 12 14 16 22 16s19-4 22-16c2-12-6-24-22-24z" fill="#F6EBD6" stroke="#D8C4A0" stroke-width="1.5"/><path d="M300 136v36M290 140c-4 10-4 22 2 32M310 140c4 10 4 22-2 32" stroke="#D8C4A0" stroke-width="1.4" fill="none"/>';
-  $('#dome').innerHTML = g;
-  var hm = ''; for (i = 0; i < 70; i++) { var hx = 100 + rnd() * 400, hy = 312 + rnd() * 160, dx = (hx - 300) / 216, lim = 300 + 190 * Math.sqrt(Math.max(0, 1 - dx * dx)); if (hy > lim - 8) continue; hm += '<circle cx="' + hx.toFixed(1) + '" cy="' + hy.toFixed(1) + '" r="' + (3 + rnd() * 5).toFixed(1) + '"/>'; }
-  $('#hammer').innerHTML = hm;
-  var rd = ''; for (i = 0; i < 24; i++) { var an = i / 24 * Math.PI * 2, rx = 300 + Math.cos(an) * 257, ry = 300 + Math.sin(an) * 257; rd += '<path d="M' + rx.toFixed(1) + ' ' + (ry - 5).toFixed(1) + 'l5 5-5 5-5-5z" fill="#B8642F" stroke="none"/>'; }
-  $('#ringDia').innerHTML = rd;
-})();
 var heroEl = $('#hero');
 if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { es.forEach(function (e) { heroEl.classList.toggle('paused', !e.isIntersecting); }); }).observe(heroEl);
 
@@ -1085,5 +1094,7 @@ renderSet(); renderList(); renderCart(); syncForm();
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="cine.js"></script>
+<script>(function(){var f=document.querySelector('.pl-photo');if(!f||matchMedia('(prefers-reduced-motion: reduce)').matches)return;f.addEventListener('pointermove',function(e){var r=f.getBoundingClientRect();f.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*10+'deg');f.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*8+'deg');});f.addEventListener('pointerleave',function(){f.style.setProperty('--ry','0deg');f.style.setProperty('--rx','0deg');});})();</script>
 </body>
 </html>

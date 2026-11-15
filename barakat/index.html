@@ -146,6 +146,33 @@ bdi{unicode-bidi:isolate}
   .hero .wrap{grid-template-columns:1fr 1.02fr;align-items:center;gap:48px}
 }
 
+/* photo hero: 3D cover-flow shelf of real photos (flow.js) */
+section.hero{overflow-x:clip}
+.book-wrap.has-flow .book,.book-wrap.has-flow .book-cap{display:none}
+.cflow{position:relative;height:calc(var(--cw,200px) * 1.25 + 70px);perspective:1000px;perspective-origin:50% 35%;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none;overflow:hidden;overflow:clip;margin-inline:-20px}
+.cflow.grab{cursor:grabbing}
+.cflow-floor{position:absolute;left:50%;top:18px;width:0;height:0;transform-style:preserve-3d;will-change:transform}
+.ccard{position:absolute;margin:0;width:var(--cw,200px);aspect-ratio:4/5;left:calc(var(--cw,200px) / -2);top:0;border-radius:10px;overflow:hidden;background:var(--parch-2);box-shadow:0 26px 40px -22px rgba(8,47,38,.6),0 0 0 1px rgba(184,149,74,.45);-webkit-box-reflect:below 6px linear-gradient(transparent 78%,rgba(255,255,255,.18));will-change:transform;cursor:pointer}
+.ccard img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.ccard .glare{position:absolute;inset:0;background:radial-gradient(110% 60% at var(--gx,50%) -5%,rgba(255,255,255,.34),transparent 60%);mix-blend-mode:soft-light;pointer-events:none}
+.ccard.front{box-shadow:0 34px 54px -24px rgba(8,47,38,.7),0 0 0 2px var(--gold-l)}
+.cflow-cap{text-align:center;margin:0;font:italic 500 16px/1.35 var(--serif);color:var(--ink);min-height:2.7em}
+.cflow-cap small{display:block;font:600 11.5px/1.4 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-style:normal;margin-top:3px}
+[dir=rtl] .cflow-cap{font-style:normal;font-size:15px}[dir=rtl] .cflow-cap small{letter-spacing:0;text-transform:none;font-size:12px}
+@media (max-width:959px){.hero .wrap>.book-wrap.has-flow{order:-1;margin-top:-6px}}
+@media (min-width:960px){.cflow{margin-inline:0;height:calc(var(--cw,240px) * 1.25 + 90px)}.cflow-floor{top:34px}}
+/* real place */
+.place-grid{display:grid;gap:24px;align-items:center;grid-template-columns:minmax(0,1fr)}
+@media (min-width:960px){.place-grid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px}}
+.place-photo{margin:0;border-radius:18px;overflow:hidden;aspect-ratio:4/5;max-width:440px;box-shadow:0 40px 70px -40px rgba(8,47,38,.65),0 0 0 1px rgba(184,149,74,.5);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.place-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.05)}
+.pstrip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:30px 0 0;padding:0 0 6px;scrollbar-width:none}
+.pstrip::-webkit-scrollbar{display:none}
+.pstrip figure{flex:0 0 auto;width:min(60vw,230px);margin:0;scroll-snap-align:start}
+.pstrip img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px;display:block;box-shadow:0 20px 40px -26px rgba(8,47,38,.55)}
+.pstrip figcaption{font-size:14px;color:var(--muted);margin-top:8px;line-height:1.35}
+.credit{font-size:12.5px;color:var(--muted);margin:10px 0 0}
+
 /* facts strip */
 .facts{background:var(--em);color:#EDE6D2}
 .facts ul{list-style:none;margin:0;padding:16px 0;display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:center}
@@ -471,6 +498,28 @@ bdi{unicode-bidi:isolate}
     </div>
   </section>
 
+  <section class="sec" id="shop" aria-labelledby="shH">
+    <div class="wrap">
+      <div class="place-grid">
+        <figure class="place-photo"><img src="img/storefront.webp" data-t-alt="shAlt" alt="Вход в магазин «Баракат»" loading="lazy" decoding="async"></figure>
+        <div>
+          <p class="eyebrow" data-t="shEy">Магазин</p>
+          <h2 class="h2" id="shH" data-t-html="shH">Настоящий магазин <em>на Выползовом</em></h2>
+          <p class="sub" data-t="shP"></p>
+        </div>
+      </div>
+      <div class="pstrip" aria-label="Фото магазина" data-t-aria="shStrip">
+        <figure><img src="img/building.webp" alt="" loading="lazy" decoding="async"><figcaption data-t="shC1">фасад</figcaption></figure>
+        <figure><img src="img/shelves.webp" alt="" loading="lazy" decoding="async"><figcaption data-t="shC2">книжные стеллажи</figcaption></figure>
+        <figure><img src="img/frames-wall.webp" alt="" loading="lazy" decoding="async"><figcaption data-t="shC3">каллиграфия в рамах</figcaption></figure>
+        <figure><img src="img/bestsellers.webp" alt="" loading="lazy" decoding="async"><figcaption data-t="shC4">бестселлеры и новинки</figcaption></figure>
+        <figure><img src="img/plates-wall.webp" alt="" loading="lazy" decoding="async"><figcaption data-t="shC5">настенные тарелки и часы</figcaption></figure>
+        <figure><img src="img/night-sign.webp" alt="" loading="lazy" decoding="async"><figcaption data-t="shC6">вывеска вечером</figcaption></figure>
+      </div>
+      <p class="credit" data-t="shCr">фото с Яндекс Карт</p>
+    </div>
+  </section>
+
   <section class="sec praise girih-d" id="praise" aria-labelledby="prH">
     <div class="wrap">
       <p class="eyebrow" data-t="prEy">За что хвалят</p>
@@ -584,6 +633,9 @@ ru: {
   h1: '<b>Баракат</b><span>книги и Коран, бахур, масла, вода Зам-Зам и халяль</span>',
   lead: 'Магазин на Выползовом переулке — гости пишут, что он <q>на территории Московской Соборной мечети</q>. Выберите товары здесь: список с ценами уйдёт в WhatsApp, а заберёте сами.',
   cta1: 'Подобрать за минуту', call: 'Позвонить', callAria: 'Позвонить',
+  shEy: 'Магазин', shH: 'Настоящий магазин <em>на Выползовом</em>',
+  shP: 'Выползов переулок, 7 — по соседству с Соборной мечетью. Внутри стеллажи с книгами, Кораны, каллиграфия в рамах и настенные тарелки. Это фото из карточки магазина на Яндекс Картах.',
+  shAlt: 'Вход в магазин «Баракат»', shStrip: 'Фото магазина', shC1: 'фасад', shC2: 'книжные стеллажи', shC3: 'каллиграфия в рамах', shC4: 'бестселлеры и новинки', shC5: 'настенные тарелки и часы', shC6: 'вывеска вечером', shCr: 'фото с Яндекс Карт',
   bookCap: 'Как в Коране 4в1: русский и арабский рядом. Переключатель языка листает страницу.',
   bookAria: 'Открытая книга: страница на русском и страница на арабском',
   pEy: 'Быстрый подбор', pH: 'Три тапа — и пакет <em>уже в WhatsApp</em>',
@@ -653,6 +705,9 @@ ar: {
   h1: '<b>بركات</b><span>كتب ومصاحف، بخور، زيوت، ماء زمزم ومنتجات حلال</span>',
   lead: 'متجر في زقاق فيبولزوف — ويكتب الزوار أنه <q>في حرم مسجد موسكو الجامع</q>. اختر ما تريد هنا: ستصل القائمة بالأسعار إلى واتساب المتجر، وتستلمها بنفسك.',
   cta1: 'اختر خلال دقيقة', call: 'اتصال', callAria: 'اتصال',
+  shEy: 'المكتبة', shH: 'المكتبة كما هي <em>في الواقع</em>',
+  shP: 'Выползов пер., 7 — بجوار المسجد الجامع في موسكو. في الداخل رفوف الكتب والمصاحف ولوحات الخط العربي والأطباق الجدارية. الصور من بطاقة المكتبة على خرائط ياندكس.',
+  shAlt: 'مدخل مكتبة «بركات»', shStrip: 'صور المكتبة', shC1: 'الواجهة', shC2: 'رفوف الكتب', shC3: 'لوحات الخط العربي', shC4: 'الأكثر مبيعًا والجديد', shC5: 'أطباق وساعات جدارية', shC6: 'اللافتة مساءً', shCr: 'صور من خرائط ياندكس',
   bookCap: 'كما في مصحف «4 في 1»: الروسية والعربية جنبًا إلى جنب. زر اللغة يقلب الصفحة.',
   bookAria: 'كتاب مفتوح: صفحة بالروسية وصفحة بالعربية',
   pEy: 'اختيار سريع', pH: 'ثلاث نقرات — و<em>طلبك في واتساب</em>',
@@ -896,6 +951,10 @@ function setLang(l) {
   try { localStorage.setItem('brk-lang', lang); } catch (e) {}
   $$('[data-t]').forEach(function (el) { var v = t(el.getAttribute('data-t')); if (typeof v === 'string') el.textContent = v; });
   $$('[data-t-html]').forEach(function (el) { el.innerHTML = t(el.getAttribute('data-t-html')); });
+  $$('[data-t-alt]').forEach(function (el) { el.alt = t(el.getAttribute('data-t-alt')); });
+  $$('[data-t-aria]').forEach(function (el) { el.setAttribute('aria-label', t(el.getAttribute('data-t-aria'))); });
+  $$('.pstrip figure').forEach(function (f) { f.querySelector('img').alt = f.querySelector('figcaption').textContent; });
+  try { document.dispatchEvent(new Event('langchange')); } catch (e) {}
   var lb = $('#langBtn'); lb.textContent = t('langBtn'); lb.lang = t('langAttr'); lb.setAttribute('aria-label', t('langAria'));
   ['#heroCall', '#bagCall', '#mbarCall'].forEach(function (s) { $(s).href = 'tel:' + BIZ.phone; });
   ['#bagCall', '#mbarCall'].forEach(function (s) { $(s).setAttribute('aria-label', t('callAria')); });
@@ -939,6 +998,8 @@ setLang(initial);
 setInterval(function () { var st0 = statusOf(BIZ.hours); setPill($('#pillHdr'), st0); setPill($('#pillFind'), st0); }, 60000);
 })();
 </script>
+<script src="flow.js"></script>
+<script>(function(){var f=document.querySelector('.place-photo');if(!f||matchMedia('(prefers-reduced-motion: reduce)').matches)return;f.addEventListener('pointermove',function(e){var r=f.getBoundingClientRect();f.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*10+'deg');f.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*8+'deg');});f.addEventListener('pointerleave',function(){f.style.setProperty('--ry','0deg');f.style.setProperty('--rx','0deg');});})();</script>
 <script src="../map-fix.js" defer></script>
 </body>
 </html>

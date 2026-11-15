@@ -363,6 +363,38 @@ section{scroll-margin-top:10px}
 .sbar .main small{font:500 12.5px/1 var(--mono);opacity:.85}
 .sbar .ico{width:52px;padding:0;flex:none}
 @media (min-width:900px){.sbar{display:none}}
+
+/* photo-real hero (corridor.js): real works from the Yandex Maps card hung along a gallery wall in 3D */
+.gal-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:8px;border-bottom:1px solid var(--ink);font:500 12px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.gal-head small{font:400 12px/1.3 var(--mono);letter-spacing:0;text-transform:none;color:var(--ink-2);text-align:right}
+.corridor{position:relative;height:clamp(290px,80vw,360px);margin:0 -16px 26px;overflow:hidden;perspective:900px;perspective-origin:12% 46%;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none;background:linear-gradient(180deg,var(--paper) 0%,#ece7de 78%,var(--paper-2) 100%)}
+.corridor.grab{cursor:grabbing}
+.corridor:not(.on){display:none}
+.c-wall{position:absolute;left:4%;top:7%;height:80%;width:400%;transform-origin:0 50%;transform-style:preserve-3d;will-change:transform}
+.c-track{position:absolute;left:0;top:0;height:100%;display:flex;gap:clamp(26px,6vw,46px);padding-left:4px;will-change:transform}
+.fr{position:relative;flex:none;height:100%;margin:0;display:flex;flex-direction:column}
+.fr::before{content:"";position:absolute;left:-30%;right:-30%;top:-14%;height:70%;background:radial-gradient(50% 60% at 50% 0,rgba(255,250,236,.95),rgba(255,250,236,0) 70%);pointer-events:none}
+.mat{position:relative;height:84%;aspect-ratio:4/5;padding:7%;background:var(--white);box-shadow:0 0 0 2px var(--ink),0 22px 30px -18px rgba(18,18,18,.55),0 2px 4px rgba(18,18,18,.15)}
+.mat img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.fr figcaption{margin-top:auto;font:400 11.5px/1.3 var(--mono);color:var(--ink-2);white-space:nowrap}
+.fr figcaption b{color:var(--lac);font-weight:600;margin-right:8px}
+.c-floor{position:absolute;left:0;right:0;bottom:0;height:9%;background:linear-gradient(180deg,rgba(18,18,18,.06),rgba(18,18,18,0));border-top:1px solid var(--line)}
+.gal-credit{position:absolute;right:16px;bottom:8px;font:400 11px/1 var(--mono);color:var(--ink-3);z-index:2}
+@media (min-width:700px){.corridor{margin:0 -32px 30px}.gal-credit{right:32px}}
+@media (min-width:900px){.corridor{height:clamp(320px,27vw,390px);margin:0 0 24px;perspective:1300px;perspective-origin:8% 46%}.gal-credit{right:0}.hero.has-gal .digits{font-size:min(17vw,230px)}.hero.has-gal{padding-top:22px}}
+/* real place section */
+.place-grid{display:grid;gap:24px;align-items:center}
+@media (min-width:900px){.place-grid{grid-template-columns:.75fr 1.25fr;gap:64px}}
+.place-photo{margin:0;max-width:440px;aspect-ratio:4/5;overflow:hidden;background:var(--white);padding:12px;box-shadow:0 0 0 2px var(--ink),0 40px 60px -40px rgba(18,18,18,.6);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.place-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.place-photo figcaption{display:none}
+.strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:32px;padding-bottom:6px;scrollbar-width:none;overscroll-behavior-x:contain}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 auto;width:min(58vw,240px);margin:0;scroll-snap-align:start}
+.strip img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid var(--line)}
+.strip figcaption{margin-top:8px;font:400 12px/1.3 var(--mono);color:var(--ink-2)}
+.strip figcaption b{color:var(--lac);font-weight:600;margin-right:6px}
+.credit{margin-top:14px;font:400 12px/1.3 var(--mono);color:var(--ink-3)}
 </style>
 </head>
 <body>
@@ -371,14 +403,16 @@ section{scroll-margin-top:10px}
 <header class="wrap top">
   <a class="mark" href="#top" aria-label="Студия_1719 — наверх">Студия<i>_</i>1719</a>
   <nav class="nav" aria-label="Разделы">
-    <a href="#visit">Визит</a><a href="#price">Прайс</a><a href="#reviews">Отзывы</a><a href="#find">Как найти</a>
+    <a href="#visit">Визит</a><a href="#price">Прайс</a><a href="#studio">Студия</a><a href="#reviews">Отзывы</a><a href="#find">Как найти</a>
   </nav>
   <span class="status" id="status" role="status">Ежедневно 09:00–22:00</span>
 </header>
 
 <main id="top">
-<section class="hero">
+<section class="hero has-gal">
   <div class="wrap">
+    <div class="gal-head" aria-hidden="true"><span>Зал_1 · работы студии</span><small>← листайте →</small></div>
+    <div class="corridor" id="corridor" aria-hidden="true"><span class="gal-credit">фото с Яндекс Карт</span></div>
     <div class="hero-grid">
       <div>
         <div class="digits" aria-hidden="true">
@@ -506,6 +540,28 @@ section{scroll-margin-top:10px}
       </div>
       <ul class="plist" id="plist"></ul>
       <button class="btn btn-line more" type="button" id="more" hidden>Показать ещё</button>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="studio" aria-labelledby="stTitle">
+  <div class="wrap">
+    <div class="place-grid">
+      <figure class="place-photo"><img src="img/neon-shelf.webp" alt="Полка с лаками и зелёная неоновая линия в студии" loading="lazy" width="675" height="1200"></figure>
+      <div>
+        <p class="kicker">Сама студия</p>
+        <h2 class="h2" id="stTitle">Небольшая студия <span class="soft">с зелёным неоном и живыми растениями</span></h2>
+        <p class="sub">Так выглядит Студия_1719 на Пушечной: рабочие места мастеров, кресло для педикюра, зеркало с неоном и диван для ожидания. Рядом — работы студии.</p>
+        <p class="credit">фото с Яндекс Карт</p>
+      </div>
+    </div>
+    <div class="strip" aria-label="Фото студии и работ">
+      <figure><img src="img/room.webp" alt="Рабочие места мастеров" loading="lazy"><figcaption><b>01</b>рабочие места</figcaption></figure>
+      <figure><img src="img/pedi-chair.webp" alt="Кресло для педикюра" loading="lazy"><figcaption><b>02</b>кресло для педикюра</figcaption></figure>
+      <figure><img src="img/pink-french.webp" alt="Розовый френч" loading="lazy"><figcaption><b>03</b>розовый френч</figcaption></figure>
+      <figure><img src="img/neon-mirror.webp" alt="Зеркало и неоновая линия" loading="lazy"><figcaption><b>04</b>зеркало и неон</figcaption></figure>
+      <figure><img src="img/nude-gold.webp" alt="Нюдовый маникюр с золотым декором" loading="lazy"><figcaption><b>05</b>нюд с золотом</figcaption></figure>
+      <figure><img src="img/sofa.webp" alt="Диван в зоне ожидания" loading="lazy"><figcaption><b>06</b>зона ожидания</figcaption></figure>
     </div>
   </div>
 </section>
@@ -994,5 +1050,7 @@ if ('IntersectionObserver' in window) { var io = new IntersectionObserver(functi
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="corridor.js"></script>
+<script>(function(){var f=document.querySelector('.place-photo');if(!f||matchMedia('(prefers-reduced-motion: reduce)').matches)return;f.addEventListener('pointermove',function(e){if(e.pointerType!=='mouse')return;var r=f.getBoundingClientRect();f.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*9+'deg');f.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*7+'deg');});f.addEventListener('pointerleave',function(){f.style.setProperty('--ry','0deg');f.style.setProperty('--rx','0deg');});})();</script>
 </body>
 </html>

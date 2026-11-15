@@ -397,7 +397,46 @@ textarea.inp{min-height:76px;resize:vertical}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 @media(min-width:900px){.toast{bottom:28px}}
 
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+/* ---------- photo hero: real photos from the Yandex Maps card ---------- */
+.stage{--scene-h:330px}
+@media(min-width:700px){.stage{--scene-h:340px}}
+@media(min-width:1024px){.stage{--scene-h:380px}}
+.sky{background-color:#070D2B}
+.sky::before{content:"";position:absolute;inset:0;z-index:1;background:inherit;opacity:.5}
+.sky::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(7,13,43,.55),rgba(7,13,43,.12) 45%,rgba(7,13,43,.5))}
+.stars{z-index:2}
+.shot{position:absolute;inset:0;z-index:0;will-change:transform}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kb 26s ease-in-out infinite alternate}
+.shot.night{opacity:var(--stars);transition:opacity .4s}
+.shot.night img{object-position:50% 30%}
+@keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.16) translate(-1.5%,-2%)}}
+.scene{display:none}
+.reel{grid-column:1/-1;grid-row:2;align-self:end;position:relative;z-index:2;height:var(--scene-h);overflow:hidden;perspective:1100px;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none;
+  --pad:72px;--ch:calc(var(--scene-h) - var(--pad) - 42px)}
+.reel.grab{cursor:grabbing}
+.reel-in{position:absolute;left:50%;bottom:calc(var(--pad) + 30px);width:0;height:var(--ch);transform-style:preserve-3d}
+.rc{position:absolute;bottom:0;margin:0;height:var(--ch);width:calc(var(--ch) * .8);left:calc(var(--ch) * -.4);border-radius:18px;overflow:hidden;background:#0C1B4D;box-shadow:0 26px 40px -22px rgba(3,6,26,.85),0 0 0 1px rgba(255,255,255,.22) inset;will-change:transform,filter;backface-visibility:hidden}
+.rc img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.rc.front{box-shadow:0 34px 50px -22px rgba(3,6,26,.95),0 0 0 2px rgba(255,253,248,.85) inset}
+.reel-cap{position:absolute;left:0;right:0;bottom:calc(var(--pad) + 4px);text-align:center;color:#FFFDF8;font-size:13.5px;font-weight:600;text-shadow:0 1px 10px rgba(3,6,26,.8);pointer-events:none}
+.reel-cap small{opacity:.75;font-weight:500;font-size:12px}
+@media(min-width:700px){.reel{--pad:84px}}
+@media(min-width:1024px){.reel{--pad:100px}}
+
+/* ---------- the real place ---------- */
+.place-grid{display:grid;gap:24px;align-items:center;margin-top:8px}
+@media(min-width:900px){.place-grid{grid-template-columns:1.15fr .85fr;gap:56px}}
+.place-photo{margin:0;border-radius:24px;overflow:hidden;aspect-ratio:16/10;box-shadow:0 40px 70px -40px rgba(7,13,43,.6);transform:perspective(1000px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.place-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.05)}
+.ph-credit{font-size:12.5px;color:var(--muted);margin-top:12px}
+.strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:28px;padding-bottom:6px;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 auto;margin:0;width:min(60vw,250px);scroll-snap-align:start}
+.strip img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;display:block;box-shadow:0 20px 40px -26px rgba(7,13,43,.55)}
+.strip figcaption{font-size:13.5px;color:var(--muted);margin-top:8px}
+.tea .tea-ph{width:62px;height:84px;border-radius:12px;object-fit:cover;display:block}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.shot{transform:none!important}}
 </style>
 </head>
 <body>
@@ -432,7 +471,11 @@ textarea.inp{min-height:76px;resize:vertical}
 
 <main>
 <section class="stage" id="hero" aria-label="Ускюдар Донер">
-  <div class="sky" aria-hidden="true"><div class="stars" id="stars"></div></div>
+  <div class="sky" aria-hidden="true">
+    <picture class="shot day"><source media="(min-width:700px)" srcset="img/day-d.webp"><img src="img/day-m.webp" alt="" fetchpriority="high"></picture>
+    <picture class="shot night"><source media="(min-width:700px)" srcset="img/night-d.webp"><img src="img/night-m.webp" alt="" loading="lazy"></picture>
+    <div class="stars" id="stars"></div>
+  </div>
 
   <div class="hero-text">
     <span class="now"><i class="dot"></i><span id="nowText">Открыто круглосуточно</span></span>
@@ -473,6 +516,11 @@ textarea.inp{min-height:76px;resize:vertical}
     <div class="water"><i class="glint"></i>
       <svg class="waves" viewBox="0 0 400 100" preserveAspectRatio="none" id="waves"></svg>
     </div>
+  </div>
+
+  <div class="reel" id="reel" role="group" aria-label="Блюда и чай — настоящие фото с Яндекс Карт, листайте свайпом">
+    <div class="reel-in" id="reelIn"></div>
+    <p class="reel-cap"><span id="reelCap">искендер на медном блюде</span> <small>· фото гостей с Яндекс Карт</small></p>
   </div>
 
   <div class="tcard" id="clock">
@@ -554,12 +602,7 @@ textarea.inp{min-height:76px;resize:vertical}
         <div class="score"><b id="scoreNum">5,0</b><div><div class="st" aria-hidden="true">★★★★★</div><span id="scoreTxt"></span></div></div>
         <ul class="asp" id="asp"></ul>
         <div class="tea">
-          <svg viewBox="0 0 62 90" aria-hidden="true">
-            <ellipse cx="31" cy="84" rx="26" ry="5" fill="#E9B44C"/>
-            <path d="M14 10h34c0 14-9 18-9 30s11 18 11 30c0 6-8 10-19 10S12 76 12 70c0-12 11-18 11-30S14 24 14 10z" fill="rgba(255,255,255,.14)" stroke="#fff" stroke-opacity=".6" stroke-width="1.5"/>
-            <path d="M18 22h26c-2 7-7 11-7 18s9 14 10 26c0 5-6 9-16 9s-17-4-17-9c1-12 10-19 10-26s-5-11-6-18z" fill="#B8331E"/>
-            <path d="M22 26c2 4 4 7 4 12" stroke="#fff" stroke-opacity=".35" stroke-width="2" fill="none" stroke-linecap="round"/>
-          </svg>
+          <img class="tea-ph" src="img/tea-copper.webp" alt="Чай в стакане-тюльпане и медный чайник — фото с Яндекс Карт" loading="lazy">
           <div>
             <p>Гости пишут, что чай подают в&nbsp;стаканах-тюльпанах и&nbsp;медных чайниках. В&nbsp;карточке цены на&nbsp;чай нет — спросите, какой заварен сегодня.</p>
             <a class="link-btn" id="teaWa" href="#" target="_blank" rel="noopener">Спросить про чай →</a>
@@ -570,6 +613,27 @@ textarea.inp{min-height:76px;resize:vertical}
         <div class="revs" id="revs"></div>
         <a class="link-btn revs-all" id="revsAll" href="#" target="_blank" rel="noopener">Все отзывы на Яндекс Картах →</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="place">
+  <div class="wrap">
+    <span class="eyebrow">Вживую · Пятницкая, 31/2с3</span>
+    <h2 class="h2">Донер режут<br>при вас</h2>
+    <div class="place-grid">
+      <figure class="place-photo"><img src="img/master.webp" alt="Повар срезает донер с вертела на кухне «Ускюдар Донер»" loading="lazy"></figure>
+      <div>
+        <p class="sec-lead">Два вертела, нож и гриль — донер срезают прямо перед подачей. У входа — веранда под зонтами с видом на Пятницкую, чай подают в стаканах-тюльпанах.</p>
+        <p class="ph-credit">Настоящие фото кафе · фото с Яндекс Карт</p>
+      </div>
+    </div>
+    <div class="strip" aria-label="Фото кафе">
+      <figure><img src="img/terrace.webp" alt="Веранда кафе с зонтами и цветами" loading="lazy"><figcaption>веранда</figcaption></figure>
+      <figure><img src="img/inside.webp" alt="Зал с витриной и меню над стойкой" loading="lazy"><figcaption>зал и витрина</figcaption></figure>
+      <figure><img src="img/serving.webp" alt="Официант раскладывает десерты на веранде" loading="lazy"><figcaption>подача на веранде</figcaption></figure>
+      <figure><img src="img/window.webp" alt="Интерьер с зеленью у окна" loading="lazy"><figcaption>у окна</figcaption></figure>
+      <figure><img src="img/night-street.webp" alt="Чай вечером на веранде" loading="lazy"><figcaption>чай вечером</figcaption></figure>
     </div>
   </div>
 </section>
@@ -988,5 +1052,6 @@ renderList(); renderCart(); syncForm();
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="reel.js"></script>
 </body>
 </html>

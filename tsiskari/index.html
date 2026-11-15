@@ -102,19 +102,30 @@ h1{font:600 clamp(64px,19vw,138px)/.86 var(--serif);letter-spacing:-.025em;margi
 .btn svg{width:20px;height:20px;flex:none}
 .btn[aria-disabled=true]{opacity:.45;pointer-events:none}
 .scene{position:relative;margin:6px -6px 0}
-.scene svg{width:100%;height:auto;overflow:visible}
 .scene figcaption{font:italic 500 17px/1.3 var(--serif);color:var(--muted);text-align:center;margin-top:4px}
-#sun{animation:rise 2.6s cubic-bezier(.2,.7,.2,1) both .2s}
-@keyframes rise{from{transform:translateY(70px)}to{transform:none}}
-.cloud{animation:drift 38s linear infinite}
-.cloud.c2{animation-duration:54s;animation-direction:reverse}
-@keyframes drift{from{transform:translateX(-40px)}50%{transform:translateX(40px)}to{transform:translateX(-40px)}}
-.paused .cloud,.paused #sunGlow{animation-play-state:paused}
-#sunGlow{animation:glow 5s ease-in-out infinite}
-@keyframes glow{50%{opacity:.55}}
+/* photo hero: a dawn fan — real dishes rise like sun rays from behind the Caucasus ridge */
+.fan{position:relative;aspect-ratio:1/1.04;perspective:1200px;perspective-origin:50% 30%;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.fan::after{content:"";position:absolute;left:0;right:0;bottom:0;height:9%;background:linear-gradient(transparent,#FCEDE2);z-index:2;pointer-events:none}
+.fan.grab{cursor:grabbing}
+.fan-sun{position:absolute;left:50%;top:58%;width:120%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(255,226,176,.95),rgba(255,214,160,.55) 45%,rgba(246,198,174,0) 100%);pointer-events:none}
+.fan-tilt{position:absolute;left:50%;top:0;width:0;height:0;transform-style:preserve-3d;will-change:transform}
+.fcard{position:absolute;margin:0;width:var(--cw,200px);height:calc(var(--cw,200px) * 1.25);left:calc(var(--cw,200px) / -2);top:var(--ct,20px);transform-origin:50% var(--po,600px);border-radius:16px;overflow:hidden;background:#E9D6C3;
+  box-shadow:0 30px 50px -26px rgba(42,35,48,.6),0 0 0 1px rgba(255,255,255,.55) inset;will-change:transform,filter;backface-visibility:hidden}
+.fcard img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.fcard .glare{position:absolute;inset:0;background:radial-gradient(130% 70% at var(--gx,50%) -10%,rgba(255,240,214,.45),transparent 55%);mix-blend-mode:soft-light;pointer-events:none}
+.fcard.front{box-shadow:0 44px 70px -28px rgba(42,35,48,.7),0 0 0 3px rgba(255,248,236,.9) inset}
+.fcard:nth-child(n+2){opacity:0}
+.fan.on .fcard{opacity:1}
+.ridge{position:absolute;left:0;right:0;bottom:0;width:100%;height:30%;pointer-events:none;z-index:2}
+.scene .hint3d{position:absolute;left:50%;bottom:9%;transform:translateX(-50%);white-space:nowrap;font:600 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:rgba(255,253,249,.82);border:1px solid var(--line);padding:7px 11px;border-radius:99px;pointer-events:none;z-index:3;transition:opacity .6s}
+.fan.touched .hint3d{opacity:0}
+.scene .fan-cap{display:flex;flex-direction:column;align-items:center;gap:2px;margin-top:8px}
+.fan-cap span{font:italic 600 21px/1.2 var(--serif);color:var(--ink)}
+.fan-cap small{font:500 11.5px/1.3 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 @media (max-width:899px){
   .htxt{display:contents}
-  .hero .eyebrow{order:1}.hero h1{order:2}.meaning{order:3}.facts{order:4}.scene{order:5}.lead{order:6}.hero .cta{order:7}
+  .hero .eyebrow{order:1}.hero h1{order:2}.meaning{order:3}.scene{order:4}.facts{order:5}.lead{order:6}.hero .cta{order:7}
   .facts{margin-top:8px}.lead{margin-top:0}.hero .cta{margin-top:8px}
 }
 @media (min-width:900px){
@@ -210,6 +221,19 @@ h2{font:600 clamp(40px,10vw,68px)/.95 var(--serif);letter-spacing:-.02em;margin:
 .ask svg{width:22px;height:22px;flex:none;color:#1E7A46}
 @media (min-width:768px){.asks{grid-template-columns:repeat(3,1fr)}}
 
+/* real place */
+.zal{background:var(--cream)}
+.zal-grid{display:grid;gap:24px;align-items:center}
+@media (min-width:900px){.zal-grid{grid-template-columns:.8fr 1.2fr;gap:56px}}
+.zal-photo{margin:0;border-radius:22px;overflow:hidden;aspect-ratio:4/5;max-width:440px;box-shadow:0 40px 70px -40px rgba(42,35,48,.65);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s;background:#3a2b26}
+.zal-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.06)}
+.zal-credit{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:14px 0 0}
+.zal-strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:30px auto 0;max-width:1200px;padding:0 16px 8px;scroll-padding:0 16px;scrollbar-width:none}
+.zal-strip::-webkit-scrollbar{display:none}
+@media (min-width:768px){.zal-strip{padding:0 32px 8px;scroll-padding:0 32px}}
+.zal-strip figure{flex:0 0 auto;width:min(62vw,250px);margin:0;scroll-snap-align:start}
+.zal-strip img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;box-shadow:0 20px 40px -26px rgba(42,35,48,.55);background:#E9D6C3}
+.zal-strip figcaption{font:italic 500 17px/1.2 var(--serif);color:var(--muted);margin-top:8px}
 /* reviews */
 #otzyvy{background:linear-gradient(180deg,var(--cream),#FBEADC)}
 .rate{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:18px 0 24px}
@@ -351,44 +375,28 @@ legend{font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:upperc
       </div>
     </div>
     <figure class="scene" id="scene" style="margin-bottom:0">
-      <svg viewBox="0 0 600 400" role="img" aria-label="Рассвет над горами в лодочке хачапури по-аджарски: солнце — желток">
-        <defs>
-          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#9DC2DE"/><stop offset=".42" stop-color="#D8D3DC"/><stop offset=".62" stop-color="#F6C6AE"/><stop offset=".8" stop-color="#F9D79E"/>
-          </linearGradient>
-          <linearGradient id="crust" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#E0A160"/><stop offset=".55" stop-color="#C9762F"/><stop offset="1" stop-color="#9C5620"/>
-          </linearGradient>
-          <radialGradient id="yolkG" cx=".38" cy=".35" r=".7">
-            <stop offset="0" stop-color="#FFC45A"/><stop offset=".6" stop-color="#F0961A"/><stop offset="1" stop-color="#D9770C"/>
-          </radialGradient>
-          <clipPath id="boat"><path d="M30 200C130 52 470 52 570 200C470 348 130 348 30 200Z"/></clipPath>
-        </defs>
-        <ellipse cx="300" cy="352" rx="250" ry="16" fill="#C9762F" opacity=".16"/>
-        <g clip-path="url(#boat)">
-          <rect width="600" height="400" fill="url(#sky)"/>
-          <g id="sunGlow"><circle cx="300" cy="212" r="120" fill="#FFE2B0" opacity=".55"/><circle cx="300" cy="212" r="86" fill="#FFEBC8" opacity=".6"/></g>
-          <g id="sun">
-            <path d="M222 206c-6-40 26-72 70-76 46-5 94 12 98 52 4 34-24 58-64 62-48 4-98-4-104-38Z" fill="#FFF8EC" opacity=".95"/>
-            <circle cx="300" cy="192" r="46" fill="url(#yolkG)"/>
-            <ellipse cx="285" cy="176" rx="12" ry="7" fill="#fff" opacity=".55" transform="rotate(-25 288 187)"/>
-          </g>
-          <g class="cloud"><rect x="96" y="120" width="120" height="7" rx="3.5" fill="#fff" opacity=".7"/><rect x="128" y="132" width="76" height="6" rx="3" fill="#fff" opacity=".55"/></g>
-          <g class="cloud c2"><rect x="380" y="104" width="104" height="6" rx="3" fill="#fff" opacity=".65"/><rect x="404" y="115" width="60" height="5" rx="2.5" fill="#fff" opacity=".5"/></g>
-          <path d="M0 236L60 206L104 222L170 170L214 196L262 160L300 188L352 150L404 194L452 168L508 204L560 180L600 200V400H0Z" fill="var(--m1)"/>
-          <path d="M0 256L48 232L96 246L150 196L198 238L236 220L292 248L340 206L392 244L440 214L500 246L548 226L600 242V400H0Z" fill="var(--m2)"/>
-          <path d="M150 196L136 210L148 208L156 216L164 206L176 211Z M340 206L326 220L338 217L346 224L352 215L362 218Z M440 214L428 226L440 224L447 230L452 222L460 225Z" fill="#fff" opacity=".9"/>
-          <path d="M0 282L70 262L128 274L196 252L262 270L330 254L398 272L466 256L530 268L600 258V400H0Z" fill="var(--m3)"/>
-          <path d="M0 300C90 286 160 296 230 288C300 280 380 294 450 286C510 280 560 290 600 286V400H0Z" fill="#F8E3A0"/>
-          <path d="M0 300C90 286 160 296 230 288C300 280 380 294 450 286C510 280 560 290 600 286" fill="none" stroke="#fff" stroke-width="3" opacity=".7"/>
-          <g fill="#EFCB77" opacity=".7"><circle cx="150" cy="316" r="5"/><circle cx="244" cy="326" r="4"/><circle cx="348" cy="314" r="6"/><circle cx="430" cy="324" r="4"/><circle cx="300" cy="338" r="3.5"/><circle cx="196" cy="336" r="3"/></g>
-        </g>
-        <path d="M30 200C130 52 470 52 570 200C470 348 130 348 30 200Z" fill="none" stroke="url(#crust)" stroke-width="30" stroke-linejoin="round"/>
-        <path d="M60 198C150 82 450 82 540 198" fill="none" stroke="#F2C48A" stroke-width="4" stroke-linecap="round" opacity=".7"/>
-        <path d="M30 200C14 190 6 176 12 166C18 158 30 164 30 176" fill="none" stroke="#B4692A" stroke-width="16" stroke-linecap="round"/>
-        <path d="M570 200C586 210 594 224 588 234C582 242 570 236 570 224" fill="none" stroke="#B4692A" stroke-width="16" stroke-linecap="round"/>
-      </svg>
-      <figcaption>Заря над хачапури по-аджарски: солнце — это желток</figcaption>
+      <div class="fan" id="fan" aria-roledescription="карусель" aria-label="Блюда «Цискари» — настоящие фото">
+        <div class="fan-sun" aria-hidden="true"></div>
+        <div class="fan-tilt" id="fanTilt">
+          <figure class="fcard"><img src="img/adjaruli-khinkali.webp" alt="Хачапури по-аджарски, хинкали и чай на столе в «Цискари»" draggable="false" decoding="async" fetchpriority="high" data-cap="хачапури по-аджарски и хинкали"><span class="glare"></span></figure>
+          <figure class="fcard"><img src="img/khinkali.webp" alt="Тарелка хинкали" draggable="false" decoding="async" data-cap="хинкали"><span class="glare"></span></figure>
+          <figure class="fcard"><img src="img/chicken-cream.webp" alt="Курица в сливочном соусе в глиняной посуде" draggable="false" decoding="async" loading="lazy" data-cap="курица в сливочном соусе"><span class="glare"></span></figure>
+          <figure class="fcard"><img src="img/adjaruli.webp" alt="Хачапури по-аджарски с желтком" draggable="false" decoding="async" loading="lazy" data-cap="хачапури с желтком"><span class="glare"></span></figure>
+          <figure class="fcard"><img src="img/platter.webp" alt="Мясное ассорти на большую компанию" draggable="false" decoding="async" loading="lazy" data-cap="мясное ассорти на компанию"><span class="glare"></span></figure>
+          <figure class="fcard"><img src="img/meat-plate.webp" alt="Мясо с картофелем, луком и соусом" draggable="false" decoding="async" loading="lazy" data-cap="мясо с картофелем и луком"><span class="glare"></span></figure>
+          <figure class="fcard"><img src="img/khinkali-pot.webp" alt="Хинкали и горячее в глиняной посуде" draggable="false" decoding="async" loading="lazy" data-cap="хинкали и горячее в глине"><span class="glare"></span></figure>
+          <figure class="fcard"><img src="img/ojakhuri.webp" alt="Жареный картофель с мясом и зеленью на сковороде" draggable="false" decoding="async" data-cap="картофель с мясом на сковороде"><span class="glare"></span></figure>
+        </div>
+        <svg class="ridge" viewBox="0 0 600 150" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 52L60 22L104 38L170 0L214 26L262 4L300 30L352 2L404 36L452 14L508 42L560 20L600 34V150H0Z" fill="var(--m1)" opacity=".92"/>
+          <path d="M0 76L48 54L96 66L150 26L198 62L236 46L292 70L340 32L392 66L440 40L500 68L548 50L600 64V150H0Z" fill="var(--m2)"/>
+          <path d="M150 26L136 40L148 38L156 46L164 36L176 41Z M340 32L326 46L338 43L346 50L352 41L362 44Z M440 40L428 52L440 50L447 56L452 48L460 51Z" fill="#fff" opacity=".9"/>
+          <defs><linearGradient id="mist" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--m3)"/><stop offset=".55" stop-color="#8E8FA6"/><stop offset="1" stop-color="#FBEADC"/></linearGradient></defs>
+          <path d="M0 102L70 84L128 94L196 74L262 90L330 76L398 92L466 78L530 88L600 80V150H0Z" fill="url(#mist)"/>
+        </svg>
+        <span class="hint3d">← листайте блюда · свайп →</span>
+      </div>
+      <figcaption class="fan-cap"><span id="fanCap">хачапури по-аджарски и хинкали</span><small>настоящие фото «Цискари» · с Яндекс Карт</small></figcaption>
     </figure>
   </div>
 </section>
@@ -451,6 +459,28 @@ legend{font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:upperc
     <div class="mgrid" id="mlist"></div>
     <button class="btn ghost more-btn" id="moreBtn" type="button" hidden>Показать ещё</button>
     <div class="asks" id="asks"></div>
+  </div>
+</section>
+
+<section id="zal" class="zal" aria-labelledby="h-zal">
+  <div class="wrap">
+    <div class="zal-grid">
+      <figure class="zal-photo"><img src="img/hall.webp" alt="Зал «Цискари»: тёмное дерево, тёплая лампа и светящаяся линия гор на стене" loading="lazy" decoding="async"></figure>
+      <div>
+        <div class="kicker"><svg viewBox="-50 -50 100 100" aria-hidden="true"><g class="borj" fill="var(--acc)"></g></svg>Как у нас</div>
+        <h2>Зал на Вороницына</h2>
+        <p class="sub">Тёмное дерево, тёплый свет и линия гор над столами — так выглядит «Цискари» внутри. Ниже — настоящие блюда и вход с улицы: снимки кафе и гостей с Яндекс Карт.</p>
+        <p class="zal-credit">фото с Яндекс Карт</p>
+      </div>
+    </div>
+  </div>
+  <div class="zal-strip" aria-label="Фото «Цискари»">
+    <figure><img src="img/facade.webp" alt="Вход в кафе с вывеской «Грузинская кухня»" loading="lazy" decoding="async"><figcaption>вход с улицы</figcaption></figure>
+    <figure><img src="img/adjaruli-plate.webp" alt="Хачапури по-аджарски на тарелке" loading="lazy" decoding="async"><figcaption>хачапури-лодочка</figcaption></figure>
+    <figure><img src="img/khinkali-close.webp" alt="Хинкали крупным планом" loading="lazy" decoding="async"><figcaption>хинкали</figcaption></figure>
+    <figure><img src="img/kebab.webp" alt="Люля-кебаб с луком и соусом на деревянной доске" loading="lazy" decoding="async"><figcaption>кебаб с луком</figcaption></figure>
+    <figure><img src="img/salad.webp" alt="Салат с баклажанами, кунжутом и зеленью" loading="lazy" decoding="async"><figcaption>баклажаны с кунжутом</figcaption></figure>
+    <figure><img src="img/chicken-walnut.webp" alt="Курица в ореховом соусе с гранатом" loading="lazy" decoding="async"><figcaption>курица с гранатом</figcaption></figure>
   </div>
 </section>
 
@@ -853,5 +883,7 @@ window.__tsiskari = { buildMsg: buildMsg, cart: cart };
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="fan.js"></script>
+<script>(function(){var f=document.querySelector('.zal-photo');if(!f||matchMedia('(prefers-reduced-motion: reduce)').matches)return;f.addEventListener('pointermove',function(e){var r=f.getBoundingClientRect();f.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*10+'deg');f.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*8+'deg');});f.addEventListener('pointerleave',function(){f.style.setProperty('--ry','0deg');f.style.setProperty('--rx','0deg');});})();</script>
 </body>
 </html>

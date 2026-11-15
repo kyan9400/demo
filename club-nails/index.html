@@ -101,15 +101,29 @@ ul,ol{list-style:none}
 .kicker span{display:inline-flex;align-items:center;gap:7px}
 .kicker i{width:9px;height:9px;border-radius:50%;flex:none}
 .arch{position:relative;width:100%;max-width:330px;margin:4px auto 0}
-.arch svg{width:100%;height:auto;overflow:hidden}
-.sw{transform-box:view-box;transform-origin:200px 372px;transform:rotate(var(--a));transition:transform .5s cubic-bezier(.2,.8,.2,1);animation:fan 1.4s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--dl);cursor:pointer}
-.sw.up{transform:rotate(var(--a)) translateY(-14px)}
-@keyframes fan{from{transform:rotate(0deg);opacity:0}to{transform:rotate(var(--a));opacity:1}}
-.rays{animation:spin 90s linear infinite;transform-box:view-box;transform-origin:200px 372px}
-@keyframes spin{to{transform:rotate(360deg)}}
-.glint{animation:glint 5s ease-in-out infinite}
-@keyframes glint{0%,100%{opacity:.25}50%{opacity:.75}}
-.paused,.paused *{animation-play-state:paused!important}
+/* photo fan: real nail photos from the studio's Yandex Maps card, fanned like polish swatches */
+.pfan{position:relative;width:100%;aspect-ratio:1/1.08;perspective:1000px;perspective-origin:50% 30%;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab;overflow:hidden;border-radius:999px 999px 0 0;
+  background:radial-gradient(70% 55% at 50% 100%,rgba(228,180,155,.22),transparent 70%),linear-gradient(180deg,#123a30,#0b2720 75%)}
+.pfan::before{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(228,180,155,.55),inset 0 0 0 9px rgba(11,39,32,.0),inset 0 0 0 10px rgba(228,180,155,.22);pointer-events:none;z-index:40}
+.pfan::after{content:"";position:absolute;left:50%;top:-30%;width:160%;height:130%;transform:translateX(-50%);pointer-events:none;z-index:0;opacity:.5;
+  background:repeating-conic-gradient(from -90deg at 50% 100%,rgba(228,180,155,.10) 0 .6deg,transparent .6deg 7.5deg);-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.pfan.grab{cursor:grabbing}
+.pf-rot{position:absolute;left:50%;bottom:-2%;width:0;height:0;transform-style:preserve-3d;will-change:transform;z-index:1}
+.fcard{position:absolute;margin:0;width:var(--cw,170px);height:calc(var(--cw,170px) * 1.42);left:calc(var(--cw,170px) / -2);bottom:calc(var(--cw,170px) * .34);border-radius:999px 999px 16px 16px;overflow:hidden;background:#0f3329;
+  transform-origin:50% 165%;transition:transform .9s cubic-bezier(.2,.8,.2,1),filter .9s,opacity .6s;will-change:transform;backface-visibility:hidden;
+  box-shadow:0 26px 40px -22px rgba(0,0,0,.8),0 0 0 1.5px rgba(228,180,155,.75)}
+.fcard img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.fcard .glare{position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.28) 0%,transparent 34%,transparent 70%,rgba(246,214,196,.16) 100%);mix-blend-mode:soft-light;pointer-events:none}
+.fcard.front{box-shadow:0 34px 60px -24px rgba(0,0,0,.85),0 0 0 2px #f0cdb9}
+.pfan.dragging .fcard{transition:filter .3s,opacity .3s}
+.pf-cap{position:relative;text-align:center;margin:12px 0 0;font-size:13px;line-height:1.35;color:var(--dim)}
+.pf-cap b{display:block;font:400 21px/1.15 var(--serif);color:var(--rose-hi);font-weight:400;min-height:1.15em}
+.pf-dots{display:flex;justify-content:center;gap:0;margin-top:2px}
+.pf-dots button{width:40px;height:44px;display:grid;place-items:center}
+.pf-dots button::before{content:"";width:7px;height:7px;border-radius:50%;background:rgba(228,180,155,.3);transition:background .3s,transform .3s}
+.pf-dots button[aria-current="true"]::before{background:var(--rose-hi);transform:scale(1.3)}
+.pf-hint{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);z-index:45;white-space:nowrap;font:600 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--rose-hi);background:rgba(8,31,25,.8);border:1px solid var(--line);padding:7px 12px;border-radius:99px;pointer-events:none;transition:opacity .6s}
+.pfan.touched .pf-hint{opacity:0}
 h1{font:400 clamp(58px,17.5vw,150px)/.9 var(--deco);letter-spacing:.01em;text-align:center;margin-top:-6px;background:linear-gradient(180deg,#fbeee6 0%,#f0cdb9 55%,#d9a088 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.06em}
 .hero-sub{text-align:center;font:400 15px/1.3 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--rose);margin-top:2px}
 .lead{font-size:17px;line-height:1.5;color:var(--cream);text-align:center;max-width:34em;margin:14px auto 0}
@@ -123,7 +137,7 @@ h1{font:400 clamp(58px,17.5vw,150px)/.9 var(--deco);letter-spacing:.01em;text-al
 .kicker{order:1;justify-content:center}.arch{order:2}.hero h1{order:3}.hero-sub{order:4}.rating{order:5}.lead{order:6}.signature{order:7}.ctas{order:8}
 @media (max-width:599px){
   .kicker{font-size:13px;gap:4px 12px}
-  .arch{max-width:250px}
+  .arch{max-width:300px}
   .signature{flex-direction:column;align-items:flex-start;gap:6px}
 }
 .rating .big{font:400 44px/1 var(--serif);color:var(--rose-hi)}
@@ -333,7 +347,7 @@ body{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
   .kicker{justify-content:flex-start}
   .rating{margin-top:22px}
   .hero{min-height:min(calc(100svh - 92px),860px)}
-  .arch{grid-column:2;grid-row:1;max-width:500px;margin:0 auto}
+  .arch{grid-column:2;grid-row:1;max-width:460px;margin:0 auto}
   h1{text-align:left;font-size:clamp(90px,9.6vw,148px)}
   .hero-sub,.lead{text-align:left;margin-left:0}
   .kicker{margin-bottom:18px}
@@ -384,6 +398,22 @@ body{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+/* real place section */
+#studio .sec-head{margin-bottom:34px}
+.st-grid{display:grid;gap:26px;align-items:center}
+@media (min-width:900px){.st-grid{grid-template-columns:.85fr 1.15fr;gap:60px}}
+.st-photo{margin:0 auto;width:100%;max-width:440px;aspect-ratio:4/5;border-radius:999px 999px 22px 22px;overflow:hidden;box-shadow:0 40px 70px -40px rgba(0,0,0,.9),0 0 0 1.5px rgba(228,180,155,.6);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .25s ease-out}
+.st-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.06)}
+.st-txt p{color:var(--dim);font-size:16.5px;line-height:1.6;max-width:32em}
+.st-txt p+p{margin-top:12px}
+.st-txt p b{color:var(--cream);font-weight:600}
+.st-credit{font-size:12.5px!important;letter-spacing:.06em;color:var(--rose)!important;margin-top:18px!important}
+.strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:34px -16px 0;padding:0 16px 8px;scroll-padding:0 16px;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 auto;width:min(62vw,250px);margin:0;scroll-snap-align:start}
+.strip img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:18px;box-shadow:0 20px 40px -26px rgba(0,0,0,.9),0 0 0 1px var(--line)}
+.strip figcaption{font-size:13px;color:var(--dim);margin-top:8px;padding-left:2px}
+@media (min-width:1272px){.strip{margin:34px 0 0;padding:0 0 8px}}
 </style>
 </head>
 <body>
@@ -397,6 +427,7 @@ body{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
     </a>
     <nav class="nav" aria-label="Разделы">
       <a href="#visit">Визит и прайс</a>
+      <a href="#studio">Студия</a>
       <a href="#praise">Отзывы</a>
       <a href="#find">Как добраться</a>
     </nav>
@@ -426,49 +457,11 @@ body{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
       <div class="rating" id="rating"></div>
     </div>
 
-    <div class="arch" aria-hidden="true">
-      <svg id="fan" viewBox="0 0 400 410">
-        <defs>
-          <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6d6c4"/><stop offset=".5" stop-color="#e4b49b"/><stop offset="1" stop-color="#b9775f"/></linearGradient>
-          <linearGradient id="gEm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2c8f72"/><stop offset="1" stop-color="#0d3f32"/></linearGradient>
-          <linearGradient id="gBl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7d2c6"/><stop offset="1" stop-color="#dc9f8e"/></linearGradient>
-          <linearGradient id="gBo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a63a4e"/><stop offset="1" stop-color="#5c1626"/></linearGradient>
-          <linearGradient id="gNu" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#efd3bd"/><stop offset="1" stop-color="#c49a7c"/></linearGradient>
-          <clipPath id="archClip"><path d="M40 392V206A160 160 0 0 1 360 206V392Z"/></clipPath>
-          <path id="nail" d="M0-152C23-140 28-82 27-24C27-6 15 5 0 5S-27-6-27-24C-28-82-23-140 0-152Z"/>
-        </defs>
-        <!-- arch -->
-        <path d="M40 392V206A160 160 0 0 1 360 206V392Z" fill="#0f3329"/>
-        <g clip-path="url(#archClip)">
-          <g class="rays" stroke="#e4b49b" stroke-opacity=".16" stroke-width="1">
-            <path id="raysP" d=""/>
-          </g>
-          <circle cx="200" cy="372" r="190" fill="none" stroke="#e4b49b" stroke-opacity=".18"/>
-          <circle cx="200" cy="372" r="150" fill="none" stroke="#e4b49b" stroke-opacity=".12" stroke-dasharray="2 6"/>
-        </g>
-        <path d="M40 392V206A160 160 0 0 1 360 206V392" fill="none" stroke="url(#rg)" stroke-width="2"/>
-        <path d="M24 392V206A176 176 0 0 1 376 206V392" fill="none" stroke="url(#rg)" stroke-width="1" stroke-opacity=".55"/>
-        <path d="M12 392V214l12-8M388 392V214l-12-8" fill="none" stroke="url(#rg)" stroke-width="1" stroke-opacity=".4"/>
-        <!-- crown -->
-        <g fill="url(#rg)">
-          <path d="M200 20l7 12-7 12-7-12z"/>
-          <circle cx="178" cy="36" r="2.2"/><circle cx="222" cy="36" r="2.2"/>
-        </g>
-        <path class="glint" d="M200 52v26M187 65h26" stroke="#f6d6c4" stroke-width="1.5" stroke-linecap="round"/>
-        <!-- swatch fan -->
-        <g id="swatches">
-          <g class="sw" style="--a:-50deg;--dl:.05s" data-c="#1f6f5a"><g transform="translate(200 318)"><use href="#nail" fill="url(#gEm)" stroke="url(#rg)" stroke-width="1.6"/><path d="M-13-128C-6-118-8-80-10-46" stroke="#fff" stroke-opacity=".45" stroke-width="4" stroke-linecap="round" fill="none"/></g></g>
-          <g class="sw" style="--a:-25deg;--dl:.12s" data-c="#e7b3a3"><g transform="translate(200 318)"><use href="#nail" fill="url(#gBl)" stroke="url(#rg)" stroke-width="1.6"/><path d="M-13-128C-6-118-8-80-10-46" stroke="#fff" stroke-opacity=".55" stroke-width="4" stroke-linecap="round" fill="none"/></g></g>
-          <g class="sw" style="--a:25deg;--dl:.2s" data-c="#8a2a3c"><g transform="translate(200 318)"><use href="#nail" fill="url(#gBo)" stroke="url(#rg)" stroke-width="1.6"/><path d="M-13-128C-6-118-8-80-10-46" stroke="#fff" stroke-opacity=".4" stroke-width="4" stroke-linecap="round" fill="none"/></g></g>
-          <g class="sw" style="--a:50deg;--dl:.28s" data-c="#d9b598"><g transform="translate(200 318)"><use href="#nail" fill="url(#gNu)" stroke="url(#rg)" stroke-width="1.6"/><path d="M-13-128C-6-118-8-80-10-46" stroke="#fff" stroke-opacity=".5" stroke-width="4" stroke-linecap="round" fill="none"/></g></g>
-          <g class="sw" style="--a:0deg;--dl:0s" data-c="#e4b49b"><g transform="translate(200 312)"><use href="#nail" fill="url(#rg)" stroke="#f6d6c4" stroke-width="1.6" transform="scale(1.06)"/><path d="M-14-136C-6-124-9-84-11-48" stroke="#fff" stroke-opacity=".65" stroke-width="4.5" stroke-linecap="round" fill="none"/></g></g>
-        </g>
-        <!-- pivot -->
-        <path d="M150 392a50 50 0 0 1 100 0z" fill="#0b2720" stroke="url(#rg)" stroke-width="1.6"/>
-        <path d="M166 392a34 34 0 0 1 68 0" fill="none" stroke="url(#rg)" stroke-width="1" stroke-opacity=".6"/>
-        <text x="200" y="384" text-anchor="middle" font-family="Poiret One, serif" font-size="22" fill="#f6d6c4" letter-spacing="2">CN</text>
-        <path d="M0 392H400" stroke="url(#rg)" stroke-width="1.2"/><path d="M60 400H340M110 408H290" stroke="url(#rg)" stroke-width="1" stroke-opacity=".5"/>
-      </svg>
+    <div class="arch" id="pfanWrap">
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6d6c4"/><stop offset=".5" stop-color="#e4b49b"/><stop offset="1" stop-color="#b9775f"/></linearGradient></defs></svg>
+      <div class="pfan" id="pfan" role="group" aria-roledescription="карусель" aria-label="Работы мастеров студии — фото с Яндекс Карт"><div class="pf-rot"></div><span class="pf-hint" aria-hidden="true">↔ листайте работы</span></div>
+      <p class="pf-cap" aria-live="polite"><b id="pfCap"></b>работы студии · фото с Яндекс Карт</p>
+      <div class="pf-dots" id="pfDots"></div>
     </div>
   </div>
 </section>
@@ -547,10 +540,37 @@ body{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
   </div>
 </section>
 
-<section class="sec" id="praise" aria-labelledby="h-praise">
+<section class="sec" id="studio" aria-labelledby="h-studio">
   <div class="wrap">
     <div class="sec-head">
       <div class="num">— II —</div>
+      <svg class="deco" viewBox="0 0 220 16" aria-hidden="true"><path d="M0 8H86M134 8H220" stroke="currentColor"/><path d="M92 8l6-5v10zM128 8l-6-5v10z" fill="currentColor" opacity=".55"/><path d="M110 1l7 7-7 7-7-7z" fill="none" stroke="currentColor"/><path d="M110 5l3 3-3 3-3-3z" fill="currentColor"/></svg>
+      <h2 id="h-studio">Студия и работы</h2>
+    </div>
+    <div class="st-grid">
+      <figure class="st-photo"><img src="img/room-pedi.webp" alt="Зал студии: кресло для педикюра и место мастера" loading="lazy" decoding="async"></figure>
+      <div class="st-txt">
+        <p>Так выглядит студия и работы её мастеров — <b>настоящие фотографии</b>, без стоковых картинок: зал с креслами для педикюра, зеркало с лампами, кофе для гостей.</p>
+        <p>Листайте ленту ниже: маникюр, френч, педикюр — такими их сняли в студии и после визита.</p>
+        <p class="st-credit">фото с Яндекс Карт</p>
+      </div>
+    </div>
+    <div class="strip" aria-label="Фото студии и работ">
+      <figure><img src="img/hall.webp" alt="Длинный зал с маникюрными столами" loading="lazy" decoding="async"><figcaption>зал</figcaption></figure>
+      <figure><img src="img/nails-white.webp" alt="Молочный маникюр, квадратная форма" loading="lazy" decoding="async"><figcaption>молочный маникюр</figcaption></figure>
+      <figure><img src="img/mirror.webp" alt="Зеркало с лампами, мастер за работой" loading="lazy" decoding="async"><figcaption>зеркало с лампами</figcaption></figure>
+      <figure><img src="img/pedi-coral.webp" alt="Коралловый педикюр" loading="lazy" decoding="async"><figcaption>коралловый педикюр</figcaption></figure>
+      <figure><img src="img/room.webp" alt="Кабинет студии с пальмой" loading="lazy" decoding="async"><figcaption>кабинет</figcaption></figure>
+      <figure><img src="img/nails-milk-art.webp" alt="Молочный маникюр с рисунком на одном ногте" loading="lazy" decoding="async"><figcaption>дизайн на одном ногте</figcaption></figure>
+      <figure><img src="img/coffee.webp" alt="Кофе и цветы на столике у зеркала" loading="lazy" decoding="async"><figcaption>кофе для гостей</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="praise" aria-labelledby="h-praise">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">— III —</div>
       <svg class="deco" viewBox="0 0 220 16" aria-hidden="true"><path d="M0 8H86M134 8H220" stroke="currentColor"/><path d="M92 8l6-5v10zM128 8l-6-5v10z" fill="currentColor" opacity=".55"/><path d="M110 1l7 7-7 7-7-7z" fill="none" stroke="currentColor"/><path d="M110 5l3 3-3 3-3-3z" fill="currentColor"/></svg>
       <h2 id="h-praise">Почему сюда возвращаются</h2>
       <p id="praiseLead"></p>
@@ -580,7 +600,7 @@ body{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 <section class="sec" id="find" aria-labelledby="h-find" style="background:var(--em-900);border-top:1px solid var(--line-soft)">
   <div class="wrap">
     <div class="sec-head">
-      <div class="num">— III —</div>
+      <div class="num">— IV —</div>
       <svg class="deco" viewBox="0 0 220 16" aria-hidden="true"><path d="M0 8H86M134 8H220" stroke="currentColor"/><path d="M92 8l6-5v10zM128 8l-6-5v10z" fill="currentColor" opacity=".55"/><path d="M110 1l7 7-7 7-7-7z" fill="none" stroke="currentColor"/><path d="M110 5l3 3-3 3-3-3z" fill="currentColor"/></svg>
       <h2 id="h-find">Как нас найти</h2>
     </div>
@@ -996,24 +1016,9 @@ $('#fTel').href = 'tel:' + BIZ.phone; $('#fTel').textContent = BIZ.phoneDisplay;
 $('#fWa').href = wa(GENERIC);
 $('#fYa').href = BIZ.yandexUrl;
 
-/* ---------- hero fan ---------- */
-(function () {
-  var d = '';
-  for (var a = -90; a <= 90; a += 7.5) { var r = a * Math.PI / 180; d += 'M200 372L' + (200 + Math.sin(r) * 330).toFixed(1) + ' ' + (372 - Math.cos(r) * 330).toFixed(1); }
-  $('#raysP').setAttribute('d', d);
-  $$('.sw').forEach(function (g) {
-    g.addEventListener('click', function () {
-      var was = g.classList.contains('up');
-      $$('.sw').forEach(function (x) { x.classList.remove('up'); });
-      if (!was) { g.classList.add('up'); document.documentElement.style.setProperty('--polish', g.getAttribute('data-c')); }
-    });
-    g.addEventListener('animationend', function () { g.style.animation = 'none'; });
-  });
-  var fan = $('#fan');
-  if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { es.forEach(function (e) { fan.classList.toggle('paused', !e.isIntersecting); }); }).observe(fan);
-})();
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="pfan.js"></script>
 </body>
 </html>

@@ -106,20 +106,23 @@ button{cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manip
 .btn-line{background:transparent;color:var(--ink);border:1.5px solid rgba(21,38,28,.35)}
 .btn-line:hover{border-color:var(--ink)}
 .btn svg{flex:none}
-.dial{position:relative;width:min(92vw,520px);margin:18px auto 0;aspect-ratio:1}
-.dial svg{width:100%;height:100%;display:block;overflow:visible}
+.dial{position:relative;width:min(92vw,520px);margin:18px auto 0;aspect-ratio:1;perspective:1000px;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.dial.grab{cursor:grabbing}
+.dial3d{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+.dial svg{position:absolute;inset:0;width:100%;height:100%;display:block;overflow:visible;transform:translateZ(34px);pointer-events:none}
+.port{position:absolute;left:13.25%;top:13.25%;width:73.5%;height:73.5%;border-radius:50%;overflow:hidden;background:#0A1C12;box-shadow:0 30px 60px -20px rgba(0,0,0,.75),0 0 0 6px rgba(10,28,18,.6);transform:translateZ(0)}
+.port::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(90% 70% at var(--gx,40%) 18%,rgba(255,230,180,.22),transparent 55%),radial-gradient(circle at 50% 50%,transparent 58%,rgba(6,18,11,.55) 100%);pointer-events:none}
+.port .ph{position:absolute;inset:-9%;margin:0;opacity:0;transition:opacity 1.1s ease;will-change:opacity,transform}
+.port .ph.on{opacity:1}
+.port .ph img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(var(--kb,1.04));transition:transform 7s linear;pointer-events:none}
+.port .ph.on img{--kb:1.16}
+.dial .hint3d{position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);z-index:3;font-size:11.5px;font-weight:600;line-height:1;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:var(--saf);background:rgba(16,41,28,.85);border:1px solid var(--line-n);border-radius:999px;padding:8px 13px;pointer-events:none}
+.phcap{text-align:center;font-size:15px;color:var(--cream);margin-top:14px;min-height:1.5em}
+.phcap small{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--saf);margin-inline-end:6px}
+@media (max-width:899px){.hero .wrap>div:last-child{order:-1}.dial{width:min(80vw,360px);margin:4px auto 0}.phcap{margin-top:10px}.clockcap{margin-bottom:6px}}
 .clockcap{text-align:center;font-size:14px;color:var(--mut-n);margin-top:6px}
 .clockcap b{color:var(--cream);font-weight:600}
-.smoke path{animation:rise 7s ease-in infinite;opacity:0}
-.smoke path:nth-child(2){animation-delay:2.3s}
-.smoke path:nth-child(3){animation-delay:4.6s}
-@keyframes rise{0%{transform:translateY(16px);opacity:0}20%{opacity:.55}100%{transform:translateY(-70px);opacity:0}}
-.ember{animation:glow 2.8s ease-in-out infinite alternate}
-.ember:nth-child(2n){animation-delay:-1.3s}
-@keyframes glow{from{opacity:.55}to{opacity:1}}
-.paused .smoke path,.paused .ember,.paused .dot{animation-play-state:paused}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.smoke path{opacity:.35}html{scroll-behavior:auto}}
-
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 /* facts strip */
 .facts{background:var(--green);color:var(--cream)}
 .facts ul{display:flex;flex-wrap:wrap;gap:8px 8px;padding:18px 0}
@@ -208,6 +211,18 @@ select.fld option{color:#15261C;background:#fff}
 .ticket .btns{display:grid;gap:10px;margin-top:18px;position:relative}
 .ticket .note{font-size:13.5px;color:var(--mut-n);margin-top:12px;text-align:center;position:relative}
 
+/* real place */
+.place{background:var(--paper)}
+.pl-grid{display:grid;gap:24px;align-items:center;grid-template-columns:minmax(0,1fr)}.pl-grid>*{min-width:0}
+@media (min-width:900px){.pl-grid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px}}
+.pl-photo{margin:0;width:100%;border-radius:24px;overflow:hidden;aspect-ratio:4/5;max-width:440px;box-shadow:0 40px 70px -40px rgba(16,41,28,.7);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.pl-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.06)}
+.pl-cred{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-top:14px}
+.strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:30px;padding-bottom:8px;scrollbar-width:none;overscroll-behavior-x:contain}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 auto;width:min(62vw,250px);margin:0;scroll-snap-align:start}
+.strip img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;display:block;box-shadow:0 20px 40px -26px rgba(16,41,28,.6)}
+.strip figcaption{font-size:13px;color:var(--mut);margin-top:8px}
 /* kitchens */
 .kitch{background:var(--green);color:var(--cream);overflow:hidden}
 .kitch .eyebrow{color:var(--saf)}
@@ -347,47 +362,26 @@ select.fld option{color:#15261C;background:#fff}
     </div>
     <div>
       <div class="dial" id="dial">
-        <svg viewBox="0 0 400 400" role="img" aria-labelledby="dialT">
-          <title id="dialT">Циферблат на 24 часа: кафе открыто круглые сутки, огонёк показывает текущее время в Москве</title>
-          <defs>
-            <radialGradient id="emb" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#F6C25A"/><stop offset=".6" stop-color="#E07A22"/><stop offset="1" stop-color="#9A3A12"/></radialGradient>
-          </defs>
-          <!-- night half / day half -->
-          <path d="M30 200 A170 170 0 0 1 370 200" fill="none" stroke="rgba(244,235,216,.07)" stroke-width="22"/>
+        <div class="dial3d" id="dial3d">
+          <div class="port" id="port"><figure class="ph on"><img src="img/grill.webp" alt="Шампуры на мангале, дым над углями" width="768" height="432" fetchpriority="high" decoding="async"></figure></div>
+          <svg viewBox="0 0 400 400" role="img" aria-labelledby="dialT">
+          <title id="dialT">Циферблат на 24 часа: кафе открыто круглые сутки, огонёк показывает текущее время в Москве; внутри — фото блюд кафе</title>
           <circle cx="200" cy="200" r="170" fill="none" stroke="#E9A83A" stroke-width="3"/>
-          <circle cx="200" cy="200" r="148" fill="none" stroke="rgba(244,235,216,.14)" stroke-width="1"/>
+          <circle cx="200" cy="200" r="147" fill="none" stroke="rgba(244,235,216,.5)" stroke-width="1.5"/>
+          <path id="slotArc" d="" fill="none" stroke="#E9A83A" stroke-width="7" stroke-linecap="round" opacity=".9"/>
           <g id="ticks" stroke="rgba(244,235,216,.55)" stroke-linecap="round"></g>
-          <g font-family="Onest, sans-serif" font-size="15" font-weight="600" fill="#F4EBD8" text-anchor="middle">
-            <text x="200" y="76">00</text><text x="327" y="205">06</text><text x="200" y="335">12</text><text x="73" y="205">18</text>
+          <g font-family="Onest, sans-serif" font-size="14" font-weight="600" fill="#F4EBD8" text-anchor="middle">
+            <text x="200" y="19">00</text><text x="391" y="205">06</text><text x="200" y="393">12</text><text x="9" y="205">18</text>
           </g>
-          <g font-family="Onest, sans-serif" font-size="11" letter-spacing="2" fill="rgba(244,235,216,.6)" text-anchor="middle">
-            <text x="200" y="96">НОЧЬ</text><text x="200" y="318">ДЕНЬ</text>
-          </g>
-          <!-- smoke -->
-          <g class="smoke" fill="none" stroke="rgba(244,235,216,.6)" stroke-width="3" stroke-linecap="round">
-            <path d="M168 180c-12-14 12-22 0-38s10-24 2-36"/>
-            <path d="M200 176c-12-14 12-22 0-38s10-24 2-36"/>
-            <path d="M232 180c-12-14 12-22 0-38s10-24 2-36"/>
-          </g>
-          <!-- skewers -->
-          <g stroke="#C9C2B0" stroke-width="3" stroke-linecap="round"><path d="M108 196h190"/><path d="M100 212h196"/></g>
-          <g>
-            <rect x="122" y="185" width="22" height="22" rx="6" fill="#8E3B1C"/><rect x="150" y="186" width="14" height="20" rx="6" fill="#E9A83A"/><rect x="170" y="185" width="22" height="22" rx="6" fill="#A4471F"/><rect x="198" y="186" width="12" height="20" rx="5" fill="#5F8F3E"/><rect x="216" y="185" width="22" height="22" rx="6" fill="#8E3B1C"/><rect x="244" y="186" width="14" height="20" rx="6" fill="#E9A83A"/><rect x="264" y="185" width="22" height="22" rx="6" fill="#A4471F"/>
-            <rect x="114" y="201" width="22" height="22" rx="6" fill="#A4471F"/><rect x="142" y="202" width="12" height="20" rx="5" fill="#5F8F3E"/><rect x="160" y="201" width="22" height="22" rx="6" fill="#8E3B1C"/><rect x="188" y="202" width="14" height="20" rx="6" fill="#E9A83A"/><rect x="208" y="201" width="22" height="22" rx="6" fill="#A4471F"/><rect x="236" y="202" width="12" height="20" rx="5" fill="#5F8F3E"/><rect x="254" y="201" width="22" height="22" rx="6" fill="#8E3B1C"/>
-          </g>
-          <circle cx="96" cy="212" r="5" fill="#C9C2B0"/><circle cx="104" cy="196" r="5" fill="#C9C2B0"/>
-          <!-- mangal -->
-          <path d="M104 226h192l-14 52H118z" fill="#1F4E35" stroke="#E9A83A" stroke-width="2.5" stroke-linejoin="round"/>
-          <g fill="url(#emb)"><rect class="ember" x="122" y="228" width="30" height="10" rx="5"/><rect class="ember" x="158" y="228" width="36" height="10" rx="5"/><rect class="ember" x="200" y="228" width="28" height="10" rx="5"/><rect class="ember" x="234" y="228" width="44" height="10" rx="5"/></g>
-          <g stroke="#E9A83A" stroke-width="1.5" opacity=".7"><path d="M140 248v18M170 248v18M200 248v18M230 248v18M260 248v18"/></g>
-          <g stroke="#E9A83A" stroke-width="3" stroke-linecap="round"><path d="M128 278l-10 30M272 278l10 30"/></g>
           <!-- hand: a spark running around the 24h ring -->
           <g id="hand" transform="rotate(0 200 200)">
-            <path d="M200 30v26" stroke="#F4EBD8" stroke-width="2.5" stroke-linecap="round"/>
             <circle cx="200" cy="30" r="11" fill="#E9A83A"/><circle cx="200" cy="30" r="5" fill="#FBF6EA"/>
           </g>
-        </svg>
+          </svg>
+        </div>
+        <span class="hint3d" aria-hidden="true">← свайп · листайте фото →</span>
       </div>
+      <p class="phcap" id="phcap" aria-live="polite"><small>фото с Яндекс Карт</small> <span>шампуры на мангале</span></p>
       <p class="clockcap" id="clockcap">Кухня работает круглосуточно, 7 дней в неделю</p>
     </div>
   </div>
@@ -481,6 +475,28 @@ select.fld option{color:#15261C;background:#fff}
     <ul class="menuc" id="menuc"></ul>
     <p class="src">Своя пекарня и&nbsp;открытая кухня. Список — из&nbsp;карточки на&nbsp;Яндекс Картах, прайса в&nbsp;ней нет.</p>
     <a class="btn btn-saf" id="askMenu" href="#" target="_blank" rel="noopener" style="margin-top:16px">Спросить, что есть сегодня</a>
+  </div>
+</section>
+
+<section class="sec place" id="place" aria-labelledby="placeH">
+  <div class="wrap">
+    <div class="pl-grid">
+      <figure class="pl-photo"><img src="img/hall.webp" alt="Зал кафе: столы со скатертями, диваны, шторы" width="900" height="1200" loading="lazy" decoding="async"></figure>
+      <div>
+        <p class="eyebrow"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3.5" y="3.5" width="9" height="9"/><rect x="3.5" y="3.5" width="9" height="9" transform="rotate(45 8 8)"/></g></svg>Настоящий зал</p>
+        <h2 class="h2" id="placeH">Так выглядит кафе <em>изнутри</em></h2>
+        <p class="sub">Без постановки: зал с&nbsp;диванами, стойка с&nbsp;витриной, вход с&nbsp;парковкой и&nbsp;блюда — всё с&nbsp;фотографий в&nbsp;карточке кафе. Новоивановское, 13А.</p>
+        <p class="pl-cred">фото с Яндекс Карт</p>
+      </div>
+    </div>
+    <div class="strip" aria-label="Фото кафе">
+      <figure><img src="img/front2.webp" alt="Здание кафе с вывеской" loading="lazy" decoding="async"><figcaption>вход и парковка</figcaption></figure>
+      <figure><img src="img/counter.webp" alt="Стойка, витрина и холодильник с напитками" loading="lazy" decoding="async"><figcaption>стойка и витрина</figcaption></figure>
+      <figure><img src="img/hall2.webp" alt="Ряд диванов вдоль окон" loading="lazy" decoding="async"><figcaption>диваны у окон</figcaption></figure>
+      <figure><img src="img/potatoes.webp" alt="Картофель с мясом в сковороде" loading="lazy" decoding="async"><figcaption>картофель с мясом</figcaption></figure>
+      <figure><img src="img/shawarma.webp" alt="Шаурма на тарелке" loading="lazy" decoding="async"><figcaption>шаурма</figcaption></figure>
+      <figure><img src="img/shashlik.webp" alt="Шашлык с луком" loading="lazy" decoding="async"><figcaption>шашлык с луком</figcaption></figure>
+    </div>
   </div>
 </section>
 
@@ -819,5 +835,7 @@ $('#fHours').innerHTML = esc(BIZ.address) + '<br>' + esc(cap(BIZ.hoursText));
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="dial.js"></script>
+<script>(function(){var f=document.querySelector('.pl-photo');if(!f||matchMedia('(prefers-reduced-motion: reduce)').matches)return;f.addEventListener('pointermove',function(e){var r=f.getBoundingClientRect();f.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*10+'deg');f.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*8+'deg');});f.addEventListener('pointerleave',function(){f.style.setProperty('--ry','0deg');f.style.setProperty('--rx','0deg');});})();</script>
 </body>
 </html>

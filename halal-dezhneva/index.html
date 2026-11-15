@@ -111,6 +111,37 @@ html[lang=ar] .hero h1{letter-spacing:0;line-height:1.15}
 .ctas .btn{flex:1 1 auto}
 @media (min-width:600px){.ctas .btn{flex:0 0 auto}}
 
+/* photo accent: shop-window peek of real photos (peek.js) */
+.peek{position:relative;margin:0 0 20px;max-width:520px}
+.peek-frame{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:var(--gd);border:4px solid #fff;box-shadow:0 0 0 1.5px var(--g),0 26px 40px -24px rgba(8,59,30,.6);touch-action:pan-y;will-change:transform;cursor:grab}
+.peek-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.1s ease;transform:translateY(var(--par,0px));will-change:opacity}
+.peek-slide.on{opacity:1}
+.peek-slide img{position:absolute;left:0;top:-14%;width:100%;height:128%;object-fit:cover;display:block;pointer-events:none;animation:kb 14s ease-in-out infinite alternate}
+.peek-slide:nth-child(2n) img{animation-name:kb2}
+@keyframes kb{from{transform:scale(1.04) translate(0,0)}to{transform:scale(1.16) translate(-3%,2%)}}
+@keyframes kb2{from{transform:scale(1.16) translate(2%,-2%)}to{transform:scale(1.04) translate(0,0)}}
+.peek.paused .peek-slide img{animation-play-state:paused}
+.peek-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(8,59,30,.55));pointer-events:none}
+.peek-cap{position:absolute;inset-inline-start:12px;bottom:12px;inset-inline-end:70px;z-index:2;color:#fff;font-size:13.5px;line-height:1.3;font-weight:600;text-shadow:0 1px 3px rgba(0,0,0,.4);pointer-events:none}
+.peek-cap small{display:block;font-weight:400;font-size:11.5px;opacity:.85}
+.peek-dots{position:absolute;inset-inline-end:14px;bottom:16px;z-index:3;display:flex;gap:2px}
+.peek-dots button{width:24px;height:24px;padding:0;border:0;background:none;display:grid;place-items:center}
+.peek-dots button::before{content:"";width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.55);transition:.25s}
+.peek-dots button[aria-current=true]::before{background:var(--y);width:18px;border-radius:4px}
+@media (max-width:899px){.hero .wrap{padding-top:22px}.peek{margin:0;width:100%}}
+@media (min-width:900px){.hero .wrap{grid-template-rows:auto auto}.hero .txt{grid-column:1;grid-row:1 / span 2}.hero .rail{grid-column:2;grid-row:1}.peek{grid-column:2;grid-row:2;margin:-6px 0 0;z-index:2;width:100%;max-width:400px;justify-self:center}.peek-frame{aspect-ratio:2/1}.hero .rail{height:370px}.hero .wrap{padding-top:44px;padding-bottom:56px}}
+/* how to recognise the shop */
+.know{margin-top:40px}
+.know h3{font-size:22px;font-weight:800;color:var(--gd)}
+.know p.kp{color:var(--mut);margin-top:6px;max-width:40em}
+.kstrip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:18px;padding-bottom:6px;scrollbar-width:none}
+.kstrip::-webkit-scrollbar{display:none}
+.kstrip figure{flex:0 0 auto;width:min(72vw,300px);scroll-snap-align:start;transform:perspective(800px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.kstrip img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;display:block;border:3px solid #fff;box-shadow:0 0 0 1px var(--line),0 18px 34px -22px rgba(8,59,30,.55)}
+.kstrip figcaption{font-size:14px;color:var(--mut);margin-top:8px}
+.know .credit{font-size:12.5px;color:var(--mut);margin-top:6px}
+@media (min-width:900px){.kstrip{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible}.kstrip figure{width:auto}}
+
 /* hanging tags */
 .rail{position:relative;z-index:1;height:300px;margin:0 -6px}
 .rail::before{content:"";position:absolute;left:0;right:0;top:14px;height:4px;border-radius:2px;background:var(--gd)}
@@ -277,6 +308,7 @@ html[lang=ar] .blank{font-size:18px}
 <section class="hero" id="hero" aria-labelledby="h1">
   <span class="ghost" aria-hidden="true">حلال</span>
   <div class="wrap">
+    <figure class="peek" id="peek"><div class="peek-frame"></div><figcaption class="peek-cap"><span></span><small data-t="peekCr">фото с Яндекс Карт</small></figcaption></figure>
     <div class="txt">
       <p class="status" id="status"><i aria-hidden="true"></i><span id="statusT">…</span></p>
       <h1 id="h1" data-t="h1">Свой халяль <span class="hl">на&nbsp;Дежнёва</span></h1>
@@ -366,6 +398,16 @@ html[lang=ar] .blank{font-size:18px}
       </div>
       <div class="map" id="map"><div class="ph" data-t="mapPh">Карта загружается…<br>пр. Дежнёва, 23</div></div>
     </div>
+    <div class="know">
+      <h3 data-t="kH">Как узнать магазин</h3>
+      <p class="kp" data-t="kP">Фото из карточки на Яндекс Картах: зелёная вывеска «Халяль», вход по жёлтым ступеням у дома 23.</p>
+      <div class="kstrip" aria-label="Фото магазина" data-ta="kAria">
+        <figure><img src="img/facade.webp" alt="" loading="lazy" decoding="async"><figcaption data-t="kC1">вывеска «Халяль» на фасаде</figcaption></figure>
+        <figure><img src="img/steps.webp" alt="" loading="lazy" decoding="async"><figcaption data-t="kC2">вход: жёлтые ступени, табличка «23»</figcaption></figure>
+        <figure><img src="img/door.webp" alt="" loading="lazy" decoding="async"><figcaption data-t="kC3">открытая дверь, внутри витрина</figcaption></figure>
+      </div>
+      <p class="credit" data-t="kCr">фото с Яндекс Карт</p>
+    </div>
   </div>
 </section>
 </main>
@@ -425,6 +467,8 @@ var AR = {
   fEye: 'كيف تصل', fH: 'ممر ديجنيوفا، <span class="hl">23</span>', fAddr: 'ممر ديجنيوفا، 23',
   route: 'رسم المسار', call: 'اتصال', hrsH: 'ساعات العمل', mapPh: 'جارٍ تحميل الخريطة…<br>ممر ديجنيوفا، 23',
   fYa: 'البطاقة على خرائط ياندكس',
+  peekCr: 'صور من خرائط ياندكس', kH: 'كيف تتعرّف على المتجر', kP: 'صور من بطاقة المتجر على خرائط ياندكس: لافتة «حلال» خضراء، والمدخل بدرج أصفر عند المبنى 23.',
+  kAria: 'صور المتجر', kC1: 'لافتة «حلال» على الواجهة', kC2: 'المدخل: درج أصفر ولوحة «23»', kC3: 'باب مفتوح وفي الداخل واجهة العرض', kCr: 'صور من خرائط ياندكس',
   fNote: 'نموذج تجريبي · مثال لموقع متجر «حلال» من إعداد الحسن الفرّان · ليس الموقع الرسمي.<br>الأسعار والبيانات مأخوذة من البطاقة على خرائط ياندكس وقد تختلف.',
   stickyMain: 'ماذا تحتاج؟ اسأل',
   brandAria: 'حلال — إلى الأعلى', navAria: 'الأقسام', stickyAria: 'إجراءات سريعة', callAria: 'اتصال'
@@ -659,6 +703,8 @@ function setLang(l) {
   lb.textContent = lang === 'ar' ? 'Русский' : 'العربية'; lb.lang = lang === 'ar' ? 'ru' : 'ar';
   lb.setAttribute('aria-label', lang === 'ar' ? 'Переключить на русский' : 'التبديل إلى العربية');
   document.title = lang === 'ar' ? 'متجر «حلال» في ممر ديجنيوفا، 23 (демо)' : '«Халяль» на Дежнёва, 23 — соседский халяль-магазин (демо)';
+  $$('.kstrip figure').forEach(function (f) { f.querySelector('img').alt = f.querySelector('figcaption').textContent; });
+  try { document.dispatchEvent(new Event('langchange')); } catch (e) {}
   fillWhen(); renderStatus(); renderRating(); renderRail(); renderWords(); renderPad(); renderPraise(); renderRevs(); renderFind();
 }
 window.setLang = setLang;
@@ -677,6 +723,8 @@ setLang(initial);
 setInterval(function () { renderStatus(); }, 60000);
 })();
 </script>
+<script src="peek.js"></script>
+<script>(function(){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;document.querySelectorAll('.kstrip figure').forEach(function(f){f.addEventListener('pointermove',function(e){if(e.pointerType!=='mouse')return;var r=f.getBoundingClientRect();f.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*10+'deg');f.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*8+'deg');});f.addEventListener('pointerleave',function(){f.style.setProperty('--ry','0deg');f.style.setProperty('--rx','0deg');});});})();</script>
 <script src="../map-fix.js" defer></script>
 </body>
 </html>

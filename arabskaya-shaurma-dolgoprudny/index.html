@@ -98,6 +98,30 @@ html[lang=ar] .hours{font-family:var(--text);font-size:15px}
 .collage{position:relative;width:min(100%,384px);margin:20px auto 0;aspect-ratio:36/30;font-size:clamp(11px,3.25vw,13.5px)}
 @supports not (aspect-ratio:1/1){.collage{height:300px}}
 .collage>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+/* photo deck (photos.js) — real photos from the Yandex Maps card */
+.collage.has-deck{aspect-ratio:1/.96}
+.collage.has-deck>svg{display:none}
+.collage.has-deck::before{content:"";position:absolute;inset:4%;border-radius:50%;background:var(--tom) radial-gradient(rgba(20,17,15,.28) 1.6px,transparent 1.8px) 0 0/9px 9px}
+.deck{position:absolute;inset:0;perspective:1000px;perspective-origin:50% 35%;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.deck-tilt{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.8,.2,1);will-change:transform}
+.dk{position:absolute;inset-inline-start:3%;top:5%;width:60%;aspect-ratio:3/4;margin:0;background:var(--paper);border:3px solid var(--ink);padding:5px;box-shadow:calc(6px*var(--dir)) 7px 0 var(--ink);transition:transform .6s cubic-bezier(.2,.8,.2,1);will-change:transform;backface-visibility:hidden}
+.dk img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none;filter:brightness(calc(1 - var(--shade,0))) saturate(1.06) contrast(1.04)}
+.dk::after{content:"";position:absolute;inset:5px;pointer-events:none;background:linear-gradient(155deg,rgba(255,255,255,.22),transparent 38%)}
+.dk.top::before{content:"";position:absolute;top:-11px;left:50%;width:58px;height:20px;margin-left:-29px;background:rgba(255,246,218,.82);border:1px solid rgba(20,17,15,.2);transform:rotate(-4deg);z-index:2}
+.dk.drag{transition:none}
+.dk.toss{transition:transform .36s cubic-bezier(.5,0,.75,.3)}
+.dk-label{position:absolute;inset-inline-start:1%;bottom:15%;z-index:60;text-align:start;pointer-events:none}
+.dk-label span{display:inline-block;background:var(--ink);color:var(--y);font:900 1.55em/1 var(--display);text-transform:uppercase;padding:.28em .55em .22em;letter-spacing:.03em;white-space:nowrap}
+html[lang=ar] .dk-label span{font-size:1.35em;line-height:1.3;letter-spacing:0}
+.dk-label small{display:table;margin-top:0;padding:.3em .55em;font:500 max(11px,.8em)/1.2 var(--text);color:var(--ink);background:var(--paper)}
+.dk-hint{position:absolute;inset-inline-start:2%;top:0;z-index:60;font:700 max(11px,.84em)/1 var(--text);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;color:var(--y);background:var(--ink);padding:.5em .75em;pointer-events:none;transform:rotate(calc(-4deg*var(--dir)))}
+html[lang=ar] .dk-hint{letter-spacing:0;text-transform:none}
+.collage.has-deck .stk{z-index:70}
+.collage.has-deck .stk-quote{top:3%;width:10.6em}
+.collage.has-deck .stk-quote p{font-size:1.6em}
+.collage.has-deck .stk-rate{top:auto;bottom:19%;inset-inline-start:auto;inset-inline-end:5%}
+.collage.has-deck .stk-bi{bottom:-1%;inset-inline-end:0}
+@media (max-width:959px){.collage.has-deck .dk-hint{display:none}}
 .turn{animation:turn 2.6s linear infinite}
 @keyframes turn{to{transform:translateX(40px)}}
 .glow rect{animation:glow 1.8s ease-in-out infinite}
@@ -286,6 +310,19 @@ html[lang=ar] .rate .btn{font-size:18px}
 .q:active{transform:translate(calc(3px*var(--dir)),3px);box-shadow:calc(1px*var(--dir)) 1px 0 var(--ink)}
 
 /* find */
+.spot{background:var(--ink);color:var(--paper);padding-block:50px 56px;overflow:hidden;overflow:clip;--focus:var(--y)}
+.spot .sec-note{color:var(--mut-inv)}
+.spot-g{display:grid;gap:26px;align-items:center}
+.spot-photo{margin:0;max-width:440px;border:4px solid var(--y);box-shadow:calc(8px*var(--dir)) 9px 0 var(--tom);aspect-ratio:3/4;overflow:hidden;transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.spot-photo img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.05)}
+.spot-cr{margin-top:14px;font-size:13px;color:var(--mut-inv)}
+.strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:30px;padding:4px 16px 12px 4px;scroll-padding-inline:4px;scrollbar-width:none;overscroll-behavior-x:contain}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 auto;width:min(62vw,270px);margin:0;scroll-snap-align:start}
+.strip img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border:3px solid var(--paper)}
+.strip figcaption{margin-top:8px;font:700 19px/1 var(--display);text-transform:uppercase;letter-spacing:.04em;color:var(--y)}
+html[lang=ar] .strip figcaption{font:400 17px/1.4 var(--text)}
+@media (min-width:960px){.spot{padding-block:76px 84px}.spot-g{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:60px}}
 .find{background:var(--paper);padding-block:50px 56px}
 .addr{margin-top:10px;font:900 19vw/.86 var(--display);text-transform:uppercase}
 .addr .fit+.fit{color:var(--tom)}
@@ -534,6 +571,27 @@ html[lang=ar] .bar-main{font-size:21px;line-height:1.3}
         <p class="sec-note" data-t="qSub">Чего нет на странице — подскажет мастер. Вопрос уже набран, останется отправить.</p>
       </header>
       <div class="ask-grid" id="askGrid"></div>
+    </div>
+  </section>
+
+  <section class="spot" id="spot">
+    <div class="wrap">
+      <div class="spot-g">
+        <figure class="spot-photo" data-cap="master"><img src="img/master.webp" alt="Мастер за стойкой кафе" loading="lazy" decoding="async"></figure>
+        <div class="sec-h">
+          <p class="kicker" data-ph="spotK">Место · Московское шоссе, 33А</p>
+          <h2 class="h2 d" data-ph="spotH">Вертел прямо за стойкой</h2>
+          <p class="sec-note" data-ph="spotT"></p>
+          <p class="spot-cr" data-ph="credit">фото с Яндекс Карт</p>
+        </div>
+      </div>
+      <div class="strip" aria-label="Фото кафе">
+        <figure data-cap="night"><img src="img/night.webp" alt="" loading="lazy" decoding="async"><figcaption></figcaption></figure>
+        <figure data-cap="counter"><img src="img/counter.webp" alt="" loading="lazy" decoding="async"><figcaption></figcaption></figure>
+        <figure data-cap="cook"><img src="img/cook.webp" alt="" loading="lazy" decoding="async"><figcaption></figcaption></figure>
+        <figure data-cap="grill-hand"><img src="img/grill-hand.webp" alt="" loading="lazy" decoding="async"><figcaption></figcaption></figure>
+        <figure data-cap="hall"><img src="img/hall.webp" alt="" loading="lazy" decoding="async"><figcaption></figcaption></figure>
+      </div>
     </div>
   </section>
 
@@ -1302,5 +1360,6 @@ setInterval(function () { renderStatus(); renderWeek(); sync(); }, 30000);
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="photos.js"></script>
 </body>
 </html>

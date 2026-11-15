@@ -319,6 +319,48 @@ footer.f{padding:44px 0 34px;border-top:1px solid var(--line);background:#06091E
 .toast{position:fixed;left:50%;bottom:96px;z-index:90;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#1D1748;border:1px solid var(--pink);color:var(--ink);padding:11px 16px;border-radius:12px;font-size:14.5px;font-weight:600;transition:.25s;max-width:calc(100% - 32px);text-align:center;box-shadow:0 0 22px -6px var(--pink)}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 @media (min-width:900px){.toast{bottom:28px}}
+
+/* photo hero: neon light-box of real photos (lightbox.js) */
+section.hero{overflow:hidden;overflow:clip}
+.signbox.photo{width:min(100%,420px);margin:6px auto 0}
+.lbox{position:relative;perspective:1100px;perspective-origin:50% 40%;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab;padding:14px}
+.lbox.grab{cursor:grabbing}
+.lb-tilt{position:relative;transform-style:preserve-3d;will-change:transform;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(var(--tz,0px))}
+.lb-frame{position:relative;aspect-ratio:4/4.6;border-radius:20px;overflow:hidden;background:#05071A;border:2.5px solid var(--pinkc);box-shadow:0 0 3px var(--pink),0 0 14px var(--pink),0 0 42px rgba(255,61,139,.5),inset 0 0 12px rgba(255,61,139,.7),0 40px 60px -30px #000}
+.lb-slide{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1.1s ease}
+.lb-slide.on{opacity:1}
+.lb-slide img{position:absolute;inset:-6%;width:112%;height:112%;max-width:none;object-fit:cover;display:block;pointer-events:none;transform:translate3d(var(--px,0px),var(--py,0px),0);will-change:transform}
+.lb-slide.on img{animation:kb 9s ease-out both}
+@keyframes kb{from{scale:1}to{scale:1.12}}
+.lb-tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,13,38,0) 60%,rgba(9,13,38,.6)),radial-gradient(90% 60% at 100% 0%,rgba(255,61,139,.2),transparent 60%);pointer-events:none}
+.lb-glare{position:absolute;inset:0;background:radial-gradient(70% 50% at var(--gx,30%) var(--gy,0%),rgba(255,255,255,.22),transparent 60%);mix-blend-mode:soft-light;pointer-events:none}
+.lb-tube{position:absolute;inset:-15px;border-radius:32px;border:2px solid var(--yelc);box-shadow:0 0 4px #FFB000,0 0 14px rgba(255,176,0,.65),inset 0 0 6px rgba(255,176,0,.5);transform:translateZ(-18px);pointer-events:none}
+.lb-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:2px;padding:0 14px}
+.lb-cap{min-width:0;display:flex;flex-direction:column;gap:4px}
+.lb-cap small{font:600 11px/1 Tektur,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.lb-cap span{font:600 14px/1.25 Onest,sans-serif;color:var(--ink)}
+.lb-dots{display:flex;gap:0;flex:none;margin-right:-6px}
+.lb-dots button{width:44px;height:44px;border:0;background:none;padding:0;cursor:pointer;display:grid;place-items:center}
+.lb-dots button::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--dim);transition:background .3s,box-shadow .3s}
+.lb-dots button[aria-current="true"]::before{background:var(--pinkc);box-shadow:0 0 6px var(--pink),0 0 12px var(--pink)}
+.signbox.photo .open-sign{right:0;bottom:auto;top:0;z-index:3;transform:rotate(4deg)}
+@media (max-width:899px){.hero .wrap>.signbox.photo{order:-1;margin-top:-6px}.hero .wrap{padding-top:12px}}
+@media (max-width:599px){.lb-frame{aspect-ratio:4/3.7}.signbox.photo .open-sign{padding:7px 10px 6px;font-size:14px}}
+@media (min-width:900px){.signbox.photo{max-width:470px}.lb-frame{aspect-ratio:4/4.8}}
+@media (prefers-reduced-motion:reduce){.lb-slide.on img{animation:none}}
+
+/* the window: real place section */
+#okno{background:linear-gradient(var(--bg2),var(--bg));border-top:1px solid var(--line)}
+.ok-grid{display:grid;gap:24px;align-items:center}
+@media (min-width:900px){.ok-grid{grid-template-columns:.8fr 1.2fr;gap:56px}}
+.ok-photo{margin:0;border-radius:22px;overflow:hidden;aspect-ratio:4/5;max-width:440px;border:1px solid var(--line);box-shadow:0 0 0 1px rgba(255,61,139,.25),0 40px 70px -40px #000,0 0 40px -16px rgba(255,61,139,.45);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.ok-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.06)}
+.ok-strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:30px;padding-bottom:8px;scrollbar-width:none}
+.ok-strip::-webkit-scrollbar{display:none}
+.ok-strip figure{flex:0 0 auto;margin:0;width:min(62vw,250px);scroll-snap-align:start}
+.ok-strip img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:16px;border:1px solid var(--line);box-shadow:0 20px 40px -26px #000}
+.ok-strip figcaption{font:600 11.5px/1.3 Tektur,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-top:9px}
+.ok-credit{font:600 11px/1 Tektur,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-top:14px}
 </style>
 </head>
 <body>
@@ -351,26 +393,19 @@ footer.f{padding:44px 0 34px;border-top:1px solid var(--line);background:#06091E
         <a class="btn g" href="#menu" id="menuCta">Всё меню</a>
       </div>
     </div>
-    <div class="signbox">
-      <svg class="sign" viewBox="0 0 420 400" role="img" aria-label="Неоновая вывеска: вертел шаурмы, шаурма в лаваше и полумесяц">
-        <g class="tube y"><path d="M352 52a30 30 0 1 0 26 46a23 23 0 1 1-26-46z"/></g>
-        <g class="tube p flk"><path d="M300 52v12M294 58h12M196 34v10M191 39h10M392 160v8M388 164h8"/></g>
-        <g class="tube y"><path d="M110 44V372M78 372H142M96 66H124"/></g>
-        <g class="tube p"><path d="M62 92Q110 78 158 92L136 300Q110 310 84 300Z"/><path d="M70 130q20 7 40 0t40 0M74 170q18 7 36 0t36 0M78 210q16 7 32 0t32 0M83 250q14 6 27 0t27 0"/></g>
-        <g transform="translate(262 206) rotate(-16)">
-          <g class="tube y">
-            <path d="M-42 -100V96Q0 126 42 96V-100"/>
-            <ellipse cx="0" cy="-100" rx="42" ry="13"/>
-            <path d="M-42 -52Q0 -74 42 -36M-42 -8Q-12 -22 14 -14"/>
-          </g>
-          <g class="tube p">
-            <path d="M-40 -104q6-24 18-10q8-26 22-8q8-26 22-6q8-22 18-2"/>
-            <circle cx="-16" cy="-124" r="6"/><circle cx="16" cy="-126" r="5"/>
-            <path d="M-41 34l10-10l10 10l10-10l10 10l10-10l10 10l10-10l10 10M-24 56v26M0 60v30M24 56v26"/>
-          </g>
-          <g class="tube p flk" style="animation-delay:-3s"><path d="M-10 -150q-9-11 0-22t0-22M18 -152q-9-11 0-22t0-22"/></g>
-        </g>
-      </svg>
+    <div class="signbox photo">
+      <div class="lbox" id="lbox" tabindex="0" role="group" aria-roledescription="карусель" aria-label="Окошко «Мистер Руру» — фото с Яндекс Карт">
+        <div class="lb-tilt">
+          <div class="lb-frame">
+            <figure class="lb-slide on" data-cap="Окошко вечером · повар у гриля"><img src="img/window.webp" alt="Окошко шаурмичной вечером: повар у гриля, табло с меню над прилавком" width="675" height="1200" decoding="async" fetchpriority="high" draggable="false"></figure>
+            <figure class="lb-slide" data-cap="Мясо на шампурах"><img src="img/grill.webp" alt="Мясо на шампурах" width="1200" height="1200" loading="lazy" decoding="async" draggable="false"></figure>
+            <figure class="lb-slide" data-cap="Табло с меню в окошке"><img src="img/menu-window.webp" alt="Светящееся табло с меню шаурмы в окошке" width="554" height="1116" loading="lazy" decoding="async" draggable="false"></figure>
+            <span class="lb-tint" aria-hidden="true"></span><span class="lb-glare" aria-hidden="true"></span>
+          </div>
+          <span class="lb-tube flk" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="lb-bar"><p class="lb-cap" aria-live="polite"><small>фото с Яндекс Карт</small><span id="lbCap">Окошко вечером · повар у гриля</span></p><div class="lb-dots" id="lbDots"></div></div>
       <div class="open-sign" id="openSign" aria-hidden="true"><span id="osBig">ОТКРЫТО</span><small id="osSmall">ДО 01:00</small></div>
     </div>
   </div>
@@ -476,6 +511,28 @@ footer.f{padding:44px 0 34px;border-top:1px solid var(--line);background:#06091E
     </div>
     <div class="revs" id="revs"></div>
     <a class="btn g all" id="revAll" href="#" target="_blank" rel="noopener">Все отзывы на Яндекс Картах</a>
+  </div>
+</section>
+
+<section id="okno" aria-labelledby="oh">
+  <div class="wrap">
+    <div class="ok-grid">
+      <figure class="ok-photo"><img src="img/kiosk.webp" alt="Киоск с вывеской «Шаурма» на Ярославском шоссе, 142к2" width="720" height="960" loading="lazy" decoding="async"></figure>
+      <div class="sh" style="margin:0">
+        <p class="kick">Настоящее место</p>
+        <h2 id="oh">Вот оно, <em>окошко</em></h2>
+        <p>Небольшой киоск с вывеской «Шаурма» у дома 142 на Ярославском шоссе. Днём — кирпичный павильон, вечером загораются табло с меню, и через стекло видно, как собирают шаурму. Все фото ниже — с Яндекс Карт.</p>
+      </div>
+    </div>
+    <div class="ok-strip" aria-label="Фото места">
+      <figure><img src="img/window.webp" alt="Окошко вечером, повар за прилавком" loading="lazy" decoding="async"><figcaption>окошко вечером</figcaption></figure>
+      <figure><img src="img/menu-window.webp" alt="Табло с меню над окошком" loading="lazy" decoding="async"><figcaption>табло с меню</figcaption></figure>
+      <figure><img src="img/shawarma.webp" alt="Шаурма в лаваше с овощами" loading="lazy" decoding="async"><figcaption>шаурма в лаваше</figcaption></figure>
+      <figure><img src="img/grill.webp" alt="Мясо на шампурах" loading="lazy" decoding="async"><figcaption>мясо на шампурах</figcaption></figure>
+      <figure><img src="img/street.webp" alt="Павильон у дома 142 с улицы" loading="lazy" decoding="async"><figcaption>вид с улицы</figcaption></figure>
+      <figure><img src="img/entrance.webp" alt="Вход в павильон" loading="lazy" decoding="async"><figcaption>вход и крыльцо</figcaption></figure>
+    </div>
+    <p class="ok-credit">фото с Яндекс Карт</p>
   </div>
 </section>
 
@@ -877,5 +934,7 @@ if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { e
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="lightbox.js"></script>
+<script>(function(){var f=document.querySelector('.ok-photo');if(!f||matchMedia('(prefers-reduced-motion: reduce)').matches)return;f.addEventListener('pointermove',function(e){var r=f.getBoundingClientRect();f.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*10+'deg');f.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*8+'deg');});f.addEventListener('pointerleave',function(){f.style.setProperty('--ry','0deg');f.style.setProperty('--rx','0deg');});})();</script>
 </body>
 </html>

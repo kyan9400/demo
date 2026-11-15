@@ -288,6 +288,7 @@ h2{font:700 clamp(34px,8.6vw,64px)/.98 var(--fd);text-transform:uppercase;letter
 .rv.cat{background:#211c12;border-color:#4a3a1b}
 .catbox{display:flex;gap:14px;align-items:center}
 .catbox svg{width:86px;height:70px;flex:none}
+.catbox img{width:70px;height:70px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #ffb35c}
 .catbox p{margin:0;font:600 18px/1.15 var(--fd);text-transform:uppercase;color:#ffb35c;letter-spacing:.02em}
 .catbox small{display:block;font:400 13px var(--fb);text-transform:none;color:var(--mute);letter-spacing:0;margin-top:4px}
 .rv-all{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-top:24px}
@@ -341,6 +342,56 @@ footer{border-top:1px solid var(--line);padding:40px 0 32px;background:#101214}
   html{scroll-behavior:auto}
   .js .rv-in.pre{opacity:1;transform:none}
 }
+
+/* cinematic photo hero (real photos from the Yandex card) */
+.hero-wheel[hidden]{display:none!important}
+.has-film{touch-action:pan-y;background:var(--asph)}
+.film{position:absolute;inset:0;overflow:hidden;overflow:clip;will-change:transform}
+.fs{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1.4s ease}
+.fs.on{opacity:1}
+.fs img{width:100%;height:100%;object-fit:cover;object-position:var(--op,50% 50%);transform:scale(1.14);will-change:transform}
+.fs.on img{animation:kb 8s cubic-bezier(.25,.6,.3,1) forwards}
+.fs:nth-of-type(2n).on img{animation-name:kb2}
+@keyframes kb{from{transform:scale(1.16) translate3d(1.5%,1%,0)}to{transform:scale(1.02) translate3d(-1%,-1%,0)}}
+@keyframes kb2{from{transform:scale(1.02) translate3d(-1.5%,0,0)}to{transform:scale(1.15) translate3d(1.5%,-1%,0)}}
+.paused .fs.on img{animation-play-state:paused}
+.film-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,12,13,.15) 0%,rgba(11,12,13,0) 18%,rgba(11,12,13,.25) 34%,rgba(21,23,25,.93) 56%,var(--asph) 72%)}
+.film-ui{position:absolute;z-index:2;left:var(--gut);right:var(--gut);top:calc(min(46svh,420px) - 34px);display:flex;align-items:center;gap:10px;font:500 12px/1 var(--fd);letter-spacing:.12em;text-transform:uppercase;color:#fff;pointer-events:none;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.film-bars{display:flex;gap:4px}
+.film-bars i{display:block;width:22px;height:3px;border-radius:2px;background:rgba(255,255,255,.3);overflow:hidden;position:relative}
+.film-bars i::after{content:"";position:absolute;inset:0;background:var(--yel);transform:scaleX(0);transform-origin:0 50%}
+.film-bars i.done::after{transform:scaleX(1)}
+.film-bars i.run::after{animation:bar var(--dur,6s) linear forwards}
+.paused .film-bars i.run::after{animation-play-state:paused}
+@keyframes bar{to{transform:scaleX(1)}}
+.film-cap{color:var(--yel)}
+.film-cr{margin-left:auto;color:rgba(255,255,255,.75);font-family:var(--fb);letter-spacing:.02em;text-transform:none;font-size:11.5px}
+.has-film .wrap{padding-top:calc(min(46svh,420px) + 4px)}
+.has-film .copy .rate{background:rgba(28,31,34,.85)}
+@media (max-width:420px){.film-cap{display:none}}
+@media (max-width:1023px){.film{bottom:auto;height:min(64svh,600px)}.film-shade{background:linear-gradient(180deg,rgba(11,12,13,.1) 0%,rgba(11,12,13,0) 30%,rgba(21,23,25,.55) 66%,var(--asph) 100%)}}
+@media (min-width:1024px){
+  .film-shade{background:linear-gradient(90deg,rgba(11,12,13,.94) 0%,rgba(11,12,13,.82) 34%,rgba(11,12,13,.25) 62%,rgba(11,12,13,.05) 100%),linear-gradient(0deg,rgba(11,12,13,.7),transparent 30%)}
+  .has-film .wrap{padding-top:34px;grid-template-columns:1fr}
+  .film-ui{top:auto;bottom:52px;left:auto;right:max(var(--gut),calc((100vw - var(--max)) / 2 + var(--gut)));gap:14px}
+  .film-cr{margin-left:8px}
+  .has-film .copy{max-width:640px}
+}
+@media (prefers-reduced-motion:reduce){.fs img,.fs.on img{animation:none;transform:none}.fs{transition:none}}
+/* place section */
+.pl-grid{display:grid;gap:24px;align-items:center}
+@media (min-width:1024px){.pl-grid{grid-template-columns:1.15fr .85fr;gap:56px}}
+.pl-photo{margin:0;border-radius:18px;overflow:hidden;aspect-ratio:16/9;border:1px solid var(--line2);box-shadow:0 40px 70px -40px rgba(0,0,0,.9);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.pl-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.06)}
+.pl-k{font:500 14px/1.3 var(--fd);letter-spacing:.12em;text-transform:uppercase;color:var(--yel);margin:0 0 10px}
+.pl-h{font:700 clamp(34px,8vw,60px)/.95 var(--fd);text-transform:uppercase;margin:0 0 16px}
+.pl-txt p.pl-l{color:#d6d8db;font-size:17px;line-height:1.55;max-width:38ch;margin:0}
+.pstrip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:30px;padding-bottom:8px;scrollbar-width:none}
+.pstrip::-webkit-scrollbar{display:none}
+.pstrip figure{flex:0 0 auto;width:min(64vw,270px);margin:0;scroll-snap-align:start}
+.pstrip img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;display:block;background:var(--asph3);border:1px solid var(--line)}
+.pstrip figcaption{font:500 13px var(--fd);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-top:8px}
+.pcredit{font-size:12.5px;color:var(--dim);margin-top:12px}
 </style>
 </head>
 <body>
@@ -361,9 +412,17 @@ footer{border-top:1px solid var(--line);padding:40px 0 32px;background:#101214}
 </header>
 
 <main id="top">
-<section class="hero" id="hero">
+<section class="hero has-film" id="hero">
+  <div class="film" id="film" aria-label="Фото шиномонтажа с Яндекс Карт">
+    <figure class="fs on" data-cap="здание шиномонтажа" style="--op:62% 55%"><img src="img/building.webp" alt="Синее здание с вывеской «Шиномонтаж»" width="1000" height="750" fetchpriority="high" decoding="async" draggable="false"></figure>
+    <figure class="fs" data-cap="цех · станки" style="--op:55% 50%"><img src="img/hall-wide.webp" alt="Цех шиномонтажа: шиномонтажные и балансировочные станки" width="1000" height="450" decoding="async" draggable="false"></figure>
+    <figure class="fs" data-cap="машина на домкратах" style="--op:30% 50%"><img src="img/car-lift.webp" alt="Кроссовер на домкратах со снятыми колёсами" width="1200" height="554" loading="lazy" decoding="async" draggable="false"></figure>
+    <figure class="fs" data-cap="двор вечером" style="--op:50% 70%"><img src="img/dusk-yard.webp" alt="Двор шиномонтажа вечером: машина и стопки шин под навесом" width="750" height="1000" loading="lazy" decoding="async" draggable="false"></figure>
+    <div class="film-shade" aria-hidden="true"></div>
+  </div>
+  <div class="film-ui" aria-hidden="true"><span class="film-n" id="filmN">01 / 04</span><span class="film-bars" id="filmBars"><i></i><i></i><i></i><i></i></span><span class="film-cap" id="filmCap">здание шиномонтажа</span><span class="film-cr">фото с Яндекс Карт</span></div>
   <div class="wrap">
-    <div class="hero-wheel" aria-hidden="true"><svg id="wheelHero" viewBox="-100 -100 200 200"></svg></div>
+    <div class="hero-wheel" hidden aria-hidden="true"><svg id="wheelHero" viewBox="-100 -100 200 200"></svg></div>
     <div class="copy" style="display:grid;gap:22px;position:relative">
       <div class="kick"><span id="kLoc">Красногорск</span><span id="kSeason"></span></div>
       <h1>Шиномонтаж <em>в&nbsp;Ильинском-Усове</em></h1>
@@ -474,6 +533,29 @@ footer{border-top:1px solid var(--line);padding:40px 0 32px;background:#101214}
 <div class="tread" aria-hidden="true"></div>
 
 <!-- ===== REVIEWS ===== -->
+<section class="sec" id="place" aria-labelledby="plH">
+  <div class="wrap">
+    <div class="pl-grid">
+      <figure class="pl-photo"><img src="img/workshop.webp" alt="Цех: шиномонтажный станок, верстак и инструменты" loading="lazy" width="1200" height="540"></figure>
+      <div class="pl-txt">
+        <p class="pl-k">Цех в Ильинском-Усове</p>
+        <h2 class="pl-h" id="plH">Синее здание с жёлтой вывеской</h2>
+        <p class="pl-l">Внутри — шиномонтажные и балансировочные станки, верстак с инструментом и навес для машин во дворе. Все фото — из карточки шиномонтажа на Яндекс Картах.</p>
+      </div>
+    </div>
+    <div class="pstrip" aria-label="Фото шиномонтажа">
+      <figure><img src="img/sign.webp" alt="Вывеска «Шиномонтаж» на синем здании" loading="lazy"><figcaption>вывеска</figcaption></figure>
+      <figure><img src="img/inside.webp" alt="Вид в цех через открытые ворота" loading="lazy"><figcaption>вход в цех</figcaption></figure>
+      <figure><img src="img/changer.webp" alt="Шиномонтажный станок" loading="lazy"><figcaption>шиномонтажный станок</figcaption></figure>
+      <figure><img src="img/rim-before-after.webp" alt="Диск до и после очистки" loading="lazy"><figcaption>диск: до и после</figcaption></figure>
+      <figure><img src="img/patch.webp" alt="Шина изнутри во время ремонта" loading="lazy"><figcaption>шина изнутри</figcaption></figure>
+      <figure><img src="img/hall-wide.webp" alt="Цех с несколькими станками" loading="lazy"><figcaption>цех</figcaption></figure>
+      <figure><img src="img/cat.webp" alt="Рыжий кот у шиномонтажа" loading="lazy"><figcaption>рыжий кот</figcaption></figure>
+    </div>
+    <p class="pcredit">фото с Яндекс Карт</p>
+  </div>
+</section>
+
 <section class="sec" id="reviews" aria-labelledby="revH">
   <div class="wrap">
     <p class="eyebrow">Почему сюда возвращаются</p>
@@ -799,7 +881,7 @@ $('#feat').innerHTML = feat.map(function (f) { return '<span>' + esc(f) + '</spa
 /* ---------- reviews ---------- */
 var STAR = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.2 6.7.7-5 4.6 1.4 6.6L12 17.3l-6 3.3 1.4-6.6-5-4.6 6.7-.7z"/></svg>';
 var stars = function (n) { var s = ''; for (var i = 0; i < Math.round(n); i++) s += STAR; return s; };
-var CAT = '<svg viewBox="0 0 86 70" aria-hidden="true"><path d="M14 62 Q10 40 26 32 L24 14 L34 24 Q42 21 50 24 L60 14 L58 32 Q72 40 68 62 Z" fill="#e8892f"/><path d="M30 46 h22 M28 52 h26" stroke="#b9621a" stroke-width="3" stroke-linecap="round"/><circle cx="35" cy="34" r="2.6" fill="#141414"/><circle cx="49" cy="34" r="2.6" fill="#141414"/><path d="M40 39 l2 2 2-2" stroke="#141414" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M68 58 Q84 56 80 40" stroke="#e8892f" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M4 66 h78" stroke="#ffd400" stroke-width="4" stroke-dasharray="10 6"/></svg>';
+var CAT = '<img src="img/cat-face.webp" alt="Рыжий кот у шиномонтажа — фото с Яндекс Карт" width="70" height="70" loading="lazy" decoding="async">';
 $('#revs').innerHTML = REVIEWS.map(function (r) {
   return '<figure class="rv' + (r.cat ? ' cat' : '') + ' rv-in">' +
     (r.cat ? '<div class="catbox">' + CAT + '<p>Рыжий начальник смены<small>гости пишут, что кот следит за работой</small></p></div>' : '') +
@@ -961,6 +1043,7 @@ if ('IntersectionObserver' in window && !reduce) {
 }
 })();
 </script>
+<script src="film.js"></script>
 <script src="../map-fix.js" defer></script>
 </body>
 </html>

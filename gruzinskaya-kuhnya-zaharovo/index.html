@@ -122,6 +122,33 @@ h1 .loc{display:block;font:500 italic clamp(22px,6vw,34px)/1.15 var(--disp);colo
 .note-tag{transform-origin:330px 74px;animation:sway 5s ease-in-out infinite}
 @keyframes sway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
 .tcap{font:500 italic 15px/1.4 var(--disp);color:var(--mut);text-align:center;margin-top:6px}
+/* photo hero: real dishes served on the 3D supra tablecloth */
+.hero{overflow-x:hidden;overflow-x:clip}
+.supra{perspective:1100px;perspective-origin:50% 30%;touch-action:pan-y;user-select:none;-webkit-user-select:none;outline:none}
+.supra:focus-visible{box-shadow:0 0 0 3px var(--cob2);border-radius:14px}
+.plane{position:absolute;inset:5% 4% 3%;transform-style:preserve-3d;will-change:transform;transform:rotateX(16deg) rotateZ(-3deg);border-radius:10px;box-shadow:0 40px 60px -30px rgba(26,34,56,.45)}
+.plane>svg{position:absolute;inset:0;width:100%;height:100%;border-radius:10px}
+.sdish{position:absolute;margin:0;width:50%;aspect-ratio:3/4;background:#FFFDF8;padding:7px;border-radius:12px;cursor:pointer;
+  box-shadow:0 30px 40px -22px rgba(26,34,56,.6),0 0 0 1px rgba(31,60,138,.12);will-change:transform;transition:box-shadow .4s}
+.sdish img{display:block;width:100%;height:100%;object-fit:cover;border-radius:7px;pointer-events:none}
+.sdish::after{content:"";position:absolute;inset:7px;border-radius:7px;background:linear-gradient(115deg,rgba(255,255,255,.28),transparent 40%);pointer-events:none}
+.sd1{left:6%;top:7%}
+.sd2{right:6%;top:24%}
+.sdish.top{box-shadow:0 46px 50px -24px rgba(26,34,56,.7),0 0 0 2px var(--cob)}
+.ntag{position:absolute;right:-2%;top:-3%;z-index:5;background:#FFFEF9;border:1px solid rgba(26,34,56,.18);border-radius:4px;padding:8px 16px 6px 14px;font-family:var(--hand);line-height:1;box-shadow:0 12px 20px -14px rgba(26,34,56,.6);transform-origin:50% -10px;animation:sway 5s ease-in-out infinite}
+.ntag span{display:block;font-size:22px;font-weight:700;color:var(--cob)}.ntag b{display:block;font-size:28px;font-weight:700;color:var(--terra)}
+.ntag::before{content:"";position:absolute;left:50%;top:-6px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:var(--terra);box-shadow:0 2px 3px rgba(0,0,0,.25)}
+.paused .ntag{animation-play-state:paused}
+.tcap small{display:block;font:600 11.5px/1.4 var(--text);font-style:normal;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-top:2px}
+@media(max-width:599px){.hero .wrap>div:last-child{order:-1}.supra{aspect-ratio:1/.9;max-width:400px}.ntag{right:0;top:-2%;padding:6px 12px 4px 10px}.ntag span{font-size:18px}.ntag b{font-size:23px}}
+/* real place */
+.place-g{display:grid;gap:26px;align-items:center}
+@media(min-width:900px){.place-g{grid-template-columns:.8fr 1.2fr;gap:56px}}
+.place-photo{margin:0;max-width:430px;border-radius:20px;overflow:hidden;border:7px solid var(--paper);box-shadow:0 0 0 1px var(--line),0 40px 60px -36px rgba(26,34,56,.6);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.place-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;transform:scale(1.04)}
+.place-sign{margin:22px 0 0;max-width:420px}
+.place-sign img{display:block;width:100%;height:auto;border-radius:10px;border:5px solid var(--paper);box-shadow:0 0 0 1px var(--line)}
+.place-sign figcaption{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-top:8px;font-weight:600}
 
 /* facts */
 .facts{padding-block:4px 30px}
@@ -335,76 +362,31 @@ h1 .loc{display:block;font:500 italic clamp(22px,6vw,34px)/1.15 var(--disp);colo
     </div>
 
     <div>
-      <div class="table" aria-hidden="true">
-        <svg viewBox="0 0 400 400" role="img">
-          <defs>
-            <pattern id="lat" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-              <path d="M0 11h22M11 0v22" stroke="#1F3C8A" stroke-opacity=".09" stroke-width="1.2"/>
-            </pattern>
-            <pattern id="stitch" width="24" height="24" patternUnits="userSpaceOnUse">
-              <path d="M12 3 21 12 12 21 3 12Z" fill="none" stroke="#1F3C8A" stroke-width="2"/>
-              <rect x="10" y="10" width="4" height="4" fill="#1F3C8A"/>
-              <rect x="0" y="0" width="2.6" height="2.6" fill="#1F3C8A"/>
-            </pattern>
-            <radialGradient id="crust" cx="45%" cy="40%" r="62%"><stop offset="0" stop-color="#E9AE5C"/><stop offset=".75" stop-color="#C9843A"/><stop offset="1" stop-color="#A9642A"/></radialGradient>
-            <radialGradient id="ch" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#FFF1C2"/><stop offset="1" stop-color="#F0CF7C"/></radialGradient>
-            <linearGradient id="roll" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E7A955"/><stop offset="1" stop-color="#B9722F"/></linearGradient>
-          </defs>
-          <g transform="rotate(-5 200 200)">
-            <!-- tablecloth -->
-            <rect x="22" y="22" width="356" height="356" rx="10" fill="#FFFDF8"/>
-            <rect x="22" y="22" width="356" height="356" rx="10" fill="url(#lat)"/>
-            <path d="M22 22h356v36H22zM22 342h356v36H22zM22 58h36v284H22zM342 58h36v284h-36z" fill="url(#stitch)" opacity=".9"/>
-            <rect x="62" y="62" width="276" height="276" fill="none" stroke="#1F3C8A" stroke-width="1.5" stroke-dasharray="4 4" opacity=".55"/>
-            <rect x="22" y="22" width="356" height="356" rx="10" fill="none" stroke="#1F3C8A" stroke-width="2" opacity=".35"/>
-            <!-- clay ketsi with imeruli -->
-            <ellipse cx="196" cy="214" rx="96" ry="96" fill="#9B4A26"/>
-            <ellipse cx="196" cy="208" rx="96" ry="94" fill="#B85A30"/>
-            <circle cx="196" cy="208" r="80" fill="url(#crust)"/>
-            <circle cx="196" cy="208" r="56" fill="url(#ch)"/>
-            <path d="M196 152v112M140 208h112M157 169l78 78M235 169l-78 78" stroke="#C9843A" stroke-width="2.2" opacity=".55"/>
-            <circle cx="196" cy="208" r="56" fill="none" stroke="#C9843A" stroke-width="3" opacity=".5"/>
-            <circle cx="178" cy="192" r="7" fill="#E9AE5C" opacity=".6"/><circle cx="214" cy="220" r="5" fill="#E9AE5C" opacity=".6"/><circle cx="206" cy="186" r="4" fill="#E9AE5C" opacity=".55"/>
-            <!-- sausage rolls -->
-            <g transform="translate(286 102) rotate(32)">
-              <rect x="-34" y="-12" width="68" height="24" rx="12" fill="url(#roll)"/>
-              <path d="M-20 -12c6 8 6 16 0 24M-4 -12c6 8 6 16 0 24M12 -12c6 8 6 16 0 24" fill="none" stroke="#8E5420" stroke-width="2" opacity=".55"/>
-            </g>
-            <g transform="translate(312 140) rotate(32)">
-              <rect x="-34" y="-12" width="68" height="24" rx="12" fill="url(#roll)"/>
-              <path d="M-20 -12c6 8 6 16 0 24M-4 -12c6 8 6 16 0 24M12 -12c6 8 6 16 0 24" fill="none" stroke="#8E5420" stroke-width="2" opacity=".55"/>
-            </g>
-            <!-- belyash -->
-            <g transform="translate(96 310)">
-              <circle r="34" fill="#B9722F"/><circle r="30" fill="url(#crust)"/><circle r="9" fill="#7A3E1E"/><circle r="9" fill="none" stroke="#E9AE5C" stroke-width="3"/>
-            </g>
-            <!-- khinkali -->
-            <g transform="translate(304 300)">
-              <path d="M-30 14c0-22 14-36 30-40 16 4 30 18 30 40 0 10-14 16-30 16s-30-6-30-16z" fill="#F7EEDC" stroke="#D9C7A6" stroke-width="2"/>
-              <path d="M0-26c-6 12-12 26-16 40M0-26c-2 14-4 28-4 42M0-26c3 14 4 28 4 42M0-26c6 12 12 26 16 40" fill="none" stroke="#D9C7A6" stroke-width="1.8"/>
-              <circle cx="0" cy="-28" r="5" fill="#EFE2C8" stroke="#D9C7A6" stroke-width="2"/>
-            </g>
-            <!-- lavash folded -->
-            <g transform="translate(92 106) rotate(-14)">
-              <path d="M-44 -26h80l8 52h-80z" fill="#F2D9A6"/>
-              <path d="M-44 -26h80l8 52h-80z" fill="none" stroke="#D8B272" stroke-width="2"/>
-              <circle cx="-20" cy="-8" r="3" fill="#C98E45" opacity=".6"/><circle cx="4" cy="6" r="3.5" fill="#C98E45" opacity=".5"/><circle cx="22" cy="-10" r="2.5" fill="#C98E45" opacity=".6"/><circle cx="-6" cy="16" r="2.5" fill="#C98E45" opacity=".5"/>
-            </g>
-          </g>
-          <g class="steam">
-            <path d="M170 132c-10-14 10-22 0-36s10-22 0-36"/>
-            <path d="M200 124c-10-14 10-22 0-36s10-22 0-36"/>
-            <path d="M230 132c-10-14 10-22 0-36s10-22 0-36"/>
-          </g>
-          <!-- hanging note -->
-          <g class="note-tag">
-            <rect x="268" y="18" width="124" height="70" rx="4" fill="#FFFEF9" stroke="rgba(26,34,56,.18)"/>
-            <text x="282" y="46" font-family="Caveat, cursive" font-size="22" font-weight="700" fill="#1F3C8A">Заберу в</text>
-            <text x="282" y="74" font-family="Caveat, cursive" font-size="26" font-weight="700" fill="#B04A26" id="tagTime">18:30</text>
-          </g>
-        </svg>
+      <div class="table supra" id="supra" tabindex="0" aria-label="Настоящие фото блюд с Яндекс Карт на сине-белой скатерти; нажмите на фото, чтобы поднять его">
+        <div class="plane" id="plane">
+          <svg viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+            <defs>
+              <pattern id="lat" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <path d="M0 11h22M11 0v22" stroke="#1F3C8A" stroke-opacity=".09" stroke-width="1.2"/>
+              </pattern>
+              <pattern id="stitch" width="24" height="24" patternUnits="userSpaceOnUse">
+                <path d="M12 3 21 12 12 21 3 12Z" fill="none" stroke="#1F3C8A" stroke-width="2"/>
+                <rect x="10" y="10" width="4" height="4" fill="#1F3C8A"/>
+                <rect x="0" y="0" width="2.6" height="2.6" fill="#1F3C8A"/>
+              </pattern>
+            </defs>
+            <rect x="0" y="0" width="400" height="400" rx="10" fill="#FFFDF8"/>
+            <rect x="0" y="0" width="400" height="400" rx="10" fill="url(#lat)"/>
+            <path d="M0 0h400v40H0zM0 360h400v40H0zM0 40h40v320H0zM360 40h40v320h-40z" fill="url(#stitch)" opacity=".9"/>
+            <rect x="44" y="44" width="312" height="312" fill="none" stroke="#1F3C8A" stroke-width="1.5" stroke-dasharray="4 4" opacity=".55"/>
+            <rect x="1" y="1" width="398" height="398" rx="10" fill="none" stroke="#1F3C8A" stroke-width="2" opacity=".35"/>
+          </svg>
+          <figure class="sdish sd1" data-cap="хачапури-лодочка с яйцом и маслом"><img src="img/adjaruli.webp" alt="Хачапури-лодочка с яйцом и маслом" width="768" height="1024" decoding="async" fetchpriority="high" draggable="false"></figure>
+          <figure class="sdish sd2" data-cap="круглый хачапури с сыром"><img src="img/imeruli.webp" alt="Круглый хачапури с сыром в коробке, рядом керамические фигурки" width="768" height="1024" decoding="async" draggable="false"></figure>
+        </div>
+        <div class="ntag" aria-hidden="true"><span>Заберу в</span><b id="tagTime">18:30</b></div>
       </div>
-      <p class="tcap">Имерули в глиняной кеци, сосиски в тесте, беляш, хинкали и лаваш</p>
+      <p class="tcap"><span id="supraCap">хачапури-лодочка с яйцом и маслом</span><small>фото с Яндекс Карт</small></p>
     </div>
   </div>
 </section>
@@ -445,6 +427,18 @@ h1 .loc{display:block;font:500 italic clamp(22px,6vw,34px)/1.15 var(--disp);colo
   </div>
 </section>
 <div class="band thin" aria-hidden="true"></div>
+
+<section class="sec place" id="place" aria-labelledby="placeH">
+  <div class="wrap place-g">
+    <figure class="place-photo"><img src="img/entrance.webp" alt="Вход в кулинарию под зелёной вывеской «Домашняя грузинская кухня», внутри видна витрина" width="825" height="1100" loading="lazy" decoding="async"></figure>
+    <div>
+      <p class="eyebrow">Как это выглядит</p>
+      <h2 class="h2" id="placeH">Ищите <em>зелёную вывеску</em></h2>
+      <p class="sub">Небольшая кулинария в Захарово, 65А: под вывеской «Домашняя грузинская кухня» — светлый проход с узорной плиткой и витрина с выпечкой. Фото настоящие, с Яндекс Карт.</p>
+      <figure class="place-sign"><img src="img/sign.webp" alt="Вывеска «Домашняя грузинская кухня»" width="558" height="174" loading="lazy" decoding="async"><figcaption>вывеска · фото с Яндекс Карт</figcaption></figure>
+    </div>
+  </div>
+</section>
 
 <section class="sec" id="praise" aria-labelledby="revH">
   <div class="wrap">
@@ -766,5 +760,7 @@ $('#fHours').innerHTML = '<span>' + esc(BIZ.address) + '</span><span>' + esc(cap
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="supra.js"></script>
+<script>(function(){var f=document.querySelector('.place-photo');if(!f||matchMedia('(prefers-reduced-motion: reduce)').matches)return;f.addEventListener('pointermove',function(e){var r=f.getBoundingClientRect();f.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*10+'deg');f.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*8+'deg');});f.addEventListener('pointerleave',function(){f.style.setProperty('--ry','0deg');f.style.setProperty('--rx','0deg');});})();</script>
 </body>
 </html>

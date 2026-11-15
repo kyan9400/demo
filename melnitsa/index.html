@@ -102,6 +102,35 @@ h1 small em{font-style:normal;font-family:var(--hand);font-weight:700;font-size:
 .plate svg{width:100%;height:auto;aspect-ratio:400/330}
 .plate figcaption{display:flex;justify-content:space-between;gap:10px;border-top:.75px solid var(--line-2);padding:8px 8px 2px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
 .plate figcaption span:last-child{text-align:end}
+/* photo hero: a deck of engraved prints with real photos */
+section.hero{overflow-x:hidden;overflow-x:clip}
+.deck{position:relative;aspect-ratio:400/330;perspective:1300px;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab;outline:none;
+  background:repeating-linear-gradient(0deg,transparent 0 4px,rgba(27,42,72,.07) 4px 5px),var(--card)}
+.deck:focus-visible{box-shadow:0 0 0 2px var(--gold)}
+.deck.grab{cursor:grabbing}
+.pc{position:absolute;inset:7% 14% 8%;margin:0;background:#FFFBF0;padding:7px;border:1.2px solid var(--ink);border-radius:3px;
+  box-shadow:0 22px 34px -22px rgba(27,42,72,.75),0 2px 0 rgba(27,42,72,.08);transform-origin:50% 100%;
+  transition:transform .65s cubic-bezier(.2,.75,.2,1),filter .65s,opacity .5s;will-change:transform;backface-visibility:hidden}
+.pc::after{content:"";position:absolute;inset:3px;border:.75px solid var(--line-2);pointer-events:none}
+.pc img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;border:.75px solid var(--ink)}
+.deck .pc.drag{transition:none}
+.deck-next{position:absolute;right:10px;bottom:10px;z-index:60;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 16px -10px rgba(27,42,72,.7)}
+.deck-next:hover{background:var(--ink);color:var(--paper)}.deck-next svg{width:20px;height:20px}
+.seal{position:absolute;z-index:70;top:-26px;right:-12px;width:clamp(78px,20vw,112px);aspect-ratio:1;border-radius:50%;overflow:hidden;background:var(--card);border:1.5px solid var(--ink);box-shadow:0 0 0 4px var(--paper),0 0 0 5.2px var(--ink),0 14px 22px -14px rgba(27,42,72,.7)}
+.plate .seal svg{width:100%;height:100%;aspect-ratio:1;display:block}
+@media(min-width:900px){.deck{aspect-ratio:1/1}}
+@media(max-width:599px){.hero .wrap{display:flex;flex-direction:column}.hero .wrap>.hero-plate{order:-1;margin:14px 6px 0!important}.seal{top:-14px;right:-8px}}
+/* place section */
+.inside{padding-bottom:40px}
+.in-grid{display:grid;gap:26px;align-items:center}
+@media(min-width:900px){.in-grid{grid-template-columns:.8fr 1.2fr;gap:60px}}
+.in-photo{margin:0;max-width:440px;transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.in-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;display:block;border:.75px solid var(--ink)}
+.strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:32px;padding:4px 2px 10px;scrollbar-width:none;overscroll-behavior-x:contain}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 auto;width:min(60vw,240px);margin:0;scroll-snap-align:start;background:#FFFBF0;border:1.2px solid var(--ink);border-radius:3px;padding:6px;box-shadow:0 18px 30px -24px rgba(27,42,72,.7)}
+.strip img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;display:block;border:.75px solid var(--ink)}
+.strip figcaption{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:8px 4px 2px}
 @media(min-width:900px){
   .hero{padding:56px 0 20px}
   .hero .wrap{grid-template-columns:1.05fr .95fr;align-items:center;gap:56px}
@@ -342,8 +371,19 @@ footer.site .wrap{display:grid;gap:22px}
           <a class="btn ghost" id="heroCall" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span id="heroPhone">Позвонить</span></a>
         </div>
       </div>
-      <figure class="plate" style="margin:0">
-        <svg id="mill" viewBox="0 0 400 330" role="img" aria-label="Гравюра: ветряная мельница среди колосьев">
+      <figure class="plate hero-plate" style="margin:0">
+        <div class="deck" id="deck" tabindex="0" aria-roledescription="колода фото" aria-label="Выпечка «Мельницы» — настоящие фото с Яндекс Карт; стрелки или свайп листают">
+          <figure class="pc" data-cap="сдобная плетёнка"><img src="img/twist.webp" alt="Сдобная плетёнка из «Мельницы»" width="834" height="834" decoding="async" fetchpriority="high" draggable="false"></figure>
+          <figure class="pc" data-cap="пирог с решёткой"><img src="img/pie-lattice.webp" alt="Пирог с решёткой из теста" width="1000" height="1000" decoding="async" draggable="false"></figure>
+          <figure class="pc" data-cap="маковая улитка"><img src="img/poppy-swirl.webp" alt="Маковая улитка" width="960" height="960" decoding="async" draggable="false"></figure>
+          <figure class="pc" data-cap="булочка-сердечко"><img src="img/heart-bun.webp" alt="Булочка-сердечко" width="960" height="960" decoding="async" draggable="false"></figure>
+          <figure class="pc" data-cap="пончики в сахарной пудре"><img src="img/donuts.webp" alt="Пончики в сахарной пудре" width="960" height="960" loading="lazy" decoding="async" draggable="false"></figure>
+          <figure class="pc" data-cap="слоёный торт"><img src="img/napoleon.webp" alt="Кусок слоёного торта" width="960" height="960" loading="lazy" decoding="async" draggable="false"></figure>
+          <figure class="pc" data-cap="тёмный хлеб-кирпичик"><img src="img/rye.webp" alt="Тёмный хлеб-кирпичик" width="960" height="960" loading="lazy" decoding="async" draggable="false"></figure>
+          <button type="button" class="deck-next" id="deckNext" aria-label="Следующее фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+        <div class="seal" aria-hidden="true">
+        <svg id="mill" viewBox="44 -44 312 312" aria-hidden="true" focusable="false">
           <defs>
             <pattern id="hz" width="4" height="3.2" patternUnits="userSpaceOnUse"><path d="M0 1.6H4" stroke="#1B2A48" stroke-width=".7"/></pattern>
             <pattern id="dg" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 2H4" stroke="#1B2A48" stroke-width=".8"/></pattern>
@@ -389,7 +429,8 @@ footer.site .wrap{display:grid;gap:22px}
           <g id="wheatL" fill="none"></g>
           <g id="wheatR" fill="none"></g>
         </svg>
-        <figcaption><span>Симферопольский бульвар, 4</span><span>своя пекарня</span></figcaption>
+        </div>
+        <figcaption><span id="deckCap">сдобная плетёнка</span><span>фото с Яндекс Карт</span></figcaption>
       </figure>
     </div>
   </section>
@@ -446,6 +487,26 @@ footer.site .wrap{display:grid;gap:22px}
           </div>
           <p class="fine">Пекарня подтвердит заказ и время в ответ. Цены взяты с Яндекс Карт — точную сумму назовут при подтверждении. Оплата наличными или картой.</p>
         </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="inside" class="inside" aria-labelledby="insideH">
+    <div class="wrap">
+      <div class="in-grid">
+        <figure class="plate in-photo"><img src="img/counter.webp" alt="Прилавок «Мельницы» с вывеской-мельницей и витринами" width="750" height="1000" loading="lazy" decoding="async"><figcaption><span>прилавок и вывеска</span><span>фото с Яндекс Карт</span></figcaption></figure>
+        <div>
+          <p class="kick"><svg viewBox="0 0 46 14" aria-hidden="true" class="ear"></svg>Пекарня изнутри</p>
+          <h2 class="t" id="insideH">Так выглядит «Мельница»</h2>
+          <p class="lede">Небольшая пекарня на Симферопольском бульваре, 4: прилавок под вывеской с мельницей, стеклянные витрины и пироги на кружевных салфетках. Здесь только настоящие фото с Яндекс Карт — без стоковых картинок.</p>
+        </div>
+      </div>
+      <div class="strip" aria-label="Фото пекарни и выпечки">
+        <figure><img src="img/facade.webp" alt="Вход в пекарню с бульвара" width="562" height="1000" loading="lazy" decoding="async"><figcaption>вход с бульвара</figcaption></figure>
+        <figure><img src="img/vitrine.webp" alt="Прилавок с выпечкой" width="868" height="868" loading="lazy" decoding="async"><figcaption>прилавок</figcaption></figure>
+        <figure><img src="img/case.webp" alt="Стеклянная витрина с выпечкой" width="1000" height="750" loading="lazy" decoding="async"><figcaption>витрина</figcaption></figure>
+        <figure><img src="img/buns-kiwi.webp" alt="Булочки-плетёнки на сланцевой доске" width="1000" height="750" loading="lazy" decoding="async"><figcaption>булочки-плетёнки</figcaption></figure>
+        <figure><img src="img/pie-cut.webp" alt="Пирог в разрезе в коробке" width="750" height="1000" loading="lazy" decoding="async"><figcaption>пирог в разрезе</figcaption></figure>
       </div>
     </div>
   </section>
@@ -904,5 +965,7 @@ window.__melnitsa = { message: message, cart: cart };
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="deck.js"></script>
+<script>(function(){var f=document.querySelector('.in-photo');if(!f||matchMedia('(prefers-reduced-motion: reduce)').matches)return;f.addEventListener('pointermove',function(e){var r=f.getBoundingClientRect();f.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*9+'deg');f.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*7+'deg');});f.addEventListener('pointerleave',function(){f.style.setProperty('--ry','0deg');f.style.setProperty('--rx','0deg');});})();</script>
 </body>
 </html>

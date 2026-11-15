@@ -392,6 +392,41 @@ h2{font-weight:800;font-size:clamp(30px,7.6vw,56px);line-height:1.02;letter-spac
 .toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--blue);color:#fff;font-size:14.5px;padding:11px 16px;border-radius:12px;z-index:40;box-shadow:0 10px 30px -10px rgba(17,22,29,.5);transition:opacity .25s,transform .25s;max-width:calc(100% - 32px);text-align:center}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 @media (min-width:900px){.toast{bottom:28px}}
+
+/* photo deck (real workshop photos from the Yandex card) */
+.xp{display:flex;flex-direction:column;gap:12px;min-width:0}.hero .wrap>*{min-width:0}
+.deck{position:relative;width:100%;aspect-ratio:1/.82;perspective:1300px;perspective-origin:50% 30%;touch-action:pan-y;user-select:none;-webkit-user-select:none;overflow:hidden;overflow:clip;margin:0 auto}
+.dk-tilt{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+.dcard{position:absolute;left:50%;top:50%;width:80%;aspect-ratio:3/2;margin:0;border-radius:14px;overflow:hidden;background:#d9dee5;box-shadow:0 30px 50px -26px rgba(17,22,29,.65),0 0 0 1px rgba(255,255,255,.55) inset;transform-origin:50% 120%;transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .7s,opacity .5s;will-change:transform;cursor:grab;backface-visibility:hidden}
+.dcard.drag{transition:none;cursor:grabbing}
+.dcard img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;color:transparent}
+.dcard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,14,20,.55));pointer-events:none}
+.dcard .fig{position:absolute;left:12px;bottom:10px;z-index:1;font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:#fff;opacity:.92}
+.dcard .crop{position:absolute;inset:8px;z-index:1;pointer-events:none;background:linear-gradient(#fff,#fff) top left/14px 1.5px,linear-gradient(#fff,#fff) top left/1.5px 14px,linear-gradient(#fff,#fff) top right/14px 1.5px,linear-gradient(#fff,#fff) top right/1.5px 14px;background-repeat:no-repeat;opacity:.75}
+.dcard .glare{position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.22) 45%,transparent 60%);background-size:250% 100%;background-position:var(--gp,100%) 0;mix-blend-mode:soft-light;pointer-events:none}
+.deck-ui{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:12.5px;color:var(--ink-2);padding:0 4px;min-height:18px}
+.deck-cap{color:var(--ink)}
+.parts{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px 2px 4px;margin:0 -2px}
+.parts::-webkit-scrollbar{display:none}
+.parts .ly{flex:0 0 auto;display:inline-flex;align-items:baseline;gap:6px;min-height:44px;padding:10px 14px;border-radius:12px;border:1px solid var(--line-2);background:var(--paper-2);font-weight:600;font-size:14.5px;transition:border-color .2s,color .2s}
+.parts .ly small{font:500 11.5px var(--mono);color:var(--ink-3)}
+.parts .ly:hover,.parts .ly:focus-visible{border-color:var(--blue);color:var(--blue)}
+@media (max-width:999px){.hero .wrap>.xp{order:-1;margin:0 auto 6px;max-width:520px;width:100%}.hero .wrap{padding-top:16px}}
+@media (max-width:599px){.deck{aspect-ratio:1/.74}.dcard{width:84%}.xp-hint{display:none}.status{min-width:0;overflow:hidden}.status span{overflow:hidden;text-overflow:ellipsis}.hdr-r{min-width:0}.logo{flex:none;white-space:nowrap}}
+@media (min-width:1000px){.parts{flex-wrap:wrap;overflow:visible}.parts .ly{min-height:40px;padding:8px 12px;font-size:14px}}
+@media (prefers-reduced-motion:reduce){.dcard{transition:none}}
+/* place section */
+.place-grid{display:grid;gap:24px;align-items:center}
+@media (min-width:900px){.place-grid{grid-template-columns:1.1fr .9fr;gap:56px}}
+.place-photo{margin:0;border-radius:20px;overflow:hidden;aspect-ratio:16/10;box-shadow:0 40px 70px -40px rgba(17,22,29,.6);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s;position:relative}
+.place-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.06)}
+.place-photo figcaption{position:absolute;left:14px;bottom:12px;font:500 11.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:30px;padding-bottom:8px;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 auto;width:min(72vw,320px);margin:0;scroll-snap-align:start}
+.strip img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;display:block;box-shadow:0 20px 40px -26px rgba(17,22,29,.55);background:var(--paper-3)}
+.strip figcaption{font:500 12px var(--mono);color:var(--ink-2);margin-top:8px;text-transform:uppercase;letter-spacing:.04em}
+.credit{font:500 12px var(--mono);color:var(--ink-3);margin-top:10px}
 </style>
 </head>
 <body>
@@ -443,103 +478,17 @@ h2{font-weight:800;font-size:clamp(30px,7.6vw,56px);line-height:1.02;letter-spac
     </div>
 
     <figure class="xp" id="xp">
-      <svg viewBox="0 0 430 430" role="group" aria-label="Разобранный телефон: нажмите на деталь, чтобы найти цену">
-        <defs>
-          <linearGradient id="gScr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a66ff"/><stop offset=".55" stop-color="#2350f0"/><stop offset="1" stop-color="#1636b0"/></linearGradient>
-          <linearGradient id="gBack" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a3340"/><stop offset="1" stop-color="#11161d"/></linearGradient>
-          <pattern id="pGrid" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M8 0H0V8" fill="none" stroke="rgba(255,255,255,.14)" stroke-width=".6"/></pattern>
-        </defs>
-        <!-- dimension marks -->
-        <g aria-hidden="true">
-          <path d="M18 70v300" stroke="#9aa3ad" stroke-width="1" stroke-dasharray="2 4"/>
-          <path d="M14 70h8M14 370h8" stroke="#9aa3ad"/>
-          <text class="dim" x="10" y="226" transform="rotate(-90 10 226)">X-R · EXPLODED VIEW · 01</text>
-        </g>
-        <!-- spine -->
-        <path d="M181 80V360" stroke="#9aa3ad" stroke-width="1" stroke-dasharray="3 5" aria-hidden="true"/>
-
-        <!-- 5: back glass + camera -->
-        <g class="ly" data-q="камера" tabindex="0" role="button" aria-label="Камера и заднее стекло — найти цену">
-          <g class="float f5"><g class="lift">
-            <g transform="translate(181,262) matrix(.866,.5,-.866,.5,0,0)">
-              <rect class="hit" x="-6" y="-6" width="104" height="196" rx="18" fill="transparent"/>
-              <rect class="edge" x="0" y="0" width="92" height="184" rx="15" fill="url(#gBack)" stroke="#11161d" stroke-width="1.4"/>
-              <rect x="9" y="9" width="36" height="36" rx="9" fill="#323c4a" stroke="#4a5666"/>
-              <circle cx="20" cy="20" r="6.5" fill="#0b0f14" stroke="#6b7889"/><circle cx="34" cy="34" r="6.5" fill="#0b0f14" stroke="#6b7889"/><circle cx="34" cy="20" r="2.5" fill="#e8ecf2" opacity=".7"/>
-              <circle cx="20" cy="20" r="2" fill="#3a66ff"/><circle cx="34" cy="34" r="2" fill="#3a66ff"/>
-            </g>
-            <path d="M262 308H286" stroke="#11161d" stroke-width="1"/><circle cx="262" cy="308" r="2.5" fill="#11161d"/>
-            <text class="lbl" x="292" y="306">Камера</text><text class="lbl-s" x="292" y="322" data-cnt="camera,back,faceid">— цен</text>
-          </g></g>
-        </g>
-
-        <!-- 4: frame + port -->
-        <g class="ly" data-q="разъем зарядки" tabindex="0" role="button" aria-label="Разъём зарядки — найти цену">
-          <g class="float f4"><g class="lift">
-            <g transform="translate(181,212) matrix(.866,.5,-.866,.5,0,0)">
-              <rect class="hit" x="-6" y="-6" width="104" height="196" rx="18" fill="transparent"/>
-              <rect class="edge" x="0" y="0" width="92" height="184" rx="15" fill="#e7ebf0" stroke="#11161d" stroke-width="1.4"/>
-              <rect x="5" y="5" width="82" height="174" rx="11" fill="#f2f4f7" stroke="#9aa3ad" stroke-width=".8"/>
-              <rect x="33" y="179" width="26" height="5" rx="2.5" fill="#2350f0"/>
-              <rect x="92" y="40" width="3" height="22" rx="1.5" fill="#11161d"/><rect x="-3" y="34" width="3" height="14" rx="1.5" fill="#11161d"/><rect x="-3" y="54" width="3" height="14" rx="1.5" fill="#11161d"/>
-            </g>
-            <path d="M262 258H286" stroke="#11161d" stroke-width="1"/><circle cx="262" cy="258" r="2.5" fill="#11161d"/>
-            <text class="lbl" x="292" y="256">Разъём</text><text class="lbl-s" x="292" y="272" data-cnt="port">— цен</text>
-          </g></g>
-        </g>
-
-        <!-- 3: battery -->
-        <g class="ly" data-q="аккумулятор" tabindex="0" role="button" aria-label="Аккумулятор — найти цену">
-          <g class="float f3"><g class="lift">
-            <g transform="translate(181,162) matrix(.866,.5,-.866,.5,0,0)">
-              <rect class="hit" x="-6" y="-6" width="104" height="196" rx="18" fill="transparent"/>
-              <rect class="edge" x="0" y="0" width="92" height="184" rx="15" fill="none" stroke="#9aa3ad" stroke-width="1" stroke-dasharray="3 4"/>
-              <rect x="14" y="52" width="64" height="104" rx="8" fill="#11161d" stroke="#11161d"/>
-              <rect x="40" y="46" width="12" height="6" rx="2" fill="#11161d"/>
-              <rect x="22" y="66" width="48" height="6" rx="3" fill="#2350f0"/>
-              <text x="24" y="100" fill="#e8ecf2" style="font:700 11px var(--mono)">Li-ion</text>
-              <path d="M24 112h44M24 120h30" stroke="#47505d" stroke-width="2" stroke-linecap="round"/>
-            </g>
-            <path d="M262 208H286" stroke="#11161d" stroke-width="1"/><circle cx="262" cy="208" r="2.5" fill="#11161d"/>
-            <text class="lbl" x="292" y="206">Аккумулятор</text><text class="lbl-s" x="292" y="222" data-cnt="battery">— цен</text>
-          </g></g>
-        </g>
-
-        <!-- 2: board -->
-        <g class="ly" data-q="не включается" tabindex="0" role="button" aria-label="Плата: не включается или после воды — найти цену">
-          <g class="float f2"><g class="lift">
-            <g transform="translate(181,112) matrix(.866,.5,-.866,.5,0,0)">
-              <rect class="hit" x="-6" y="-6" width="104" height="196" rx="18" fill="transparent"/>
-              <rect class="edge" x="0" y="0" width="92" height="184" rx="15" fill="none" stroke="#9aa3ad" stroke-width="1" stroke-dasharray="3 4"/>
-              <path d="M8 8h76v44H50v124H8z" fill="#1c6b4e" stroke="#11161d" stroke-width="1.2" stroke-linejoin="round"/>
-              <rect x="16" y="16" width="22" height="22" rx="3" fill="#11161d"/><rect x="44" y="16" width="14" height="10" rx="2" fill="#11161d"/><rect x="62" y="16" width="16" height="16" rx="2" fill="#2a3340"/>
-              <rect x="16" y="60" width="14" height="20" rx="2" fill="#11161d"/><rect x="16" y="92" width="22" height="12" rx="2" fill="#2a3340"/><rect x="18" y="140" width="16" height="16" rx="2" fill="#11161d"/>
-              <path d="M38 27h6M27 38v22M23 80v12M27 104v36" stroke="#8be0b8" stroke-width="1.2" fill="none" opacity=".85"/>
-              <circle cx="27" cy="27" r="3" fill="#3a66ff"/>
-            </g>
-            <path d="M262 158H286" stroke="#11161d" stroke-width="1"/><circle cx="262" cy="158" r="2.5" fill="#11161d"/>
-            <text class="lbl" x="292" y="156">Плата · вода</text><text class="lbl-s" x="292" y="172" data-cnt="power,water,board">— цен</text>
-          </g></g>
-        </g>
-
-        <!-- 1: screen -->
-        <g class="ly" data-q="экран" tabindex="0" role="button" aria-label="Экран — найти цену">
-          <g class="float"><g class="lift">
-            <g transform="translate(181,62) matrix(.866,.5,-.866,.5,0,0)">
-              <rect class="hit" x="-6" y="-6" width="104" height="196" rx="18" fill="transparent"/>
-              <rect class="edge" x="0" y="0" width="92" height="184" rx="15" fill="#11161d" stroke="#11161d" stroke-width="1.4"/>
-              <rect x="4" y="4" width="84" height="176" rx="12" fill="url(#gScr)"/>
-              <rect x="4" y="4" width="84" height="176" rx="12" fill="url(#pGrid)"/>
-              <rect x="34" y="10" width="24" height="7" rx="3.5" fill="#11161d"/>
-              <path d="M4 60L60 4h18L4 78z" fill="#fff" opacity=".12"/>
-              <path d="M62 120l-10 10 6 6-12 14 3 6" stroke="#fff" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
-              <path d="M52 130l-12-2M58 136l8 6" stroke="#fff" stroke-width="1" fill="none" stroke-linecap="round" opacity=".6"/>
-            </g>
-            <path d="M262 108H286" stroke="#11161d" stroke-width="1"/><circle cx="262" cy="108" r="2.5" fill="#11161d"/>
-            <text class="lbl" x="292" y="106">Экран</text><text class="lbl-s" x="292" y="122" data-cnt="screen">— цен</text>
-          </g></g>
-        </g>
-      </svg>
+      <div class="deck" id="deck" aria-label="Фото из мастерской X-Repair: листайте свайпом">
+        <noscript><img src="img/open-battery.webp" alt="Вскрытый iPhone в руках мастера" style="width:100%;border-radius:14px"></noscript>
+      </div>
+      <div class="deck-ui"><span class="deck-cap mono" id="deckCap" aria-live="polite"></span><span class="deck-n mono" id="deckN"></span></div>
+      <div class="parts" role="group" aria-label="Найти цену по детали">
+        <button type="button" class="ly" data-q="экран">Экран <small data-cnt="screen">— цен</small></button>
+        <button type="button" class="ly" data-q="аккумулятор">Аккумулятор <small data-cnt="battery">— цен</small></button>
+        <button type="button" class="ly" data-q="не включается">Плата · вода <small data-cnt="power,water,board">— цен</small></button>
+        <button type="button" class="ly" data-q="разъем зарядки">Разъём <small data-cnt="port">— цен</small></button>
+        <button type="button" class="ly" data-q="камера">Камера <small data-cnt="camera,back,faceid">— цен</small></button>
+      </div>
       <figcaption class="xp-hint">Нажмите на деталь — <b>покажем её цены</b></figcaption>
     </figure>
   </div>
@@ -633,6 +582,29 @@ h2{font-weight:800;font-size:clamp(30px,7.6vw,56px);line-height:1.02;letter-spac
         <ul class="pops" id="pops"></ul>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="sec" id="lab" aria-labelledby="lab-title">
+  <div class="wrap">
+    <div class="place-grid">
+      <figure class="place-photo"><img src="img/master.webp" alt="Мастер X-Repair за рабочим столом с инструментами" loading="lazy" width="1200" height="675"><figcaption>мастерская · рабочее место</figcaption></figure>
+      <div>
+        <div class="kicker">Мастерская</div>
+        <h2 id="lab-title">Чинят здесь, на&nbsp;Никитском</h2>
+        <p class="sub">Микроскоп, паяльная станция, антистатические коврики и перчатки — так выглядит работа в X-Repair на самом деле. Все снимки ниже — из карточки сервиса на Яндекс Картах.</p>
+      </div>
+    </div>
+    <div class="strip" aria-label="Фото сервиса X-Repair">
+      <figure><img src="img/microscope.webp" alt="Пайка под микроскопом" loading="lazy"><figcaption>пайка под микроскопом</figcaption></figure>
+      <figure><img src="img/diagnostics.webp" alt="Диагностика платы по схеме" loading="lazy"><figcaption>диагностика по схеме</figcaption></figure>
+      <figure><img src="img/workshop.webp" alt="Рабочие столы мастерской" loading="lazy"><figcaption>мастерская</figcaption></figure>
+      <figure><img src="img/preheater.webp" alt="Нагревательный стол для плат" loading="lazy"><figcaption>подогрев платы</figcaption></figure>
+      <figure><img src="img/reception.webp" alt="Стойка приёмки X-Repair" loading="lazy"><figcaption>приёмка</figcaption></figure>
+      <figure><img src="img/hall.webp" alt="Зал сервиса со стойкой X-Repair" loading="lazy"><figcaption>зал</figcaption></figure>
+      <figure><img src="img/entrance.webp" alt="Вход с Никитского бульвара, дом 5" loading="lazy"><figcaption>вход · Никитский бул., 5</figcaption></figure>
+    </div>
+    <p class="credit">фото с Яндекс Карт</p>
   </div>
 </section>
 
@@ -1363,6 +1335,7 @@ setInterval(function () { var st = openStatus(), el = $('#status'); if (st) { el
 window.XR = { state: state, message: message, search: search, rowsFor: rowsFor, modelsFor: modelsFor };
 })();
 </script>
+<script src="deck.js"></script>
 <script src="../map-fix.js" defer></script>
 </body>
 </html>

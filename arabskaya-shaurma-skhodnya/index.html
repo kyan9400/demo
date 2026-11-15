@@ -129,6 +129,31 @@ html[lang=ar] .hero h1{line-height:1.15;letter-spacing:0;font-size:clamp(42px,11
 /* arch visual */
 .archbox{position:relative;width:min(84vw,440px);margin:0 auto;aspect-ratio:4/5}
 .archbox svg{width:100%;height:100%;display:block;overflow:visible}
+/* photo-real arch: real photos inside the arch window (arch.js) */
+.archbox.has-photo{touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none;margin-bottom:46px}
+.archbox.has-photo .bread,.archbox.has-photo .steam,.archbox.has-photo .tiles{display:none}
+.aph{opacity:0;transition:opacity 1.2s ease;transform-box:fill-box;transform-origin:50% 50%;animation:akb 16s ease-in-out infinite alternate}
+.aph:nth-child(2n){animation-name:akb2}
+.aph.on{opacity:1}
+.archbox.paused .aph{animation-play-state:paused}
+@keyframes akb{from{transform:scale(1)}to{transform:scale(1.12) translate(-2%,1.5%)}}
+@keyframes akb2{from{transform:scale(1.12) translate(2%,-1%)}to{transform:scale(1)}}
+.archbox .shade{display:none}.archbox.has-photo .shade{display:inline}
+.archcap{position:absolute;left:-10%;right:-10%;top:100%;margin:10px 0 0;text-align:center;font-size:14.5px;font-weight:600;line-height:1.3;color:var(--olive-d)}
+.archcap small{display:block;font-weight:400;font-size:12px;color:var(--mut);margin-top:2px}
+@media (max-width:899px){.hero .wrap>.archbox.has-photo{order:-1;width:min(68vw,300px);margin-top:4px}.archbox.has-photo .hquote{display:none}.archbox.has-photo .plaque{inset-inline-end:-8%}.archbox.has-photo .plaque b{font-size:24px}.hero .wrap{padding-top:22px}}
+/* real place */
+.place-grid{display:grid;gap:24px;align-items:center;grid-template-columns:minmax(0,1fr)}
+@media (min-width:900px){.place-grid{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:56px}}
+.place-photo{margin:0;border-radius:200px 200px 18px 18px;overflow:hidden;aspect-ratio:4/5;max-width:420px;border:3px solid var(--sand,#E2B26B);box-shadow:0 40px 70px -40px rgba(41,38,26,.6);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.place-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.05)}
+.pstrip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:24px;padding-bottom:6px;scrollbar-width:none}
+.pstrip::-webkit-scrollbar{display:none}
+.pstrip figure{flex:0 0 auto;width:min(62vw,240px);margin:0;scroll-snap-align:start}
+.pstrip img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;display:block;box-shadow:0 18px 34px -22px rgba(41,38,26,.55)}
+.pstrip figcaption{font-size:14px;color:var(--mut);margin-top:8px}
+.credit{font-size:12.5px;color:var(--mut);margin-top:8px}
+@media (min-width:900px){.pstrip{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible}.pstrip figure{width:auto}}
 .steam path{animation:rise 6s ease-in infinite;opacity:0}
 .steam path:nth-child(2){animation-delay:2s}
 .steam path:nth-child(3){animation-delay:4s}
@@ -360,13 +385,16 @@ html[lang=ar] .wk li{font-size:13px}
           </pattern>
           <clipPath id="ac"><path d="M40 500V210C40 110 110 40 200 18 290 40 360 110 360 210V500Z"/></clipPath>
           <radialGradient id="br" cx=".45" cy=".4" r=".65"><stop offset="0" stop-color="#F0C988"/><stop offset=".7" stop-color="#E2B26B"/><stop offset="1" stop-color="#B9823E"/></radialGradient>
+          <linearGradient id="archShade" x1="0" x2="0" y1="0" y2="1"><stop offset=".55" stop-color="#232913" stop-opacity="0"/><stop offset="1" stop-color="#232913" stop-opacity=".55"/></linearGradient>
           <linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
         </defs>
         <path d="M22 500V206C22 100 100 22 200 0 300 22 378 100 378 206V500Z" fill="#2F371A"/>
         <g clip-path="url(#ac)">
-          <rect width="400" height="500" fill="url(#tp)"/>
+          <rect class="tiles" width="400" height="500" fill="url(#tp)"/>
+          <g id="archPh"></g>
+          <rect class="shade" width="400" height="500" fill="url(#archShade)"/>
           <rect class="glint" x="0" y="0" width="120" height="500" fill="url(#gl)" transform="skewX(-14)"/>
-          <ellipse cx="200" cy="470" rx="170" ry="40" fill="#232913" opacity=".55"/>
+          <ellipse class="tiles" cx="200" cy="470" rx="170" ry="40" fill="#232913" opacity=".55"/>
         </g>
         <path d="M40 500V210C40 110 110 40 200 18 290 40 360 110 360 210V500" fill="none" stroke="#E2B26B" stroke-width="3"/>
         <g class="steam" fill="none" stroke="#FBF6EC" stroke-width="5" stroke-linecap="round" opacity=".9">
@@ -374,7 +402,7 @@ html[lang=ar] .wk li{font-size:13px}
           <path d="M205 200c-12-18 12-30 0-50"/>
           <path d="M240 210c-12-18 12-30 0-50"/>
         </g>
-        <g transform="translate(200 330)">
+        <g class="bread" transform="translate(200 330)">
           <ellipse cx="0" cy="96" rx="118" ry="16" fill="#232913" opacity=".5"/>
           <circle r="112" fill="url(#br)"/>
           <circle r="112" fill="none" stroke="#B9823E" stroke-width="4"/>
@@ -456,6 +484,25 @@ html[lang=ar] .wk li{font-size:13px}
       <circle cx="150" cy="150" r="72" fill="none" stroke="#B9823E" stroke-width="3" stroke-dasharray="2 8" stroke-linecap="round"/>
       <path d="M72 92c22-20 52-30 82-28" fill="none" stroke="#FBE3B3" stroke-width="6" stroke-linecap="round" opacity=".7"/>
     </svg>
+  </div>
+</section>
+
+<section class="sec" id="place" aria-labelledby="plH">
+  <div class="wrap">
+    <div class="place-grid">
+      <figure class="place-photo"><img src="img/hall.webp" alt="Зал со столиками" loading="lazy" decoding="async"></figure>
+      <div>
+        <p class="eyebrow" data-t="plEye">Место</p>
+        <h2 class="h2" id="plH" data-t="plH">Можно взять с&nbsp;собой — <em>или сесть за&nbsp;столик</em></h2>
+        <p class="sub" data-t="plP">Так выглядит точка на Мичурина, 31: вывеска «Арабская шаурма», окно на гриль и небольшой зал со столиками. Фото из карточки на Яндекс Картах.</p>
+      </div>
+    </div>
+    <div class="pstrip" aria-label="Фото с Яндекс Карт" data-ta="plStrip">
+      <figure><img src="img/exterior.webp" alt="" loading="lazy" decoding="async"><figcaption data-t="plC1">вывеска вечером</figcaption></figure>
+      <figure><img src="img/shawarma.webp" alt="" loading="lazy" decoding="async"><figcaption data-t="plC2">шаурма в лаваше</figcaption></figure>
+      <figure><img src="img/meat-plate.webp" alt="" loading="lazy" decoding="async"><figcaption data-t="plC3">мясо с картофелем и луком</figcaption></figure>
+    </div>
+    <p class="credit" data-t="plCr">фото с Яндекс Карт</p>
   </div>
 </section>
 
@@ -552,6 +599,8 @@ var AR = {
   route: 'رسم المسار', call: 'اتصال', hrsH: 'ساعات العمل', hrsTxt: 'يوميًا، على مدار الساعة',
   mapPh: 'جارٍ تحميل الخريطة…<br>شارع ميتشورينا، 31، مبنى 3',
   fHours: 'سخودنيا، شارع ميتشورينا، 31، مبنى 3<br>على مدار الساعة، بلا عطلات', fYa: 'البطاقة على خرائط ياندكس',
+  plEye: 'المكان', plH: 'خذها معك — <em>أو اجلس إلى طاولة</em>', plP: 'هكذا يبدو المحل في شارع ميتشورينا، 31: لافتة «الشاورما العربية»، ونافذة على الشواية، وصالة صغيرة بطاولات. الصور من بطاقة المحل على خرائط ياندكس.',
+  plAlt: 'الصالة والطاولات', plStrip: 'صور من خرائط ياندكس', plC1: 'اللافتة مساءً', plC2: 'شاورما في خبز رقيق', plC3: 'لحم مع بطاطا وبصل', plCr: 'صور من خرائط ياندكس',
   fNote: 'نموذج تجريبي · مثال لموقع «الشاورما العربية» من إعداد الحسن الفرّان · ليس الموقع الرسمي.<br>الأسعار والبيانات مأخوذة من البطاقة على خرائط ياندكس وقد تختلف.',
   stickyMain: 'اطلب طلبي',
   brandAria: 'الشاورما العربية — إلى الأعلى', navAria: 'الأقسام', stickyAria: 'إجراءات سريعة', callAria: 'اتصال'
@@ -819,6 +868,9 @@ function setLang(l) {
   lb.textContent = lang === 'ar' ? 'Русский' : 'العربية'; lb.lang = lang === 'ar' ? 'ru' : 'ar';
   lb.setAttribute('aria-label', lang === 'ar' ? 'Переключить на русский' : 'التبديل إلى العربية');
   document.title = lang === 'ar' ? 'الشاورما العربية في سخودنيا — على مدار الساعة (демо)' : 'Арабская шаурма на Сходне — круглосуточно, ул. Мичурина, 31 (демо)';
+  var pa = $('.place-photo img'); if (pa) pa.alt = lang === 'ar' ? 'الصالة والطاولات' : 'Зал со столиками';
+  $$('.pstrip figure').forEach(function (f) { f.querySelector('img').alt = f.querySelector('figcaption').textContent; });
+  try { document.dispatchEvent(new Event('langchange')); } catch (e) {}
   fillWhen(); renderStatus(); renderRating(); renderStrip(); renderTiles(); renderPanel(); renderUsual(); renderPraise(); renderTq(); renderRevs(); renderFind();
 }
 window.setLang = setLang;
@@ -859,6 +911,8 @@ setLang(initial);
 setInterval(renderStatus, 30000);
 })();
 </script>
+<script src="arch.js"></script>
+<script>(function(){var f=document.querySelector('.place-photo');if(!f||matchMedia('(prefers-reduced-motion: reduce)').matches)return;f.addEventListener('pointermove',function(e){var r=f.getBoundingClientRect();f.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*10+'deg');f.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*8+'deg');});f.addEventListener('pointerleave',function(){f.style.setProperty('--ry','0deg');f.style.setProperty('--rx','0deg');});})();</script>
 <script src="../map-fix.js" defer></script>
 </body>
 </html>

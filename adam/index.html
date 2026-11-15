@@ -153,6 +153,61 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;letter-spacing:-.01em
 .glow{animation:glow 3.4s ease-in-out infinite}
 @keyframes glow{0%,100%{opacity:.55}50%{opacity:.9}}
 .paused *{animation-play-state:paused!important}
+/* cinematic photo hero (cine.js) — real photos from the Yandex Maps card */
+.hero.cine{background:var(--night);color:var(--cream);padding:0 0 34px;isolation:isolate;overflow:hidden;overflow:clip}
+.cine-bg{position:absolute;inset:0 0 auto;height:66svh;min-height:380px;max-height:620px;overflow:hidden;z-index:-1;touch-action:pan-y}
+.cine-move{position:absolute;inset:-4% 0 0;will-change:transform}
+.cf{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1.6s ease;overflow:hidden}
+.cf.on{opacity:1}
+.cf img{width:100%;height:100%;object-fit:cover;object-position:var(--ox,50%) var(--oy,50%);transform-origin:var(--ox,50%) var(--oy,50%);will-change:transform}
+.cf.on img,.cf.was img{animation:kb 11s ease-out both}
+@keyframes kb{from{transform:scale(1.02) translate3d(0,0,0)}to{transform:scale(1.14) translate3d(-1.5%,-1%,0)}}
+.cine-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(36,20,15,.55) 0%,rgba(36,20,15,0) 22%,rgba(36,20,15,0) 42%,rgba(36,20,15,.82) 78%,var(--night) 99%)}
+.hero.cine .wrap{padding-top:calc(min(max(66svh,380px),620px) - 200px)}
+.hero.cine .h1{color:#FFF8EC;text-shadow:0 2px 24px rgba(0,0,0,.45)}
+.hero.cine .h1 em{color:#F0A0A8}
+.hero.cine .kicker{color:var(--brass-l)}.hero.cine .kicker .pill{color:var(--cream)}
+.hero.cine .lead{color:var(--cream-m)}.hero.cine .lead b{color:#FFF8EC}
+.hero.cine .rate{background:rgba(255,248,236,.07);border-color:rgba(244,232,212,.22)}.hero.cine .rate .num{color:#FFF8EC}.hero.cine .rate small{color:var(--cream-m)}
+.hero.cine .btn.out{border-color:rgba(244,232,212,.55);color:var(--cream)}.hero.cine .btn.out:hover{background:var(--cream);color:var(--night)}
+.hero.cine .facts{border-top-color:rgba(244,232,212,.18)}.hero.cine .facts li{color:var(--cream-m)}.hero.cine .facts b{color:#FFF8EC}.hero.cine .facts .ic{color:var(--brass-l)}
+.cine-ui{position:absolute;top:12px;inset-inline:20px;display:flex;flex-direction:column;align-items:flex-start;gap:0;pointer-events:none}
+.cine-cap{margin:0;font:600 12.5px/1.3 var(--sans);color:#FFF8EC;background:rgba(36,20,15,.5);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(244,232,212,.2);padding:7px 12px;border-radius:99px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cine-cap small{font-weight:500;color:var(--brass-l);margin-inline-end:8px;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+[dir=rtl] .cine-cap small{letter-spacing:0;font-size:12px;text-transform:none}
+.cine-dots{display:flex;gap:0;pointer-events:auto}
+.cine-dots button{width:44px;height:44px;border:0;background:none;padding:0;cursor:pointer;display:grid;place-items:center}
+.cine-dots button i{display:block;width:28px;height:3px;border-radius:3px;background:rgba(255,248,236,.35);overflow:hidden;position:relative}
+.cine-dots button i::after{content:"";position:absolute;inset:0;background:#FFF8EC;transform:scaleX(0);transform-origin:0 50%}
+[dir=rtl] .cine-dots button i::after{transform-origin:100% 50%}
+.cine-dots button.on i::after{animation:prog var(--dur,6.5s) linear forwards}
+.cine.static .cine-dots button.on i::after,.cine.paused .cine-dots button.on i::after{animation:none;transform:none}
+@keyframes prog{to{transform:none}}
+.hero.cine .wrap>div:first-child{position:relative}
+@media (min-width:900px){
+  .hero.cine{padding:0;min-height:min(calc(100svh - 100px),780px);display:flex;align-items:center}
+  .hero.cine .wrap{padding-top:70px;padding-bottom:70px;grid-template-columns:minmax(0,600px) 1fr}
+  .cine-bg{inset:0;height:auto;max-height:none}
+  .cine-move{inset:-6% 0 -2%}
+  .cine-shade{background:linear-gradient(90deg,rgba(28,15,11,.95) 0%,rgba(28,15,11,.86) 40%,rgba(28,15,11,.2) 70%,rgba(28,15,11,.05) 100%),linear-gradient(0deg,rgba(28,15,11,.6),transparent 30%)}
+  [dir=rtl] .cine-shade{background:linear-gradient(270deg,rgba(28,15,11,.95) 0%,rgba(28,15,11,.86) 40%,rgba(28,15,11,.2) 70%,rgba(28,15,11,.05) 100%),linear-gradient(0deg,rgba(28,15,11,.6),transparent 30%)}
+  .cine-ui{top:30px;inset-inline:auto 20px;align-items:flex-end}
+  .cine-cap{max-width:360px}
+}
+/* the real place (hall section) */
+.hall-grid{display:grid;gap:26px;align-items:center}
+@media (min-width:900px){.hall-grid{grid-template-columns:1.1fr .9fr;gap:56px}}
+.hall-photo{margin:0;border-radius:200px 200px 22px 22px;overflow:hidden;aspect-ratio:4/4.3;box-shadow:0 40px 70px -40px rgba(42,27,21,.6),0 0 0 6px var(--card),0 0 0 7px var(--brass-l);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .25s ease-out;max-width:560px;width:100%;margin-inline:auto}
+.hall-photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.06)}
+.sec-h .hall-q{font:italic 500 20px/1.4 var(--serif);color:var(--ink);margin:18px 0 0;padding-inline-start:16px;border-inline-start:3px solid var(--brass)}
+[dir=rtl] .sec-h .hall-q{font-style:normal;font-size:18px}
+.strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:34px;padding-bottom:8px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.strip::-webkit-scrollbar{display:none}
+@media (max-width:899px){.strip{-webkit-mask:linear-gradient(90deg,#000 82%,transparent);mask:linear-gradient(90deg,#000 82%,transparent)}[dir=rtl] .strip{-webkit-mask:linear-gradient(270deg,#000 82%,transparent);mask:linear-gradient(270deg,#000 82%,transparent)}}
+.strip figure{flex:0 0 auto;margin:0;width:min(62vw,250px);scroll-snap-align:start}
+.strip img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;box-shadow:0 20px 40px -26px rgba(42,27,21,.55)}
+.strip figcaption{font-size:13.5px;color:var(--muted);margin-top:8px}
+.credit{font-size:12.5px;color:var(--muted);margin:10px 0 0}
 @media (max-width:699px){.mz-it .ds{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.pk blockquote{font-size:17px}.pk h3{font-size:23px}}
 
 /* sections */
@@ -447,8 +502,16 @@ textarea.inp{min-height:76px;resize:vertical}
 </header>
 
 <main id="top">
-  <section class="hero" aria-labelledby="h1">
-    <div class="wm" aria-hidden="true"></div>
+  <section class="hero cine" id="hero" aria-labelledby="h1">
+    <div class="cine-bg" id="cineBg" aria-hidden="true">
+      <div class="cine-move" id="cineMove">
+        <figure class="cf on" style="--ox:50%;--oy:45%"><img src="img/meze-spread.webp" alt="" width="1280" height="853" fetchpriority="high" decoding="async"></figure>
+        <figure class="cf" style="--ox:50%;--oy:40%"><img src="img/hall-arch.webp" alt="" width="1280" height="853" loading="lazy" decoding="async"></figure>
+        <figure class="cf" style="--ox:55%;--oy:55%"><img src="img/breakfast.webp" alt="" width="1200" height="900" loading="lazy" decoding="async"></figure>
+        <figure class="cf" style="--ox:50%;--oy:50%"><img src="img/meze-platter.webp" alt="" width="900" height="1200" loading="lazy" decoding="async"></figure>
+      </div>
+      <div class="cine-shade"></div>
+    </div>
     <div class="wrap">
       <div>
         <div class="kicker"><span class="pill" id="heroStatus"><i></i><span></span></span><span class="dot"></span><span data-t="heroKicker"></span></div>
@@ -464,87 +527,9 @@ textarea.inp{min-height:76px;resize:vertical}
         </div>
         <ul class="facts" id="facts"></ul>
       </div>
-      <div class="arch" id="archBox">
-        <svg viewBox="0 0 400 540" role="img" id="archSvg">
-          <title id="archTitle"></title>
-          <defs>
-            <pattern id="zel" width="40" height="40" patternUnits="userSpaceOnUse">
-              <rect width="40" height="40" fill="#EADCC3"/>
-              <g fill="none" stroke="#C29A4B" stroke-opacity=".55" stroke-width="1">
-                <rect x="12" y="12" width="16" height="16"/><rect x="12" y="12" width="16" height="16" transform="rotate(45 20 20)"/>
-                <path d="M0 0l8 8M40 0l-8 8M0 40l8-8M40 40l-8-8"/>
-              </g>
-              <circle cx="20" cy="20" r="2.4" fill="#9B1D33" fill-opacity=".5"/>
-            </pattern>
-            <linearGradient id="niche" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E1A14"/><stop offset="1" stop-color="#4A2A1F"/></linearGradient>
-            <radialGradient id="lamp" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#F6D78F" stop-opacity=".75"/><stop offset="1" stop-color="#F6D78F" stop-opacity="0"/></radialGradient>
-            <linearGradient id="brassG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E4C88B"/><stop offset=".5" stop-color="#C29A4B"/><stop offset="1" stop-color="#8E6A2A"/></linearGradient>
-            <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FB3B0"/><stop offset="1" stop-color="#3F7C7A"/></linearGradient>
-            <clipPath id="archClip"><path d="M48 540V250C48 140 120 66 200 30c80 36 152 110 152 220v290z"/></clipPath>
-            <symbol id="pt" viewBox="-10 -10 20 20"><path d="M0-8C6-7 9-1 6 4 4 7 0 8 0 8S-4 7-6 4C-9-1-6-7 0-8z"/><path d="M0-6C0-1 0 3 0 7" stroke="#fff" stroke-opacity=".25" stroke-width=".8" fill="none"/></symbol>
-          </defs>
-          <!-- outer tiled frame -->
-          <path d="M20 540V246C20 122 104 36 200 0c96 36 180 122 180 246v294z" fill="url(#zel)"/>
-          <path d="M20 540V246C20 122 104 36 200 0c96 36 180 122 180 246v294z" fill="none" stroke="#C29A4B" stroke-width="2"/>
-          <path d="M38 540V250C38 134 114 56 200 20c86 36 162 114 162 230v290z" fill="none" stroke="#9B1D33" stroke-width="2.5"/>
-          <!-- niche -->
-          <path d="M48 540V250C48 140 120 66 200 30c80 36 152 110 152 220v290z" fill="url(#niche)"/>
-          <g clip-path="url(#archClip)">
-            <circle class="glow" cx="200" cy="170" r="130" fill="url(#lamp)"/>
-            <!-- lattice window (mashrabiya) -->
-            <g opacity=".22" stroke="#E4C88B" fill="none" stroke-width="1">
-              <path d="M110 120h180M110 150h180M110 180h180M110 210h180M110 240h180M110 270h180"/>
-              <path d="M110 110l170 170M140 110l150 150M170 110l120 120M110 140l140 140M110 170l110 110M290 110L120 280M260 110L110 260M230 110L110 230M290 140L150 280M290 170L180 280"/>
-            </g>
-            <!-- lantern -->
-            <g class="lantern">
-              <path d="M200 30v52" stroke="#C29A4B" stroke-width="1.6"/>
-              <path d="M186 82h28l6 10h-40z" fill="url(#brassG)"/>
-              <path d="M180 92h40l-6 50h-28z" fill="#F6D78F" fill-opacity=".85"/>
-              <path d="M180 92h40l-6 50h-28z" fill="none" stroke="url(#brassG)" stroke-width="2.4"/>
-              <path d="M193 92v50M207 92v50M182 108h36M184 124h32" stroke="#8E6A2A" stroke-width="1.4"/>
-              <path d="M186 142h28l-6 10h-16z" fill="url(#brassG)"/>
-              <circle cx="200" cy="157" r="3" fill="#C29A4B"/>
-            </g>
-            <!-- falling petals -->
-            <use href="#pt" class="petal" x="120" y="110" width="16" height="16" fill="#C2334B"/>
-            <use href="#pt" class="petal p2" x="250" y="90" width="13" height="13" fill="#D9566A"/>
-            <use href="#pt" class="petal p3" x="290" y="150" width="15" height="15" fill="#A8233A"/>
-            <use href="#pt" class="petal p4" x="160" y="70" width="12" height="12" fill="#E07B88"/>
-          </g>
-          <!-- fountain -->
-          <g>
-            <ellipse cx="200" cy="520" rx="150" ry="16" fill="#1A0D09" opacity=".35"/>
-            <!-- basin body: octagonal tiled -->
-            <path d="M64 430h272l-14 92H78z" fill="url(#zel)"/>
-            <path d="M64 430h272l-14 92H78z" fill="none" stroke="#C29A4B" stroke-width="2"/>
-            <path d="M78 450h244M80 500h240" stroke="#9B1D33" stroke-width="2" opacity=".7"/>
-            <!-- water surface -->
-            <ellipse cx="200" cy="430" rx="138" ry="20" fill="url(#water)"/>
-            <ellipse cx="200" cy="430" rx="138" ry="20" fill="none" stroke="#E4C88B" stroke-width="3"/>
-            <ellipse class="ripple" cx="200" cy="432" rx="90" ry="12" fill="none" stroke="#DCEFEA" stroke-width="1.4"/>
-            <ellipse class="ripple r2" cx="200" cy="432" rx="90" ry="12" fill="none" stroke="#DCEFEA" stroke-width="1.4"/>
-            <!-- column + top bowl -->
-            <path d="M192 432V372h16v60" fill="url(#brassG)"/>
-            <path d="M158 366h84c-6 14-22 20-42 20s-36-6-42-20z" fill="url(#brassG)"/>
-            <ellipse cx="200" cy="366" rx="42" ry="6" fill="#5E9A97"/>
-            <path d="M196 366v-18h8v18" fill="url(#brassG)"/>
-            <!-- jets -->
-            <g fill="none" stroke="#CFE8E4" stroke-width="2.2" stroke-linecap="round">
-              <path class="jet" d="M200 348c-10-30-40-30-52 18"/>
-              <path class="jet" d="M200 348c10-30 40-30 52 18"/>
-              <path class="jet" d="M160 384c-14 10-22 24-26 44"/>
-              <path class="jet" d="M240 384c14 10 22 24 26 44"/>
-            </g>
-            <!-- floating petals -->
-            <use href="#pt" class="float" x="112" y="420" width="16" height="16" fill="#C2334B"/>
-            <use href="#pt" class="float f2" x="150" y="430" width="13" height="13" fill="#E07B88"/>
-            <use href="#pt" class="float f3" x="240" y="424" width="15" height="15" fill="#A8233A"/>
-            <use href="#pt" class="float" x="276" y="430" width="12" height="12" fill="#D9566A"/>
-            <use href="#pt" class="float f2" x="200" y="437" width="11" height="11" fill="#C2334B"/>
-          </g>
-        </svg>
-        <p class="arch-cap" id="archCap"></p>
+      <div class="cine-ui" id="cineUi">
+        <p class="cine-cap"><small><span class="ru-only">фото с Яндекс Карт</span><span class="ar-only">صور من خرائط ياندكس</span></small><span id="cineCap"></span></p>
+        <div class="cine-dots" id="cineDots"></div>
       </div>
     </div>
   </section>
@@ -603,6 +588,31 @@ textarea.inp{min-height:76px;resize:vertical}
       </div>
       <ul class="items" id="items"></ul>
       <div class="more"><button class="btn out" type="button" id="moreBtn" hidden></button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="hall" aria-labelledby="hlH">
+    <div class="wrap">
+      <div class="hall-grid">
+        <figure class="hall-photo" id="hallPhoto"><img src="img/hall.webp" alt="Зал ресторана «Адам»: арка, латунные лампы, открытая кухня" data-alt-ru="Зал ресторана «Адам»: арка, латунные лампы, открытая кухня" data-alt-ar="صالة مطعم «آدم»: قوس ومصابيح نحاسية ومطبخ مفتوح" loading="lazy" decoding="async"></figure>
+        <div class="sec-h">
+          <div class="kicker"><span class="ru-only">Большая Грузинская, 76 · как есть</span><span class="ar-only">بولشايا غروزينسكايا، 76 · كما هو</span></div>
+          <h2 id="hlH"><span class="ru-only">Так выглядит <em>зал</em></span><span class="ar-only">هكذا تبدو <em>الصالة</em></span></h2>
+          <p><span class="ru-only">Арки, бирюзовые полосы на стенах, латунные лампы и инкрустированные столики — без ретуши, настоящие фото с Яндекс Карт.</span><span class="ar-only">أقواس وخطوط فيروزية على الجدران ومصابيح نحاسية وطاولات مطعّمة — صور حقيقية من خرائط ياندكس دون تعديل.</span></p>
+          <p class="hall-q" id="hallQ"></p>
+        </div>
+      </div>
+      <div class="strip" id="hallStrip" tabindex="0" aria-label="Фото ресторана">
+        <figure><img src="img/facade.webp" alt="вход и летняя веранда" data-alt-ru="вход и летняя веранда" data-alt-ar="المدخل والشرفة الصيفية" loading="lazy" decoding="async"><figcaption><span class="ru-only">вход и летняя веранда</span><span class="ar-only">المدخل والشرفة الصيفية</span></figcaption></figure>
+        <figure><img src="img/hall-tables.webp" alt="зал с мозаичными столиками" data-alt-ru="зал с мозаичными столиками" data-alt-ar="الصالة وطاولات الفسيفساء" loading="lazy" decoding="async"><figcaption><span class="ru-only">зал с мозаичными столиками</span><span class="ar-only">الصالة وطاولات الفسيفساء</span></figcaption></figure>
+        <figure><img src="img/tea-set.webp" alt="чай на инкрустированном столике" data-alt-ru="чай на инкрустированном столике" data-alt-ar="شاي على طاولة مطعّمة" loading="lazy" decoding="async"><figcaption><span class="ru-only">чай на инкрустированном столике</span><span class="ar-only">شاي على طاولة مطعّمة</span></figcaption></figure>
+        <figure><img src="img/coffee-sand.webp" alt="кофе в турке" data-alt-ru="кофе в турке" data-alt-ar="قهوة في الركوة" loading="lazy" decoding="async"><figcaption><span class="ru-only">кофе в турке</span><span class="ar-only">قهوة في الركوة</span></figcaption></figure>
+        <figure><img src="img/mezze-trio.webp" alt="мезе и закуски" data-alt-ru="мезе и закуски" data-alt-ar="مازة ومقبلات" loading="lazy" decoding="async"><figcaption><span class="ru-only">мезе и закуски</span><span class="ar-only">مازة ومقبلات</span></figcaption></figure>
+        <figure><img src="img/falafel.webp" alt="фалафель" data-alt-ru="фалафель" data-alt-ar="فلافل" loading="lazy" decoding="async"><figcaption><span class="ru-only">фалафель</span><span class="ar-only">فلافل</span></figcaption></figure>
+        <figure><img src="img/salad.webp" alt="салат с гранатом" data-alt-ru="салат с гранатом" data-alt-ar="سلطة بالرمان" loading="lazy" decoding="async"><figcaption><span class="ru-only">салат с гранатом</span><span class="ar-only">سلطة بالرمان</span></figcaption></figure>
+        <figure><img src="img/tea-pour.webp" alt="чай из латунного чайника" data-alt-ru="чай из латунного чайника" data-alt-ar="شاي من إبريق نحاسي" loading="lazy" decoding="async"><figcaption><span class="ru-only">чай из латунного чайника</span><span class="ar-only">شاي من إبريق نحاسي</span></figcaption></figure>
+      </div>
+      <p class="credit"><span class="ru-only">фото с Яндекс Карт · листайте вбок</span><span class="ar-only">صور من خرائط ياندكس · اسحب جانبًا</span></p>
     </div>
   </section>
 
@@ -1257,8 +1267,7 @@ function renderHero() {
   if (bill) f.push('<li>' + IC.coin + '<span><b>' + esc(bill.replace(/ ₽$/, NB + '₽')) + '</b>' + esc(t('fBill')) + '</span></li>');
   if (feat('халяль')) f.push('<li>' + IC.star + '<span><b>' + esc(t('fHalal')) + '</b>' + esc(t('fHalalS')) + '</span></li>');
   $('#facts').innerHTML = f.join('');
-  $('#archTitle').textContent = t('archTitle');
-  $('#archCap').textContent = t('archCap');
+  $('#hallQ').textContent = t('archCap');
 }
 
 /* ---------- drawer / order ---------- */
@@ -1352,8 +1361,6 @@ function observeReveal(instant) {
 }
 if ('IntersectionObserver' in window) {
   io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -6% 0px' });
-  var pio = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('paused', !e.isIntersecting); }); });
-  pio.observe($('#archBox'));
 }
 setTimeout(function () { $$('.rv').forEach(function (el) { el.classList.add('in'); }); }, 2500);
 
@@ -1454,5 +1461,6 @@ setInterval(function () { renderStatus(); renderWeek(); }, 30000);
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="cine.js"></script>
 </body>
 </html>

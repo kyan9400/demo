@@ -93,7 +93,7 @@ svg{display:block}
 .rib.ink{background:var(--ink)}
 
 /* hero */
-.hero{padding:22px 0 30px;position:relative}
+.hero{padding:22px 0 30px;position:relative;overflow-x:hidden;overflow-x:clip}
 .hero-g{display:grid;gap:18px}
 .hero-g > div:first-child{position:relative}
 .h-sw{position:absolute;top:34px;right:0;width:min(25vw,104px);height:auto;animation:bob 5s ease-in-out infinite}
@@ -121,6 +121,29 @@ svg{display:block}
 .quote1 q{font-style:italic}
 .quote1 span{display:block;font-size:13px;color:var(--mute);margin-top:4px}
 
+/* hero photo board: real tattoos from the salon's Yandex card, pinned to the flash sheet at different depths */
+.pin{position:relative;aspect-ratio:1/1.02;perspective:1100px;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.pin3d{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+.tp{position:absolute;margin:0;padding:6px 6px 22px;background:#fffaf0;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);transform:translate3d(0,0,var(--z,0px)) rotate(var(--r,0deg)) scale(var(--s,1));transition:transform .6s cubic-bezier(.2,1.2,.4,1),box-shadow .4s;will-change:transform;cursor:pointer}
+.tp img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;filter:saturate(1.08) contrast(1.04)}
+.tp figcaption{position:absolute;left:0;right:0;bottom:4px;text-align:center;font:600 11px/1 var(--cond);letter-spacing:.18em;color:var(--red)}
+.tp::before{content:"";position:absolute;top:-9px;left:50%;width:46%;height:16px;margin-left:-23%;background:rgba(232,220,190,.82);border:1px solid rgba(27,23,20,.12);transform:rotate(-3deg);z-index:1}
+.tp.on{box-shadow:8px 10px 0 var(--ink)}
+.p1{left:30%;top:16%;width:40%;--r:-2deg;--z:70px;z-index:5}
+.p2{left:2%;top:3%;width:30%;--r:-8deg;--z:25px;z-index:3}
+.p3{left:68%;top:2%;width:30%;--r:7deg;--z:40px;z-index:3}
+.p4{left:4%;top:53%;width:29%;--r:6deg;--z:45px;z-index:4}
+.p5{left:67%;top:52%;width:30%;--r:-6deg;--z:15px;z-index:2}
+.tp.on{--s:1.06;z-index:9}
+.pin-sw{position:absolute;width:19%;height:auto;transform:translateZ(110px);pointer-events:none;z-index:10}
+.pin-sw.s1{left:30%;top:-2%}
+.pin-sw.s2{left:52%;top:79%;transform:translateZ(110px) scaleX(-1)}
+.pin-rib{position:absolute;left:50%;bottom:-1%;transform:translate3d(-50%,0,120px) rotate(-3deg);white-space:nowrap;z-index:11;pointer-events:none;font-size:11.5px}
+.pin-cap{margin:30px 0 0;text-align:center;font-size:14.5px;color:var(--ink-2)}
+.pin-cap b{font:600 13px/1 var(--cond);letter-spacing:.14em;color:var(--red)}
+.pin-cap small{color:var(--mute);font-size:12.5px}
+@media (max-width:899px){.hero-g>.art{order:-1;max-width:400px}.hero{padding-top:14px}}
+@media (prefers-reduced-motion:reduce){.tp{transition:none}}
 /* hero art */
 .art{position:relative;max-width:470px;width:100%;margin:0 auto}
 .art .frame{position:relative;border:2px solid var(--ink);background:var(--paper-hi);padding:10px;box-shadow:6px 6px 0 var(--ink)}
@@ -128,7 +151,7 @@ svg{display:block}
 .art svg.comp{width:100%;height:auto;overflow:visible}
 .art .tag{position:absolute;font:600 11px/1 var(--cond);letter-spacing:.2em;text-transform:uppercase;background:var(--paper-hi);padding:0 6px}
 .art .tag.a{top:-7px;left:18px}
-.art .tag.b{bottom:-7px;right:18px;color:var(--red)}
+.art .tag.b{top:-7px;right:18px;color:var(--red)}
 .st1{animation:stamp .7s cubic-bezier(.2,1.4,.4,1) backwards}
 @keyframes stamp{from{opacity:0;transform:scale(1.25) rotate(-4deg)}}
 .st1{transform-box:fill-box;transform-origin:center}
@@ -138,6 +161,18 @@ svg{display:block}
 .tw{animation:tw 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
 @keyframes tw{50%{transform:scale(.6);opacity:.5}}
 .paused,.paused *{animation-play-state:paused!important}
+
+/* real studio */
+.st-grid{display:grid;gap:24px;align-items:center;grid-template-columns:minmax(0,1fr)}
+@media (min-width:900px){.st-grid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px}}
+.st-photo{margin:0;width:100%;max-width:420px;aspect-ratio:4/5;border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink);background:var(--paper-hi);padding:8px;transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.st-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.st-cred{font:600 11.5px/1 var(--cond)!important;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)!important;margin-top:16px!important}
+.strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:28px;padding:4px 6px 12px 2px;scrollbar-width:none;overscroll-behavior-x:contain}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 auto;width:min(58vw,240px);margin:0;scroll-snap-align:start;background:#fffaf0;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:6px}
+.strip img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.strip figcaption{font:600 11.5px/1.2 var(--cond);letter-spacing:.14em;text-transform:uppercase;color:var(--red);text-align:center;padding:8px 0 2px}
 
 /* sections */
 .sec{padding:52px 0}
@@ -474,32 +509,22 @@ svg{display:block}
 
     <div class="art" id="art">
       <div class="frame">
-        <svg class="comp" viewBox="0 0 400 380" role="img" aria-label="Флэш-лист: сердце с кинжалом и лентой, ласточки, роза и звезда">
-          <g class="st1" style="animation-delay:.05s"><use href="#m-dagger" x="91" y="6" width="218" height="326"/></g>
-          <g class="st1" style="animation-delay:.25s">
-            <svg x="96" y="98" width="208" height="208" viewBox="0 0 100 100" overflow="visible">
-              <path class="o" d="M3 50L16 45L16 63L3 67L10 58Z"/>
-              <path class="o" d="M97 50L84 45L84 63L97 67L90 58Z"/>
-              <path class="r" d="M50 90C22 70 8 54 8 35C8 20 18 10 31 10C40 10 46 15 50 23C54 15 60 10 69 10C82 10 92 20 92 35C92 54 78 70 50 90Z"/>
-              <path class="hl" d="M19 31C19 24 24 18 31 18"/>
-              <path class="o" d="M12 44Q50 35 88 44L88 61Q50 52 12 61Z"/>
-              <path id="bnr" d="M15 55Q50 46.5 85 55" fill="none"/>
-              <text font-family="Oswald,Arial Narrow,sans-serif" font-weight="700" font-size="7.3" letter-spacing=".7" fill="#1b1714"><textPath href="#bnr" startOffset="50%" text-anchor="middle">КРУГЛОСУТОЧНО</textPath></text>
-            </svg>
-          </g>
-          <g class="bob"><g class="st1" style="animation-delay:.5s"><use href="#m-swallow" x="6" y="18" width="118" height="118"/></g></g>
-          <g class="bob b2"><g class="st1" style="animation-delay:.62s"><use href="#m-swallow" x="-394" y="18" width="118" height="118" transform="scale(-1 1)"/></g></g>
-          <g class="st1" style="animation-delay:.8s"><use href="#m-rose" x="4" y="252" width="118" height="118"/></g>
-          <g class="st1" style="animation-delay:.92s"><use href="#m-star" x="292" y="262" width="96" height="96"/></g>
-          <use class="tw" href="#m-spark" x="166" y="20" width="16" height="16"/>
-          <use class="tw" href="#m-spark" x="352" y="168" width="14" height="14" style="animation-delay:-1s"/>
-          <use class="tw" href="#m-spark" x="34" y="178" width="13" height="13" style="animation-delay:-2s"/>
-          <use class="tw" href="#m-spark" x="232" y="350" width="14" height="14" style="animation-delay:-1.5s"/>
-          <circle cx="140" cy="350" r="3.4" fill="#1b1714"/><circle cx="262" cy="28" r="3" fill="#1b1714"/><circle cx="380" cy="136" r="2.6" fill="#1b1714"/><circle cx="20" cy="232" r="2.6" fill="#1b1714"/>
-        </svg>
+        <div class="pin" id="pin">
+          <div class="pin3d" id="pin3d">
+            <figure class="tp p1" data-n="1" data-c="сердце с кинжалом и лентой"><img src="img/heart-dagger.webp" alt="Цветная олдскул-татуировка: сердце, кинжал и лента на руке" width="750" height="1000" fetchpriority="high" decoding="async"><figcaption>№ 1</figcaption></figure>
+            <figure class="tp p2" data-n="2" data-c="кошка с цветами, графика"><img src="img/lion.webp" alt="Графичная татуировка: кошка с глазом и цветами на предплечье" width="750" height="1000" decoding="async"><figcaption>№ 2</figcaption></figure>
+            <figure class="tp p3" data-n="3" data-c="цветной дракон"><img src="img/dragon.webp" alt="Цветная татуировка дракона на руке" width="750" height="1000" decoding="async"><figcaption>№ 3</figcaption></figure>
+            <figure class="tp p4" data-n="4" data-c="красное и чёрное"><img src="img/redblack.webp" alt="Татуировка в красном и чёрном на предплечье" width="750" height="1000" loading="lazy" decoding="async"><figcaption>№ 4</figcaption></figure>
+            <figure class="tp p5" data-n="5" data-c="крыло"><img src="img/wings.webp" alt="Чёрно-серая татуировка крыла на предплечье" width="750" height="1000" loading="lazy" decoding="async"><figcaption>№ 5</figcaption></figure>
+            <svg class="pin-sw s1" viewBox="0 0 100 100" aria-hidden="true"><use href="#m-swallow"/></svg>
+            <svg class="pin-sw s2" viewBox="0 0 100 100" aria-hidden="true"><use href="#m-swallow"/></svg>
+            <span class="rib pin-rib">настоящие работы салона</span>
+          </div>
+        </div>
+        <span class="tag a">Лист № 1 · Guts</span>
+        <span class="tag b">Кусковская, 19</span>
       </div>
-      <span class="tag a">Лист № 1 · Guts</span>
-      <span class="tag b">Кусковская, 19</span>
+      <p class="pin-cap" id="pinCap" aria-live="polite"><b>№ 1</b> <span>сердце с кинжалом и лентой</span> <small>· фото с Яндекс Карт</small></p>
     </div>
   </div>
 </section>
@@ -591,6 +616,28 @@ svg{display:block}
         <div class="extras" id="extras"></div>
         <p class="pay" id="pay"></p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec studio" id="studio" aria-labelledby="studioH">
+  <div class="wrap">
+    <div class="st-grid">
+      <figure class="st-photo"><img src="img/workspace.webp" alt="Рабочее место мастера: кушетка, подлокотник, кольцевая лампа у окна" width="580" height="750" loading="lazy" decoding="async"></figure>
+      <div class="sec-h">
+        <span class="rib ink">Студия</span>
+        <h2 id="studioH">Настоящие <em>работы</em> и&nbsp;кабинет</h2>
+        <p>Никаких стоковых картинок: кабинет на&nbsp;Кусковской и&nbsp;татуировки из&nbsp;карточки салона на&nbsp;Яндекс Картах. Свежие — ещё под плёнкой.</p>
+        <p class="st-cred">фото с Яндекс Карт</p>
+      </div>
+    </div>
+    <div class="strip" aria-label="Работы салона">
+      <figure><img src="img/ghost.webp" alt="Татуировка призрака на голени" loading="lazy" decoding="async"><figcaption>призрак, голень</figcaption></figure>
+      <figure><img src="img/sleeve.webp" alt="Чёрно-красный рукав по всей руке" loading="lazy" decoding="async"><figcaption>рукав</figcaption></figure>
+      <figure><img src="img/sleeve2.webp" alt="Графичная татуировка воина на предплечье" loading="lazy" decoding="async"><figcaption>графика, предплечье</figcaption></figure>
+      <figure><img src="img/eyes.webp" alt="Реалистичная чёрно-белая татуировка глаз под плёнкой" loading="lazy" decoding="async"><figcaption>реализм, под плёнкой</figcaption></figure>
+      <figure><img src="img/forearm.webp" alt="Татуировка аниме-персонажа на предплечье" loading="lazy" decoding="async"><figcaption>аниме-портрет</figcaption></figure>
+      <figure><img src="img/chair.webp" alt="Кабинет: кушетка и стул мастера" loading="lazy" decoding="async"><figcaption>кабинет</figcaption></figure>
     </div>
   </div>
 </section>
@@ -1010,5 +1057,7 @@ boot();
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="pin.js"></script>
+<script>(function(){var f=document.querySelector('.st-photo');if(!f||matchMedia('(prefers-reduced-motion: reduce)').matches)return;f.addEventListener('pointermove',function(e){var r=f.getBoundingClientRect();f.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*10+'deg');f.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*8+'deg');});f.addEventListener('pointerleave',function(){f.style.setProperty('--ry','0deg');f.style.setProperty('--rx','0deg');});})();</script>
 </body>
 </html>

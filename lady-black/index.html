@@ -78,7 +78,7 @@ svg{display:block}
 
 /* header */
 .top{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:1240px;margin:0 auto;padding:14px 16px 4px}
-.mark{display:inline-flex;align-items:baseline;gap:6px;min-height:44px;text-decoration:none;font:italic 700 25px/44px var(--serif);letter-spacing:-.01em}
+.mark{display:inline-flex;align-items:baseline;gap:6px;min-height:44px;text-decoration:none;font:italic 700 25px/44px var(--serif);letter-spacing:-.01em;white-space:nowrap;flex:none}
 .mark i{display:inline-block;width:7px;height:7px;background:var(--red);border-radius:50%;transform:translateY(-2px)}
 .nav{display:none}
 .status{display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:6px 12px;border:1px solid var(--line-2);font:500 12.5px/1.2 var(--mono);white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis}
@@ -269,6 +269,39 @@ h1{font-weight:400}
   .card .btns{grid-template-columns:1fr 1fr}
   .who{grid-template-columns:1fr 1fr;gap:34px}
 }
+
+/* ---------- photo-real hero: depth collage of real photos (Yandex Maps card) ---------- */
+section.hero{overflow-x:hidden;overflow-x:clip}
+.hero-art.has-photos{background:none;border:0;padding:0}
+.hero-art.has-photos svg.flat,.hero-art.has-photos .tagline{display:none}
+.depth{position:relative;aspect-ratio:1/1.02;max-width:520px;margin:0 auto;perspective:1000px;touch-action:pan-y}
+.layer{position:absolute;margin:0;background:var(--white);padding:6px 6px 0;box-shadow:0 24px 40px -22px rgba(0,0,0,.55);outline:1px solid var(--line);will-change:transform;transition:box-shadow .3s}
+.layer img{display:block;width:100%;object-fit:cover;background:#e8e8e4}
+.layer figcaption{display:flex;align-items:center;gap:7px;padding:7px 2px 8px;font:500 11px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.layer figcaption::before{content:"";flex:none;width:14px;border-top:2px solid var(--red)}
+.l-a{right:0;top:0;width:66%}.l-a img{aspect-ratio:3/4}
+.l-b{left:0;bottom:0;width:44%;z-index:3}.l-b img{aspect-ratio:3/4}
+.l-c{left:4%;top:2%;width:31%;z-index:2}
+.l-a figcaption{justify-content:flex-end}.l-a figcaption::before{order:1}.l-c img{aspect-ratio:1/1}
+.depth-credit{position:absolute;right:0;bottom:-2px;font:500 11px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--grey);max-width:48%;text-align:right}
+@media (max-width:899px){.hero-grid{display:flex;flex-direction:column;gap:26px}.hero-grid>.hero-art{order:-1}.hero{padding-top:12px}.depth{max-width:440px;aspect-ratio:1/.96}}
+@media (max-width:599px){.hero-art.has-photos .hero-q{display:none}}
+@media (min-width:900px){.hero-art.has-photos .hero-q{margin-top:26px}}
+/* studio: real place section */
+.st-grid{display:grid;gap:26px;align-items:center}
+@media (min-width:900px){.st-grid{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:64px}}
+.st-photo{margin:0;max-width:460px;background:var(--white);padding:8px 8px 0;outline:1px solid var(--line);box-shadow:0 40px 70px -40px rgba(0,0,0,.6);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.st-photo img{display:block;width:100%;aspect-ratio:4/3.4;object-fit:cover}
+.st-photo figcaption{padding:9px 2px 10px;font:500 11px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
+.st-credit{margin-top:14px;font:500 12px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:34px;padding:2px 2px 10px;scrollbar-width:none;overscroll-behavior-x:contain}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 auto;width:min(60vw,250px);margin:0;scroll-snap-align:start}
+.strip figure.wide{width:min(84vw,420px)}
+.strip img{display:block;width:100%;height:calc(min(60vw,250px) * 4 / 3);object-fit:cover;outline:1px solid var(--line);background:#e8e8e4}
+.strip figcaption{margin-top:9px;font:500 11px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
+@media (max-width:899px){.strip{margin-inline:-16px;padding-inline:16px;scroll-padding-inline:16px}}
+@media (prefers-reduced-motion:reduce){.layer,.st-photo{transform:none!important}}
 @media (min-width:900px){
   body{padding-bottom:0}
   .bar{display:none}
@@ -338,7 +371,13 @@ h1{font-weight:400}
         </a>
       </div>
     </div>
-    <figure class="hero-art" data-t="0.97">
+    <figure class="hero-art has-photos" data-t="0.97">
+      <div class="depth" id="depth" aria-label="Фото ателье с Яндекс Карт">
+        <figure class="layer l-a" data-d="0.35"><img src="img/mural-2.webp" alt="Витрина ателье Lady Black: чёрно-белая роспись с силуэтами моделей" fetchpriority="high" decoding="async"><figcaption>витрина ателье</figcaption></figure>
+        <figure class="layer l-c" data-d="0.7"><img src="img/satin.webp" alt="Зелёный атлас под лапкой швейной машины" decoding="async" style="object-position:40% 60%"><figcaption>атлас в работе</figcaption></figure>
+        <figure class="layer l-b" data-d="1"><img src="img/hoodie.webp" alt="Чёрное худи с вышитым сердцем из цветов на спине" decoding="async" style="object-position:50% 40%"><figcaption>худи · вышивка</figcaption></figure>
+        <span class="depth-credit">фото с Яндекс Карт</span>
+      </div>
       <svg class="flat" viewBox="0 0 240 250" role="img" aria-label="Технический эскиз жакета">
         <g id="heroFlat"></g>
       </svg>
@@ -417,9 +456,28 @@ h1{font-weight:400}
   </div>
 </section>
 
+<section class="sec" id="studio" aria-labelledby="stH">
+  <div class="wrap">
+    <div class="st-grid">
+      <figure class="st-photo" data-t="0.97"><img src="img/studio.webp" alt="Мастерская Lady Black: стол, кресло, стеллаж с тканями и вешалка с одеждой" loading="lazy" decoding="async"><figcaption>мастерская · Пятницкий пер., 2</figcaption></figure>
+      <div>
+        <p class="sec-n" data-t="0.03">03 · мастерская</p>
+        <h2 id="stH">Ателье <em>изнутри</em></h2>
+        <p class="intro">Стол для примерок, стеллаж с тканями, манекены и вешалки с вещами в работе. Снаружи — чёрно-белая роспись на витрине. Все фото — из карточки ателье на Яндекс Картах.</p>
+        <p class="st-credit">фото с Яндекс Карт</p>
+      </div>
+    </div>
+    <div class="strip" aria-label="Фото ателье с Яндекс Карт" tabindex="0">
+      <figure><img src="img/at-work.webp" alt="Мастер развешивает вещи у манекена" loading="lazy" decoding="async"><figcaption>примерка и вещи в работе</figcaption></figure>
+      <figure class="wide"><img src="img/mural.webp" alt="Витрина ателье с росписью и дверью Lady Black" loading="lazy" decoding="async"><figcaption>вход в ателье</figcaption></figure>
+      <figure class="wide"><img src="img/building.webp" alt="Здание в Пятницком переулке с кораблём над входом" loading="lazy" decoding="async"><figcaption>здание «Пятницкий»</figcaption></figure>
+    </div>
+  </div>
+</section>
+
 <section class="sec" id="visit" aria-labelledby="visH">
   <div class="wrap">
-    <p class="sec-n" data-t="0.03">03 · как найти</p>
+    <p class="sec-n" data-t="0.03">04 · как найти</p>
     <h2 id="visH" data-t="0.03" data-y="bottom">Пятницкий <em>переулок, 2</em></h2>
     <div class="visit">
       <div class="card">
@@ -854,5 +912,6 @@ try { boot(); } catch (e) { if (window.console) console.warn(e); }
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="photo.js" defer></script>
 </body>
 </html>

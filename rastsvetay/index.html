@@ -122,6 +122,34 @@ h1{margin:18px 0 0;font-weight:500}
 .hint svg{width:16px;height:16px;animation:bob 1.8s ease-in-out infinite}
 @keyframes bob{50%{transform:translateY(4px)}}
 .hint.gone{opacity:0}
+.hero-art.has-photos svg.bud,.hero-art.has-photos .hint{display:none}
+.hero-art.has-photos{height:min(116vw,470px);margin-top:10px}
+.cine{position:absolute;inset:0;perspective:1200px;display:flex;justify-content:center;align-items:stretch}
+.cine::before{content:"";position:absolute;left:50%;top:6%;width:min(96vw,560px);aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,#FFE0D3,rgba(255,224,211,0) 72%);pointer-events:none}
+.cine-arch{position:relative;width:min(80vw,350px);height:100%;border-radius:999px 999px 28px 28px;overflow:hidden;background:var(--blush-2);box-shadow:0 40px 70px -36px rgba(168,51,31,.55),0 0 0 6px #fff,0 0 0 7px var(--line-2);touch-action:pan-y;cursor:pointer;user-select:none;-webkit-user-select:none;will-change:transform;transform-style:preserve-3d;isolation:isolate}
+.cine-zoom{position:absolute;inset:0;will-change:transform;transform-origin:50% 40%}
+.cine-s{position:absolute;inset:0;opacity:0;transition:opacity 1.3s ease}
+.cine-s.on{opacity:1;z-index:1}
+.cine-s img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;transform:scale(1.04)}
+.cine-s.on img{animation:kb 7.5s ease-out forwards}
+@keyframes kb{from{transform:scale(1.04) translate(0,0)}to{transform:scale(1.17) translate(var(--kx,2%),var(--ky,0))}}
+.cine-paused .cine-s.on img,.cine-still .cine-s.on img{animation-play-state:paused}
+.cine-still .cine-s.on img{animation:none}
+.cine-arch::after{content:"";position:absolute;inset:auto 0 0;height:42%;background:linear-gradient(transparent,rgba(42,30,27,.62));z-index:2;pointer-events:none}
+.cine-bars{position:absolute;left:22px;right:22px;bottom:78px;display:flex;gap:5px;z-index:3;pointer-events:none}
+.cine-bars span{flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.35);overflow:hidden}
+.cine-bars i{display:block;height:100%;background:#fff;transform-origin:0 50%;transform:scaleX(0)}
+.cine-cap{position:absolute;left:22px;right:22px;bottom:18px;margin:0;z-index:3;color:#fff;pointer-events:none;line-height:1.25}
+.cine-cap small{display:block;font:700 10.5px/1.2 var(--f-b);letter-spacing:.14em;text-transform:uppercase;opacity:.85;font-size:11px}
+.cine-cap span{display:block;font:italic 500 21px/1.2 var(--f-d);margin-top:4px}
+.cine-seal{position:absolute;left:calc(50% - min(40vw,175px) - 34px);bottom:22%;width:104px;height:104px;border-radius:50%;background:#fff;box-shadow:0 18px 30px -16px rgba(168,51,31,.6);z-index:4;will-change:transform;padding:0}
+.cine-seal svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 22s linear infinite}
+.cine-seal text{font:800 11px var(--f-b);fill:var(--coral-d)}
+.cine-seal img{position:absolute;left:24px;top:24px;width:56px;height:56px;border-radius:50%;object-fit:cover}
+@keyframes spin{to{transform:rotate(360deg)}}
+.cine-paused .cine-seal svg,.cine-still .cine-seal svg{animation-play-state:paused}
+@media(max-width:899.98px){.cine-seal{left:8px;bottom:auto;top:12%;width:90px;height:90px}.cine-seal img{left:21px;top:21px;width:48px;height:48px}}
+@media(min-width:900px){.hero-art.has-photos{height:640px;margin:0}.cine-arch{width:min(100%,440px)}.cine-seal{left:-6px}}
 @media(min-width:900px){
   .hero-in{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);grid-template-rows:1fr repeat(5,auto) 1fr;column-gap:30px;padding:20px 0 30px;min-height:min(820px,calc(100vh - 100px));min-height:min(820px,calc(100svh - 100px))}
   .hero-in>*{grid-column:1}
@@ -363,6 +391,16 @@ footer a:hover{text-decoration:underline}
   html{scroll-behavior:auto}
   .reveal.pre{opacity:1;transform:none}
 }
+.lavka{background:var(--paper);border-block:1px solid var(--line);overflow:hidden}
+.lv-grid{display:grid;gap:26px;align-items:center}@media(min-width:900px){.lv-grid{grid-template-columns:.85fr 1.15fr;gap:64px}}
+.lv-photo{margin:0;max-width:420px;aspect-ratio:4/5;border-radius:999px 999px 26px 26px;overflow:hidden;box-shadow:0 40px 70px -40px rgba(168,51,31,.5),0 0 0 6px var(--bg),0 0 0 7px var(--line-2);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s;isolation:isolate}
+.lv-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.05)}
+.lavka .credit{font:700 11.5px/1 var(--f-b);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:16px}
+.strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:34px;padding:4px 2px 8px;scrollbar-width:none;overscroll-behavior-x:contain}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 auto;margin:0;width:min(62vw,260px);scroll-snap-align:start}
+.strip img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:20px;box-shadow:0 20px 40px -26px rgba(168,51,31,.5)}
+.strip figcaption{font-size:13.5px;color:var(--muted);margin-top:8px;font-weight:600}
 </style>
 </head>
 <body>
@@ -474,6 +512,28 @@ footer a:hover{text-decoration:underline}
       <p class="swipe" aria-hidden="true">листайте витрину вбок <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></p>
       <div class="grid short" id="grid"></div>
       <button type="button" class="btn btn-line show-all" id="showAll">Показать всю витрину</button>
+    </div>
+  </section>
+
+  <section class="lavka" id="lavka" aria-labelledby="h-lavka">
+    <div class="wrap">
+      <div class="lv-grid">
+        <figure class="lv-photo"><img src="img/studio.webp" alt="Букетная лавка «Расцветай» внутри: стойка флориста и логотип на стене" loading="lazy"></figure>
+        <div>
+          <span class="kicker">Букетная лавка</span>
+          <h2 id="h-lavka">Здесь их и <em>собирают</em></h2>
+          <p class="sub">Небольшая лавка на Садовой-Кудринской: стойка флориста, цветы в вазах у окна и букеты, которые уходят к вам. Всё на этой странице — настоящие фото из карточки на Яндекс Картах.</p>
+          <p class="credit">фото с Яндекс Карт</p>
+        </div>
+      </div>
+      <div class="strip" aria-label="Фото лавки и букетов">
+        <figure><img src="img/storefront.webp" alt="Вход в лавку с вывеской «Расцветай»" loading="lazy"><figcaption>вход с улицы</figcaption></figure>
+        <figure><img src="img/showcase.webp" alt="Цветы в вазах у окна лавки" loading="lazy"><figcaption>цветы у окна</figcaption></figure>
+        <figure><img src="img/white-box.webp" alt="Белый букет с розами и эустомой" loading="lazy"><figcaption>белый букет</figcaption></figure>
+        <figure><img src="img/pink-hydrangea.webp" alt="Букет с розовой гортензией" loading="lazy"><figcaption>розовая гортензия</figcaption></figure>
+        <figure><img src="img/peach-roses.webp" alt="Персиковые розы с эвкалиптом" loading="lazy"><figcaption>персиковые розы</figcaption></figure>
+        <figure><img src="img/yellow-box.webp" alt="Жёлтая композиция в коробке" loading="lazy"><figcaption>жёлтая композиция</figcaption></figure>
+      </div>
     </div>
   </section>
 
@@ -1071,5 +1131,7 @@ if ('IntersectionObserver' in window && !RM) {
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="cinema.js"></script>
+<script>(function(){var f=document.querySelector('.lv-photo');if(!f||matchMedia('(prefers-reduced-motion: reduce)').matches)return;f.addEventListener('pointermove',function(e){var r=f.getBoundingClientRect();f.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*10+'deg');f.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*8+'deg');});f.addEventListener('pointerleave',function(){f.style.setProperty('--ry','0deg');f.style.setProperty('--rx','0deg');});})();</script>
 </body>
 </html>

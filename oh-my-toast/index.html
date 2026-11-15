@@ -105,29 +105,48 @@ h1 .oh{position:absolute;font-family:var(--hand);font-weight:700;font-size:clamp
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
 .cta .btn{flex:1 1 200px}
 .art{position:relative;max-width:520px;width:100%;justify-self:center}
-.art svg.win{width:100%;height:auto}
 .tag{position:absolute;font-family:var(--hand);font-weight:700;font-size:22px;line-height:1.1;background:var(--paper);border:2.5px solid var(--ink);border-radius:12px;padding:3px 10px 5px;box-shadow:var(--sh)}
 .tag.t1{top:13%;inset-inline-start:-2%;transform:rotate(-6deg)}
 .tag.t2{bottom:18%;inset-inline-end:-1%;transform:rotate(5deg);background:var(--cream-2)}
+/* photo deck hero (real photos from the Yandex Maps card) */
+.tag{z-index:20;pointer-events:none}
+.deck{position:relative;width:100%;aspect-ratio:1/.9;perspective:1300px;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none;--s:.55;--tx:0deg;--ty:0deg;outline-offset:6px}
+.deck-in{position:absolute;inset:0;display:grid;place-items:center;transform-style:preserve-3d;transform:rotateX(var(--tx)) rotateY(var(--ty));transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.dcard{grid-area:1/1;position:relative;margin:0;width:56%;aspect-ratio:4/5;border-radius:20px;background:var(--paper);border:6px solid var(--paper);box-shadow:0 0 0 2.5px var(--ink),5px 7px 0 2.5px var(--ink),0 46px 60px -34px rgba(35,25,43,.55);overflow:hidden;will-change:transform;
+  transform:translate3d(calc(var(--dir) * var(--k) * 10% * var(--s)),calc(var(--k) * -2.4%),calc(var(--k) * -70px)) rotate(calc(var(--dir) * (1.5deg + var(--k) * 4.2deg) * var(--s)));
+  filter:brightness(calc(1 - var(--k) * .075));opacity:clamp(0,calc(5 - var(--k)),1);
+  transition:transform .75s cubic-bezier(.2,.8,.2,1),filter .75s,opacity .5s}
+.dcard img{width:100%;height:100%;object-fit:cover;border-radius:14px;pointer-events:none}
+.dcard .glare{position:absolute;inset:0;border-radius:14px;background:radial-gradient(110% 70% at var(--gx,30%) -8%,rgba(255,255,255,.42),transparent 58%);mix-blend-mode:soft-light;pointer-events:none;opacity:0;transition:opacity .5s}
+.dcard.top .glare{opacity:1}
+.dcard.drag{transition:none;transform:translate3d(var(--dx,0),-1%,40px) rotate(var(--dr,0deg))}
+.dcard.fly{transition:transform .34s cubic-bezier(.5,0,.9,.5),opacity .34s;transform:translate3d(calc(var(--fx,1) * 135%),-8%,60px) rotate(calc(var(--fx,1) * 24deg))}
+.deck-cap{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 10px;margin-top:14px;text-align:center;font-size:14px}
+.deck-cap b{font-family:var(--hand);font-weight:700;font-size:23px;line-height:1.1}
+.deck-cap .dnum{font-weight:800;font-size:12px;letter-spacing:.08em;background:var(--ink);color:var(--cream);border-radius:99px;padding:4px 9px}
+.deck-cap small{flex-basis:100%;color:var(--muted);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+@media (max-width:959px){.hero-in{padding-block:14px 34px}.art{order:-1;max-width:460px}.deck{aspect-ratio:1/.8}.dcard{width:52%}.tag{font-size:19px}.tag.t1{top:4%}.tag.t2{bottom:30%}}
+@media (prefers-reduced-motion:reduce){.dcard,.deck-in{transition:none}}
 @media (min-width:960px){
   .hero-in{grid-template-columns:1.05fr .95fr;align-items:center;padding-block:56px 64px;gap:48px}
   .lead{font-size:20px}
   .cta .btn{flex:0 0 auto}
 }
-/* motion */
-.cloud{animation:drift 26s linear infinite}
-.cloud.c2{animation-duration:34s;animation-delay:-12s}
-@keyframes drift{from{transform:translateX(-120px)}to{transform:translateX(520px)}}
-.egg{animation:bob 6s ease-in-out infinite;transform-origin:370px 100px}
-@keyframes bob{50%{transform:translateY(8px) rotate(6deg)}}
-.swing{animation:swing 5s ease-in-out infinite;transform-origin:118px 22px}
-@keyframes swing{50%{transform:rotate(4deg)}}
-.steam path{animation:steam 3s ease-in-out infinite;opacity:.0}
-.steam path:nth-child(2){animation-delay:1.2s}
-@keyframes steam{30%{opacity:.8}100%{opacity:0;transform:translateY(-14px)}}
-.paused .cloud,.paused .egg,.paused .swing,.paused .steam path{animation-play-state:paused}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.steam path{opacity:.6}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 
+/* real place section */
+.place{background:var(--sky-2);border-top:2px solid var(--ink)}
+.pl-grid{display:grid;gap:26px;align-items:center}
+@media (min-width:900px){.pl-grid{grid-template-columns:1.15fr .85fr;gap:56px}}
+.pl-photo{position:relative;margin:0;border-radius:24px;overflow:hidden;aspect-ratio:4/3;border:6px solid var(--paper);box-shadow:0 0 0 2.5px var(--ink),6px 8px 0 2.5px var(--ink);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.pl-photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.06)}
+.pl-photo figcaption,.strip figcaption{position:absolute;left:10px;bottom:10px;font-family:var(--hand);font-weight:700;font-size:20px;line-height:1.1;background:var(--paper);border:2px solid var(--ink);border-radius:10px;padding:1px 9px 3px}
+.pl-credit{margin-top:14px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:30px -16px 0;padding:4px 16px 14px;scrollbar-width:none;scroll-padding-inline:16px}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{position:relative;flex:0 0 auto;margin:0;width:min(60vw,250px);aspect-ratio:4/5;border-radius:18px;overflow:hidden;scroll-snap-align:start;border:4px solid var(--paper);box-shadow:0 0 0 2px var(--ink),4px 5px 0 2px var(--ink)}
+.strip img{width:100%;height:100%;object-fit:cover}
+@media (min-width:768px){.strip{margin-inline:-32px;padding-inline:32px;scroll-padding-inline:32px}}
 /* sections */
 section{padding-block:56px}
 .eyebrow{font-family:var(--hand);font-weight:700;font-size:24px;color:var(--tomato);line-height:1}
@@ -414,77 +433,21 @@ textarea.inp{min-height:76px;resize:vertical}
       </div>
     </div>
 
-    <div class="art" id="art" aria-hidden="true">
-      <svg class="win" viewBox="0 0 480 520" role="img">
-        <defs>
-          <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8FD2F6"/><stop offset="1" stop-color="#E3F5FD"/></linearGradient>
-          <pattern id="mid" width="9" height="12" patternUnits="userSpaceOnUse"><rect x="2" y="2" width="3" height="7" rx="1" fill="#FFF1C7" opacity=".85"/></pattern>
-          <clipPath id="glass"><rect x="30" y="30" width="420" height="404" rx="20"/></clipPath>
-        </defs>
-        <rect x="8" y="8" width="464" height="450" rx="38" fill="#FFFBEF" stroke="#23192B" stroke-width="4"/>
-        <g clip-path="url(#glass)">
-          <rect x="30" y="30" width="420" height="404" fill="url(#skyG)"/>
-          <g class="egg">
-            <path d="M330 92c-6-26 22-40 42-30 20-10 46 4 40 26 14 12 4 34-16 32-10 12-38 12-48 0-22 4-32-18-18-28z" fill="#fff" stroke="#23192B" stroke-width="3.5"/>
-            <circle cx="370" cy="96" r="22" fill="#FFC21A" stroke="#23192B" stroke-width="3.5"/>
-            <path d="M360 86a12 12 0 0 1 10-4" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-          </g>
-          <g class="cloud"><path d="M40 170h92a16 16 0 0 0 0-32 24 24 0 0 0-44-8 18 18 0 0 0-30 10 15 15 0 0 0-18 30z" fill="#FFFBEF" stroke="#23192B" stroke-width="3"/></g>
-          <g class="cloud c2"><path d="M-40 240h70a12 12 0 0 0 0-24 18 18 0 0 0-34-6 14 14 0 0 0-24 8 11 11 0 0 0-12 22z" fill="#FFFBEF" stroke="#23192B" stroke-width="3"/></g>
-          <!-- city -->
-          <path d="M30 380h40v-30h30v16h26v-40h24v54H30z" fill="#7CBDE9" stroke="#23192B" stroke-width="3" stroke-linejoin="round"/>
-          <path d="M330 380v-46h28v22h32v-36h30v26h30v34z" fill="#7CBDE9" stroke="#23192B" stroke-width="3" stroke-linejoin="round"/>
-          <!-- MID -->
-          <g stroke="#23192B" stroke-width="3.5" stroke-linejoin="round">
-            <path d="M240 32l6 52h-12z" fill="#2E7BC0"/>
-            <circle cx="240" cy="34" r="4" fill="#FFC21A"/>
-            <rect x="228" y="84" width="24" height="22" fill="#2E7BC0"/>
-            <rect x="214" y="106" width="52" height="34" fill="#2E7BC0"/>
-            <rect x="196" y="140" width="88" height="44" fill="#2E7BC0"/>
-            <rect x="174" y="184" width="132" height="70" fill="#2E7BC0"/>
-            <rect x="120" y="290" width="54" height="150" fill="#2E7BC0"/>
-            <rect x="306" y="290" width="54" height="150" fill="#2E7BC0"/>
-            <rect x="132" y="270" width="30" height="20" fill="#2E7BC0"/>
-            <rect x="318" y="270" width="30" height="20" fill="#2E7BC0"/>
-            <rect x="156" y="254" width="168" height="186" fill="#2E7BC0"/>
-          </g>
-          <g fill="url(#mid)">
-            <rect x="218" y="110" width="44" height="26"/><rect x="200" y="144" width="80" height="36"/><rect x="178" y="188" width="124" height="62"/>
-            <rect x="162" y="260" width="156" height="120"/><rect x="124" y="296" width="46" height="84"/><rect x="310" y="296" width="46" height="84"/>
-          </g>
-          <rect x="30" y="380" width="420" height="60" fill="#4F9AD6" stroke="#23192B" stroke-width="3"/>
-          <path d="M40 400h60M140 414h90M280 402h70M380 420h50" stroke="#DDF2FD" stroke-width="4" stroke-linecap="round"/>
-          <!-- hanging bubble chair -->
-          <g class="swing">
-            <path d="M118 22v70" stroke="#23192B" stroke-width="3"/>
-            <circle cx="118" cy="140" r="50" fill="#fff" fill-opacity=".38" stroke="#23192B" stroke-width="3.5"/>
-            <path d="M80 150c10 16 66 16 76 0v8c-8 18-68 18-76 0z" fill="#D93A22" stroke="#23192B" stroke-width="3" stroke-linejoin="round"/>
-            <path d="M92 108a40 40 0 0 1 20-12" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
-          </g>
-        </g>
-        <rect x="30" y="30" width="420" height="404" rx="20" fill="none" stroke="#23192B" stroke-width="4"/>
-        <path d="M240 30v404" stroke="#23192B" stroke-width="4" opacity=".0"/>
-        <!-- sill -->
-        <rect x="0" y="436" width="480" height="34" rx="12" fill="#D93A22" stroke="#23192B" stroke-width="4"/>
-        <!-- cup -->
-        <g transform="translate(360 352)">
-          <g class="steam" fill="none" stroke="#23192B" stroke-width="3" stroke-linecap="round"><path d="M26 -4c-6-8 6-12 0-22"/><path d="M42 -2c-6-8 6-12 0-22"/></g>
-          <path d="M8 10h60l-8 76H16z" fill="#fff" stroke="#23192B" stroke-width="4" stroke-linejoin="round"/>
-          <rect x="2" y="2" width="72" height="12" rx="5" fill="#FFFBEF" stroke="#23192B" stroke-width="4"/>
-          <path d="M12 38h52l-3 28H15z" fill="#2E7BC0" stroke="#23192B" stroke-width="4" stroke-linejoin="round"/>
-          <path d="M28 48l10 8 10-8" fill="none" stroke="#FFF1C7" stroke-width="3" stroke-linecap="round"/>
-        </g>
-        <!-- toast character -->
-        <g transform="translate(36 322) rotate(-8 70 70)">
-          <path d="M18 132V58C2 54-2 34 8 22 22 4 52 2 70 14c18-12 48-10 62 8 10 12 6 32-10 36v74z" fill="#D98A3A" stroke="#23192B" stroke-width="4" stroke-linejoin="round"/>
-          <path d="M30 122V52c-10-2-12-14-6-20 10-12 32-12 46-2 14-10 36-10 46 2 6 6 4 18-6 20v70z" fill="#F7CF80"/>
-          <circle cx="52" cy="72" r="5" fill="#23192B"/><circle cx="88" cy="72" r="5" fill="#23192B"/>
-          <path d="M58 86c6 8 18 8 24 0" fill="none" stroke="#23192B" stroke-width="4" stroke-linecap="round"/>
-          <circle cx="40" cy="86" r="6" fill="#F08A7E" opacity=".7"/><circle cx="100" cy="86" r="6" fill="#F08A7E" opacity=".7"/>
-        </g>
-      </svg>
-      <span class="tag t1">вид на МИД</span>
-      <span class="tag t2" id="artTag">10:00–22:00</span>
+    <div class="art" id="art">
+      <div class="deck" id="deck" tabindex="0" role="group" aria-roledescription="карусель" aria-label="Настоящие блюда Oh My Toast — листайте свайпом или нажмите">
+        <div class="deck-in">
+          <figure class="dcard" style="--k:0;--dir:-1;z-index:7" data-cap="яйца пашот с креветками"><img src="img/benedict-shrimp.webp" alt="Яйца пашот с креветками — фото Oh My Toast" width="750" height="1000" draggable="false" decoding="async"><span class="glare"></span></figure>
+          <figure class="dcard" style="--k:1;--dir:1;z-index:6" data-cap="бриошь в фирменной коробочке"><img src="img/box-toast.webp" alt="Бриошь в фирменной коробочке — фото Oh My Toast" width="750" height="1000" draggable="false" decoding="async"><span class="glare"></span></figure>
+          <figure class="dcard" style="--k:2;--dir:-1;z-index:5" data-cap="две коробочки у окна"><img src="img/boxes-window.webp" alt="Две коробочки у окна — фото Oh My Toast" width="750" height="1000" draggable="false" decoding="async"><span class="glare"></span></figure>
+          <figure class="dcard" style="--k:3;--dir:1;z-index:4" data-cap="яйца пашот с лососем"><img src="img/benedict-salmon.webp" alt="Яйца пашот с лососем — фото Oh My Toast" width="750" height="1000" draggable="false" decoding="async" loading="lazy"><span class="glare"></span></figure>
+          <figure class="dcard" style="--k:4;--dir:-1;z-index:3" data-cap="сэндвич и картофель фри"><img src="img/box-sandwich.webp" alt="Сэндвич и картофель фри — фото Oh My Toast" width="750" height="1000" draggable="false" decoding="async" loading="lazy"><span class="glare"></span></figure>
+          <figure class="dcard" style="--k:5;--dir:1;z-index:2" data-cap="завтрак в коробочках"><img src="img/breakfast-boxes.webp" alt="Завтрак в коробочках — фото Oh My Toast" width="750" height="1000" draggable="false" decoding="async" loading="lazy"><span class="glare"></span></figure>
+          <figure class="dcard" style="--k:6;--dir:-1;z-index:1" data-cap="коробочки и ролл"><img src="img/boxes-wrap.webp" alt="Коробочки и ролл — фото Oh My Toast" width="750" height="1000" draggable="false" decoding="async" loading="lazy"><span class="glare"></span></figure>
+        </div>
+      </div>
+      <p class="deck-cap"><span class="dnum" id="deckNum">1 / 7</span><b id="deckCap">яйца пашот с креветками</b><small>свайп · фото с Яндекс Карт</small></p>
+      <span class="tag t1" aria-hidden="true">вид на МИД</span>
+      <span class="tag t2" id="artTag" aria-hidden="true">10:00–22:00</span>
     </div>
   </div>
 </section>
@@ -536,6 +499,28 @@ textarea.inp{min-height:76px;resize:vertical}
     <p class="sub">Три завтрака из меню названы в честь богов. Берите того, кто ближе по настроению.</p>
     <div class="g-grid" id="godGrid"></div>
     <p class="legend">Гости пишут про статую Зевса, часть которой выходит на улицу, и про руку Тора, торчащую из стекла.</p>
+  </div>
+</section>
+
+<section class="place" id="place" aria-labelledby="h-place">
+  <div class="wrap">
+    <div class="pl-grid">
+      <figure class="pl-photo"><img src="img/hall-window.webp" alt="Зал Oh My Toast: белая стойка, подвесные кресла и большие окна на улицу" width="1200" height="900" loading="lazy"><figcaption>зал у окон</figcaption></figure>
+      <div>
+        <p class="eyebrow">настоящий зал</p>
+        <h2 id="h-place">Белый зал и МИД за стеклом</h2>
+        <p class="sub">Светлый зал с большими окнами на Смоленскую: белая стойка, подвесные кресла, колонны в греческом духе, а за стеклом — высотка МИД. Так кафе выглядит на снимках гостей и самого Oh My Toast.</p>
+        <p class="pl-credit">фото с Яндекс Карт</p>
+      </div>
+    </div>
+    <div class="strip" aria-label="Фото зала и блюд Oh My Toast">
+      <figure><img src="img/table-mid.webp" alt="Столик у окна с видом на МИД" width="506" height="900" loading="lazy"><figcaption>столик у окна</figcaption></figure>
+      <figure><img src="img/hall.webp" alt="Зал с колоннами и зелёными креслами" width="675" height="900" loading="lazy"><figcaption>колонны и кресла</figcaption></figure>
+      <figure><img src="img/cup-mid.webp" alt="Стакан кофе Oh My Toast на фоне МИД" width="506" height="900" loading="lazy"><figcaption>кофе с собой</figcaption></figure>
+      <figure><img src="img/bar.webp" alt="Барная стойка и подвесное кресло" width="675" height="900" loading="lazy"><figcaption>бар и кресло-кокон</figcaption></figure>
+      <figure><img src="img/lemonades.webp" alt="Два лимонада на столе" width="675" height="900" loading="lazy"><figcaption>лимонады</figcaption></figure>
+      <figure><img src="img/hall-bar.webp" alt="Зал у стойки и окна" width="675" height="900" loading="lazy"><figcaption>у стойки</figcaption></figure>
+    </div>
   </div>
 </section>
 
@@ -1026,6 +1011,8 @@ setInterval(function () { fillTimes($('#bTime')); fillTimes($('#dTime')); }, 300
 renderBox(); renderPanel(); renderGods(); renderList(); renderCart();
 })();
 </script>
+<script src="deck.js"></script>
+<script>(function(){var f=document.querySelector('.pl-photo');if(!f||matchMedia('(prefers-reduced-motion: reduce)').matches)return;f.addEventListener('pointermove',function(e){if(e.pointerType!=='mouse')return;var r=f.getBoundingClientRect();f.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*10+'deg');f.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*8+'deg');});f.addEventListener('pointerleave',function(){f.style.setProperty('--ry','0deg');f.style.setProperty('--rx','0deg');});})();</script>
 <script src="../map-fix.js" defer></script>
 </body>
 </html>

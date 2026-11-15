@@ -101,26 +101,6 @@ h1{margin-top:18px;font-weight:400}
 .rate span em{display:block;font-style:normal;color:var(--ivory);font-size:15px;letter-spacing:.06em}
 .cta{display:grid;gap:10px;margin-top:22px}
 
-/* pattern piece */
-.piece{position:relative;margin:0 auto;width:100%;max-width:440px}
-.piece svg{width:100%;height:auto;overflow:visible}
-.piece .ln{fill:none;stroke:var(--ivory);stroke-width:1.4}
-.piece .sa{fill:none;stroke:rgba(242,235,221,.45);stroke-width:1;stroke-dasharray:5 5}
-.piece .gr{stroke:var(--brass);stroke-width:1.2;fill:none}
-.piece .gh{fill:var(--brass)}
-.piece text{font-family:var(--sans);font-size:12px;letter-spacing:.22em;fill:var(--dim-d);text-transform:uppercase}
-.piece .big{font-family:var(--serif);font-style:italic;font-size:21px;letter-spacing:0;fill:var(--ivory);text-transform:none}
-.piece .tear{fill:none;stroke:#f2ebdd;stroke-width:1.6;stroke-linejoin:round;animation:tear 10s ease-in-out infinite}
-.piece .hole{fill:#0f0e0c;animation:tear 10s ease-in-out infinite}
-.piece .st{fill:none;stroke:var(--brass);stroke-width:1.8;stroke-linecap:round;stroke-dasharray:14;stroke-dashoffset:14;animation:stitch 10s ease-in-out infinite}
-.piece .st:nth-child(2){animation-delay:.18s}.piece .st:nth-child(3){animation-delay:.36s}.piece .st:nth-child(4){animation-delay:.54s}.piece .st:nth-child(5){animation-delay:.72s}.piece .st:nth-child(6){animation-delay:.9s}.piece .st:nth-child(7){animation-delay:1.08s}
-.piece .needle{animation:needle 10s ease-in-out infinite}
-@keyframes tear{0%,22%{opacity:1}52%,88%{opacity:0}100%{opacity:1}}
-@keyframes stitch{0%,14%{stroke-dashoffset:14;opacity:1}30%{stroke-dashoffset:0;opacity:1}55%,88%{stroke-dashoffset:0;opacity:.14}100%{stroke-dashoffset:14;opacity:0}}
-@keyframes needle{0%,10%{transform:translate(0,0);opacity:0}16%{opacity:1}36%{transform:translate(0,70px);opacity:1}46%,100%{transform:translate(0,70px);opacity:0}}
-.piece figcaption{position:relative;margin:-6px 0 0;padding:16px 0 0 18px;border-left:1px solid var(--brass)}
-.piece figcaption q{display:block;font:italic 500 23px/1.22 var(--serif);quotes:"«" "»"}
-.piece figcaption span{display:block;margin-top:8px;font-size:13px;color:var(--dim-d)}
 
 /* section heads */
 .sec{position:relative;padding:62px 0}
@@ -269,6 +249,47 @@ h1{margin-top:18px;font-weight:400}
 .bar .btn{flex:1;min-height:52px;padding:10px 14px;font-size:15.5px}
 .bar .call{flex:none;width:56px;padding:0}
 
+
+/* ---------- photo-real hero: a couture deck of real work (photos from the Yandex card) ---------- */
+.deck-wrap{position:relative;margin:0;min-width:0}
+.deck{position:relative;height:clamp(330px,92vw,400px);perspective:1200px;perspective-origin:50% 45%;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.deck.grab{cursor:grabbing}
+.deck-in{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .3s ease-out}
+.dcard{position:absolute;left:50%;top:50%;width:var(--cw,220px);margin:0;padding:7px 7px 0;background:var(--ivory);color:var(--text);box-shadow:0 30px 50px -22px rgba(0,0,0,.85);will-change:transform,opacity;backface-visibility:hidden}
+.dcard::before{content:"";position:absolute;inset:3px;border:1px dashed rgba(128,96,46,.55);pointer-events:none}
+.dcard img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;pointer-events:none;background:#d9d0bf}
+.dcard figcaption{display:flex;justify-content:space-between;gap:8px;padding:9px 4px 10px;font:500 11px/1.2 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--dim);white-space:nowrap}
+.dcard figcaption b{font-weight:500;color:var(--brass-t)}
+.dcard .pin{position:absolute;left:50%;top:-7px;z-index:1;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f3dcae,var(--brass) 45%,#7d5d2a);box-shadow:0 3px 5px rgba(0,0,0,.5)}
+.dcard .sheen{position:absolute;left:7px;right:7px;top:7px;aspect-ratio:3/4;background:linear-gradient(115deg,rgba(255,255,255,.3),transparent 42%);mix-blend-mode:soft-light;pointer-events:none}
+.deck-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px}
+.deck-cap{min-width:0;font:italic 500 21px/1.15 var(--serif);color:var(--ivory)}
+.deck-cap small{display:block;font:400 11.5px/1.3 var(--sans);font-style:normal;letter-spacing:.16em;text-transform:uppercase;color:var(--dim-d);margin-top:3px}
+.deck-nav{display:flex;gap:8px;flex:none}
+.deck-nav button{display:grid;place-items:center;width:46px;height:46px;border:1px solid rgba(207,169,106,.55);color:var(--brass);font-size:19px;line-height:1;transition:background .2s}
+.deck-nav button:hover{background:rgba(207,169,106,.14)}
+.deck-wrap .quote{position:relative;margin:22px 0 0;padding:14px 0 0 18px;border-left:1px solid var(--brass)}
+.deck-wrap .quote q{display:block;font:italic 500 21px/1.22 var(--serif);quotes:"«" "»"}
+.deck-wrap .quote span{display:block;margin-top:8px;font-size:13px;color:var(--dim-d)}
+@media (max-width:899px){.hero-grid{display:flex;flex-direction:column;gap:22px}.hero-grid>.deck-wrap{order:-1}.deck-wrap .quote{display:none}.hero{padding-top:12px}}
+@media (min-width:900px){.deck{height:min(500px,calc(100svh - 300px));min-height:400px}.deck-wrap .quote q{font-size:22px}}
+/* the studio: real place section */
+.studio{background:var(--ink-2)}
+.st-grid{display:grid;gap:26px;align-items:center}
+@media (min-width:900px){.st-grid{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:64px}}
+.st-photo{position:relative;margin:0;max-width:440px;padding:8px;background:var(--ivory);box-shadow:0 40px 70px -40px rgba(0,0,0,.95);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.st-photo::before{content:"";position:absolute;inset:3px;border:1px dashed rgba(128,96,46,.55);pointer-events:none}
+.st-photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.st-photo figcaption{padding:9px 2px 2px;font:500 11px/1.2 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.studio .intro{color:#d6cdbd}
+.st-credit{margin-top:16px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass)}
+.strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:34px;padding:2px 0 10px;scrollbar-width:none;overscroll-behavior-x:contain}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 auto;width:min(60vw,250px);margin:0;scroll-snap-align:start}
+.strip img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--line-d);background:var(--ink-3)}
+.strip figcaption{margin-top:9px;font:500 11px/1.2 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--dim-d)}
+@media (max-width:899px){.strip{margin-inline:-16px;padding-inline:16px;scroll-padding-inline:16px}}
+@media (prefers-reduced-motion:reduce){.deck-in,.st-photo{transform:none!important}}
 @media (min-width:600px){
   .gar{grid-template-columns:repeat(3,minmax(0,1fr))}
   .cta{grid-auto-flow:column;justify-content:start}
@@ -306,9 +327,6 @@ h1{margin-top:18px;font-weight:400}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .piece .tear,.piece .hole{animation:none;opacity:0}
-  .piece .st{animation:none;stroke-dashoffset:0;opacity:.5}
-  .piece .needle{animation:none;opacity:0}
   .ruler i{transition:none}
   .t-list li.new{animation:none}
 }
@@ -344,47 +362,22 @@ h1{margin-top:18px;font-weight:400}
         </a>
       </div>
     </div>
-    <figure class="piece" id="piece">
-      <svg viewBox="0 0 380 450" role="img" aria-label="Деталь выкройки пальто: разрыв зашивают латунной строчкой, и он исчезает">
-        <!-- seam allowance -->
-        <path class="sa" d="M96 22 L196 10 Q214 46 250 58 L330 74 Q312 140 326 196 L344 432 L60 432 L52 210 Q40 140 96 22 Z"/>
-        <!-- outline: coat front -->
-        <path class="ln" d="M104 34 L194 24 Q212 58 246 70 L316 84 Q300 146 314 198 L330 420 L72 420 L66 212 Q54 146 104 34 Z"/>
-        <!-- lapel / center front -->
-        <path class="ln" d="M104 34 L150 150 L120 200 L72 420" opacity=".55"/>
-        <!-- dart -->
-        <path class="ln" d="M212 236 L232 360 L252 236" opacity=".8"/>
-        <!-- notches -->
-        <path class="ln" d="M314 126 l10 -2 M318 154 l10 -1 M66 300 l-10 0 M66 312 l-10 0"/>
-        <!-- grain line -->
-        <path class="gr" d="M170 210 V 392"/>
-        <path class="gh" d="M170 202 l-6 14 h12 Z M170 400 l-6 -14 h12 Z"/>
-        <text x="178" y="300" transform="rotate(90 178 300)">долевая</text>
-        <text x="190" y="118">полочка</text>
-        <text x="190" y="134">крой 2 дет.</text>
-        <text class="big" x="196" y="172">пальто</text>
-        <!-- the repair -->
-        <g transform="translate(96 290) scale(1.35)">
-          <path class="hole" d="M0 0 L10 -8 L18 4 L28 -6 L36 6 L46 -4 L54 6 L46 12 L36 10 L28 14 L18 10 L10 14 Z"/>
-          <path class="tear" d="M0 0 L10 -8 L18 4 L28 -6 L36 6 L46 -4 L54 6 L46 12 L36 10 L28 14 L18 10 L10 14 Z"/>
-          <g>
-            <path class="st" d="M2 -10 L6 18"/>
-            <path class="st" d="M11 -12 L15 18"/>
-            <path class="st" d="M20 -10 L24 20"/>
-            <path class="st" d="M29 -12 L33 20"/>
-            <path class="st" d="M38 -8 L42 20"/>
-            <path class="st" d="M47 -10 L51 18"/>
-          </g>
-          <g class="needle">
-            <path d="M68 -70 L68 -16" stroke="#cfa96a" stroke-width="2" stroke-linecap="round"/>
-            <ellipse cx="68" cy="-64" rx="1.6" ry="4" fill="none" stroke="#0f0e0c" stroke-width="1.2"/>
-            <path d="M68 -64 Q90 -40 64 -20" fill="none" stroke="#cfa96a" stroke-width="1" stroke-dasharray="3 3"/>
-          </g>
-        </g>
-        <text x="72" y="444">ремонт · 1 место</text>
-      </svg>
-      <figcaption><q>От сожжённого места и следа не осталось!</q><span>Полина С. — про розовое пальто из альпаки · отзыв на Яндекс Картах</span></figcaption>
-    </figure>
+    <div class="deck-wrap" id="deckWrap">
+      <div class="deck" id="deck" aria-roledescription="carousel" aria-label="Работы ателье — фото с Яндекс Карт">
+        <div class="deck-in" id="deckIn">
+          <figure class="dcard" data-cap="Манжета пиджака"><span class="pin" aria-hidden="true"></span><img src="img/cuff.webp" alt="Манжета пиджака в клетку с металлическими пуговицами" draggable="false" decoding="async" fetchpriority="high"><span class="sheen"></span><figcaption><span>манжета</span><b>№ 01</b></figcaption></figure>
+          <figure class="dcard" data-cap="Кружево на рукаве"><span class="pin" aria-hidden="true"></span><img src="img/lace.webp" alt="Чёрное кружево на рукаве крупным планом" draggable="false" decoding="async"><span class="sheen"></span><figcaption><span>кружево</span><b>№ 02</b></figcaption></figure>
+          <figure class="dcard" data-cap="Вязаное платье"><span class="pin" aria-hidden="true"></span><img src="img/knit-dress.webp" alt="Розовое вязаное платье на манекене" draggable="false" decoding="async"><span class="sheen"></span><figcaption><span>трикотаж</span><b>№ 03</b></figcaption></figure>
+          <figure class="dcard" data-cap="Мех и крючок"><span class="pin" aria-hidden="true"></span><img src="img/fur-hook.webp" alt="Рыжий мех с пришитым крючком крупным планом" draggable="false" loading="lazy" decoding="async"><span class="sheen"></span><figcaption><span>мех</span><b>№ 04</b></figcaption></figure>
+          <figure class="dcard" data-cap="Жакет с цветами"><span class="pin" aria-hidden="true"></span><img src="img/jacket-print.webp" alt="Жакет с цветочным принтом на примерке" draggable="false" loading="lazy" decoding="async"><span class="sheen"></span><figcaption><span>жакет</span><b>№ 05</b></figcaption></figure>
+        </div>
+      </div>
+      <div class="deck-bar">
+        <p class="deck-cap" aria-live="polite"><span id="deckT">Манжета пиджака</span><small>работы ателье · фото с Яндекс Карт</small></p>
+        <div class="deck-nav"><button type="button" id="deckPrev" aria-label="Предыдущее фото">←</button><button type="button" id="deckNext" aria-label="Следующее фото">→</button></div>
+      </div>
+      <figure class="quote"><q>От сожжённого места и следа не осталось!</q><span>Полина С. — про розовое пальто из альпаки · отзыв на Яндекс Картах</span></figure>
+    </div>
   </div>
 </section>
 
@@ -417,6 +410,25 @@ h1{margin-top:18px;font-weight:400}
         <a class="btn btn-brass" id="send" href="#" target="_blank" rel="noopener">Отправить в WhatsApp</a>
         <button type="button" class="t-clear" id="clear" hidden>Очистить заказ</button>
       </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec studio" id="studio" aria-labelledby="stH">
+  <div class="wrap">
+    <div class="st-grid">
+      <figure class="st-photo"><img src="img/studio.webp" alt="Мастерская Athele Sofia: стол закройщика, оверлок, нитки и светящаяся вывеска с логотипом" loading="lazy" decoding="async"><figcaption>мастерская · 2 этаж</figcaption></figure>
+      <div>
+        <p class="kicker">Мастерская</p>
+        <h2 id="stH">Небольшая мастерская на&nbsp;втором&nbsp;этаже</h2>
+        <p class="intro">Стол закройщика, оверлок, нитки на стене и примерочная за стеклянной дверью. Вход — с Малого Николопесковского, дом 4. Все фото на странице — из карточки ателье на Яндекс Картах.</p>
+        <p class="st-credit">фото с Яндекс Карт</p>
+      </div>
+    </div>
+    <div class="strip" aria-label="Фото ателье с Яндекс Карт" tabindex="0">
+      <figure><img src="img/fitting.webp" alt="Примерочная за стеклянной дверью" loading="lazy" decoding="async"><figcaption>примерочная</figcaption></figure>
+      <figure><img src="img/corset-skirt.webp" alt="Юбка из фатина и корсет, вид со спины" loading="lazy" decoding="async"><figcaption>корсет и юбка</figcaption></figure>
+      <figure><img src="img/entrance.webp" alt="Вход в здание, табличка дома 4 и надпись «2 этаж»" loading="lazy" decoding="async"><figcaption>вход · 2 этаж</figcaption></figure>
     </div>
   </div>
 </section>
@@ -805,7 +817,7 @@ function renderReviews() {
 function fillRulers() { $$('#asp .ruler i').forEach(function (i) { i.style.width = i.getAttribute('data-w') + '%'; }); }
 
 function observe() {
-  var piece = $('#piece'), asp = $('#asp');
+  var piece = null, asp = $('#asp');
   if (!('IntersectionObserver' in window)) { fillRulers(); return; }
   if (piece) new IntersectionObserver(function (es) { es.forEach(function (e) { piece.classList.toggle('paused', !e.isIntersecting); }); }).observe(piece);
   var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { fillRulers(); io.disconnect(); } }); }, { threshold: .2 });
@@ -822,5 +834,6 @@ try { boot(); } catch (e) { if (window.console) console.warn(e); }
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="photo.js" defer></script>
 </body>
 </html>

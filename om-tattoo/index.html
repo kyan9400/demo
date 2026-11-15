@@ -360,6 +360,30 @@ textarea:focus{outline:2px solid var(--red);outline-offset:1px}
   .draw .ln{stroke-dashoffset:0}
   html{scroll-behavior:auto}
 }
+
+/* photo-real hero (tunnel.js): real works from the Yandex Maps card in a depth tunnel; mandala as backdrop */
+.mandala-box.has-tunnel{width:min(80vw,330px);aspect-ratio:4/5}
+.has-tunnel .mandala{position:absolute;left:-14%;top:-4%;width:128%;height:auto;aspect-ratio:1;opacity:.3;pointer-events:none}
+.tunnel{position:absolute;inset:0;perspective:760px;overflow:hidden;border-radius:20px;touch-action:pan-y;cursor:pointer;user-select:none;-webkit-user-select:none;background:radial-gradient(80% 60% at 50% 40%,rgba(239,231,216,.07),rgba(18,16,14,.0) 70%);box-shadow:inset 0 0 0 1px var(--line-i)}
+.t-space{position:absolute;inset:0;transform-style:preserve-3d}
+.tcard{position:absolute;left:13%;top:9%;width:74%;aspect-ratio:4/5;margin:0;border-radius:10px;overflow:hidden;background:var(--ink-3);box-shadow:0 34px 60px -22px #000,0 0 0 1px rgba(239,231,216,.16);will-change:transform,opacity;backface-visibility:hidden}
+.tcard img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.t-vig{position:absolute;inset:0;pointer-events:none;z-index:150;background:radial-gradient(120% 90% at 50% 45%,transparent 55%,rgba(18,16,14,.75) 100%)}
+.t-cap{position:absolute;left:0;right:0;bottom:0;z-index:200;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;padding:0 16px 14px;font-size:14px;color:var(--bone);pointer-events:none}
+.t-cap .t-n{font-weight:800;font-size:12px;letter-spacing:.14em;color:var(--red-l)}
+.t-cap small{flex-basis:100%;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-dim)}
+@media (min-width:1024px){.mandala-box.has-tunnel{width:min(34vw,430px)}.t-cap{padding:0 22px 18px}}
+/* real place section */
+.place-g{display:grid;gap:26px;align-items:center}
+@media (min-width:900px){.place-g{grid-template-columns:1.1fr .9fr;gap:60px}}
+.place-photo{margin:0;border-radius:20px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 40px 70px -40px rgba(18,16,14,.8);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.place-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.05)}
+.strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:30px;padding-bottom:6px;scrollbar-width:none;overscroll-behavior-x:contain}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 auto;width:min(58vw,240px);margin:0;scroll-snap-align:start}
+.strip img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:14px;box-shadow:0 20px 40px -26px rgba(18,16,14,.7)}
+.strip figcaption{margin-top:8px;font-size:13px;color:var(--mute)}
+.credit{margin-top:12px;font-size:12px;letter-spacing:.06em;color:var(--mute)}
 </style>
 </head>
 <body>
@@ -372,7 +396,7 @@ textarea:focus{outline:2px solid var(--red);outline-offset:1px}
     <div><b>Ом</b><span>тату</span></div>
   </a>
   <nav class="nav" aria-label="Разделы">
-    <a href="#brief">Бриф идеи</a><a href="#prices">Цены</a><a href="#learn">Обучение</a><a href="#reviews">Отзывы</a><a href="#find">Как найти</a>
+    <a href="#brief">Бриф идеи</a><a href="#prices">Цены</a><a href="#learn">Обучение</a><a href="#studio">Студия</a><a href="#reviews">Отзывы</a><a href="#find">Как найти</a>
   </nav>
   <span class="pill" id="st1"><i></i><span>вт–вс 11:00–20:00</span></span>
 </header>
@@ -480,6 +504,29 @@ textarea:focus{outline:2px solid var(--red);outline-offset:1px}
     <p class="sub" id="lnSub"></p>
     <ol class="ladder" id="ladder"></ol>
     <div class="rent" id="rent"></div>
+  </div>
+</section>
+
+<section class="sec" id="studio" aria-labelledby="stH">
+  <div class="wrap">
+    <div class="place-g">
+      <figure class="place-photo"><img src="img/room.webp" alt="Кабинет студии: кресло мастера, растение и картина на стене" loading="lazy" width="1200" height="900"></figure>
+      <div>
+        <p class="k">Студия</p>
+        <h2 class="h2" id="stH">Тихий кабинет <em>на Демьяна Бедного</em></h2>
+        <p class="sub">Так выглядит студия: кабинет с креслом мастера, кушетка под кольцевой лампой, мягкий диван и гирлянда для тех, кто ждёт. Рядом — работы мастеров.</p>
+        <p class="credit">фото с Яндекс Карт</p>
+      </div>
+    </div>
+    <div class="strip" aria-label="Фото студии и работ">
+      <figure><img src="img/lounge.webp" alt="Диван и гирлянда в зоне ожидания" loading="lazy"><figcaption>зона ожидания</figcaption></figure>
+      <figure><img src="img/angel.webp" alt="Татуировка: ангел на предплечье" loading="lazy"><figcaption>ангел, графика</figcaption></figure>
+      <figure><img src="img/room-light.webp" alt="Кушетка под кольцевой лампой" loading="lazy"><figcaption>кушетка и свет</figcaption></figure>
+      <figure><img src="img/leg-colour.webp" alt="Цветная татуировка на ноге" loading="lazy"><figcaption>цветная работа</figcaption></figure>
+      <figure><img src="img/painting.webp" alt="Картина в студии и кресло" loading="lazy"><figcaption>картина в кабинете</figcaption></figure>
+      <figure><img src="img/ladybug.webp" alt="Татуировка: божья коровка" loading="lazy"><figcaption>божья коровка</figcaption></figure>
+      <figure><img src="img/chair.webp" alt="Кресло мастера" loading="lazy"><figcaption>кресло мастера</figcaption></figure>
+    </div>
   </div>
 </section>
 
@@ -1115,5 +1162,7 @@ boot();
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="tunnel.js"></script>
+<script>(function(){var f=document.querySelector('.place-photo');if(!f||matchMedia('(prefers-reduced-motion: reduce)').matches)return;f.addEventListener('pointermove',function(e){if(e.pointerType!=='mouse')return;var r=f.getBoundingClientRect();f.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*9+'deg');f.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*7+'deg');});f.addEventListener('pointerleave',function(){f.style.setProperty('--ry','0deg');f.style.setProperty('--rx','0deg');});})();</script>
 </body>
 </html>

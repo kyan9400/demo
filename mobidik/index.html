@@ -346,6 +346,43 @@ h2{font:400 clamp(32px,8.4vw,60px)/1.05 var(--fd);letter-spacing:-.015em;margin:
   .gloss #car .sweep{opacity:.6;transform:translateX(300px) skewX(-24deg)}
   .fogOn #car .fog{opacity:.6}
 }
+
+/* depth-parallax photo hero (real photos from the Yandex card) */
+.depth{position:relative;width:100%;max-width:620px;justify-self:center;aspect-ratio:1/.86;order:-1;touch-action:pan-y;user-select:none;-webkit-user-select:none;overflow:hidden;overflow:clip;margin:-6px 0 -4px;cursor:grab}
+.depth.grab{cursor:grabbing}
+.dl{position:absolute;margin:0;border-radius:18px;overflow:hidden;background:#0e3358;box-shadow:0 40px 60px -30px rgba(0,8,20,.85),0 0 0 1px rgba(255,255,255,.14) inset;will-change:transform;transform:translate3d(var(--x,0px),var(--y,0px),0) rotate(var(--r,0deg)) scale(var(--s,1))}
+.dl img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;color:transparent}
+.dl::after{content:"";position:absolute;top:0;bottom:0;left:0;width:45%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);transform:translateX(-120%) skewX(-20deg);animation:lacq 7s cubic-bezier(.5,0,.3,1) infinite;pointer-events:none}
+.dl-2::after{animation-delay:1.6s}.dl-3::after{animation-delay:3.2s}.dl-4::after{display:none}
+@keyframes lacq{0%{transform:translateX(-120%) skewX(-20deg)}50%,100%{transform:translateX(330%) skewX(-20deg)}}
+.dl figcaption{position:absolute;left:12px;bottom:10px;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(6,26,48,.55);padding:5px 9px;border-radius:99px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.dl-4{left:2%;top:3%;width:30%;aspect-ratio:3/4;--r:-5deg;filter:brightness(.7) saturate(.8)}
+.dl-1{left:24%;top:4%;width:72%;aspect-ratio:5/3;--r:2deg;z-index:1}
+.dl-2{left:3%;top:42%;width:54%;aspect-ratio:4/3;--r:-3.5deg;z-index:2}
+.dl-3{right:3%;top:52%;width:48%;aspect-ratio:4/3;--r:4deg;z-index:3}
+.d-credit{position:absolute;left:4%;bottom:1%;z-index:4;font-size:11.5px;font-weight:600;color:var(--on-sea-mute);letter-spacing:.04em}
+.depth .bubl{position:absolute;bottom:-10px;width:8px;height:8px;border:1.5px solid rgba(143,216,238,.7);border-radius:50%;z-index:5;animation:bub2 7s linear infinite;pointer-events:none}
+@keyframes bub2{0%{transform:translateY(0);opacity:0}15%{opacity:.9}100%{transform:translateY(-420px);opacity:0}}
+.paused .dl::after,.paused .bubl{animation-play-state:paused}
+@media (min-width:1024px){.depth{grid-column:2;grid-row:1;max-width:none;order:0;margin:0 -1vw 0 0}}
+@media (max-width:1023px){.hero .wrap{padding-top:18px}}
+@media (prefers-reduced-motion:reduce){.dl::after,.depth .bubl{display:none}}
+/* place section */
+.place{background:var(--abyss);color:var(--on-sea)}
+.pl-grid{display:grid;gap:24px;align-items:center}
+@media (min-width:1024px){.pl-grid{grid-template-columns:1.15fr .85fr;gap:56px}}
+.pl-photo{margin:0;border-radius:22px;overflow:hidden;aspect-ratio:16/10;box-shadow:0 40px 70px -40px rgba(0,0,0,.8);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s;position:relative}
+.pl-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.06)}
+.place h2{color:#fff}
+.place .pl-txt p{color:#c9d7e5;font-size:17px;line-height:1.55;max-width:36ch;margin:0}
+.place .pl-k{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8fd8ee;margin:0 0 10px}
+.place h2{font:400 clamp(38px,8vw,64px)/1 var(--fd);margin:0 0 16px}
+.pstrip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:30px;padding-bottom:8px;scrollbar-width:none}
+.pstrip::-webkit-scrollbar{display:none}
+.pstrip figure{flex:0 0 auto;width:min(66vw,280px);margin:0;scroll-snap-align:start}
+.pstrip img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;display:block;background:#0e3358;box-shadow:0 20px 40px -24px rgba(0,0,0,.8)}
+.pstrip figcaption{font-size:13px;color:var(--on-sea-mute);margin-top:8px}
+.pcredit{font-size:12.5px;color:var(--on-sea-mute);margin-top:12px}
 </style>
 </head>
 <body>
@@ -384,46 +421,13 @@ h2{font:400 clamp(32px,8.4vw,60px)/1.05 var(--fd);letter-spacing:-.015em;margin:
       <div class="hero-facts" id="hfacts"></div>
     </div>
 
-    <svg class="whale" viewBox="0 56 640 304" role="img" aria-label="Белый кит — символ МобиДика">
-      <defs>
-        <linearGradient id="wg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#e3ecf5"/><stop offset="1" stop-color="#a9bfd4"/>
-        </linearGradient>
-        <linearGradient id="ws" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
-        </linearGradient>
-        <clipPath id="wclip"><path id="wbody" d="M60 182C60 156 82 142 120 142L284 140C364 140 432 160 494 194C522 208 542 212 558 206C568 182 586 158 616 142C618 164 610 190 594 212C610 222 624 240 628 262C606 248 582 236 558 232C522 232 470 248 390 260C300 272 200 270 130 256L104 248C76 240 60 214 60 182Z"/></clipPath>
-        <radialGradient id="deep" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#2a6aa3" stop-opacity=".45"/><stop offset="1" stop-color="#2a6aa3" stop-opacity="0"/></radialGradient>
-      </defs>
-      <g opacity=".5" stroke="#8fd8ee" stroke-width="1" fill="none">
-        <path d="M20 316c60-10 120 10 180 0s120-10 180 0 120 10 240-4" opacity=".5"/>
-        <path d="M60 340c60-8 120 8 180 0s120-8 180 0 100 8 200-4" opacity=".3"/>
-      </g>
-      <ellipse cx="340" cy="210" rx="300" ry="120" fill="url(#deep)"/>
-      <g class="bob">
-        <path d="M60 182C60 156 82 142 120 142L284 140C364 140 432 160 494 194C522 208 542 212 558 206C568 182 586 158 616 142C618 164 610 190 594 212C610 222 624 240 628 262C606 248 582 236 558 232C522 232 470 248 390 260C300 272 200 270 130 256L104 248C76 240 60 214 60 182Z" fill="url(#wg)"/>
-        <g clip-path="url(#wclip)">
-          <path d="M60 230C150 246 250 250 360 240S520 220 640 250L640 300L60 300Z" fill="#9db4ca" opacity=".55"/>
-          <rect class="sweep" x="0" y="100" width="120" height="200" fill="url(#ws)" opacity=".9"/>
-          <g stroke="#b8cadb" stroke-width="2" fill="none" stroke-linecap="round" opacity=".9">
-            <path d="M330 168c18 4 34 10 50 18"/><path d="M360 160c18 5 34 12 48 20"/><path d="M300 176c14 2 28 6 42 12"/><path d="M420 182c14 6 26 12 38 20"/>
-          </g>
-        </g>
-        <path d="M110 152C220 146 360 148 470 192" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" opacity=".95"/>
-        <path d="M104 238C160 246 220 248 268 244" stroke="#6f8aa6" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <circle cx="250" cy="216" r="5" fill="#0b2a4a"/><circle cx="251.5" cy="214.5" r="1.6" fill="#fff"/>
-        <path d="M250 252C262 284 292 302 320 300C306 282 288 266 272 256Z" fill="#cfdbe7"/>
-        <g fill="#cfeefa">
-          <circle class="drop" cx="112" cy="110" r="5"/><circle class="drop" cx="96" cy="96" r="3.5" style="animation-delay:.5s"/>
-          <circle class="drop" cx="128" cy="92" r="4" style="animation-delay:1s"/><circle class="drop" cx="108" cy="78" r="3" style="animation-delay:1.5s"/>
-          <circle class="drop" cx="140" cy="108" r="3" style="animation-delay:2s"/><circle class="drop" cx="86" cy="116" r="2.6" style="animation-delay:2.3s"/>
-        </g>
-      </g>
-      <g fill="none" stroke="#8fd8ee" stroke-width="1.5" opacity=".8">
-        <circle class="bub" cx="200" cy="330" r="5"/><circle class="bub" cx="420" cy="340" r="4" style="animation-delay:1.6s"/>
-        <circle class="bub" cx="520" cy="320" r="6" style="animation-delay:3s"/><circle class="bub" cx="320" cy="350" r="3" style="animation-delay:4.2s"/>
-      </g>
-    </svg>
+    <div class="depth" id="depth" aria-label="Фото МобиДика с Яндекс Карт">
+      <figure class="dl dl-4" data-f="0.35"><img src="img/blue-suv.webp" alt="Синий внедорожник в боксе" width="901" height="1200" decoding="async" draggable="false"></figure>
+      <figure class="dl dl-1" data-f="0.6"><img src="img/polish.webp" alt="Полировка кузова машинкой" width="1000" height="600" decoding="async" fetchpriority="high" draggable="false"><figcaption>полировка</figcaption></figure>
+      <figure class="dl dl-2" data-f="1"><img src="img/g-box.webp" alt="Чёрный внедорожник после мойки в боксе" width="1200" height="900" decoding="async" draggable="false"><figcaption>после мойки</figcaption></figure>
+      <figure class="dl dl-3" data-f="1.45"><img src="img/wet-suv.webp" alt="Матовый внедорожник на мойке, мокрый пол" width="1000" height="741" decoding="async" draggable="false"><figcaption>мойка</figcaption></figure>
+      <span class="d-credit">фото с Яндекс Карт</span>
+    </div>
   </div>
   <svg class="wave" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30C180 6 360 6 540 24S900 54 1080 36 1320 8 1440 22V56H0Z" fill="#f4f7fb"/></svg>
 </section>
@@ -550,6 +554,29 @@ h2{font:400 clamp(32px,8.4vw,60px)/1.05 var(--fd);letter-spacing:-.015em;margin:
 </section>
 
 <!-- ===== WAITING ROOM ===== -->
+<section class="sec place" id="place" aria-labelledby="pl-h">
+  <div class="wrap">
+    <div class="pl-grid">
+      <figure class="pl-photo"><img src="img/box.webp" alt="Чистый бокс МобиДика с картинами на стенах" loading="lazy" width="1200" height="675"></figure>
+      <div class="pl-txt">
+        <p class="pl-k">Боксы на Гороховском</p>
+        <h2 id="pl-h">Так выглядит МобиДик внутри</h2>
+        <p>Светлые боксы для мойки и детейлинга, шиномонтаж с балансировкой и въезд со двора за синим забором «Автокомплекс». Снимки — из карточки на Яндекс Картах.</p>
+      </div>
+    </div>
+    <div class="pstrip" aria-label="Фото МобиДика">
+      <figure><img src="img/ceramic-box.webp" alt="Седан в боксе детейлинга" loading="lazy"><figcaption>бокс детейлинга</figcaption></figure>
+      <figure><img src="img/coupe-box.webp" alt="Купе в боксе" loading="lazy"><figcaption>купе в боксе</figcaption></figure>
+      <figure><img src="img/tyre-shop.webp" alt="Шиномонтажное оборудование и компрессор" loading="lazy"><figcaption>шиномонтаж</figcaption></figure>
+      <figure><img src="img/balancing.webp" alt="Балансировочный станок с колесом" loading="lazy"><figcaption>балансировка</figcaption></figure>
+      <figure><img src="img/tyre-work.webp" alt="Мастер снимает колесо у кроссовера" loading="lazy"><figcaption>смена колёс</figcaption></figure>
+      <figure><img src="img/sign.webp" alt="Синий забор с вывеской «Автокомплекс»" loading="lazy"><figcaption>вывеска «Автокомплекс»</figcaption></figure>
+      <figure><img src="img/driveway.webp" alt="Въезд во двор к автокомплексу" loading="lazy"><figcaption>въезд со двора</figcaption></figure>
+    </div>
+    <p class="pcredit">фото с Яндекс Карт</p>
+  </div>
+</section>
+
 <section class="sec wait" id="wait" aria-labelledby="w-h">
   <div class="wrap">
     <p class="eyebrow">Пока машину моют</p>
@@ -1003,6 +1030,7 @@ if ('IntersectionObserver' in window && !reduce) {
 setTimeout(function () { rvs.forEach(reveal); }, 2500);
 })();
 </script>
+<script src="depth.js"></script>
 <script src="../map-fix.js" defer></script>
 </body>
 </html>

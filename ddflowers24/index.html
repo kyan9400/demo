@@ -109,6 +109,20 @@ h1 em{display:block;font-style:italic;font-weight:500;color:var(--muted)}
 .hero-art{position:relative;margin:-6px -16px 0;height:min(92vw,400px)}
 @media(max-width:899.98px){.hero-cta .btn{padding:0 20px;flex:1 1 auto}}
 .hero-art svg{width:100%;height:100%}
+.hero-art.has-photos>svg{opacity:0;pointer-events:none}
+.dpt{position:absolute;inset:0;perspective:1000px;perspective-origin:50% 45%;touch-action:pan-y;cursor:pointer;z-index:1;user-select:none;-webkit-user-select:none;overflow:hidden;overflow:clip}
+.dpt::before{content:"";position:absolute;left:50%;top:48%;width:140%;aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(255,79,163,.22),rgba(122,79,208,.10) 55%,transparent 75%);pointer-events:none}
+.dpt-cam{position:absolute;left:50%;top:47%;width:0;height:0;transform-style:preserve-3d;will-change:transform}
+.dcard{position:absolute;margin:0;width:var(--cw,220px);aspect-ratio:4/5;left:calc(var(--cw,220px) / -2);top:calc(var(--cw,220px) * -.625);border-radius:16px;overflow:hidden;background:var(--bg-3);box-shadow:0 34px 60px -28px rgba(0,0,0,.85),0 0 0 1px rgba(185,174,219,.22);filter:brightness(var(--dim,1)) saturate(calc(var(--dim,1) * .5 + .5));transition:transform 1.1s cubic-bezier(.2,.75,.2,1),filter 1.1s,box-shadow .6s;will-change:transform}
+.dcard img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.dcard .glare{position:absolute;inset:0;background:radial-gradient(110% 70% at var(--gx,50%) -10%,rgba(255,255,255,.3),transparent 55%);mix-blend-mode:soft-light;pointer-events:none}
+.dcard.front{box-shadow:0 40px 80px -24px rgba(255,79,163,.45),0 0 0 1px rgba(255,125,187,.7),0 0 40px -6px rgba(255,79,163,.35)}
+.dpt-cap{position:absolute;left:0;right:0;bottom:12px;margin:0;text-align:center;z-index:3;pointer-events:none;font-size:13px;color:var(--muted);line-height:1.35}
+.dpt-cap small{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.dpt-cap span{font:italic 500 21px/1.2 var(--f-d);color:var(--ink)}
+.dpt-hint{position:absolute;left:50%;top:10px;transform:translateX(-50%);white-space:nowrap;font:600 11px/1 var(--f-b);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:rgba(13,9,32,.62);border:1px solid var(--line-2);padding:7px 12px;border-radius:99px;pointer-events:none;z-index:3}
+@media(max-width:899.98px){.hero-in{padding-top:14px}.hero-art.has-photos{order:-1;height:min(100vw,400px);margin:0 -16px 4px}.hero-art.has-photos .dpt-hint{display:none}.dpt-cap{bottom:4px}.dpt-cap span{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.dcard{transition:none}}
 .sway{transform-box:fill-box;transform-origin:50% 100%;animation:sway 7s ease-in-out infinite alternate}
 @keyframes sway{from{transform:rotate(-2.2deg)}to{transform:rotate(2.2deg)}}
 .twk{animation:twk 3.4s ease-in-out infinite alternate}
@@ -289,6 +303,16 @@ input[type=date].field{color-scheme:dark}
 .reveal{opacity:1;transform:none;transition:opacity .7s,transform .7s}
 .js .reveal.pre{opacity:0;transform:translateY(18px)}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.js .reveal.pre{opacity:1;transform:none}}
+.place-grid{display:grid;gap:26px;align-items:center}@media(min-width:900px){.place-grid{grid-template-columns:.85fr 1.15fr;gap:64px}}
+.place-photo{margin:0;border-radius:26px 26px 26px 26px;overflow:hidden;aspect-ratio:4/5;max-width:440px;box-shadow:0 40px 80px -40px rgba(0,0,0,.9),0 0 0 1px var(--line-2),0 0 60px -20px rgba(255,79,163,.35);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.place-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.06)}
+.place .lead2{color:var(--muted);font-size:17px;max-width:44ch;margin-top:16px}
+.place .credit{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-top:14px}
+.strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:34px;padding-bottom:6px;scrollbar-width:none;overscroll-behavior-x:contain}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 auto;margin:0;width:min(62vw,270px);scroll-snap-align:start}
+.strip img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;display:block;box-shadow:0 20px 40px -26px rgba(0,0,0,.8);border:1px solid var(--line)}
+.strip figcaption{font-size:13px;color:var(--dim);margin-top:8px}
 </style>
 </head>
 <body>
@@ -417,6 +441,27 @@ input[type=date].field{color-scheme:dark}
     <div class="extras">
       <div class="ex-col"><h3>На полках</h3><div class="tags" id="shelf"></div></div>
       <div class="ex-col"><h3>Удобно</h3><div class="tags" id="comfort"></div><p class="pay" id="pay"></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec place" id="place" aria-labelledby="h-place">
+  <div class="wrap">
+    <div class="place-grid">
+      <figure class="place-photo"><img src="img/night-entrance.webp" alt="Вход в цветочный магазин вечером, светящаяся вывеска «Цветы»" loading="lazy"></figure>
+      <div>
+        <div class="kicker">Сам магазин</div>
+        <h2 id="h-place">Свет горит <em>всю ночь</em></h2>
+        <p class="lead2">Холодильники с готовыми букетами, витрина у окна, полки с горшечными растениями и подарками — вот так магазин выглядит на настоящих фото из его карточки.</p>
+        <p class="credit">фото с Яндекс Карт</p>
+      </div>
+    </div>
+    <div class="strip" aria-label="Фото магазина и букетов">
+      <figure><img src="img/hall.webp" alt="Торговый зал с цветами" loading="lazy"><figcaption>торговый зал</figcaption></figure>
+      <figure><img src="img/window.webp" alt="Готовые букеты на витрине у окна" loading="lazy"><figcaption>витрина у окна</figcaption></figure>
+      <figure><img src="img/interior.webp" alt="Зал с лентами и упаковочной бумагой" loading="lazy"><figcaption>ленты и упаковка</figcaption></figure>
+      <figure><img src="img/red-roses.webp" alt="Большой букет красных роз" loading="lazy"><figcaption>красные розы</figcaption></figure>
+      <figure><img src="img/facade.webp" alt="Фасад с витринами магазина" loading="lazy"><figcaption>фасад</figcaption></figure>
     </div>
   </div>
 </section>
@@ -933,5 +978,7 @@ if (!reduced && 'IntersectionObserver' in window) {
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="depth.js"></script>
+<script>(function(){var f=document.querySelector('.place-photo');if(!f||matchMedia('(prefers-reduced-motion: reduce)').matches)return;f.addEventListener('pointermove',function(e){var r=f.getBoundingClientRect();f.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*10+'deg');f.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*8+'deg');});f.addEventListener('pointerleave',function(){f.style.setProperty('--ry','0deg');f.style.setProperty('--rx','0deg');});})();</script>
 </body>
 </html>

@@ -259,6 +259,41 @@ button{cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manip
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .ember{opacity:0}
 }
+
+/* photo hero: a stack of real photos dealt off the grill (deck.js) */
+.flamebox{aspect-ratio:400/440}
+.flamebox>svg{position:absolute;inset:0}
+.flamebox .fl{opacity:.85}
+.deck{position:absolute;left:0;right:0;top:0;height:82%;perspective:1000px;perspective-origin:50% 20%;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab;z-index:1;outline-offset:6px;border-radius:20px}
+.deck.grab{cursor:grabbing}
+.deck-in{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+.dcard{position:absolute;left:50%;top:3%;width:60%;aspect-ratio:4/5;margin:0 0 0 -30%;border-radius:16px;overflow:hidden;background:#2A201B;border:3px solid #F6E6D1;box-shadow:0 26px 40px -18px rgba(0,0,0,.85),0 0 0 1px rgba(0,0,0,.4);transform-origin:50% 90%;will-change:transform,filter;backface-visibility:hidden;transition:transform .55s cubic-bezier(.2,.8,.2,1),filter .55s}
+.dcard.drag{transition:none}
+.dcard img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.dcard .fire-l{position:absolute;inset:0;background:linear-gradient(0deg,rgba(255,106,26,.42),rgba(255,106,26,0) 45%),radial-gradient(80% 50% at var(--gx,50%) 0%,rgba(255,255,255,.18),transparent 60%);mix-blend-mode:soft-light;pointer-events:none;animation:firelick 1.7s ease-in-out infinite alternate}
+@keyframes firelick{from{opacity:.65}to{opacity:1}}
+.paused .dcard .fire-l{animation-play-state:paused}
+.deck-cap{position:absolute;left:0;right:0;bottom:-6px;margin:0;text-align:center;display:flex;flex-direction:column;gap:4px;z-index:2;pointer-events:none}
+.deck-cap small{font:600 11px/1 var(--text);letter-spacing:.14em;text-transform:uppercase;color:var(--y)}
+.deck-cap>span{font:600 15px/1.2 var(--text);color:var(--warm)}
+.flamebox>svg text{display:none}
+@media (max-width:999px){.hero .wrap>.flamebox{order:-1;margin-top:-8px;width:min(100%,430px)}.hero .wrap{padding-top:16px}}
+@media (max-width:599px){.flamebox{aspect-ratio:400/400}.dcard{width:56%;margin-left:-28%;top:2%}}
+@media (prefers-reduced-motion:reduce){.dcard{transition:none}.dcard .fire-l{animation:none}}
+
+/* the people at the grill: real photos */
+.crew{display:grid;gap:24px;align-items:center;margin-top:34px}
+@media (min-width:900px){.crew{grid-template-columns:.75fr 1.25fr;gap:52px}}
+.crew-photo{margin:0;border-radius:22px;overflow:hidden;aspect-ratio:4/5;max-width:420px;border:3px solid var(--warm2);box-shadow:0 40px 70px -40px #000,0 0 50px -20px rgba(255,122,26,.55);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.crew-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.05)}
+.crew-txt h3{font:700 clamp(28px,7vw,40px)/1.05 var(--disp);text-transform:uppercase}
+.crew-txt p{margin-top:12px;color:var(--mut-d);font-size:16.5px;line-height:1.55;max-width:34em}
+.crew-strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:28px;padding-bottom:8px;scrollbar-width:none}
+.crew-strip::-webkit-scrollbar{display:none}
+.crew-strip figure{flex:0 0 auto;margin:0;width:min(60vw,240px);scroll-snap-align:start}
+.crew-strip img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:16px;border:1px solid var(--line-d);box-shadow:0 20px 40px -26px #000}
+.crew-strip figcaption{font-size:13px;color:var(--mut-d);margin-top:8px}
+.crew-credit{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut-d);margin-top:12px}
 </style>
 </head>
 <body>
@@ -290,8 +325,8 @@ button{cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manip
         <a class="btn btn-ghost" id="heroCall" href="#"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Позвонить</a>
       </div>
     </div>
-    <div class="flamebox" aria-hidden="true">
-      <svg viewBox="0 0 400 430">
+    <div class="flamebox">
+      <svg viewBox="0 0 400 430" aria-hidden="true">
         <defs>
           <linearGradient id="f1" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#FF8A1F"/><stop offset=".55" stop-color="#E8361A"/><stop offset="1" stop-color="#9E1A12"/></linearGradient>
           <linearGradient id="f2" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#FFC542"/><stop offset=".7" stop-color="#FF6A1A"/><stop offset="1" stop-color="#E8361A"/></linearGradient>
@@ -326,6 +361,14 @@ button{cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manip
           <text x="200" y="424" font-size="18" fill="rgba(255,244,230,.7)" letter-spacing="6">00:00 — 24:00</text>
         </g>
       </svg>
+      <div class="deck" id="deck" tabindex="0" role="group" aria-roledescription="стопка фото" aria-label="Фото с Яндекс Карт: шаурма и гриль на Пушкинской, 2А">
+        <figure class="dcard" data-cap="Шаурма с картошкой фри"><img src="img/shawarma-fries.webp" alt="Шаурма в разрезе с картошкой фри и морковью" width="1080" height="1071" decoding="async" fetchpriority="high" draggable="false"><i class="fire-l" aria-hidden="true"></i></figure>
+        <figure class="dcard" data-cap="Вертел с мясом у окна"><img src="img/spit.webp" alt="Вертикальный вертел с мясом для шаурмы" width="900" height="1200" decoding="async" draggable="false"><i class="fire-l" aria-hidden="true"></i></figure>
+        <figure class="dcard" data-cap="Шаурма у входа на Пушкинской"><img src="img/storefront-roll.webp" alt="Шаурма в руке на фоне вывески «Шаурма &amp; гриль»" width="900" height="1200" loading="lazy" decoding="async" draggable="false"><i class="fire-l" aria-hidden="true"></i></figure>
+        <figure class="dcard" data-cap="Шаурма в разрезе"><img src="img/roll-hand.webp" alt="Шаурма в лаваше с полосками от гриля" width="900" height="1200" loading="lazy" decoding="async" draggable="false"><i class="fire-l" aria-hidden="true"></i></figure>
+        <figure class="dcard" data-cap="Пита с начинкой"><img src="img/pita.webp" alt="Пита с мясом и соусом над прилавком" width="900" height="1200" loading="lazy" decoding="async" draggable="false"><i class="fire-l" aria-hidden="true"></i></figure>
+      </div>
+      <p class="deck-cap" aria-live="polite"><small>фото с Яндекс Карт · <span id="deckN">1/5</span></small><span id="deckCap">Шаурма с картошкой фри</span></p>
     </div>
   </div>
 </section>
@@ -389,6 +432,24 @@ button{cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manip
     <p class="sub">Так пишет Людмила О. В&nbsp;отзывах снова и&nbsp;снова благодарят людей у&nbsp;гриля — вот их слова.</p>
     <div class="cooks" id="cooksList"></div>
     <p class="cooknote">Имена — из&nbsp;отзывов гостей на&nbsp;Яндекс Картах.</p>
+    <div class="crew">
+      <figure class="crew-photo"><img src="img/shawarmist.webp" alt="Шаурмист за прилавком с шаурмой и напитком в руках" width="900" height="1200" loading="lazy" decoding="async"></figure>
+      <div class="crew-txt">
+        <p class="eyebrow">Фото с Яндекс Карт</p>
+        <h3>Вот так здесь <span class="fire-t">работают</span></h3>
+        <p>Живые снимки с Пушкинской, 2А: шаурму сворачивают при вас, овощи и соусы — в открытой линии, вертел крутится у окна, рядом витрина с выпечкой. Это снимки, которые выложили заведение и гости.</p>
+      </div>
+    </div>
+    <div class="crew-strip" aria-label="Фото с кухни и прилавка">
+      <figure><img src="img/rolling.webp" alt="Повар раскладывает начинку на лаваш" loading="lazy" decoding="async"><figcaption>начинка на лаваш</figcaption></figure>
+      <figure><img src="img/wrapping.webp" alt="Руки в перчатках сворачивают шаурму" loading="lazy" decoding="async"><figcaption>сворачивают при вас</figcaption></figure>
+      <figure><img src="img/veg-bar.webp" alt="Лотки с овощами и соусами" loading="lazy" decoding="async"><figcaption>овощи и соусы</figcaption></figure>
+      <figure><img src="img/vitrine.webp" alt="Витрина с выпечкой и закусками" loading="lazy" decoding="async"><figcaption>витрина</figcaption></figure>
+      <figure><img src="img/bakery.webp" alt="Выпечка на витрине с ценниками" loading="lazy" decoding="async"><figcaption>выпечка</figcaption></figure>
+      <figure><img src="img/counter.webp" alt="Прилавок и кофемашина" loading="lazy" decoding="async"><figcaption>прилавок</figcaption></figure>
+      <figure><img src="img/storefront.webp" alt="Павильон «Шаурма &amp; гриль» с улицы" loading="lazy" decoding="async"><figcaption>павильон с улицы</figcaption></figure>
+    </div>
+    <p class="crew-credit">фото с Яндекс Карт</p>
   </div>
 </section>
 
@@ -708,5 +769,7 @@ if ('IntersectionObserver' in window) new IntersectionObserver((es) => es.forEac
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="deck.js"></script>
+<script>(function(){var f=document.querySelector('.crew-photo');if(!f||matchMedia('(prefers-reduced-motion: reduce)').matches)return;f.addEventListener('pointermove',function(e){var r=f.getBoundingClientRect();f.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*10+'deg');f.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*8+'deg');});f.addEventListener('pointerleave',function(){f.style.setProperty('--ry','0deg');f.style.setProperty('--rx','0deg');});})();</script>
 </body>
 </html>

@@ -140,6 +140,26 @@ h1{margin:0}
 .cta{display:grid;gap:10px;margin-top:22px}
 @media (min-width:560px){.cta{grid-template-columns:auto auto;justify-content:start}}
 
+/* premiere deck: real photos of pets from the salon's Yandex card */
+.deck{position:relative;width:100%;max-width:420px;margin:0 auto;aspect-ratio:1/1.12;perspective:1200px;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.deck.grab{cursor:grabbing}
+.deck3d{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+.pcard{position:absolute;left:50%;top:2%;width:68%;aspect-ratio:3/4.15;margin:0 0 0 -34%;padding:9px 9px 0;border-radius:14px;background:linear-gradient(180deg,#2b1b12,#1a1013);box-shadow:0 0 0 1.5px var(--brass-2),0 34px 50px -24px rgba(0,0,0,.9);transform-origin:50% 92%;transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .7s;will-change:transform;display:flex;flex-direction:column}
+.pcard::before{content:"";position:absolute;left:6px;right:6px;top:2px;height:6px;background:radial-gradient(circle,#fff1c9 0 1.6px,rgba(255,215,130,.5) 2.2px,transparent 3px) 0 0/11px 6px;opacity:.9}
+.pcard img{flex:1;min-height:0;width:100%;object-fit:cover;border-radius:7px;display:block;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(229,189,99,.4)}
+.pcard figcaption{padding:8px 4px 10px;text-align:center;line-height:1.15}
+.pcard small{display:block;font:600 11px/1 var(--f-sign);letter-spacing:.3em;text-transform:uppercase;color:var(--brass)}
+.pcard span{display:block;margin-top:5px;font:800 italic 17px/1.1 var(--f-glam);color:var(--cream);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pcard.drag{transition:none}
+.pcard figcaption{transition:opacity .5s}.pcard:not(.top) figcaption{opacity:.25}
+.hero-txt{position:relative;z-index:2}
+.pcard .shine{position:absolute;inset:0;border-radius:14px;background:linear-gradient(115deg,transparent 35%,rgba(255,240,200,.16) 48%,transparent 60%);pointer-events:none;opacity:0;transition:opacity .4s}
+.pcard.top .shine{opacity:1}
+.deck-hint{position:absolute;left:50%;bottom:0;transform:translateX(-50%);z-index:200;font:600 11px/1 var(--f-sign);letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--brass);background:rgba(20,16,21,.85);border:1px solid rgba(229,189,99,.35);border-radius:999px;padding:7px 12px;pointer-events:none}
+.deck-cred{text-align:center;font-size:12px;letter-spacing:.08em;color:var(--mute);margin-top:8px}
+.hero-star .quote-tag{margin-top:14px}
+@media (max-width:999px){.hero-grid{gap:22px}.hero-star{order:-1}.deck{max-width:340px;aspect-ratio:1/1.02}.pcard{width:60%;margin-left:-30%}.hero-star .quote-tag{margin-top:6px}.hero-star .star-cta{margin-top:8px}}
+@media (max-width:999px) and (min-width:600px){.deck{max-width:400px}}
 /* walk of fame star tile */
 .star-tile{position:relative;width:100%;max-width:380px;margin:0 auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.55))}
 .star-tile svg{width:100%;height:auto}
@@ -155,6 +175,7 @@ h1{margin:0}
   .hero{padding:20px 0 64px}
   .hero-grid{grid-template-columns:1.1fr .9fr;gap:60px}
   .sign{max-width:640px}
+  .sign-name{font-size:clamp(70px,8.2vw,110px)}
   .hero-star .star-tile{max-width:440px}
 }
 
@@ -303,6 +324,18 @@ table.mx{width:100%;min-width:560px;border-collapse:separate;border-spacing:0}
 .plist li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;border-top:1px solid var(--line);font-size:15px;line-height:1.35}
 .plist li span:last-child{font:600 17px/1.2 var(--f-sign);white-space:nowrap;color:var(--brass)}
 .plist li small{display:block;margin-top:2px;color:var(--mute);font-size:13.5px;line-height:1.4}
+
+/* ===== real salon ===== */
+.set-grid{display:grid;gap:26px;align-items:center;grid-template-columns:minmax(0,1fr)}
+@media (min-width:900px){.set-grid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px}}
+.set-photo{margin:0;width:100%;max-width:440px;aspect-ratio:4/5;border-radius:22px;overflow:hidden;box-shadow:0 0 0 1.5px var(--brass-2),0 40px 70px -40px rgba(0,0,0,.9);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.set-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.06)}
+.set-cred{margin-top:14px;font:600 12px/1 var(--f-sign);letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+.strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:30px;padding-bottom:8px;scrollbar-width:none;overscroll-behavior-x:contain}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 auto;width:min(62vw,250px);margin:0;scroll-snap-align:start}
+.strip img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:16px;box-shadow:0 0 0 1px rgba(229,189,99,.35),0 20px 40px -26px rgba(0,0,0,.9)}
+.strip figcaption{margin-top:8px;font-size:13.5px;color:var(--mute)}
 
 /* ===== backstage ===== */
 .back{background:var(--ink-2)}
@@ -461,7 +494,11 @@ table.mx{width:100%;min-width:560px;border-collapse:separate;border-spacing:0}
       </div>
     </div>
     <div class="hero-star">
-      <div class="star-tile" data-star="hero" aria-hidden="true"></div>
+      <div class="deck" id="deck" aria-roledescription="карусель" aria-label="Питомцы после визита в салон — фото с Яндекс Карт">
+        <div class="deck3d" id="deck3d"><figure class="pcard"><img src="img/maltese.webp" alt="Белый пёс сидит на жёлтом бархатном диване" width="750" height="1000" fetchpriority="high" decoding="async"><figcaption><small>в главной роли</small><span>белый пёс на жёлтом диване</span></figcaption></figure></div>
+        <span class="deck-hint" aria-hidden="true">свайп — следующая звезда</span>
+      </div>
+      <p class="deck-cred">реальные гости салона · фото с Яндекс Карт</p>
       <div class="quote-tag"><q>как голливудская звезда</q><small>— Pretty W. о своей Холли после груминга, отзыв на Яндекс Картах</small></div>
       <div class="star-cta"><a href="#cast" id="nameJump">Вписать кличку своего питомца ↓</a></div>
     </div>
@@ -534,6 +571,28 @@ table.mx{width:100%;min-width:560px;border-collapse:separate;border-spacing:0}
     <div class="mx-wrap"><table class="mx" id="mx"></table></div>
     <p class="mx-hint" id="mxHint"></p>
     <div class="lists" id="lists"></div>
+  </div>
+</section>
+
+<section class="sec set" id="set" aria-labelledby="setH">
+  <div class="wrap">
+    <div class="set-grid">
+      <figure class="set-photo"><img src="img/sofa.webp" alt="Жёлтый бархатный диван у зелёной стены с чёрно-белыми портретами в рамах" width="750" height="1000" loading="lazy" decoding="async"></figure>
+      <div class="sec-h">
+        <p class="kicker">Съёмочная площадка</p>
+        <h2 id="setH">Так выглядит салон</h2>
+        <p class="sec-lead">Зелёные стены, жёлтый бархатный диван, портреты в&nbsp;рамах и&nbsp;зеркало в&nbsp;золотой раме — так салон на&nbsp;Саларьевской, 9, выглядит на&nbsp;фото в&nbsp;своей карточке.</p>
+        <p class="set-cred">фото с Яндекс Карт</p>
+      </div>
+    </div>
+    <div class="strip" aria-label="Фото салона">
+      <figure><img src="img/salon-swing.webp" alt="Зал с подвесным креслом, зеркалом и диваном у окна" loading="lazy" decoding="async"><figcaption>зал у окна</figcaption></figure>
+      <figure><img src="img/salon.webp" alt="Жёлтый диван и портреты на зелёной стене" loading="lazy" decoding="async"><figcaption>диван и портреты</figcaption></figure>
+      <figure><img src="img/salon-tv.webp" alt="Стойка администратора и экран на стене" loading="lazy" decoding="async"><figcaption>стойка администратора</figcaption></figure>
+      <figure><img src="img/salon-wall.webp" alt="Стена с одеждой для собак и стулья" loading="lazy" decoding="async"><figcaption>одежда для питомцев</figcaption></figure>
+      <figure><img src="img/mirror.webp" alt="Собачка в розовом платье у зеркала в золотой раме" loading="lazy" decoding="async"><figcaption>у зеркала</figcaption></figure>
+      <figure><img src="img/bear.webp" alt="Кудрявый пёс в костюме с надписью BEAR" loading="lazy" decoding="async"><figcaption>в костюме</figcaption></figure>
+    </div>
   </div>
 </section>
 
@@ -1041,5 +1100,7 @@ if (document.fonts && document.fonts.ready) document.fonts.ready.then(function (
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="deck.js"></script>
+<script>(function(){var f=document.querySelector('.set-photo');if(!f||matchMedia('(prefers-reduced-motion: reduce)').matches)return;f.addEventListener('pointermove',function(e){var r=f.getBoundingClientRect();f.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*10+'deg');f.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*8+'deg');});f.addEventListener('pointerleave',function(){f.style.setProperty('--ry','0deg');f.style.setProperty('--rx','0deg');});})();</script>
 </body>
 </html>

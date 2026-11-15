@@ -73,7 +73,7 @@ svg{display:block}
 .logo{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;font:400 clamp(18px,5.4vw,23px)/1 var(--disp);letter-spacing:-.01em;white-space:nowrap}
 .logo i{font-style:normal;color:var(--yel);margin:0 1px}
 .nav{display:none}
-.status{display:inline-flex;align-items:center;gap:7px;flex:none;min-height:36px;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.12);font-size:13px;font-weight:700;white-space:nowrap}
+.status{display:inline-flex;align-items:center;gap:7px;flex:0 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;min-height:36px;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.12);font-size:13px;font-weight:700;white-space:nowrap}
 .status::before{content:"";width:8px;height:8px;border-radius:50%;background:#5df59a;box-shadow:0 0 0 4px rgba(93,245,154,.2)}
 .status.closed::before{background:#ff9a85;box-shadow:0 0 0 4px rgba(255,154,133,.2)}
 .top-tel{display:none}
@@ -298,6 +298,32 @@ h2 .b{color:var(--blue)}
   .map{height:auto;min-height:100%}
   .foot .rows{grid-template-columns:1fr 1.3fr 1fr}
 }
+
+/* ---------- photo-real hero: real photos floating in soap bubbles (Yandex Maps card) ---------- */
+.pbubs{position:absolute;inset:0;pointer-events:none}
+.pbub{position:absolute;left:var(--x);top:var(--y);width:var(--s);height:var(--s);margin:calc(var(--s) / -2) 0 0 calc(var(--s) / -2);border-radius:50%;will-change:transform}
+.pbub img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover;box-shadow:0 22px 40px -18px rgba(8,20,70,.8)}
+.pbub::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 30% 24%,rgba(255,255,255,.85) 0 4%,rgba(255,255,255,.25) 5% 13%,transparent 14%),radial-gradient(circle at 50% 50%,transparent 60%,rgba(255,255,255,.18) 68%,rgba(170,215,255,.6) 72%,rgba(255,226,120,.5) 76%,rgba(255,255,255,.85) 79%,transparent 80%);pointer-events:none}
+.pbub figcaption{position:absolute;left:50%;bottom:4%;transform:translateX(-50%);padding:3px 9px;border-radius:999px;background:rgba(15,36,104,.72);color:#fff;font:800 11px/1.3 var(--sans);white-space:nowrap}
+.field .bub{box-shadow:inset 0 0 0 999px rgba(29,69,196,.32);text-shadow:0 1px 6px rgba(15,36,104,.95)}
+.field-credit{position:absolute;left:16px;bottom:8px;font-size:11.5px;font-weight:700;color:#c9d5fb;pointer-events:none}
+@media (min-width:900px){.pbub{--s:var(--sd)!important;left:var(--xd,var(--x))}.field-credit{left:0}}
+/* the place: real photos */
+.place{background:var(--blue);color:#fff}
+.place .kick{background:rgba(255,255,255,.14);color:var(--yel)}
+.place .sub{color:#dbe3fd}
+.pl-grid{display:grid;gap:24px;align-items:center}
+@media (min-width:900px){.pl-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px}}
+.pl-photo{margin:0;border-radius:28px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 40px 70px -40px rgba(8,20,70,.9);border:4px solid #fff;transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.pl-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.04)}
+.pl-credit{display:inline-block;margin-top:14px;padding:6px 12px;border-radius:999px;background:var(--yel);color:var(--ink);font-weight:800;font-size:13px}
+.strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:30px;padding:2px 0 10px;scrollbar-width:none;overscroll-behavior-x:contain}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 auto;width:min(60vw,240px);margin:0;scroll-snap-align:start}
+.strip img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:22px;border:3px solid #fff;background:var(--blue-d)}
+.strip figcaption{margin-top:8px;font-weight:800;font-size:14px;color:#fff}
+@media (max-width:899px){.strip{margin-inline:-16px;padding-inline:16px;scroll-padding-inline:16px}}
+@media (prefers-reduced-motion:reduce){.pl-photo{transform:none!important}}
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
@@ -330,7 +356,13 @@ h2 .b{color:var(--blue)}
     </div>
     <div class="field" id="field" aria-label="Пузыри с услугами: нажмите, чтобы добавить в заявку">
       <p class="field-hint">Проткните пузырь — услуга упадёт в тазик заявки</p>
+      <div class="pbubs" id="pbubs" aria-hidden="true">
+        <figure class="pbub" data-d="0.5" style="--x:78%;--y:30%;--s:168px;--sd:240px;--xd:70%"><img src="img/coat.webp" alt="" fetchpriority="high" decoding="async" style="object-position:50% 30%"><figcaption>пальто с мехом</figcaption></figure>
+        <figure class="pbub" data-d="0.9" style="--x:19%;--y:44%;--s:132px;--sd:190px;--xd:22%"><img src="img/lace-skull.webp" alt="" decoding="async" style="object-position:50% 45%"><figcaption>кружево</figcaption></figure>
+        <figure class="pbub" data-d="0.7" style="--x:58%;--y:80%;--s:122px;--sd:176px;--xd:56%"><img src="img/jeans.webp" alt="" decoding="async"><figcaption>джинсы</figcaption></figure>
+      </div>
       <div id="bubs"></div>
+      <span class="field-credit">фото работ — с Яндекс Карт</span>
       <svg class="awl" id="awl" viewBox="0 0 250 64" aria-hidden="true">
         <g class="jab">
           <path d="M250 32L132 28.5v7z" fill="#e8edf7" stroke="#0f1a3a" stroke-width="2" stroke-linejoin="round"/>
@@ -399,6 +431,26 @@ h2 .b{color:var(--blue)}
     <h2>Цены и <span class="b">мыльная часть</span></h2>
     <p class="sub">На карточке пока два ценника — оба про длину. Всё остальное — честно по фото или на месте.</p>
     <div class="duo" id="duo"></div>
+  </div>
+</section>
+
+<section class="sec place" id="place" aria-labelledby="h-place">
+  <div class="wrap">
+    <div class="pl-grid">
+      <figure class="pl-photo"><img src="img/reception.webp" alt="Стойка приёма «Шило&amp;Мыло» с надписями «ателье, химчистка, ремонт обуви»" loading="lazy" decoding="async"></figure>
+      <div>
+        <span class="kick">Где это</span>
+        <h2 id="h-place">Вот где <span style="color:var(--yel)">шьют и&nbsp;моют</span></h2>
+        <p class="sub">Стойка «Шило&amp;Мыло» с надписью «ателье, химчистка, ремонт обуви», рядом — стенд со списком услуг. Все фото — из карточки на Яндекс Картах.</p>
+        <span class="pl-credit">фото с Яндекс Карт</span>
+      </div>
+    </div>
+    <div class="strip" aria-label="Фото с Яндекс Карт" tabindex="0">
+      <figure><img src="img/services.webp" alt="Стенд «Наши услуги»: пошив и ремонт одежды, химчистка" loading="lazy" decoding="async"><figcaption>стенд с услугами</figcaption></figure>
+      <figure><img src="img/entrance.webp" alt="Вход в торговый центр «Кожевники»" loading="lazy" decoding="async"><figcaption>вход в ТЦ «Кожевники»</figcaption></figure>
+      <figure><img src="img/coat.webp" alt="Пальто с меховой отделкой на вешалке" loading="lazy" decoding="async"><figcaption>пальто с мехом</figcaption></figure>
+      <figure><img src="img/lace-skull.webp" alt="Кружевная аппликация-череп со стразами" loading="lazy" decoding="async"><figcaption>кружевная аппликация</figcaption></figure>
+    </div>
   </div>
 </section>
 
@@ -727,5 +779,6 @@ renderPicker(); renderBasin();
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="photo.js" defer></script>
 </body>
 </html>

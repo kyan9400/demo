@@ -108,21 +108,39 @@ h1{margin-top:18px;font-weight:400}
 .stage{position:relative;width:100%;max-width:520px;margin:0 auto;aspect-ratio:1/1.02}
 .arch{position:absolute;left:12%;right:12%;top:6%;bottom:0;border-radius:999px 999px 28px 28px;background:linear-gradient(180deg,var(--sand) 0%,var(--sand-2) 100%)}
 .arch::after{content:"";position:absolute;inset:12px;border-radius:999px 999px 20px 20px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.65)}
-.fan{position:absolute;inset:0;width:100%;height:100%;overflow:hidden}
-.tip{transform-box:fill-box;transform-origin:50% 92.5%;transform:rotate(0deg);transition:transform 1.3s cubic-bezier(.2,.8,.2,1)}
-.fan.open .tip{transform:rotate(var(--a))}
-.tip:hover{filter:brightness(1.04)}
+/* photo hero: depth gallery — real photos from the studio's Yandex Maps card, layered in the arch niche */
+.stage{touch-action:pan-y;perspective:1200px}
+.arch{overflow:hidden;box-shadow:0 40px 70px -46px rgba(60,52,38,.7)}
+.arch::after{z-index:2}
+.dg-main,.dg-main figure{position:absolute;inset:0;margin:0}
+.dg-main{will-change:transform}
+.dg-main figure{opacity:0;transition:opacity 1.1s ease}
+.dg-main figure.on{opacity:1}
+.dg-main img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.08);pointer-events:none}
+.arch .dg-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(255,255,255,.12),transparent 35%,transparent 70%,rgba(44,42,37,.28));pointer-events:none}
+.dg-tile{position:absolute;z-index:3;width:var(--w,24%);aspect-ratio:1/1.55;will-change:transform;padding:0;border:0;background:none;cursor:pointer}
+.dg-tile .bob{display:block;width:100%;height:100%;animation:bob var(--t,7s) ease-in-out var(--d,0s) infinite alternate}
+.dg-tile .tipimg{display:block;width:100%;height:100%;border-radius:50% 50% 42% 42% / 30% 30% 18% 18%;overflow:hidden;background:var(--sand);box-shadow:0 22px 34px -18px rgba(60,52,38,.65),0 0 0 3px var(--milk);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.dg-tile img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;transition:opacity .5s}
+.dg-tile:hover .tipimg{transform:scale(1.06)}
+.dg-tile:focus-visible{outline:none}.dg-tile:focus-visible .tipimg{box-shadow:0 0 0 3px var(--milk),0 0 0 6px var(--sage-d)}
+@keyframes bob{from{transform:translate3d(0,-5px,0) rotate(var(--r,0deg))}to{transform:translate3d(0,6px,0) rotate(calc(var(--r,0deg) * -.4))}}
+.stage.paused .bob{animation-play-state:paused}
+.dg-cap{position:absolute;z-index:4;right:14%;bottom:5%;max-width:62%;text-align:right;font:italic 500 18px/1.1 var(--serif);color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.45);pointer-events:none}
+.dg-cap small{display:block;font:600 11px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;font-style:normal;opacity:.9;margin-top:4px}
 .quote{position:absolute;left:0;bottom:6%;max-width:min(260px,64%);padding:14px 16px;background:var(--milk);border-radius:18px 18px 18px 4px;box-shadow:0 18px 40px -24px rgba(60,52,38,.55);font-size:13px;line-height:1.4;color:var(--ink-2)}
 .quote q{display:block;font:italic 500 19px/1.18 var(--serif);color:var(--ink);quotes:"«" "»"}
 .quote small{display:block;margin-top:6px;font-size:12px}
 .namerow{position:relative}
-.fan.mini{position:absolute;inset:auto;right:-10px;top:-6px;width:min(38vw,200px);height:auto;aspect-ratio:460/400;pointer-events:none}
 @media (max-width:899px){
-  .stage{display:none}
-  .h1-b{margin-top:34px}
+  .hero{padding-top:10px}
+  .hero-grid{display:flex;flex-direction:column;align-items:stretch;gap:14px}
+  .hero-grid>.stage{order:-1;max-width:400px;aspect-ratio:1/.93;margin:0 auto}
+  .stage .quote{display:none}
+  .stage .arch{left:15%;right:15%;top:2%}
+  .dg-cap{font-size:16px;right:17%}
 }
 @media (min-width:900px){
-  .fan.mini{display:none}
   .hero{padding:40px 0 70px}
   .hero-grid{grid-template-columns:1.05fr .95fr;gap:40px}
   .h1-a{font-size:clamp(150px,15vw,210px)}
@@ -301,6 +319,20 @@ section{scroll-margin-top:12px}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+/* real place section */
+.room-grid{display:grid;gap:24px;align-items:center;margin-top:28px}
+@media (min-width:900px){.room-grid{grid-template-columns:.8fr 1.2fr;gap:60px}}
+.room-photo{margin:0 auto;width:100%;max-width:420px;aspect-ratio:4/5;border-radius:999px 999px var(--r) var(--r);overflow:hidden;box-shadow:0 40px 70px -44px rgba(60,52,38,.75);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .25s ease-out}
+.room-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.06)}
+.room-txt .sub+.sub{margin-top:10px}
+.room-txt small{display:block;margin-top:16px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-d)}
+.strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:32px -16px 0;padding:0 16px 8px;scroll-padding:0 16px;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+@media (min-width:700px){.strip{margin:32px -32px 0;padding:0 32px 8px;scroll-padding:0 32px}}
+@media (min-width:1284px){.strip{margin:32px 0 0;padding:0 0 8px;scroll-padding:0}}
+.strip figure{flex:0 0 auto;width:min(60vw,240px);margin:0;scroll-snap-align:start}
+.strip img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:var(--r);box-shadow:0 18px 36px -26px rgba(60,52,38,.7)}
+.strip figcaption{font-size:13.5px;color:var(--ink-2);margin-top:8px;padding-left:4px}
 </style>
 </head>
 <body>
@@ -311,6 +343,7 @@ section{scroll-margin-top:12px}
   <nav class="nav" aria-label="Разделы">
     <a href="#visit">Соберите визит</a>
     <a href="#incl">В студии</a>
+    <a href="#room">Фото</a>
     <a href="#love">Отзывы</a>
     <a href="#find">Как пройти</a>
   </nav>
@@ -324,7 +357,6 @@ section{scroll-margin-top:12px}
       <div class="where" id="where"></div>
       <div class="namerow">
         <h1><span class="h1-a">Киип</span><span class="h1-b">Маникюр и педикюр на Чистых прудах — с чаем, палитрой и вашим мастером</span></h1>
-        <svg class="fan mini" id="fanS" viewBox="-30 -6 460 400" aria-hidden="true"></svg>
       </div>
       <p class="lead" id="lead">Гусятников переулок, 9. Соберите визит из прайса студии, посмотрите итог и запишитесь — онлайн или сообщением администратору.</p>
       <a class="rate" id="rate" href="#" target="_blank" rel="noopener"><b id="rVal">5,0</b><span><em><span class="stars" aria-hidden="true">★★★★★</span> <span id="rCnt"></span></em><span id="rRev"></span></span></a>
@@ -333,9 +365,8 @@ section{scroll-margin-top:12px}
         <a class="btn btn-soft" id="heroBook" href="#" target="_blank" rel="noopener">Записаться онлайн</a>
       </div>
     </div>
-    <div class="stage" aria-hidden="true">
-      <div class="arch"></div>
-      <svg class="fan" id="fan" viewBox="-30 -6 460 400"></svg>
+    <div class="stage" id="dg" role="group" aria-label="Работы и студия — фото с Яндекс Карт">
+      <div class="arch"><div class="dg-main"></div><span class="dg-shade"></span><p class="dg-cap" aria-live="polite"><span id="dgCap"></span><small>фото с Яндекс Карт</small></p></div>
       <div class="quote" id="heroQuote"></div>
     </div>
   </div>
@@ -395,6 +426,30 @@ section{scroll-margin-top:12px}
       <h3>Не только ногти</h3>
       <p class="sub">В карточке студии есть и эти услуги, но без цен. Нажмите — вопрос сразу уйдёт администратору в WhatsApp.</p>
       <div class="also-grid" id="also"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="room" aria-labelledby="roomH">
+  <div class="wrap">
+    <p class="eyebrow">Настоящие фото</p>
+    <h2 class="h2" id="roomH">Студия <i>и работы</i></h2>
+    <div class="room-grid">
+      <figure class="room-photo"><img src="img/desk-2.webp" alt="Маникюрный стол, полки с гель-лаками и меню напитков" loading="lazy" decoding="async"></figure>
+      <div class="room-txt">
+        <p class="sub">Светлые столы, стена с палитрой гель-лаков, мягкие кресла для педикюра — студия выглядит именно так.</p>
+        <p class="sub">Листайте ленту: столы мастеров, кресла и работы, которыми студия делится в своей карточке.</p>
+        <small>фото с Яндекс Карт</small>
+      </div>
+    </div>
+    <div class="strip" aria-label="Фото студии и работ">
+      <figure><img src="img/hall.webp" alt="Ряд маникюрных столов" loading="lazy" decoding="async"><figcaption>столы мастеров</figcaption></figure>
+      <figure><img src="img/nails-almond.webp" alt="Нюдовый маникюр, миндальная форма" loading="lazy" decoding="async"><figcaption>нюд, миндаль</figcaption></figure>
+      <figure><img src="img/pedi-room.webp" alt="Место мастера и кресла для педикюра" loading="lazy" decoding="async"><figcaption>кресла для педикюра</figcaption></figure>
+      <figure><img src="img/nails-blue-french.webp" alt="Френч с голубой линией" loading="lazy" decoding="async"><figcaption>голубой френч</figcaption></figure>
+      <figure><img src="img/armchair.webp" alt="Мягкое кресло" loading="lazy" decoding="async"><figcaption>кресло</figcaption></figure>
+      <figure><img src="img/pedi-lilac.webp" alt="Сиреневый педикюр" loading="lazy" decoding="async"><figcaption>сиреневый педикюр</figcaption></figure>
+      <figure><img src="img/mirror.webp" alt="Круглое зеркало и мойка" loading="lazy" decoding="async"><figcaption>зеркало</figcaption></figure>
     </div>
   </div>
 </section>
@@ -731,25 +786,6 @@ $('#ticket').addEventListener('click', function (e) {
   if (dar) $('#heroQuote').innerHTML = '<q>Лучшего маникюра в моей жизни не было.</q><small>' + esc(dar.a) + ', отзыв на Яндекс Картах</small>';
   else $('#heroQuote').hidden = true;
 
-  // the swatch fan
-  var tipPath = 'M0 -262C27 -262 38 -234 38 -198L33 8Q33 26 15 26H-15Q-33 26 -33 8L-38 -198C-38 -234 -27 -262 0 -262Z';
-  var cols = [
-    ['#f1e9dc', 'Молочный'], ['#e4cdb8', ''], ['#d8b49b', 'Нюд'], ['#d9a6a0', ''], ['#b97c6c', ''], ['#9aab8f', 'Шалфей'], ['#6f8366', ''], ['#7f2a34', 'Вишня']
-  ];
-  var n = cols.length, span = 92, svg = '<defs><linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".5"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><g transform="translate(200 360)">';
-  cols.forEach(function (c, i) {
-    var a = -span / 2 + span * i / (n - 1);
-    svg += '<g class="tip" style="--a:' + a.toFixed(1) + 'deg"><path d="' + tipPath + '" fill="' + c[0] + '" stroke="rgba(60,52,38,.12)" stroke-width="1.2"/>' +
-      '<path d="M-22 -205C-22 -232 -15 -246 -4 -251" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/>' +
-      '<path d="M-30 -60 L-27 -200 C-27 -228 -20 -244 -8 -250" fill="none" stroke="url(#gl)" stroke-width="10" stroke-opacity=".4"/>' +
-      '<circle r="7" fill="#e2d3bd" stroke="rgba(60,52,38,.18)"/></g>';
-  });
-  svg += '<circle r="14" fill="none" stroke="#b9a07a" stroke-width="5"/><circle r="14" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="1.5" stroke-dasharray="6 30"/></g>';
-  var fans = [$('#fan'), $('#fanS')];
-  fans.forEach(function (f, i) { if (f) f.innerHTML = svg.replace(/id="gl"/, 'id="gl' + i + '"').replace(/url\(#gl\)/g, 'url(#gl' + i + ')'); });
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var openF = function () { fans.forEach(function (f) { if (f) f.classList.add('open'); }); };
-  if (reduce) openF(); else setTimeout(openF, 250);
 })();
 
 /* ---------- links ---------- */
@@ -847,5 +883,6 @@ renderAll();
 })();
 </script>
 <script src="../map-fix.js" defer></script>
+<script src="depth.js"></script>
 </body>
 </html>
