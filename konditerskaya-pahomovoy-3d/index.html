@@ -284,6 +284,23 @@ footer p{margin:6px 0;font-size:14.5px}
 .reveal{transition:opacity .7s ease, transform .7s ease}
 .js .reveal.pre{opacity:0;transform:translateY(18px)}
 .stage .cake3d{position:absolute;inset:-22% -4% 0;width:108%;height:122%;display:block;cursor:grab;z-index:0}.stage .cake3d:active{cursor:grabbing}.stage.has3d .note,.stage.has3d .cap{z-index:1}.stage .hint3d{position:absolute;left:4%;top:auto;bottom:22%;font:600 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,.7);padding:7px 11px;border-radius:99px;pointer-events:none;z-index:1;opacity:0;transition:opacity .6s}.stage.has3d .hint3d{opacity:1}
+section.hero{overflow-x:hidden;overflow-x:clip}
+.stage.has-ring #heroSvg{opacity:0;pointer-events:none}
+.ring3d{position:absolute;inset:0;perspective:1100px;perspective-origin:50% 40%;touch-action:pan-y;cursor:grab;z-index:0;user-select:none;-webkit-user-select:none}
+.ring3d.grab{cursor:grabbing}
+.ring-tilt,.ring-rot{position:absolute;left:50%;top:44%;width:0;height:0;transform-style:preserve-3d;will-change:transform}
+.rcard{position:absolute;margin:0;width:var(--cw,220px);aspect-ratio:4/5;left:calc(var(--cw,220px) / -2);top:calc(var(--cw,220px) * -0.625);border-radius:18px;overflow:hidden;background:#eee;box-shadow:0 30px 50px -24px rgba(46,26,34,.55),0 0 0 1px rgba(255,255,255,.5) inset;backface-visibility:hidden;-webkit-box-reflect:below 10px linear-gradient(transparent 72%,rgba(255,255,255,.22))}
+.rcard img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.rcard .glare{position:absolute;inset:0;background:radial-gradient(120% 70% at var(--gx,50%) -10%,rgba(255,255,255,.38),transparent 55%);mix-blend-mode:soft-light;pointer-events:none}
+.rcard.front{box-shadow:0 40px 70px -26px rgba(46,26,34,.65),0 0 0 2px rgba(255,255,255,.85) inset}
+.stage .hint3d{position:absolute;left:50%;transform:translateX(-50%);bottom:4%;font:600 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,.75);padding:7px 11px;border-radius:99px;pointer-events:none;z-index:300;white-space:nowrap}
+.stage .ring-cap{z-index:300}.stage.has-ring .note{z-index:300}
+@media (max-width:599px){.hero-grid{display:flex;flex-direction:column}.hero-grid>.stage.has-ring{order:-1;aspect-ratio:1/.92;margin:-6px auto 6px}.stage.has-ring .note{display:none}.stage .ring-cap{position:absolute;left:0;right:0;bottom:0;margin:0;text-align:center;max-width:none}.stage .ring-cap small{display:inline}.stage .ring-cap span{display:block}}
+.nat-grid{display:grid;gap:22px;align-items:center}@media(min-width:900px){.nat-grid{grid-template-columns:.8fr 1.2fr;gap:56px}}
+.nat-photo{margin:0;border-radius:24px;overflow:hidden;aspect-ratio:4/5;max-width:440px;box-shadow:0 40px 70px -40px rgba(46,26,34,.6);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s}
+.nat-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.06)}
+.strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:28px;padding-bottom:6px;scrollbar-width:none}
+.strip img{flex:0 0 auto;width:min(62vw,260px);aspect-ratio:4/5;object-fit:cover;border-radius:18px;scroll-snap-align:start;box-shadow:0 20px 40px -26px rgba(46,26,34,.55)}
 </style>
 </head>
 <body>
@@ -325,7 +342,6 @@ footer p{margin:6px 0;font-size:14.5px}
     <div class="stage" id="heroStage" aria-hidden="true">
       <svg viewBox="0 0 400 360" id="heroSvg"></svg>
       <div class="note"><q>В меру сладкий, пропитанный</q><span>Марина А., отзыв на Яндекс Картах</span></div>
-      <span class="hint3d">↻ потяните · листайте вниз</span>
       <p class="cap"><small>в разрезе</small><span id="heroCap"></span></p>
     </div>
   </div>
@@ -432,6 +448,19 @@ footer p{margin:6px 0;font-size:14.5px}
   </div>
 </section>
 
+<section class="sec wrap natalia" id="natalia" aria-labelledby="h-nat">
+  <div class="nat-grid">
+    <figure class="nat-photo"><img src="img/natalia.webp" alt="Наталья Пахомова в своей кондитерской" loading="lazy"></figure>
+    <div>
+      <p class="kicker">кондитер и хозяйка</p>
+      <h2 class="h2" id="h-nat">Каждый торт делает <em>Наталья</em></h2>
+      <p class="lead">Кондитерская носит её имя: Наталья сама печёт, собирает и украшает торты в Хотькове. Ниже — настоящие работы с витрины и заказов, фото с Яндекс Карт.</p>
+    </div>
+  </div>
+  <div class="strip" aria-label="Работы Натальи">
+    <img src="img/cake-tiered.webp" alt="Ярусный торт" loading="lazy"><img src="img/slice-berry.webp" alt="Кусок ягодного торта" loading="lazy"><img src="img/desserts.webp" alt="Десерты с клубникой" loading="lazy"><img src="img/cake-love.webp" alt="Торт «Love»" loading="lazy"><img src="img/slice-choc.webp" alt="Шоколадный торт в разрезе" loading="lazy"><img src="img/shop.webp" alt="Витрина кондитерской" loading="lazy">
+  </div>
+</section>
 <section class="sec wrap" id="love" aria-labelledby="h-love">
   <p class="eyebrow">за что хвалят</p>
   <h2 id="h-love">Почему к Наталье <em>возвращаются</em></h2>
@@ -904,6 +933,7 @@ if ('IntersectionObserver' in window && !reduced) {
 })();
 </script>
 <script src="../map-fix.js" defer></script>
-<script type="module" src="cake3d.js"></script>
+<script src="ring.js"></script>
+<script>(function(){var f=document.querySelector('.nat-photo');if(!f||matchMedia('(prefers-reduced-motion: reduce)').matches)return;f.addEventListener('pointermove',function(e){var r=f.getBoundingClientRect();f.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*10+'deg');f.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*8+'deg');});f.addEventListener('pointerleave',function(){f.style.setProperty('--ry','0deg');f.style.setProperty('--rx','0deg');});})();</script>
 </body>
 </html>
