@@ -1,0 +1,937 @@
+<!doctype html>
+<!--
+  CONCEPT — «DDflowers24», ул. Большие Каменщики, 9с, у «Таганской» (демо-концепт)
+  1. Идея: «Ночная оранжерея, которая не закрывается». Магазин работает 24/7, поэтому заголовок живой —
+     «Букет в 03:14? Конечно.» подставляет текущее московское время, а всё остальное помогает за минуту
+     выбрать настоящий букет из их витрины и отправить заявку флористу.
+  2. Фирменный модуль: «Букет под бюджет» — повод + ползунок бюджета (точки на шкале — реальные цены всех
+     18 позиций) → подходящие букеты из данных, отсортированные под повод, каждый нарисован в SVG по своему
+     реальному составу (гортензия, дельфиниум, пионы…) → доставка или самовывоз, день, время, текст открытки
+     → живое превью сообщения → WhatsApp. Условия и цену доставки сайт не обещает — спрашивает.
+  3. Арт-дирекшн: ночная оранжерея — сине-чёрный фиолет, тонкие рёбра викторианской теплицы,
+     светящиеся бутоны; один акцент — неон-розовый. Cormorant Garamond (курсив) + Onest.
+     Мотив: арка оранжереи и генеративные букеты, у каждого — свои цветы из карточки.
+-->
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0D0920">
+<title>DDflowers24 — цветы круглосуточно у «Таганской», Большие Каменщики, 9с (демо)</title>
+<meta name="description" content="Демо-концепт сайта цветочного магазина DDflowers24 у «Таганской»: букеты и шляпные коробки с ценами, подбор под бюджет и повод, заявка на доставку в WhatsApp. Круглосуточно.">
+<meta property="og:title" content="DDflowers24 — цветы у «Таганской» круглосуточно (демо)">
+<meta property="og:description" content="Букеты с ценами, подбор под бюджет и повод, заявка в WhatsApp. 5,0 на Яндекс Картах. Демо-концепт сайта.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://kyan9400.github.io/demo/ddflowers24/">
+<meta property="og:image" content="https://kyan9400.github.io/demo/ddflowers24/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230D0920'/%3E%3Cpath d='M12 58V30a20 20 0 0 1 40 0v28' fill='none' stroke='%237E6BC4' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='11' fill='%23FF4FA3'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23FFD1E8'/%3E%3Cpath d='M32 43v15' stroke='%2386B3A2' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0D0920; --bg-2:#140E2E; --bg-3:#1C1540; --card:#18113A;
+  --ink:#F4EFFF; --muted:#B9AEDB; --dim:#8E83B5; --line:rgba(185,174,219,.16); --line-2:rgba(185,174,219,.28);
+  --rib:#5E4F9C;
+  --pink:#FF4FA3; --pink-2:#FF7DBB; --pink-ink:#2A0718;
+  --leaf:#86B3A2;
+  --wa:#25D366; --wa-ink:#05301A;
+  --f-d:"Cormorant Garamond","Times New Roman",Georgia,serif;
+  --f-b:"Onest",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--bg)}
+body{font:16px/1.55 var(--f-b);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;padding-bottom:calc(80px + env(safe-area-inset-bottom,0px));overflow-x:hidden}
+@media(min-width:900px){body{padding-bottom:0}}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;-webkit-tap-highlight-color:transparent}
+input,textarea,select{font:inherit;color:inherit}
+h1,h2,h3{font-weight:500}
+svg{display:block}
+:focus-visible{outline:2px solid var(--pink-2);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+[id]{scroll-margin-top:72px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.nb{white-space:nowrap}
+
+/* demo bar + header */
+.demo-bar{background:#07051A;color:#B3A9D6;font-size:12.5px;line-height:1.4;padding:7px 16px;text-align:center;border-bottom:1px solid var(--line)}
+.top{position:sticky;top:0;z-index:40;background:rgba(13,9,32,.96);border-bottom:1px solid var(--line)}
+.top-in{width:min(1200px,100% - 32px);margin-inline:auto;height:58px;display:flex;align-items:center;gap:14px}
+.brand{display:inline-flex;align-items:center;gap:10px;min-height:44px;margin-right:auto;text-decoration:none;white-space:nowrap}
+.brand-mark{width:30px;height:30px;flex:none}
+.brand b{font:600 23px/1 var(--f-d);letter-spacing:.01em}
+.brand b i{font-style:italic;color:var(--pink-2)}
+.nav{display:none;gap:28px;font-size:15px;font-weight:500}
+.nav a{text-decoration:none;padding:12px 0;color:var(--muted)}
+.nav a:hover{color:var(--ink)}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px;border:1px solid var(--line-2);white-space:nowrap}
+.dot{display:inline-block;flex:none;width:8px;height:8px;border-radius:50%;background:#4BE08F;animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(75,224,143,.5)}70%,100%{box-shadow:0 0 0 8px rgba(75,224,143,0)}}
+.status .long{display:none}
+.top .top-wa{display:none}
+@media(min-width:520px){.status .long{display:inline}.status .short{display:none}}
+@media(min-width:900px){.nav{display:flex}.top-in{height:66px;gap:28px}.top .top-wa{display:inline-flex}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;transition:transform .15s,background .2s,box-shadow .2s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-pink{background:var(--pink);color:var(--pink-ink);box-shadow:0 8px 30px -10px rgba(255,79,163,.7)}
+.btn-pink:hover{background:var(--pink-2)}
+.btn-line{border:1px solid var(--line-2);color:var(--ink)}
+.btn-line:hover{border-color:var(--muted)}
+.btn-wa{background:var(--wa);color:var(--wa-ink)}
+.btn-sm{min-height:44px;padding:0 16px;font-size:14.5px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:
+  radial-gradient(120% 70% at 80% 100%,rgba(255,79,163,.10),transparent 60%),
+  radial-gradient(90% 60% at 10% 0%,rgba(94,79,156,.22),transparent 70%),var(--bg)}
+.hero-in{display:grid;gap:8px;padding:34px 0 0;min-height:calc(100vh - 92px);min-height:calc(100svh - 92px);align-content:start}
+.eyebrow{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13.5px;color:var(--muted);letter-spacing:.02em}
+.eyebrow span{display:inline-flex;align-items:center;gap:7px}
+.mdot{width:9px;height:9px;border-radius:50%;flex:none;display:inline-block}
+h1{font:500 clamp(46px,13vw,108px)/.92 var(--f-d);letter-spacing:-.02em;margin:18px 0 0}
+h1 .time{font-style:italic;color:var(--pink-2);font-variant-numeric:lining-nums tabular-nums;white-space:nowrap}
+h1 em{display:block;font-style:italic;font-weight:500;color:var(--muted)}
+.lead{font-size:17px;color:var(--muted);max-width:34ch;margin-top:18px}
+.lead strong{color:var(--ink);font-weight:600}
+.rating{display:inline-flex;align-items:center;gap:12px;margin-top:22px;text-decoration:none;padding:9px 16px 9px 10px;border-radius:999px;border:1px solid var(--line-2);width:max-content;max-width:100%}
+.rating .num{font:600 26px/1 var(--f-d);color:var(--ink)}
+.stars{display:flex;gap:2px;color:#FFC94D}
+.stars svg{width:14px;height:14px}
+.rating small{font-size:13px;color:var(--muted);line-height:1.25}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.hero-art{position:relative;margin:-6px -16px 0;height:min(92vw,400px)}
+@media(max-width:899.98px){.hero-cta .btn{padding:0 20px;flex:1 1 auto}}
+.hero-art svg{width:100%;height:100%}
+.sway{transform-box:fill-box;transform-origin:50% 100%;animation:sway 7s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(-2.2deg)}to{transform:rotate(2.2deg)}}
+.twk{animation:twk 3.4s ease-in-out infinite alternate}
+@keyframes twk{from{opacity:.15}to{opacity:.95}}
+.paused .sway,.paused .twk{animation-play-state:paused}
+@media(min-width:900px){
+  .hero-in{grid-template-columns:1.05fr .95fr;align-items:center;gap:40px;padding:40px 0;min-height:min(820px,calc(100svh - 100px))}
+  .hero-art{margin:0;height:600px}
+  .lead{font-size:19px}
+}
+
+/* sections */
+.sec{padding:60px 0;border-bottom:1px solid var(--line)}
+.kicker{font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--pink-2)}
+h2{font:500 clamp(38px,9vw,68px)/.98 var(--f-d);letter-spacing:-.015em;margin-top:12px}
+h2 em{font-style:italic;color:var(--muted)}
+.sec-sub{color:var(--muted);max-width:52ch;margin-top:14px;font-size:16.5px}
+@media(min-width:900px){.sec{padding:110px 0}}
+
+/* picker */
+.pick{display:grid;gap:22px;margin-top:34px}
+.panel{background:var(--bg-2);border:1px solid var(--line);border-radius:24px;padding:22px 18px}
+.step{display:flex;align-items:baseline;gap:10px;font-weight:600;font-size:15px;margin-bottom:14px}
+.step b{font:italic 600 24px/1 var(--f-d);color:var(--pink-2)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--line-2);font-size:15px;font-weight:500;color:var(--muted);transition:background .2s,color .2s,border-color .2s}
+.chip:hover{color:var(--ink);border-color:var(--muted)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.budget-val{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:22px 0 6px;flex-wrap:wrap}
+.budget-val output{font:500 clamp(44px,12vw,64px)/1 var(--f-d);font-variant-numeric:lining-nums}
+.budget-val span{font-size:14px;color:var(--muted)}
+.range{position:relative;height:64px}
+.ticks{position:absolute;left:14px;right:14px;top:6px;height:14px}
+.tick{position:absolute;top:0;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:var(--dim);opacity:.5;transition:background .2s,opacity .2s,box-shadow .2s}
+.tick.on{background:var(--pink);opacity:1;box-shadow:0 0 10px rgba(255,79,163,.8)}
+input[type=range]{position:absolute;left:0;right:0;bottom:6px;width:100%;height:44px;-webkit-appearance:none;appearance:none;background:transparent;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:6px;background:linear-gradient(90deg,var(--pink) var(--fill,40%),rgba(185,174,219,.22) var(--fill,40%))}
+input[type=range]::-moz-range-track{height:6px;border-radius:6px;background:linear-gradient(90deg,var(--pink) var(--fill,40%),rgba(185,174,219,.22) var(--fill,40%))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;margin-top:-11px;border-radius:50%;background:var(--ink);border:6px solid var(--pink);box-shadow:0 0 0 6px rgba(255,79,163,.18)}
+input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--ink);border:6px solid var(--pink)}
+.range-legend{display:flex;justify-content:space-between;font-size:13px;color:var(--dim);margin-top:2px}
+.fit{margin-top:16px;font-size:15px;color:var(--muted)}
+.fit b{color:var(--ink);font-weight:600}
+.note{margin-top:14px;font-size:14px;color:var(--muted);border-left:2px solid var(--pink);padding:4px 0 4px 12px}
+
+.results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.res{position:relative;text-align:left;border:1px solid var(--line);border-radius:20px;background:var(--card);padding:8px 12px 14px;transition:border-color .2s,transform .2s,background .2s;display:flex;flex-direction:column;min-width:0}
+.res:hover{border-color:var(--line-2)}
+.res[aria-pressed="true"]{border-color:var(--pink);background:#22143F;box-shadow:0 0 0 1px var(--pink) inset}
+.res .art{aspect-ratio:1/1.05;margin:0 -4px}
+.res .art svg{width:100%;height:100%}
+.res h3{font:600 20px/1.08 var(--f-d);margin-top:2px;overflow-wrap:anywhere}
+.res .cat{font-size:12px;color:var(--dim);margin-top:4px;line-height:1.3}
+.res .price{margin-top:auto;padding-top:8px;font-weight:700;font-size:16px;font-variant-numeric:tabular-nums}
+.res .tag{position:absolute;top:10px;left:10px;font-size:11.5px;font-weight:700;letter-spacing:.04em;padding:4px 9px;border-radius:999px;background:var(--pink);color:var(--pink-ink)}
+.res .check{position:absolute;top:10px;right:10px;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--line-2);display:grid;place-items:center}
+.res[aria-pressed="true"] .check{background:var(--pink);border-color:var(--pink)}
+.res .check svg{width:14px;height:14px;opacity:0}
+.res[aria-pressed="true"] .check svg{opacity:1}
+.res.custom{justify-content:center;border-style:dashed;padding:18px 14px}
+.res.custom .ic{font:italic 600 46px/1 var(--f-d);color:var(--pink-2)}
+.res.custom p{font-size:13.5px;color:var(--muted);margin-top:6px}
+.more-btn{grid-column:1/-1;min-height:48px;border:1px solid var(--line-2);border-radius:999px;font-weight:600;font-size:15px}
+.more-btn:hover{border-color:var(--muted)}
+
+.form-grid{display:grid;gap:16px}
+.lbl{display:block;font-size:13.5px;color:var(--muted);margin-bottom:8px;font-weight:500}
+.field{width:100%;min-height:50px;padding:12px 14px;border-radius:14px;border:1px solid var(--line-2);background:var(--bg);font-size:16px;color:var(--ink)}
+.field::placeholder{color:#7D72A6}
+.field:focus{outline:none;border-color:var(--pink-2)}
+textarea.field{min-height:84px;resize:vertical}
+input[type=date].field{color-scheme:dark}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:5px;border:1px solid var(--line-2);border-radius:999px}
+.seg button{min-height:44px;border-radius:999px;font-weight:600;font-size:15px;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.pickup-note{font-size:14px;color:var(--muted)}
+.preview{margin-top:18px;background:#0B1D17;border:1px solid rgba(37,211,102,.25);border-radius:18px 18px 18px 6px;padding:14px 16px;font-size:14.5px;line-height:1.5;white-space:pre-line;color:#DDF5E6;overflow-wrap:anywhere}
+.preview-h{font-size:12.5px;color:var(--dim);margin-top:18px;letter-spacing:.04em}
+.send-row{display:grid;gap:10px;margin-top:14px}
+.send-row .btn{width:100%}
+.quote-mini{margin-top:16px;font:italic 500 19px/1.3 var(--f-d);color:var(--muted)}
+.quote-mini small{display:block;font:400 12.5px/1.4 var(--f-b);color:var(--dim);margin-top:6px;font-style:normal}
+@media(min-width:620px){.results{grid-template-columns:repeat(3,minmax(0,1fr))}.send-row{grid-template-columns:1fr auto}.form-grid.two{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){
+  .pick{grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);align-items:start;gap:26px}
+  .pick .p-left{position:sticky;top:90px}
+  .panel{padding:30px}
+  .results{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+/* catalogue */
+.cat-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:20px}
+.cat-chips{margin-top:28px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px}
+.card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:22px;background:var(--bg-2);padding:10px 14px 14px;min-width:0}
+.card .art{aspect-ratio:1/1;margin:0 -6px}
+.card .art svg{width:100%;height:100%}
+.card .cat{font-size:12px;color:var(--dim);letter-spacing:.03em}
+.card h3{font:600 19px/1.08 var(--f-d);margin-top:4px;overflow-wrap:break-word}
+@media(min-width:700px){.card h3{font-size:22px}}
+.card p{font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card .row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:12px;flex-wrap:wrap}
+.card .price{font-weight:700;font-size:16px;font-variant-numeric:tabular-nums}
+.card .ask{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:0 14px;border-radius:999px;border:1px solid var(--line-2);font-size:14px;font-weight:600;text-decoration:none}
+.card .ask:hover{border-color:var(--pink-2);color:var(--pink-2)}
+.card.hide{display:none}
+.show-all{margin-top:18px;width:100%}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:1100px){.grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.show-all{width:auto}}
+
+/* extras */
+.extras{display:grid;gap:28px;margin-top:34px}
+.ex-col h3{font:italic 600 26px/1.1 var(--f-d);margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tagx{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border-radius:12px;background:var(--bg-3);font-size:14.5px;color:var(--ink)}
+.tagx i{width:6px;height:6px;border-radius:50%;background:var(--pink-2);flex:none}
+.pay{font-size:14.5px;color:var(--muted);margin-top:14px}
+@media(min-width:900px){.extras{grid-template-columns:1.3fr 1fr;gap:60px}}
+
+/* praise */
+.praise{display:grid;gap:34px;margin-top:38px}
+.asp{display:grid;gap:16px}
+.asp-row{display:grid;grid-template-columns:1fr auto;gap:6px 14px;align-items:baseline}
+.asp-row b{font:600 21px/1.1 var(--f-d)}
+.asp-row span{font-size:13.5px;color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
+.bar{grid-column:1/-1;height:4px;border-radius:4px;background:rgba(185,174,219,.14);overflow:hidden}
+.bar i{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--rib),var(--pink));border-radius:4px}
+.revs{display:grid;gap:14px}
+.rev{border:1px solid var(--line);border-radius:22px;padding:22px 20px;background:var(--bg-2)}
+.rev q{display:block;font:500 19px/1.34 var(--f-d);quotes:"«" "»"}
+@media(min-width:900px){.rev q{font-size:21px}}
+.rev footer{display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:14px;font-size:13.5px;color:var(--muted)}
+.rev footer b{color:var(--ink);font-weight:600}
+.all-revs{margin-top:22px}
+@media(min-width:700px){.revs{grid-template-columns:1fr 1fr}.rev.wide{grid-column:1/-1}}
+@media(min-width:1024px){.praise{grid-template-columns:.7fr 1.3fr;gap:60px;align-items:start}}
+
+/* visit */
+.visit{display:grid;gap:18px;margin-top:34px}
+.addr{background:var(--bg-2);border:1px solid var(--line);border-radius:24px;padding:24px 20px}
+.addr .big{font:500 32px/1.05 var(--f-d)}
+.metro{display:grid;gap:8px;margin-top:18px}
+.metro li{list-style:none;display:flex;align-items:center;gap:10px;font-size:15px}
+.metro li span{color:var(--muted);margin-left:auto;font-variant-numeric:tabular-nums}
+.metro .mdot{width:12px;height:12px}
+.facts{display:grid;gap:10px;margin-top:20px;font-size:14.5px;color:var(--muted)}
+.facts div{display:flex;gap:10px}
+.facts div{align-items:center;min-height:30px}.facts b{color:var(--ink);font-weight:600;min-width:86px}.facts a{display:inline-flex;align-items:center;min-height:44px;margin-block:-8px}
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin-top:20px}
+.week div{border:1px solid var(--line);border-radius:12px;padding:8px 2px;text-align:center;font-size:12px;color:var(--muted);line-height:1.25}
+.week div b{display:block;font-size:13.5px;color:var(--ink)}
+.week div.today{border-color:var(--pink);background:rgba(255,79,163,.1)}
+.addr .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.map{position:relative;min-height:320px;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:
+  repeating-linear-gradient(0deg,transparent 0 39px,rgba(185,174,219,.07) 39px 40px),
+  repeating-linear-gradient(90deg,transparent 0 39px,rgba(185,174,219,.07) 39px 40px),var(--bg-2)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:invert(.9) hue-rotate(200deg) saturate(.6) brightness(.95)}
+@media(min-width:900px){.visit{grid-template-columns:.9fr 1.1fr}.map{min-height:100%}}
+
+/* footer */
+.foot{padding:56px 0 40px;color:var(--muted);font-size:14px}
+.foot-in{display:grid;gap:24px}
+.foot .brand b{font-size:30px}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--ink)}
+.foot .contacts{display:grid;gap:0}
+.foot .contacts a{display:flex;align-items:center;min-height:44px}
+.foot .fine{font-size:12.5px;color:var(--dim);border-top:1px solid var(--line);padding-top:18px;line-height:1.55}
+@media(min-width:900px){.foot-in{grid-template-columns:1fr 1fr 1.2fr}}
+
+/* sticky bar */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(13,9,32,.97);border-top:1px solid var(--line-2)}
+.dock .btn{flex:1;min-width:0;min-height:52px;padding:0 14px}
+@media(max-width:359.98px){.dock .btn{font-size:15px;padding:0 10px}.dock{gap:6px;padding-inline:10px}.dock .ico{width:48px}}
+.dock .ico{flex:none;width:52px;min-height:52px;padding:0;border-radius:50%}
+@media(min-width:900px){.dock{display:none}}
+
+.reveal{opacity:1;transform:none;transition:opacity .7s,transform .7s}
+.js .reveal.pre{opacity:0;transform:translateY(18px)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.js .reveal.pre{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="demo-bar">Демо-концепт · пример сайта для «DDflowers24» от Альхассана Альфаррана · не официальный сайт</div>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="#top" aria-label="DDflowers24 — наверх">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M12 60V30a20 20 0 0 1 40 0v30" fill="none" stroke="#7E6BC4" stroke-width="2.5"/><path d="M32 10v50M12 40h40" stroke="#7E6BC4" stroke-width="1.2" opacity=".6"/><circle cx="32" cy="32" r="10" fill="#FF4FA3"/><circle cx="32" cy="32" r="4.5" fill="#FFD1E8"/></svg>
+      <b>DD<i>flowers</i>24</b>
+    </a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#pick">Подбор</a><a href="#shop">Витрина</a><a href="#praise">Отзывы</a><a href="#visit">Как найти</a>
+    </nav>
+    <span class="status"><i class="dot"></i><span class="long" id="statusLong">Открыто круглосуточно</span><span class="short">24/7</span></span>
+    <a class="btn btn-wa btn-sm top-wa" id="topWa" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" id="hero">
+  <div class="wrap hero-in">
+    <div>
+      <div class="eyebrow" id="eyebrow"></div>
+      <h1>Букет в <span class="time" id="heroTime">3 часа ночи</span>? <em>Конечно.</em></h1>
+      <p class="lead">Цветочный магазин у «Таганской» работает <strong>круглосуточно</strong>: готовые букеты, шляпные коробки и композиции. Назовите бюджет — покажем, что из витрины в него помещается.</p>
+      <a class="rating" id="rating" target="_blank" rel="noopener"></a>
+      <div class="hero-cta">
+        <a class="btn btn-pink" href="#pick">Подобрать букет
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-line" id="heroCall">Позвонить</a>
+      </div>
+    </div>
+    <div class="hero-art" id="heroArt" aria-hidden="true"></div>
+  </div>
+</section>
+
+<section class="sec" id="pick">
+  <div class="wrap">
+    <div class="kicker">Подбор за минуту</div>
+    <h2>Букет под бюджет <em>и повод</em></h2>
+    <p class="sec-sub">Только настоящие позиции из витрины магазина с их ценами. Каждый букет нарисован по своему составу.</p>
+
+    <div class="pick">
+      <div class="p-left panel">
+        <div class="step"><b>1</b> Какой повод?</div>
+        <div class="chips" id="occasions" role="group" aria-label="Повод"></div>
+        <div id="occNote"></div>
+
+        <div class="step" style="margin-top:28px"><b>2</b> Сколько готовы потратить?</div>
+        <div class="budget-val"><output id="budgetOut" for="budget">10 000 ₽</output><span>до этой суммы</span></div>
+        <div class="range">
+          <div class="ticks" id="ticks" aria-hidden="true"></div>
+          <input type="range" id="budget" aria-label="Бюджет, рублей">
+        </div>
+        <div class="range-legend"><span id="minL"></span><span id="maxL"></span></div>
+        <p class="fit" id="fit"></p>
+      </div>
+
+      <div class="p-right">
+        <div class="panel">
+          <div class="step"><b>3</b> Выберите букет</div>
+          <div class="results" id="results"></div>
+        </div>
+
+        <div class="panel" style="margin-top:14px">
+          <div class="step"><b>4</b> Как передать?</div>
+          <div class="seg" role="group" aria-label="Способ получения">
+            <button type="button" id="modeDel" aria-pressed="true">Доставка</button>
+            <button type="button" id="modePick" aria-pressed="false">Самовывоз</button>
+          </div>
+          <div class="form-grid" style="margin-top:18px">
+            <div id="addrWrap">
+              <label class="lbl" for="addr">Адрес доставки</label>
+              <input class="field" id="addr" type="text" placeholder="Улица, дом, квартира — можно позже в чате" autocomplete="street-address">
+            </div>
+            <p class="pickup-note" id="pickupNote" hidden></p>
+            <div>
+              <span class="lbl" id="dayLbl">Когда</span>
+              <div class="chips" id="days" role="group" aria-labelledby="dayLbl"></div>
+              <input class="field" id="date" type="date" style="margin-top:10px" hidden aria-label="Дата">
+            </div>
+            <div>
+              <span class="lbl" id="timeLbl">Время</span>
+              <div class="chips" id="times" role="group" aria-labelledby="timeLbl"></div>
+            </div>
+            <div>
+              <label class="lbl" for="cardText">Текст открытки — по желанию</label>
+              <textarea class="field" id="cardText" maxlength="200" placeholder="Например: С днём рождения, мама!"></textarea>
+            </div>
+          </div>
+          <div class="preview-h">ТАК УЙДЁТ СООБЩЕНИЕ ФЛОРИСТУ</div>
+          <div class="preview" id="preview" aria-live="polite"></div>
+          <div class="send-row">
+            <a class="btn btn-wa" id="send" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
+              Отправить в WhatsApp</a>
+            <a class="btn btn-line" id="callPick">Позвонить</a>
+          </div>
+          <p class="quote-mini" id="preQuote"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="shop">
+  <div class="wrap">
+    <div class="cat-head">
+      <div>
+        <div class="kicker">Витрина</div>
+        <h2>Что собирают <em>на Каменщиках</em></h2>
+        <p class="sec-sub" id="shopSub"></p>
+      </div>
+    </div>
+    <div class="chips cat-chips" id="catChips" role="group" aria-label="Категории"></div>
+    <div class="grid" id="grid"></div>
+    <button class="btn btn-line show-all" id="showAll" type="button"></button>
+  </div>
+</section>
+
+<section class="sec" id="extras">
+  <div class="wrap">
+    <div class="kicker">Не только букеты</div>
+    <h2>Что ещё <em>найдётся</em></h2>
+    <div class="extras">
+      <div class="ex-col"><h3>На полках</h3><div class="tags" id="shelf"></div></div>
+      <div class="ex-col"><h3>Удобно</h3><div class="tags" id="comfort"></div><p class="pay" id="pay"></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="praise">
+  <div class="wrap">
+    <div class="kicker">Почему сюда возвращаются</div>
+    <h2 id="praiseH"></h2>
+    <div class="praise">
+      <div class="asp" id="aspects"></div>
+      <div>
+        <div class="revs" id="revs"></div>
+        <a class="btn btn-line all-revs" id="allRevs" target="_blank" rel="noopener">Все отзывы на Яндекс Картах</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="visit">
+  <div class="wrap">
+    <div class="kicker">Как найти</div>
+    <h2>Открыто, <em>даже когда всё закрыто</em></h2>
+    <div class="visit">
+      <div class="addr">
+        <div class="big" id="addrBig"></div>
+        <ul class="metro" id="metro"></ul>
+        <div class="week" id="week"></div>
+        <div class="facts" id="facts"></div>
+        <div class="btns">
+          <a class="btn btn-pink" id="route" target="_blank" rel="noopener">Построить маршрут</a>
+          <a class="btn btn-line" id="visitCall">Позвонить</a>
+        </div>
+      </div>
+      <div class="map" id="map"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <a class="brand" href="#top"><b>DD<i>flowers</i>24</b></a>
+      <p style="margin-top:10px" id="footAddr"></p>
+    </div>
+    <div class="contacts">
+      <a id="footPhone"></a>
+      <a id="footWa" target="_blank" rel="noopener">Написать в WhatsApp</a>
+      <a id="footYa" target="_blank" rel="noopener">Карточка на Яндекс Картах</a>
+    </div>
+    <p class="fine">Демо-концепт · пример сайта для «DDflowers24» от Альхассана Альфаррана · не официальный сайт.<br>Цены и данные взяты из карточки на Яндекс Картах и могут отличаться.</p>
+  </div>
+</footer>
+
+<div class="dock">
+  <a class="btn btn-pink" href="#pick">Подобрать букет</a>
+  <a class="btn btn-wa ico" id="dockWa" target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg></a>
+  <a class="btn btn-line ico" id="dockCall" aria-label="Позвонить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></a>
+</div>
+
+<script src="data.js"></script>
+<script>
+(function () {
+'use strict';
+document.documentElement.classList.add('js');
+var BIZ = window.BIZ;
+var $ = function (s) { return document.querySelector(s); };
+var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+var wa = function (text) { return 'https://wa.me/' + BIZ.wa + '?text=' + encodeURIComponent(text); };
+var rub = function (n) { return n == null ? 'по запросу' : n.toLocaleString('ru-RU').replace(/\s/g, ' ') + ' ₽'; };
+var plural = function (n, one, few, many) { var a = Math.abs(n) % 100, b = a % 10; return a > 10 && a < 20 ? many : b === 1 ? one : b >= 2 && b <= 4 ? few : many; };
+var ratingText = BIZ.rating.value.toFixed(1).replace('.', ',');
+var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+function mskNow() { var d = new Date(); return new Date(d.getTime() + (d.getTimezoneOffset() + 180) * 60000); }
+var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+var shortAddr = BIZ.address.replace(/, Москва$/, '');
+
+/* ---------- simple links ---------- */
+['#heroCall', '#callPick', '#visitCall', '#dockCall'].forEach(function (s) { $(s).href = 'tel:' + BIZ.phone; });
+var hello = 'Здравствуйте! Пишу с сайта DDflowers24. Хочу заказать букет — подскажете?';
+['#topWa', '#dockWa', '#footWa'].forEach(function (s) { $(s).href = wa(hello); });
+$('#footPhone').href = 'tel:' + BIZ.phone; $('#footPhone').textContent = BIZ.phoneDisplay;
+$('#footYa').href = BIZ.yandexUrl;
+$('#footAddr').textContent = shortAddr + ' · ' + BIZ.hoursText;
+$('#allRevs').href = BIZ.reviewsUrl;
+$('#route').href = BIZ.routeUrl;
+
+/* ---------- hero ---------- */
+var m0 = BIZ.metro[0];
+$('#eyebrow').innerHTML = '<span>' + esc(shortAddr) + '</span><span><i class="mdot" style="background:' + m0.color + '"></i>' + esc(m0.name) + ' · ' + esc(m0.distance) + '</span>';
+var star = '<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6 .7-4.5 4.1 1.2 6-5.3-3-5.3 3 1.2-6L1.4 7.8l6-.7z"/></svg>';
+var rt = $('#rating');
+rt.href = BIZ.reviewsUrl;
+rt.innerHTML = '<span class="num">' + ratingText + '</span><span><span class="stars">' + star + star + star + star + star + '</span><small>' +
+  BIZ.rating.count + ' ' + plural(BIZ.rating.count, 'оценка', 'оценки', 'оценок') + ' · ' + BIZ.rating.reviews + ' ' + plural(BIZ.rating.reviews, 'отзыв', 'отзыва', 'отзывов') + '<br>на Яндекс Картах</small></span>';
+
+function tickClock() {
+  var n = mskNow(), t = pad(n.getHours()) + ':' + pad(n.getMinutes());
+  $('#heroTime').textContent = t;
+  $('#statusLong').textContent = BIZ.is24 ? 'Открыто круглосуточно · ' + t + ' МСК' : t;
+}
+tickClock(); setInterval(tickClock, 15000);
+
+/* ---------- flower drawing ---------- */
+function hash(s) { var h = 2166136261; for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+function rng(seed) { return function () { seed |= 0; seed = seed + 0x6D2B79F5 | 0; var t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function shade(hex, f) {
+  var n = parseInt(hex.slice(1), 16), r = n >> 16, g = n >> 8 & 255, b = n & 255;
+  var k = function (c) { return Math.max(0, Math.min(255, Math.round(f < 0 ? c * (1 + f) : c + (255 - c) * f))); };
+  return '#' + ((1 << 24) + (k(r) << 16) + (k(g) << 8) + k(b)).toString(16).slice(1);
+}
+var FL = [
+  [/пионовидн/, 'ruffle', '#F6B3CF'], [/(^|[\s,])роз(а|ы)?(?![а-яё])|роза кустов/, 'rose', '#F0507E'], [/пион(ы|ов)?(?![а-яё])/, 'ruffle', '#F79CC0'],
+  [/гортенз/, 'cluster', '#A9B8FF'], [/дельфиниум/, 'spike', '#5F7DFF'], [/эустом/, 'cup', '#E7DAFF'], [/диантус/, 'fringe', '#FF6FAE'],
+  [/протея/, 'protea', '#F2A7A0'], [/антуриум/, 'heart', '#FF3D6E'], [/фаленопсис|орхиде/, 'orchid', '#F7F0FF'], [/альстромери/, 'star', '#FFB07A'],
+  [/эвкалипт/, 'leaf', '#86B3A2'], [/маттиол/, 'spike', '#D7B6FF'], [/аллиум/, 'cluster', '#A97CFF'], [/верба/, 'twig', '#EDE6F7'],
+  [/гербер/, 'star', '#FF8F5A'], [/нарцисс/, 'star', '#FFE06B'], [/орнитогалум/, 'star', '#FFFFFF'], [/вероник/, 'spike', '#8C7BFF'],
+  [/латирус/, 'ruffle', '#F3B5E0'], [/молюцелл/, 'spike', '#A6D99B']
+];
+var COL = [
+  [/малинов/, 'ruffle', '#D8246F'], [/розов/, 'rose', '#F28DB5'], [/сиренев/, 'cluster', '#B79CFF'], [/жёлт|желт/, 'star', '#FFE06B'],
+  [/кремов/, 'cup', '#FFF0D2'], [/голуб/, 'cluster', '#9CCBFF'], [/оранжев/, 'ruffle', '#FF9A3C'], [/орхиде/, 'orchid', '#F7F0FF'], [/зелен/, 'leaf', '#86B3A2']
+];
+function flowersOf(item) {
+  var d = (item.d || '').toLowerCase(), list = [], src = /оттенк/.test(d) ? COL : FL;
+  src.forEach(function (f) { var m = d.match(f[0]); if (m) list.push({ re: m.index, shape: f[1], color: f[2] }); });
+  list.sort(function (a, b) { return a.re - b.re; });
+  if (/тыкв/.test(d)) list.push({ shape: 'star', color: '#FFB347' });
+  if (!list.length) list = [{ shape: 'rose', color: '#F0507E' }, { shape: 'cluster', color: '#B79CFF' }];
+  return list;
+}
+function head(sh, x, y, r, c, R) {
+  var o = '', i, a, dk = shade(c, -0.35), lt = shade(c, 0.45);
+  x = +x.toFixed(1); y = +y.toFixed(1); r = +r.toFixed(1);
+  switch (sh) {
+    case 'rose':
+      o += '<circle cx="' + x + '" cy="' + y + '" r="' + r + '" fill="' + c + '"/>';
+      o += '<path d="M' + (x - r * .55) + ' ' + y + 'a' + r * .55 + ' ' + r * .55 + ' 0 1 1 ' + r * .9 + ' ' + r * .25 + 'a' + r * .32 + ' ' + r * .32 + ' 0 1 1 -' + r * .5 + ' -' + r * .35 + '" fill="none" stroke="' + dk + '" stroke-width="' + (r * .14).toFixed(1) + '" stroke-linecap="round"/>';
+      break;
+    case 'ruffle':
+      for (i = 0; i < 6; i++) { a = i / 6 * 6.283 + R(); o += '<circle cx="' + (x + Math.cos(a) * r * .45).toFixed(1) + '" cy="' + (y + Math.sin(a) * r * .45).toFixed(1) + '" r="' + (r * .62).toFixed(1) + '" fill="' + (i % 2 ? c : shade(c, -.12)) + '"/>'; }
+      o += '<circle cx="' + x + '" cy="' + y + '" r="' + (r * .45).toFixed(1) + '" fill="' + lt + '"/>';
+      break;
+    case 'cluster':
+      for (i = 0; i < 7; i++) { a = i / 6 * 6.283; var rr = i === 6 ? 0 : r * .55; o += '<circle cx="' + (x + Math.cos(a) * rr).toFixed(1) + '" cy="' + (y + Math.sin(a) * rr).toFixed(1) + '" r="' + (r * .42).toFixed(1) + '" fill="' + (i % 3 ? c : lt) + '"/>'; }
+      break;
+    case 'cup':
+      o += '<ellipse cx="' + (x - r * .4).toFixed(1) + '" cy="' + y + '" rx="' + (r * .55).toFixed(1) + '" ry="' + (r * .85).toFixed(1) + '" fill="' + shade(c, -.1) + '" transform="rotate(-18 ' + x + ' ' + y + ')"/>';
+      o += '<ellipse cx="' + (x + r * .4).toFixed(1) + '" cy="' + y + '" rx="' + (r * .55).toFixed(1) + '" ry="' + (r * .85).toFixed(1) + '" fill="' + shade(c, -.1) + '" transform="rotate(18 ' + x + ' ' + y + ')"/>';
+      o += '<ellipse cx="' + x + '" cy="' + (y - r * .1).toFixed(1) + '" rx="' + (r * .55).toFixed(1) + '" ry="' + (r * .9).toFixed(1) + '" fill="' + c + '"/>';
+      o += '<circle cx="' + x + '" cy="' + (y + r * .35).toFixed(1) + '" r="' + (r * .18).toFixed(1) + '" fill="#9A6BE0"/>';
+      break;
+    case 'fringe':
+      o += '<circle cx="' + x + '" cy="' + y + '" r="' + (r * .8).toFixed(1) + '" fill="' + c + '" stroke="' + lt + '" stroke-width="' + (r * .35).toFixed(1) + '" stroke-dasharray="1.2 1.6"/>';
+      o += '<circle cx="' + x + '" cy="' + y + '" r="' + (r * .25).toFixed(1) + '" fill="' + dk + '"/>';
+      break;
+    case 'star':
+      for (i = 0; i < 9; i++) { a = i * 40; o += '<ellipse cx="' + x + '" cy="' + (y - r * .55).toFixed(1) + '" rx="' + (r * .22).toFixed(1) + '" ry="' + (r * .5).toFixed(1) + '" fill="' + c + '" transform="rotate(' + a + ' ' + x + ' ' + y + ')"/>'; }
+      o += '<circle cx="' + x + '" cy="' + y + '" r="' + (r * .3).toFixed(1) + '" fill="' + (c === '#FFFFFF' ? '#C9E27A' : '#5A3A1E') + '"/>';
+      break;
+    case 'heart':
+      o += '<path d="M' + x + ' ' + (y + r * .9) + 'C' + (x - r * 1.3) + ' ' + y + ' ' + (x - r * .9) + ' ' + (y - r * 1.1) + ' ' + x + ' ' + (y - r * .45) + 'C' + (x + r * .9) + ' ' + (y - r * 1.1) + ' ' + (x + r * 1.3) + ' ' + y + ' ' + x + ' ' + (y + r * .9) + 'z" fill="' + c + '"/>';
+      o += '<path d="M' + x + ' ' + (y - r * .2) + 'q' + r * .25 + ' -' + r * .5 + ' ' + r * .55 + ' -' + r * .75 + '" stroke="#FFE07A" stroke-width="' + (r * .22).toFixed(1) + '" stroke-linecap="round" fill="none"/>';
+      break;
+    case 'orchid':
+      for (i = 0; i < 5; i++) { a = i * 72 + 36; o += '<ellipse cx="' + x + '" cy="' + (y - r * .5).toFixed(1) + '" rx="' + (r * .38).toFixed(1) + '" ry="' + (r * .55).toFixed(1) + '" fill="' + c + '" transform="rotate(' + a + ' ' + x + ' ' + y + ')"/>'; }
+      o += '<circle cx="' + x + '" cy="' + y + '" r="' + (r * .3).toFixed(1) + '" fill="#E0457F"/>';
+      break;
+    case 'protea':
+      for (i = 0; i < 12; i++) { a = i * 30; o += '<path d="M' + (x - r * .2) + ' ' + y + 'L' + x + ' ' + (y - r * 1.1) + 'L' + (x + r * .2) + ' ' + y + 'z" fill="' + (i % 2 ? c : shade(c, -.2)) + '" transform="rotate(' + a + ' ' + x + ' ' + y + ')"/>'; }
+      o += '<circle cx="' + x + '" cy="' + y + '" r="' + (r * .55).toFixed(1) + '" fill="' + lt + '"/>';
+      break;
+    case 'spike':
+      for (i = 0; i < 7; i++) { o += '<circle cx="' + (x + (i % 2 ? 1 : -1) * r * .22).toFixed(1) + '" cy="' + (y - i * r * .62).toFixed(1) + '" r="' + (r * (.52 - i * .05)).toFixed(1) + '" fill="' + (i % 2 ? c : shade(c, .2)) + '"/>'; }
+      break;
+    case 'leaf':
+      for (i = 0; i < 4; i++) { o += '<circle cx="' + (x + (i % 2 ? r * .55 : -r * .55)).toFixed(1) + '" cy="' + (y - i * r * .55).toFixed(1) + '" r="' + (r * .42).toFixed(1) + '" fill="' + (i % 2 ? c : shade(c, -.2)) + '"/>'; }
+      break;
+    case 'twig':
+      o += '<path d="M' + x + ' ' + (y + r) + 'L' + (x + r * .3) + ' ' + (y - r * 2.4) + '" stroke="#7A5A48" stroke-width="1.4"/>';
+      for (i = 0; i < 5; i++) o += '<ellipse cx="' + (x + r * .06 * i + (i % 2 ? 2 : -2)).toFixed(1) + '" cy="' + (y + r * .6 - i * r * .7).toFixed(1) + '" rx="' + (r * .22).toFixed(1) + '" ry="' + (r * .3).toFixed(1) + '" fill="' + c + '"/>';
+      break;
+  }
+  return o;
+}
+function container(item, cat) {
+  var d = (item.d || '').toLowerCase();
+  if (/тыкв/.test(d)) return 'pumpkin';
+  if (/ящик/i.test(cat)) return 'crate';
+  if (/шляп|коробк/i.test(cat)) return 'hatbox';
+  if (/^букет/i.test(cat)) return 'cone';
+  return 'bowl';
+}
+function bouquetSVG(item, cat, opts) {
+  opts = opts || {};
+  var R = rng(hash(item.t)), fl = flowersOf(item), ct = container(item, cat);
+  var p = item.p || 10000, s = .78 + .26 * Math.min(1, p / 27000);
+  var cx = 100, cy = ct === 'cone' ? 92 : 100, RX = 56 * s, RY = 36 * s;
+  var n = Math.max(6, Math.min(22, Math.round(6 + p / 27000 * 16)));
+  var o = '<svg viewBox="0 0 200 210" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">';
+  o += '<circle cx="100" cy="' + (cy - 4) + '" r="' + (RX + 30).toFixed(0) + '" fill="url(#g-glow)"/>';
+  var boxTop = cy + RY * .8, W = RX + 6;
+  // back of container
+  if (ct === 'cone') o += '<path d="M' + (cx - RX - 18).toFixed(1) + ' ' + (cy - RY - 8).toFixed(1) + 'L' + cx + ' 204L' + (cx + RX + 18).toFixed(1) + ' ' + (cy - RY - 8).toFixed(1) + 'z" fill="#2C2052"/>';
+  if (ct === 'hatbox' || ct === 'crate') o += '<ellipse cx="' + cx + '" cy="' + boxTop.toFixed(1) + '" rx="' + W.toFixed(1) + '" ry="10" fill="#120B26"/>';
+  // leaves
+  var i, a, heads = [];
+  for (i = 0; i < 9; i++) {
+    a = Math.PI + i / 8 * Math.PI;
+    var lx = cx + Math.cos(a) * (RX + 6), ly = cy + Math.sin(a) * (RY + 4) + 6;
+    o += '<ellipse cx="' + lx.toFixed(1) + '" cy="' + ly.toFixed(1) + '" rx="6" ry="15" fill="' + (i % 2 ? '#3E7564' : '#2C5A4C') + '" transform="rotate(' + ((a * 180 / Math.PI) + 90).toFixed(0) + ' ' + lx.toFixed(1) + ' ' + ly.toFixed(1) + ')"/>';
+  }
+  // positions in a dome
+  for (i = 0; i < n; i++) {
+    var rr = Math.sqrt((i + .5) / n), th = i * 2.39996 + R() * .4;
+    heads.push({ x: cx + Math.cos(th) * rr * RX, y: cy + Math.sin(th) * rr * RY - (1 - rr * rr) * 10 });
+  }
+  heads.sort(function (a, b) { return a.y - b.y; });
+  // types: weighted by order, spikes go to back
+  var types = [];
+  for (i = 0; i < n; i++) {
+    var k = 0, roll = R(), tot = 0, w = fl.map(function (f, j) { var v = f.shape === 'leaf' ? .5 : (fl.length - j) + 1; tot += v; return v; });
+    roll *= tot; for (k = 0; k < fl.length - 1; k++) { roll -= w[k]; if (roll <= 0) break; }
+    types.push(fl[k]);
+  }
+  // make sure each flower appears at least once
+  fl.forEach(function (f, j) { if (types.indexOf(f) < 0 && j < n) types[n - 1 - j] = f; });
+  types.sort(function (a, b) { var sa = (a.shape === 'spike' || a.shape === 'twig' || a.shape === 'leaf') ? 0 : 1, sb = (b.shape === 'spike' || b.shape === 'twig' || b.shape === 'leaf') ? 0 : 1; return sa - sb; });
+  heads.forEach(function (h, j) {
+    var t = types[j], r = (11 + R() * 4) * s;
+    if (t.shape === 'spike') r *= .85;
+    o += head(t.shape, h.x, h.y, r, t.color, R);
+  });
+  // front of container
+  if (ct === 'cone') {
+    o += '<path d="M' + (cx - RX - 8).toFixed(1) + ' ' + (cy + RY * .55).toFixed(1) + 'Q' + cx + ' ' + (cy + RY * .55 + 18).toFixed(1) + ' ' + (cx + RX + 8).toFixed(1) + ' ' + (cy + RY * .55).toFixed(1) + 'L' + cx + ' 204z" fill="#3B2B6B" stroke="#FF7DBB" stroke-width="1" stroke-opacity=".55"/>';
+    o += '<path d="M' + cx + ' ' + (cy + RY * .55 + 9).toFixed(1) + 'L' + cx + ' 204" stroke="#2C2052" stroke-width="1.2"/>';
+    o += '<g transform="translate(' + cx + ' 176)"><ellipse cx="-9" cy="0" rx="9" ry="5" fill="#FF4FA3"/><ellipse cx="9" cy="0" rx="9" ry="5" fill="#FF4FA3"/><path d="M-2 2l-7 16M2 2l7 16" stroke="#FF4FA3" stroke-width="2.4" stroke-linecap="round"/><circle r="3.6" fill="#FF7DBB"/></g>';
+  } else if (ct === 'hatbox') {
+    o += '<path d="M' + (cx - W).toFixed(1) + ' ' + boxTop.toFixed(1) + 'V196A' + W.toFixed(1) + ' 11 0 0 0 ' + (cx + W).toFixed(1) + ' 196V' + boxTop.toFixed(1) + 'A' + W.toFixed(1) + ' 10 0 0 1 ' + (cx - W).toFixed(1) + ' ' + boxTop.toFixed(1) + 'z" fill="#2E2257"/>';
+    o += '<path d="M' + (cx - W).toFixed(1) + ' ' + (boxTop + 22).toFixed(1) + 'A' + W.toFixed(1) + ' 10 0 0 0 ' + (cx + W).toFixed(1) + ' ' + (boxTop + 22).toFixed(1) + '" stroke="#FF4FA3" stroke-width="5" fill="none" stroke-opacity=".8"/>';
+    o += '<path d="M' + (cx - W).toFixed(1) + ' ' + boxTop.toFixed(1) + 'A' + W.toFixed(1) + ' 10 0 0 0 ' + (cx + W).toFixed(1) + ' ' + boxTop.toFixed(1) + '" stroke="#5E4F9C" stroke-width="1.5" fill="none"/>';
+  } else if (ct === 'crate') {
+    o += '<rect x="' + (cx - W).toFixed(1) + '" y="' + boxTop.toFixed(1) + '" width="' + (2 * W).toFixed(1) + '" height="' + (198 - boxTop).toFixed(1) + '" rx="3" fill="#4A342E"/>';
+    for (i = 1; i < 3; i++) o += '<path d="M' + (cx - W).toFixed(1) + ' ' + (boxTop + i * (198 - boxTop) / 3).toFixed(1) + 'H' + (cx + W).toFixed(1) + '" stroke="#2B1D19" stroke-width="2"/>';
+    o += '<path d="M' + (cx - W + 8).toFixed(1) + ' ' + boxTop.toFixed(1) + 'V198M' + (cx + W - 8).toFixed(1) + ' ' + boxTop.toFixed(1) + 'V198" stroke="#6B4C42" stroke-width="3"/>';
+  } else if (ct === 'pumpkin') {
+    o += '<ellipse cx="' + cx + '" cy="170" rx="' + (W + 6).toFixed(1) + '" ry="32" fill="#D9662A"/>';
+    o += '<ellipse cx="' + cx + '" cy="170" rx="' + (W * .55).toFixed(1) + '" ry="31" fill="none" stroke="#A84A1B" stroke-width="2"/><ellipse cx="' + cx + '" cy="170" rx="' + (W * .2).toFixed(1) + '" ry="30" fill="none" stroke="#A84A1B" stroke-width="2"/>';
+  } else {
+    o += '<path d="M' + (cx - W).toFixed(1) + ' ' + (cy + RY * .7).toFixed(1) + 'H' + (cx + W).toFixed(1) + 'L' + (cx + W - 14).toFixed(1) + ' 194H' + (cx - W + 14).toFixed(1) + 'z" fill="#3B2B6B"/><path d="M' + (cx - W).toFixed(1) + ' ' + (cy + RY * .7).toFixed(1) + 'H' + (cx + W).toFixed(1) + '" stroke="#FF7DBB" stroke-opacity=".6"/>';
+  }
+  return o + '</svg>';
+}
+
+/* ---------- items ---------- */
+var ITEMS = [];
+BIZ.menu.forEach(function (c) { c.items.forEach(function (it) { ITEMS.push({ t: it.t, p: it.p, d: it.d || '', v: it.v, cat: c.name, key: c.name + '|' + it.t }); }); });
+var priced = ITEMS.filter(function (i) { return i.p != null; });
+var pMin = Math.min.apply(null, priced.map(function (i) { return i.p; })), pMax = Math.max.apply(null, priced.map(function (i) { return i.p; }));
+ITEMS.forEach(function (i) {
+  var s = (i.t + ' ' + i.d).toLowerCase();
+  i.tags = {
+    tender: /нежн|облак|зефир|любовь|романт|сиренев|эустом|пион/.test(s) ? 1 : 0,
+    bright: /малин|страст|всплеск|туман|тепло|осенн|эспрессо|насыщ|выразит|антуриум|гербер/.test(s) ? 1 : 0,
+    classic: /класс|романт|(^|[\s,])роз(а|ы)?(?![а-яё])/.test(s) ? 1 : 0,
+    box: /шляп|ящик|коробк/.test(i.cat.toLowerCase()) ? 1 : 0,
+    grand: i.p >= 18000 ? 1 : 0
+  };
+});
+var SVG_CACHE = {};
+function art(i) { return SVG_CACHE[i.key] || (SVG_CACHE[i.key] = bouquetSVG(i, i.cat)); }
+
+/* ---------- hero art ---------- */
+(function heroArt() {
+  var o = '<svg viewBox="0 36 400 424" preserveAspectRatio="xMidYMax meet"><defs>' +
+    '<radialGradient id="g-glow"><stop offset="0" stop-color="#FF4FA3" stop-opacity=".28"/><stop offset=".55" stop-color="#7A4FD0" stop-opacity=".10"/><stop offset="1" stop-color="#0D0920" stop-opacity="0"/></radialGradient>' +
+    '<radialGradient id="g-bud"><stop offset="0" stop-color="#FFD1E8" stop-opacity=".9"/><stop offset="1" stop-color="#FF4FA3" stop-opacity="0"/></radialGradient>' +
+    '<linearGradient id="g-glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A1F55" stop-opacity=".55"/><stop offset="1" stop-color="#0D0920" stop-opacity="0"/></linearGradient></defs>';
+  // greenhouse
+  o += '<path d="M30 460V210A170 170 0 0 1 370 210V460z" fill="url(#g-glass)"/>';
+  o += '<g fill="none" stroke="#5E4F9C" stroke-width="1.4">';
+  o += '<path d="M30 460V210A170 170 0 0 1 370 210V460"/><path d="M70 460V214A130 130 0 0 1 330 214V460" stroke-opacity=".55"/>';
+  [-60, -30, 0, 30, 60].forEach(function (a) { var r = a * Math.PI / 180; o += '<path d="M200 210L' + (200 + Math.sin(r) * 170).toFixed(1) + ' ' + (210 - Math.cos(r) * 170).toFixed(1) + '" stroke-opacity=".45"/>'; });
+  [120, 160, 200, 240, 280].forEach(function (x) { o += '<path d="M' + x + ' 460V' + (210 + (x === 200 ? 0 : 0)) + '" stroke-opacity=".28"/>'; });
+  [300, 380].forEach(function (y) { o += '<path d="M30 ' + y + 'H370" stroke-opacity=".28"/>'; });
+  o += '<path d="M30 210H370" stroke-opacity=".5"/><circle cx="200" cy="210" r="26" stroke-opacity=".7"/><circle cx="200" cy="210" r="16" stroke-opacity=".45"/></g>';
+  o += '<text x="200" y="217" text-anchor="middle" font-family="Cormorant Garamond,serif" font-style="italic" font-size="19" fill="#FF7DBB">24</text>';
+  // moon
+  o += '<circle cx="320" cy="70" r="20" fill="#F4EFFF" opacity=".9"/><circle cx="330" cy="63" r="18" fill="#0D0920"/>';
+  // stems with blooms (real flowers of the popular bouquets)
+  var R = rng(7), stems = [
+    { x: 92, h: 190, sh: 'cluster', c: '#A9B8FF', r: 26 }, { x: 140, h: 250, sh: 'spike', c: '#5F7DFF', r: 20 },
+    { x: 196, h: 205, sh: 'protea', c: '#F2A7A0', r: 30 }, { x: 250, h: 260, sh: 'rose', c: '#F0507E', r: 24 },
+    { x: 300, h: 180, sh: 'ruffle', c: '#F79CC0', r: 27 }, { x: 166, h: 130, sh: 'cup', c: '#E7DAFF', r: 18 },
+    { x: 232, h: 120, sh: 'heart', c: '#FF3D6E', r: 18 }, { x: 330, h: 110, sh: 'orchid', c: '#F7F0FF', r: 16 }, { x: 64, h: 110, sh: 'fringe', c: '#FF6FAE', r: 16 }
+  ];
+  stems.forEach(function (s, i) {
+    var top = 460 - s.h, bend = (R() - .5) * 40;
+    o += '<g class="sway" style="animation-delay:-' + (i * 1.3).toFixed(1) + 's;animation-duration:' + (6 + R() * 4).toFixed(1) + 's">';
+    o += '<path d="M' + s.x + ' 460Q' + (s.x + bend) + ' ' + (top + s.h * .5).toFixed(0) + ' ' + s.x + ' ' + top + '" stroke="#3E7564" stroke-width="2.4" fill="none"/>';
+    o += '<ellipse cx="' + (s.x + bend * .3 + 10) + '" cy="' + (top + s.h * .55).toFixed(0) + '" rx="5" ry="14" fill="#2C5A4C" transform="rotate(50 ' + (s.x + bend * .3 + 10) + ' ' + (top + s.h * .55).toFixed(0) + ')"/>';
+    o += '<circle cx="' + s.x + '" cy="' + top + '" r="' + (s.r * 2.3).toFixed(0) + '" fill="url(#g-bud)" opacity=".45"/>';
+    o += head(s.sh, s.x, top + (s.sh === 'spike' ? 30 : 0), s.r, s.c, R) + '</g>';
+  });
+  for (var i = 0; i < 22; i++) o += '<circle class="twk" style="animation-delay:-' + (R() * 3.4).toFixed(2) + 's" cx="' + (40 + R() * 320).toFixed(0) + '" cy="' + (60 + R() * 360).toFixed(0) + '" r="' + (0.8 + R() * 1.6).toFixed(1) + '" fill="#FFD1E8"/>';
+  o += '<path d="M0 459H400" stroke="#5E4F9C" stroke-opacity=".6"/></svg>';
+  $('#heroArt').innerHTML = o;
+  var hero = $('#hero');
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { es.forEach(function (e) { hero.classList.toggle('paused', !e.isIntersecting); }); }).observe(hero);
+})();
+
+/* ---------- picker ---------- */
+var OCC = [
+  { k: 'Просто так', m: 'просто так', w: { bright: 1, tender: 1 } },
+  { k: 'День рождения', m: 'день рождения', w: { bright: 2, box: 1, grand: 1 } },
+  { k: 'Любимой', m: 'подарок любимой', w: { tender: 2, classic: 1, box: 1 } },
+  { k: 'Маме', m: 'подарок маме', w: { tender: 2, box: 2 } },
+  { k: 'Свадьба', m: 'свадьба', w: { tender: 3, grand: 1 } },
+  { k: 'Извиниться', m: 'хочу извиниться', w: { classic: 2, tender: 1 } },
+  { k: 'Коллеге', m: 'подарок коллеге', w: { classic: 2, bright: 1 } }
+];
+var hasF = function (re) { return BIZ.features.some(function (f) { return re.test(f.k) && f.v; }); };
+var st = { occ: 1, budget: Math.min(pMax, 10000), sel: null, showAll: false, mode: hasF(/доставка/i) ? 'del' : 'pick', day: 0, date: '', time: 0 };
+function save() {}
+
+$('#occasions').innerHTML = OCC.map(function (o, i) { return '<button type="button" class="chip" data-i="' + i + '" aria-pressed="' + (i === st.occ) + '">' + o.k + '</button>'; }).join('');
+$('#occasions').addEventListener('click', function (e) { var b = e.target.closest('.chip'); if (!b) return; st.occ = +b.dataset.i; st.sel = null; st.showAll = false; save(); renderPick(); });
+
+var rg = $('#budget');
+var step = 100, lo = Math.floor(pMin / step) * step, hi = Math.ceil(pMax / step) * step;
+rg.min = lo; rg.max = hi; rg.step = step; rg.value = st.budget;
+$('#minL').textContent = rub(lo); $('#maxL').textContent = rub(hi);
+$('#ticks').innerHTML = priced.map(function (i) { return '<i class="tick" data-p="' + i.p + '" style="left:' + ((i.p - lo) / (hi - lo) * 100).toFixed(2) + '%"></i>'; }).join('');
+rg.addEventListener('input', function () { st.budget = +rg.value; if (st.sel && st.sel !== 'custom') { var it = ITEMS.find(function (x) { return x.key === st.sel; }); if (!it || it.p > st.budget) st.sel = null; } save(); renderPick(); });
+
+function scoreOf(i) { var w = OCC[st.occ].w, s = 0; for (var k in w) s += (i.tags[k] || 0) * w[k]; return s; }
+function fitting() {
+  return priced.filter(function (i) { return i.p <= st.budget; })
+    .sort(function (a, b) { return scoreOf(b) - scoreOf(a) || b.p - a.p; });
+}
+var check = '<svg viewBox="0 0 16 16" fill="none" stroke="#2A0718" stroke-width="2.4"><path d="M3 8.5l3.2 3L13 4.5"/></svg>';
+
+function renderPick() {
+  var occ = OCC[st.occ];
+  [].forEach.call($('#occasions').children, function (b, i) { b.setAttribute('aria-pressed', i === st.occ); });
+  var fill = (st.budget - lo) / (hi - lo) * 100;
+  rg.style.setProperty('--fill', fill + '%');
+  rg.setAttribute('aria-valuetext', 'до ' + rub(st.budget));
+  $('#budgetOut').textContent = rub(st.budget);
+  [].forEach.call($('#ticks').children, function (t) { t.classList.toggle('on', +t.dataset.p <= st.budget); });
+  var list = fitting();
+  var lowP = list.length ? Math.min.apply(null, list.map(function (i) { return i.p; })) : 0, hiP = list.length ? Math.max.apply(null, list.map(function (i) { return i.p; })) : 0;
+  $('#fit').innerHTML = list.length
+    ? 'В бюджет помещается <b>' + list.length + ' из ' + priced.length + '</b> ' + plural(priced.length, 'позиции', 'позиций', 'позиций') + ' витрины' + (list.length > 1 ? ' — от ' + rub(lowP) + ' до ' + rub(hiP) : '') + '. Каждая точка на шкале — реальный букет.'
+    : 'Самый доступный букет витрины стоит ' + rub(pMin) + '.';
+  $('#occNote').innerHTML = occ.k === 'Свадьба' && hasF(/свадеб/i)
+    ? '<p class="note">В карточке магазина указана свадебная флористика: букет невесты и бутоньерку лучше обсудить с флористом — кнопка внизу отправит ему заявку.</p>' : '';
+
+  if (!st.sel || (st.sel !== 'custom' && !list.some(function (i) { return i.key === st.sel; }))) st.sel = list.length ? list[0].key : 'custom';
+  var cap = innerWidth < 620 ? 3 : 5, show = st.showAll ? list : list.slice(0, cap);
+  var html = show.map(function (i, j) {
+    return '<button type="button" class="res" data-k="' + esc(i.key) + '" aria-pressed="' + (st.sel === i.key) + '">' +
+      (j === 0 && scoreOf(i) > 0 ? '<span class="tag">К поводу</span>' : '') + '<span class="check">' + check + '</span>' +
+      '<span class="art">' + art(i) + '</span><h3>' + esc(i.t) + '</h3><span class="cat">' + esc(i.cat) + '</span><span class="price">' + rub(i.p) + '</span></button>';
+  }).join('');
+  html += '<button type="button" class="res custom" data-k="custom" aria-pressed="' + (st.sel === 'custom') + '"><span class="check">' + check + '</span><span class="ic">∗</span><h3>Флорист соберёт на ' + rub(st.budget) + '</h3><p>Свой букет под повод — опишете пожелания в чате</p></button>';
+  if (list.length > cap) html += '<button type="button" class="more-btn" id="moreRes">' + (st.showAll ? 'Свернуть' : 'Показать ещё ' + (list.length - cap)) + '</button>';
+  $('#results').innerHTML = html;
+  renderMsg();
+}
+$('#results').addEventListener('click', function (e) {
+  if (e.target.closest('#moreRes')) { st.showAll = !st.showAll; renderPick(); return; }
+  var b = e.target.closest('.res'); if (!b) return;
+  st.sel = b.dataset.k;
+  [].forEach.call($('#results').querySelectorAll('.res'), function (x) { x.setAttribute('aria-pressed', x === b); });
+  renderMsg();
+});
+
+/* delivery */
+var DAYS = ['Сегодня', 'Завтра', 'Другой день'], TIMES = ['Как можно скорее', 'Утром', 'Днём', 'Вечером', 'Ночью'];
+$('#days').innerHTML = DAYS.map(function (d, i) { return '<button type="button" class="chip" data-i="' + i + '" aria-pressed="' + (i === 0) + '">' + d + '</button>'; }).join('');
+$('#times').innerHTML = TIMES.map(function (d, i) { return '<button type="button" class="chip" data-i="' + i + '" aria-pressed="' + (i === 0) + '">' + d + '</button>'; }).join('');
+var dateIn = $('#date');
+var today = mskNow(); var iso = function (d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); };
+dateIn.min = iso(today);
+function pickChip(group, key) {
+  $(group).addEventListener('click', function (e) {
+    var b = e.target.closest('.chip'); if (!b) return; st[key] = +b.dataset.i;
+    [].forEach.call($(group).children, function (x) { x.setAttribute('aria-pressed', x === b); });
+    if (key === 'day') { dateIn.hidden = st.day !== 2; if (st.day === 2 && !dateIn.value) { var t = mskNow(); t.setDate(t.getDate() + 2); dateIn.value = iso(t); } }
+    renderMsg();
+  });
+}
+pickChip('#days', 'day'); pickChip('#times', 'time');
+function setMode(m) {
+  st.mode = m;
+  $('#modeDel').setAttribute('aria-pressed', m === 'del'); $('#modePick').setAttribute('aria-pressed', m === 'pick');
+  $('#addrWrap').hidden = m !== 'del'; $('#pickupNote').hidden = m !== 'pick';
+  renderMsg();
+}
+$('#pickupNote').textContent = 'Заберёте сами: ' + shortAddr + ', ' + BIZ.metro[0].distance + ' от «' + BIZ.metro[0].name + '». Магазин открыт ' + BIZ.hoursText + (hasF(/^парковка$/i) ? ', есть парковка.' : '.');
+$('#modeDel').addEventListener('click', function () { setMode('del'); });
+$('#modePick').addEventListener('click', function () { setMode('pick'); });
+if (!hasF(/доставка/i)) $('#modeDel').hidden = true;
+['#addr', '#cardText', '#date'].forEach(function (s) { $(s).addEventListener('input', renderMsg); });
+
+var fmtDay = function (d) { return d.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long' }); };
+function whenText() {
+  var d = mskNow(), label;
+  if (st.day === 1) d.setDate(d.getDate() + 1);
+  if (st.day === 2 && dateIn.value) { var p = dateIn.value.split('-'); d = new Date(+p[0], +p[1] - 1, +p[2]); }
+  label = st.day === 0 ? 'сегодня, ' + fmtDay(d) : st.day === 1 ? 'завтра, ' + fmtDay(d) : fmtDay(d);
+  return label + ', ' + TIMES[st.time].toLowerCase();
+}
+function buildMsg() {
+  var L = ['Здравствуйте! Пишу с сайта DDflowers24.'], occ = OCC[st.occ].k;
+  if (st.sel === 'custom' || !fitting().length) {
+    L.push('Хочу букет на сумму до ' + rub(st.budget) + ' — соберите, пожалуйста, на ваш вкус.');
+  } else {
+    var it = ITEMS.find(function (x) { return x.key === st.sel; }) || fitting()[0];
+    var kind = /^букет/i.test(it.cat) ? 'букет ' : /ящик/i.test(it.cat) ? 'композицию в деревянном ящике ' : /шляп/i.test(it.cat) ? 'композицию в шляпной коробке ' : 'композицию ';
+    L.push('Хочу заказать ' + kind + '«' + it.t + '» — ' + rub(it.p) + '.');
+  }
+  L.push('Повод: ' + OCC[st.occ].m + '.');
+  var addr = $('#addr').value.trim();
+  if (st.mode === 'del') {
+    L.push('Нужна доставка: ' + (addr || 'адрес напишу в чате') + '.');
+    L.push('Когда: ' + whenText() + '.');
+  } else {
+    L.push('Заберу сам(а) в магазине на Больших Каменщиках — ' + whenText() + '.');
+  }
+  var card = $('#cardText').value.trim();
+  if (card) L.push('Открытка с текстом: «' + card + '».');
+  L.push(st.mode === 'del' ? 'Подскажите, пожалуйста, получится ли к этому времени и сколько будет стоить доставка?' : 'Подскажите, пожалуйста, будет ли букет готов к этому времени?');
+  return L.join('\n');
+}
+function renderMsg() { var m = buildMsg(); $('#preview').textContent = m; $('#send').href = wa(m); }
+$('#preQuote').innerHTML = '«Работают круглосуточно, можно сделать предзаказ на дату».<small>Алёна З., отзыв на Яндекс Картах</small>';
+setMode(st.mode);
+renderPick();
+
+/* ---------- catalogue ---------- */
+var cats = ['Все'].concat(BIZ.menu.map(function (c) { return c.name; }));
+var cst = { cat: 0, all: false };
+$('#shopSub').textContent = ITEMS.length + ' ' + plural(ITEMS.length, 'позиция', 'позиции', 'позиций') + ' из карточки магазина — от ' + rub(pMin) + ' до ' + rub(pMax) + '. Наличие и замены цветов уточняйте у флориста — одной кнопкой.';
+$('#catChips').innerHTML = cats.map(function (c, i) { return '<button type="button" class="chip" data-i="' + i + '" aria-pressed="' + (i === 0) + '">' + esc(c) + '</button>'; }).join('');
+$('#catChips').addEventListener('click', function (e) { var b = e.target.closest('.chip'); if (!b) return; cst.cat = +b.dataset.i; cst.all = false; renderGrid(); });
+function renderGrid() {
+  [].forEach.call($('#catChips').children, function (b, i) { b.setAttribute('aria-pressed', i === cst.cat); });
+  var list = cst.cat === 0 ? ITEMS.slice().sort(function (a, b) { return (b.p || 0) - (a.p || 0); }) : ITEMS.filter(function (i) { return i.cat === cats[cst.cat]; });
+  var LIM = innerWidth < 700 ? 6 : 8;
+  $('#grid').innerHTML = list.map(function (i, j) {
+    var msg = 'Здравствуйте! Пишу с сайта DDflowers24. Хочу заказать «' + i.t + '» — ' + rub(i.p) + '. Он сейчас в наличии?';
+    return '<article class="card' + (!cst.all && j >= LIM ? ' hide' : '') + '"><div class="art">' + art(i) + '</div><div class="cat">' + esc(i.cat) + '</div><h3>' + esc(i.t) + '</h3>' +
+      (i.d ? '<p>' + esc(i.d) + '</p>' : '') + '<div class="row"><span class="price">' + rub(i.p) + '</span><a class="ask" href="' + wa(msg) + '" target="_blank" rel="noopener" aria-label="Заказать «' + esc(i.t) + '» в WhatsApp">Заказать</a></div></article>';
+  }).join('');
+  var b = $('#showAll');
+  b.hidden = list.length <= LIM;
+  b.textContent = cst.all ? 'Свернуть' : 'Показать ещё ' + (list.length - LIM);
+}
+$('#showAll').addEventListener('click', function () { cst.all = !cst.all; renderGrid(); if (!cst.all) $('#shop').scrollIntoView(); });
+renderGrid();
+
+/* ---------- extras ---------- */
+var SHELF = [[/сухоцвет/i, 'Сухоцветы'], [/стабилиз/i, 'Стабилизированные цветы'], [/в колбе/i, 'Цветы в колбе'], [/флорариум/i, 'Флорариумы'], [/комнатн/i, 'Комнатные растения'], [/кашпо/i, 'Кашпо'],
+  [/шары/i, 'Шары с гелием'], [/мягкие/i, 'Мягкие игрушки'], [/открытк/i, 'Открытки'], [/^подарочная упаковка$/i, 'Подарочная упаковка'], [/сертификат/i, 'Подарочный сертификат'], [/свадеб/i, 'Свадебная флористика'], [/для флористов/i, 'Товары для флористов']];
+var COMF = [[/^доставка$/i, 'Доставка'], [/^самовывоз$/i, 'Самовывоз'], [/^парковка$/i, 'Своя парковка'], [/парковка для людей/i, 'Парковка для людей с инвалидностью'], [/входа на инвалид/i, 'Вход доступен на коляске'], [/собак/i, 'Можно с собакой'], [/скидочн/i, 'Скидочная карта'], [/wi-fi/i, 'Wi-Fi']];
+var tagList = function (arr) { return arr.filter(function (x) { return hasF(x[0]); }).map(function (x) { return '<span class="tagx"><i></i>' + x[1] + '</span>'; }).join(''); };
+$('#shelf').innerHTML = tagList(SHELF);
+$('#comfort').innerHTML = tagList(COMF);
+var payF = BIZ.features.find(function (f) { return /способ оплаты/i.test(f.k); });
+if (payF && typeof payF.v === 'string') $('#pay').textContent = 'Оплата: ' + payF.v.replace(', оплата картой, ', ', карта, ').replace('безналичная', 'безнал') + '.';
+
+/* ---------- praise ---------- */
+var totalPos = 0;
+$('#praiseH').innerHTML = ratingText + ' — <em>' + BIZ.rating.count + ' ' + plural(BIZ.rating.count, 'оценка', 'оценки', 'оценок') + ' на Яндекс Картах</em>';
+var maxC = Math.max.apply(null, BIZ.aspects.map(function (a) { return a.count; }));
+var ASPN = { 'Персонал': 'флористов и персонал', 'Букеты': 'букеты', 'Качество товаров': 'качество цветов', 'Выбор товаров': 'выбор', 'Время ожидания': 'скорость', 'Доставка': 'доставку', 'График работы': 'график 24/7' };
+$('#aspects').innerHTML = BIZ.aspects.map(function (a) {
+  return '<div class="asp-row"><b>' + esc(a.text) + '</b><span>' + a.positive + ' ' + plural(a.positive, 'хвалит', 'хвалят', 'хвалят') + ' ' + esc(ASPN[a.text] || a.text.toLowerCase()) + '</span><div class="bar"><i style="--w:' + (a.positive / maxC * 100).toFixed(1) + '%"></i></div></div>';
+}).join('');
+var PICK = ['Анастасия А.', 'Валерия', 'Ксения С.', 'Виктория', 'Александр С.'];
+var revs = PICK.map(function (n) { return BIZ.reviews.find(function (r) { return r.a === n && r.r >= 5; }); }).filter(Boolean);
+$('#revs').innerHTML = revs.map(function (r, i) {
+  var x = r.x; if (x.length > 220) { var cut = x.slice(0, 220), p = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf('! ')); x = cut.slice(0, p + 1) + '…'; }
+  return '<blockquote class="rev' + (i === 0 ? ' wide' : '') + '"><q>' + esc(x) + '</q><footer><b>' + esc(r.a) + '</b><span>отзыв на Яндекс Картах · ' + esc(r.d) + '</span></footer></blockquote>';
+}).join('');
+
+/* ---------- visit ---------- */
+$('#addrBig').textContent = shortAddr;
+$('#metro').innerHTML = BIZ.metro.map(function (m) { return '<li><i class="mdot" style="background:' + m.color + '"></i>' + esc(m.name) + '<span>' + esc(m.distance) + '</span></li>'; }).join('');
+var dn = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'], td = (mskNow().getDay() + 6) % 7;
+$('#week').innerHTML = BIZ.hours.map(function (h, i) {
+  var t = !h.length ? 'выходной' : (h[0][0] === '00:00' && h[0][1] === '00:00') ? '24 ч' : h.map(function (x) { return x[0] + '–' + x[1]; }).join(', ');
+  return '<div class="' + (i === td ? 'today' : '') + '"><b>' + dn[i] + '</b>' + t + '</div>';
+}).join('');
+var facts = [['Часы', BIZ.hoursText.charAt(0).toUpperCase() + BIZ.hoursText.slice(1)], ['Телефон', '<a href="tel:' + BIZ.phone + '">' + BIZ.phoneDisplay + '</a>']];
+if (hasF(/^парковка$/i)) facts.push(['Парковка', 'своя, у магазина']);
+$('#facts').innerHTML = facts.map(function (f) { return '<div><b>' + f[0] + '</b><span>' + f[1] + '</span></div>'; }).join('');
+if (BIZ.mapEmbed) {
+  var mapEl = $('#map'), loadMap = function () { if (mapEl.dataset.on) return; mapEl.dataset.on = 1; mapEl.innerHTML = '<iframe loading="lazy" title="DDflowers24 на карте" src="' + BIZ.mapEmbed + '"></iframe>'; };
+  if ('IntersectionObserver' in window) { var mo = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { loadMap(); mo.disconnect(); } }, { rootMargin: '400px' }); mo.observe(mapEl); } else loadMap();
+}
+
+/* ---------- reveal (with fail-safe) ---------- */
+if (!reduced && 'IntersectionObserver' in window) {
+  var rv = document.querySelectorAll('.sec h2, .panel, .card, .rev, .addr');
+  [].forEach.call(rv, function (el) { el.classList.add('reveal'); });
+  var ro = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.remove('pre'); ro.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+  [].forEach.call(rv, function (el) { var r = el.getBoundingClientRect(); if (r.top > innerHeight) { el.classList.add('pre'); ro.observe(el); } });
+  setTimeout(function () { [].forEach.call(document.querySelectorAll('.pre'), function (el) { el.classList.remove('pre'); }); }, 2500);
+}
+})();
+</script>
+<script src="../map-fix.js" defer></script>
+</body>
+</html>

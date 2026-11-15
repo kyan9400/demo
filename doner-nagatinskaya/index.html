@@ -1,0 +1,768 @@
+<!doctype html>
+<!--
+  ДЕМО-КОНЦЕПТ · «Донер», Нагатинская ул., 16с2 (Коломенская)
+
+  1. ИДЕЯ. Круглосуточный донер, у которого весь сайт — это упаковка навынос: крафт-пакет,
+     красный резиновый штамп «24/7» и чек, который печатается прямо на странице. Прайса в
+     карточке нет, поэтому цены страница не выдумывает: «итого» назовёт шаурмист в WhatsApp.
+
+  2. ФИРМЕННЫЙ МОДУЛЬ. «Пробейте свой чек».
+     а) «Возьму, как у…» — четыре заказа, которые гости сами описали в отзывах (darya I. — пита
+        с картошкой фри внутри; Александр Р. — фри и гранатовый соус; Антон З. — колбасный сыр
+        и гранатовый соус; Emmure C. — шаурма с сыром и сосиска в тесте). Одно нажатие — строка
+        печатается в чек.
+     б) «Соберите свою» — основа (лаваш обычная / гигант / пита — так пишут гости), добавки из
+        отзывов (сыр, колбасный сыр, фри внутрь, перчики, грибы, гранатовый соус), своё пожелание,
+        количество. Плюс «к заказу» — сосиска в тесте, яблочный лимонад, капучино (тоже из отзывов).
+     в) Навынос или доставка (своя курьерская служба — по карточке), к какому времени (24/7 —
+        любое). Чек с позициями, временем по Москве и штрих-кодом → готовое сообщение в WhatsApp
+        с просьбой назвать сумму. Единственная цифра денег — «средний чек 250 ₽» из карточки.
+
+  3. АРТ-ДИРЕКШН. Крафт-бумага (тёплый #D9BF96 с волокнами из feTurbulence) + чёрная печать +
+     один красный — штамп (#B3221A). Мотивы: крафт-пакет с загнутым верхом и торчащим чеком,
+     круглый штамп с текстом по кругу, зубчатый край чека, пунктир перфорации, штрих-код.
+     Типографика: Rubik Mono One (широкий «упаковочный» гротеск) + PT Mono (чеки) +
+     Commissioner (текст). Светлая тема: днём и ночью — как бумажный пакет на прилавке.
+-->
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#1A1714">
+<title>Донер на Нагатинской — шаурма навынос круглосуточно (демо)</title>
+<meta name="description" content="Демо-концепт сайта донерной на Нагатинской ул., 16с2: круглосуточно, навынос и доставка, 4,8 на Яндекс Картах. Соберите свою шаурму — чек уйдёт в WhatsApp.">
+<meta property="og:title" content="Донер на Нагатинской — пробейте свой чек (демо)">
+<meta property="og:description" content="Круглосуточно у Коломенской. Шаурма, как её описывают гости: пита с фри внутри, гранатовый соус, колбасный сыр. Заказ — чеком в WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://kyan9400.github.io/demo/doner-nagatinskaya/">
+<meta property="og:image" content="https://kyan9400.github.io/demo/doner-nagatinskaya/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23D9BF96'/%3E%3Ccircle cx='20' cy='20' r='14' fill='none' stroke='%23B3221A' stroke-width='3'/%3E%3Ctext x='20' y='24.5' font-family='monospace' font-weight='700' font-size='12' fill='%23B3221A' text-anchor='middle'%3E24/7%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=PT+Mono&family=Commissioner:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --kraft:#D9BF96; --kraft2:#CDAE7F; --kraft3:#B98F5C; --paper:#FBF7EE; --ink:#1A1714; --ink2:#3B332A;
+  --red:#B3221A; --red-d:#8E160F; --mut:#4A3F33; --line:rgba(26,23,20,.22);
+  --disp:"Rubik Mono One","Arial Black",Impact,sans-serif; --mono:"PT Mono",ui-monospace,"Courier New",monospace;
+  --text:"Commissioner",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --fiber:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9 .06' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .24 0 0 0 0 .12 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)' opacity='.5'/%3E%3C/svg%3E");
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth;background:var(--ink)}
+body{margin:0;background:var(--kraft) var(--fiber);color:var(--ink);font:400 16px/1.55 var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,p,ul,ol,figure,blockquote,dl,dd{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.mono{font-family:var(--mono)}
+
+.demobar{background:var(--ink);color:rgba(251,247,238,.82);font-size:12.5px;line-height:1.4;padding:8px 20px;text-align:center}
+
+/* header */
+.hdr{border-bottom:2px solid var(--ink)}
+.hdr .wrap{display:flex;align-items:center;gap:14px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.brand b{font:400 19px/1 var(--disp);letter-spacing:.02em}
+.brand small{display:block;font:400 12px/1.2 var(--mono);color:var(--mut);margin-top:4px;white-space:nowrap}
+.nav{display:none;gap:24px;margin-inline-start:auto;font:400 14px var(--mono);text-transform:uppercase;letter-spacing:.04em}
+.nav a{text-decoration:none;padding:10px 0;border-bottom:2px solid transparent}
+.nav a:hover{border-color:var(--red)}
+.live{margin-inline-start:auto;display:inline-flex;align-items:center;gap:8px;font:700 12.5px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;border:2px solid var(--ink);padding:8px 10px;border-radius:3px;white-space:nowrap;background:var(--paper)}
+.dot{width:8px;height:8px;border-radius:50%;background:#1E8A3E;animation:blink 2s steps(2,end) infinite}
+@keyframes blink{50%{opacity:.25}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:0 22px;border-radius:4px;border:2px solid var(--ink);font:700 15px/1 var(--text);text-decoration:none;transition:transform .1s ease,box-shadow .1s ease,background .2s;background:var(--paper);color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
+.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.btn-red{background:var(--red);color:#fff;border-color:var(--ink)}
+.btn-red:hover{background:#C42A20}
+.btn-ink{background:var(--ink);color:var(--paper);box-shadow:4px 4px 0 var(--red)}
+.btn svg{flex:none}
+
+/* hero */
+.hero{position:relative;overflow:hidden}
+.hero .wrap{display:grid;gap:10px;padding-top:26px;padding-bottom:34px}
+.kick{font:400 13px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--ink2)}
+.kick b{color:var(--red);font-weight:700}
+.hero h1{font:400 clamp(25px,8vw,58px)/1.04 var(--disp);letter-spacing:-.01em;margin-top:8px;text-transform:uppercase}
+.hero h1 span{display:block}
+.hero h1 .r{color:var(--red)}
+.lead{font-size:17px;line-height:1.55;max-width:31em;margin-top:14px;color:var(--ink2)}
+.stub{display:inline-flex;align-items:stretch;margin-top:20px;text-decoration:none;background:var(--paper);border:2px solid var(--ink);border-radius:3px;max-width:100%}
+.stub .v{display:flex;align-items:center;padding:8px 14px;font:400 30px/1 var(--disp);border-inline-end:2px dashed var(--ink)}
+.stub .t{padding:9px 14px;font:400 13px/1.45 var(--mono);text-transform:uppercase}
+.stub .t b{color:var(--red);letter-spacing:2px}
+.ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
+.ctas .btn{flex:1 1 auto}
+@media (min-width:600px){.ctas .btn{flex:0 0 auto;padding:0 26px}}
+.hquote{margin-top:22px;font:400 14px/1.5 var(--mono);max-width:30em;border-inline-start:3px solid var(--red);padding-inline-start:12px;color:var(--ink2)}
+.bagbox{position:relative;width:min(88vw,440px);margin:10px auto 0;aspect-ratio:400/440}
+.bagbox svg{width:100%;height:100%;display:block;overflow:visible}
+.steam path{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round;opacity:0;animation:steam 4.8s ease-in infinite}
+.steam path:nth-child(2){animation-delay:1.6s}
+.steam path:nth-child(3){animation-delay:3.2s}
+@keyframes steam{0%{transform:translateY(14px);opacity:0}30%{opacity:.45}100%{transform:translateY(-46px);opacity:0}}
+.stampg{transform-origin:300px 300px;animation:thump .7s cubic-bezier(.3,1.6,.5,1) .35s both}
+@keyframes thump{0%{transform:scale(1.7) rotate(-30deg);opacity:0}60%{opacity:.95}100%{transform:scale(1) rotate(-14deg);opacity:.92}}
+.paused .steam path,.paused .dot,.paused .tape-in{animation-play-state:paused}
+
+/* tape */
+.tape{background:var(--ink);color:var(--kraft);overflow:hidden;border-block:2px solid var(--ink);white-space:nowrap}
+.tape-in{display:inline-flex;gap:0;animation:roll 38s linear infinite;font:400 14px/1 var(--disp);padding:13px 0;letter-spacing:.04em}
+.tape-in span{padding-inline-end:28px}
+.tape-in i{font-style:normal;color:#F06A5E;padding-inline-end:28px}
+@keyframes roll{to{transform:translateX(-50%)}}
+
+/* sections */
+.sec{padding:56px 0}
+.lbl0{font:700 12.5px/1 var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--red-d);display:flex;align-items:center;gap:10px}
+.lbl0::before{content:"";width:22px;height:2px;background:var(--red)}
+.h2{font:400 clamp(24px,7vw,44px)/1.08 var(--disp);text-transform:uppercase;margin-top:12px;letter-spacing:-.01em}
+.sub{margin-top:12px;max-width:36em;color:var(--ink2);font-size:16px}
+
+/* builder */
+.check-grid{display:grid;gap:26px;margin-top:28px}
+.card{background:var(--paper);border:2px solid var(--ink);border-radius:4px;padding:20px 18px;box-shadow:6px 6px 0 rgba(26,23,20,.18)}
+.card + .card{margin-top:18px}
+.card h3{font:400 15px/1.2 var(--disp);text-transform:uppercase;letter-spacing:.02em}
+.card .hint{font-size:14.5px;color:var(--mut);margin-top:6px}
+.presets{display:grid;gap:10px;margin-top:14px}
+.pre{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;text-align:start;background:#fff;border:2px solid var(--ink);border-radius:4px;padding:12px 14px;min-height:60px;transition:transform .1s,box-shadow .1s;box-shadow:3px 3px 0 var(--ink)}
+.pre:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.pre:hover{background:#FFF8F0}
+.pre b{display:block;font-weight:700;font-size:15.5px;line-height:1.3}
+.pre small{display:block;font:400 13px/1.4 var(--mono);color:var(--mut);margin-top:3px}
+.pre .plus{width:36px;height:36px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font:700 20px/1 var(--mono)}
+.grp{margin-top:18px}
+.grp > span{display:block;font:700 12.5px/1 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--ink2);margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:8px 14px;border:2px solid var(--ink);border-radius:999px;background:#fff;font-weight:600;font-size:15px;line-height:1.2;display:inline-flex;align-items:center;gap:8px;text-align:start}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.chip[aria-pressed="true"]::before{content:"✓";color:#F06A5E;font-weight:700}
+.chip em{font-style:normal;font:400 12px var(--mono);opacity:.75}
+.fld{width:100%;min-height:48px;border:2px solid var(--ink);border-radius:4px;background:#fff;padding:10px 12px;font-size:16px}
+.row2{display:grid;grid-template-columns:1fr;gap:12px}
+.qty{display:inline-flex;align-items:center;border:2px solid var(--ink);border-radius:4px;background:#fff}
+.qty button{width:46px;height:46px;border:0;background:transparent;font:700 20px/1 var(--mono)}
+.qty output{min-width:34px;text-align:center;font:700 17px var(--mono)}
+.addrow{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:18px}
+.addrow .btn{flex:1 1 200px}
+.extras{display:grid;gap:8px;margin-top:12px}
+.ex{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;border-bottom:1px dashed var(--line);padding:8px 0}
+.ex:last-child{border-bottom:0}
+.ex b{font-weight:600}
+.ex small{display:block;font:400 12.5px/1.4 var(--mono);color:var(--mut)}
+.ex .qty button{width:44px;height:44px}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+
+/* receipt */
+.rcpt-col{position:relative}
+.rcpt{position:relative;background:var(--paper);color:var(--ink);font:400 14.5px/1.5 var(--mono);padding:26px 20px 24px;margin:10px 0;filter:drop-shadow(0 10px 14px rgba(60,40,15,.28))}
+.rcpt::before,.rcpt::after{content:"";position:absolute;left:0;right:0;height:9px}
+.rcpt::before{top:-9px;background:conic-gradient(from 135deg at 50% 0,var(--paper) 90deg,transparent 0) 0 0/18px 9px repeat-x}
+.rcpt::after{bottom:-9px;background:conic-gradient(from -45deg at 50% 100%,var(--paper) 90deg,transparent 0) 0 0/18px 9px repeat-x}
+.rc-h{text-align:center;text-transform:uppercase}
+.rc-h b{display:block;font:400 22px/1.15 var(--disp);letter-spacing:.02em}
+.rc-h span{display:block;font-size:13px;margin-top:6px}
+.dash{border:0;border-top:2px dashed var(--ink);margin:14px 0;opacity:.75}
+.rc-meta{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;font-size:13.5px;text-transform:uppercase}
+.rc-meta dd{text-align:end;overflow-wrap:anywhere}
+.rc-lines li{display:grid;grid-template-columns:1fr auto auto;gap:4px 10px;align-items:start;padding:7px 0;border-bottom:1px dotted rgba(26,23,20,.35)}
+.rc-lines li.new{animation:print .55s steps(6,end)}
+@keyframes print{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+.rc-lines .nm{text-transform:uppercase;font-weight:700;overflow-wrap:anywhere}
+.rc-lines .ad{grid-column:1/2;font-size:13px;color:var(--ink2);text-transform:none;overflow-wrap:anywhere}
+.rc-lines .q{font-weight:700;white-space:nowrap}
+.rc-lines .x{width:44px;height:44px;margin:-10px -10px -10px 0;border:0;background:transparent;font:700 18px/1 var(--mono);color:var(--red-d);border-radius:50%}
+.rc-lines .x:hover{background:rgba(179,34,26,.08)}
+.rc-empty{padding:16px 0;text-align:center;color:var(--mut);font-size:14px}
+.rc-tot{display:flex;justify-content:space-between;gap:10px;align-items:baseline;font:400 15px/1.2 var(--disp);text-transform:uppercase}
+.rc-tot span:last-child{font:700 14px/1.3 var(--mono);color:var(--red-d);text-align:end}
+.rc-note{font-size:12.5px;line-height:1.5;color:var(--ink2);margin-top:10px}
+.bars{display:block;width:100%;height:46px;margin-top:14px}
+.rc-stamp{position:absolute;right:8px;bottom:146px;width:92px;height:92px;pointer-events:none;opacity:0;transform:scale(.6) rotate(-30deg);transition:opacity .25s,transform .35s cubic-bezier(.3,1.6,.5,1)}
+.rc-stamp.on{opacity:.88;transform:scale(1) rotate(-12deg)}
+.rc-send{display:grid;gap:12px;margin-top:20px}
+.rc-send .btn{width:100%}
+.rc-send .btn.off{background:var(--paper);color:var(--ink)}
+
+/* praise */
+.praise{display:grid;gap:26px;margin-top:28px}
+.ledger{background:var(--paper);border:2px solid var(--ink);padding:20px 18px;font:400 15px/1.4 var(--mono)}
+.ledger li{padding:9px 0;border-bottom:1px dashed rgba(26,23,20,.3)}
+.ledger li:last-child{border-bottom:0}
+.lg-row{display:flex;align-items:baseline;gap:8px;text-transform:uppercase}
+.lg-row .fill{flex:1;border-bottom:2px dotted rgba(26,23,20,.5);transform:translateY(-4px);min-width:16px}
+.lg-row b{font-weight:700;white-space:nowrap}
+.lg-sub{font-size:13px;color:var(--mut);margin-top:3px}
+.lg-bar{height:8px;background:repeating-linear-gradient(90deg,var(--ink) 0 3px,transparent 3px 5px);width:var(--w);margin-top:6px;opacity:.85}
+.revs{display:grid;gap:18px}
+.rev{position:relative;background:#fff;border:2px solid var(--ink);padding:18px 18px 16px;border-radius:3px}
+.rev:nth-child(odd){transform:rotate(-.6deg)}
+.rev:nth-child(even){transform:rotate(.5deg)}
+.rev p{font-size:16px;line-height:1.55}
+.rev footer{margin-top:10px;font:400 13px/1.4 var(--mono);color:var(--mut);text-transform:uppercase}
+.rev footer b{color:var(--ink)}
+.rev .st{color:var(--red);letter-spacing:2px;font-size:13px;display:block;margin-bottom:6px}
+.more{margin-top:22px}
+
+/* find */
+.find-grid{display:grid;gap:22px;margin-top:28px}
+.addr{background:var(--ink);color:var(--paper);padding:22px 20px;border-radius:4px}
+.addr .a1{font:400 20px/1.25 var(--disp);text-transform:uppercase}
+.addr .a2{font:400 14px/1.4 var(--mono);opacity:.8;margin-top:8px}
+.metro{margin-top:16px;display:grid;gap:8px;font-size:15px}
+.metro li{display:flex;align-items:center;gap:10px}
+.metro i{width:12px;height:12px;border-radius:50%;flex:none;border:2px solid var(--paper)}
+.metro span{white-space:nowrap;opacity:.75;font-family:var(--mono);font-size:13.5px;margin-inline-start:auto}
+.addr .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.addr .btn{flex:1 1 160px;box-shadow:4px 4px 0 var(--red)}
+.tip{background:var(--paper);border:2px dashed var(--ink);padding:18px;border-radius:4px;position:relative}
+.tip h3{font:400 14px/1.2 var(--disp);text-transform:uppercase;color:var(--red-d)}
+.tip p{margin-top:8px;font-size:15.5px}
+.tip p q{font-style:italic}
+.tip small{display:block;font:400 12.5px/1.4 var(--mono);color:var(--mut);margin-top:6px;text-transform:uppercase}
+.sched{background:var(--paper);border:2px solid var(--ink);padding:16px 18px;font:400 14.5px/1.4 var(--mono)}
+.sched li{display:flex;gap:8px;align-items:baseline;padding:5px 0;text-transform:uppercase}
+.sched li .fill{flex:1;border-bottom:2px dotted rgba(26,23,20,.4);transform:translateY(-4px)}
+.sched li.today{color:var(--red-d);font-weight:700}
+.sched li.today::after{content:"◂ сегодня";font-size:12px;margin-inline-start:4px;text-transform:none}
+.map{position:relative;border:2px solid var(--ink);border-radius:4px;overflow:hidden;min-height:300px;background:var(--kraft2)}
+.map iframe{display:block;width:100%;height:340px;border:0}
+.feats{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.feats li{font:400 13px/1.2 var(--mono);text-transform:uppercase;border:1.5px solid var(--ink);padding:8px 10px;border-radius:3px;background:rgba(251,247,238,.55)}
+
+/* footer */
+.foot{background:var(--ink);color:rgba(251,247,238,.86);padding:40px 0 calc(110px + env(safe-area-inset-bottom,0px));font-size:15px}
+.foot .fb{font:400 20px/1.2 var(--disp);color:var(--paper);text-transform:uppercase}
+.foot a{color:var(--paper);display:inline-block;padding:12px 0;min-height:44px}
+.foot p{margin-top:10px}
+.foot .small{font-size:13px;opacity:.8}
+
+/* sticky */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:var(--ink);border-top:2px solid var(--red)}
+.sticky .btn{flex:1;min-height:52px;box-shadow:none;border-color:var(--paper)}
+.sticky .call{flex:none;width:52px;padding:0;background:var(--paper)}
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--paper);border:2px solid var(--ink);padding:10px 14px;font:700 14px var(--mono);opacity:0;pointer-events:none;transition:.25s;z-index:31;white-space:nowrap;max-width:calc(100vw - 32px);overflow:hidden;text-overflow:ellipsis}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+@media (min-width:720px){
+  .row2{grid-template-columns:1fr 1fr}
+  .presets{grid-template-columns:1fr 1fr}
+}
+@media (min-width:1000px){
+  .nav{display:flex}
+  .live{margin-inline-start:24px}
+  .hero .wrap{grid-template-columns:1.08fr .92fr;align-items:center;gap:40px;padding-top:56px;padding-bottom:70px;min-height:calc(100vh - 140px);min-height:calc(100svh - 140px)}
+  .bagbox{width:100%;max-width:480px;margin:0 auto}
+  .sec{padding:88px 0}
+  .check-grid{grid-template-columns:1.15fr .85fr;align-items:start;gap:40px}
+  .rcpt-col{position:sticky;top:20px}
+  .praise{grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}
+  .revs{grid-template-columns:1fr 1fr}
+  .find-grid{grid-template-columns:1fr 1fr;align-items:start}
+  .map,.map iframe{height:100%;min-height:520px}
+  .find-r{display:grid;gap:22px}
+  .sticky{display:none}
+  .toast{bottom:28px}
+  .foot{padding-bottom:40px}
+  .foot .wrap{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .stampg{opacity:.92;transform:rotate(-14deg)}
+}
+</style>
+</head>
+<body>
+<div class="demobar" id="demobar">Демо-концепт · пример сайта для «Донер» от Альхассана Альфаррана · не официальный сайт</div>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Донер на Нагатинской — наверх">
+      <svg width="38" height="38" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="#B3221A" stroke-width="3"/><circle cx="20" cy="20" r="12.5" fill="none" stroke="#B3221A" stroke-width="1.2" stroke-dasharray="2 2"/><text x="20" y="24.5" text-anchor="middle" font-family="PT Mono,monospace" font-weight="700" font-size="11.5" fill="#B3221A">24/7</text></svg>
+      <span><b>Донер</b><small>Нагатинская, 16с2</small></span>
+    </a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#check">Пробить чек</a><a href="#praise">Отзывы</a><a href="#find">Как найти</a>
+    </nav>
+    <div class="live" id="live"><span class="dot" aria-hidden="true"></span><span id="liveText">Круглосуточно</span></div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" id="hero" aria-labelledby="h1">
+  <div class="wrap">
+    <div>
+      <p class="kick"><b>●</b> <span id="kickAddr">Нагатинская ул., 16с2</span> · 24/7</p>
+      <h1 id="h1"><span>Донер</span><span>на Нагатинской.</span><span class="r">Без перерыва.</span></h1>
+      <p class="lead">Шаурма в&nbsp;лаваше и&nbsp;в&nbsp;пите, навынос и&nbsp;с&nbsp;доставкой — днём, ночью, в&nbsp;праздники. Соберите свою, как это делают гости, и&nbsp;отправьте чек в&nbsp;WhatsApp.</p>
+      <a class="stub" id="rateBadge" href="#" target="_blank" rel="noopener"><span class="v" id="rateVal">4,8</span><span class="t"><b aria-hidden="true">★★★★★</b><br><span id="rateCount">245 оценок</span> · <span id="revCount">148 отзывов</span><br>на Яндекс Картах</span></a>
+      <div class="ctas">
+        <a class="btn btn-red" href="#check">Пробить свой чек</a>
+        <a class="btn" id="heroCall" href="#"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span id="heroPhone">Позвонить</span></a>
+      </div>
+      <p class="hquote">«Мясо не&nbsp;просто жареное, а&nbsp;будто с&nbsp;костра!» — julia, отзыв на&nbsp;Яндекс Картах</p>
+    </div>
+
+    <div class="bagbox" aria-hidden="true">
+      <svg viewBox="0 0 400 440">
+        <defs>
+          <filter id="rough" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3"/></filter>
+          <filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.1 .07" numOctaves="2" seed="9"/><feColorMatrix values="0 0 0 0 .3 0 0 0 0 .2 0 0 0 0 .08 0 0 0 .35 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+          <mask id="ink"><rect width="400" height="440" fill="#fff"/><g filter="url(#grain)"><rect width="400" height="440" fill="#000" opacity=".9"/></g></mask>
+          <path id="circ" d="M300 300 m-58 0 a58 58 0 1 1 116 0 a58 58 0 1 1 -116 0"/>
+        </defs>
+        <ellipse cx="200" cy="428" rx="170" ry="10" fill="rgba(26,23,20,.22)"/>
+        <g class="steam"><path d="M168 66c-10-14 10-22 0-36"/><path d="M200 60c-10-14 10-22 0-36"/><path d="M232 66c-10-14 10-22 0-36"/></g>
+        <!-- receipt sticking out -->
+        <g transform="rotate(-7 210 90)">
+          <path d="M150 36 l8-6 8 6 8-6 8 6 8-6 8 6 8-6 8 6 8-6 8 6 8-6 8 6 8-6 V150 H150 Z" fill="#FBF7EE"/>
+          <g font-family="PT Mono,monospace" font-size="11.5" fill="#1A1714">
+            <text x="160" y="56" font-weight="700">ДОНЕР · 24/7</text>
+            <text x="160" y="72">ПИТА ......... 1</text>
+            <text x="160" y="86">+ ФРИ ВНУТРИ</text>
+            <text x="160" y="100">+ ГРАНАТОВЫЙ</text>
+            <text x="160" y="116">- - - - - - - -</text>
+          </g>
+        </g>
+        <!-- bag -->
+        <path d="M62 118 H338 L352 420 H48 Z" fill="#C99A63"/>
+        <path d="M62 118 H338 L352 420 H48 Z" fill="#000" opacity=".06" filter="url(#grain)"/>
+        <path d="M300 118 L338 118 L352 420 L318 420 Z" fill="#B98552"/>
+        <path d="M300 118 L318 420" stroke="#9E6E40" stroke-width="2"/>
+        <path d="M100 118 L82 420" stroke="#A97A48" stroke-width="1.5" opacity=".6"/>
+        <!-- folded top with crimp -->
+        <path d="M56 92 l10 -8 10 8 10 -8 10 8 10 -8 10 8 10 -8 10 8 10 -8 10 8 10 -8 10 8 10 -8 10 8 10 -8 10 8 10 -8 10 8 10 -8 10 8 10 -8 10 8 10 -8 10 8 10 -8 10 8 10 -8 10 8 V136 H56 Z" fill="#D7AD78"/>
+        <path d="M56 136 H344" stroke="#8C5F33" stroke-width="2.5"/>
+        <g fill="#8C5F33"><circle cx="184" cy="114" r="3.5"/><circle cx="216" cy="114" r="3.5"/></g>
+        <path d="M184 114 C184 100 216 100 216 114" fill="none" stroke="#1A1714" stroke-width="2.5"/>
+        <!-- print -->
+        <g mask="url(#ink)">
+          <text x="180" y="212" text-anchor="middle" font-family="Rubik Mono One,Arial Black,sans-serif" font-size="46" fill="#1A1714">ДОНЕР</text>
+          <rect x="70" y="226" width="220" height="3" fill="#1A1714"/>
+          <text x="180" y="250" text-anchor="middle" font-family="PT Mono,monospace" font-size="14" font-weight="700" fill="#1A1714" letter-spacing="1">НАГАТИНСКАЯ 16С2</text>
+          <text x="180" y="270" text-anchor="middle" font-family="PT Mono,monospace" font-size="12" fill="#1A1714" letter-spacing="1">НАВЫНОС · ДОСТАВКА</text>
+          <g stroke="#1A1714" stroke-width="2" stroke-dasharray="6 5"><path d="M78 380 H294"/></g>
+          <text x="80" y="404" font-family="PT Mono,monospace" font-size="11" fill="#1A1714">✂ ОТРЫВНОЙ ТАЛОН · ЧЕК ВНУТРИ</text>
+        </g>
+        <!-- stamp -->
+        <g class="stampg" filter="url(#rough)">
+          <circle cx="300" cy="300" r="70" fill="none" stroke="#B3221A" stroke-width="6"/>
+          <circle cx="300" cy="300" r="46" fill="none" stroke="#B3221A" stroke-width="2.5"/>
+          <text font-family="PT Mono,monospace" font-weight="700" font-size="12.5" fill="#B3221A" letter-spacing="2.2"><textPath href="#circ">КРУГЛОСУТОЧНО · БЕЗ ВЫХОДНЫХ ·</textPath></text>
+          <text x="300" y="312" text-anchor="middle" font-family="Rubik Mono One,Arial Black,sans-serif" font-size="30" fill="#B3221A">24/7</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="tape" aria-hidden="true"><div class="tape-in" id="tape"></div></div>
+
+<section class="sec" id="check" aria-labelledby="checkH">
+  <div class="wrap">
+    <p class="lbl0">Фирменное · заказ чеком</p>
+    <h2 class="h2" id="checkH">Пробейте свой чек</h2>
+    <p class="sub">Прайса в&nbsp;карточке нет — и&nbsp;мы его не&nbsp;придумываем. Соберите заказ из&nbsp;того, что берут гости, а&nbsp;сумму и&nbsp;время назовёт шаурмист в&nbsp;WhatsApp.</p>
+
+    <div class="check-grid">
+      <div>
+        <div class="card">
+          <h3>Возьму, как у…</h3>
+          <p class="hint">Заказы, которые гости сами описали в&nbsp;отзывах. Нажмите — строка напечатается в&nbsp;чеке.</p>
+          <div class="presets" id="presets"></div>
+        </div>
+
+        <div class="card">
+          <h3>Или соберите свою</h3>
+          <div class="grp"><span id="baseL">Основа</span><div class="chips" id="base" role="group" aria-labelledby="baseL"></div></div>
+          <div class="grp"><span id="addL">Добавить внутрь</span><div class="chips" id="adds" role="group" aria-labelledby="addL"></div>
+            <p class="hint">Всё это гости упоминают в&nbsp;отзывах. Что есть сегодня — подскажут в&nbsp;ответ.</p></div>
+          <div class="grp"><label for="wish"><span>Пожелание</span></label><input class="fld" id="wish" type="text" maxlength="120" placeholder="Поострее, без лука, побольше соуса…" autocomplete="off"></div>
+          <div class="addrow">
+            <div class="qty" role="group" aria-label="Количество"><button type="button" id="qMinus" aria-label="Меньше">−</button><output id="qOut" aria-live="polite">1</output><button type="button" id="qPlus" aria-label="Больше">+</button></div>
+            <button type="button" class="btn btn-ink" id="addMine">Пробить в&nbsp;чек</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>К заказу</h3>
+          <p class="hint">Тоже из&nbsp;отзывов — и&nbsp;по карточке здесь есть кофе с&nbsp;собой.</p>
+          <div class="extras" id="extras"></div>
+        </div>
+
+        <div class="card">
+          <h3>Как и когда</h3>
+          <div class="grp"><span id="modeL">Получить</span><div class="seg" id="mode" role="group" aria-labelledby="modeL"></div></div>
+          <div class="grp" id="addrGrp" hidden><label for="addr"><span>Адрес доставки</span></label><input class="fld" id="addr" type="text" maxlength="140" placeholder="Улица, дом, подъезд — или напишете в чате" autocomplete="street-address"></div>
+          <div class="grp"><label for="when"><span>К какому времени</span></label><select class="fld" id="when"></select>
+            <p class="hint">Работают круглосуточно — можно заказать и&nbsp;на&nbsp;03:00.</p></div>
+        </div>
+      </div>
+
+      <div class="rcpt-col">
+        <article class="rcpt" id="rcpt" aria-labelledby="rcH">
+          <div class="rc-h"><b id="rcH">Донер</b><span>Нагатинская ул., 16с2 · 24/7</span></div>
+          <hr class="dash">
+          <dl class="rc-meta"><dt>Чек-черновик</dt><dd id="rcNo">№ —</dd><dt>Время, МСК</dt><dd id="rcTime">—</dd><dt>Получить</dt><dd id="rcMode">навынос</dd><dt>Когда</dt><dd id="rcWhen">как можно скорее</dd></dl>
+          <hr class="dash">
+          <ul class="rc-lines" id="rcLines" aria-live="polite"></ul>
+          <p class="rc-empty" id="rcEmpty">Чек пустой. Нажмите «Возьму, как у…» или соберите свою шаурму.</p>
+          <hr class="dash">
+          <div class="rc-tot"><span>Итого</span><span>сумму назовёт шаурмист</span></div>
+          <p class="rc-note" id="rcNote"></p>
+          <svg class="bars" id="bars" viewBox="0 0 300 46" preserveAspectRatio="none" aria-hidden="true"></svg>
+          <svg class="rc-stamp" id="rcStamp" viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="#B3221A"><circle cx="60" cy="60" r="54" stroke-width="5"/><circle cx="60" cy="60" r="44" stroke-width="1.5"/></g><text x="60" y="56" text-anchor="middle" font-family="PT Mono,monospace" font-weight="700" font-size="15" fill="#B3221A">ГОТОВ К</text><text x="60" y="76" text-anchor="middle" font-family="PT Mono,monospace" font-weight="700" font-size="15" fill="#B3221A">ОТПРАВКЕ</text></svg>
+          <div class="rc-send">
+            <a class="btn btn-red off" id="send" href="#" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-1 2.2c0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg><span id="sendT">Отправить чек в&nbsp;WhatsApp</span></a>
+            <a class="btn" id="rcCall" href="#">Или позвонить</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="praise" aria-labelledby="praiseH" style="padding-top:20px">
+  <div class="wrap">
+    <p class="lbl0">Почему сюда возвращаются</p>
+    <h2 class="h2" id="praiseH">Отчёт по&nbsp;отзывам</h2>
+    <p class="sub" id="praiseSub"></p>
+    <div class="praise">
+      <div>
+        <ul class="ledger" id="ledger" aria-label="О чём пишут в отзывах"></ul>
+      </div>
+      <div>
+        <div class="revs" id="revs"></div>
+        <a class="btn more" id="allRevs" href="#" target="_blank" rel="noopener">Все отзывы на&nbsp;Яндекс Картах</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="find" aria-labelledby="findH" style="padding-top:20px">
+  <div class="wrap">
+    <p class="lbl0">Как найти</p>
+    <h2 class="h2" id="findH">Не&nbsp;перепутайте вход</h2>
+    <div class="find-grid">
+      <div class="find-r">
+        <div class="addr">
+          <p class="a1" id="addr1">Нагатинская ул., 16с2</p>
+          <p class="a2" id="addr2"></p>
+          <ul class="metro" id="metro"></ul>
+          <div class="btns">
+            <a class="btn" id="route" href="#" target="_blank" rel="noopener">Построить маршрут</a>
+            <a class="btn btn-red" id="findCall" href="#">Позвонить</a>
+          </div>
+        </div>
+        <div class="tip">
+          <h3>Подсказка от&nbsp;гостей</h3>
+          <p><q>Чуть не&nbsp;взял со&nbsp;стороны тц, хорошо что проверил где вход) Не&nbsp;ошибитесь, данное место ближе к&nbsp;ПИКу (после мойки).</q></p>
+          <small>Emmure C., отзыв на Яндекс Картах</small>
+          <p>А&nbsp;ещё гости пишут, что парковка у&nbsp;входа часто занята — встать можно напротив, у&nbsp;гаражей.</p>
+          <small>по отзыву Дмитрия</small>
+        </div>
+        <ul class="sched" id="sched" aria-label="Режим работы"></ul>
+        <ul class="feats" id="feats" aria-label="Удобства"></ul>
+      </div>
+      <div class="map" id="mapBox"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <p class="fb">Донер на&nbsp;Нагатинской</p>
+      <p id="fAddr"></p>
+      <p><a id="fPhone" href="#"></a> · <span id="fHours"></span></p>
+    </div>
+    <div>
+      <p class="small">Демо-концепт · пример сайта для «Донер» от Альхассана Альфаррана · не официальный сайт</p>
+      <p class="small">Цены и данные взяты из карточки на Яндекс Картах и могут отличаться.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <a class="btn btn-red" id="stickyMain" href="#check">Пробить чек</a>
+  <a class="btn call" id="stickyCall" href="#" aria-label="Позвонить"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></a>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script>
+(function(){
+'use strict';
+const BIZ = window.BIZ;
+if (!BIZ) return;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const wa = (text) => 'https://wa.me/' + BIZ.wa + '?text=' + encodeURIComponent(text);
+const plural = (n, one, few, many) => { const a = Math.abs(n) % 100, b = a % 10; return a > 10 && a < 20 ? many : b === 1 ? one : b >= 2 && b <= 4 ? few : many; };
+const nb = (n) => n.toLocaleString('ru-RU').replace(/\s/g, ' ');
+function mskNow(){ const d = new Date(); return new Date(d.getTime() + (d.getTimezoneOffset() + 180) * 60000); }
+function openStatus(now = mskNow()) {
+  if (!BIZ.hours) return null;
+  if (BIZ.is24) return { open: true, text: 'Круглосуточно' };
+  const day = (now.getDay() + 6) % 7, mins = now.getHours() * 60 + now.getMinutes();
+  const m = (s) => +s.slice(0, 2) * 60 + +s.slice(3);
+  for (const [f, t] of BIZ.hours[(day + 6) % 7]) if (m(t) <= m(f) && mins < m(t)) return { open: true, text: 'Открыто · до ' + t };
+  for (const [f, t] of BIZ.hours[day]) { const a = m(f), b = m(t) <= a ? m(t) + 1440 : m(t); if (mins >= a && mins < b) return { open: true, text: 'Открыто · до ' + t }; }
+  for (const [f] of BIZ.hours[day]) if (mins < m(f)) return { open: false, text: 'Закрыто · откроется в ' + f };
+  return { open: false, text: 'Закрыто' };
+}
+const pad = (n) => String(n).padStart(2, '0');
+const hhmm = (d) => pad(d.getHours()) + ':' + pad(d.getMinutes());
+
+/* ---------- facts ---------- */
+const rt = BIZ.rating || {};
+const rVal = (rt.value || 0).toFixed(1).replace('.', ',');
+$('#rateVal').textContent = rVal;
+$('#rateCount').textContent = nb(rt.count) + ' ' + plural(rt.count, 'оценка', 'оценки', 'оценок');
+$('#revCount').textContent = nb(rt.reviews) + ' ' + plural(rt.reviews, 'отзыв', 'отзыва', 'отзывов');
+$('#rateBadge').href = BIZ.reviewsUrl || BIZ.yandexUrl;
+$('#rateBadge').setAttribute('aria-label', 'Рейтинг ' + rVal + ' на Яндекс Картах, ' + $('#rateCount').textContent);
+const st = openStatus(); if (st) $('#liveText').textContent = st.text;
+const tel = 'tel:' + BIZ.phone;
+['#heroCall', '#stickyCall', '#findCall', '#rcCall', '#fPhone'].forEach((s) => { $(s).href = tel; });
+$('#fPhone').textContent = BIZ.phoneDisplay;
+$('#fAddr').textContent = BIZ.fullAddress;
+$('#fHours').textContent = BIZ.hoursText;
+$('#addr2').textContent = BIZ.fullAddress;
+$('#route').href = BIZ.routeUrl;
+$('#allRevs').href = BIZ.reviewsUrl;
+
+const feat = (k) => (BIZ.features || []).filter((f) => f.k === k);
+const avg = feat('средний счёт')[0];
+let avgText = '';
+if (avg && typeof avg.v === 'string') { const m = avg.v.match(/(\d[\d\s]*)\D+(\d[\d\s]*)/); avgText = m && m[1].trim() === m[2].trim() ? m[1].trim() + ' ₽' : avg.v; }
+const courier = (BIZ.features || []).some((f) => f.k === 'доставка еды' && typeof f.v === 'string' && /курьер/.test(f.v));
+const pay = feat('способ оплаты')[0];
+
+/* ticker */
+const tapeWords = ['Круглосуточно', 'Навынос', courier ? 'Доставка своими курьерами' : 'Доставка', 'Кофе с собой', 'Нагатинская, 16с2', rVal + ' на Яндекс Картах'];
+const tapeHTML = tapeWords.map((w) => '<span>' + esc(w) + '</span><i>✱</i>').join('');
+$('#tape').innerHTML = tapeHTML + tapeHTML + tapeHTML + tapeHTML;
+
+/* ---------- builder ---------- */
+const BASES = [
+  { id: 'lav', t: 'Шаурма в лаваше', s: 'обычная' },
+  { id: 'giant', t: 'Шаурма в лаваше, гигант', s: 'гигант' },
+  { id: 'pita', t: 'Шаурма в пите', s: 'питу пекут сами' }
+];
+const ADDS = [
+  { id: 'cheese', t: 'сыр' },
+  { id: 'kolb', t: 'колбасный сыр' },
+  { id: 'fries', t: 'картофель фри внутрь' },
+  { id: 'pepper', t: 'перчики' },
+  { id: 'mush', t: 'грибы' },
+  { id: 'pom', t: 'гранатовый соус' }
+];
+const EXTRAS = [
+  { id: 'sausage', t: 'Сосиска в тесте', s: '«это было просто вау!» — Emmure C.' },
+  { id: 'lemon', t: 'Яблочный лимонад', s: '«очень вкусный» — julia' },
+  { id: 'capp', t: 'Капучино', s: '«вкуснее ещё не пробовала» — АС' }
+];
+const PRESETS = [
+  { who: 'darya I.', title: 'Пита с картошкой фри внутри', base: 'pita', adds: ['fries'], q: 'питу пекут сами, курочка и овощи отличные' },
+  { who: 'Александр Р.', title: 'С картофелем фри и гранатовым соусом', base: 'lav', adds: ['fries', 'pom'], q: '«крайне советую попробовать»' },
+  { who: 'Антон З.', title: 'Колбасный сыр и гранатовый соус', base: 'lav', adds: ['kolb', 'pom'], q: '«теперь топ 1 на районе»' },
+  { who: 'Emmure C.', title: 'Шаурма с сыром и сосиска в тесте', base: 'lav', adds: ['cheese'], extra: 'sausage', q: '«это было просто вау!»' }
+];
+const addName = (id) => (ADDS.find((a) => a.id === id) || {}).t || id;
+const baseOf = (id) => BASES.find((b) => b.id === id);
+
+let base = 'lav', adds = new Set(), qty = 1;
+let lines = [];   // {key, nm, ad, q}
+let mode = 'pick';
+
+function chip(label, pressed, extra) { return '<button type="button" class="chip" aria-pressed="' + pressed + '"' + (extra || '') + '>' + label + '</button>'; }
+function renderBuilder() {
+  $('#base').innerHTML = BASES.map((b) => chip(esc(b.t.replace('Шаурма в ', 'В ')) + (b.id === 'pita' ? ' <em>· пекут сами</em>' : ''), b.id === base, ' data-b="' + b.id + '"')).join('');
+  $('#adds').innerHTML = ADDS.map((a) => chip(esc(a.t), adds.has(a.id), ' data-a="' + a.id + '"')).join('');
+  $('#qOut').textContent = qty;
+}
+$('#base').addEventListener('click', (e) => { const b = e.target.closest('[data-b]'); if (!b) return; base = b.dataset.b; renderBuilder(); });
+$('#adds').addEventListener('click', (e) => { const b = e.target.closest('[data-a]'); if (!b) return; const id = b.dataset.a; adds.has(id) ? adds.delete(id) : adds.add(id); renderBuilder(); });
+$('#qMinus').addEventListener('click', () => { qty = Math.max(1, qty - 1); renderBuilder(); });
+$('#qPlus').addEventListener('click', () => { qty = Math.min(20, qty + 1); renderBuilder(); });
+
+function addLine(nm, ad, q, kind) {
+  const key = nm + '|' + ad;
+  const ex = lines.find((l) => l.key === key);
+  if (ex) { ex.q = Math.min(30, ex.q + q); ex.bump = true; }
+  else lines.push({ key, nm, ad, q, kind, fresh: true });
+  renderReceipt();
+}
+$('#addMine').addEventListener('click', () => {
+  const b = baseOf(base);
+  const parts = ADDS.filter((a) => adds.has(a.id)).map((a) => '+ ' + a.t);
+  const w = $('#wish').value.trim();
+  if (w) parts.push('«' + w + '»');
+  addLine(b.t, parts.join(', '), qty, 'main');
+  toast('Пробито: ' + b.t.toLowerCase() + ' × ' + qty);
+  qty = 1; $('#wish').value = ''; renderBuilder();
+});
+
+$('#presets').innerHTML = PRESETS.map((p, i) => '<button type="button" class="pre" data-p="' + i + '"><span><b>' + esc(p.title) + '</b><small>как у ' + esc(p.who) + ' · ' + esc(p.q) + '</small></span><span class="plus" aria-hidden="true">+</span></button>').join('');
+$('#presets').addEventListener('click', (e) => {
+  const el = e.target.closest('[data-p]'); if (!el) return;
+  const p = PRESETS[+el.dataset.p];
+  addLine(baseOf(p.base).t, p.adds.map((a) => '+ ' + addName(a)).join(', ') + ' (как у ' + p.who + ')', 1, 'main');
+  if (p.extra) { const x = EXTRAS.find((x) => x.id === p.extra); addLine(x.t, '', 1, 'extra'); }
+  toast('Пробито: как у ' + p.who);
+});
+
+function renderExtras() {
+  $('#extras').innerHTML = EXTRAS.map((x) => {
+    const l = lines.find((l) => l.key === x.t + '|');
+    const n = l ? l.q : 0;
+    return '<div class="ex"><span><b>' + esc(x.t) + '</b><small>' + esc(x.s) + '</small></span><div class="qty" role="group" aria-label="' + esc(x.t) + ', количество"><button type="button" data-x="' + x.id + '" data-d="-1" aria-label="Убрать: ' + esc(x.t) + '">−</button><output>' + n + '</output><button type="button" data-x="' + x.id + '" data-d="1" aria-label="Добавить: ' + esc(x.t) + '">+</button></div></div>';
+  }).join('');
+}
+$('#extras').addEventListener('click', (e) => {
+  const b = e.target.closest('[data-x]'); if (!b) return;
+  const x = EXTRAS.find((x) => x.id === b.dataset.x), d = +b.dataset.d;
+  const key = x.t + '|';
+  const l = lines.find((l) => l.key === key);
+  if (d > 0) addLine(x.t, '', 1, 'extra');
+  else if (l) { l.q--; if (l.q <= 0) lines = lines.filter((z) => z !== l); renderReceipt(); }
+});
+
+/* mode + time */
+const MODES = [{ id: 'pick', t: 'Заберу сам' }];
+if ((BIZ.features || []).some((f) => f.k === 'доставка еды')) MODES.push({ id: 'deliv', t: courier ? 'Доставка курьером' : 'Доставка' });
+function renderMode() {
+  $('#mode').innerHTML = MODES.map((m) => chip(esc(m.t), m.id === mode, ' data-m="' + m.id + '"')).join('');
+  $('#addrGrp').hidden = mode !== 'deliv';
+}
+$('#mode').addEventListener('click', (e) => { const b = e.target.closest('[data-m]'); if (!b) return; mode = b.dataset.m; renderMode(); renderReceipt(); });
+(function fillWhen() {
+  const now = mskNow(); const sel = $('#when');
+  const o = (v, t) => { const op = document.createElement('option'); op.value = v; op.textContent = t; sel.appendChild(op); };
+  o('asap', 'Как можно скорее');
+  const start = new Date(now); start.setSeconds(0, 0); start.setMinutes(now.getMinutes() < 30 ? 30 : 60);
+  start.setTime(start.getTime() + 30 * 60000);
+  for (let i = 0; i < 46; i++) {
+    const d = new Date(start.getTime() + i * 30 * 60000);
+    const tom = d.getDate() !== now.getDate();
+    o(hhmm(d) + (tom ? ', завтра' : ''), 'К ' + hhmm(d) + (tom ? ' (завтра)' : ''));
+  }
+})();
+$('#when').addEventListener('change', renderReceipt);
+$('#addr').addEventListener('input', renderReceipt);
+
+/* receipt */
+const draftNo = (() => { try { let n = localStorage.getItem('doner-draft'); if (!n) { n = String(1000 + Math.floor(Math.random() * 9000)); localStorage.setItem('doner-draft', n); } return n; } catch (e) { return String(1000 + Math.floor(Math.random() * 9000)); } })();
+$('#rcNo').textContent = '№ ' + draftNo;
+function whenText() { const v = $('#when').value; return v === 'asap' ? 'как можно скорее' : 'к ' + v; }
+function count() { return lines.reduce((s, l) => s + l.q, 0); }
+function barcode(str) {
+  let h = 2166136261; for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); }
+  let x = 4, out = '';
+  while (x < 296) { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; const w = 1 + (Math.abs(h) % 4); const g = 1 + (Math.abs(h >> 3) % 3); if (x + w > 296) break; out += '<rect x="' + x + '" y="0" width="' + w + '" height="46"/>'; x += w + g; }
+  return '<g fill="#1A1714">' + out + '</g>';
+}
+function message() {
+  let t = 'Здравствуйте! Хочу заказать:\n';
+  lines.forEach((l, i) => { t += (i + 1) + ') ' + l.nm + ' × ' + l.q + (l.ad ? ' — ' + l.ad : '') + '\n'; });
+  t += '\n' + (mode === 'deliv' ? 'Доставка' + ($('#addr').value.trim() ? ': ' + $('#addr').value.trim() : ' — адрес напишу') : 'Заберу сам на Нагатинской, 16с2') + ', ' + whenText() + '.';
+  t += '\nПодскажите, пожалуйста, сумму и когда будет готово. Спасибо!';
+  return t;
+}
+function renderReceipt() {
+  const ul = $('#rcLines');
+  ul.innerHTML = lines.map((l, i) => '<li class="' + (l.fresh || l.bump ? 'new' : '') + '"><span class="nm">' + esc(l.nm) + '</span><span class="q">× ' + l.q + '</span><button type="button" class="x" data-i="' + i + '" aria-label="Убрать из чека: ' + esc(l.nm) + '">×</button>' + (l.ad ? '<span class="ad">' + esc(l.ad) + '</span>' : '') + '</li>').join('');
+  lines.forEach((l) => { l.fresh = false; l.bump = false; });
+  const n = count();
+  $('#rcEmpty').hidden = n > 0;
+  $('#rcTime').textContent = hhmm(mskNow());
+  $('#rcMode').textContent = mode === 'deliv' ? 'доставка' : 'навынос';
+  $('#rcWhen').textContent = whenText();
+  const notes = [];
+  if (avgText) notes.push('Средний чек по Яндекс Картам — ' + avgText + '.');
+  if (pay && typeof pay.v === 'string') notes.push('Оплата: ' + pay.v + '.');
+  $('#rcNote').textContent = notes.join(' ');
+  $('#bars').innerHTML = barcode(draftNo + lines.map((l) => l.key + l.q).join() + mode + $('#when').value);
+  $('#rcStamp').classList.toggle('on', n > 0);
+  const send = $('#send');
+  send.classList.toggle('off', n === 0);
+  send.href = n ? wa(message()) : wa('Здравствуйте! Подскажите, пожалуйста, что сегодня есть из шаурмы и сколько стоит?');
+  $('#sendT').textContent = n ? 'Отправить чек в WhatsApp' : 'Спросить, что есть сегодня';
+  $('#stickyMain').textContent = n ? 'Чек · ' + n + ' ' + plural(n, 'позиция', 'позиции', 'позиций') : 'Пробить чек';
+  $('#stickyMain').href = n ? '#rcpt' : '#check';
+  renderExtras();
+}
+$('#rcLines').addEventListener('click', (e) => { const b = e.target.closest('[data-i]'); if (!b) return; lines.splice(+b.dataset.i, 1); renderReceipt(); });
+let tt;
+function toast(s) { const t = $('#toast'); t.textContent = s; t.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('on'), 1800); }
+setInterval(() => { $('#rcTime').textContent = hhmm(mskNow()); }, 30000);
+
+renderBuilder(); renderMode(); renderReceipt();
+
+/* ---------- praise ---------- */
+const asp = (BIZ.aspects || []).filter((a) => a.positive > 0);
+const maxP = Math.max(1, ...asp.map((a) => a.positive));
+const aspLabel = { 'Еда': 'хвалят еду', 'Шаверма': 'хвалят шаверму', 'Фаст-фуд': 'хвалят фастфуд', 'Мясо': 'хвалят мясо', 'Персонал': 'хвалят персонал', 'Время ожидания': 'довольны скоростью' };
+$('#ledger').innerHTML = asp.map((a) => '<li><div class="lg-row"><span>' + esc(a.text) + '</span><span class="fill"></span><b>' + nb(a.positive) + '</b></div><div class="lg-bar" style="--w:' + Math.round(a.positive / maxP * 100) + '%"></div><p class="lg-sub">' + nb(a.positive) + ' ' + plural(a.positive, 'гость', 'гостя', 'гостей') + ' ' + (aspLabel[a.text] || 'отмечают: ' + a.text.toLowerCase()) + '</p></li>').join('');
+$('#praiseSub').textContent = rVal + ' на Яндекс Картах · ' + nb(rt.count) + ' ' + plural(rt.count, 'оценка', 'оценки', 'оценок') + '. Вот что гости отмечают чаще всего — и их слова без правок.';
+function trimRev(x) {
+  let s = x.trim();
+  if (s.length > 220 || /…$/.test(s)) {
+    s = s.replace(/…$/, '').slice(0, 220);
+    const i = Math.max(s.lastIndexOf('. '), s.lastIndexOf('! '), s.lastIndexOf('? '), s.lastIndexOf('!! '));
+    if (i > 60) s = s.slice(0, i + 1) + ' …';
+  }
+  return s;
+}
+const want = [['julia', 'октябрь 2026'], ['Александр Р.'], ['Konstantin K.'], ['Дмитрий', 'октябрь 2026'], ['valentin N.'], ['Alena E.']];
+const picked = [];
+want.forEach(([a, d]) => { const r = (BIZ.reviews || []).find((r) => r.a === a && (!d || r.d === d) && r.r >= 4); if (r) picked.push(r); });
+$('#revs').innerHTML = picked.map((r) => '<blockquote class="rev"><span class="st" aria-label="Оценка ' + r.r + ' из 5">' + '★'.repeat(r.r) + '</span><p>' + esc(trimRev(r.x)) + '</p><footer><b>' + esc(r.a) + '</b> · ' + esc(r.d) + ' · отзыв на Яндекс Картах</footer></blockquote>').join('');
+
+/* ---------- find ---------- */
+$('#metro').innerHTML = (BIZ.metro || []).map((m) => '<li><i style="background:' + esc(m.color) + '"></i>м. ' + esc(m.name) + '<span>' + esc(m.distance) + '</span></li>').join('')
+  + '<li><i style="background:#FBF7EE"></i>Остановка «2-й Нагатинский проезд»<span>168 м</span></li>';
+const DAYS = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+const today = (mskNow().getDay() + 6) % 7;
+$('#sched').innerHTML = (BIZ.hours || []).map((d, i) => {
+  const t = !d.length ? 'выходной' : d.map(([f, to]) => f === '00:00' && to === '00:00' ? 'круглосуточно' : f + '–' + to).join(', ');
+  return '<li class="' + (i === today ? 'today' : '') + '"><span>' + DAYS[i] + '</span><span class="fill"></span><span>' + t + '</span></li>';
+}).join('');
+const FEATS = [];
+(BIZ.features || []).forEach((f) => {
+  if (f.k === 'средний счёт' || f.k === 'цены') return;
+  if (f.k === 'доставка еды') { if (typeof f.v === 'string') FEATS.push('доставка: ' + f.v); return; }
+  if (f.k === 'способ оплаты') { FEATS.push('оплата: ' + f.v); return; }
+  if (f.k === 'доступность входа на инвалидной коляске') { FEATS.push('вход для колясок'); return; }
+  if (f.k === 'кухня') { FEATS.push(f.v + ' кухня'); return; }
+  FEATS.push(f.v === true ? f.k : f.k + ': ' + f.v);
+});
+if (avgText) FEATS.unshift('средний чек ' + avgText);
+$('#feats').innerHTML = FEATS.map((f) => '<li>' + esc(f) + '</li>').join('');
+(function map() {
+  const box = $('#mapBox');
+  const fr = document.createElement('iframe');
+  fr.loading = 'lazy'; fr.src = BIZ.mapEmbed; fr.title = 'Карта: ' + BIZ.address; fr.setAttribute('allowfullscreen', '');
+  box.appendChild(fr);
+})();
+
+/* pause animations off-screen */
+const hero = $('#hero');
+if ('IntersectionObserver' in window) new IntersectionObserver((es) => es.forEach((e) => hero.classList.toggle('paused', !e.isIntersecting))).observe(hero);
+})();
+</script>
+<script src="../map-fix.js" defer></script>
+</body>
+</html>

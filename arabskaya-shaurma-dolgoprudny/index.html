@@ -1,0 +1,1306 @@
+<!doctype html>
+<!--
+  ДЕМО-КОНЦЕПТ · «Арабская шаурма», Долгопрудный, Московское шоссе, 33А
+
+  1. ИДЕЯ. Афиша шаурмы, за которой едут специально: двуязычный уличный плакат (русский + арабский),
+     а меню для него написали сами гости. В карточке на Яндекс Картах прайса нет, поэтому всё,
+     что можно выбрать на странице, взято из отзывов и уходит мастеру вопросом в WhatsApp.
+
+  2. ФИРМЕННЫЙ МОДУЛЬ. «Соберите свою шаурму»: три готовых рецепта из отзывов (в первый раз,
+     топ Вадима Д., с фалафелем), затем начинка → лаваш → двойное мясо → добавки → количество →
+     закуски и напитки → как и когда забрать. Шаурма «в разрезе» собирается на глазах, чек
+     печатается сам, итог — готовое сообщение в WhatsApp на языке страницы. Цен в данных нет:
+     страница их не выдумывает, а просит мастера назвать сумму.
+
+  3. АРТ-ДИРЕКШН. Плакатный стрит-фуд: жёлтая бумага #FFD21E, чёрная краска #14110F и томатный
+     #D62B18 как единственный акцент. Наборная типографика: строки заголовка подогнаны по ширине,
+     как в высокой печати (Sofia Sans Extra Condensed 900 + арабский плакатный Lalezar; текст — Rubik
+     для кириллицы и арабского). Мотивы: вертел с куриной грудкой на томатном круге, стикеры,
+     перфорация чека и «четыре стороны» — гости пишут, что шаурму здесь обжаривают на гриле
+     с четырёх сторон, поэтому и отзывы разложены по четырём сторонам.
+-->
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFD21E">
+<title>Арабская шаурма — Долгопрудный, Московское шоссе, 33А (демо)</title>
+<meta name="description" content="Демо-концепт сайта кафе «Арабская шаурма» в Долгопрудном: соберите шаурму по советам из отзывов и отправьте заказ в WhatsApp. Оценка 5,0 на Яндекс Картах.">
+<meta property="og:title" content="Арабская шаурма — Долгопрудный (демо)">
+<meta property="og:description" content="Куриная грудка с вертела, арабский лаваш, гриль с четырёх сторон. Соберите свою шаурму и отправьте заказ в WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://kyan9400.github.io/demo/arabskaya-shaurma-dolgoprudny/">
+<meta property="og:image" content="https://kyan9400.github.io/demo/arabskaya-shaurma-dolgoprudny/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23FFD21E'/%3E%3Ccircle cx='20' cy='20' r='16' fill='%23D62B18'/%3E%3Cpath d='M20 5v30' stroke='%2314110F' stroke-width='2.6' stroke-linecap='round'/%3E%3Cg fill='%23FFD21E' stroke='%2314110F' stroke-width='2.2' stroke-linejoin='round'%3E%3Crect x='11.5' y='10' width='17' height='6.5' rx='2.5'/%3E%3Crect x='10' y='16.5' width='20' height='6.5' rx='2.5'/%3E%3Crect x='12.5' y='23' width='15' height='6' rx='2.5'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@700;900&family=Rubik:wght@400;500;700&family=Lalezar&display=swap" rel="stylesheet">
+<script>try{var L0=new URLSearchParams(location.search).get('lang')||localStorage.getItem('ash-lang');if(L0==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl';}}catch(e){}</script>
+<style>
+:root{
+  --y:#FFD21E; --ink:#14110F; --tom:#D62B18; --paper:#FFF6DA; --lav:#F1D9A2;
+  --mut:rgba(20,17,15,.74); --mut-inv:rgba(255,246,218,.76); --line:rgba(20,17,15,.16); --line-inv:rgba(255,246,218,.24);
+  --display:"Sofia Sans Extra Condensed","Lalezar",Impact,"Arial Narrow",sans-serif;
+  --text:"Rubik",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --dir:1; --focus:var(--tom);
+}
+html[dir=rtl]{--dir:-1}
+html[lang=ar]{--display:"Lalezar","Sofia Sans Extra Condensed",Impact,sans-serif}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth;font-synthesis:none}
+body{margin:0;background:var(--y);color:var(--ink);font:400 16px/1.55 var(--text);-webkit-font-smoothing:antialiased;padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
+html[lang=ar] body{font-size:17px;line-height:1.75}
+html[lang=ar] *{letter-spacing:0!important}
+h1,h2,h3,p,ul,ol,figure,blockquote{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer;border-radius:0;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+svg{display:block}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.wrap{width:100%;max-width:1320px;margin-inline:auto;padding-inline:16px}
+.d{font-family:var(--display);font-weight:900;text-transform:uppercase;line-height:.9}
+html[lang=ar] .d{line-height:1.22}
+.ic{width:22px;height:22px;flex:none}
+.flip{transform:scaleX(var(--dir))}
+
+/* demo bar + header */
+.demo-bar{background:var(--ink);color:var(--paper);font-size:12px;line-height:1.4;padding:6px 16px;text-align:center}
+.hdr{background:var(--y)}
+.hdr-in{display:flex;align-items:center;gap:12px;padding-block:8px}
+.brand{display:inline-flex;align-items:center;gap:9px;min-height:44px;text-decoration:none;margin-inline-end:auto}
+.brand svg{width:36px;height:36px;flex:none}
+.brand-name{font:900 18px/.9 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.nav,.hdr-tel{display:none}
+.lang{min-height:44px;min-width:84px;padding:4px 14px;background:transparent;border:3px solid var(--ink);font:700 16px/1 var(--text)}
+.lang:active{background:var(--ink);color:var(--y)}
+.status{display:inline-flex;align-items:center;gap:7px;background:var(--ink);color:var(--paper);font:500 13px/1.2 var(--text);letter-spacing:0;text-transform:none;padding:7px 12px;border-radius:99px;white-space:nowrap}
+.status .dot{width:9px;height:9px;border-radius:50%;background:#42D67B;flex:none}
+.status[data-open="0"] .dot{background:#FF6A4D}
+.status[data-open="1"] .dot{animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.3}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;overflow:clip;padding-bottom:30px}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:46%;pointer-events:none;background-image:radial-gradient(rgba(20,17,15,.2) 1.5px,transparent 1.7px);background-size:9px 9px;-webkit-mask-image:linear-gradient(to top,#000,transparent);mask-image:linear-gradient(to top,#000,transparent);opacity:.5}
+.hero-g{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr)}
+.place{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 14px;border-block:3px solid var(--ink);padding-block:7px 6px;font-size:clamp(19px,5.5vw,24px);line-height:1;letter-spacing:.035em}
+.title{margin:10px 0 6px;font:900 25vw/.86 var(--display);text-transform:uppercase;text-align:start}
+.fit{display:block;white-space:nowrap}
+.fit>span{display:inline-block}
+.title .fit+.fit{color:var(--tom);font-size:30vw}
+html[lang=ar] .title{line-height:1.04;margin-top:2px}
+.hours{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 12px;border-block:3px solid var(--ink);padding-block:7px;font:700 clamp(17px,4.7vw,20px)/1.1 var(--display);text-transform:uppercase;letter-spacing:.04em}
+html[lang=ar] .hours{font-family:var(--text);font-size:15px}
+.collage{position:relative;width:min(100%,384px);margin:20px auto 0;aspect-ratio:36/30;font-size:clamp(11px,3.25vw,13.5px)}
+@supports not (aspect-ratio:1/1){.collage{height:300px}}
+.collage>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.turn{animation:turn 2.6s linear infinite}
+@keyframes turn{to{transform:translateX(40px)}}
+.glow rect{animation:glow 1.8s ease-in-out infinite}
+.glow rect:nth-child(2n){animation-delay:-.9s}
+@keyframes glow{50%{opacity:.45}}
+.paused .turn,.paused .glow rect,.paused.marquee-track{animation-play-state:paused}
+.stk{position:absolute;transform:rotate(calc(var(--r,0deg)*var(--dir)));animation:slap .5s cubic-bezier(.2,1.4,.4,1) both}
+@keyframes slap{from{transform:rotate(calc((var(--r,0deg) - 14deg)*var(--dir))) scale(1.5);opacity:0}}
+.stk-rate{inset-inline-start:0;top:44%;--r:-9deg;width:8.9em;height:8.9em;border-radius:50%;background:var(--ink);color:var(--y);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.22em;text-decoration:none;text-align:center;box-shadow:0 0 0 3px var(--y),0 0 0 6px var(--ink);animation-delay:.25s}
+.stk-rate b{font:900 4.3em/.74 var(--display);margin-top:.06em}
+.stk-rate .stars{display:flex;gap:1px}
+.stk-rate .stars svg{width:.95em;height:.95em;fill:currentColor}
+.stk-rate span{font:500 max(11px,.9em)/1.15 var(--text);color:var(--paper)}
+.stk-quote{inset-inline-end:0;top:0;--r:5deg;width:12.6em;background:var(--paper);border:3px solid var(--ink);padding:.7em .8em .6em;box-shadow:calc(4px*var(--dir)) 5px 0 var(--ink);animation-delay:.4s}
+.stk-quote p{font:900 1.72em/.96 var(--display);text-transform:uppercase}
+.stk-quote small{display:block;margin-top:.5em;font:500 max(11px,.84em)/1.25 var(--text);color:var(--mut)}
+.stk-bi{inset-inline-end:2%;bottom:2%;--r:-5deg;background:var(--y);border:3px solid var(--ink);padding:.1em .7em .2em;font:400 1.95em/1.3 "Lalezar",var(--display);white-space:nowrap;box-shadow:calc(4px*var(--dir)) 5px 0 var(--ink);animation-delay:.55s}
+html[lang=ar] .stk-bi{font:900 1.9em/1 var(--display);font-family:"Sofia Sans Extra Condensed",Impact,sans-serif;text-transform:uppercase;padding:.3em .6em .22em;letter-spacing:.02em}
+.hero-copy{margin-top:22px}
+.lead{font-size:17px;line-height:1.5;max-width:33em}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:8px 22px;background:var(--ink);color:var(--y);border:3px solid var(--ink);font:900 25px/1 var(--display);text-transform:uppercase;letter-spacing:.03em;text-decoration:none;box-shadow:calc(5px*var(--dir)) 5px 0 var(--tom);transition:transform .12s,box-shadow .12s}
+.btn:active{transform:translate(calc(3px*var(--dir)),3px);box-shadow:calc(2px*var(--dir)) 2px 0 var(--tom)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:none}
+.btn.ghost:active{background:var(--ink);color:var(--y);transform:none}
+html[lang=ar] .btn{font-size:21px;line-height:1.3}
+.wa-ic{width:30px;height:30px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;flex:none}
+.wa-ic svg{width:19px;height:19px}
+.facts{margin-top:22px;display:grid;gap:9px}
+.facts li{display:flex;align-items:center;gap:10px;font-size:15px;line-height:1.3;font-weight:500}
+
+/* marquee */
+.marquee{background:var(--ink);color:var(--y);overflow:hidden;overflow:clip;max-width:100%;min-width:0;contain:paint;border-block:3px solid var(--ink)}
+html,body{overflow-x:hidden;overflow-x:clip}
+.marquee-track{display:flex;width:max-content;padding-block:12px;font:900 23px/1 var(--display);text-transform:uppercase;letter-spacing:.05em;animation:mq 44s linear infinite;will-change:transform}
+html[lang=ar] .marquee-track{font-size:20px;line-height:1.3;padding-block:8px}
+html[dir=rtl] .marquee-track{animation-name:mqr}
+.marquee-track span{display:inline-flex;align-items:center;white-space:nowrap}
+.marquee-track span::after{content:"";width:9px;height:9px;background:var(--tom);transform:rotate(45deg);margin-inline:18px}
+.marquee-track .tag{color:var(--paper)}
+@keyframes mq{to{transform:translateX(-50%)}}
+@keyframes mqr{to{transform:translateX(50%)}}
+
+/* section heads */
+.kicker{font:700 12.5px/1.3 var(--text);letter-spacing:.14em;text-transform:uppercase}
+html[lang=ar] .kicker{font-size:14.5px}
+.h2{font-size:clamp(52px,15.5vw,112px);line-height:.86;margin-top:10px}
+html[lang=ar] .h2{font-size:clamp(42px,12.4vw,92px);line-height:1.14}
+.sec-note{margin-top:14px;max-width:41em;font-size:15.5px}
+html[lang=ar] .sec-note{font-size:16.5px}
+
+/* builder */
+.build{background:var(--ink);color:var(--paper);padding-block:44px 54px;--focus:var(--y);scroll-margin-top:0}
+.build .kicker,.build .h2{color:var(--y)}
+.build .sec-note{color:var(--mut-inv)}
+.b-grid{display:flex;flex-direction:column;margin-top:24px}
+.b-side{display:contents}
+.preview{order:1;position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;margin-inline:-16px;padding:9px 16px;background:var(--ink);border-block:2px solid var(--line-inv)}
+.preview svg{flex:1 1 auto;min-width:0;width:100%;max-width:290px;height:auto}
+.pv-meta{flex:none;display:flex;flex-direction:column;align-items:flex-end;gap:3px;margin-inline-start:auto;text-align:end}
+.pv-meta b{font-size:48px;color:var(--y);line-height:.8}
+html[lang=ar] .pv-meta b{line-height:1}
+.pv-meta span{font-size:12px;line-height:1.2;color:var(--mut-inv);letter-spacing:.1em;text-transform:uppercase}
+.pc{transform-box:fill-box;transform-origin:center;transform:scale(0);opacity:0;transition:transform .34s cubic-bezier(.3,1.6,.5,1),opacity .15s}
+.pc.on{transform:scale(1);opacity:1}
+.b-opts{order:2}
+.presets-t{margin-top:22px;font-size:26px;color:var(--paper)}
+.presets{display:grid;gap:10px;margin-top:12px}
+.preset{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:1px 14px;min-height:72px;padding:11px 14px;background:var(--y);color:var(--ink);border:0;text-align:start;transition:transform .12s}
+.preset:active{transform:scale(.98)}
+.preset .n{grid-row:1/span 3;font-size:54px;line-height:.8;color:var(--tom)}
+html[lang=ar] .preset .n{line-height:1.1}
+.preset b{font-size:26px;line-height:1}
+html[lang=ar] .preset b{font-size:23px;line-height:1.3}
+.preset span{font-size:14.5px;line-height:1.3}
+.preset small{font-size:12.5px;line-height:1.3;color:var(--mut)}
+.preset[aria-pressed=true]{background:var(--paper);box-shadow:inset 0 0 0 4px var(--tom)}
+.step{border-top:2px solid var(--line-inv);padding-block:20px 22px;margin-top:22px}
+.step+.step{margin-top:0}
+.step-h{display:flex;align-items:center;gap:11px}
+.step-n{display:inline-grid;place-items:center;min-width:36px;height:30px;padding:0 6px;background:var(--y);color:var(--ink);font-size:23px;line-height:1}
+html[lang=ar] .step-n{font-family:"Sofia Sans Extra Condensed",Impact,sans-serif;line-height:1}
+.step-t{font-size:32px;line-height:.95}
+html[lang=ar] .step-t{font-size:27px;line-height:1.25}
+.step-c{margin-top:8px;font-size:14px;line-height:1.45;color:var(--mut-inv);max-width:38em}
+html[lang=ar] .step-c{font-size:15px;line-height:1.6}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:13px}
+.opts.three{grid-template-columns:repeat(3,1fr)}
+.opt{display:flex;flex-direction:column;justify-content:center;gap:2px;min-height:54px;padding:8px 12px;background:transparent;border:2px solid rgba(255,246,218,.5);color:var(--paper);font:500 16px/1.2 var(--text);text-align:start;transition:background .15s,color .15s,border-color .15s,transform .1s}
+.opts.three .opt{padding-inline:8px;text-align:center;align-items:center;font-size:15px}
+.opt:active{transform:scale(.97)}
+.opt small{font-size:13px;line-height:1.25;opacity:.78}
+.opt[aria-checked=true],.opt[aria-pressed=true]{background:var(--y);border-color:var(--y);color:var(--ink);font-weight:700}
+.opt[aria-checked=true] small,.opt[aria-pressed=true] small{font-weight:400;opacity:.85}
+.qty{display:inline-flex;align-items:center;margin-top:13px;border:2px solid var(--paper)}
+.qty button{width:54px;height:52px;background:transparent;border:0;font:500 28px/1 var(--text)}
+.qty button:active{background:var(--y);color:var(--ink)}
+.qty output{min-width:62px;text-align:center;font-size:38px;line-height:1;color:var(--y)}
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:13px}
+.ex{display:flex;align-items:stretch;min-height:56px;border:2px solid rgba(255,246,218,.5);transition:background .15s,border-color .15s}
+.ex-add{flex:1 1 auto;min-width:0;display:flex;align-items:center;gap:8px;padding:6px 10px;background:transparent;border:0;color:inherit;font:500 15px/1.2 var(--text);text-align:start}
+.ex-add small{display:block;font-size:12.5px;opacity:.78;font-weight:400}
+.ex-n{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;border:2px solid currentColor;font:700 14px/1 var(--text)}
+.ex-minus{flex:none;width:44px;background:transparent;border:0;border-inline-start:2px solid rgba(20,17,15,.3);font:500 24px/1 var(--text)}
+.ex.on{background:var(--y);border-color:var(--y);color:var(--ink)}
+.ex.on .ex-add{font-weight:700}
+.ex.on .ex-n{background:var(--tom);border-color:var(--tom);color:#fff}
+.time-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px;margin-top:12px}
+.time-row label{font-size:15px;font-weight:500}
+.time-row input{height:50px;min-width:136px;padding:0 12px;background:var(--paper);color:var(--ink);border:2px solid var(--paper);font:700 18px/1 var(--text);border-radius:0;color-scheme:light}
+.note{margin-top:10px;font-size:14px;line-height:1.45;color:var(--y)}
+.ticket{order:3;position:relative;margin-top:30px;background:var(--paper);color:var(--ink);padding:20px 18px 18px;--focus:var(--tom)}
+.ticket::before,.ticket::after{content:"";position:absolute;inset-inline:0;height:10px;background:radial-gradient(circle at 9px 0,transparent 6px,var(--paper) 6.6px) 0 0/18px 10px repeat-x}
+.ticket::before{top:-10px}
+.ticket::after{bottom:-10px;transform:scaleY(-1)}
+.t-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:3px solid var(--ink)}
+.t-title{font-size:38px}
+html[lang=ar] .t-title{font-size:32px}
+.t-stamp{display:grid;place-items:center;min-width:58px;height:58px;padding:0 8px;border-radius:50%;background:var(--tom);color:#fff;font-size:30px;line-height:1;transform:rotate(calc(8deg*var(--dir)))}
+html[lang=ar] .t-stamp{font-family:"Sofia Sans Extra Condensed",Impact,sans-serif}
+.t-stamp.bump{animation:bump .4s}
+@keyframes bump{40%{transform:rotate(calc(8deg*var(--dir))) scale(1.22)}}
+.t-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;font-weight:700;font-size:16.5px;line-height:1.3;margin-top:12px}
+.t-row b{white-space:nowrap}
+.t-row i{font-style:normal;font-weight:400;font-size:13.5px;color:var(--mut)}
+.t-sub{font-size:14.5px;line-height:1.45;color:var(--mut);margin-top:3px}
+.t-hr{border:0;border-top:2px dashed rgba(20,17,15,.45);margin:14px 0 0}
+.t-p{font-weight:500}
+.t-p span:last-child{font-weight:700;text-align:end}
+.t-bill{font-size:13.5px;line-height:1.45;color:var(--mut);margin-top:4px}
+.send{width:100%;margin-top:18px;padding-inline:14px;font-size:24px}
+html[lang=ar] .send{font-size:20px}
+.t-call{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 9px;min-height:48px;margin-top:12px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid var(--ink)}
+.t-hint{margin-top:10px;font-size:13px;line-height:1.45;color:var(--mut);text-align:center}
+
+/* four sides */
+.sides{padding-block:50px 56px}
+.sides .sec-note{color:var(--ink)}
+.sides-grid{display:grid;gap:14px;margin-top:26px}
+.side{position:relative;display:flex;flex-direction:column;gap:12px;padding:18px 18px 16px;background:var(--paper);border:3px solid var(--ink);--hl:var(--tom)}
+.side:nth-child(2){background:var(--ink);color:var(--paper);--hl:var(--y);--focus:var(--y)}
+.side:nth-child(3){background:var(--tom);color:#fff;--hl:var(--y);--focus:#fff}
+.side-k{display:flex;align-items:center;gap:10px;font:700 12.5px/1.25 var(--text);letter-spacing:.12em;text-transform:uppercase}
+html[lang=ar] .side-k{font-size:14.5px}
+.side-ic{width:40px;height:40px;flex:none}
+.side h3{font-size:40px;line-height:.9;max-width:9em}
+html[lang=ar] .side h3{font-size:32px;line-height:1.2}
+.side blockquote{font-size:15.5px;line-height:1.5;text-align:start}
+.side footer{margin-top:auto;padding-top:4px;font-size:13.5px;line-height:1.4}
+.side-n{position:absolute;inset-inline-end:14px;top:6px;font-size:96px;line-height:.8;opacity:.12;pointer-events:none}
+html[lang=ar] .side-n{font-family:"Sofia Sans Extra Condensed",Impact,sans-serif}
+.master{display:grid;gap:14px;margin-top:14px;padding:18px;border:3px solid var(--ink)}
+.master .side-k{--hl:var(--tom)}
+.master h3{font-size:44px;margin-top:10px}
+html[lang=ar] .master h3{font-size:34px}
+.master-t{margin-top:10px;font-size:16px;max-width:30em}
+.mq{display:flex;flex-direction:column;gap:10px;padding:16px;background:var(--paper)}
+.mq blockquote{font-size:15.5px;line-height:1.5;text-align:start}
+.mq footer{margin-top:auto;font-size:13.5px;line-height:1.4}
+.proof{display:grid;gap:14px;margin-top:14px}
+.asp{padding:18px;background:var(--paper);border:3px solid var(--ink)}
+.asp h3{font-size:32px}
+html[lang=ar] .asp h3{font-size:27px}
+.asp-note{margin-top:8px;font-size:13.5px;line-height:1.45;color:var(--mut)}
+.asp-list{margin-top:12px}
+.asp-row{display:grid;grid-template-columns:minmax(86px,auto) minmax(0,1fr) auto;align-items:center;gap:10px;min-height:36px;font-size:15px;border-top:2px solid var(--line)}
+.asp-track{display:block}
+.asp-bar{display:block;position:relative;height:14px;min-width:8px;background:rgba(20,17,15,.2)}
+.asp-bar i{position:absolute;inset-block:0;inset-inline-start:0;background:var(--ink)}
+.asp-v{white-space:nowrap;font-size:14px}
+.asp-v b{font-weight:700;font-size:15.5px}
+.rate{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:20px 18px;background:var(--ink);color:var(--paper);--focus:var(--y)}
+.rate-v{font-size:132px;line-height:.74;color:var(--y);margin-top:6px}
+html[lang=ar] .rate-v{font-family:"Sofia Sans Extra Condensed",Impact,sans-serif;line-height:.74}
+.rate .stars{display:flex;gap:3px;color:var(--y)}
+.rate .stars svg{width:22px;height:22px;fill:currentColor}
+.rate p{font-size:15.5px}
+.rate .btn{margin-top:8px;background:var(--y);color:var(--ink);border-color:var(--y);font-size:22px;min-height:52px;text-align:center}
+html[lang=ar] .rate .btn{font-size:18px}
+
+/* ask */
+.ask{background:var(--tom);color:#fff;padding-block:46px 50px;--focus:#fff}
+.ask .sec-note{color:#fff}
+.ask-grid{display:grid;gap:12px;margin-top:22px}
+.q{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:62px;padding:12px 16px;background:var(--paper);color:var(--ink);border:3px solid var(--ink);box-shadow:calc(4px*var(--dir)) 4px 0 var(--ink);text-decoration:none;font-weight:700;font-size:16.5px;line-height:1.25;transition:transform .12s,box-shadow .12s}
+.q:active{transform:translate(calc(3px*var(--dir)),3px);box-shadow:calc(1px*var(--dir)) 1px 0 var(--ink)}
+
+/* find */
+.find{background:var(--paper);padding-block:50px 56px}
+.addr{margin-top:10px;font:900 19vw/.86 var(--display);text-transform:uppercase}
+.addr .fit+.fit{color:var(--tom)}
+.find-sub{margin-top:8px;font-size:16px;font-weight:500}
+.transit{margin-top:16px;border-top:3px solid var(--ink)}
+.transit li{display:flex;align-items:center;gap:10px;min-height:48px;padding-block:6px;border-bottom:2px solid var(--line);font-size:15.5px;line-height:1.3}
+.transit .dist{margin-inline-start:auto;padding-inline-start:8px;font-weight:700;white-space:nowrap}
+.mdot{width:22px;height:22px;flex:none;display:grid;place-items:center}
+.mdot i{width:14px;height:14px;border-radius:50%;box-shadow:0 0 0 2px var(--ink)}
+.find-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:20px}
+.find-cta .btn{font-size:23px}
+html[lang=ar] .find-cta .btn{font-size:19px}
+.map{position:relative;height:330px;margin-top:26px;border:3px solid var(--ink);overflow:hidden;background:
+  linear-gradient(115deg,transparent 46%,rgba(20,17,15,.1) 46%,rgba(20,17,15,.1) 54%,transparent 54%),
+  repeating-linear-gradient(0deg,transparent 0 58px,rgba(20,17,15,.1) 58px 62px),
+  repeating-linear-gradient(90deg,transparent 0 78px,rgba(20,17,15,.1) 78px 82px),var(--y)}
+.map-pin{position:absolute;left:50%;top:50%;width:40px;height:40px;margin:-36px 0 0 -20px;color:var(--tom)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.sched{margin-top:26px}
+.sched h3{font-size:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 12px}
+html[lang=ar] .sched h3{font-size:27px}
+.week{margin-top:12px;border:3px solid var(--ink)}
+.week li{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:42px;padding:6px 14px;font-size:15.5px;border-top:2px solid var(--line)}
+.week li:first-child{border-top:0}
+.week li b{font-weight:500}
+.week li.today{background:var(--ink);color:var(--y);font-weight:700}
+.week li.today b{font-weight:700}
+.week em{font-style:normal;font-size:12px;letter-spacing:.08em;text-transform:uppercase;border:1.5px solid currentColor;padding:1px 7px;margin-inline-start:8px;border-radius:99px;font-weight:500}
+.feat-t{margin-top:26px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{padding:6px 12px;border:2px solid var(--ink);border-radius:99px;font-size:14px;line-height:1.3;font-weight:500}
+
+/* footer */
+.ftr{background:var(--ink);color:var(--paper);padding-block:36px 30px;font-size:14.5px;line-height:1.55;--focus:var(--y)}
+.ftr-name{font-size:44px;color:var(--y)}
+.ftr-g{display:grid;gap:20px;margin-top:14px}
+.ftr a{display:inline-flex;align-items:center;min-height:44px;font-weight:500;text-underline-offset:3px}
+.ftr-links{display:flex;flex-wrap:wrap;gap:0 22px}
+.ftr-notes{margin-top:18px;padding-top:16px;border-top:2px solid var(--line-inv);color:var(--mut-inv);font-size:13px;line-height:1.55;display:grid;gap:6px}
+
+/* sticky bar */
+.bar{position:fixed;inset-inline:0;bottom:0;z-index:60;display:flex;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px));background:var(--ink);border-top:3px solid var(--y);--focus:#fff}
+.bar-main{flex:1 1 auto;min-width:0;display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:4px 12px;background:var(--y);color:var(--ink);font:900 24px/1 var(--display);text-transform:uppercase;letter-spacing:.03em;text-decoration:none}
+html[lang=ar] .bar-main{font-size:21px;line-height:1.3}
+.bar-main:active{background:var(--paper)}
+.bar-n{display:grid;place-items:center;min-width:26px;height:26px;padding:0 6px;border-radius:99px;background:var(--tom);color:#fff;font:700 14px/1 var(--text)}
+.bar-call{flex:none;display:grid;place-items:center;width:58px;min-height:52px;background:var(--tom);color:#fff}
+.bar-call svg{width:26px;height:26px}
+
+/* reveal (fail-safe: visible unless .anim is set by JS) */
+.anim .rv{opacity:0;transform:translateY(18px)}
+.anim .rv.in{opacity:1;transform:none;transition:opacity .5s,transform .5s}
+
+@media (min-width:420px){
+  .extras{gap:10px}
+}
+@media (min-width:700px){
+  .wrap{padding-inline:28px}
+  .preview{margin-inline:-28px;padding-inline:28px}
+  .presets{grid-template-columns:repeat(3,1fr)}
+  .preset{grid-template-columns:1fr;align-content:start;gap:4px;padding:14px 16px}
+  .preset .n{grid-row:auto}
+  .opts,.extras{grid-template-columns:repeat(4,1fr)}
+  .opts.two{grid-template-columns:repeat(2,minmax(0,260px))}
+  .opts.three{grid-template-columns:repeat(3,minmax(0,200px))}
+  .sides-grid{grid-template-columns:1fr 1fr}
+  .master{grid-template-columns:1fr 1fr;padding:22px}
+  .master-h{grid-column:1/-1}
+  .proof{grid-template-columns:1.5fr 1fr}
+  .ask-grid{grid-template-columns:1fr 1fr}
+  .week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
+  .week li b{font-size:13px;overflow-wrap:anywhere}
+  .week li{flex-direction:column;align-items:flex-start;justify-content:center;gap:2px;min-height:76px;padding:10px 12px;border-top:0;border-inline-start:2px solid var(--line)}
+  .week li:first-child{border-inline-start:0}
+  .week em{margin:4px 0 0}
+  .ftr-g{grid-template-columns:1fr 1fr}
+}
+@media (min-width:960px){
+  body{padding-bottom:0}
+  .bar{display:none}
+  .wrap{padding-inline:40px}
+  .demo-bar{font-size:13px}
+  .hdr{position:sticky;top:0;z-index:40;border-bottom:3px solid var(--ink)}
+  .hdr-in{padding-block:7px;gap:26px}
+  .nav{display:flex;gap:26px}
+  .nav a{display:inline-flex;align-items:center;min-height:44px;font-weight:500;font-size:15.5px;text-decoration:none}
+  .nav a:hover,.hdr-tel:hover{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:6px}
+  .hdr-tel{display:inline-flex;align-items:center;min-height:44px;font-weight:700;font-size:16px;text-decoration:none}
+  .hero{padding-bottom:44px}
+  .hero-g{grid-template-columns:minmax(0,1.32fr) minmax(0,1fr);column-gap:54px;margin-top:22px}
+  .place{grid-column:1;font-size:27px;padding-block:9px 8px}
+  .title{grid-column:1;font-size:13vw;margin-top:14px}
+  .title .fit+.fit{font-size:16vw}
+  .hours{grid-column:1;font-size:22px;padding-block:9px}
+  html[lang=ar] .hours{font-size:16.5px}
+  .collage{grid-column:2;grid-row:1/span 4;width:100%;max-width:500px;margin:0;align-self:center;justify-self:end;font-size:16.5px}
+  .hero-copy{grid-column:1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:8px 36px;align-items:start;margin-top:24px}
+  .lead{font-size:18px}
+  .cta{grid-column:1}
+  .facts{grid-column:2;grid-row:1/span 2;margin-top:2px}
+  .marquee-track{font-size:28px;padding-block:14px}
+  html[lang=ar] .marquee-track{font-size:24px}
+  .build{padding-block:72px 86px;scroll-margin-top:60px}
+  .sec-h{max-width:820px}
+  .b-grid{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(360px,.78fr);column-gap:60px;align-items:start;margin-top:10px}
+  .b-opts{grid-column:1;grid-row:1}
+  .b-side{display:block;grid-column:2;grid-row:1;position:sticky;top:84px;padding-top:26px}
+  .preview{position:static;margin:0;padding:0 0 22px;border:0;background:transparent;align-items:flex-end}
+  .preview svg{max-width:none}
+  .pv-meta b{font-size:64px}
+  .ticket{margin-top:10px;padding:24px 24px 22px}
+  .sides{padding-block:76px 84px;scroll-margin-top:50px}
+  .sides-grid{grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px}
+  .side{padding:22px 20px 20px;min-height:360px}
+  .side h3{font-size:44px}
+  .master{grid-template-columns:.9fr 1fr 1fr;gap:18px;margin-top:18px;padding:26px}
+  .master-h{grid-column:auto}
+  .master h3{font-size:56px}
+  html[lang=ar] .master h3{font-size:42px}
+  .proof{gap:18px;margin-top:18px}
+  .asp{padding:26px}
+  .rate{padding:28px 26px;justify-content:center}
+  .rate-v{font-size:190px}
+  .ask{padding-block:64px 70px}
+  .ask-grid{grid-template-columns:repeat(4,1fr);gap:18px;margin-top:28px}
+  .q{align-items:flex-start;flex-direction:column;justify-content:space-between;min-height:132px;padding:18px;font-size:19px}
+  .find{padding-block:76px 84px;scroll-margin-top:50px}
+  .find-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);column-gap:60px;align-items:start}
+  .addr{font-size:8.6vw}
+  .map{height:100%;min-height:470px;margin-top:0}
+  .sched{margin-top:44px}
+  .ftr{padding-block:54px 40px}
+  .ftr-name{font-size:64px}
+}
+@media (min-width:1500px){
+  .title{font-size:200px}
+  .title .fit+.fit{font-size:240px}
+  .addr{font-size:128px}
+}
+@media (hover:hover){
+  .btn:hover{transform:translate(calc(-2px*var(--dir)),-2px);box-shadow:calc(7px*var(--dir)) 7px 0 var(--tom)}
+  .btn.ghost:hover{background:var(--ink);color:var(--y);transform:none;box-shadow:none}
+  .opt:hover,.ex:hover{border-color:var(--y)}
+  .preset:hover{transform:translateY(-2px)}
+  .q:hover{transform:translate(calc(-2px*var(--dir)),-2px);box-shadow:calc(6px*var(--dir)) 6px 0 var(--ink)}
+  .lang:hover{background:var(--ink);color:var(--y)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .anim .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar">Демо-концепт · пример сайта для «Арабская шаурма» от Альхассана Альфаррана · не официальный сайт</div>
+
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href="#top" id="brand" aria-label="Арабская шаурма">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#D62B18"/><path d="M20 4v32" stroke="#14110F" stroke-width="2.6" stroke-linecap="round"/><g fill="#FFD21E" stroke="#14110F" stroke-width="2.2" stroke-linejoin="round"><rect x="11.5" y="10" width="17" height="6.5" rx="2.5"/><rect x="10" y="16.5" width="20" height="6.5" rx="2.5"/><rect x="12.5" y="23" width="15" height="6" rx="2.5"/></g></svg>
+      <span class="brand-name" id="brandName">Арабская<br>шаурма</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Разделы">
+      <a href="#build" data-t="navBuild">Собрать шаурму</a>
+      <a href="#reviews" data-t="navRev">Отзывы</a>
+      <a href="#find" data-t="navFind">Как найти</a>
+    </nav>
+    <a class="hdr-tel" id="hdrTel" href="tel:+79270061958" dir="ltr">+7 (927) 006-19-58</a>
+    <button class="lang" id="langBtn" type="button" lang="ar" aria-label="Переключить язык: арабский">العربية</button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" id="hero">
+    <div class="wrap hero-g">
+      <p class="place d"><span id="placeCity">Долгопрудный</span><span id="placeStreet">Московское шоссе, 33А</span></p>
+      <h1 class="title" id="title"><span class="fit"><span>Арабская</span></span><span class="fit"><span>шаурма</span></span></h1>
+      <p class="hours"><span id="hoursSum">пн–сб 09:00–22:00 · вс 10:00–22:00</span><span class="status" id="heroStatus" data-open="1" hidden><i class="dot"></i><span></span></span></p>
+      <div class="collage" id="collage">
+        <svg id="spit" viewBox="0 0 360 300" aria-hidden="true" focusable="false"></svg>
+        <div class="stk stk-quote"><p lang="ru" dir="ltr">«самая лучшая арабская шаурма в Москве»</p><small data-t="quoteSrc">из отзывов на Яндекс Картах</small></div>
+        <a class="stk stk-rate" id="rateStk" href="https://yandex.ru/maps/org/arabskaya_shaurma/85926063637/reviews/" target="_blank" rel="noopener"></a>
+        <div class="stk stk-bi" id="biStk" aria-hidden="true" lang="ar" dir="rtl">الشاورما العربية</div>
+      </div>
+      <div class="hero-copy">
+        <p class="lead" id="lead">Куриная грудка с вертела, арабский лаваш, гриль с четырёх сторон. Так её описывают гости — и ставят 5,0.</p>
+        <div class="cta">
+          <a class="btn" href="#build"><span data-t="ctaBuild">Собрать шаурму</span></a>
+          <a class="btn ghost" id="heroCall" href="tel:+79270061958"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 3h3l1.600 4.300-2.100 1.500a11 11 0 0 0 4.700 4.700l1.500-2.100L20 13v3a2 2 0 0 1-2 2A14 14 0 0 1 5 5a2 2 0 0 1 2-2z"/></svg><span data-t="ctaCall">Позвонить</span></a>
+        </div>
+        <ul class="facts" id="facts"></ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="marquee-track" id="mq"></div></div>
+
+  <section class="build" id="build">
+    <div class="wrap">
+      <header class="sec-h">
+        <p class="kicker" data-t="bKicker">Конструктор · по отзывам гостей</p>
+        <h2 class="h2 d" data-t="bH2">Соберите свою шаурму</h2>
+        <p class="sec-note" data-t="bNote">Меню в карточке на Яндекс Картах нет, поэтому варианты взяты из отзывов гостей. Состав и цену подтвердит мастер — заказ уйдёт ему в WhatsApp.</p>
+      </header>
+      <noscript><p class="sec-note">Напишите заказ в WhatsApp: <a href="https://wa.me/79270061958">+7 (927) 006-19-58</a></p></noscript>
+      <div class="b-grid">
+        <aside class="b-side">
+          <div class="preview" id="preview">
+            <svg id="cut" viewBox="0 0 360 132" role="img" aria-label="Шаурма в разрезе"></svg>
+            <div class="pv-meta"><b class="d" id="pvCount">×1</b><span data-t="pvLabel">в разрезе</span></div>
+          </div>
+          <div class="ticket" id="ticket">
+            <div class="t-head"><h3 class="d t-title" data-t="tTitle">Ваш заказ</h3><span class="t-stamp d" id="tStamp" aria-hidden="true">×1</span></div>
+            <div id="tLines" aria-live="polite"></div>
+            <a class="btn send" id="sendBtn" target="_blank" rel="noopener" href="https://wa.me/79270061958"><span class="wa-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.200a8.800 8.800 0 0 0-7.500 13.400L3.300 20.700l4.200-1.100A8.800 8.800 0 1 0 12 3.200z" fill="none" stroke="currentColor" stroke-width="1.900" stroke-linejoin="round"/><path fill="currentColor" d="M9.200 7.600c-.5 0-1 .6-1 1.700 0 2.400 3.100 5.900 5.900 6.500 1 .2 1.900-.4 2.100-1.200.1-.5-.1-.8-.5-1l-1.400-.6c-.4-.2-.7 0-.9.3-.2.3-.5.5-.9.3-.9-.4-1.900-1.400-2.300-2.300-.2-.4 0-.6.2-.8.3-.3.5-.7.3-1.100l-.5-1.300c-.2-.4-.5-.5-1-.5z"/></svg></span><span data-t="tSend">Отправить заказ в WhatsApp</span></a>
+            <a class="t-call" id="tCall" href="tel:+79270061958"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 3h3l1.600 4.300-2.100 1.500a11 11 0 0 0 4.700 4.700l1.500-2.100L20 13v3a2 2 0 0 1-2 2A14 14 0 0 1 5 5a2 2 0 0 1 2-2z"/></svg><span data-t="tCall">Позвонить</span><bdi dir="ltr" id="tCallNum">+7 (927) 006-19-58</bdi></a>
+            <p class="t-hint" data-t="tHint">Откроется WhatsApp с готовым текстом — останется нажать «Отправить».</p>
+          </div>
+        </aside>
+        <div class="b-opts" id="opts"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sides" id="reviews">
+    <div class="wrap">
+      <header class="sec-h">
+        <p class="kicker" id="sKicker">353 отзыва · 5,0 на Яндекс Картах</p>
+        <h2 class="h2 d" data-t="sH2">Хороша с четырёх сторон</h2>
+        <p class="sec-note" data-t="sIntro">Гости пишут, что шаурму здесь обжаривают на гриле с четырёх сторон. Хвалят её тоже с четырёх.</p>
+      </header>
+      <div class="sides-grid" id="sidesGrid"></div>
+      <div class="master" id="master"></div>
+      <div class="proof">
+        <div class="asp" id="aspects"></div>
+        <div class="rate" id="rate"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ask" id="ask">
+    <div class="wrap">
+      <header class="sec-h">
+        <h2 class="h2 d" data-t="qH2">Спросите в один тап</h2>
+        <p class="sec-note" data-t="qSub">Чего нет на странице — подскажет мастер. Вопрос уже набран, останется отправить.</p>
+      </header>
+      <div class="ask-grid" id="askGrid"></div>
+    </div>
+  </section>
+
+  <section class="find" id="find">
+    <div class="wrap">
+      <div class="find-g">
+        <div>
+          <p class="kicker" data-t="fKicker">Как найти</p>
+          <h2 class="addr" id="addr"><span class="fit"><span>Московское</span></span><span class="fit"><span>шоссе, 33А</span></span></h2>
+          <p class="find-sub" id="findSub">Долгопрудный, Московская область</p>
+          <ul class="transit" id="transit"></ul>
+          <div class="find-cta">
+            <a class="btn" id="routeBtn" target="_blank" rel="noopener" href="https://yandex.ru/maps/?rtext=~55.937598%2C37.520026&amp;rtt=auto"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l8 19-8-4.500L4 21z"/></svg><span data-t="fRoute">Построить маршрут</span></a>
+            <a class="btn ghost" id="ymBtn" target="_blank" rel="noopener" href="https://yandex.ru/maps/org/arabskaya_shaurma/85926063637/"><span data-t="fYmaps">Открыть в Яндекс Картах</span></a>
+          </div>
+        </div>
+        <div class="map" id="map">
+          <svg class="map-pin" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" stroke="#14110F" stroke-width="1.500" d="M12 22.500s7.500-7.300 7.500-12.700a7.500 7.500 0 1 0-15 0c0 5.400 7.500 12.700 7.500 12.700z"/><circle cx="12" cy="9.800" r="2.700" fill="#FFD21E" stroke="#14110F" stroke-width="1.500"/></svg>
+          <iframe id="mapFrame" title="Карта: Арабская шаурма, Московское ш., 33А" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <div class="sched">
+        <h3 class="d"><span data-t="fHours">Часы работы</span><span class="status" id="findStatus" data-open="1" hidden><i class="dot"></i><span></span></span></h3>
+        <ul class="week" id="week"></ul>
+        <p class="feat-t" data-t="fFeat">В карточке на Яндекс Картах</p>
+        <div class="chips" id="chips"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <p class="ftr-name d" id="ftrName">Арабская шаурма</p>
+    <div class="ftr-g">
+      <div>
+        <p id="ftrAddr">Московская область, Долгопрудный, Московское шоссе, 33А</p>
+        <p id="ftrHours">пн–сб 09:00–22:00 · вс 10:00–22:00</p>
+      </div>
+      <div class="ftr-links">
+        <a id="ftrTel" href="tel:+79270061958" dir="ltr">+7 (927) 006-19-58</a>
+        <a id="ftrWa" target="_blank" rel="noopener" href="https://wa.me/79270061958">WhatsApp</a>
+        <a id="ftrYm" target="_blank" rel="noopener" href="https://yandex.ru/maps/org/arabskaya_shaurma/85926063637/" data-t="ftYm">Яндекс Карты</a>
+        <a id="ftrRev" target="_blank" rel="noopener" href="https://yandex.ru/maps/org/arabskaya_shaurma/85926063637/reviews/" data-t="allRev">Все отзывы на Яндекс Картах</a>
+      </div>
+    </div>
+    <div class="ftr-notes">
+      <p id="ftrDemo">Демо-концепт · пример сайта для «Арабская шаурма» от Альхассана Альфаррана · не официальный сайт</p>
+      <p data-t="ftSrc">Цены и данные взяты из карточки на Яндекс Картах и могут отличаться.</p>
+      <p data-t="ftBuild">Варианты в конструкторе собраны по отзывам гостей; состав и цену подтверждает кафе.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="bar" id="bar">
+  <a class="bar-main" id="barMain" href="#build"><span id="barText">Собрать шаурму</span></a>
+  <a class="bar-call" id="barCall" href="tel:+79270061958" aria-label="Позвонить"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 3h3l1.600 4.300-2.100 1.500a11 11 0 0 0 4.700 4.700l1.500-2.100L20 13v3a2 2 0 0 1-2 2A14 14 0 0 1 5 5a2 2 0 0 1 2-2z"/></svg></a>
+</div>
+
+<script src="data.js"></script>
+<script>
+(function () {
+'use strict';
+var BIZ = window.BIZ;
+if (!BIZ) return;
+
+/* ---------- helpers ---------- */
+var $ = function (s, r) { return (r || document).querySelector(s); };
+var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+var NB = ' ';
+var esc = function (s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+var wa = function (text) { return 'https://wa.me/' + BIZ.wa + '?text=' + encodeURIComponent(text); };
+var pad = function (n) { return String(n).padStart(2, '0'); };
+var plural = function (n, one, few, many) { var a = Math.abs(n) % 100, b = a % 10; return a > 10 && a < 20 ? many : b === 1 ? one : b >= 2 && b <= 4 ? few : many; };
+var arPl = function (n, one, two, few, many, other) { var m = n % 100; return n === 1 ? one : n === 2 ? two : (m >= 3 && m <= 10) ? n + ' ' + few : (m >= 11 && m <= 99) ? n + ' ' + many : n + ' ' + other; };
+var mins = function (s) { return +s.slice(0, 2) * 60 + +s.slice(3); };
+var hhmm = function (v) { return pad(Math.floor(v / 60) % 24) + ':' + pad(v % 60); };
+var lang = 'ru';
+
+/* ---------- facts from the Yandex card ---------- */
+var R = BIZ.rating || { value: 0, count: 0, reviews: 0 };
+var parts = (BIZ.fullAddress || '').split(', ');
+var REGION = parts.length >= 4 ? parts[0] : '';
+var CITY = parts.length >= 4 ? parts[1] : '';
+var STREET = parts.length >= 4 ? parts.slice(2).join(', ') : (BIZ.address || '');
+var feat = function (k) { var f = (BIZ.features || []).filter(function (x) { return x.k === k; })[0]; return f ? f.v : null; };
+var AVG = feat('средний счёт') ? String(feat('средний счёт')).replace(/\s*₽/, NB + '₽') : null;
+/* nearest stops: from the same Yandex card (lead file), not present in data.js */
+var STOPS = [
+  { type: 'bus', name: 'Комсомольская улица, 2', dist: '18 м' },
+  { type: 'train', name: 'Долгопрудная', dist: '189 м' }
+];
+/* highlight phrase Yandex shows under the card */
+var HIGHLIGHT = 'самая лучшая арабская шаурма в Москве';
+
+/* ---------- builder options: everything here is mentioned in guests' reviews ---------- */
+var FILL = [
+  { id: 'chicken', ru: 'Курица', ruS: 'грудка с вертела', ar: 'دجاج', arS: 'صدر دجاج على السيخ' },
+  { id: 'falafel', ru: 'Фалафель', ruS: 'без мяса', ar: 'فلافل', arS: 'بدون لحم' }
+];
+var BREAD = [
+  { id: 'arab', ru: 'Арабский', ruS: 'советуют гости', ar: 'خبز عربي', arS: 'ينصح به الزبائن' },
+  { id: 'master', ru: 'На выбор мастера', ruS: 'посоветует сам', ar: 'حسب اختيار المعلّم', arS: 'ينصحك بنفسه' }
+];
+var MEAT = [
+  { id: 'n', ru: 'Обычная порция', ar: 'كمية عادية' },
+  { id: 'd', ru: 'Двойное мясо', ar: 'دجاج مضاعف' }
+];
+var ADDS = [
+  { id: 'mush', ru: 'Грибы', ar: 'فطر' },
+  { id: 'cheese', ru: 'Сыр', ar: 'جبنة' },
+  { id: 'jal', ru: 'Халапеньо', ar: 'هالبينو' },
+  { id: 'sauce', ru: 'Побольше соуса', ar: 'صلصة إضافية' }
+];
+var EXTRAS = [
+  { id: 'fries', ru: 'Картошка фри с соусом', ar: 'بطاطا مقلية مع الصلصة' },
+  { id: 'falafel', ru: 'Фалафель', ar: 'فلافل' },
+  { id: 'hummus', ru: 'Хумус', ar: 'حمّص', ask: true },
+  { id: 'mutabbal', ru: 'Мутаббаль', ar: 'متبّل' },
+  { id: 'cola', ru: 'Кола', ar: 'كولا' },
+  { id: 'tea', ru: 'Чай', ar: 'شاي' },
+  { id: 'coffee', ru: 'Кофе', ar: 'قهوة' },
+  { id: 'choco', ru: 'Горячий шоколад', ar: 'شوكولاتة ساخنة' }
+];
+var WAYS = [
+  { id: 'take', ru: 'С собой', ar: 'سفري' },
+  { id: 'here', ru: 'Поем у вас', ar: 'داخل المطعم' },
+  { id: 'dlv', ru: 'Доставка', ar: 'توصيل' }
+];
+var WHENS = [
+  { id: 'asap', ru: 'Как можно скорее', ar: 'في أقرب وقت' },
+  { id: '30', ru: 'Через 30 минут', ar: 'بعد 30 دقيقة' },
+  { id: '60', ru: 'Через час', ar: 'بعد ساعة' },
+  { id: 'open', ru: 'К открытию', ar: 'عند الافتتاح' },
+  { id: 'time', ru: 'Ко времени', ar: 'في وقت محدد' }
+];
+var PRESETS = [
+  { id: 'first', set: { fill: 'chicken', bread: 'arab', meat: 'n', add: {} },
+    ru: ['В первый раз', 'курица в арабском лаваше', 'так советуют в отзывах'],
+    ar: ['للمرة الأولى', 'دجاج بخبز عربي', 'كما تنصح المراجعات'] },
+  { id: 'vadim', set: { fill: 'chicken', bread: 'arab', meat: 'd', add: { mush: 1, cheese: 1, jal: 1 } },
+    ru: ['Топ Вадима Д.', 'арабский лаваш, двойное мясо, грибы, сыр, халапеньо', 'из его отзыва на Яндекс Картах'],
+    ar: ['طلب Вадим Д.', 'خبز عربي، دجاج مضاعف، فطر، جبنة، هالبينو', 'من مراجعته على خرائط ياندكس'] },
+  { id: 'falafel', set: { fill: 'falafel', bread: 'master', meat: 'n', add: {} },
+    ru: ['С фалафелем', 'фалафель вместо курицы', 'как берёт Власов М.'],
+    ar: ['بالفلافل', 'فلافل بدل الدجاج', 'كما طلبها Власов М.'] }
+];
+
+/* ---------- reviews: verbatim from Yandex Maps (shortened only at sentence boundaries) ---------- */
+var rvx = function (author, from) {
+  var r = (BIZ.reviews || []).filter(function (x) { return x.a === author; })[0];
+  if (!r) return null;
+  var x = r.x;
+  if (from) { var i = x.indexOf(from); if (i > 0) x = '…' + x.slice(i); }
+  return x;
+};
+var QUOTES = [
+  { a: 'Леонид П.', x: (rvx('Леонид П.', 'Попробуйте') || '…Попробуйте в арабском лаваше. Божественно вкусно и владелец точки очень приятный человек.') + ' Беру шаурму теперь только у него, даже когда нужно переться через полгорода.' },
+  { a: 'Вадим Д.', x: rvx('Вадим Д.') || 'Самые качественные продукты, на вертеле только куриная грудка (самое дорогое мясо), соус ОЧЕНЬ вкусный и никогда не бывает заветренным - тут это просто невозможно.' },
+  { a: 'Роман И.', x: '…Мясо сочное, хорошо прожаренное, свежие овощи, идеальный баланс соуса и специй. Лаваш хрустящий снаружи и мягкий внутри всё как должно быть…' },
+  { a: 'Валерия М.', x: '…Поджаренная со всех, со всех четырех сторон шаурма, хруст сопровождается до самого конца!…' },
+  { a: 'Mikhail C.', x: rvx('Mikhail C.') || 'Отличное место. Очень вкусно, идеально чисто и аутентично: все пропитано обаянием хозяина и соло работника Башара.' },
+  { a: 'Арсений Ш.', x: rvx('Арсений Ш.') || 'Просто нереально вкусно! Хозяин очень позитивный, всех гостей помнит в лицо, очень приятно возвращаться сюда снова и снова, ведь вкуснее шаурму вы вряд ли вообще найдете, всегда свежие и качественные продукты…' }
+];
+
+/* ---------- strings ---------- */
+var DAYS = {
+  ru: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
+  ruS: ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'],
+  ruAcc: ['в понедельник', 'во вторник', 'в среду', 'в четверг', 'в пятницу', 'в субботу', 'в воскресенье'],
+  ar: ['الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت', 'الأحد']
+};
+var ASPECT_AR = { 'Еда': 'الطعام', 'Шаверма': 'الشاورما', 'Фаст-фуд': 'الوجبات السريعة', 'Мясо': 'اللحم', 'Персонал': 'طاقم العمل', 'Атмосфера': 'الأجواء', 'Фалафель': 'الفلافل', 'Чистота': 'النظافة' };
+var FEAT_AR = { 'цены': 'الأسعار', 'средние': 'متوسطة', 'доставка еды': 'توصيل الطلبات', 'средний счёт': 'متوسط الفاتورة', 'кофе с собой': 'قهوة سفري', 'еда навынос': 'طلبات سفري', 'специальное меню': 'قائمة خاصة', 'шаурма': 'شاورما', 'кухня': 'المطبخ', 'арабская': 'عربي' };
+var rateTxt = function () { var v = (+R.value).toFixed(1); return lang === 'ar' ? v : v.replace('.', ','); };
+
+var S = {
+  ru: {
+    demo: 'Демо-концепт · пример сайта для «' + BIZ.name + '» от Альхассана Альфаррана · не официальный сайт',
+    langBtn: 'العربية', langAria: 'Переключить язык: арабский', langAttr: 'ar',
+    navBuild: 'Собрать шаурму', navRev: 'Отзывы', navFind: 'Как найти',
+    city: CITY, h1: (BIZ.name || '').split(' '),
+    lead: function () { return 'Куриная грудка с вертела, арабский лаваш, гриль с четырёх сторон. Так её описывают гости — и ставят ' + rateTxt() + '.'; },
+    rateCount: function (n) { return n + ' ' + plural(n, 'оценка', 'оценки', 'оценок'); },
+    revCount: function (n) { return n + ' ' + plural(n, 'отзыв', 'отзыва', 'отзывов'); },
+    ym: 'Яндекс Карты', rateAria: function () { return 'Оценка ' + rateTxt() + ' на Яндекс Картах, ' + S.ru.rateCount(R.count) + '. Открыть отзывы'; },
+    quoteSrc: 'из отзывов на Яндекс Картах',
+    ctaBuild: 'Собрать шаурму', ctaCall: 'Позвонить',
+    stopBus: function (n) { return 'Остановка «' + n + '»'; }, stopTrain: function (n) { return 'Станция МЦД ' + n; }, metro: function (n) { return 'Метро ' + n; },
+    factBill: function (v) { return 'Средний счёт ' + v; },
+    ways: { 'еда навынос': 'навынос', 'доставка еды': 'доставка', 'кофе с собой': 'кофе с собой' },
+    mqTag: 'Из отзывов гостей', mq: ['куриная грудка с вертела', 'арабский лаваш', 'гриль с четырёх сторон', 'лёгкий соус', 'хруст до самого конца', 'фалафель, хумус, мутаббаль'],
+    stOpen: function (t) { return 'Открыто · до ' + t; }, st24: 'Круглосуточно',
+    stToday: function (t) { return 'Закрыто · откроется в ' + t; },
+    stTomorrow: function (t) { return 'Закрыто · откроется завтра в ' + t; },
+    stDay: function (d, t) { return 'Закрыто · откроется ' + DAYS.ruAcc[d] + ' в ' + t; },
+    dayOff: 'выходной', today: 'сегодня',
+    bKicker: 'Конструктор · по отзывам гостей', bH2: 'Соберите свою шаурму',
+    bNote: 'Меню в карточке на Яндекс Картах нет, поэтому варианты взяты из отзывов гостей. Состав и цену подтвердит мастер — заказ уйдёт ему в WhatsApp.',
+    presetsT: 'Как берут гости',
+    s1: 'Начинка', s1c: function (p, c) { return 'Гости пишут: на вертеле только куриная грудка. Фалафель тоже хвалят — ' + p + ' из ' + c + ' упоминаний положительные.'; },
+    s2: 'Лаваш', s2c: 'В отзывах советуют именно арабский.',
+    s3: 'Мясо',
+    s4: 'Добавки', s4c: 'Внутри, по словам гостей: пекинская капуста, солёные огурцы, помидоры и чесночный соус.',
+    s5: 'Сколько штук',
+    s6: 'К шаурме', s6c: 'Тоже из отзывов. Нажмите, чтобы добавить.',
+    s7: 'Как заберёте', s7dlv: 'Доставка указана в карточке на Яндекс Картах. Условия и стоимость мастер напишет в ответе.',
+    s8: 'К какому времени', timeL: 'Время:',
+    closedNote: 'Сейчас закрыто — заказ можно отправить заранее.',
+    badTime: function (a, b) { return 'В это время закрыто. Часы работы: ' + a + '–' + b + '.'; },
+    ifAvail: 'если есть', minus: 'Убрать одну', plus: 'Добавить', less: 'Меньше', more: 'Больше',
+    pvLabel: 'в разрезе', cutAria: 'Шаурма в разрезе: меняется по вашему выбору',
+    tTitle: 'Ваш заказ', mChicken: 'Шаурма с курицей', mFalafel: 'Шаурма с фалафелем',
+    dArab: 'арабский лаваш', dMaster: 'лаваш на выбор мастера', dDouble: 'двойное мясо',
+    comma: ', ', semi: '; ', addWord: 'добавить:',
+    price: 'Цена', priceV: 'подтвердит мастер',
+    bill: function (v) { return 'Средний счёт по Яндекс Картам — ' + v + '.'; },
+    tSend: 'Отправить заказ в WhatsApp', tCall: 'Позвонить', tHint: 'Откроется WhatsApp с готовым текстом — останется нажать «Отправить».',
+    whenL: { asap: 'как можно скорее', '30': 'через 30 минут', '60': 'через час' },
+    whenTime: function (t) { return 'к ' + t; }, whenOpen: function (t) { return 'к открытию · ' + t; },
+    openPhrase: function (st) { return (st.in === 0 ? '' : st.in === 1 ? 'завтра ' : DAYS.ruAcc[st.day] + ' ') + 'к открытию, в ' + st.at; },
+    msgHi: 'Здравствуйте! Хочу заказать:', msgIfAvail: '(если есть сегодня)',
+    msgWhen: function (way, when, a) {
+      var W = {
+        take: { asap: 'Заберу с собой, как только будет готово.', '30': 'Заберу с собой примерно через 30 минут.', '60': 'Заберу с собой примерно через час.', time: 'Заберу с собой к ' + a + '.', open: 'Заберу с собой ' + a + '.' },
+        here: { asap: 'Поем у вас, скоро буду.', '30': 'Поем у вас, буду примерно через 30 минут.', '60': 'Поем у вас, буду примерно через час.', time: 'Поем у вас, буду к ' + a + '.', open: 'Поем у вас, приду ' + a + '.' },
+        dlv: { asap: 'Нужна доставка, как можно скорее.', '30': 'Нужна доставка примерно через 30 минут.', '60': 'Нужна доставка примерно через час.', time: 'Нужна доставка к ' + a + '.', open: 'Нужна доставка ' + a + '.' }
+      };
+      return W[way][when] + (way === 'dlv' ? ' Адрес напишу следующим сообщением.' : '');
+    },
+    msgSum: 'Подскажите, пожалуйста, сумму заказа.', msgSumDlv: 'Подскажите, пожалуйста, сумму заказа и стоимость доставки.',
+    msgGeneric: 'Здравствуйте! Хочу заказать шаурму.',
+    sKicker: function () { return S.ru.revCount(R.reviews) + ' · ' + rateTxt() + ' на Яндекс Картах'; },
+    sH2: 'Хороша с четырёх сторон', sIntro: 'Гости пишут, что шаурму здесь обжаривают на гриле с четырёх сторон. Хвалят её тоже с четырёх.',
+    sideK: ['Сторона 1 · Лаваш', 'Сторона 2 · Мясо', 'Сторона 3 · Соус', 'Сторона 4 · Гриль'],
+    sideT: ['Арабский лаваш', 'Куриная грудка с вертела', 'Соус и овощи в балансе', 'Хруст до самого конца'],
+    revSrc: 'отзыв на Яндекс Картах',
+    mKicker: 'И пятая сторона', mTitle: 'Человек у вертела', mText: 'В отзывах хозяина называют по имени — Башар — и пишут, что гостей он помнит в лицо.',
+    aTitle: 'Что отмечают в отзывах', aNote: 'Данные Яндекс Карт: сколько отзывов упоминают тему и сколько из них — с похвалой.',
+    aRow: function (p, c) { return '<b>' + p + '</b> из ' + c; },
+    allRev: 'Все отзывы на Яндекс Картах', ftYm: 'Яндекс Карты',
+    rateLine: function () { return S.ru.rateCount(R.count) + ' и ' + S.ru.revCount(R.reviews) + ' на Яндекс Картах'; },
+    qH2: 'Спросите в один тап', qSub: 'Чего нет на странице — подскажет мастер. Вопрос уже набран, останется отправить.',
+    qs: [
+      ['Сколько стоит шаурма?', 'Здравствуйте! Подскажите, пожалуйста, сколько стоит шаурма и что ещё есть в меню?'],
+      ['Как работает доставка?', 'Здравствуйте! Подскажите, пожалуйста, куда вы доставляете и сколько стоит доставка?'],
+      ['Есть ли сегодня хумус?', 'Здравствуйте! Подскажите, пожалуйста, есть ли сегодня хумус и мутаббаль?'],
+      ['Что есть из арабских продуктов?', 'Здравствуйте! В отзывах пишут, что у вас можно купить продукты арабского мира. Подскажите, пожалуйста, что есть сейчас?']
+    ],
+    fKicker: 'Как найти', findSub: function () { return [CITY, REGION].filter(Boolean).join(', '); },
+    fRoute: 'Построить маршрут', fYmaps: 'Открыть в Яндекс Картах', fHours: 'Часы работы', fFeat: 'В карточке на Яндекс Картах',
+    mapTitle: 'Карта: ' + BIZ.name + ', ' + BIZ.address,
+    ftSrc: 'Цены и данные взяты из карточки на Яндекс Картах и могут отличаться.',
+    ftBuild: 'Варианты в конструкторе собраны по отзывам гостей; состав и цену подтверждает кафе.',
+    barBuild: 'Собрать шаурму', barSend: 'Отправить заказ', callAria: 'Позвонить'
+  },
+  ar: {
+    demo: 'نموذج تجريبي · مثال لموقع «' + BIZ.name + '» من تصميم الحسن الفران · ليس الموقع الرسمي',
+    langBtn: 'Русский', langAria: 'تغيير اللغة: الروسية', langAttr: 'ru',
+    navBuild: 'اصنع شاورمتك', navRev: 'آراء الزبائن', navFind: 'العنوان',
+    city: 'دولغوبرودني', h1: ['الشاورما', 'العربية'],
+    lead: function () { return 'صدر دجاج على السيخ، خبز عربي، وتحميص على الشواية من الجهات الأربع. هكذا يصفها الزبائن، ويمنحونها تقييم ' + rateTxt() + '.'; },
+    rateCount: function (n) { return arPl(n, 'تقييم واحد', 'تقييمان', 'تقييمات', 'تقييمًا', 'تقييم'); },
+    revCount: function (n) { return arPl(n, 'مراجعة واحدة', 'مراجعتان', 'مراجعات', 'مراجعة', 'مراجعة'); },
+    ym: 'خرائط ياندكس', rateAria: function () { return 'التقييم ' + rateTxt() + ' على خرائط ياندكس، ' + S.ar.rateCount(R.count) + '. فتح المراجعات'; },
+    quoteSrc: 'من مراجعات خرائط ياندكس',
+    ctaBuild: 'اصنع شاورمتك', ctaCall: 'اتصال',
+    stopBus: function (n) { return 'موقف حافلات «' + n + '»'; }, stopTrain: function (n) { return 'محطة قطار МЦД «' + n + '»'; }, metro: function (n) { return 'مترو ' + n; },
+    factBill: function (v) { return 'متوسط الفاتورة ' + v; },
+    ways: { 'еда навынос': 'سفري', 'доставка еды': 'توصيل', 'кофе с собой': 'قهوة سفري' },
+    mqTag: 'من مراجعات الزبائن', mq: ['صدر دجاج على السيخ', 'خبز عربي', 'تحميص من الجهات الأربع', 'صلصة خفيفة', 'قرمشة حتى آخر لقمة', 'فلافل، حمّص، متبّل'],
+    stOpen: function (t) { return 'مفتوح الآن · حتى ' + t; }, st24: 'مفتوح على مدار الساعة',
+    stToday: function (t) { return 'مغلق الآن · يفتح الساعة ' + t; },
+    stTomorrow: function (t) { return 'مغلق الآن · يفتح غدًا الساعة ' + t; },
+    stDay: function (d, t) { return 'مغلق الآن · يفتح يوم ' + DAYS.ar[d] + ' الساعة ' + t; },
+    dayOff: 'مغلق', today: 'اليوم',
+    bKicker: 'اصنعها بنفسك · من مراجعات الزبائن', bH2: 'اصنع شاورمتك',
+    bNote: 'صفحة المكان على خرائط ياندكس لا تتضمن قائمة طعام، لذلك أُخذت الخيارات من مراجعات الزبائن. المكوّنات والسعر يؤكّدهما المعلّم، ويصله طلبك عبر واتساب.',
+    presetsT: 'هكذا يطلبها الزبائن',
+    s1: 'الحشوة', s1c: function (p, c) { return 'يكتب الزبائن أن السيخ لا يحمل إلا صدر الدجاج. والفلافل تنال المديح أيضًا: ' + p + ' من ' + c + ' مراجعة ذكرتها كانت إيجابية.'; },
+    s2: 'الخبز', s2c: 'في المراجعات ينصح الزبائن بالخبز العربي تحديدًا.',
+    s3: 'كمية الدجاج',
+    s4: 'الإضافات', s4c: 'في الداخل، بحسب الزبائن: ملفوف صيني، خيار مخلل، طماطم وصلصة ثوم.',
+    s5: 'العدد',
+    s6: 'مع الشاورما', s6c: 'من المراجعات أيضًا. اضغط للإضافة.',
+    s7: 'طريقة الاستلام', s7dlv: 'خدمة التوصيل مذكورة في صفحة المكان على خرائط ياندكس. الشروط والتكلفة يرسلها المعلّم في ردّه.',
+    s8: 'الوقت', timeL: 'الساعة:',
+    closedNote: 'المكان مغلق الآن، ويمكن إرسال الطلب مسبقًا.',
+    badTime: function (a, b) { return 'المكان مغلق في هذا الوقت. ساعات العمل: ' + a + '–' + b + '.'; },
+    ifAvail: 'إن توفّر', minus: 'إزالة واحدة', plus: 'إضافة', less: 'أقل', more: 'أكثر',
+    pvLabel: 'من الداخل', cutAria: 'الشاورما من الداخل: تتغيّر حسب اختيارك',
+    tTitle: 'طلبك', mChicken: 'شاورما دجاج', mFalafel: 'شاورما فلافل',
+    dArab: 'خبز عربي', dMaster: 'الخبز حسب اختيار المعلّم', dDouble: 'دجاج مضاعف',
+    comma: '، ', semi: '؛ ', addWord: 'الإضافات:',
+    price: 'السعر', priceV: 'يؤكّده المعلّم',
+    bill: function (v) { return 'متوسط الفاتورة حسب خرائط ياندكس: ' + v + '.'; },
+    tSend: 'إرسال الطلب عبر واتساب', tCall: 'اتصال', tHint: 'سيُفتح واتساب برسالة جاهزة، ويبقى الضغط على «إرسال».',
+    whenL: { asap: 'في أقرب وقت', '30': 'بعد 30 دقيقة', '60': 'بعد ساعة' },
+    whenTime: function (t) { return 'الساعة ' + t; }, whenOpen: function (t) { return 'عند الافتتاح · ' + t; },
+    openPhrase: function (st) { return (st.in === 0 ? '' : st.in === 1 ? 'غدًا ' : 'يوم ' + DAYS.ar[st.day] + ' ') + 'عند الافتتاح، الساعة ' + st.at; },
+    msgHi: 'السلام عليكم، أودّ أن أطلب:', msgIfAvail: '(إن توفّر اليوم)',
+    msgWhen: function (way, when, a) {
+      var W = {
+        take: { asap: 'سأستلم الطلب فور تجهيزه.', '30': 'سأستلم الطلب بعد 30 دقيقة تقريبًا.', '60': 'سأستلم الطلب بعد ساعة تقريبًا.', time: 'سأستلم الطلب الساعة ' + a + '.', open: 'سأستلم الطلب ' + a + '.' },
+        here: { asap: 'سآكل في المطعم، وسأصل قريبًا.', '30': 'سآكل في المطعم، وسأصل بعد 30 دقيقة تقريبًا.', '60': 'سآكل في المطعم، وسأصل بعد ساعة تقريبًا.', time: 'سآكل في المطعم، وسأصل الساعة ' + a + '.', open: 'سآكل في المطعم، وسأصل ' + a + '.' },
+        dlv: { asap: 'أحتاج إلى توصيل الطلب في أقرب وقت.', '30': 'أحتاج إلى توصيل الطلب بعد 30 دقيقة تقريبًا.', '60': 'أحتاج إلى توصيل الطلب بعد ساعة تقريبًا.', time: 'أحتاج إلى توصيل الطلب الساعة ' + a + '.', open: 'أحتاج إلى توصيل الطلب ' + a + '.' }
+      };
+      return W[way][when] + (way === 'dlv' ? ' سأرسل العنوان في الرسالة التالية.' : '');
+    },
+    msgSum: 'كم يبلغ إجمالي الطلب؟', msgSumDlv: 'كم يبلغ إجمالي الطلب وتكلفة التوصيل؟',
+    msgGeneric: 'السلام عليكم، أودّ أن أطلب شاورما.',
+    sKicker: function () { return S.ar.revCount(R.reviews) + ' · ' + rateTxt() + ' على خرائط ياندكس'; },
+    sH2: 'لذيذة من جهاتها الأربع', sIntro: 'يكتب الزبائن أن الشاورما هنا تُحمَّص على الشواية من جهاتها الأربع، ويمدحونها من أربع جهات أيضًا.',
+    sideK: ['الجهة 1 · الخبز', 'الجهة 2 · اللحم', 'الجهة 3 · الصلصة', 'الجهة 4 · الشواية'],
+    sideT: ['خبز عربي', 'صدر دجاج على السيخ', 'توازن الصلصة والخضار', 'قرمشة حتى آخر لقمة'],
+    revSrc: 'مراجعة على خرائط ياندكس (بالروسية)',
+    mKicker: 'والجهة الخامسة', mTitle: 'المعلّم خلف السيخ', mText: 'في المراجعات يذكر الزبائن صاحب المكان باسمه، بشار، ويقولون إنه يتذكّر وجوه زبائنه.',
+    aTitle: 'ما يذكره الزبائن في المراجعات', aNote: 'بيانات خرائط ياندكس: عدد المراجعات التي تذكر الموضوع، وعدد الإيجابية منها.',
+    aRow: function (p, c) { return '<b>' + p + '</b> من ' + c; },
+    allRev: 'جميع المراجعات على خرائط ياندكس', ftYm: 'خرائط ياندكس',
+    rateLine: function () { return S.ar.rateCount(R.count) + ' و' + S.ar.revCount(R.reviews) + ' على خرائط ياندكس'; },
+    qH2: 'اسأل بضغطة واحدة', qSub: 'ما لا تجده في الصفحة يجيبك عنه المعلّم. السؤال مكتوب مسبقًا، ويبقى الإرسال.',
+    qs: [
+      ['كم سعر الشاورما؟', 'السلام عليكم، كم سعر الشاورما، وماذا يوجد أيضًا في قائمة الطعام؟'],
+      ['كيف يتم التوصيل؟', 'السلام عليكم، إلى أين توصلون الطلبات، وكم تكلفة التوصيل؟'],
+      ['هل يتوفر الحمّص اليوم؟', 'السلام عليكم، هل يتوفر اليوم الحمّص والمتبّل؟'],
+      ['ما المنتجات العربية المتوفرة؟', 'السلام عليكم، قرأت في المراجعات أنكم تبيعون منتجات عربية. ما المتوفر منها حاليًا؟']
+    ],
+    fKicker: 'كيف تصل إلينا', findSub: function () { return 'دولغوبرودني، مقاطعة موسكو'; },
+    fRoute: 'عرض الاتجاهات', fYmaps: 'فتح في خرائط ياندكس', fHours: 'ساعات العمل', fFeat: 'في صفحة المكان على خرائط ياندكس',
+    mapTitle: 'الخريطة: ' + BIZ.name,
+    ftSrc: 'الأسعار والبيانات مأخوذة من صفحة المكان على خرائط ياندكس وقد تختلف.',
+    ftBuild: 'خيارات الطلب مأخوذة من مراجعات الزبائن، والمكوّنات والسعر يؤكّدهما المطعم.',
+    barBuild: 'اصنع شاورمتك', barSend: 'إرسال الطلب', callAria: 'اتصال'
+  }
+};
+var t = function (k) {
+  var v = (S[lang] && k in S[lang]) ? S[lang][k] : S.ru[k];
+  return typeof v === 'function' ? v.apply(null, Array.prototype.slice.call(arguments, 1)) : (v == null ? '' : v);
+};
+var L = function (o, suffix) { return o[lang + (suffix || '')] || o['ru' + (suffix || '')] || ''; };
+
+/* ---------- opening hours, Moscow time ---------- */
+function mskNow() {
+  if (window.__testNow) return new Date(window.__testNow);
+  var d = new Date();
+  return new Date(d.getTime() + (d.getTimezoneOffset() + 180) * 60000);
+}
+function statusNow(now) {
+  now = now || mskNow();
+  var H = BIZ.hours;
+  if (!H) return null;
+  if (BIZ.is24) return { open: true, all: true };
+  var day = (now.getDay() + 6) % 7, m = now.getHours() * 60 + now.getMinutes(), i, iv, a, b;
+  var prev = H[(day + 6) % 7];
+  for (i = 0; i < prev.length; i++) if (mins(prev[i][1]) <= mins(prev[i][0]) && m < mins(prev[i][1])) return { open: true, until: prev[i][1] };
+  for (i = 0; i < H[day].length; i++) { iv = H[day][i]; a = mins(iv[0]); b = mins(iv[1]) <= a ? mins(iv[1]) + 1440 : mins(iv[1]); if (m >= a && m < b) return { open: true, until: iv[1] }; }
+  for (i = 0; i < H[day].length; i++) if (m < mins(H[day][i][0])) return { open: false, at: H[day][i][0], in: 0, day: day };
+  for (i = 1; i <= 7; i++) { var d = (day + i) % 7; if (H[d].length) return { open: false, at: H[d][0][0], in: i, day: d }; }
+  return null;
+}
+function statusText(st) {
+  if (!st) return '';
+  if (st.all) return t('st24');
+  if (st.open) return t('stOpen', st.until);
+  return st.in === 0 ? t('stToday', st.at) : st.in === 1 ? t('stTomorrow', st.at) : t('stDay', st.day, st.at);
+}
+function dayHours(d) { return BIZ.hours[d].map(function (p) { return p[0] + '–' + p[1]; }).join(', '); }
+function hoursSummary() {
+  var H = BIZ.hours;
+  if (!H) return '';
+  if (BIZ.is24) return t('st24');
+  var out = [], s = 0, d;
+  var name = function (i) { return lang === 'ar' ? DAYS.ar[i] : DAYS.ruS[i]; };
+  for (d = 1; d <= 7; d++) if (d === 7 || dayHours(d) !== dayHours(s)) { out.push((s === d - 1 ? name(s) : name(s) + '–' + name(d - 1)) + NB + (dayHours(s) || t('dayOff'))); s = d; }
+  return out.join(' · ');
+}
+var dist = function (d) {
+  var m = /^([\d.,]+)\s*(м|км)$/.exec(d);
+  if (!m) return d;
+  return lang === 'ar' ? m[1].replace(',', '.') + NB + (m[2] === 'км' ? 'كم' : 'م') : m[1] + NB + m[2];
+};
+
+/* ---------- icons ---------- */
+var STAR = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.500l2.600 5.400 5.900.8-4.300 4.100 1.100 5.800L10 14.800l-5.300 2.800 1.100-5.800L1.500 7.700l5.900-.8z"/></svg>';
+var stars = function () { return '<span class="stars" aria-hidden="true">' + STAR + STAR + STAR + STAR + STAR + '</span>'; };
+var IC = {
+  train: '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 11h14M8.500 21l1.500-4M15.500 21L14 17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="14" r="1.200" fill="currentColor"/><circle cx="15" cy="14" r="1.200" fill="currentColor"/></svg>',
+  bus: '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 11h16" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="19.500" r="1.700" fill="currentColor"/><circle cx="16" cy="19.500" r="1.700" fill="currentColor"/></svg>',
+  bill: '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8h6M9 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  bag: '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 13H6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="2"/></svg>',
+  go: '<svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12.500 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.600" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  wa: '<span class="wa-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.200a8.800 8.800 0 0 0-7.500 13.400L3.300 20.700l4.200-1.100A8.800 8.800 0 1 0 12 3.200z" fill="none" stroke="currentColor" stroke-width="1.900" stroke-linejoin="round"/><path fill="currentColor" d="M9.200 7.600c-.5 0-1 .6-1 1.700 0 2.400 3.100 5.900 5.900 6.500 1 .2 1.900-.4 2.100-1.200.1-.5-.1-.8-.5-1l-1.400-.6c-.4-.2-.7 0-.9.3-.2.3-.5.5-.9.3-.9-.4-1.900-1.400-2.300-2.300-.2-.4 0-.6.2-.8.3-.3.5-.7.3-1.100l-.5-1.300c-.2-.4-.5-.5-1-.5z"/></svg></span>'
+};
+var sideIc = function (n) {
+  var bars = ['M13 5h18', 'M39 13v18', 'M13 39h18', 'M5 13v18'];
+  var inner = n === 5 ? bars.map(function (b) { return '<path d="' + b + '" stroke="var(--hl)" stroke-width="6" stroke-linecap="round"/>'; }).join('') + '<circle cx="22" cy="22" r="5" fill="currentColor"/>'
+    : '<path d="' + bars[n - 1] + '" stroke="var(--hl)" stroke-width="6" stroke-linecap="round"/>';
+  return '<svg class="side-ic" viewBox="0 0 44 44" aria-hidden="true"><rect x="9" y="9" width="26" height="26" rx="7" fill="none" stroke="currentColor" stroke-width="3"/>' + inner + '</svg>';
+};
+
+/* ---------- hero art: the spit ---------- */
+function renderSpit() {
+  var y0 = 48, h = 27, step = 25;
+  var W = [92, 124, 144, 150, 142, 126, 104, 80], OFF = [2, -3, 1, 0, -2, 3, -1, 1];
+  var rect = function (i, extra) { var w = W[i]; return '<rect x="' + (180 - w / 2 + OFF[i]) + '" y="' + (y0 + i * step) + '" width="' + w + '" height="' + h + '" rx="11" ' + extra + '/>'; };
+  var fills = '', outlines = '', clip = '', stripes = '', bars = '', i;
+  for (i = 0; i < W.length; i++) { fills += rect(i, 'fill="' + (i % 2 ? '#EFB24C' : '#F8CC6E') + '"'); outlines += rect(i, 'fill="none"'); clip += rect(i, ''); }
+  for (i = 0; i < 8; i++) stripes += '<rect x="' + (40 + i * 40) + '" y="40" width="13" height="220" fill="#B9601A" opacity=".42"/>';
+  for (i = 0; i < 6; i++) bars += '<rect x="287" y="' + (82 + i * 26) + '" width="16" height="9" rx="4.5" fill="#FFD21E"/>';
+  $('#spit').innerHTML =
+    '<defs><clipPath id="coneClip">' + clip + '</clipPath>' +
+    '<pattern id="ht" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(28)"><circle cx="4.5" cy="4.5" r="1.9" fill="#14110F"/></pattern>' +
+    '<linearGradient id="htFade" x1="0" y1="0" x2="1" y2="1"><stop offset=".4" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="1"/></linearGradient>' +
+    '<mask id="htMask"><circle cx="180" cy="150" r="143" fill="url(#htFade)"/></mask></defs>' +
+    '<circle cx="180" cy="150" r="143" fill="#D62B18"/>' +
+    '<rect x="30" y="0" width="300" height="300" fill="url(#ht)" opacity=".3" mask="url(#htMask)"/>' +
+    '<rect x="176" y="12" width="8" height="262" rx="4" fill="#14110F"/>' +
+    '<g>' + fills + '</g>' +
+    '<g clip-path="url(#coneClip)"><g class="turn">' + stripes + '</g><rect x="232" y="40" width="40" height="220" fill="#14110F" opacity=".1"/></g>' +
+    '<g stroke="#14110F" stroke-width="4" stroke-linejoin="round">' + outlines + '</g>' +
+    '<circle cx="180" cy="33" r="13" fill="#FFD21E" stroke="#14110F" stroke-width="4"/><path d="M174 31a7 7 0 0 1 6-5" fill="none" stroke="#14110F" stroke-width="2.4" stroke-linecap="round"/>' +
+    '<rect x="96" y="250" width="168" height="13" rx="6.5" fill="#14110F"/><rect x="150" y="262" width="60" height="14" rx="3" fill="#14110F"/>' +
+    '<rect x="280" y="66" width="30" height="176" rx="7" fill="#14110F"/><g class="glow">' + bars + '</g>';
+}
+
+/* ---------- builder art: the cross-section ---------- */
+var CUT = ['CTMCPDJCTS', 'PCDSCMTDCJ', 'DJCP_SCMD_'];
+var SHAPE = {
+  C: '<path d="M-11,-5Q-3,-11 9,-7Q14,-1 10,6Q1,11 -9,7Q-14,1 -11,-5Z" fill="#ECA847" stroke="#14110F" stroke-width="2.5" stroke-linejoin="round"/><path d="M-5,-2l8,4" stroke="#B4621A" stroke-width="2.4" stroke-linecap="round"/>',
+  D: '<path d="M-11,-5Q-3,-11 9,-7Q14,-1 10,6Q1,11 -9,7Q-14,1 -11,-5Z" fill="#E0963A" stroke="#14110F" stroke-width="2.5" stroke-linejoin="round"/><path d="M-5,-2l8,4" stroke="#A85616" stroke-width="2.4" stroke-linecap="round"/>',
+  F: '<circle r="10" fill="#A56C2D" stroke="#14110F" stroke-width="2.5"/><circle cx="-3" cy="-3" r="1.7" fill="#E6B86F"/><circle cx="3.5" cy="1" r="1.7" fill="#E6B86F"/><circle cx="-1" cy="4.5" r="1.5" fill="#6B4117"/>',
+  T: '<circle r="10" fill="#E5432E" stroke="#14110F" stroke-width="2.5"/><path d="M0,-6v12M-5.200,-3l10.400,6M-5.200,3l10.400,-6" stroke="#FFB7A0" stroke-width="1.8" stroke-linecap="round"/>',
+  P: '<circle r="9.5" fill="#9CC04A" stroke="#14110F" stroke-width="2.5"/><circle r="5" fill="#DCEBA4"/><circle cx="-1.500" cy="-1" r="1" fill="#7FA533"/><circle cx="1.800" cy="1.500" r="1" fill="#7FA533"/>',
+  M: '<path d="M-11,1A11,10.500 0 0 1 11,1Z" fill="#E9D7B5" stroke="#14110F" stroke-width="2.5" stroke-linejoin="round"/><rect x="-3.800" y="1" width="7.600" height="8.500" rx="2.400" fill="#FBF1DC" stroke="#14110F" stroke-width="2.5"/>',
+  S: '<path d="M-10,8L0,-9.500L10,8Z" fill="#FFB300" stroke="#14110F" stroke-width="2.5" stroke-linejoin="round"/><circle cx="-1" cy="3" r="1.800" fill="#D08400"/><circle cx="3.200" cy="5.300" r="1.200" fill="#D08400"/>',
+  J: '<circle r="9.5" fill="#1F7A33" stroke="#14110F" stroke-width="2.5"/><circle r="5" fill="#E3F4BE"/><circle cx="-1.800" cy="-1" r="1.100" fill="#1F7A33"/><circle cx="1.800" cy="1.600" r="1.100" fill="#1F7A33"/>',
+  A: '<circle r="4.600" fill="#FFFDF4" stroke="#14110F" stroke-width="2"/>'
+};
+function renderCut() {
+  var base = '', pieces = '', r, c, k, x, y, rot, n = 0;
+  var piece = function (key, x, y, rot, shape) { return '<g transform="translate(' + x + ' ' + y + ') rotate(' + rot + ')"><g class="pc" data-k="' + key + '">' + shape + '</g></g>'; };
+  for (r = 0; r < 3; r++) for (c = 0; c < 10; c++) {
+    k = CUT[r].charAt(c); x = (r === 1 ? 60 : 50) + c * 28.9; y = 44 + r * 22; rot = ((n * 37) % 44) - 22; n++;
+    base += '<path transform="translate(' + x + ' ' + y + ') rotate(' + (rot * 3) + ')" d="M-9,3q9,-10 18,0" fill="none" stroke="#A9CC56" stroke-width="4.500" stroke-linecap="round"/>';
+    if (k === '_') continue;
+    pieces += piece(k, x, y, rot, SHAPE[k]);
+    if (k === 'C') pieces += piece('F', x, y, rot, SHAPE.F);
+  }
+  [[93, 55], [151, 77], [209, 55], [267, 77]].forEach(function (p) { pieces += piece('A', p[0], p[1], 0, SHAPE.A); });
+  [[122, 55], [180, 77], [238, 55], [296, 77], [64, 55], [122, 99], [238, 99]].forEach(function (p) { pieces += piece('X', p[0], p[1], 0, SHAPE.A); });
+  $('#cut').innerHTML =
+    '<rect x="4" y="4" width="352" height="124" rx="62" fill="#F1D9A2" stroke="#14110F" stroke-width="5"/>' +
+    '<rect x="12" y="12" width="336" height="108" rx="54" fill="none" stroke="#B8752B" stroke-width="6" stroke-linecap="round" stroke-dasharray="15 21"/>' +
+    '<rect x="20" y="20" width="320" height="92" rx="46" fill="#FFF4D2" stroke="#14110F" stroke-width="3"/>' +
+    '<g>' + base + '</g><g>' + pieces + '</g>';
+}
+function syncCut() {
+  var on = {
+    C: state.fill === 'chicken', D: state.fill === 'chicken' && state.meat === 'd', F: state.fill === 'falafel',
+    T: true, P: true, A: true, M: !!state.add.mush, S: !!state.add.cheese, J: !!state.add.jal, X: !!state.add.sauce
+  };
+  $$('#cut .pc').forEach(function (el, i) {
+    var want = !!on[el.getAttribute('data-k')];
+    if (el.classList.contains('on') !== want) { el.style.transitionDelay = want ? ((i % 7) * 28) + 'ms' : '0ms'; el.classList.toggle('on', want); }
+  });
+}
+
+/* ---------- builder ---------- */
+var state = { fill: 'chicken', bread: 'arab', meat: 'n', add: {}, qty: 1, ex: {}, way: 'take', when: 'asap', time: '', touched: false };
+function defaultTime() {
+  var st = statusNow(), now = mskNow(), m = now.getHours() * 60 + now.getMinutes();
+  if (st && st.open && st.until) { var end = mins(st.until); if (end <= m) end += 1440; return hhmm(Math.min(Math.ceil((m + 40) / 10) * 10, end - 10)); }
+  if (st && !st.open) return hhmm(mins(st.at) + 30);
+  return '12:00';
+}
+function timeRange() {
+  var H = BIZ.hours;
+  if (!H || BIZ.is24) return null;
+  var st = statusNow(), now = mskNow(), d = (st && !st.open && st.in > 0) ? st.day : (now.getDay() + 6) % 7;
+  return H[d][0] || null;
+}
+function timeOk(v) {
+  var iv = timeRange();
+  if (!iv || !v) return true;
+  var a = mins(iv[0]), b = mins(iv[1]) <= a ? mins(iv[1]) + 1440 : mins(iv[1]), x = mins(v);
+  return x >= a && x <= b;
+}
+function renderOpts() {
+  var radio = function (g, o, extra) {
+    return '<button type="button" class="opt" role="radio" data-g="' + g + '" data-v="' + o.id + '" aria-checked="false"' + (extra || '') + '><span>' + esc(L(o)) + '</span>' + (L(o, 'S') ? '<small>' + esc(L(o, 'S')) + '</small>' : '') + '</button>';
+  };
+  var step = function (id, title, cap, body) {
+    return '<section class="step" id="st-' + id + '"><div class="step-h"><span class="step-n d" aria-hidden="true"></span><h3 class="step-t d">' + esc(title) + '</h3></div>' + (cap ? '<p class="step-c">' + esc(cap) + '</p>' : '') + body + '</section>';
+  };
+  var fal = (BIZ.aspects || []).filter(function (a) { return a.text === 'Фалафель'; })[0];
+  var h = '<h3 class="presets-t d">' + esc(t('presetsT')) + '</h3><div class="presets">' + PRESETS.map(function (p, i) {
+    var s = L(p);
+    return '<button type="button" class="preset" data-p="' + p.id + '" aria-pressed="false"><span class="n d" aria-hidden="true">' + (i + 1) + '</span><b class="d">' + esc(s[0]) + '</b><span>' + esc(s[1]) + '</span><small>' + esc(s[2]) + '</small></button>';
+  }).join('') + '</div>';
+  h += step('fill', t('s1'), fal ? t('s1c', fal.positive, fal.count) : '', '<div class="opts two" role="radiogroup" aria-label="' + esc(t('s1')) + '">' + FILL.map(function (o) { return radio('fill', o); }).join('') + '</div>');
+  h += step('bread', t('s2'), t('s2c'), '<div class="opts two" role="radiogroup" aria-label="' + esc(t('s2')) + '">' + BREAD.map(function (o) { return radio('bread', o); }).join('') + '</div>');
+  h += step('meat', t('s3'), '', '<div class="opts two" role="radiogroup" aria-label="' + esc(t('s3')) + '">' + MEAT.map(function (o) { return radio('meat', o); }).join('') + '</div>');
+  h += step('add', t('s4'), t('s4c'), '<div class="opts">' + ADDS.map(function (o) { return '<button type="button" class="opt" data-add="' + o.id + '" aria-pressed="false"><span>' + esc(L(o)) + '</span></button>'; }).join('') + '</div>');
+  h += step('qty', t('s5'), '', '<div class="qty"><button type="button" data-q="-1" aria-label="' + esc(t('less')) + '">−</button><output class="d" id="qtyOut" aria-live="polite">1</output><button type="button" data-q="1" aria-label="' + esc(t('more')) + '">+</button></div>');
+  h += step('ex', t('s6'), t('s6c'), '<div class="extras">' + EXTRAS.map(function (o) {
+    return '<div class="ex" data-exbox="' + o.id + '"><button type="button" class="ex-add" data-ex="' + o.id + '" aria-label="' + esc(t('plus') + ': ' + L(o)) + '"><span class="ex-n" aria-hidden="true">+</span><span>' + esc(L(o)) + (o.ask ? '<small>' + esc(t('ifAvail')) + '</small>' : '') + '</span></button><button type="button" class="ex-minus" data-exm="' + o.id + '" aria-label="' + esc(t('minus') + ': ' + L(o)) + '" hidden>−</button></div>';
+  }).join('') + '</div>');
+  h += step('way', t('s7'), '', '<div class="opts three" role="radiogroup" aria-label="' + esc(t('s7')) + '">' + WAYS.map(function (o) { return radio('way', o); }).join('') + '</div><p class="note" id="dlvNote" hidden>' + esc(t('s7dlv')) + '</p>');
+  h += step('when', t('s8'), '', '<p class="note" id="closedNote" hidden>' + esc(t('closedNote')) + '</p><div class="opts" role="radiogroup" aria-label="' + esc(t('s8')) + '">' + WHENS.map(function (o) { return radio('when', o); }).join('') + '</div>' +
+    '<div class="time-row" id="timeRow" hidden><label for="timeIn">' + esc(t('timeL')) + '</label><input type="time" id="timeIn" step="300" dir="ltr"></div><p class="note" id="timeNote" hidden></p>');
+  $('#opts').innerHTML = h;
+  $('#timeIn').value = state.time;
+}
+function mainName() { return state.fill === 'chicken' ? t('mChicken') : t('mFalafel'); }
+function details() {
+  var det = [state.bread === 'arab' ? t('dArab') : t('dMaster')];
+  if (state.fill === 'chicken' && state.meat === 'd') det.push(t('dDouble'));
+  return det;
+}
+function whenArg(st) { return state.when === 'time' ? state.time : (state.when === 'open' && st && !st.open ? t('openPhrase', st) : ''); }
+function orderText() {
+  var st = statusNow(), adds = ADDS.filter(function (a) { return state.add[a.id]; }).map(function (a) { return L(a); });
+  var main = '• ' + mainName() + ' × ' + state.qty + ' — ' + details().join(t('comma'));
+  if (adds.length) main += t('semi') + t('addWord') + ' ' + adds.join(t('comma'));
+  var x = [t('msgHi'), main];
+  EXTRAS.forEach(function (e) { var n = state.ex[e.id] | 0; if (n) x.push('• ' + L(e) + ' × ' + n + (e.ask ? ' ' + t('msgIfAvail') : '')); });
+  x.push(t('msgWhen', state.way, state.when, whenArg(st)));
+  x.push(t(state.way === 'dlv' ? 'msgSumDlv' : 'msgSum'));
+  return x.join('\n');
+}
+function total() { var n = state.qty; EXTRAS.forEach(function (e) { n += state.ex[e.id] | 0; }); return n; }
+var lastTotal = 1;
+function sync() {
+  var st = statusNow(), closed = !!(st && !st.open);
+  if (state.fill === 'falafel') state.meat = 'n';
+  if (closed && (state.when === 'asap' || state.when === '30' || state.when === '60')) state.when = 'open';
+  if (!closed && state.when === 'open') state.when = 'asap';
+  if (!state.time) state.time = defaultTime();
+
+  $$('#opts [data-g]').forEach(function (b) {
+    var g = b.getAttribute('data-g'), v = b.getAttribute('data-v');
+    b.setAttribute('aria-checked', String(state[g] === v));
+    if (g === 'when') {
+      b.hidden = closed ? (v === 'asap' || v === '30' || v === '60') : v === 'open';
+      if (v === 'open' && closed) b.querySelector('span').textContent = t('whenOpen', st.at).replace(/^./, function (c) { return c.toUpperCase(); });
+    }
+  });
+  $$('#opts [data-add]').forEach(function (b) { b.setAttribute('aria-pressed', String(!!state.add[b.getAttribute('data-add')])); });
+  $$('#opts [data-p]').forEach(function (b) {
+    var p = PRESETS.filter(function (x) { return x.id === b.getAttribute('data-p'); })[0].set;
+    var same = p.fill === state.fill && p.bread === state.bread && p.meat === state.meat && ADDS.every(function (a) { return !!p.add[a.id] === !!state.add[a.id]; });
+    b.setAttribute('aria-pressed', String(same));
+  });
+  $$('#opts [data-exbox]').forEach(function (box) {
+    var id = box.getAttribute('data-exbox'), n = state.ex[id] | 0;
+    box.classList.toggle('on', n > 0);
+    box.querySelector('.ex-n').textContent = n > 0 ? n : '+';
+    box.querySelector('.ex-minus').hidden = n === 0;
+  });
+  $('#st-meat').hidden = state.fill !== 'chicken';
+  $$('#opts .step:not([hidden]) .step-n').forEach(function (el, i) { el.textContent = pad(i + 1); });
+  $('#qtyOut').textContent = state.qty;
+  $('#dlvNote').hidden = state.way !== 'dlv';
+  $('#closedNote').hidden = !closed;
+  $('#timeRow').hidden = state.when !== 'time';
+  var iv = timeRange(), bad = state.when === 'time' && !timeOk(state.time);
+  $('#timeNote').hidden = !bad;
+  if (bad && iv) $('#timeNote').textContent = t('badTime', iv[0], iv[1]);
+
+  /* ticket */
+  var adds = ADDS.filter(function (a) { return state.add[a.id]; }).map(function (a) { return L(a); });
+  var h = '<div class="t-row"><span>' + esc(mainName()) + '</span><b>× ' + state.qty + '</b></div>' +
+    '<p class="t-sub">' + esc(details().join(t('comma'))) + (adds.length ? '<br>+ ' + esc(adds.join(t('comma'))) : '') + '</p>';
+  EXTRAS.forEach(function (e) { var n = state.ex[e.id] | 0; if (n) h += '<div class="t-row"><span>' + esc(L(e)) + (e.ask ? ' <i>(' + esc(t('ifAvail')) + ')</i>' : '') + '</span><b>× ' + n + '</b></div>'; });
+  var wayL = L(WAYS.filter(function (w) { return w.id === state.way; })[0]);
+  var whenL = state.when === 'time' ? t('whenTime', state.time) : state.when === 'open' ? t('whenOpen', st ? st.at : '') : t('whenL')[state.when];
+  h += '<hr class="t-hr"><div class="t-row t-p"><span>' + esc(wayL) + '</span><span>' + esc(whenL) + '</span></div>' +
+    '<hr class="t-hr"><div class="t-row t-p"><span>' + esc(t('price')) + '</span><span>' + esc(t('priceV')) + '</span></div>' +
+    (AVG ? '<p class="t-bill">' + esc(t('bill', AVG)) + '</p>' : '');
+  $('#tLines').innerHTML = h;
+
+  var n = total(), href = wa(orderText());
+  $('#sendBtn').href = href;
+  $('#pvCount').textContent = '×' + state.qty;
+  var stamp = $('#tStamp');
+  stamp.textContent = '×' + n;
+  if (n !== lastTotal) { stamp.classList.remove('bump'); void stamp.offsetWidth; stamp.classList.add('bump'); lastTotal = n; }
+  var bar = $('#barMain');
+  if (state.touched) {
+    bar.href = href; bar.target = '_blank'; bar.rel = 'noopener';
+    bar.innerHTML = IC.wa + '<span>' + esc(t('barSend')) + '</span><span class="bar-n">' + n + '</span>';
+  } else {
+    bar.href = '#build'; bar.removeAttribute('target'); bar.removeAttribute('rel');
+    bar.innerHTML = '<span>' + esc(t('barBuild')) + '</span>';
+  }
+  syncCut();
+}
+function onOptsClick(e) {
+  var b = e.target.closest ? e.target.closest('button') : null;
+  if (!b || !$('#opts').contains(b)) return;
+  var a = function (k) { return b.getAttribute(k); };
+  if (a('data-g')) state[a('data-g')] = a('data-v');
+  else if (a('data-add')) state.add[a('data-add')] = !state.add[a('data-add')];
+  else if (a('data-q')) state.qty = Math.max(1, Math.min(9, state.qty + +a('data-q')));
+  else if (a('data-ex')) state.ex[a('data-ex')] = Math.min(9, (state.ex[a('data-ex')] | 0) + 1);
+  else if (a('data-exm')) state.ex[a('data-exm')] = Math.max(0, (state.ex[a('data-exm')] | 0) - 1);
+  else if (a('data-p')) {
+    var p = PRESETS.filter(function (x) { return x.id === a('data-p'); })[0].set;
+    state.fill = p.fill; state.bread = p.bread; state.meat = p.meat; state.add = {};
+    Object.keys(p.add).forEach(function (k) { state.add[k] = true; });
+  } else return;
+  state.touched = true;
+  sync();
+}
+
+/* ---------- static sections ---------- */
+function setText(sel, v) { var el = $(sel); if (el) el.textContent = v; }
+function renderHero() {
+  setText('#demoBar', t('demo')); setText('#ftrDemo', t('demo'));
+  setText('#placeCity', t('city')); setText('#placeStreet', STREET);
+  $('#title').innerHTML = t('h1').map(function (w) { return '<span class="fit"><span>' + esc(w) + '</span></span>'; }).join('');
+  $('#title').setAttribute('aria-label', lang === 'ar' ? t('h1').join(' ') : BIZ.name);
+  setText('#hoursSum', hoursSummary()); setText('#ftrHours', hoursSummary());
+  setText('#lead', t('lead'));
+  var rs = $('#rateStk');
+  rs.href = BIZ.reviewsUrl; rs.setAttribute('aria-label', t('rateAria'));
+  rs.innerHTML = '<b>' + rateTxt() + '</b>' + stars() + '<span>' + esc(t('rateCount', R.count)) + '<br>' + esc(t('ym')) + '</span>';
+  $('.stk-quote p').textContent = '«' + HIGHLIGHT + '»';
+  var bi = $('#biStk');
+  if (lang === 'ar') { bi.textContent = BIZ.name; bi.lang = 'ru'; bi.dir = 'ltr'; } else { bi.textContent = 'الشاورما العربية'; bi.lang = 'ar'; bi.dir = 'rtl'; }
+  var facts = [], train = STOPS.filter(function (s) { return s.type === 'train'; })[0];
+  if (train) facts.push(IC.train + '<span>' + esc(t('stopTrain', train.name)) + ' — ' + esc(dist(train.dist)) + '</span>');
+  if (AVG) facts.push(IC.bill + '<span>' + esc(t('factBill', AVG)) + '</span>');
+  var ways = Object.keys(t('ways')).filter(function (k) { return feat(k) === true; }).map(function (k) { return t('ways')[k]; });
+  if (ways.length) { var w = ways.join(t('comma')); facts.push(IC.bag + '<span>' + esc(w.charAt(0).toUpperCase() + w.slice(1)) + '</span>'); }
+  $('#facts').innerHTML = facts.map(function (f) { return '<li>' + f + '</li>'; }).join('');
+  var items = '<span class="tag">' + esc(t('mqTag')) + '</span>' + t('mq').map(function (m) { return '<span>' + esc(m) + '</span>'; }).join('');
+  $('#mq').innerHTML = items + items;
+}
+function quoteCard(q) { return '<blockquote lang="ru" dir="ltr">«' + esc(q.x) + '»</blockquote><footer><b>' + esc(q.a) + '</b> · ' + esc(t('revSrc')) + '</footer>'; }
+function renderSides() {
+  setText('#sKicker', t('sKicker'));
+  $('#sidesGrid').innerHTML = QUOTES.slice(0, 4).map(function (q, i) {
+    return '<article class="side rv"><p class="side-k">' + sideIc(i + 1) + '<span>' + esc(t('sideK')[i]) + '</span></p><h3 class="d">' + esc(t('sideT')[i]) + '</h3>' + quoteCard(q) + '<span class="side-n d" aria-hidden="true">' + (i + 1) + '</span></article>';
+  }).join('');
+  $('#master').innerHTML = '<div class="master-h"><p class="side-k">' + sideIc(5) + '<span>' + esc(t('mKicker')) + '</span></p><h3 class="d">' + esc(t('mTitle')) + '</h3><p class="master-t">' + esc(t('mText')) + '</p></div>' +
+    QUOTES.slice(4).map(function (q) { return '<div class="mq rv">' + quoteCard(q) + '</div>'; }).join('');
+  var A = BIZ.aspects || [], max = A.reduce(function (m, a) { return Math.max(m, a.count); }, 1);
+  $('#aspects').innerHTML = '<h3 class="d">' + esc(t('aTitle')) + '</h3><p class="asp-note">' + esc(t('aNote')) + '</p><ul class="asp-list">' + A.map(function (a) {
+    var name = lang === 'ar' ? (ASPECT_AR[a.text] || a.text) : a.text;
+    return '<li class="asp-row"><span>' + esc(name) + '</span><span class="asp-track"><span class="asp-bar" style="width:' + Math.max(4, Math.round(a.count / max * 100)) + '%"><i style="width:' + Math.round(a.positive / a.count * 100) + '%"></i></span></span><span class="asp-v">' + t('aRow', a.positive, a.count) + '</span></li>';
+  }).join('') + '</ul>';
+  $('#rate').innerHTML = '<p class="kicker">' + esc(t('ym')) + '</p><p class="rate-v d">' + rateTxt() + '</p>' + stars() + '<p>' + esc(t('rateLine')) + '</p>' +
+    '<a class="btn" target="_blank" rel="noopener" href="' + esc(BIZ.reviewsUrl) + '">' + esc(t('allRev')) + '</a>';
+}
+function renderAsk() {
+  $('#askGrid').innerHTML = t('qs').map(function (q) { return '<a class="q" target="_blank" rel="noopener" href="' + esc(wa(q[1])) + '"><span>' + esc(q[0]) + '</span>' + IC.wa + '</a>'; }).join('');
+}
+function renderFind() {
+  var i = STREET.indexOf(' '), lines = i > 0 ? [STREET.slice(0, i), STREET.slice(i + 1)] : [STREET];
+  $('#addr').innerHTML = lines.map(function (w) { return '<span class="fit" data-max="0.34"><span>' + esc(w) + '</span></span>'; }).join('');
+  $('#addr').setAttribute('aria-label', STREET); $('#addr').dir = 'ltr';
+  setText('#findSub', t('findSub'));
+  var rows = STOPS.map(function (s) { return '<li>' + (s.type === 'bus' ? IC.bus : IC.train) + '<span>' + esc(s.type === 'bus' ? t('stopBus', s.name) : t('stopTrain', s.name)) + '</span><span class="dist">' + esc(dist(s.dist)) + '</span></li>'; });
+  (BIZ.metro || []).forEach(function (m) { rows.push('<li><span class="mdot"><i style="background:' + esc(m.color) + '"></i></span><span>' + esc(t('metro', m.name)) + '</span><span class="dist">' + esc(dist(m.distance)) + '</span></li>'); });
+  $('#transit').innerHTML = rows.join('');
+  $('#routeBtn').href = BIZ.routeUrl; $('#ymBtn').href = BIZ.yandexUrl;
+  var chips = (BIZ.features || []).map(function (f) {
+    var k = lang === 'ar' ? (FEAT_AR[f.k] || f.k) : f.k, v = f.v === true ? '' : (lang === 'ar' ? (FEAT_AR[f.v] || f.v) : f.v);
+    var s = (k.charAt(0).toUpperCase() + k.slice(1)) + (v ? ': ' + String(v).replace(/\s*₽/, NB + '₽') : '');
+    return '<span class="chip">' + esc(s) + '</span>';
+  });
+  $('#chips').innerHTML = chips.join('');
+  var fr = $('#mapFrame');
+  fr.title = t('mapTitle');
+  if (!fr.getAttribute('src') && BIZ.mapEmbed) fr.src = BIZ.mapEmbed;
+  renderWeek();
+}
+function renderWeek() {
+  if (!BIZ.hours) return;
+  var today = (mskNow().getDay() + 6) % 7;
+  $('#week').innerHTML = BIZ.hours.map(function (_, d) {
+    return '<li' + (d === today ? ' class="today"' : '') + '><b>' + esc(lang === 'ar' ? DAYS.ar[d] : DAYS.ru[d]) + (d === today ? '<em>' + esc(t('today')) + '</em>' : '') + '</b><span>' + esc(dayHours(d) || t('dayOff')) + '</span></li>';
+  }).join('');
+}
+function renderFooter() {
+  setText('#ftrName', BIZ.name);
+  setText('#ftrAddr', BIZ.fullAddress || BIZ.address);
+  ['#hdrTel', '#ftrTel'].forEach(function (s) { var a = $(s); a.href = 'tel:' + BIZ.phone; a.textContent = BIZ.phoneDisplay; });
+  ['#heroCall', '#tCall', '#barCall'].forEach(function (s) { $(s).href = 'tel:' + BIZ.phone; });
+  setText('#tCallNum', BIZ.phoneDisplay);
+  $('#barCall').setAttribute('aria-label', t('callAria') + ' ' + BIZ.phoneDisplay);
+  $('#ftrWa').href = wa(t('msgGeneric'));
+  $('#ftrYm').href = BIZ.yandexUrl; $('#ftrRev').href = BIZ.reviewsUrl;
+}
+function renderStatus() {
+  var st = statusNow(), txt = statusText(st);
+  ['#heroStatus', '#findStatus'].forEach(function (s) {
+    var el = $(s);
+    if (!st) { el.hidden = true; return; }
+    el.hidden = false; el.setAttribute('data-open', st.open ? '1' : '0'); el.lastElementChild.textContent = txt;
+  });
+}
+
+/* ---------- fitted poster lines ---------- */
+function fitAll() {
+  $$('.fit').forEach(function (line) {
+    var span = line.firstElementChild, box = line.parentElement.clientWidth;
+    if (!span || !box) return;
+    line.style.fontSize = '100px';
+    var w = span.getBoundingClientRect().width;
+    if (!w) { line.style.fontSize = ''; return; }
+    var cap = parseFloat(line.getAttribute('data-max') || '0.62') * box;
+    line.style.fontSize = Math.min(100 * (box - 2) / w, cap).toFixed(1) + 'px';
+  });
+}
+
+/* ---------- language ---------- */
+function setLang(l) {
+  lang = l === 'ar' ? 'ar' : 'ru';
+  var de = document.documentElement;
+  de.lang = lang; de.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  try { localStorage.setItem('ash-lang', lang); } catch (e) {}
+  $$('[data-t]').forEach(function (el) { el.textContent = t(el.getAttribute('data-t')); });
+  var lb = $('#langBtn');
+  lb.textContent = t('langBtn'); lb.lang = t('langAttr'); lb.setAttribute('aria-label', t('langAria'));
+  $('#cut').setAttribute('aria-label', t('cutAria'));
+  renderHero(); renderOpts(); sync(); renderSides(); renderAsk(); renderFind(); renderFooter(); renderStatus();
+  fitAll();
+  observeReveal();
+}
+window.setLang = setLang;
+
+/* ---------- reveal with a fail-safe ---------- */
+var io = null;
+function observeReveal() {
+  if (!io) { $$('.rv').forEach(function (el) { el.classList.add('in'); }); return; }
+  $$('.rv:not(.in)').forEach(function (el) { io.observe(el); });
+}
+var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+if ('IntersectionObserver' in window && !reduce) {
+  document.documentElement.classList.add('anim');
+  io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -6% 0px' });
+  setTimeout(function () { $$('.rv').forEach(function (el) { el.classList.add('in'); }); }, 3500);
+  /* pause decorative loops while they are off-screen */
+  var pio = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('paused', !e.isIntersecting); }); });
+  pio.observe($('#collage')); pio.observe($('#mq'));
+}
+
+/* ---------- init ---------- */
+renderSpit();
+renderCut();
+$('#opts').addEventListener('click', onOptsClick);
+$('#opts').addEventListener('input', function (e) { if (e.target && e.target.id === 'timeIn') { state.time = e.target.value || defaultTime(); state.touched = true; sync(); } });
+$('#langBtn').addEventListener('click', function () { setLang(lang === 'ar' ? 'ru' : 'ar'); });
+var initial = 'ru';
+try { initial = new URLSearchParams(location.search).get('lang') || localStorage.getItem('ash-lang') || 'ru'; } catch (e) {}
+setLang(initial);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitAll);
+if (document.fonts && document.fonts.addEventListener) document.fonts.addEventListener('loadingdone', fitAll);
+var rz;
+window.addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(fitAll, 120); });
+window.addEventListener('load', fitAll);
+setInterval(function () { renderStatus(); renderWeek(); sync(); }, 30000);
+})();
+</script>
+<script src="../map-fix.js" defer></script>
+</body>
+</html>

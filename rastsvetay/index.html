@@ -1,0 +1,1075 @@
+<!doctype html>
+<!--
+  CONCEPT — «Расцветай», Садовая-Кудринская, 32А, стр. 9, у «Маяковской» (демо-концепт)
+  1. Идея: «Бутон, который раскрывается для вас». Вся витрина «Расцветай» — сборные букеты, и в каждом
+     описании перечислен состав. Сайт превращает этот состав в азбуку: вы выбираете цветы и гамму —
+     флорист собирает. Гости пишут, что перед отправкой им присылают фото на согласование, — сайт об этом и просит.
+  2. Фирменный модуль: «Соберите сборный букет». Цветы — только те, что реально встречаются в составах
+     витрины (с подсчётом «в 5 букетах»), гаммы — из реальных описаний (персиково-розовая, розово-лавандовая,
+     карамельная…). Живой SVG-букет растёт с каждым цветком, сайт находит ближайший букет из витрины и его цену,
+     дальше — бюджет, доставка или самовывоз, день, время, открытка, фото перед отправкой → WhatsApp.
+     Цену и условия доставки сайт не называет — спрашивает.
+  3. Арт-дирекшн: светлая весна — тёплый белый, коралл и молодой зелёный. Playfair Display (курсив) +
+     Manrope, рукописный Caveat — только для открытки. Мотив: большой коралловый бутон в героe, лепестки
+     которого раскрываются по скроллу, вокруг — бегущая надпись с адресом, как печать на крафте.
+-->
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFF8F3">
+<title>Расцветай — сборные букеты на Садовой-Кудринской, у «Маяковской» (демо)</title>
+<meta name="description" content="Демо-концепт сайта цветочного магазина «Расцветай» на Садовой-Кудринской: сборные букеты с ценами, конструктор букета из цветов витрины, заявка флористу в WhatsApp. Ежедневно 09:00–21:00.">
+<meta property="og:title" content="«Расцветай» — соберите свой букет (демо)">
+<meta property="og:description" content="Сборные букеты с ценами, конструктор букета и заявка флористу в WhatsApp. 5,0 на Яндекс Картах. Демо-концепт сайта.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://kyan9400.github.io/demo/rastsvetay/">
+<meta property="og:image" content="https://kyan9400.github.io/demo/rastsvetay/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23FFF1EA'/%3E%3Cpath d='M32 54V36' stroke='%2366A83E' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M32 38C18 34 16 20 22 12c4 6 7 8 10 8s6-2 10-8c6 8 4 22-10 26z' fill='%23F26A4E'/%3E%3Cpath d='M32 38c-6-4-7-12-4-20 2 2 3 3 4 3s2-1 4-3c3 8 2 16-4 20z' fill='%23FFB39C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF8F3; --paper:#FFFFFF; --blush:#FFEDE5; --blush-2:#FFE1D5;
+  --ink:#2A1E1B; --muted:#6A5853; --dim:#8A7770; --line:#F1DED5; --line-2:#E6C9BD;
+  --coral:#FF7A5C; --coral-2:#F26A4E; --coral-d:#C23E27; --coral-dd:#A8331F;
+  --green:#8CC665; --green-2:#66A83E; --green-d:#3C7526; --leaf-bg:#EEF6E4;
+  --wa:#25D366; --wa-ink:#053B1C;
+  --f-d:"Playfair Display",Georgia,"Times New Roman",serif;
+  --f-b:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --f-h:"Caveat","Segoe Print",cursive;
+  --r:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--bg)}
+body{font:16px/1.55 var(--f-b);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;padding-bottom:calc(84px + env(safe-area-inset-bottom,0px));overflow-x:hidden}
+@media(min-width:900px){body{padding-bottom:0}}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;-webkit-tap-highlight-color:transparent}
+input,textarea{font:inherit;color:inherit}
+svg{display:block}
+:focus-visible{outline:2.5px solid var(--coral-d);outline-offset:3px;border-radius:8px}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+[id]{scroll-margin-top:76px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.nb{white-space:nowrap}
+
+/* demo bar + header */
+.demo-bar{background:#2A1E1B;color:#F4DED5;font-size:12.5px;line-height:1.4;padding:7px 16px;text-align:center}
+.top{position:sticky;top:0;z-index:40;background:rgba(255,248,243,.94);-webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.top-in{width:min(1200px,100% - 32px);margin-inline:auto;height:60px;display:flex;align-items:center;gap:14px}
+.brand{display:inline-flex;align-items:center;gap:9px;min-height:44px;margin-right:auto;text-decoration:none;white-space:nowrap}
+.brand svg{width:30px;height:30px;flex:none}
+.brand b{font:italic 600 25px/1 var(--f-d);letter-spacing:-.01em;color:var(--ink)}
+.nav{display:none;gap:30px;font-size:15px;font-weight:600}
+.nav a{text-decoration:none;padding:12px 0;color:var(--muted);transition:color .2s}
+.nav a:hover{color:var(--coral-d)}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;padding:7px 13px;border-radius:999px;background:var(--paper);border:1px solid var(--line);white-space:nowrap;color:var(--ink)}
+.dot{display:inline-block;flex:none;width:8px;height:8px;border-radius:50%;background:var(--green-2)}
+.status.open .dot{animation:pulse 2.4s infinite}
+.status.closed .dot{background:#C9A99C}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(102,168,62,.5)}70%,100%{box-shadow:0 0 0 8px rgba(102,168,62,0)}}
+.top .top-wa{display:none}
+.status .short{display:none}
+@media(max-width:379.98px){.status .long{display:none}.status .short{display:inline}.brand b{font-size:22px}.top-in{gap:8px}}
+.dock .sh{display:none}
+@media(max-width:379.98px){.dock .lg{display:none}.dock .sh{display:inline}}
+@media(min-width:900px){.nav{display:flex}.top-in{height:68px;gap:30px}.top .top-wa{display:inline-flex}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;transition:transform .15s,background .2s,box-shadow .2s,border-color .2s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-coral{background:var(--coral-d);color:#fff;box-shadow:0 10px 26px -12px rgba(194,62,39,.75)}
+.btn-coral:hover{background:var(--coral-dd)}
+.btn-line{border:1.5px solid var(--line-2);color:var(--ink);background:var(--paper)}
+.btn-line:hover{border-color:var(--coral-d);color:var(--coral-d)}
+.btn-wa{background:var(--wa);color:var(--wa-ink)}
+.btn-wa:hover{background:#1FC25C}
+.btn-sm{min-height:44px;padding:0 18px;font-size:14.5px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(70% 55% at 85% 35%,#FFE6DC 0,rgba(255,230,220,0) 70%),
+  radial-gradient(60% 40% at 0% 100%,#F0F7E6 0,rgba(240,247,230,0) 70%),var(--bg)}
+.hero-in{display:grid;grid-template-columns:minmax(0,1fr);padding:24px 0 36px;align-content:start}
+.hero-in>*{min-width:0}
+.eyebrow{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;color:var(--muted);font-weight:600}
+.eyebrow span{display:inline-flex;align-items:center;gap:7px}
+.mdot{width:10px;height:10px;border-radius:50%;flex:none;display:inline-block;box-shadow:0 0 0 2px #fff}
+h1{margin:18px 0 0;font-weight:500}
+.h1-name{display:block;font:italic 500 clamp(60px,19vw,150px)/.9 var(--f-d);letter-spacing:-.035em;color:var(--coral-d)}
+.h1-sub{display:block;font:500 clamp(23px,6.4vw,46px)/1.1 var(--f-d);letter-spacing:-.015em;margin-top:10px}
+.h1-sub em{font-style:italic;color:var(--green-d)}
+.lead{font-size:17px;color:var(--muted);max-width:36ch;margin-top:16px}
+.lead b{color:var(--ink);font-weight:700}
+.rating{display:inline-flex;align-items:center;gap:12px;margin-top:20px;text-decoration:none;padding:9px 18px 9px 12px;border-radius:999px;background:var(--paper);border:1px solid var(--line);width:max-content;max-width:100%;transition:border-color .2s}
+.rating:hover{border-color:var(--coral)}
+.rating .num{font:600 27px/1 var(--f-d)}
+.stars{display:flex;gap:2px;color:#F2A93B}
+.stars svg{width:14px;height:14px}
+.rating small{font-size:13px;color:var(--muted);line-height:1.25}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+@media(max-width:899.98px){.hero-cta .btn{flex:1 1 auto;padding:0 18px}}
+.hero-art{position:relative;margin:-4px -16px 0;height:min(80vw,330px)}
+@media(max-width:899.98px){.rating{margin-top:16px}.lead{margin-top:6px}}
+.hero-art svg.bud{position:absolute;inset:0;width:100%;height:100%}
+.hint{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);font:600 22px/1 var(--f-h);color:var(--coral-d);white-space:nowrap;transition:opacity .4s;display:flex;align-items:center;gap:8px}
+.hint svg{width:16px;height:16px;animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(4px)}}
+.hint.gone{opacity:0}
+@media(min-width:900px){
+  .hero-in{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);grid-template-rows:1fr repeat(5,auto) 1fr;column-gap:30px;padding:20px 0 30px;min-height:min(820px,calc(100vh - 100px));min-height:min(820px,calc(100svh - 100px))}
+  .hero-in>*{grid-column:1}
+  .eyebrow{grid-row:2}.hero-in h1{grid-row:3}.lead{grid-row:4}.rating{grid-row:5}.hero-cta{grid-row:6}
+  .hero-art{grid-column:2;grid-row:1/-1;margin:0;height:660px;align-self:center}
+  .lead{font-size:19px}
+  .h1-sub{max-width:17ch}
+}
+/* bud */
+.bud{--o:0}
+.pt{transform-box:view-box;transform-origin:200px 318px;transform:rotate(calc((var(--a0) + (var(--a1) - var(--a0)) * var(--o)) * 1deg)) scale(calc(var(--s0) + (1 - var(--s0)) * var(--o)))}
+.lf{transform-box:view-box;transform:rotate(calc((var(--a0) + (var(--a1) - var(--a0)) * var(--o)) * 1deg))}
+.stamen{opacity:calc(var(--o) * 1.6 - .6)}
+.sway{transform-box:view-box;transform-origin:200px 560px;animation:sway 8s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(-1.6deg)}to{transform:rotate(1.6deg)}}
+.ring{transform-box:view-box;transform-origin:200px 300px;animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.paused .sway,.paused .ring{animation-play-state:paused}
+
+/* sections */
+section{padding:68px 0}
+.kicker{font:700 12.5px/1 var(--f-b);letter-spacing:.16em;text-transform:uppercase;color:var(--green-d);display:inline-flex;align-items:center;gap:10px}
+.kicker::before{content:"";width:22px;height:2px;background:var(--green-2);border-radius:2px}
+h2{font:500 clamp(36px,9.4vw,64px)/1.02 var(--f-d);letter-spacing:-.025em;margin-top:14px}
+h2 em{font-style:italic;color:var(--coral-d)}
+.sub{color:var(--muted);font-size:16.5px;max-width:56ch;margin-top:14px}
+@media(min-width:900px){section{padding:110px 0}.sub{font-size:18px}}
+
+/* builder */
+.build{background:var(--paper);border-block:1px solid var(--line)}
+.builder{display:flex;flex-direction:column;gap:14px;margin-top:30px}
+.step{order:1;background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:20px 16px}
+.step h3{display:flex;align-items:baseline;gap:12px;font:600 19px/1.25 var(--f-b);letter-spacing:-.01em}
+.step h3 i{font:italic 500 28px/1 var(--f-d);color:var(--coral-d);flex:none}
+.step .note{font-size:14px;color:var(--muted);margin-top:6px}
+.s2{order:2}.s3{order:4}.s4{order:5}
+.side,.side-in{display:contents}
+.vase-card{order:3}.send-card{order:6}
+.pals{display:grid;grid-template-columns:repeat(auto-fill,minmax(136px,1fr));gap:8px;margin-top:14px}
+.pal{display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-height:56px;padding:12px 12px 11px;border-radius:16px;background:var(--paper);border:1.5px solid var(--line);text-align:left;transition:border-color .2s,box-shadow .2s,transform .15s}
+.pal:active{transform:scale(.97)}
+.pal .sw{display:flex;flex:none}
+.pal .sw i{width:16px;height:16px;border-radius:50%;margin-left:-5px;box-shadow:0 0 0 2px #fff, inset 0 0 0 1px rgba(0,0,0,.08)}
+.pal .sw i:first-child{margin-left:0}
+.pal b{display:block;font-size:14px;font-weight:700;line-height:1.2}
+.pal small{display:block;font-size:12.5px;color:var(--muted);line-height:1.25}
+.pal[aria-pressed="true"]{border-color:var(--coral-d);box-shadow:0 0 0 3px rgba(194,62,39,.12)}
+.fls{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.fl{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:5px 14px 5px 6px;border-radius:999px;background:var(--paper);border:1.5px solid var(--line);font-size:14.5px;font-weight:600;transition:border-color .2s,background .2s,transform .15s}
+.fl:active{transform:scale(.95)}
+.fl svg{width:34px;height:34px;flex:none;border-radius:50%;background:var(--blush)}
+.fl small{font-size:12px;color:var(--dim);font-weight:600}
+.fl[aria-pressed="true"]{border-color:var(--green-2);background:var(--leaf-bg)}
+.fl[aria-pressed="true"] svg{background:#fff}
+.fl[aria-pressed="true"]::after{content:"";width:14px;height:14px;margin-left:2px;background:var(--green-d);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.more{margin-top:10px;min-height:44px;font-size:14.5px;font-weight:700;color:var(--coral-d);text-decoration:underline;text-underline-offset:4px}
+.fls.short .fl.extra{display:none}
+
+.vase-card{position:relative;border-radius:var(--r);background:linear-gradient(180deg,#FFF1EA,#FFF9F5 70%);border:1px solid var(--line);padding:16px 16px 18px;overflow:hidden}
+.vase-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 10px}
+.vase-head b{white-space:nowrap}
+.vase-head b{font:italic 500 24px/1.1 var(--f-d)}
+.vase-head span{font-size:13.5px;color:var(--muted);font-weight:600;white-space:nowrap}
+.vase{position:relative;height:300px;margin:6px auto 0;max-width:340px}
+.vase svg{width:100%;height:100%}
+.vase .empty{position:absolute;left:0;right:0;top:4%;text-align:center;font:600 24px/1.15 var(--f-h);color:var(--coral-d);padding:0 30px}
+.pop{transform-box:fill-box;transform-origin:50% 50%;animation:pop .5s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+.tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:4px;min-height:28px}
+.tags span{font-size:13px;font-weight:600;padding:4px 10px;border-radius:999px;background:#fff;border:1px solid var(--line)}
+.match{margin-top:14px;padding:14px 16px;border-radius:16px;background:#fff;border:1px dashed var(--line-2);font-size:14.5px;line-height:1.45}
+.match b{font-weight:700}
+.match .pr{font:600 20px/1 var(--f-d);color:var(--coral-d);white-space:nowrap}
+.match small{display:block;color:var(--muted);font-size:13px;margin-top:6px}
+.match button{color:var(--coral-d);font-weight:700;text-decoration:underline;text-underline-offset:3px;min-height:44px;font-size:14px}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{min-height:46px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper);font-size:14.5px;font-weight:600;transition:border-color .2s,background .2s,color .2s}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:14px;background:var(--blush);padding:5px;border-radius:999px}
+.seg button{min-height:46px;border-radius:999px;font-weight:700;font-size:15px;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:#fff;color:var(--ink);box-shadow:0 4px 14px -6px rgba(120,50,30,.35)}
+.lbl{display:block;font-size:13.5px;font-weight:700;color:var(--muted);margin:16px 0 6px}
+.inp{width:100%;min-height:50px;padding:12px 14px;border-radius:14px;border:1.5px solid var(--line);background:#fff;font-size:16px;line-height:1.4;resize:vertical}
+.inp:focus{outline:none;border-color:var(--coral-d);box-shadow:0 0 0 3px rgba(194,62,39,.14)}
+textarea.inp{min-height:84px}
+.own{display:none;margin-top:10px;max-width:240px}
+.own.on{display:block}
+.check{display:flex;gap:12px;align-items:flex-start;margin-top:16px;padding:14px;border-radius:16px;background:var(--leaf-bg);cursor:pointer;min-height:44px}
+.check input{width:22px;height:22px;flex:none;accent-color:var(--green-d);margin-top:1px}
+.check b{display:block;font-size:15px}
+.check small{display:block;font-size:13.5px;color:var(--muted);margin-top:2px}
+.pick-note{margin-top:12px;font-size:14px;color:var(--muted);display:flex;gap:8px;align-items:flex-start}
+.pick-note svg{width:18px;height:18px;flex:none;color:var(--coral-d);margin-top:2px}
+.hide{display:none!important}
+
+.send-card{border-radius:var(--r);background:var(--ink);color:#FCEDE6;padding:20px 16px}
+.send-card h3{font:italic 500 24px/1.15 var(--f-d);color:#fff}
+.msg{margin-top:12px;background:#fff;color:var(--ink);border-radius:16px 16px 16px 4px;padding:14px 16px;font-size:14.5px;line-height:1.5;white-space:pre-wrap;max-height:320px;overflow:auto;overflow-wrap:anywhere}
+.send-card .btn{width:100%;margin-top:14px}
+.send-card .fine{font-size:13px;color:#D9C2B8;margin-top:10px;text-align:center}
+.send-card .fine a{color:#fff;display:inline-block;padding:13px 0;margin-block:-13px}
+.postcard{margin-top:12px;background:#FFF6EE;color:#5A3A2E;border-radius:6px;padding:12px 16px;font:500 24px/1.15 var(--f-h);transform:rotate(-1.2deg);box-shadow:0 8px 20px -12px rgba(0,0,0,.6);overflow-wrap:anywhere}
+.postcard::before{content:"открытка";display:block;font:700 10.5px/1 var(--f-b);letter-spacing:.14em;text-transform:uppercase;color:var(--coral-d);margin-bottom:6px}
+
+@media(min-width:900px){
+  .builder{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:16px 32px;align-items:start}
+  .step{grid-column:1;padding:26px 26px}
+  .side{display:block;grid-column:2;grid-row:1/span 4;height:100%}
+  .side-in{display:flex;flex-direction:column;gap:12px;position:sticky;top:84px}
+  .vase{height:220px}
+  .vase-card{padding:14px 18px 16px}
+  .match{margin-top:10px;padding:12px 14px}
+  .send-card{padding:18px}
+  .msg{max-height:150px;font-size:14px}
+  .send-card .btn{margin-top:12px}
+}
+
+/* shop */
+.shop-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px}
+.grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:30px}
+.card{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -26px rgba(120,50,30,.45)}
+.card .art{height:220px;background:radial-gradient(60% 70% at 50% 45%,#FFE9DF,#FFF6F1 70%);display:flex;align-items:center;justify-content:center;position:relative}
+.card .art svg{height:100%;width:auto;max-width:100%}
+.card .art .badge{position:absolute;top:12px;left:12px;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;background:var(--green-d);color:#fff;padding:5px 10px;border-radius:999px}
+.card .body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.card .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.card h3{font:600 19px/1.2 var(--f-d)}
+.card .p{font:600 21px/1 var(--f-d);color:var(--coral-d);white-space:nowrap}
+.card .gam{font-size:13px;font-weight:700;color:var(--green-d);margin-top:6px}
+.card p{font-size:14.5px;color:var(--muted);margin-top:8px;flex:1}
+.card .acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.card .acts .btn{flex:1 1 auto;padding:0 14px}
+.grid.short .card.extra{display:none}
+.show-all{margin-top:18px}
+@media(max-width:639.98px){
+  .grid,.grid.short{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-16px;padding:4px 16px 14px;scroll-padding-inline:16px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .grid::-webkit-scrollbar{display:none}
+  .grid .card,.grid.short .card.extra{display:flex;flex:0 0 84%;scroll-snap-align:start}
+  .card .art{height:190px}
+  .show-all{display:none}
+  .swipe{display:flex}
+}
+.swipe{display:none;align-items:center;gap:8px;margin-top:14px;font:600 21px/1 var(--f-h);color:var(--coral-d)}
+.swipe svg{width:18px;height:18px}
+@media(min-width:640px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.grid.short .card.extra{display:flex}.show-all{display:none}}
+
+/* love */
+.love{background:linear-gradient(180deg,var(--bg),#FFF1EA)}
+.big-rate{display:flex;align-items:center;gap:18px;margin-top:26px;flex-wrap:wrap}
+.big-rate .n{font:italic 500 92px/.9 var(--f-d);color:var(--coral-d);letter-spacing:-.03em}
+.big-rate .stars svg{width:20px;height:20px}
+.big-rate small{display:block;font-size:14.5px;color:var(--muted);margin-top:6px}
+.aspects{display:grid;gap:10px;margin-top:28px}
+.asp{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:14px 16px}
+.asp .t{display:flex;justify-content:space-between;gap:10px;font-weight:700;font-size:15px}
+.asp .t span{color:var(--muted);font-weight:600;font-size:13.5px;white-space:nowrap}
+.bar{height:8px;border-radius:8px;background:var(--blush);margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:8px;background:linear-gradient(90deg,var(--green),var(--green-2));width:var(--w);transform-origin:left;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.pre .bar i{transform:scaleX(0)}
+.names{margin-top:22px;padding:18px;border-radius:18px;background:var(--leaf-bg);font-size:15.5px}
+.names b{font:italic 600 19px/1.3 var(--f-d);color:var(--green-d)}
+.revs{display:grid;gap:12px;margin-top:28px}
+.rev{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px 18px;position:relative}
+.rev::before{content:"“";position:absolute;top:2px;right:16px;font:italic 500 80px/1 var(--f-d);color:var(--blush-2)}
+.rev q{display:block;font-size:15.5px;line-height:1.55;quotes:none;position:relative}
+.rev .who{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;margin-top:14px;font-size:13.5px;color:var(--muted)}
+.rev .who b{color:var(--ink);font-size:14.5px;white-space:nowrap}
+.rev .who span:last-child{flex-basis:100%}
+.asp .t{align-items:baseline}
+@media(max-width:899.98px){.rev:nth-child(5){display:none}}
+.rev .stars svg{width:12px;height:12px}
+.all-link{display:inline-flex;margin-top:22px}
+.feats{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.feats span{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;background:var(--paper);border:1px solid var(--line);font-size:14px;font-weight:600}
+.feats span i{width:7px;height:7px;border-radius:50%;background:var(--coral)}
+@media(min-width:900px){
+  .love-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+  .aspects{grid-template-columns:1fr 1fr}
+  .revs{grid-template-columns:1fr 1fr;margin-top:0}
+  .rev:first-child{grid-column:1/-1}
+  .rev:first-child q{font:italic 500 23px/1.4 var(--f-d)}
+}
+
+/* visit */
+.visit-grid{display:grid;gap:16px;margin-top:30px}
+.addr{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:22px 18px}
+.addr .a{font:500 25px/1.2 var(--f-d)}
+.metro{list-style:none;margin-top:14px;display:grid;gap:8px}
+.metro li{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600}
+.metro li span{margin-left:auto;color:var(--muted);font-weight:600;font-size:14px}
+.week{list-style:none;margin-top:18px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.week li{text-align:center;border-radius:12px;padding:8px 2px;background:var(--bg);font-size:12px;color:var(--muted);line-height:1.3}
+.week li b{display:block;font-size:13.5px;color:var(--ink)}
+.week li.today{background:var(--coral-d);color:#FFE6DD}
+.week li.today b{color:#fff}
+.hours-t{margin-top:10px;font-size:14.5px;color:var(--muted)}
+.facts{display:grid;gap:10px;margin-top:18px;font-size:14.5px}
+.facts div{display:flex;gap:10px;align-items:baseline}
+.facts b{flex:none;min-width:88px;color:var(--ink)}
+.facts a{display:inline-flex;align-items:center;min-height:44px;margin-block:-12px;color:var(--coral-d);font-weight:700}
+.facts span{color:var(--muted)}
+.addr .btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.addr .btns .btn{flex:1 1 auto}
+.map{position:relative;min-height:340px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:
+  linear-gradient(90deg,rgba(194,62,39,.05) 1px,transparent 1px) 0 0/28px 28px,
+  linear-gradient(rgba(194,62,39,.05) 1px,transparent 1px) 0 0/28px 28px,#FFF3EC}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.map .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--muted);font-size:14px;text-align:center;padding:20px}
+.map .ph svg{width:40px;height:40px;color:var(--coral-d)}
+@media(min-width:900px){.visit-grid{grid-template-columns:.9fr 1.1fr}.map{min-height:520px}.addr{padding:30px}}
+
+/* footer */
+footer{background:#2A1E1B;color:#E9D3CA;padding:52px 0 36px;font-size:14.5px}
+.f-grid{display:grid;gap:26px}
+.f-brand{font:italic 500 44px/1 var(--f-d);color:#fff}
+footer a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.f-col p+p{margin-top:0!important}
+footer a:hover{text-decoration:underline}
+.f-col p+p{margin-top:6px}
+.f-note{margin-top:34px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);font-size:13px;color:#CDB4AA;display:grid;gap:6px}
+@media(min-width:900px){.f-grid{grid-template-columns:1.2fr 1fr 1fr}}
+
+/* dock */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,248,243,.96);border-top:1px solid var(--line);box-shadow:0 -10px 30px -18px rgba(120,50,30,.4)}
+.dock .btn{min-height:52px}
+.dock .main{flex:1;padding:0 14px;font-size:15.5px}
+.dock .ic{width:52px;padding:0;flex:none}
+.dock .count{display:inline-grid;place-items:center;min-width:24px;height:24px;border-radius:12px;background:#fff;color:var(--coral-d);font-size:13px;font-weight:800;padding:0 6px}
+@media(min-width:900px){.dock{display:none}}
+
+/* reveal */
+.reveal{transition:opacity .7s ease,transform .7s ease}
+.reveal.pre{opacity:0;transform:translateY(18px)}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .reveal.pre{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="demo-bar">Демо-концепт · пример сайта для «Расцветай» от Альхассана Альфаррана · не официальный сайт</div>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="#top" aria-label="Расцветай — наверх">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 58V36" stroke="#66A83E" stroke-width="3.5" stroke-linecap="round"/><path d="M32 50c-7 0-12-4-13-9 6 0 11 3 13 9z" fill="#8CC665"/><path d="M32 38C18 34 16 20 22 10c4 6 7 8 10 8s6-2 10-8c6 10 4 24-10 28z" fill="#F26A4E"/><path d="M32 38c-6-4-7-12-4-21 2 2 3 3 4 3s2-1 4-3c3 9 2 17-4 21z" fill="#FFB39C"/></svg>
+      <b>Расцветай</b>
+    </a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#build">Собрать букет</a><a href="#shop">Витрина</a><a href="#love">Отзывы</a><a href="#visit">Как найти</a>
+    </nav>
+    <span class="status" id="status"><i class="dot"></i><span class="long" id="statusText">ежедневно 09:00–21:00</span><span class="short" id="statusShort">09:00–21:00</span></span>
+    <a class="btn btn-wa btn-sm top-wa" id="topWa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" id="hero" style="padding:0">
+    <div class="wrap hero-in">
+        <p class="eyebrow" id="eyebrow"></p>
+        <h1><span class="h1-name">Расцветай</span><span class="h1-sub">сборные букеты, которые собирают <em>под вас</em></span></h1>
+        <a class="rating" id="rating" href="#" target="_blank" rel="noopener"></a>
+      <div class="hero-art" id="heroArt" aria-hidden="true">
+        <svg class="bud" id="bud" viewBox="0 0 400 580" preserveAspectRatio="xMidYMid meet"></svg>
+        <span class="hint" id="hint">листайте — бутон раскроется <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
+      </div>
+        <p class="lead" id="lead">Назовите цветы и гамму — флорист соберёт. Гости пишут, что <b>перед отправкой им присылают фото букета</b> на согласование.</p>
+        <div class="hero-cta">
+          <a class="btn btn-coral" href="#build">Собрать свой букет</a>
+          <a class="btn btn-line" id="heroCall" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Позвонить</a>
+        </div>
+    </div>
+  </section>
+
+  <section class="build" id="build">
+    <div class="wrap">
+      <span class="kicker">Конструктор</span>
+      <h2>Соберите <em>сборный</em> букет</h2>
+      <p class="sub" id="buildSub"></p>
+
+      <div class="builder">
+        <div class="step s1">
+          <h3><i>01</i>Гамма</h3>
+          <p class="note">Оттенки — из описаний букетов в витрине.</p>
+          <div class="pals" id="pals"></div>
+        </div>
+        <div class="step s2">
+          <h3><i>02</i>Цветы</h3>
+          <p class="note">Только те, что «Расцветай» ставит в свои букеты. Отметьте, что нравится.</p>
+          <div class="fls short" id="fls"></div>
+          <button type="button" class="more" id="flsMore"></button>
+        </div>
+
+        <div class="side"><div class="side-in">
+          <div class="vase-card" id="vaseCard">
+            <div class="vase-head"><b>Ваш букет</b><span id="vaseCount"></span></div>
+            <div class="vase" id="vase"></div>
+            <div class="tags" id="tags"></div>
+            <div class="match" id="match"></div>
+          </div>
+          <div class="send-card" id="sendCard">
+            <h3>Сообщение флористу</h3>
+            <div class="msg" id="preview"></div>
+            <div class="postcard hide" id="postcard"></div>
+            <a class="btn btn-wa" id="send" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>Отправить в WhatsApp</a>
+            <p class="fine">Откроется WhatsApp с готовым текстом — его можно поправить. Или позвоните: <a id="sendCall" class="nb" href="#"></a></p>
+          </div>
+        </div></div>
+
+        <div class="step s3">
+          <h3><i>03</i>Сумма</h3>
+          <p class="note">Гости пишут, что букет можно попросить собрать на определённую сумму.</p>
+          <div class="chips" id="budget"></div>
+          <div class="own" id="ownWrap"><label class="vh" for="own">Своя сумма, ₽</label><input class="inp" id="own" type="number" inputmode="numeric" min="0" step="100" placeholder="Сумма, ₽"></div>
+        </div>
+        <div class="step s4">
+          <h3><i>04</i>Когда и куда</h3>
+          <div class="seg" role="group" aria-label="Способ получения">
+            <button type="button" id="modeDel" aria-pressed="true">Доставка</button>
+            <button type="button" id="modePick" aria-pressed="false">Самовывоз</button>
+          </div>
+          <span class="lbl">День</span>
+          <div class="chips" id="days" style="margin-top:0"></div>
+          <div class="hide" id="dateWrap"><label class="vh" for="date">Дата</label><input class="inp" id="date" type="date" style="margin-top:10px;max-width:240px"></div>
+          <span class="lbl">Желаемое время</span>
+          <div class="chips" id="times" style="margin-top:0"></div>
+          <div id="addrWrap"><label class="lbl" for="addr">Адрес доставки</label><textarea class="inp" id="addr" rows="2" placeholder="Улица, дом, квартира — можно написать позже в чате"></textarea></div>
+          <p class="pick-note hide" id="pickNote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span id="pickAddr"></span></p>
+          <label class="lbl" for="card">Текст открытки <span style="font-weight:600">(если нужна)</span></label>
+          <textarea class="inp" id="card" rows="2" maxlength="200" placeholder="Например: С днём рождения, мама!"></textarea>
+          <label class="check"><input type="checkbox" id="photo" checked><span><b>Прислать фото букета перед отправкой</b><small>В отзывах это упоминают снова и снова — попросим и мы.</small></span></label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="shop" id="shop">
+    <div class="wrap">
+      <div class="shop-head">
+        <div>
+          <span class="kicker">Витрина</span>
+          <h2>Что уже <em>собирали</em></h2>
+          <p class="sub" id="shopSub"></p>
+        </div>
+      </div>
+      <p class="swipe" aria-hidden="true">листайте витрину вбок <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></p>
+      <div class="grid short" id="grid"></div>
+      <button type="button" class="btn btn-line show-all" id="showAll">Показать всю витрину</button>
+    </div>
+  </section>
+
+  <section class="love" id="love">
+    <div class="wrap love-grid">
+      <div>
+        <span class="kicker">Отзывы</span>
+        <h2>Почему сюда <em>возвращаются</em></h2>
+        <div class="big-rate" id="bigRate"></div>
+        <div class="aspects reveal" id="aspects"></div>
+        <p class="names" id="names"></p>
+      </div>
+      <div>
+        <div class="revs" id="revs"></div>
+        <a class="btn btn-line all-link" id="allRevs" href="#" target="_blank" rel="noopener">Все отзывы на Яндекс Картах</a>
+      </div>
+    </div>
+    <div class="wrap"><div class="feats" id="feats"></div></div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <span class="kicker">Как найти</span>
+      <h2>Садовая-Кудринская, <em>32А</em></h2>
+      <div class="visit-grid">
+        <div class="addr">
+          <p class="a" id="addrText"></p>
+          <ul class="metro" id="metro"></ul>
+          <ul class="week" id="week"></ul>
+          <p class="hours-t" id="hoursT"></p>
+          <div class="facts" id="facts"></div>
+          <div class="btns">
+            <a class="btn btn-coral" id="route" href="#" target="_blank" rel="noopener">Построить маршрут</a>
+            <a class="btn btn-line" id="visitCall" href="#">Позвонить</a>
+          </div>
+        </div>
+        <div class="map" id="map"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span id="mapPh"></span></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-col"><p class="f-brand">Расцветай</p><p style="margin-top:12px" id="fCats"></p></div>
+      <div class="f-col"><p id="fAddr"></p><p id="fHours"></p></div>
+      <div class="f-col"><p><a id="fTel" href="#"></a></p><p><a id="fWa" href="#" target="_blank" rel="noopener">Написать в WhatsApp</a></p><p><a id="fYa" href="#" target="_blank" rel="noopener">Карточка на Яндекс Картах</a></p></div>
+    </div>
+    <div class="f-note">
+      <p>Демо-концепт · пример сайта для «Расцветай» от Альхассана Альфаррана · не официальный сайт</p>
+      <p>Цены и данные взяты из карточки на Яндекс Картах и могут отличаться.</p>
+    </div>
+  </div>
+</footer>
+
+<nav class="dock" aria-label="Быстрые действия">
+  <a class="btn btn-coral main" id="dockMain" href="#build">Собрать букет</a>
+  <a class="btn btn-wa ic" id="dockWa" href="#" target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg></a>
+  <a class="btn btn-line ic" id="dockCall" href="#" aria-label="Позвонить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+</nav>
+
+<script src="data.js"></script>
+<script>
+(function () {
+'use strict';
+var BIZ = window.BIZ;
+if (!BIZ) return;
+var $ = function (s) { return document.querySelector(s); };
+var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+var wa = function (text) { return 'https://wa.me/' + BIZ.wa + '?text=' + encodeURIComponent(text); };
+var rub = function (n) { return n == null ? 'по запросу' : n.toLocaleString('ru-RU').replace(/\s/g, ' ') + ' ₽'; };
+var plural = function (n, one, few, many) { var a = Math.abs(n) % 100, b = a % 10; return a > 10 && a < 20 ? many : b === 1 ? one : b >= 2 && b <= 4 ? few : many; };
+var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+var STAR = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg>';
+var stars = function (n) { var o = ''; for (var i = 0; i < n; i++) o += STAR; return '<span class="stars">' + o + '</span>'; };
+var ratingText = BIZ.rating.value.toFixed(1).replace('.', ',');
+var cnt = BIZ.rating.count, rcnt = BIZ.rating.reviews;
+var shortAddr = BIZ.address.replace(/,\s*Москва$/, '');
+
+/* ---------- time / status ---------- */
+function mskNow() { var d = new Date(); return new Date(d.getTime() + (d.getTimezoneOffset() + 180) * 60000); }
+var mm = function (s) { return +s.slice(0, 2) * 60 + +s.slice(3); };
+function openStatus(now) {
+  now = now || mskNow();
+  if (!BIZ.hours) return null;
+  if (BIZ.is24) return { open: true, text: 'Круглосуточно' };
+  var day = (now.getDay() + 6) % 7, mins = now.getHours() * 60 + now.getMinutes(), i, h;
+  var prev = BIZ.hours[(day + 6) % 7];
+  for (i = 0; i < prev.length; i++) { h = prev[i]; if (mm(h[1]) <= mm(h[0]) && mins < mm(h[1])) return { open: true, text: 'Открыто · до ' + h[1] }; }
+  for (i = 0; i < BIZ.hours[day].length; i++) { h = BIZ.hours[day][i]; var a = mm(h[0]), b = mm(h[1]) <= a ? mm(h[1]) + 1440 : mm(h[1]); if (mins >= a && mins < b) return { open: true, text: 'Открыто · до ' + h[1] }; }
+  for (i = 0; i < BIZ.hours[day].length; i++) { h = BIZ.hours[day][i]; if (mins < mm(h[0])) return { open: false, text: 'Закрыто · откроется в ' + h[0] }; }
+  var names = ['в понедельник', 'во вторник', 'в среду', 'в четверг', 'в пятницу', 'в субботу', 'в воскресенье'];
+  for (i = 1; i <= 7; i++) { var d = (day + i) % 7; if (BIZ.hours[d].length) return { open: false, text: 'Закрыто · откроется ' + (i === 1 ? 'завтра' : names[d]) + ' в ' + BIZ.hours[d][0][0] }; }
+  return null;
+}
+function paintStatus() {
+  var s = openStatus(); if (!s) return;
+  $('#statusText').textContent = s.text;
+  $('#statusShort').textContent = s.open ? s.text.replace(/^Открыто · /, '') : 'закрыто';
+  $('#status').className = 'status ' + (s.open ? 'open' : 'closed');
+}
+paintStatus(); setInterval(paintStatus, 60000);
+
+/* ---------- static bits ---------- */
+var hello = 'Здравствуйте! Пишу вам с сайта «Расцветай». Хочу заказать букет.';
+['#heroCall', '#visitCall', '#dockCall', '#sendCall'].forEach(function (s) { $(s).href = 'tel:' + BIZ.phone; });
+$('#sendCall').textContent = BIZ.phoneDisplay;
+['#topWa', '#dockWa', '#fWa'].forEach(function (s) { $(s).href = wa(hello); });
+$('#eyebrow').innerHTML = BIZ.metro.slice(0, 1).map(function (m) { return '<span><i class="mdot" style="background:' + m.color + '"></i>' + esc(m.name) + ' · ' + esc(m.distance) + '</span>'; }).join('') + '<span>' + esc(shortAddr.replace(/, стр\. \d+/, '')) + '</span>';
+$('#rating').href = BIZ.reviewsUrl;
+$('#rating').innerHTML = '<span class="num">' + ratingText + '</span><span>' + stars(5) + '<small>' + cnt + ' ' + plural(cnt, 'оценка', 'оценки', 'оценок') + ' · ' + rcnt + ' ' + plural(rcnt, 'отзыв', 'отзыва', 'отзывов') + '<br>на Яндекс Картах</small></span>';
+
+/* ---------- flower vocabulary (from the catalogue texts) ---------- */
+var FLOWERS = [
+  { id: 'hydr', n: 'Гортензия', g: 'гортензия', re: /гортенз/, sh: 'cluster' },
+  { id: 'peony', n: 'Пионовидные розы', g: 'пионовидные розы', re: /пионовидн/, sh: 'ruffle' },
+  { id: 'dian', n: 'Диантусы', g: 'диантусы', re: /диантус/, sh: 'fringe' },
+  { id: 'ranun', n: 'Ранункулюсы', g: 'ранункулюсы', re: /ранункулюс/, sh: 'ranun' },
+  { id: 'rose', n: 'Одноголовые розы', g: 'одноголовые розы', re: /одноголов/, sh: 'rose' },
+  { id: 'eust', n: 'Эустома', g: 'эустома', re: /эустом/, sh: 'cup' },
+  { id: 'matt', n: 'Маттиола', g: 'маттиола', re: /маттиол/, sh: 'spike' },
+  { id: 'gen', n: 'Гениста', g: 'гениста', re: /генист/, sh: 'spike', c: '#F2C94C' },
+  { id: 'forget', n: 'Незабудка', g: 'незабудка', re: /незабуд/, sh: 'forget', c: '#86AEEF' },
+  { id: 'anem', n: 'Анемон', g: 'анемон', re: /анемон/, sh: 'anem', c: '#FFFFFF' },
+  { id: 'euc', n: 'Заснеженный эвкалипт', g: 'эвкалипт', re: /эвкалипт/, sh: 'leaf', c: '#A9C4B6' },
+  { id: 'chrys', n: 'Кустовая хризантема', g: 'кустовая хризантема', re: /хризантем/, sh: 'star' },
+  { id: 'leuc', n: 'Леукадендрон', g: 'леукадендрон', re: /леукадендрон/, sh: 'cone', c: '#C9A548' },
+  { id: 'anth', n: 'Антуриум', g: 'антуриум', re: /антуриум/, sh: 'heart' },
+  { id: 'glad', n: 'Гладиолус', g: 'гладиолус', re: /гладиолус/, sh: 'spike' },
+  { id: 'thl', n: 'Тиласпия', g: 'тиласпия', re: /тиласпи/, sh: 'pod', c: '#A3C873' },
+  { id: 'tan', n: 'Танацетум', g: 'танацетум', re: /танацетум/, sh: 'daisy', c: '#FFFFFF' },
+  { id: 'fors', n: 'Форзиция', g: 'веточки форзиции', re: /форзици/, sh: 'twig', c: '#F2C21B' }
+];
+var FBY = {}; FLOWERS.forEach(function (f) { FBY[f.id] = f; });
+var PALS = [
+  { id: 'any', n: 'На вкус флориста', g: 'на вкус флориста', c: ['#FF8C6E', '#F7B3A1', '#FFD3C4', '#EE6D7F'] },
+  { id: 'peach', n: 'Персиково-розовая', g: 'персиково-розовая', re: /персиково-розов/, c: ['#F8A98F', '#F07D76', '#FDDCCB', '#E8918A'] },
+  { id: 'lav', n: 'Розово-лавандовая', g: 'розово-лавандовая', re: /лаванд/, c: ['#EDA3C6', '#B6A0E3', '#F7D3E5', '#9E89D6'] },
+  { id: 'caramel', n: 'Карамельная', g: 'карамельная, тёплая', re: /карамел/, c: ['#E2A06A', '#C9794C', '#F3D3AE', '#B76A44'] },
+  { id: 'white', n: 'Белая, весенняя', g: 'белая, весенняя', re: /весенн/, c: ['#FFFFFF', '#F6F0DA', '#FBE7A6', '#EAF2D9'] },
+  { id: 'red', n: 'Классическая красная', g: 'классическая красная', re: /красного/, c: ['#D52B40', '#B01D31', '#EC5262', '#C42638'] }
+];
+
+/* ---------- catalogue ---------- */
+var ITEMS = [];
+BIZ.menu.forEach(function (c) { c.items.forEach(function (it, j) { ITEMS.push({ t: it.t, p: it.p, v: it.v || '', d: it.d || '', cat: c.name, key: c.name + '|' + j }); }); });
+ITEMS.forEach(function (it) {
+  var s = (it.t + ' ' + it.d).toLowerCase();
+  it.fl = FLOWERS.filter(function (f) { return f.re.test(s); }).map(function (f) { return f.id; });
+  var pal = PALS.filter(function (p) { return p.re && p.re.test(s); })[0];
+  it.pal = pal ? pal.id : 'any';
+  it.mix = /сборн/i.test(it.t);
+});
+FLOWERS.forEach(function (f) { f.count = ITEMS.filter(function (i) { return i.fl.indexOf(f.id) >= 0; }).length; });
+FLOWERS = FLOWERS.filter(function (f) { return f.count > 0; }).sort(function (a, b) { return b.count - a.count; });
+PALS.forEach(function (p) { p.src = p.re ? ITEMS.filter(function (i) { return i.pal === p.id; }) : []; });
+PALS = PALS.filter(function (p) { return !p.re || p.src.length; });
+var PBY = {}; PALS.forEach(function (p) { PBY[p.id] = p; });
+var mixes = ITEMS.filter(function (i) { return i.mix && i.p != null; });
+var mixMin = Math.min.apply(null, mixes.map(function (i) { return i.p; })), mixMax = Math.max.apply(null, mixes.map(function (i) { return i.p; }));
+
+$('#buildSub').innerHTML = 'В описаниях ' + mixes.length + ' ' + plural(mixes.length, 'сборного букета', 'сборных букетов', 'сборных букетов') + ' из витрины встречается ' + FLOWERS.length + ' ' + plural(FLOWERS.length, 'вид', 'вида', 'видов') + ' цветов и зелени. Выберите свои — сайт покажет, на какой букет из витрины это похоже, и сложит сообщение флористу.';
+
+/* ---------- drawing ---------- */
+function hash(s) { var h = 2166136261; for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+function rng(seed) { return function () { seed |= 0; seed = seed + 0x6D2B79F5 | 0; var t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function shade(hex, f) {
+  var n = parseInt(hex.slice(1), 16), r = n >> 16, g = n >> 8 & 255, b = n & 255;
+  var k = function (c) { return Math.max(0, Math.min(255, Math.round(f < 0 ? c * (1 + f) : c + (255 - c) * f))); };
+  return '#' + ((1 << 24) + (k(r) << 16) + (k(g) << 8) + k(b)).toString(16).slice(1);
+}
+var F = function (n) { return (+n).toFixed(1); };
+var C = function (x, y, r, fill, extra) { return '<circle cx="' + F(x) + '" cy="' + F(y) + '" r="' + F(r) + '" fill="' + fill + '"' + (extra || '') + '/>'; };
+var E = function (x, y, rx, ry, fill, rot, cx, cy) { return '<ellipse cx="' + F(x) + '" cy="' + F(y) + '" rx="' + F(rx) + '" ry="' + F(ry) + '" fill="' + fill + '"' + (rot != null ? ' transform="rotate(' + F(rot) + ' ' + F(cx) + ' ' + F(cy) + ')"' : '') + '/>'; };
+var LINE = ' stroke="rgba(110,50,35,.22)" stroke-width=".8"';
+function head(sh, x, y, r, c, R) {
+  var o = '', i, a, dk = shade(c, -0.28), lt = shade(c, 0.5);
+  switch (sh) {
+    case 'cluster':
+      for (i = 0; i < 12; i++) { a = i * 2.4; var rr = Math.sqrt((i + .5) / 12) * r * .78; o += C(x + Math.cos(a) * rr, y + Math.sin(a) * rr, r * .3, i % 3 ? c : lt, LINE); }
+      for (i = 0; i < 5; i++) { a = i * 1.26 + .4; o += C(x + Math.cos(a) * r * .4, y + Math.sin(a) * r * .4, r * .06, dk); }
+      break;
+    case 'ruffle':
+      o += C(x, y, r, shade(c, -.06), LINE);
+      for (i = 0; i < 3; i++) o += '<path d="M' + F(x - r * (.78 - i * .22)) + ' ' + F(y + r * .05) + 'a' + F(r * (.78 - i * .22)) + ' ' + F(r * (.62 - i * .16)) + ' 0 0 1 ' + F(r * (1.56 - i * .44)) + ' 0" fill="none" stroke="' + dk + '" stroke-opacity=".55" stroke-width="' + F(r * .09) + '" stroke-linecap="round"/>';
+      o += C(x, y + r * .12, r * .2, lt);
+      break;
+    case 'ranun':
+      for (i = 0; i < 4; i++) o += C(x, y, r * (1 - i * .22), i % 2 ? shade(c, .18) : shade(c, -.05 * i), i === 0 ? LINE : '');
+      o += C(x, y, r * .16, '#7E9A4C');
+      break;
+    case 'rose':
+      o += C(x, y, r, c, LINE);
+      o += '<path d="M' + F(x - r * .55) + ' ' + F(y) + 'a' + F(r * .55) + ' ' + F(r * .55) + ' 0 1 1 ' + F(r * .9) + ' ' + F(r * .25) + 'a' + F(r * .32) + ' ' + F(r * .32) + ' 0 1 1 -' + F(r * .5) + ' -' + F(r * .35) + '" fill="none" stroke="' + dk + '" stroke-width="' + F(r * .13) + '" stroke-linecap="round"/>';
+      break;
+    case 'fringe':
+      o += C(x, y, r * .78, c, ' stroke="' + lt + '" stroke-width="' + F(r * .36) + '" stroke-dasharray="1.3 1.5"');
+      o += C(x, y, r * .26, dk);
+      break;
+    case 'cup':
+      o += E(x - r * .38, y, r * .52, r * .85, shade(c, -.08), -18, x, y) + E(x + r * .38, y, r * .52, r * .85, shade(c, -.08), 18, x, y);
+      o += E(x, y - r * .1, r * .52, r * .9, c);
+      o += C(x, y + r * .35, r * .16, '#9C7AD6');
+      break;
+    case 'spike':
+      for (i = 0; i < 6; i++) o += C(x + (i % 2 ? 1 : -1) * r * .22, y - i * r * .6, r * (.5 - i * .05), i % 2 ? c : shade(c, .25), i ? '' : LINE);
+      break;
+    case 'forget':
+      for (i = 0; i < 5; i++) { a = i * 1.257 + R(); var fx = x + Math.cos(a) * r * .5, fy = y + Math.sin(a) * r * .5; for (var k = 0; k < 5; k++) { var b = k * 1.257; o += C(fx + Math.cos(b) * r * .14, fy + Math.sin(b) * r * .14, r * .12, c); } o += C(fx, fy, r * .07, '#F7D35A'); }
+      break;
+    case 'anem':
+      for (i = 0; i < 6; i++) o += E(x, y - r * .5, r * .42, r * .55, c, i * 60, x, y);
+      o += C(x, y, r * .95, 'none', LINE);
+      o += C(x, y, r * .3, '#2E2A3E') + C(x, y, r * .42, 'none', ' stroke="#2E2A3E" stroke-width="' + F(r * .08) + '" stroke-dasharray="1 1.6"');
+      break;
+    case 'star':
+      for (i = 0; i < 12; i++) o += E(x, y - r * .55, r * .17, r * .45, i % 2 ? c : shade(c, -.1), i * 30, x, y);
+      o += C(x, y, r * .3, '#D8B64A');
+      break;
+    case 'daisy':
+      for (i = 0; i < 4; i++) { a = i * 1.57 + R(); var dx = x + Math.cos(a) * r * .45, dy = y + Math.sin(a) * r * .45; o += C(dx, dy, r * .26, '#F2C21B', ' stroke="#fff" stroke-width="' + F(r * .1) + '"'); }
+      break;
+    case 'heart':
+      o += '<path d="M' + F(x) + ' ' + F(y + r * .9) + 'C' + F(x - r * 1.3) + ' ' + F(y) + ' ' + F(x - r * .9) + ' ' + F(y - r * 1.1) + ' ' + F(x) + ' ' + F(y - r * .45) + 'C' + F(x + r * .9) + ' ' + F(y - r * 1.1) + ' ' + F(x + r * 1.3) + ' ' + F(y) + ' ' + F(x) + ' ' + F(y + r * .9) + 'z" fill="' + c + '"' + LINE + '/>';
+      o += '<path d="M' + F(x) + ' ' + F(y - r * .15) + 'q' + F(r * .25) + ' -' + F(r * .5) + ' ' + F(r * .55) + ' -' + F(r * .75) + '" stroke="#F4D35E" stroke-width="' + F(r * .2) + '" stroke-linecap="round" fill="none"/>';
+      break;
+    case 'cone':
+      o += E(x, y, r * .55, r * .9, c, (R() - .5) * 30, x, y) + E(x, y - r * .15, r * .3, r * .55, shade(c, -.25), null);
+      break;
+    case 'pod':
+      for (i = 0; i < 5; i++) o += C(x + (i % 2 ? r * .4 : -r * .4), y - i * r * .5, r * .26, i % 2 ? c : shade(c, -.15));
+      break;
+    case 'leaf':
+      for (i = 0; i < 5; i++) o += C(x + (i % 2 ? r * .5 : -r * .5), y - i * r * .5, r * .36, i % 2 ? c : shade(c, -.14));
+      break;
+    case 'twig':
+      o += '<path d="M' + F(x) + ' ' + F(y + r) + 'L' + F(x + r * .3) + ' ' + F(y - r * 2.2) + '" stroke="#8A6A4E" stroke-width="1.4"/>';
+      for (i = 0; i < 6; i++) o += C(x + r * .05 * i + (i % 2 ? 2.4 : -2.4), y + r * .7 - i * r * .55, r * .2, c);
+      break;
+  }
+  return o;
+}
+var BACK = { spike: 1, leaf: 1, twig: 1, pod: 1, cone: 1 };
+function bouquetSVG(ids, palId, opt) {
+  opt = opt || {};
+  var pal = (PBY[palId] || PALS[0]).c, R = rng(hash(ids.join(',') + palId + (opt.seed || '')));
+  var W = 240, cx = 120, cy = 112, RX = 70 * (opt.s || 1), RY = 46 * (opt.s || 1);
+  var o = '<svg viewBox="0 0 240 270" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">';
+  var i;
+  if (!ids.length) {
+    // a few bare sprigs of eucalyptus waiting for flowers
+    [[-34, -22], [0, -4], [34, 22]].forEach(function (s, k) {
+      var bx = cx + s[0] * .5, tx = cx + s[0], ty = 96 + Math.abs(s[0]) * .5;
+      o += '<path d="M' + bx + ' 190Q' + F(bx + s[1] * .3) + ' 140 ' + F(tx) + ' ' + F(ty) + '" stroke="#7FA88F" stroke-width="1.6" fill="none"/>';
+      for (var q = 0; q < 6; q++) { var tt = q / 6, px = bx + (tx - bx) * (1 - tt) * .9 + (tx - bx) * .1, py = ty + (190 - ty) * tt * .85; o += C(px + (q % 2 ? 6 : -6), py, 5.5 - q * .3, q % 2 ? '#A9C4B6' : '#93B3A2'); }
+    });
+  } else {
+    for (i = 0; i < 11; i++) {
+      var a = Math.PI * (1.05 + i / 10 * .9), lx = cx + Math.cos(a) * (RX + 4), ly = cy + Math.sin(a) * (RY + 4) + 10;
+      o += E(lx, ly, 7, 19, i % 2 ? '#7DBE4E' : '#5E9E38', (a * 180 / Math.PI) + 90, lx, ly);
+    }
+    var fl = ids.map(function (id, k) { var f = FBY[id]; return { id: id, sh: f.sh, c: f.c || pal[k % pal.length] }; });
+    var n = opt.n || Math.max(7, Math.min(22, 6 + fl.length * 3));
+    var heads = [];
+    for (i = 0; i < n; i++) { var rr = Math.sqrt((i + .5) / n), th = i * 2.39996 + R() * .5; heads.push({ rr: rr, x: cx + Math.cos(th) * rr * RX, y: cy + Math.sin(th) * rr * RY - (1 - rr * rr) * 12 }); }
+    var types = [];
+    for (i = 0; i < n; i++) types.push(fl[i % fl.length]);
+    for (i = types.length - 1; i > 0; i--) { var j = Math.floor(R() * (i + 1)), t = types[i]; types[i] = types[j]; types[j] = t; }
+    // greenery / spikes to the rim, blossoms inside
+    heads.sort(function (a, b) { return b.rr - a.rr; });
+    types.sort(function (a, b) { return (BACK[b.sh] ? 1 : 0) - (BACK[a.sh] ? 1 : 0); });
+    heads.forEach(function (h, k) { h.t = types[k]; });
+    heads.sort(function (a, b) { return (BACK[b.t.sh] ? 1 : 0) - (BACK[a.t.sh] ? 1 : 0) || a.y - b.y; });
+    heads.forEach(function (h) {
+      var r = (opt.r || 13) * (.9 + R() * .3) * (opt.s || 1);
+      if (h.t.sh === 'spike' || h.t.sh === 'leaf' || h.t.sh === 'pod') { r *= .8; h.y -= 8; }
+      if (h.t.sh === 'cluster') r *= 1.35;
+      var g = head(h.t.sh, h.x, h.y, r, h.t.c, R);
+      o += opt.pop === h.t.id ? '<g class="pop">' + g + '</g>' : g;
+    });
+  }
+  // kraft wrap + ribbon
+  var top = cy + RY * .5;
+  o += '<path d="M' + F(cx - RX - 14) + ' ' + F(top - 8) + 'L' + F(cx - 10) + ' 262H' + F(cx + 10) + 'L' + F(cx + RX + 14) + ' ' + F(top - 8) + 'Q' + F(cx + RX * .3) + ' ' + F(top + 22) + ' ' + cx + ' ' + F(top + 14) + 'Q' + F(cx - RX * .3) + ' ' + F(top + 22) + ' ' + F(cx - RX - 14) + ' ' + F(top - 8) + 'z" fill="#EBD3B3"/>';
+  o += '<path d="M' + F(cx - RX - 14) + ' ' + F(top - 8) + 'L' + F(cx - 10) + ' 262" stroke="#D9BB94" stroke-width="1.2"/><path d="M' + F(cx + RX + 14) + ' ' + F(top - 8) + 'L' + F(cx + 10) + ' 262" stroke="#D9BB94" stroke-width="1.2"/>';
+  o += '<path d="M' + cx + ' ' + F(top + 14) + 'L' + cx + ' 262" stroke="#D9BB94" stroke-width="1"/>';
+  o += '<g transform="translate(' + cx + ' 222)"><ellipse cx="-11" cy="0" rx="11" ry="6" fill="#F26A4E"/><ellipse cx="11" cy="0" rx="11" ry="6" fill="#F26A4E"/><path d="M-2 3l-8 20M2 3l8 20" stroke="#F26A4E" stroke-width="3" stroke-linecap="round"/><circle r="4.2" fill="#C23E27"/></g>';
+  return o + '</svg>';
+}
+function itemSVG(it) {
+  if (!it.mix && it.fl.length === 1 && it.fl[0] === 'hydr') {
+    var c = '#B9C6F2';
+    return '<svg viewBox="0 0 240 270" aria-hidden="true"><path d="M120 150Q118 210 122 262" stroke="#5E9E38" stroke-width="4" fill="none"/>' + E(96, 190, 9, 24, '#7DBE4E', -50, 96, 190) + E(146, 210, 9, 24, '#5E9E38', 50, 146, 210) + head('cluster', 92, 118, 30, '#C9B6EE', rng(3)) + head('cluster', 148, 116, 30, '#F3B4CF', rng(5)) + head('cluster', 120, 96, 34, c, rng(7)) + '</svg>';
+  }
+  if (it.fl.length === 1 && it.fl[0] === 'rose') return bouquetSVG(['rose'], 'red', { n: 22, r: 12, s: 1.05 });
+  // no flower names in the description: a neutral illustration in the item's own gamma
+  if (!it.fl.length) return bouquetSVG(['peony', 'ranun', 'chrys', 'euc'].filter(function (id) { return FBY[id]; }), it.pal, { seed: it.key });
+  return bouquetSVG(it.fl, it.pal, { seed: it.key, s: .92 + .12 * Math.min(1, (it.p || 8000) / 13000) });
+}
+
+/* ---------- hero bud (petals open with scroll) ---------- */
+(function () {
+  var svg = $('#bud'), B = 318;
+  var petal = function (L, W, fill, a0, a1, s0, cls) {
+    var y = B - L;
+    var d = 'M200 ' + B + 'C' + F(200 - W) + ' ' + F(B - L * .32) + ' ' + F(200 - W * .95) + ' ' + F(B - L * .86) + ' ' + F(200 - W * .3) + ' ' + F(y + 2) + 'Q200 ' + F(y - 10) + ' ' + F(200 + W * .3) + ' ' + F(y + 2) + 'C' + F(200 + W * .95) + ' ' + F(B - L * .86) + ' ' + F(200 + W) + ' ' + F(B - L * .32) + ' 200 ' + B + 'z';
+    return '<g class="pt' + (cls ? ' ' + cls : '') + '" style="--a0:' + a0 + ';--a1:' + a1 + ';--s0:' + s0 + '"><path d="' + d + '" fill="' + fill + '"/><path d="M200 ' + (B - 6) + 'Q' + F(200 + W * .08) + ' ' + F(B - L * .5) + ' 200 ' + F(y + 14) + '" stroke="#fff" stroke-opacity=".35" stroke-width="1.4" fill="none"/></g>';
+  };
+  var o = '<defs>' +
+    '<linearGradient id="gBack" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#FF9C82"/><stop offset="1" stop-color="#FFD2C3"/></linearGradient>' +
+    '<linearGradient id="gMid" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#F26A4E"/><stop offset="1" stop-color="#FFA58C"/></linearGradient>' +
+    '<linearGradient id="gIn" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#FFB49E"/><stop offset="1" stop-color="#FFE6DC"/></linearGradient>' +
+    '<linearGradient id="gFront" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#D9482E"/><stop offset=".7" stop-color="#F57A5E"/><stop offset="1" stop-color="#FF9F86"/></linearGradient>' +
+    '<path id="ringPath" d="M200 300m-176 0a176 176 0 1 1 352 0a176 176 0 1 1 -352 0"/>' +
+    '</defs>';
+  o += '<circle cx="200" cy="300" r="150" fill="#FFE3D8" opacity=".8"/><circle cx="200" cy="300" r="196" fill="none" stroke="#F2C1B1" stroke-width="1"/>';
+  o += '<g class="ring"><text font-family="Manrope, sans-serif" font-size="12.5" font-weight="700" letter-spacing="3.4" fill="#C23E27"><textPath href="#ringPath">РАСЦВЕТАЙ · САДОВАЯ-КУДРИНСКАЯ, 32А · ' + esc(BIZ.hoursText.toUpperCase()) + ' · ' + esc(BIZ.metro[0].name.toUpperCase()) + ' ·</textPath></text></g>';
+  o += '<g class="sway">';
+  o += '<path d="M200 330C196 400 206 470 198 580" stroke="#5E9E38" stroke-width="7" fill="none" stroke-linecap="round"/>';
+  o += '<g class="lf" style="transform-origin:200px 460px;--a0:-8;--a1:-38"><path d="M200 460C160 450 118 420 104 380C150 384 186 412 200 460z" fill="#8CC665"/><path d="M200 460C170 440 140 412 112 386" stroke="#5E9E38" stroke-width="1.6" fill="none"/></g>';
+  o += '<g class="lf" style="transform-origin:200px 410px;--a0:10;--a1:40"><path d="M200 410C240 404 280 376 292 338C248 342 212 368 200 410z" fill="#7DBE4E"/><path d="M200 410C228 394 256 366 286 342" stroke="#5E9E38" stroke-width="1.6" fill="none"/></g>';
+  // back petals
+  [[-92, 'gBack', 150, 56], [-58, 'gBack', 165, 60], [58, 'gBack', 165, 60], [92, 'gBack', 150, 56]].forEach(function (p, i) { o += petal(p[2], p[3], 'url(#' + p[1] + ')', (i < 2 ? -1 : 1) * (6 - i % 2 * 2), p[0], .62); });
+  [[-34, 172, 58], [0, 182, 58], [34, 172, 58]].forEach(function (p, i) { o += petal(p[1], p[2], 'url(#gMid)', (i - 1) * 3, p[0], .64); });
+  // stamens (appear when open)
+  o += '<g class="stamen">';
+  for (var k = 0; k < 9; k++) { var ang = -70 + k * 17.5, rad = ang * Math.PI / 180, x2 = 200 + Math.sin(rad) * 64, y2 = 244 - Math.cos(rad) * 54; o += '<path d="M200 262L' + F(x2) + ' ' + F(y2) + '" stroke="#C9A548" stroke-width="1.4"/>' + C(x2, y2, 4.2, '#F2C94C'); }
+  o += '</g>';
+  [[-14, 120, 46], [14, 120, 46]].forEach(function (p, i) { o += petal(p[1], p[2], 'url(#gIn)', (i ? 1 : -1) * 2, p[0], .7); });
+  [[-46, 128, 62], [46, 128, 62], [-20, 112, 66], [20, 112, 66]].forEach(function (p, i) { o += petal(p[1], p[2], 'url(#gFront)', (p[0] < 0 ? -1 : 1) * (i < 2 ? 9 : 4), p[0], .74); });
+  // sepals
+  [[-1, 0], [1, 0], [0, 1]].forEach(function (s) { o += '<g class="pt" style="--a0:' + (s[0] * 22) + ';--a1:' + (s[0] * 58 + (s[1] ? 0 : 0)) + ';--s0:1"><path d="M200 ' + (B + 14) + 'C' + (190 + s[0] * 4) + ' ' + (B - 6) + ' ' + (194 + s[0] * 2) + ' ' + (B - 30) + ' 200 ' + (B - 44) + 'C' + (206 + s[0] * 2) + ' ' + (B - 30) + ' ' + (210 + s[0] * 4) + ' ' + (B - 6) + ' 200 ' + (B + 14) + 'z" fill="' + (s[1] ? '#7DBE4E' : '#5E9E38') + '"/></g>'; });
+  o += C(200, B + 10, 13, '#66A83E');
+  o += '</g>';
+  svg.innerHTML = o;
+
+  var hero = $('#hero'), hint = $('#hint'), cur = 0, target = 0, intro = 0, raf = 0;
+  function setO(v) { svg.style.setProperty('--o', v.toFixed(3)); }
+  if (RM) { setO(1); hint.classList.add('gone'); return; }
+  function scrollTarget() {
+    var h = hero.offsetHeight || innerHeight, y = Math.max(0, scrollY - hero.offsetTop + 60);
+    return Math.min(1, Math.max(intro, intro + y / Math.min(h * .75, 440)));
+  }
+  function loop() {
+    target = scrollTarget();
+    cur += (target - cur) * .14;
+    if (Math.abs(target - cur) < .002) cur = target;
+    setO(cur);
+    hint.classList.toggle('gone', cur > .55);
+    raf = cur !== target ? requestAnimationFrame(loop) : 0;
+  }
+  var kick = function () { if (!raf) raf = requestAnimationFrame(loop); };
+  addEventListener('scroll', kick, { passive: true });
+  addEventListener('resize', kick);
+  var t0 = performance.now();
+  (function introAnim(t) { intro = Math.min(.3, (t - t0) / 1800 * .3); kick(); if (intro < .3) requestAnimationFrame(introAnim); })(t0);
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { es.forEach(function (e) { $('#heroArt').classList.toggle('paused', !e.isIntersecting); }); }).observe($('#heroArt'));
+  window.__bloom = function () { return cur; };
+})();
+
+/* ---------- builder ---------- */
+var st = { pal: 'any', sel: [], budget: 'florist', own: '', mode: 'del', day: 0, time: 0, last: null };
+var showAllFl = false;
+function renderPals() {
+  $('#pals').innerHTML = PALS.map(function (p) {
+    var src = p.src.length ? 'как в букете за ' + p.src.map(function (i) { return rub(i.p); }).join(' и ') : 'флорист подберёт';
+    return '<button type="button" class="pal" data-id="' + p.id + '" aria-pressed="' + (p.id === st.pal) + '"><span class="sw">' + p.c.map(function (c) { return '<i style="background:' + c + '"></i>'; }).join('') + '</span><span><b>' + esc(p.n) + '</b><small>' + src + '</small></span></button>';
+  }).join('');
+}
+var VIS = 10;
+function flIcon(f) {
+  var pal = PBY[st.pal].c, idx = Math.max(0, FLOWERS.indexOf(f));
+  return '<svg viewBox="0 0 40 40" aria-hidden="true">' + head(f.sh, 20, f.sh === 'spike' || f.sh === 'leaf' || f.sh === 'pod' || f.sh === 'twig' ? 27 : 20, f.sh === 'cluster' ? 14 : 11, f.c || pal[idx % pal.length], rng(hash(f.id))) + '</svg>';
+}
+function renderFls() {
+  $('#fls').innerHTML = FLOWERS.map(function (f, i) {
+    return '<button type="button" class="fl' + (i >= VIS ? ' extra' : '') + '" data-id="' + f.id + '" aria-pressed="' + (st.sel.indexOf(f.id) >= 0) + '">' + flIcon(f) + '<span>' + esc(f.n) + ' <small>' + f.count + '</small></span></button>';
+  }).join('');
+  $('#fls').classList.toggle('short', !showAllFl);
+  var extra = FLOWERS.length - VIS;
+  $('#flsMore').classList.toggle('hide', extra <= 0);
+  $('#flsMore').textContent = showAllFl ? 'Свернуть' : 'Ещё ' + extra + ' ' + plural(extra, 'цветок', 'цветка', 'цветков') + ' и зелень';
+}
+$('#pals').addEventListener('click', function (e) { var b = e.target.closest('.pal'); if (!b) return; st.pal = b.dataset.id; st.last = null; renderPals(); renderFls(); renderVase(); });
+$('#fls').addEventListener('click', function (e) {
+  var b = e.target.closest('.fl'); if (!b) return;
+  var id = b.dataset.id, i = st.sel.indexOf(id);
+  if (i >= 0) { st.sel.splice(i, 1); st.last = null; } else { st.sel.push(id); st.last = id; }
+  b.setAttribute('aria-pressed', i < 0);
+  renderVase();
+});
+$('#flsMore').addEventListener('click', function () { showAllFl = !showAllFl; renderFls(); });
+
+function matches() {
+  if (!st.sel.length) return [];
+  return ITEMS.filter(function (i) { return i.fl.length; }).map(function (i) {
+    var both = i.fl.filter(function (f) { return st.sel.indexOf(f) >= 0; }).length;
+    var uni = i.fl.length + st.sel.length - both;
+    return { it: i, both: both, score: both / uni + (st.pal !== 'any' && i.pal === st.pal ? .2 : 0) + (i.mix ? .01 : 0) };
+  }).filter(function (m) { return m.both > 0; }).sort(function (a, b) { return b.score - a.score || (a.it.p || 0) - (b.it.p || 0); });
+}
+var lastBest = null;
+function renderVase() {
+  $('#vase').innerHTML = bouquetSVG(st.sel, st.pal, { pop: st.last }) + (st.sel.length ? '' : '<p class="empty">отметьте цветы —<br>букет соберётся здесь</p>');
+  var n = st.sel.length;
+  $('#vaseCount').textContent = n ? n + ' ' + plural(n, 'вид', 'вида', 'видов') + ' · ' + PBY[st.pal].n.toLowerCase() : PBY[st.pal].n.toLowerCase();
+  $('#tags').innerHTML = st.sel.map(function (id) { return '<span>' + esc(FBY[id].n) + '</span>'; }).join('');
+  var m = matches();
+  lastBest = m.length ? m[0] : null;
+  if (!lastBest) {
+    $('#match').innerHTML = 'Сборные букеты в витрине стоят от <b class="nb">' + rub(mixMin) + '</b> до <b class="nb">' + rub(mixMax) + '</b>. Отметьте цветы — подскажем самый похожий.';
+  } else {
+    var it = lastBest.it, top = m.slice(0, 3).map(function (x) { return x.it.p; }).filter(function (p) { return p != null; });
+    var lo = Math.min.apply(null, top), hi = Math.max.apply(null, top);
+    $('#match').innerHTML = 'Ближе всего в витрине — <b>«' + esc(it.t) + '»</b> <span class="pr">' + rub(it.p) + '</span><small>Из вашего выбора в нём ' + lastBest.both + ' из ' + n + '. ' + (top.length > 1 && lo !== hi ? 'Похожие букеты: <span class="nb">' + lo.toLocaleString('ru-RU').replace(/\s/g, ' ') + '–' + rub(hi) + '</span>. ' : '') + 'Цены из карточки на Яндекс Картах; точную стоимость вашего состава назовёт флорист.</small><button type="button" id="seeBest">Посмотреть этот букет</button>';
+  }
+  renderBudget();
+  renderMsg();
+}
+$('#match').addEventListener('click', function (e) {
+  if (!e.target.closest('#seeBest') || !lastBest) return;
+  var card = document.querySelector('.card[data-key="' + lastBest.it.key + '"]');
+  if (card) { $('#grid').classList.remove('short'); card.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'center' }); card.animate && card.animate([{ boxShadow: '0 0 0 4px rgba(194,62,39,.5)' }, { boxShadow: '0 0 0 0 rgba(194,62,39,0)' }], { duration: 1600 }); }
+});
+
+function renderBudget() {
+  var opts = [['florist', 'Подскажет флорист']];
+  if (lastBest && lastBest.it.p != null) opts.push(['match', 'Как у похожего · ' + rub(lastBest.it.p)]);
+  opts.push(['own', 'Своя сумма']);
+  if (st.budget === 'match' && !(lastBest && lastBest.it.p != null)) st.budget = 'florist';
+  $('#budget').innerHTML = opts.map(function (o) { return '<button type="button" class="chip" data-id="' + o[0] + '" aria-pressed="' + (o[0] === st.budget) + '">' + o[1] + '</button>'; }).join('');
+  $('#ownWrap').classList.toggle('on', st.budget === 'own');
+}
+$('#budget').addEventListener('click', function (e) { var b = e.target.closest('.chip'); if (!b) return; st.budget = b.dataset.id; renderBudget(); renderMsg(); if (st.budget === 'own') $('#own').focus(); });
+$('#own').addEventListener('input', function () { st.own = this.value; renderMsg(); });
+
+/* when */
+var now = mskNow(), stNow = openStatus(now);
+var todayH = BIZ.hours[(now.getDay() + 6) % 7], lateToday = todayH.length && now.getHours() * 60 + now.getMinutes() >= mm(todayH[todayH.length - 1][1]) - 60;
+var addDays = function (d, n) { var x = new Date(d.getTime()); x.setDate(x.getDate() + n); return x; };
+var fmtDay = function (d) { return d.getDate() + ' ' + ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'][d.getMonth()]; };
+var DAYS = [];
+if (!lateToday) DAYS.push({ k: 'Сегодня', d: now });
+DAYS.push({ k: 'Завтра', d: addDays(now, 1) }, { k: 'Послезавтра', d: addDays(now, 2) }, { k: 'Другой день', d: null });
+var open = mm(BIZ.hours[0][0] ? BIZ.hours[0][0][0] : '09:00'), close = mm(BIZ.hours[0][0] ? BIZ.hours[0][0][1] : '21:00');
+var TIMES = [{ k: 'Любое', t: null }];
+for (var tm = open; tm + 180 <= close; tm += 180) { var a = pad(Math.floor(tm / 60)) + ':' + pad(tm % 60), b2 = pad(Math.floor((tm + 180) / 60)) + ':' + pad((tm + 180) % 60); TIMES.push({ k: a + '–' + b2, t: a + '–' + b2 }); }
+function chipGroup(sel, list, key) {
+  $(sel).innerHTML = list.map(function (d, i) { return '<button type="button" class="chip" data-i="' + i + '" aria-pressed="' + (i === st[key]) + '">' + d.k + '</button>'; }).join('');
+  $(sel).addEventListener('click', function (e) {
+    var b = e.target.closest('.chip'); if (!b) return; st[key] = +b.dataset.i;
+    [].forEach.call($(sel).children, function (x) { x.setAttribute('aria-pressed', x === b); });
+    if (key === 'day') $('#dateWrap').classList.toggle('hide', DAYS[st.day].d !== null);
+    renderMsg();
+  });
+}
+chipGroup('#days', DAYS, 'day'); chipGroup('#times', TIMES, 'time');
+var iso = function (d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); };
+$('#date').min = iso(now);
+function setMode(m) {
+  st.mode = m;
+  $('#modeDel').setAttribute('aria-pressed', m === 'del'); $('#modePick').setAttribute('aria-pressed', m === 'pick');
+  $('#addrWrap').classList.toggle('hide', m !== 'del'); $('#pickNote').classList.toggle('hide', m !== 'pick');
+  renderMsg();
+}
+$('#pickAddr').textContent = 'Заберёте сами: ' + shortAddr + ', ' + BIZ.hoursText + '.';
+$('#modeDel').addEventListener('click', function () { setMode('del'); });
+$('#modePick').addEventListener('click', function () { setMode('pick'); });
+['#addr', '#card', '#date'].forEach(function (s) { $(s).addEventListener('input', renderMsg); });
+$('#photo').addEventListener('change', renderMsg);
+
+function whenText() {
+  var d = DAYS[st.day], day;
+  if (d.d) day = d.k.toLowerCase() + ', ' + fmtDay(d.d);
+  else { var v = $('#date').value; day = v ? fmtDay(new Date(v + 'T12:00:00')) : 'дату напишу'; }
+  var t = TIMES[st.time].t;
+  return day + (t ? ', ' + t : '');
+}
+function buildMsg() {
+  var L = ['Здравствуйте! Хочу заказать сборный букет.', ''];
+  L.push('Гамма: ' + PBY[st.pal].g);
+  L.push('Цветы: ' + (st.sel.length ? st.sel.map(function (id) { return FBY[id].g; }).join(', ') : 'на ваш вкус'));
+  if (lastBest) L.push('Похоже на ваш «' + lastBest.it.t + '» за ' + rub(lastBest.it.p).replace(/ /g, ' '));
+  var bud = st.budget === 'match' && lastBest ? 'около ' + rub(lastBest.it.p) : st.budget === 'own' && +st.own > 0 ? 'около ' + rub(Math.round(+st.own)) : 'подскажите, пожалуйста, по цене';
+  L.push('Сумма: ' + bud.replace(/ /g, ' '));
+  L.push('');
+  if (st.mode === 'del') {
+    L.push('Доставка: ' + whenText());
+    var ad = $('#addr').value.trim();
+    L.push('Адрес: ' + (ad || 'напишу в ответ'));
+  } else {
+    L.push('Самовывоз (' + shortAddr + '): ' + whenText());
+  }
+  var card = $('#card').value.trim();
+  if (card) L.push('Открытка: «' + card + '»');
+  if (st.photo !== false && $('#photo').checked) L.push('Пришлите, пожалуйста, фото букета перед ' + (st.mode === 'del' ? 'отправкой' : 'выдачей') + '.');
+  if (st.mode === 'del') L.push('Подскажите, сколько будет стоить доставка?');
+  return L.join('\n');
+}
+function renderMsg() {
+  var m = buildMsg();
+  $('#preview').textContent = m;
+  $('#send').href = wa(m);
+  var card = $('#card').value.trim();
+  $('#postcard').classList.toggle('hide', !card);
+  $('#postcard').textContent = card;
+  var dm = $('#dockMain'), n = st.sel.length;
+  if (n) { dm.href = wa(m); dm.target = '_blank'; dm.rel = 'noopener'; dm.innerHTML = '<span class="lg">Отправить флористу</span><span class="sh">Отправить</span> <span class="count">' + n + '</span>'; }
+  else { dm.href = '#build'; dm.removeAttribute('target'); dm.innerHTML = 'Собрать букет'; }
+}
+
+/* ---------- shop ---------- */
+$('#shopSub').innerHTML = ITEMS.length + ' ' + plural(ITEMS.length, 'позиция', 'позиции', 'позиций') + ' из карточки на Яндекс Картах — с составом и ценой. Любой букет можно взять за основу конструктора или сразу спросить о нём.';
+var PALN = { peach: 'персиково-розовая гамма', lav: 'розово-лавандовая гамма', caramel: 'карамельная гамма', white: 'белая весенняя гамма', red: 'классический красный' };
+var topSet = {}; (BIZ.top || []).forEach(function (t) { topSet[t.t + '|' + t.p] = 1; });
+var gridItems = ITEMS.slice().sort(function (a, b) { return (topSet[b.t + '|' + b.p] || 0) - (topSet[a.t + '|' + a.p] || 0); });
+$('#grid').innerHTML = gridItems.map(function (it, j) {
+  var ask = 'Здравствуйте! Хочу букет из вашей витрины: «' + it.t + '»' + (it.v ? ', ' + it.v : '') + ' — ' + rub(it.p).replace(/ /g, ' ') + '.\n' + (it.d ? 'Состав по описанию: ' + it.d.replace(/^.*?В составе:\s*/i, '').replace(/^Сборный букет из:\s*/i, '') + '\n' : '') + 'Он сейчас есть? Можно на доставку или самовывоз?';
+  return '<article class="card reveal' + (j >= 6 ? ' extra' : '') + '" data-key="' + esc(it.key) + '"><div class="art">' + (topSet[it.t + '|' + it.p] ? '<span class="badge">Популярное</span>' : '') + itemSVG(it) + '</div><div class="body"><div class="row"><h3>' + esc(it.t) + '</h3><span class="p">' + rub(it.p) + '</span></div>' +
+    (PALN[it.pal] || it.v ? '<div class="gam">' + [PALN[it.pal], it.v].filter(Boolean).map(esc).join(' · ') + '</div>' : '') +
+    (it.d ? '<p>' + esc(it.d) + '</p>' : '<p></p>') +
+    '<div class="acts"><a class="btn btn-coral btn-sm" href="' + wa(ask) + '" target="_blank" rel="noopener">Хочу такой</a>' + (it.fl.length ? '<button type="button" class="btn btn-line btn-sm" data-base="' + esc(it.key) + '">Взять за основу</button>' : '') + '</div></div></article>';
+}).join('');
+$('#grid').addEventListener('click', function (e) {
+  var b = e.target.closest('[data-base]'); if (!b) return;
+  var it = ITEMS.filter(function (i) { return i.key === b.dataset.base; })[0]; if (!it) return;
+  st.sel = it.fl.filter(function (id) { return FBY[id]; }); st.pal = PBY[it.pal] ? it.pal : 'any'; st.last = null;
+  if (st.sel.some(function (id) { return FLOWERS.indexOf(FBY[id]) >= VIS; })) showAllFl = true;
+  renderPals(); renderFls(); renderVase();
+  $('#vaseCard').scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'center' });
+});
+var gridOpen = false;
+$('#showAll').textContent = 'Показать всю витрину · ' + ITEMS.length;
+$('#showAll').addEventListener('click', function () { gridOpen = !gridOpen; $('#grid').classList.toggle('short', !gridOpen); this.textContent = gridOpen ? 'Свернуть' : 'Показать всю витрину · ' + ITEMS.length; if (!gridOpen) $('#shop').scrollIntoView(); });
+if (ITEMS.length <= 6) $('#showAll').classList.add('hide');
+
+/* ---------- love ---------- */
+$('#bigRate').innerHTML = '<span class="n">' + ratingText + '</span><div>' + stars(5) + '<small>' + cnt + ' ' + plural(cnt, 'оценка', 'оценки', 'оценок') + ' · ' + rcnt + ' ' + plural(rcnt, 'отзыв', 'отзыва', 'отзывов') + '<br>на Яндекс Картах</small></div>';
+var maxC = Math.max.apply(null, BIZ.aspects.map(function (a) { return a.count; }));
+$('#aspects').innerHTML = BIZ.aspects.map(function (a) {
+  return '<div class="asp"><div class="t">' + esc(a.text) + '<span>' + a.positive + ' ' + plural(a.positive, 'гость похвалил', 'гостя похвалили', 'гостей похвалили') + '</span></div><div class="bar"><i style="--w:' + (a.positive / maxC * 100).toFixed(1) + '%"></i></div></div>';
+}).join('');
+$('#names').innerHTML = '<b>Флористов благодарят по имени.</b> В отзывах на Яндекс Картах гости отдельно вспоминают Алёну, Екатерину, Наталью и Елену — и пишут, что букеты согласуют перед отправкой.';
+var PICK = ['Наталия И.', 'Балалин Д.', 'Kelumyou', 'Ар И.', 'лина П.'];
+var revs = PICK.map(function (n) { return BIZ.reviews.filter(function (r) { return r.a === n && r.r >= 5; })[0]; }).filter(Boolean);
+$('#revs').innerHTML = revs.map(function (r) {
+  return '<figure class="rev reveal"><q>' + esc(r.x) + '</q><figcaption class="who"><b>' + esc(r.a) + '</b>' + stars(r.r) + '<span>' + esc(r.d) + ' · отзыв на Яндекс Картах</span></figcaption></figure>';
+
+}).join('');
+$('#allRevs').href = BIZ.reviewsUrl;
+var FEAT = [[/^доставка$/i, 'Доставка'], [/самовывоз/i, 'Самовывоз'], [/^подарочная упаковка$/i, 'Подарочная упаковка'], [/открытк/i, 'Открытки'], [/свадебн/i, 'Свадебная флористика'], [/комнатн/i, 'Комнатные растения'], [/кашпо/i, 'Кашпо'], [/игрушк/i, 'Мягкие игрушки'], [/живот/i, 'Можно с животными']];
+var feats = FEAT.filter(function (x) { return BIZ.features.some(function (f) { return x[0].test(f.k) && f.v; }); }).map(function (x) { return x[1]; });
+var payF = BIZ.features.filter(function (f) { return /способ оплаты/i.test(f.k); })[0];
+$('#feats').innerHTML = feats.map(function (t) { return '<span><i></i>' + esc(t) + '</span>'; }).join('');
+
+/* ---------- visit ---------- */
+$('#addrText').textContent = shortAddr;
+$('#metro').innerHTML = BIZ.metro.map(function (m) { return '<li><i class="mdot" style="background:' + m.color + '"></i>' + esc(m.name) + '<span>' + esc(m.distance) + '</span></li>'; }).join('');
+var dn = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'], td = (now.getDay() + 6) % 7;
+$('#week').innerHTML = BIZ.hours.map(function (h, i) {
+  var t = !h.length ? 'вых.' : h.map(function (x) { return x[0].replace(/^0/, '').replace(':00', '') + '–' + x[1].replace(':00', ''); }).join(', ');
+  return '<li' + (i === td ? ' class="today" aria-current="date"' : '') + '><b>' + dn[i] + '</b>' + t + '</li>';
+}).join('');
+$('#hoursT').textContent = 'Работает ' + BIZ.hoursText + '.' + (stNow ? ' Сейчас: ' + stNow.text.toLowerCase() + '.' : '');
+var facts = [];
+if (payF) facts.push(['Оплата', payF.v]);
+var acc = BIZ.features.filter(function (f) { return /инвалидн/i.test(f.k); })[0];
+if (acc && typeof acc.v === 'string') facts.push(['Коляска', 'помещение ' + acc.v]);
+facts.push(['Телефон', '<a href="tel:' + BIZ.phone + '">' + esc(BIZ.phoneDisplay) + '</a>']);
+$('#facts').innerHTML = facts.map(function (f) { return '<div><b>' + f[0] + '</b><span>' + (f[0] === 'Телефон' ? f[1] : esc(f[1])) + '</span></div>'; }).join('');
+$('#route').href = BIZ.routeUrl;
+$('#mapPh').textContent = BIZ.fullAddress;
+(function () {
+  var mapEl = $('#map'), load = function () { if (mapEl.dataset.on) return; mapEl.dataset.on = 1; var f = document.createElement('iframe'); f.loading = 'lazy'; f.title = '«Расцветай» на карте'; f.src = BIZ.mapEmbed; mapEl.appendChild(f); };
+  if ('IntersectionObserver' in window) { var mo = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { load(); mo.disconnect(); } }, { rootMargin: '400px' }); mo.observe(mapEl); } else load();
+})();
+$('#fCats').textContent = 'Магазин цветов и доставка букетов на Садовой-Кудринской.';
+$('#fAddr').textContent = shortAddr;
+$('#fHours').textContent = 'Ежедневно ' + BIZ.hoursText.replace(/^ежедневно,\s*/, '');
+$('#fTel').href = 'tel:' + BIZ.phone; $('#fTel').textContent = BIZ.phoneDisplay;
+$('#fYa').href = BIZ.yandexUrl;
+
+/* ---------- init ---------- */
+renderPals(); renderFls(); renderVase(); setMode('del');
+
+/* reveal with fail-safe */
+if ('IntersectionObserver' in window && !RM) {
+  var rv = document.querySelectorAll('.reveal');
+  var ro = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.remove('pre'); ro.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+  [].forEach.call(rv, function (el) { var r = el.getBoundingClientRect(); if (r.top > innerHeight) { el.classList.add('pre'); ro.observe(el); } });
+  setTimeout(function () { [].forEach.call(document.querySelectorAll('.pre'), function (el) { el.classList.remove('pre'); }); }, 2600);
+}
+})();
+</script>
+<script src="../map-fix.js" defer></script>
+</body>
+</html>

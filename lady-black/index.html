@@ -1,0 +1,858 @@
+<!doctype html>
+<!--
+  КОНЦЕПТ · демо №45 · «Lady Black», Пятницкий пер., 2 (у «Новокузнецкой»)
+
+  1. Идея. Чёрное, белое и одна красная нить. Нить выходит из ушка иглы в первом экране
+     и, пока вы листаете, прошивает всю страницу — через прайс, отзывы и карту — и
+     завязывается узелком у кнопки WhatsApp. Ателье, где шьют с нуля, а не только чинят.
+
+  2. Фирменный модуль. «Что нужно сделать?» в два режима: «Сшить по меркам» — технические
+     эскизы вещей из настоящего прайса (свитшот, футболка, лонгслив, рубашка, жакет, платье,
+     брюки) с ценами, ткань из карточки, вышивка/принт, количество (гости шили по 5 платьев
+     подружкам невесты); «Починить» — подшив брюк с ценой из прайса и работы без цены
+     с вопросом по фото. Всё собирается в «техзадание» → готовое сообщение в WhatsApp.
+
+  3. Арт-дирекшн. Монохром модного журнала: белая бумага, чёрная тушь, красный — только
+     нить и выбранное. Шрифты: Playfair Display (дидона, заголовки), Onest (текст),
+     IBM Plex Mono (бирки и подписи как на лекалах). Мотив: игла, нить, технические эскизы.
+-->
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#fafaf8">
+<title>Lady Black — пошив и ремонт одежды у м. Новокузнецкая (демо)</title>
+<meta name="description" content="Демо-концепт сайта для ателье «Lady Black» в Пятницком переулке: пошив по меркам и ремонт с ценами из прайса, отзывы и заявка в WhatsApp.">
+<meta property="og:title" content="Lady Black — пошив и ремонт одежды (демо)">
+<meta property="og:description" content="Выберите вещь — цена из прайса ателье сразу, техзадание уходит в WhatsApp. Пятницкий пер., 2 · 182 м от «Новокузнецкой».">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kyan9400.github.io/demo/lady-black/">
+<meta property="og:image" content="https://kyan9400.github.io/demo/lady-black/og.jpg">
+<meta property="og:locale" content="ru_RU">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111'/%3E%3Cpath d='M18 12v38h22' fill='none' stroke='%23fafaf8' stroke-width='5'/%3E%3Cpath d='M8 58 C 26 40, 40 54, 58 20' fill='none' stroke='%23d0141c' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Onest:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fafaf8; --white:#fff; --ink:#111; --grey:#5c5c5c; --line:rgba(17,17,17,.14); --line-2:rgba(17,17,17,.3);
+  --red:#c8141c; --red-d:#a50f16;
+  --night:#111; --night-t:#f2f2ef; --night-d:#a6a6a2; --night-l:rgba(242,242,239,.16);
+  --serif:"Playfair Display",Georgia,serif; --sans:Onest,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--sans);padding-bottom:calc(78px + env(safe-area-inset-bottom,0px));-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@supports (overflow:clip){body{overflow-x:clip}}
+a{color:inherit}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer;-webkit-tap-highlight-color:transparent;background:none;border:0}
+svg{display:block}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.wrap{position:relative;z-index:2;width:100%;max-width:1240px;margin:0 auto;padding:0 16px}
+[hidden]{display:none!important}
+.mono{font-family:var(--mono)}
+
+.demo-bar{background:var(--ink);color:#bdbdb8;font-size:12.5px;line-height:1.4;text-align:center;padding:7px 14px}
+
+/* buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:14px 24px;border-radius:0;font:600 16px/1.2 var(--sans);text-decoration:none;text-align:center;transition:transform .15s,background .2s,color .2s}
+.btn:active{transform:translateY(1px) scale(.985)}
+.btn svg{flex:none;width:21px;height:21px}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink::after{content:"";position:absolute;left:10px;right:10px;bottom:8px;border-bottom:1.5px dashed var(--red);pointer-events:none;transition:left .25s,right .25s}
+.btn-ink:hover::after{left:4px;right:4px}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-d)}
+.btn-line{box-shadow:inset 0 0 0 1.5px currentColor}
+.btn-line:hover{background:rgba(17,17,17,.05)}
+
+/* thread layer */
+.threaded{position:relative}
+#thread{position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:none}
+#thread path{fill:none;stroke:var(--red);stroke-width:2;stroke-linecap:round}
+#thread circle{fill:var(--red);opacity:0;transition:opacity .4s}
+#thread.done circle{opacity:1}
+
+/* header */
+.top{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:1240px;margin:0 auto;padding:14px 16px 4px}
+.mark{display:inline-flex;align-items:baseline;gap:6px;min-height:44px;text-decoration:none;font:italic 700 25px/44px var(--serif);letter-spacing:-.01em}
+.mark i{display:inline-block;width:7px;height:7px;background:var(--red);border-radius:50%;transform:translateY(-2px)}
+.nav{display:none}
+.status{display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:6px 12px;border:1px solid var(--line-2);font:500 12.5px/1.2 var(--mono);white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.status::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:#1f8a4c}
+.status.closed::before{background:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink);background:transparent}
+
+/* hero */
+.hero{padding:18px 0 56px}
+.hero-grid{display:grid;gap:34px}
+.label{display:inline-block;font:500 12px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.where{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14.5px;color:var(--grey)}
+.where span{display:inline-flex;align-items:center;gap:7px}
+.where b{color:var(--ink);font-weight:500}
+.m-dot{flex:none;display:inline-block;width:10px;height:10px;border-radius:50%}
+.h1box{position:relative;margin-top:10px}
+h1{font-weight:400}
+.h-1{display:block;font:900 clamp(104px,33vw,232px)/.82 var(--serif);letter-spacing:-.045em;margin-left:-.05em}
+.h-2{display:block;font:italic 400 clamp(104px,33vw,232px)/.86 var(--serif);letter-spacing:-.04em;padding-left:.32em}
+.h-sub{display:block;margin-top:18px;font:500 12.5px/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.needle{position:absolute;right:2%;top:-4%;width:34%;max-width:170px;height:auto;overflow:visible;z-index:3;pointer-events:none}
+.needle .n{fill:#cfcfca;stroke:var(--ink);stroke-width:1.2}
+.lead{margin-top:16px;max-width:30em;font-size:17px;line-height:1.55}
+.lead b{font-weight:600}
+.rate{display:inline-flex;align-items:center;gap:14px;margin-top:22px;min-height:56px;text-decoration:none}
+.rate b{font:900 46px/1 var(--serif);letter-spacing:-.02em}
+.rate span{font-size:13.5px;line-height:1.35;color:var(--grey);border-left:1px solid var(--line-2);padding-left:14px}
+.rate span em{display:block;font-style:normal;color:var(--ink);font-weight:500;font-size:15px}
+.cta{display:grid;gap:10px;margin-top:22px}
+.hero-art{position:relative;background:var(--white);border:1px solid var(--line);padding:22px 18px 18px}
+.hero-art svg.flat{width:100%;max-width:min(340px,70vw);height:auto;margin:0 auto}
+.flat .o{fill:#fff;stroke:var(--ink);stroke-width:1.6;stroke-linejoin:round}
+.flat .d{fill:none;stroke:var(--ink);stroke-width:1.1;stroke-dasharray:4 4}
+.flat .s{fill:none;stroke:var(--ink);stroke-width:1.1}
+.flat .b{fill:var(--ink)}
+.tagline{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;padding-top:12px;border-top:1px solid var(--ink);font:500 13px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.tagline b{font:700 22px/1 var(--serif);letter-spacing:0;text-transform:none;white-space:nowrap}
+.hero-q{margin-top:16px;font:italic 400 21px/1.3 var(--serif)}
+.hero-q small{display:block;margin-top:6px;font:400 13px/1.4 var(--sans);color:var(--grey);font-style:normal}
+
+/* sections */
+.sec{position:relative;padding:64px 0}
+.sec-n{display:flex;align-items:center;gap:12px;font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--grey)}
+.sec-n::before{content:"";width:28px;border-top:2px solid var(--red)}
+.sec h2{margin-top:14px;font:900 clamp(44px,12.5vw,92px)/.92 var(--serif);letter-spacing:-.035em}
+.sec h2 em{font-weight:400}
+.sec .intro{margin-top:14px;max-width:34em;font-size:16.5px;color:var(--grey)}
+
+/* module */
+.tabs{display:grid;grid-template-columns:1fr 1fr;margin-top:28px;border:1.5px solid var(--ink);background:var(--white)}
+.tabs button{min-height:54px;padding:8px 10px;font-weight:600;font-size:15.5px;line-height:1.2}
+.tabs button[aria-selected="true"]{background:var(--ink);color:#fff}
+.mod{display:grid;gap:22px;margin-top:20px}
+.flats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.fl{position:relative;display:flex;flex-direction:column;align-items:stretch;min-height:44px;padding:12px 12px 12px;border:1px solid var(--line-2);background:var(--white);text-align:start;transition:border-color .2s,box-shadow .2s}
+.fl svg{width:100%;height:auto;max-height:118px;margin:0 auto 8px}
+.fl .t{font-weight:600;font-size:15.5px;line-height:1.25}
+.fl .p{margin-top:2px;font:500 14px/1.3 var(--mono)}
+.fl .p.ask{color:var(--grey);font-size:12.5px}
+.fl[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.fl[aria-pressed="true"] .o{stroke:var(--red);stroke-dasharray:6 4;animation:sew 1.2s linear infinite}
+.fl[aria-pressed="true"] .p{color:var(--red)}
+.fl[aria-pressed="true"]::after{content:"";position:absolute;top:10px;right:10px;width:10px;height:10px;border-radius:50%;background:var(--red)}
+@keyframes sew{to{stroke-dashoffset:-20}}
+.more-h{margin:22px 0 10px;font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;border:1px solid var(--line-2);background:var(--white);font-size:14.5px;line-height:1.2;text-align:start}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.fixes{display:grid;gap:10px}
+.fx{display:block;border:1px solid var(--line-2);background:var(--white)}
+.fx[data-on="1"]{border-color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.fx-h{display:flex;align-items:center;gap:12px;width:100%;min-height:60px;padding:12px 14px;text-align:start}
+.fx-h .r{flex:none;width:22px;height:22px;border:1.5px solid var(--ink);border-radius:50%;position:relative}
+.fx[data-on="1"] .r::after{content:"";position:absolute;inset:4px;border-radius:50%;background:var(--red)}
+.fx-h .t{flex:1;min-width:0;font-weight:600;font-size:16px;line-height:1.3}
+.fx-h .p{flex:none;text-align:end;font:500 14px/1.3 var(--mono)}
+.fx-h .p.ask{color:var(--grey);font:400 13px/1.3 var(--sans);max-width:9.5em}
+.fx-q{margin:0 14px 12px 48px;padding-top:10px;border-top:1px dashed var(--line-2);font-size:14.5px;line-height:1.45;color:var(--grey)}
+.fx-q i{font:italic 400 17px/1.35 var(--serif);color:var(--ink)}
+.fx-q small{display:block;margin-top:3px;font-size:12.5px}
+.opts{margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}
+.opt-h{margin:0 0 10px;font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.opt-h+*{margin-bottom:18px}
+.qty{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.qty button{display:grid;place-items:center;width:48px;height:48px;border:1.5px solid var(--ink);background:var(--white);font-size:22px;line-height:1}
+.qty output{min-width:2em;text-align:center;font:900 30px/1 var(--serif)}
+.qty small{flex-basis:100%;font-size:13.5px;color:var(--grey)}
+.check{display:flex;align-items:flex-start;gap:12px;min-height:56px;padding:12px 14px;border:1px solid var(--line-2);background:var(--white);cursor:pointer}
+.check input{flex:none;width:22px;height:22px;margin-top:1px;accent-color:#c8141c}
+.check b{display:block;font-weight:600}
+.check small{display:block;font-size:13.5px;color:var(--grey)}
+.days{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;max-width:460px}
+.days button{min-height:54px;min-width:0;padding:6px 2px;border:1px solid var(--line-2);background:var(--white);line-height:1.15;text-align:center}
+.days button b{display:block;font-weight:600;font-size:15px}
+.days button small{display:block;font:400 12px/1.3 var(--mono);color:var(--grey)}
+.days button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.days button[aria-pressed="true"] small{color:#ff8a8f}
+.note{display:block;width:100%;min-height:92px;padding:12px 14px;border:1px solid var(--line-2);background:var(--white);font-size:16px;line-height:1.45;resize:vertical}
+.note::placeholder{color:#7a7a76}
+
+/* spec sheet */
+.spec{position:relative;background:var(--white);border:1.5px solid var(--ink);padding:22px 18px 20px}
+.spec-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding-bottom:12px;border-bottom:1.5px solid var(--ink)}
+.spec-h h3{font:900 28px/1 var(--serif);letter-spacing:-.02em}
+.spec-h span{font:500 12px/1.3 var(--mono);color:var(--grey);text-align:end}
+.spec dl{display:grid;grid-template-columns:auto 1fr;margin-top:4px}
+.spec dt,.spec dd{padding:10px 0;border-bottom:1px dashed var(--line-2);font-size:15px;line-height:1.35}
+.spec dt{padding-right:14px;font:500 11.5px/1.9 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
+.spec dd{text-align:end;font-weight:500}
+.spec dd.empty{color:#8a8a86;font-weight:400}
+.spec dd.flash{animation:flash .6s ease}
+@keyframes flash{from{background:rgba(200,20,28,.12)}to{background:transparent}}
+.spec .sum{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px}
+.spec .sum span{font:500 12px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
+.spec .sum b{font:900 34px/1 var(--serif);letter-spacing:-.02em;color:var(--red);white-space:nowrap}
+.spec .fine{margin-top:8px;font-size:13.5px;color:var(--grey)}
+.spec .hint{display:flex;gap:10px;margin-top:14px;padding:12px;background:var(--paper);font-size:14px;line-height:1.4}
+.spec .hint svg{flex:none;width:22px;height:22px;fill:none;stroke:var(--red);stroke-width:1.6}
+.spec .btn{width:100%;margin-top:14px}
+.reset{display:block;margin:8px auto 0;min-height:44px;padding:0 12px;font-size:14px;color:var(--grey);text-decoration:underline;text-underline-offset:3px}
+
+/* masters & reviews (night) */
+.night{background:var(--night);color:var(--night-t)}
+.night .sec-n{color:var(--night-d)}
+.night .intro{color:#cfcfca}
+.who{display:grid;gap:26px;margin-top:34px}
+.who-i{border-top:1px solid var(--night-l);padding-top:18px}
+.who-i h3{font:italic 400 clamp(60px,18vw,110px)/.9 var(--serif);letter-spacing:-.03em}
+.who-i h3 small{display:block;margin-top:8px;font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;font-style:normal;color:var(--night-d)}
+.who-i blockquote{margin-top:14px;font:400 19px/1.4 var(--serif);font-style:italic}
+.who-i blockquote footer{margin-top:6px;font:400 13px/1.4 var(--sans);font-style:normal;color:var(--night-d)}
+.asp{display:grid;gap:14px;margin-top:40px}
+.asp-i{display:flex;align-items:center;gap:16px;padding:14px 0;border-top:1px solid var(--night-l)}
+.asp-i b{flex:none;font:900 54px/1 var(--serif);letter-spacing:-.03em}
+.asp-i span{font-size:15px;line-height:1.35}
+.asp-i span small{display:block;color:var(--night-d);font-size:13.5px}
+.asp-i .bar{flex:1;min-width:60px;height:2px;background:var(--night-l);position:relative}
+.asp-i .bar i{position:absolute;left:0;top:-1px;height:4px;width:0;background:var(--red);transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+.revs{display:grid;gap:14px;margin-top:40px}
+.rev{background:#1b1b1b;padding:22px 18px 18px;border-left:2px solid var(--red)}
+.rev p{font:italic 400 19px/1.42 var(--serif)}
+.rev footer{margin-top:12px;font-size:13.5px;color:var(--night-d)}
+.rev footer b{color:var(--night-t);font-weight:500}
+.rev-more{width:100%;margin-top:14px}
+.rev-all{display:inline-flex;align-items:center;min-height:48px;margin-top:18px;font-size:15.5px;text-underline-offset:4px}
+
+/* visit */
+.visit{display:grid;gap:22px;margin-top:30px}
+.card{background:var(--white);border:1px solid var(--line-2);padding:22px 18px}
+.card h3{font:900 30px/1.05 var(--serif);letter-spacing:-.02em}
+.card .sub{margin-top:8px;color:var(--grey);font-size:15px}
+.metro{list-style:none;margin-top:14px}
+.metro li{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line-2);font-size:15.5px}
+.metro li span:first-child{display:inline-flex;align-items:center;gap:9px}
+.metro .d{font:400 14px/1.6 var(--mono);color:var(--grey)}
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin-top:18px}
+.week div{padding:9px 2px;text-align:center;border:1px solid var(--line-2);font:400 12px/1.35 var(--mono)}
+.week div b{display:block;font:600 14px/1.3 var(--sans)}
+.week .off{color:#77776f;border-style:dashed}
+.week .today{background:var(--ink);color:#fff;border-color:var(--ink)}
+.week .today b{color:#ff8a8f}
+.today-l{margin-top:10px;font-size:14.5px;color:var(--grey)}
+.card .btns{display:grid;gap:10px;margin-top:18px}
+.feat h4{margin:22px 0 10px;font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.feat .chips span{display:inline-flex;align-items:center;min-height:36px;padding:6px 12px;border:1px solid var(--line-2);font-size:14px}
+.feat .chips a{display:inline-flex;align-items:center;min-height:44px;padding:6px 12px;border:1px solid var(--ink);font-size:14px;text-decoration:none;font-weight:500}
+.feat .chips a::after{content:"→";margin-left:6px;color:var(--red)}
+.map{position:relative;min-height:330px;border:1.5px solid var(--ink);background:#ececea}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) contrast(1.05)}
+
+/* footer */
+.foot{position:relative;z-index:2;background:var(--ink);color:#d6d6d2;padding:46px 0 34px;font-size:14.5px}
+.foot .mark{color:#fff}
+.foot-g{display:grid;gap:14px;margin-top:16px}
+.foot a{color:#fff;text-underline-offset:3px}
+.foot .fl2{display:flex;flex-wrap:wrap;gap:4px 18px}
+.foot .fl2 a,#fTel{display:inline-flex;align-items:center;min-height:44px}
+.foot .src{margin-top:20px;font-size:13px;line-height:1.5;color:#a6a6a2}
+
+/* mobile bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(250,250,248,.97);border-top:1px solid var(--line-2)}
+.bar .btn{flex:1;min-height:52px;padding:10px 14px;font-size:15.5px}
+.bar .call{flex:none;width:56px;padding:0}
+
+@media (min-width:600px){
+  .flats{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .cta{grid-auto-flow:column;justify-content:start}
+  .revs{grid-template-columns:1fr 1fr}
+  .card .btns{grid-template-columns:1fr 1fr}
+  .who{grid-template-columns:1fr 1fr;gap:34px}
+}
+@media (min-width:900px){
+  body{padding-bottom:0}
+  .bar{display:none}
+  .top{padding:20px 32px 6px}
+  .nav{display:flex;gap:26px;font-size:14.5px}
+  .nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;border-bottom:1.5px solid transparent}
+  .nav a:hover{border-color:var(--red)}
+  .wrap{padding:0 32px}
+  .hero{padding:24px 0 100px}
+  .hero-grid{grid-template-columns:1.15fr .85fr;align-items:end;gap:60px}
+  .sec{padding:104px 0}
+  .mod{grid-template-columns:minmax(0,1.4fr) minmax(0,.85fr);gap:32px;align-items:start}
+  .spec{position:sticky;top:24px;padding:28px 26px 24px}
+  .flats{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .tabs{max-width:560px}
+  .night-g{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+  .asp{margin-top:110px}
+  .revs{grid-template-columns:repeat(3,1fr)}
+  .rev.hid{display:block!important}
+  .rev-more{display:none}
+  .visit{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:30px;align-items:stretch}
+  .map{min-height:100%}
+  .foot-g{grid-template-columns:1.3fr 1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .fl[aria-pressed="true"] .o{animation:none}
+  .asp-i .bar i{transition:none}
+  .spec dd.flash{animation:none}
+}
+</style>
+</head>
+<body>
+<div class="demo-bar">Демо-концепт · пример сайта для «Lady Black» от Альхассана Альфаррана · не официальный сайт</div>
+
+<header class="top">
+  <a class="mark" href="#top" aria-label="Lady Black — в начало">Lady Black<i aria-hidden="true"></i></a>
+  <nav class="nav" aria-label="Разделы">
+    <a href="#order">Пошив и ремонт</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#visit">Как найти</a>
+  </nav>
+  <span class="status" id="st1">пн–пт 10:00–20:00</span>
+</header>
+
+<main class="threaded" id="top">
+<svg id="thread" aria-hidden="true"><path id="thrP" d=""/><circle id="knot" r="5" cx="-10" cy="-10"/></svg>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="where" id="where"></p>
+      <div class="h1box">
+        <h1><span class="h-1">Lady</span><span class="h-2">Black</span><span class="h-sub">Ателье по пошиву и ремонту одежды</span></h1>
+        <svg class="needle" viewBox="0 0 170 190" aria-hidden="true">
+          <path class="n" d="M152 10 C 160 14 162 22 156 28 L 22 182 L 18 180 L 140 18 C 143 12 147 8 152 10 Z"/>
+          <ellipse id="eye" cx="150" cy="18" rx="3" ry="6.5" transform="rotate(42 150 18)" fill="#fafaf8" stroke="#111" stroke-width="1"/>
+        </svg>
+      </div>
+      <p class="lead">Сошьют по вашим меркам — от футболки до жакета — или подошьют брюки. В отзывах гости благодарят по имени хозяйку ателье <b>Милу</b> и мастера <b>Юлию</b>.</p>
+      <a class="rate" id="rate" href="#" target="_blank" rel="noopener"><b id="rVal">5,0</b><span><em id="rCnt"></em><span id="rRev"></span></span></a>
+      <div class="cta">
+        <a class="btn btn-ink" href="#order">Рассчитать пошив или ремонт</a>
+        <a class="btn btn-line" data-wa="Здравствуйте! Хочу сшить или отремонтировать вещь. Подскажете по цене и срокам?" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+          Написать в WhatsApp
+        </a>
+      </div>
+    </div>
+    <figure class="hero-art" data-t="0.97">
+      <svg class="flat" viewBox="0 0 240 250" role="img" aria-label="Технический эскиз жакета">
+        <g id="heroFlat"></g>
+      </svg>
+      <div class="tagline"><span id="heroT">Жакет · пошив</span><b id="heroP"></b></div>
+      <p class="hero-q">«Такой худи не купишь ни на одном маркетплейсе и ни в одном магазине.»<small>Татьяна К. — про худи с вышивкой для внука · отзыв на Яндекс Картах</small></p>
+    </figure>
+  </div>
+</section>
+
+<section class="sec" id="order" aria-labelledby="orderH">
+  <div class="wrap">
+    <p class="sec-n" data-t="0.03">01 · прайс ателье</p>
+    <h2 id="orderH">Что нужно <em>сделать?</em></h2>
+    <p class="intro">Цены — из прайса на Яндекс Картах. Выберите вещь, и техзадание само соберётся в сообщение для WhatsApp.</p>
+    <div class="tabs" role="tablist" aria-label="Режим">
+      <button type="button" role="tab" id="tabSew" aria-selected="true" data-mode="sew">Сшить по меркам</button>
+      <button type="button" role="tab" id="tabFix" aria-selected="false" data-mode="fix">Починить, подогнать</button>
+    </div>
+    <div class="mod">
+      <div>
+        <div id="paneSew" role="tabpanel" aria-labelledby="tabSew">
+          <div class="flats" id="flats"></div>
+          <p class="more-h">Ещё шьют — цену уточнят</p>
+          <div class="chips" id="moreSew"></div>
+        </div>
+        <div id="paneFix" role="tabpanel" aria-labelledby="tabFix" hidden>
+          <div class="fixes" id="fixes"></div>
+        </div>
+        <div class="opts">
+          <div id="sewOpts">
+            <p class="opt-h">Ткань</p>
+            <div class="chips" id="fabric"></div>
+            <p class="opt-h">Детали</p>
+            <label class="check"><input type="checkbox" id="emb"><span><b>Вышивка или принт</b><small>Гости пишут, что заказывали худи с вышивкой на груди. Цену уточнят.</small></span></label>
+          </div>
+          <p class="opt-h" id="qtyH">Сколько штук</p>
+          <div class="qty"><button type="button" id="qm" aria-label="Меньше">−</button><output id="qv">1</output><button type="button" id="qp" aria-label="Больше">+</button><small id="qHint">Фая С. шила здесь 5 одинаковых платьев для подружек невесты — «каждой в размер».</small></div>
+          <p class="opt-h" id="dayH">Когда удобно прийти</p>
+          <div class="days" id="days" role="group" aria-labelledby="dayH"></div>
+          <p class="opt-h" style="margin-top:18px"><label for="note">Комментарий</label></p>
+          <textarea class="note" id="note" data-t="0.03" maxlength="300" placeholder="Например: худи на ребёнка 2 лет, вышивка с именем"></textarea>
+        </div>
+      </div>
+      <aside class="spec" id="spec" aria-live="polite">
+        <div class="spec-h"><h3>Техзадание</h3><span id="specAddr">Lady Black</span></div>
+        <dl id="specDl"></dl>
+        <div class="sum" id="sum" hidden><span id="sumL">По прайсу</span><b id="sumV"></b></div>
+        <p class="fine" id="fine"></p>
+        <div class="hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3l2-2.5h6L17 7h3v12H4z"/><circle cx="12" cy="13" r="3.6"/></svg><span id="hintT">Есть фото или пример модели? Прикрепите его в WhatsApp после отправки.</span></div>
+        <a class="btn btn-red" id="send" href="#" target="_blank" rel="noopener">Отправить в WhatsApp</a>
+        <button type="button" class="reset" id="reset">Сбросить</button>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec night" id="reviews" aria-labelledby="revH">
+  <div class="wrap">
+    <div class="night-g">
+      <div>
+        <p class="sec-n" data-t="0.03">02 · отзывы</p>
+        <h2 id="revH">Кого <em>благодарят</em></h2>
+        <p class="intro">В отзывах на Яндекс Картах гости чаще всего называют двух людей по имени.</p>
+      </div>
+      <div class="asp" id="asp"></div>
+    </div>
+    <div class="who">
+      <div class="who-i" data-t="0.03"><h3>Мила<small>хозяйка ателье — так её называют гости</small></h3>
+        <blockquote>«Мила помогает с выбором модели, так как я не знала, чего хочу)»<footer>маргарита П., отзыв на Яндекс Картах</footer></blockquote></div>
+      <div class="who-i"><h3>Юлия<small>мастер — гости пишут о ремонте и подгонке</small></h3>
+        <blockquote>«У Юлии просто золотые руки. Настоящий мастер своего дела.»<footer>Мария Р., отзыв на Яндекс Картах</footer></blockquote></div>
+    </div>
+    <div class="revs" id="revs"></div>
+    <button type="button" class="btn btn-line rev-more" id="revMore">Показать ещё отзывы</button>
+    <a class="rev-all" id="revAll" data-t="0.03" href="#" target="_blank" rel="noopener">Все отзывы на Яндекс Картах →</a>
+  </div>
+</section>
+
+<section class="sec" id="visit" aria-labelledby="visH">
+  <div class="wrap">
+    <p class="sec-n" data-t="0.03">03 · как найти</p>
+    <h2 id="visH" data-t="0.03" data-y="bottom">Пятницкий <em>переулок, 2</em></h2>
+    <div class="visit">
+      <div class="card">
+        <h3 id="aStatus">Пн–пт, 10:00–20:00</h3>
+        <p class="sub" id="aSub"></p>
+        <div class="week" id="week"></div>
+        <p class="today-l" id="todayL"></p>
+        <ul class="metro" id="metro"></ul>
+        <div class="btns">
+          <a class="btn btn-ink" id="route" href="#" target="_blank" rel="noopener">Построить маршрут</a>
+          <a class="btn btn-line" data-tel href="#">Позвонить</a>
+        </div>
+        <div class="feat">
+          <h4>Что указано в карточке</h4>
+          <div class="chips" id="fWork"></div>
+          <h4>Оплата</h4>
+          <div class="chips" id="fPay"></div>
+        </div>
+      </div>
+      <div class="map" data-t="0.97"><iframe id="mapF" title="Карта: Lady Black на Яндекс Картах" loading="lazy"></iframe></div>
+    </div>
+    <div style="margin-top:40px;display:flex;justify-content:center" id="endWrap"><a class="btn btn-ink" id="endBtn" data-wa="Здравствуйте! Хочу сшить или отремонтировать вещь. Подскажете по цене и срокам?" href="#" target="_blank" rel="noopener" data-t="0.5" data-end>Написать в Lady Black</a></div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="mark" href="#top">Lady Black<i aria-hidden="true"></i></a>
+    <div class="foot-g">
+      <div><span id="fAddr"></span><br><a data-tel href="#" id="fTel"></a></div>
+      <div class="fl2"><a data-wa="Здравствуйте! Хочу сшить или отремонтировать вещь. Подскажете по цене и срокам?" href="#" target="_blank" rel="noopener">WhatsApp</a><a id="fYa" href="#" target="_blank" rel="noopener">Яндекс Карты</a></div>
+      <div class="fl2"><a href="#order">Пошив и ремонт</a><a href="#reviews">Отзывы</a></div>
+    </div>
+    <p class="src">Демо-концепт · пример сайта для «Lady Black» от Альхассана Альфаррана · не официальный сайт.<br>Цены и данные взяты из карточки на Яндекс Картах и могут отличаться.</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Быстрые действия">
+  <a class="btn btn-ink" id="barGo" href="#order">Рассчитать пошив</a>
+  <a class="btn btn-line call" data-tel href="#" aria-label="Позвонить в ателье"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></a>
+</nav>
+
+<script src="data.js"></script>
+<script>
+(function () {
+'use strict';
+var BIZ = window.BIZ;
+if (!BIZ) return;
+var NB = ' ';
+var $ = function (s, r) { return (r || document).querySelector(s); };
+var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+var wa = function (text) { return 'https://wa.me/' + BIZ.wa + '?text=' + encodeURIComponent(text); };
+var num = function (n) { return Number(n).toLocaleString('ru-RU').replace(/[\s ]/g, NB); };
+var rub = function (n) { return n == null ? 'по запросу' : num(n) + NB + '₽'; };
+var plural = function (n, one, few, many) { var a = Math.abs(n) % 100, b = a % 10; return a > 10 && a < 20 ? many : b === 1 ? one : b >= 2 && b <= 4 ? few : many; };
+var lowerFirst = function (s) { return s.charAt(0).toLowerCase() + s.slice(1); };
+var upperFirst = function (s) { return s.charAt(0).toUpperCase() + s.slice(1); };
+var setText = function (sel, v) { var el = $(sel); if (el) el.textContent = v; };
+var store = {
+  get: function (k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } },
+  set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+};
+var R = BIZ.rating || {};
+var ratingText = R.value != null ? Number(R.value).toFixed(1).replace('.', ',') : '';
+var shortAddr = (BIZ.address || '').replace(/,\s*Москва$/, '');
+var HT = (BIZ.hoursText || '').replace(/(\D)-(\D)/g, '$1–$2');
+var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+var F = {}; (BIZ.features || []).forEach(function (f) { F[f.k] = f.v; });
+
+/* ---------- time (Moscow) ---------- */
+function mskNow() { var d = new Date(); return new Date(d.getTime() + (d.getTimezoneOffset() + 180) * 60000); }
+var m2 = function (s) { return +s.slice(0, 2) * 60 + +s.slice(3); };
+var DAY_ACC = ['в понедельник', 'во вторник', 'в среду', 'в четверг', 'в пятницу', 'в субботу', 'в воскресенье'];
+var DAY_NOM = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'];
+var DAY_S = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+var MON_G = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+var MON_S = ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл', 'авг', 'сен', 'окт', 'нояб', 'дек'];
+function openStatus(now) {
+  now = now || mskNow();
+  if (!BIZ.hours) return null;
+  if (BIZ.is24) return { open: true, text: 'Круглосуточно', short: 'Круглосуточно' };
+  var day = (now.getDay() + 6) % 7, mins = now.getHours() * 60 + now.getMinutes(), i, iv;
+  var prev = BIZ.hours[(day + 6) % 7] || [];
+  for (i = 0; i < prev.length; i++) { iv = prev[i]; if (m2(iv[1]) <= m2(iv[0]) && mins < m2(iv[1])) return { open: true, text: 'Открыто · до ' + iv[1], short: 'Открыто до ' + iv[1] }; }
+  var today = BIZ.hours[day] || [];
+  for (i = 0; i < today.length; i++) { iv = today[i]; var a = m2(iv[0]), b = m2(iv[1]) <= a ? m2(iv[1]) + 1440 : m2(iv[1]); if (mins >= a && mins < b) return { open: true, text: 'Открыто · до ' + iv[1], short: 'Открыто до ' + iv[1] }; }
+  for (i = 0; i < today.length; i++) { iv = today[i]; if (mins < m2(iv[0])) return { open: false, text: 'Закрыто · откроется в ' + iv[0], short: 'Закрыто до ' + iv[0] }; }
+  for (i = 1; i <= 7; i++) { var d = (day + i) % 7; if ((BIZ.hours[d] || []).length) { var f = BIZ.hours[d][0][0]; return { open: false, text: 'Закрыто · откроется ' + (i === 1 ? 'завтра' : DAY_ACC[d]) + ' в ' + f, short: 'Закрыто до ' + (i === 1 ? 'завтра' : DAY_S[d].toLowerCase()) + ', ' + f }; } }
+  return null;
+}
+function renderStatus() {
+  var st = openStatus(), s1 = $('#st1');
+  if (st && s1) { s1.textContent = st.short; s1.title = st.text + ' · ' + HT; s1.classList.toggle('closed', !st.open); }
+  var now = mskNow(), day = (now.getDay() + 6) % 7;
+  setText('#aStatus', st ? st.text : HT);
+  var td = (BIZ.hours || [])[day] || [];
+  setText('#todayL', 'Сегодня ' + DAY_NOM[day] + ' — ' + (td.length ? td.map(function (iv) { return iv[0] + '–' + iv[1]; }).join(', ') : 'выходной') + '. Ателье работает по будням.');
+  $('#week').innerHTML = (BIZ.hours || []).map(function (ivs, d) {
+    var t = ivs.length ? ivs.map(function (iv) { return iv[0].replace(/:00$/, '') + '–' + iv[1].replace(/:00$/, ''); }).join(', ') : 'вых.';
+    return '<div class="' + (d === day ? 'today' : '') + (ivs.length ? '' : ' off') + '"' + (d === day ? ' aria-current="date"' : '') + '><b>' + DAY_S[d] + '</b>' + esc(t) + '</div>';
+  }).join('');
+}
+
+/* ---------- facts ---------- */
+function renderFacts() {
+  $$('[data-tel]').forEach(function (a) { a.href = 'tel:' + BIZ.phone; });
+  $$('[data-wa]').forEach(function (a) { a.href = wa(a.getAttribute('data-wa')); });
+  setText('#fTel', BIZ.phoneDisplay);
+  var m0 = (BIZ.metro || [])[0];
+  $('#where').innerHTML = (m0 ? '<span><i class="m-dot" style="background:' + esc(m0.color) + '"></i><b>' + esc(m0.name) + '</b>' + NB + '·' + NB + esc(m0.distance).replace(' ', NB) + '</span>' : '') + '<span>' + esc(shortAddr) + '</span>';
+  var cnt = R.count + NB + plural(R.count, 'оценка', 'оценки', 'оценок');
+  var rev = R.reviews + NB + plural(R.reviews, 'отзыв', 'отзыва', 'отзывов');
+  setText('#rVal', ratingText); setText('#rCnt', '★ ' + ratingText + ' · ' + cnt); setText('#rRev', rev + ' на Яндекс Картах');
+  $('#rate').href = BIZ.reviewsUrl; $('#rate').setAttribute('aria-label', 'Рейтинг ' + ratingText + ' — ' + cnt + ', ' + rev + ' на Яндекс Картах');
+  $('#revAll').href = BIZ.reviewsUrl; $('#fYa').href = BIZ.yandexUrl; $('#route').href = BIZ.routeUrl;
+  setText('#specAddr', shortAddr);
+  setText('#aSub', BIZ.fullAddress + (m0 ? ' · ' + m0.distance + ' от метро «' + m0.name + '»' : '') + ' · остановка «Улица Балчуг» — 267 м');
+  setText('#fAddr', BIZ.address + ' · ' + HT);
+  var mf = $('#mapF'); if (mf && BIZ.mapEmbed) mf.src = BIZ.mapEmbed;
+  $('#metro').innerHTML = (BIZ.metro || []).map(function (m) {
+    return '<li><span><i class="m-dot" style="background:' + esc(m.color) + '"></i>' + esc(m.name) + '</span><span class="d">' + esc(m.distance) + '</span></li>';
+  }).join('');
+  var work = [];
+  [['ремонт одежды', 'Ремонт одежды'], ['подгонка', 'Подгонка'], ['ремонт трикотажа', 'Ремонт трикотажа'], ['вышивка', 'Вышивка'], ['гарантия', 'Гарантия'], ['пандус', 'Пандус']].forEach(function (p) { if (F[p[0]] === true) work.push('<span>' + p[1] + '</span>'); });
+  if (F['подарочный сертификат'] === true) work.push('<a href="' + esc(wa('Здравствуйте! Хочу подарочный сертификат в ваше ателье. Подскажите, как оформить?')) + '" target="_blank" rel="noopener">Подарочный сертификат</a>');
+  $('#fWork').innerHTML = work.join('');
+  var pay = typeof F['способ оплаты'] === 'string' ? F['способ оплаты'].split(/,\s*/).map(upperFirst) : [];
+  $('#fPay').innerHTML = pay.map(function (c) { return '<span>' + esc(c) + '</span>'; }).join('');
+}
+
+/* ---------- technical flats (SVG, 120×130) ---------- */
+var FLAT = {
+  tee: '<path class="o" d="M38 14 L50 10 Q60 18 70 10 L82 14 L108 34 L96 50 L86 42 L86 124 L34 124 L34 42 L24 50 L12 34 Z"/><path class="s" d="M50 10 Q60 24 70 10"/><path class="d" d="M38 120 H82 M24 46 L33 38 M96 46 L87 38"/>',
+  long: '<path class="o" d="M38 14 L50 10 Q60 18 70 10 L82 14 Q96 20 100 46 L108 112 L96 114 L88 60 L86 124 L34 124 L32 60 L24 114 L12 112 L20 46 Q24 20 38 14 Z"/><path class="s" d="M50 10 Q60 24 70 10"/><path class="d" d="M13 104 L25 106 M107 104 L95 106 M38 120 H82"/>',
+  sweat: '<path class="o" d="M38 16 L48 12 Q60 20 72 12 L82 16 Q98 22 102 48 L108 108 L94 110 L88 62 L86 118 L34 118 L32 62 L26 110 L12 108 L18 48 Q22 22 38 16 Z"/><path class="o" d="M44 14 Q46 -2 60 -2 Q74 -2 76 14 Q60 26 44 14 Z"/><path class="o" d="M34 112 H86 V124 H34 Z"/><path class="s" d="M44 84 H76 L82 108 H38 Z"/><path class="d" d="M12 100 L26 102 M108 100 L94 102 M48 18 L50 34 M72 18 L70 34"/>',
+  shirt: '<path class="o" d="M38 14 L50 8 L60 16 L70 8 L82 14 Q96 20 100 46 L108 108 L96 110 L88 60 L86 124 L34 124 L32 60 L24 110 L12 108 L20 46 Q24 20 38 14 Z"/><path class="s" d="M50 8 L56 22 L60 16 L64 22 L70 8 M60 18 V124"/><circle class="b" cx="63" cy="34" r="1.6"/><circle class="b" cx="63" cy="54" r="1.6"/><circle class="b" cx="63" cy="74" r="1.6"/><circle class="b" cx="63" cy="94" r="1.6"/><path class="d" d="M14 98 L26 100 M106 98 L94 100 M40 46 H52 V58 H40 Z"/>',
+  jacket: '<path class="o" d="M36 14 L50 10 L60 22 L70 10 L84 14 Q98 22 102 50 L108 114 L94 116 L88 62 L88 126 L32 126 L32 62 L26 116 L12 114 L18 50 Q22 22 36 14 Z"/><path class="s" d="M50 10 L46 30 L54 36 L60 74 L66 36 L74 30 L70 10 M60 74 L56 126"/><circle class="b" cx="64" cy="84" r="2"/><circle class="b" cx="64" cy="100" r="2"/><path class="s" d="M38 92 H52 M70 92 H84"/><path class="d" d="M14 104 L26 106 M106 104 L94 106"/>',
+  dress: '<path class="o" d="M44 8 L52 6 Q60 16 68 6 L76 8 L80 30 Q76 44 76 52 L100 124 L20 124 L44 52 Q44 44 40 30 Z"/><path class="s" d="M44 52 H76"/><path class="d" d="M52 6 Q60 20 68 6 M22 118 H98 M52 56 L44 120 M68 56 L76 120"/>',
+  trousers: '<path class="o" d="M34 8 H86 L94 124 H68 L60 44 L52 124 H26 Z"/><path class="s" d="M34 18 H86 M60 18 V40"/><path class="d" d="M28 116 H50 M70 116 H92 M40 20 Q44 32 52 30 M80 20 Q76 32 68 30"/>',
+  other: '<path class="o" d="M60 12 a8 8 0 1 1 8 8 Q60 22 60 30 L104 62 Q108 68 100 68 H20 Q12 68 16 62 L60 30"/>'
+};
+function flatFor(t) { t = t.toLowerCase(); return /свитш|худи/.test(t) ? 'sweat' : /футболк/.test(t) ? 'tee' : /лонгслив/.test(t) ? 'long' : /рубашк|сороч|блуз/.test(t) ? 'shirt' : /жакет|пиджак|костюм/.test(t) ? 'jacket' : /плать|юбк/.test(t) ? 'dress' : /брюк|джинс/.test(t) ? 'trousers' : 'other'; }
+
+/* ---------- catalogue from data.js ---------- */
+var SEW = [], HEM = [];
+(BIZ.menu || []).forEach(function (cat, ci) {
+  (cat.items || []).forEach(function (it, ii) {
+    var hay = (cat.name + ' ' + it.t + ' ' + (it.d || '')).toLowerCase();
+    var x = { id: 'm' + ci + '_' + ii, t: it.t, p: it.p, v: it.v, d: it.d, cat: cat.name, from: /(^|\s)от\s*\d/i.test(it.d || '') && !/подшив/.test(hay) };
+    if (/подшив|ремонт|подгон/.test(hay)) HEM.push(x);
+    else {
+      if (/свитшот/i.test(it.t) && /худи/i.test(it.d || '')) x.label = it.t + ' / худи';
+      SEW.push(x);
+    }
+  });
+});
+// show «Пошив …» items by price ascending
+SEW.sort(function (a, b) { return (a.p || 0) - (b.p || 0); });
+var NOM = { 'спецодежды': 'Спецодежда', 'костюмов': 'Костюм', 'юбок': 'Юбка', 'верхней одежды': 'Верхняя одежда', 'блузок': 'Блузка', 'мужских сорочек': 'Мужская сорочка', 'нижнего белья': 'Нижнее бельё', 'детская одежда': 'Детская одежда', 'свадебных платьев': 'Свадебное платье' };
+var MORE = [];
+(typeof F['пошив'] === 'string' ? F['пошив'].split(/,\s*/) : []).forEach(function (w, i) { if (NOM[w]) MORE.push({ id: 'f' + i, t: NOM[w], p: null, more: true }); });
+var FABRIC = (typeof F['пошив одежды из'] === 'string' ? F['пошив одежды из'].split(/,\s*/) : []).map(function (w) {
+  var map = { 'меха': 'Мех', 'трикотажа': 'Трикотаж', 'текстиля': 'Текстиль', 'костюмных тканей': 'Костюмная ткань', 'пальтовых тканей': 'Пальтовая ткань' };
+  return map[w] || upperFirst(w);
+});
+var FIX = [];
+HEM.forEach(function (h) {
+  var froms = [], re = /подшив\s+(\S+)\s+от\s+(\d+)/gi, mm;
+  while ((mm = re.exec(h.d || ''))) froms.push({ w: mm[1], p: +mm[2] });
+  FIX.push({ id: h.id, t: 'Подшить брюки или джинсы', sub: h.cat, p: h.p, v: h.v, froms: froms, priced: true, q: { x: 'Все отлично, брюки подшили замечательно !', a: 'Екатерина А.' } });
+});
+[
+  { id: 'fit', t: 'Подогнать по фигуре', f: 'подгонка', q: { x: 'Я обратилась к Юлии, чтобы скорректировать несколько вещей по фигуре.', a: 'Ирина П.' } },
+  { id: 'hole', t: 'Зашить дырку или разрыв', f: 'ремонт одежды', q: { x: 'Порвалось неожиданно платье сегодня утром, быстро с ней заделали дырку, попали в цвет 100/100.', a: 'Полина П.' } },
+  { id: 'rework', t: 'Доработать покупную вещь', f: 'ремонт одежды', q: { x: 'Заказывала здесь пошив танцевального сценического костюма, который собрал кучу комплиментов, доработку покупного платья, ещё сделала заказ.', a: 'Oks G.' } },
+  { id: 'knit', t: 'Ремонт трикотажа', f: 'ремонт трикотажа' },
+  { id: 'dear', t: 'Ремонт дорогой или сложной вещи', f: 'ремонт одежды', q: { x: 'Всегда обращаюсь за ремонтом моих дорогостоящих и сложных в починке вещей и качество работы на высоте, рекомендую!', a: 'EIS' } }
+].forEach(function (j) { if (!j.f || F[j.f] === true) FIX.push(j); });
+var ALL = {}; SEW.concat(MORE, FIX).forEach(function (x) { ALL[x.id] = x; });
+
+/* ---------- state ---------- */
+var saved = store.get('ladyblack-spec') || {};
+var state = {
+  mode: saved.mode === 'fix' ? 'fix' : 'sew',
+  sew: ALL[saved.sew] ? saved.sew : null, fix: ALL[saved.fix] ? saved.fix : null,
+  fabric: FABRIC.indexOf(saved.fabric) >= 0 ? saved.fabric : null, emb: !!saved.emb,
+  qty: Math.max(1, Math.min(20, saved.qty | 0 || 1)), day: null, note: typeof saved.note === 'string' ? saved.note.slice(0, 300) : ''
+};
+var save = function () { store.set('ladyblack-spec', { mode: state.mode, sew: state.sew, fix: state.fix, fabric: state.fabric, emb: state.emb, qty: state.qty, note: state.note }); };
+var cur = function () { return ALL[state.mode === 'sew' ? state.sew : state.fix] || null; };
+
+function renderFlats() {
+  $('#flats').innerHTML = SEW.map(function (x) {
+    var on = state.sew === x.id;
+    return '<button type="button" class="fl" data-sew="' + x.id + '" aria-pressed="' + on + '"><svg viewBox="0 -6 120 136" aria-hidden="true" class="flat">' + FLAT[flatFor(x.t + ' ' + (x.label || ''))] + '</svg><span class="t">' + esc(x.label || x.t) + '</span><span class="p">' + (x.p == null ? 'по запросу' : (x.from ? 'от ' : '') + rub(x.p)) + '</span></button>';
+  }).join('');
+  $('#moreSew').innerHTML = MORE.map(function (x) { return '<button type="button" class="chip" data-sew="' + x.id + '" aria-pressed="' + (state.sew === x.id) + '">' + esc(x.t) + '</button>'; }).join('');
+}
+function fixPrice(x) {
+  if (!x.priced) return '<span class="p ask">цена — по фото в WhatsApp</span>';
+  return '<span class="p">' + rub(x.p) + (x.v ? '<br><span style="color:var(--grey);font-size:12px">за ' + esc(x.v) + '</span>' : '') + '</span>';
+}
+function renderFixes() {
+  $('#fixes').innerHTML = FIX.map(function (x) {
+    var on = state.fix === x.id, h = '<div class="fx" data-on="' + (on ? 1 : 0) + '"><button type="button" class="fx-h" data-fix="' + x.id + '" aria-pressed="' + on + '"><span class="r" aria-hidden="true"></span><span class="t">' + esc(x.t) + (x.sub ? '<br><span style="font-weight:400;font-size:13.5px;color:var(--grey)">' + esc(lowerFirst(x.sub)) + '</span>' : '') + '</span>' + fixPrice(x) + '</button>';
+    if (x.froms && x.froms.length) h += '<p class="fx-q">В описании прайса: ' + x.froms.map(function (f) { return 'подшив ' + esc(f.w) + ' — от ' + rub(f.p); }).join(', ') + '.</p>';
+    if (x.q) h += '<p class="fx-q">Гости пишут: <i>«' + esc(x.q.x) + '»</i><small>' + esc(x.q.a) + ', отзыв на Яндекс Картах</small></p>';
+    return h + '</div>';
+  }).join('');
+}
+
+var DAYS = [];
+function upcomingDays() {
+  var now = mskNow(), out = [], mins = now.getHours() * 60 + now.getMinutes();
+  for (var i = 0; i < 14 && out.length < 5; i++) {
+    var dt = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
+    var d = (dt.getDay() + 6) % 7, ivs = (BIZ.hours || [])[d] || [];
+    if (!ivs.length) continue;
+    if (i === 0 && mins >= m2(ivs[ivs.length - 1][1]) - 30) continue;
+    out.push({ key: dt.getFullYear() + '-' + (dt.getMonth() + 1) + '-' + dt.getDate(), top: i === 0 ? 'Сегодня' : i === 1 ? 'Завтра' : DAY_S[d], sub: dt.getDate() + NB + MON_S[dt.getMonth()], msg: (i === 0 ? 'сегодня' : i === 1 ? 'завтра' : DAY_ACC[d]) + ', ' + dt.getDate() + ' ' + MON_G[dt.getMonth()] });
+  }
+  return out;
+}
+function renderDays() {
+  DAYS = upcomingDays();
+  if (state.day && !DAYS.some(function (d) { return d.key === state.day; })) state.day = null;
+  $('#days').innerHTML = DAYS.map(function (d) { return '<button type="button" data-day="' + d.key + '" aria-pressed="' + (state.day === d.key) + '"><b>' + d.top + '</b><small>' + d.sub + '</small></button>'; }).join('');
+}
+
+function totals() {
+  var x = cur(); if (!x || x.p == null) return null;
+  return { sum: x.p * state.qty, from: !!x.from };
+}
+function message() {
+  var x = cur(), L = ['Здравствуйте! Пишу с сайта Lady Black.'];
+  var day = DAYS.filter(function (d) { return d.key === state.day; })[0];
+  if (!x) {
+    L.push(state.mode === 'sew' ? 'Хочу сшить вещь по меркам.' : 'Нужно отремонтировать вещь.');
+  } else if (state.mode === 'sew') {
+    L.push('Хочу сшить: ' + lowerFirst(x.label || x.t) + (state.qty > 1 ? ' — ' + state.qty + NB + 'шт' : '') + '.');
+    if (state.fabric) L.push('Ткань: ' + lowerFirst(state.fabric) + '.');
+    if (state.emb) L.push('Нужна вышивка или принт — подскажите цену.');
+  } else {
+    L.push('Нужно: ' + lowerFirst(x.t) + (state.qty > 1 ? ' — ' + state.qty + NB + 'шт' : '') + '.');
+  }
+  var t = totals();
+  if (t) L.push('По прайсу: ' + (t.from ? 'от ' : '') + rub(x.p) + (state.qty > 1 ? ' × ' + state.qty + ' = ' + (t.from ? 'от ' : '') + rub(t.sum) : '') + '.');
+  if (day) L.push('Удобно прийти: ' + day.msg + '.');
+  if (state.note.trim()) L.push('Комментарий: ' + state.note.trim());
+  if (x && !t) L.push('Цены в прайсе нет — фото вещи пришлю следующим сообщением. Подскажите, пожалуйста, стоимость и сроки.');
+  else if (x && state.mode === 'fix') L.push('Подскажите, пожалуйста, когда можно принести? Могу прислать фото.');
+  else if (x) L.push('Подскажите, пожалуйста, сроки и когда можно прийти на обмеры.');
+  else L.push('Подскажите, пожалуйста, по цене и срокам — могу прислать фото.');
+  return L.join('\n');
+}
+var lastSpec = {};
+function renderSpec() {
+  var x = cur(), day = DAYS.filter(function (d) { return d.key === state.day; })[0];
+  var rows = [
+    ['Изделие', x ? (state.mode === 'sew' ? 'Пошив: ' + lowerFirst(x.label || x.t) : x.t) : null, state.mode === 'sew' ? 'выберите эскиз' : 'выберите работу'],
+    ['Кол-во', x ? state.qty + NB + 'шт.' : null, '—']
+  ];
+  if (state.mode === 'sew') { rows.push(['Ткань', state.fabric, 'обсудим']); rows.push(['Детали', state.emb ? 'вышивка или принт' : null, 'без вышивки']); }
+  rows.push(['Визит', day ? upperFirst(day.msg) : null, 'не выбран']);
+  $('#specDl').innerHTML = rows.map(function (r) {
+    var changed = lastSpec[r[0]] !== undefined && lastSpec[r[0]] !== r[1];
+    lastSpec[r[0]] = r[1];
+    return '<dt>' + r[0] + '</dt><dd class="' + (r[1] ? '' : 'empty') + (changed && r[1] ? ' flash' : '') + '">' + esc(r[1] || r[2]) + '</dd>';
+  }).join('');
+  var t = totals();
+  $('#sum').hidden = !t;
+  if (t) { setText('#sumL', state.qty > 1 ? 'По прайсу × ' + state.qty : 'По прайсу'); setText('#sumV', (t.from ? 'от ' : '') + rub(t.sum)); }
+  var fine = '';
+  if (x && t && state.mode === 'sew') fine = 'Цена из прайса на Яндекс Картах' + (x.d ? ': «' + x.d.replace(/[\s.]+$/, '') + '»' : '') + '. Итог мастер подтвердит после обмеров.';
+  else if (x && t) fine = x.froms && x.froms.length ? 'В описании прайса: ' + x.froms.map(function (f) { return f.w + ' — от ' + rub(f.p); }).join(', ') + '.' : '';
+  else if (x) fine = 'Этой работы нет в прайсе — мастер назовёт цену по фото.';
+  if (x && state.emb && state.mode === 'sew') fine += ' Вышивку и принт оценят отдельно.';
+  setText('#fine', fine.trim());
+  setText('#hintT', x && !t ? 'После отправки прикрепите фото вещи — так ответят быстрее.' : 'Есть фото или пример модели? Прикрепите его в WhatsApp после отправки.');
+  $('#send').href = wa(message());
+  $('#send').textContent = x ? 'Отправить техзадание в WhatsApp' : 'Написать в WhatsApp';
+  $('#reset').hidden = !x && !state.fabric && !state.emb && !state.day && !state.note && state.qty === 1;
+  var bar = $('#barGo');
+  if (x) { bar.href = '#spec'; bar.textContent = 'Техзадание · ' + (t ? (t.from ? 'от ' : '') + rub(t.sum) : 'по фото'); }
+  else { bar.href = '#order'; bar.textContent = 'Рассчитать пошив'; }
+}
+function renderMode() {
+  var sew = state.mode === 'sew';
+  $('#tabSew').setAttribute('aria-selected', String(sew)); $('#tabFix').setAttribute('aria-selected', String(!sew));
+  $('#paneSew').hidden = !sew; $('#paneFix').hidden = sew; $('#sewOpts').hidden = !sew;
+  setText('#qtyH', sew ? 'Сколько штук' : 'Сколько вещей');
+  $('#qHint').hidden = !sew;
+  $('#note').placeholder = sew ? 'Например: худи на ребёнка 2 лет, вышивка с именем' : 'Например: джинсы, укоротить на 4 см с сохранением низа';
+}
+function renderFabric() {
+  $('#fabric').innerHTML = FABRIC.map(function (f) { return '<button type="button" class="chip" data-fab="' + esc(f) + '" aria-pressed="' + (state.fabric === f) + '">' + esc(f) + '</button>'; }).join('');
+}
+function renderHero() {
+  var j = SEW.filter(function (x) { return /жакет/i.test(x.t); })[0] || SEW[SEW.length - 1];
+  if (!j) return;
+  $('#heroFlat').innerHTML = '<g transform="translate(0 4) scale(2 1.85)">' + FLAT[flatFor(j.t)] + '</g>';
+  setText('#heroT', j.t + ' · пошив по меркам');
+  setText('#heroP', (j.from ? 'от ' : '') + rub(j.p));
+}
+function all() { renderFlats(); renderFixes(); renderSpec(); save(); requestThread(); }
+
+function bind() {
+  $('.tabs').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-mode]'); if (!b) return;
+    state.mode = b.getAttribute('data-mode'); renderMode(); renderSpec(); save(); requestThread();
+  });
+  $('.tabs').addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    state.mode = state.mode === 'sew' ? 'fix' : 'sew'; renderMode(); renderSpec(); save(); (state.mode === 'sew' ? $('#tabSew') : $('#tabFix')).focus();
+  });
+  $('#paneSew').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-sew]'); if (!b) return;
+    var id = b.getAttribute('data-sew'); state.sew = state.sew === id ? null : id; all();
+    var again = $('[data-sew="' + id + '"]'); if (again) again.focus({ preventScroll: true });
+  });
+  $('#fixes').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-fix]'); if (!b) return;
+    var id = b.getAttribute('data-fix'); state.fix = state.fix === id ? null : id; all();
+    var again = $('[data-fix="' + id + '"]'); if (again) again.focus({ preventScroll: true });
+  });
+  $('#fabric').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-fab]'); if (!b) return;
+    var f = b.getAttribute('data-fab'); state.fabric = state.fabric === f ? null : f; renderFabric(); renderSpec(); save();
+  });
+  $('#emb').checked = state.emb;
+  $('#emb').addEventListener('change', function (e) { state.emb = e.target.checked; renderSpec(); save(); });
+  var setQ = function (d) { state.qty = Math.max(1, Math.min(20, state.qty + d)); setText('#qv', state.qty); renderSpec(); save(); };
+  $('#qm').addEventListener('click', function () { setQ(-1); });
+  $('#qp').addEventListener('click', function () { setQ(1); });
+  setText('#qv', state.qty);
+  $('#days').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-day]'); if (!b) return;
+    var k = b.getAttribute('data-day'); state.day = state.day === k ? null : k;
+    $$('#days button').forEach(function (x) { x.setAttribute('aria-pressed', String(x.getAttribute('data-day') === state.day)); });
+    renderSpec();
+  });
+  $('#note').value = state.note;
+  $('#note').addEventListener('input', function (e) { state.note = e.target.value.slice(0, 300); renderSpec(); save(); });
+  $('#reset').addEventListener('click', function () {
+    state.sew = null; state.fix = null; state.fabric = null; state.emb = false; state.qty = 1; state.day = null; state.note = '';
+    $('#emb').checked = false; $('#note').value = ''; setText('#qv', 1); renderFabric(); renderDays(); all();
+  });
+}
+
+/* ---------- reviews ---------- */
+var REVS = [
+  { a: 'Татьяна К.', d: 'сентябрь 2025', x: 'Ателье замечательное. Хозяйка, Мила, милейшая, добрая, отзывчивая, а ещё профессионал своего дела. Сшила худи 2-х летнему внуку отличного качества, да ещё и вышивку красивую сделала.' },
+  { a: 'Наталья Н.', d: 'февраль 2025', x: '…Сначала я заказала пошив кожаных штанов, и результат превзошел все мои ожидания — идеальный крой, удобство и стиль.' },
+  { a: 'Фая С.', d: 'январь 2023', x: 'Классное ателье, девочки профессионалы своего дела, очень приятно. Шила 5 одинаковых платьев для подружек невест на двевичник, все в срок и качественно пошили каждой в размер.' },
+  { a: 'Даша', d: 'июнь 2025', x: 'Мила - мастер и профиссионал своего дела . Спасибо огромное за красивый и качественный пошив брюк для танцев ♥️ получила огромное количество комплиментов .' },
+  { a: 'Татьяна Е.', d: 'июль 2025', x: 'Это ателье-просто находка! Замечательный, очень доброжелательный и позитивный мастер Мила! Отдавала сразу несколько вещей на переделку - все было сделано даже не на 5+, а на 10+++.' },
+  { a: 'Татьяна И.', d: 'май 2026', x: 'Сшили чудесное платье! Идеально сидит, все элементы выполнены качественно, работа проделана огромная и высшего класса. Превзошли мои ожидания' }
+];
+function renderReviews() {
+  $('#revs').innerHTML = REVS.map(function (r, i) {
+    return '<article class="rev' + (i >= 3 ? ' hid' : '') + '"' + (i >= 3 ? ' hidden' : '') + '><p>«' + esc(r.x) + '»</p><footer><b>' + esc(r.a) + '</b> · ' + esc(r.d) + ' · отзыв на Яндекс Картах</footer></article>';
+  }).join('');
+  var NM = { 'Персонал': 'мастеров и персонал', 'Время ожидания': 'скорость и сроки' };
+  $('#asp').innerHTML = (BIZ.aspects || []).map(function (a) {
+    var w = a.count ? Math.round(a.positive / a.count * 100) : 0;
+    return '<div class="asp-i"><b>' + a.positive + '</b><span>' + plural(a.positive, 'гость хвалит', 'гостя хвалят', 'гостей хвалят') + ' ' + esc(NM[a.text] || lowerFirst(a.text)) + '<small>из ' + a.count + NB + plural(a.count, 'упоминания', 'упоминаний', 'упоминаний') + ' в отзывах · ' + w + '% с похвалой</small></span></div>';
+  }).join('');
+}
+function fillBars() { $$('#asp .bar i').forEach(function (i) { i.style.width = i.getAttribute('data-w') + '%'; }); }
+
+/* ---------- the red thread ---------- */
+var thr = { len: 0, top: 0, h: 0, ok: false }, raf = 0, rafT = 0;
+function buildThread() {
+  var main = $('.threaded'), svg = $('#thread'), path = $('#thrP'), eye = $('#eye');
+  if (!main || !svg || !path || !eye) return;
+  var mr = main.getBoundingClientRect(), W = main.clientWidth, H = main.offsetHeight;
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.setAttribute('width', W); svg.setAttribute('height', H);
+  var er = eye.getBoundingClientRect();
+  var pts = [[er.left + er.width / 2 - mr.left, er.top + er.height / 2 - mr.top]];
+  var mobile = W < 900, gut = mobile ? 7 : Math.max(14, (W - Math.min(W, 1240)) / 2 + 14);
+  $$('[data-t]', main).forEach(function (el) {
+    if (!el.offsetParent && el.tagName !== 'svg') return;
+    var r = el.getBoundingClientRect(), fx = parseFloat(el.getAttribute('data-t'));
+    var x = fx < .2 ? gut : fx > .8 ? W - gut : W * fx;
+    var y = el.hasAttribute('data-end') ? r.top - mr.top - 22 : el.getAttribute('data-y') === 'bottom' ? r.bottom - mr.top + 8 : r.top - mr.top + Math.min(r.height / 2, 60);
+    if (y > pts[pts.length - 1][1] + 20) pts.push([x, y]);
+  });
+  var d = 'M' + pts[0][0].toFixed(1) + ' ' + pts[0][1].toFixed(1);
+  for (var i = 1; i < pts.length; i++) {
+    var a = pts[i - 1], b = pts[i], dy = b[1] - a[1];
+    var wob = Math.abs(a[0] - b[0]) < 4 ? (i % 2 ? 1 : -1) * (mobile ? 5 : 16) : 0;
+    d += ' C' + (a[0] + wob).toFixed(1) + ' ' + (a[1] + dy * .55).toFixed(1) + ' ' + (b[0] + wob).toFixed(1) + ' ' + (b[1] - dy * .55).toFixed(1) + ' ' + b[0].toFixed(1) + ' ' + b[1].toFixed(1);
+  }
+  path.setAttribute('d', d);
+  var last = pts[pts.length - 1];
+  var k = $('#knot'); k.setAttribute('cx', last[0]); k.setAttribute('cy', last[1]);
+  thr.len = path.getTotalLength(); thr.top = mr.top + window.pageYOffset; thr.h = H; thr.ok = true;
+  path.style.strokeDasharray = thr.len + ' ' + thr.len;
+  drawThread();
+}
+function drawThread() {
+  raf = 0; if (!thr.ok) return;
+  var p = reduce ? 1 : (window.pageYOffset + window.innerHeight * .78 - thr.top) / thr.h;
+  p = Math.max(0, Math.min(1, p));
+  if (window.pageYOffset + window.innerHeight >= document.documentElement.scrollHeight - 4) p = 1;
+  $('#thrP').style.strokeDashoffset = (thr.len * (1 - p)).toFixed(1);
+  $('#thread').classList.toggle('done', p >= .995);
+}
+function requestThread() { clearTimeout(rafT); rafT = setTimeout(buildThread, 120); }
+
+function observe() {
+  window.addEventListener('scroll', function () { if (!raf) raf = requestAnimationFrame(drawThread); }, { passive: true });
+  window.addEventListener('resize', requestThread);
+  if ('ResizeObserver' in window) new ResizeObserver(requestThread).observe($('.threaded'));
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(requestThread);
+  window.addEventListener('load', requestThread);
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { fillBars(); io.disconnect(); } }); }, { threshold: .2 });
+    io.observe($('#asp'));
+  }
+  setTimeout(fillBars, 4000);
+}
+
+function boot() {
+  renderFacts(); renderStatus(); renderHero(); renderDays(); renderFabric(); renderFlats(); renderFixes(); renderMode(); renderSpec(); renderReviews(); bind(); observe(); buildThread();
+  $('#revMore').addEventListener('click', function () { $$('#revs .hid').forEach(function (r) { r.hidden = false; }); this.hidden = true; requestThread(); });
+  setInterval(function () { renderStatus(); renderDays(); renderSpec(); }, 60000);
+}
+try { boot(); } catch (e) { if (window.console) console.warn(e); }
+})();
+</script>
+<script src="../map-fix.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1237 @@
+<!doctype html>
+<!--
+  CONCEPT — «Кафе кальян», Новослободская ул., 14/19с8 (демо-концепт)
+  1. Идея: «Стол на вечер». Сюда приходят компанией на вечер — за кальяном, коктейлями и шаурмой на тарелке,
+     и бронируют заранее (так пишут гости). Сайт и есть эта бронь: гость собирает свой вечер, а сайт рисует его стол.
+  2. Фирменный модуль: «Стол на вечер» — вид сверху на круглый стол лаунжа. День, время (12:00–23:30, свет в зале
+     темнеет к ночи), число гостей (вокруг стола появляются подушки), повод из карточки, кальяны (на столе загораются
+     угли и расходятся кольца дыма), вкус и крепость, блюда из реальной кухни (на столе появляются тарелки) →
+     сумма предзаказа + ориентир по среднему счёту → готовое сообщение в WhatsApp (на русском или арабском),
+     плюс звонок и бронь через Яндекс.
+  3. Арт-дирекшн: поздний вечер в лаунже — чернильно-сливовый фон, один янтарный акцент цвета тлеющих углей,
+     дым бледно-сиреневый. Cormorant Garamond (курсив) + Onest, для арабского — El Messiri. Мотивы в SVG:
+     геометричный кальян с дымом, пузырьками и углями; восьмиконечная звезда машрабии (в отзывах — египетская
+     забивка и арабская шаурма) как узор, разделитель и фавикон.
+-->
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#140B18">
+<title>Кафе кальян — кальян-бар на Новослободской, 14/19с8 (демо)</title>
+<meta name="description" content="Демо-концепт сайта «Кафе кальян» на Новослободской: соберите стол на вечер — гости, время, кальяны и блюда из меню — и отправьте бронь в WhatsApp. 5,0 на Яндекс Картах, 145 м от «Менделеевской».">
+<meta property="og:title" content="Кафе кальян — стол на вечер на Новослободской (демо)">
+<meta property="og:description" content="Кальяны, бар и кухня, ежедневно 12:00–00:00. Бронь стола в WhatsApp. Демо-концепт сайта.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://kyan9400.github.io/demo/kafe-kalyan/">
+<meta property="og:image" content="https://kyan9400.github.io/demo/kafe-kalyan/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23140B18'/%3E%3Cg fill='none' stroke='%23F4A93C' stroke-width='4'%3E%3Crect x='19' y='19' width='26' height='26'/%3E%3Crect x='19' y='19' width='26' height='26' transform='rotate(45 32 32)'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='5' fill='%23F4A93C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Onest:wght@400;500;600;700&family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>try{var L0=new URLSearchParams(location.search).get('lang')||localStorage.getItem('kk-lang');if(L0==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl';}}catch(e){}</script>
+<style>
+:root{
+  --bg:#140B18; --bg-2:#1B0F21; --card:#22142A; --card-2:#2A1933;
+  --text:#F3EAF2; --muted:#BBA9C0; --dim:#8F7C96; --line:rgba(243,234,242,.11); --line-2:rgba(243,234,242,.2);
+  --amber:#F4A93C; --amber-2:#FFC46B; --amber-ink:#1F1004; --amber-soft:rgba(244,169,60,.14);
+  --smoke:#E7DBF0; --open:#7FE0B4; --closed:#F29A9A;
+  --f-d:"Cormorant Garamond","Times New Roman",Georgia,serif;
+  --f-b:"Onest",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --f-ar:"El Messiri","Onest",system-ui,sans-serif;
+  --star:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23F4A93C' stroke-opacity='.075' stroke-width='1'%3E%3Crect x='17' y='17' width='22' height='22'/%3E%3Crect x='17' y='17' width='22' height='22' transform='rotate(45 28 28)'/%3E%3Cpath d='M0 28h5M51 28h5M28 0v5M28 51v5'/%3E%3C/g%3E%3C/svg%3E");
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--bg)}
+body{font-variant-numeric:lining-nums;font:16px/1.55 var(--f-b);color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px));overflow-x:hidden}
+@media(min-width:900px){body{padding-bottom:0}}
+html[lang=ar] body{font-family:var(--f-ar);line-height:1.7}
+body *{font-variant-numeric:lining-nums}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;-webkit-tap-highlight-color:transparent}
+input,textarea{font:inherit;color:inherit}
+h1,h2,h3{font-weight:500}
+svg{display:block}
+:focus-visible{outline:2px solid var(--amber-2);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+[id]{scroll-margin-top:76px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.ltr{direction:ltr;unicode-bidi:isolate}
+
+/* numerals: Cormorant figures are old-style, so numbers use Onest */
+.stp output,.sum-r b,.lbl output,.stage-t,.hrs,.ap b,.stat b,.rate .v{font-family:var(--f-b)!important;font-style:normal!important;font-weight:600!important;letter-spacing:-.02em}
+.ap b,.stat b{font-size:32px!important}.rate .v{font-size:40px!important}.stage-t{font-size:30px!important}.lbl output{font-size:22px!important}.sum-r b{font-size:22px!important}.stp output{font-size:24px!important}.hrs{font-size:26px!important}
+/* RTL: keep numbers, prices and ranges in reading order */
+html[dir=rtl] .it-p,html[dir=rtl] .sum-r b,html[dir=rtl] #bill,html[dir=rtl] .pre li span:last-child,html[dir=rtl] .mlist span,html[dir=rtl] .age{direction:ltr;unicode-bidi:isolate}
+html[dir=rtl] .bv{text-align:left}
+html[dir=rtl] .bv>div{direction:ltr;unicode-bidi:isolate}
+/* demo bar */
+.demo{font-size:12.5px;line-height:1.45;color:var(--muted);background:#0C060F;padding:7px 16px;text-align:center;border-bottom:1px solid var(--line)}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:40;background:rgba(20,11,24,.92);border-bottom:1px solid var(--line);-webkit-backdrop-filter:saturate(1.2) blur(8px);backdrop-filter:saturate(1.2) blur(8px)}
+.hdr .wrap{display:flex;align-items:center;gap:12px;height:60px}
+.wm{display:flex;min-height:44px;align-items:center;align-items:baseline;gap:7px;text-decoration:none;flex:none}
+.wm small{font:500 13px/1 var(--f-b);color:var(--muted);letter-spacing:.06em;text-transform:lowercase}
+.wm b{font:italic 600 28px/1 var(--f-d);letter-spacing:-.01em}
+.wm i{width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px var(--amber);align-self:center}
+.nav{display:none;gap:22px;margin-inline-start:28px}
+.nav a{text-decoration:none;font-size:14.5px;color:var(--muted);padding:10px 0}
+.nav a:hover{color:var(--text)}
+.hdr-r{margin-inline-start:auto;display:flex;align-items:center;gap:8px}
+.st{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);white-space:nowrap}
+.st::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--open);box-shadow:0 0 0 3px rgba(127,224,180,.16)}
+.st.off::before{background:var(--closed);box-shadow:0 0 0 3px rgba(242,154,154,.15)}
+.hdr .st{display:none}
+.lang{min-height:44px;padding:0 14px;border:1px solid var(--line-2);border-radius:999px;font-size:14px;font-weight:500}
+.lang:hover{border-color:var(--amber)}
+.lang[lang=ar]{font-family:var(--f-ar);font-size:15px}
+.hdr-tel{display:none;text-decoration:none;font-size:14.5px;font-weight:500}
+@media(min-width:420px){.hdr .st{display:inline-flex}}
+@media(min-width:960px){.nav{display:flex}.hdr-tel{display:inline}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;transition:transform .15s ease,background .2s,border-color .2s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-a{background:var(--amber);color:var(--amber-ink)}
+.btn-a:hover{background:var(--amber-2)}
+.btn-o{border:1px solid var(--line-2);color:var(--text)}
+.btn-o:hover{border-color:var(--amber)}
+.btn-g{color:var(--muted);min-height:44px;padding:0 6px;font-weight:500}
+.btn-g:hover{color:var(--text)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:26px 0 34px;min-height:calc(92vh - 92px);min-height:calc(92svh - 92px)}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 82% 30%,rgba(244,169,60,.13),transparent 70%),radial-gradient(70% 60% at 0% 100%,rgba(120,60,140,.22),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 128px;grid-template-areas:"eye eye" "h1 h1" "lead art" "rate art" "cta cta" "q q" "stats stats";column-gap:12px}
+.eye{grid-area:eye;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);font-weight:600}
+html[lang=ar] .eye{letter-spacing:0;font-size:15px}
+.h1{grid-area:h1;font:italic 600 clamp(86px,25vw,200px)/.86 var(--f-d);letter-spacing:-.035em;margin:10px 0 6px;color:var(--text)}
+.h1 small{display:block;font:500 15px/1.2 var(--f-b);font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+html[lang=ar] .h1 small{font-family:var(--f-ar);letter-spacing:0;font-size:16px}
+.h1 .dot{color:var(--amber)}
+.lead{grid-area:lead;font-size:17px;line-height:1.5;color:var(--text);max-width:34ch;align-self:start;margin-top:6px}
+.lead em{font-style:normal;color:var(--amber-2)}
+.rate{grid-area:rate;display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-top:16px;align-self:start;text-decoration:none}
+.rate .v{font:600 44px/1 var(--f-d)}
+.rate .s{color:var(--amber);letter-spacing:2px;font-size:15px}
+.rate .c{font-size:14px;color:var(--muted);line-height:1.35}
+.rate:hover .c{color:var(--text)}
+.art{grid-area:art;position:relative;align-self:end;margin-top:-90px}
+.art svg{width:100%;height:auto;overflow:visible}
+.ctas{grid-area:cta;display:flex;flex-direction:column;gap:10px;margin-top:24px}
+.metro{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px;font-size:14px;color:var(--muted)}
+.mi{display:inline-flex;align-items:center;gap:7px}
+.mi i{width:10px;height:10px;border-radius:50%;flex:none}
+.q{grid-area:q;margin-top:26px;padding-inline-start:16px;border-inline-start:2px solid var(--amber)}
+.q p{font:italic 500 25px/1.15 var(--f-d);color:var(--smoke)}
+.q small{display:block;margin-top:6px;font-size:13px;color:var(--muted)}
+.stats{grid-area:stats;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:26px;border-top:1px solid var(--line);padding-top:18px}
+.stat b{display:block;font:600 34px/1 var(--f-d);color:var(--amber)}
+.stat span{display:block;font-size:13px;line-height:1.3;color:var(--muted);margin-top:4px}
+
+.wisp{fill:none;stroke:var(--smoke);stroke-linecap:round;opacity:0;transform-box:fill-box;transform-origin:50% 100%}
+.anim .wisp{animation:rise 7s ease-in-out infinite}
+.wisp.w2{animation-delay:-2.3s!important}.wisp.w3{animation-delay:-4.6s!important}
+@keyframes rise{0%{opacity:0;transform:translateY(14px) scale(.85,.8)}25%{opacity:.42}70%{opacity:.18}100%{opacity:0;transform:translateY(-36px) scale(1.15,1.12)}}
+.ring{fill:none;stroke:var(--smoke);stroke-width:2.5;opacity:0;transform-box:fill-box;transform-origin:center}
+.anim .ring{animation:ring 9s ease-out infinite 1s}
+@keyframes ring{0%{opacity:0;transform:translateY(0) scale(.5)}15%{opacity:.45}100%{opacity:0;transform:translateY(-70px) scale(1.9)}}
+.coal{animation:none}
+.anim .coal{animation:glow 2.6s ease-in-out infinite alternate}
+.anim .coal.c2{animation-delay:-.9s}.anim .coal.c3{animation-delay:-1.7s}
+@keyframes glow{from{opacity:.72}to{opacity:1}}
+.bub{fill:var(--smoke);opacity:0}
+.anim .bub{animation:bub 3.2s ease-in infinite}
+.bub.b2{animation-delay:-1.1s!important}.bub.b3{animation-delay:-2.1s!important}
+@keyframes bub{0%{opacity:0;transform:translateY(0)}20%{opacity:.55}100%{opacity:0;transform:translateY(-26px)}}
+.paused *{animation-play-state:paused!important}
+
+@media(min-width:700px){
+  .hero .wrap{grid-template-columns:minmax(0,1fr) 200px}
+  .art{margin-top:-140px}
+  .ctas{flex-direction:row;flex-wrap:wrap}
+}
+@media(min-width:1024px){
+  .hero{padding:56px 0 64px;min-height:0}
+  .hero .wrap{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);grid-template-areas:"eye art" "h1 art" "lead art" "rate art" "cta art" "stats q";column-gap:64px}
+  .h1{font-size:clamp(150px,14vw,210px);margin-top:14px}
+  .lead{font-size:20px;max-width:30ch}
+  .art{margin-top:0;align-self:center;justify-self:center;width:min(330px,100%)}
+  .q{align-self:end;margin-top:26px}
+  .q p{font-size:30px}
+}
+
+/* sections */
+.sec{padding:64px 0;position:relative}
+.sec-h{margin-bottom:26px}
+.kick{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);font-weight:600;display:flex;align-items:center;gap:10px}
+html[lang=ar] .kick{letter-spacing:0;font-size:15px}
+.kick svg{width:14px;height:14px;flex:none}
+.h2{font:italic 600 clamp(44px,11vw,84px)/.95 var(--f-d);letter-spacing:-.02em;margin-top:10px}
+html[lang=ar] .h2{font:700 clamp(34px,8vw,58px)/1.2 var(--f-ar);letter-spacing:0}
+.sub{color:var(--muted);margin-top:12px;max-width:56ch;font-size:16px}
+.divider{display:flex;align-items:center;gap:14px;color:var(--amber);opacity:.7}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line-2),transparent)}
+.divider svg{width:18px;height:18px}
+
+/* module */
+.mod{background:var(--bg-2) var(--star);border-block:1px solid var(--line)}
+.mod-g{display:grid;gap:24px;grid-template-columns:minmax(0,1fr)}
+.ctl,.stage,.fld{min-width:0}
+.stage{position:relative;border-radius:28px;background:radial-gradient(circle at 50% 46%,rgba(244,169,60,var(--lamp,.16)),transparent 62%),#120A16;border:1px solid var(--line);padding:14px;overflow:hidden}
+.stage-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:4px 6px 0}
+.stage-t{font:italic 600 38px/1 var(--f-d);color:var(--amber-2)}
+.stage-d{font-size:14px;color:var(--muted);text-align:end}
+#tbl{width:100%;max-width:420px;margin:0 auto;aspect-ratio:1/1;height:auto}
+.stage-cap{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;font-size:13.5px;color:var(--muted);padding:0 6px 4px}
+.stage-cap b{color:var(--text);font-weight:600}
+.seat{transform-box:fill-box;transform-origin:center;animation:pop .35s cubic-bezier(.2,1.4,.5,1) both}
+@keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
+.tsmoke{fill:none;stroke:var(--smoke);stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center}
+.anim .tsmoke{animation:tsm 4.2s ease-out infinite}
+@keyframes tsm{0%{opacity:.5;transform:scale(1)}100%{opacity:0;transform:scale(2.6)}}
+
+.ctl{display:grid;gap:22px}
+.fld>.lbl{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:10px}
+html[lang=ar] .fld>.lbl{letter-spacing:0;font-size:15px}
+.lbl output{font:italic 600 26px/1 var(--f-d);letter-spacing:0;text-transform:none;color:var(--amber-2)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:0 15px;border-radius:999px;border:1px solid var(--line-2);font-size:15px;line-height:1.15;color:var(--text);transition:background .15s,border-color .15s,color .15s}
+.chip:hover{border-color:var(--amber)}
+.chip[aria-pressed=true]{background:var(--amber);border-color:var(--amber);color:var(--amber-ink);font-weight:600}
+.days{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;margin-inline:-16px;padding-inline:16px;scroll-padding-inline:16px}
+.days::-webkit-scrollbar{display:none}
+.day{flex:none;min-width:70px;min-height:58px;padding:6px 10px;border-radius:16px;border:1px solid var(--line-2);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.15}
+.day b{font-size:15px;font-weight:600}
+.day span{font-size:12.5px;color:var(--muted)}
+.day[aria-pressed=true]{background:var(--amber);border-color:var(--amber);color:var(--amber-ink)}
+.day[aria-pressed=true] span{color:rgba(31,16,4,.78)}
+.range{direction:ltr}
+.range input{width:100%;height:44px;-webkit-appearance:none;appearance:none;background:transparent;cursor:pointer}
+.range input::-webkit-slider-runnable-track{height:6px;border-radius:6px;background:linear-gradient(90deg,#F4C98A,#B46A2B 55%,#3B1F48)}
+.range input::-moz-range-track{height:6px;border-radius:6px;background:linear-gradient(90deg,#F4C98A,#B46A2B 55%,#3B1F48)}
+.range input::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:var(--amber);border:4px solid #120A16;box-shadow:0 0 0 1px var(--amber),0 0 16px rgba(244,169,60,.6);margin-top:-11px}
+.range input::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--amber);border:4px solid #120A16;box-shadow:0 0 0 1px var(--amber)}
+.range .ends{display:flex;justify-content:space-between;font-size:12.5px;color:var(--dim)}
+.stp{display:flex;align-items:center;gap:6px}
+.stp button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-2);font-size:22px;line-height:1;display:grid;place-items:center}
+.stp button:hover{border-color:var(--amber)}
+.stp button:disabled{opacity:.35;cursor:default}
+.stp output{min-width:36px;text-align:center;font:600 30px/1 var(--f-d)}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.note{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.45}
+.pre{border:1px dashed var(--line-2);border-radius:18px;padding:14px 16px}
+.pre ul{list-style:none;display:grid;gap:6px}
+.pre li{display:flex;justify-content:space-between;gap:12px;font-size:15px}
+.pre li span:last-child{white-space:nowrap;color:var(--muted)}
+.pre .empty{color:var(--muted);font-size:15px}
+.pre a{color:var(--amber-2);display:inline-block;padding:12px 2px;margin:-12px 0}
+textarea{width:100%;min-height:76px;resize:vertical;border-radius:16px;border:1px solid var(--line-2);background:#120A16;padding:12px 14px;font-size:16px;line-height:1.45}
+textarea:focus{outline:none;border-color:var(--amber)}
+textarea::placeholder{color:var(--dim)}
+.sum{border-radius:24px;background:var(--card);border:1px solid var(--line);padding:18px}
+.sum-r{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:6px 0;border-bottom:1px solid var(--line);font-size:15px}
+.sum-r:last-of-type{border-bottom:0}
+.sum-r b{font:600 26px/1 var(--f-d);white-space:nowrap}
+.sum-r span:first-child{color:var(--muted)}
+.sum .acts{display:grid;gap:10px;margin-top:16px}
+.sum .acts .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.sum .acts .btn{white-space:normal;text-align:center;min-width:0}
+.sum .acts .two .btn{padding:0 12px;font-size:15px}
+.wa-ic{width:20px;height:20px}
+@media(min-width:960px){
+  .mod-g{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+  .stage{position:sticky;top:84px}
+  .days{margin-inline:0;padding-inline:0;flex-wrap:wrap}
+}
+
+/* kitchen */
+.k-g{display:grid;gap:26px;grid-template-columns:minmax(0,1fr)}
+.sig{border-radius:26px;background:linear-gradient(160deg,#2B1934,#1A0F20);border:1px solid var(--line);padding:22px;position:relative;overflow:hidden}
+.sig::after{content:"";position:absolute;inset-inline-end:-40px;top:-40px;width:180px;height:180px;background:var(--star);opacity:.9;transform:rotate(12deg);pointer-events:none}
+.sig h3{font:italic 600 38px/1 var(--f-d);margin-top:10px}
+html[lang=ar] .sig h3{font:700 30px/1.25 var(--f-ar)}
+.sig blockquote{margin-top:14px;font:italic 500 22px/1.25 var(--f-d);color:var(--smoke)}
+.sig cite{display:block;font:normal 13px/1.4 var(--f-b);color:var(--muted);margin-top:6px}
+html[lang=ar] .sig cite{font-family:var(--f-ar)}
+.sig .rows{margin-top:16px}
+.kcat{margin-top:22px}
+.kcat:first-child{margin-top:0}
+.kcat h3{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:4px}
+html[lang=ar] .kcat h3{letter-spacing:0;font-size:15px}
+.it{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.it-n{flex:1;min-width:0}
+.it-n b{display:block;font-weight:500;font-size:16px;line-height:1.3}
+.it-n small{display:block;font-size:13.5px;color:var(--muted);line-height:1.35;margin-top:2px}
+.it-p{white-space:nowrap;font-weight:600;font-size:16px}
+.add{width:44px;height:44px;border-radius:50%;border:1px solid var(--amber);color:var(--amber);font-size:22px;line-height:1;display:grid;place-items:center;flex:none;transition:background .15s,color .15s,transform .15s}
+.add:hover{background:var(--amber);color:var(--amber-ink)}
+.add:active{transform:scale(.9)}
+.qty{display:flex;align-items:center;gap:2px;flex:none}
+.qty button{width:40px;height:44px;border-radius:12px;font-size:20px;color:var(--amber)}
+.qty button:hover{background:var(--amber-soft)}
+.qty output{min-width:22px;text-align:center;font-weight:600}
+.flash{animation:fl .5s ease}
+@keyframes fl{0%{background:var(--amber-soft)}100%{background:transparent}}
+@media(min-width:960px){.k-g{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:start}.sig{position:sticky;top:84px}}
+
+/* bar */
+.bar-tools{display:grid;gap:12px;margin-bottom:12px}
+.search{position:relative}
+.search input{width:100%;min-height:50px;border-radius:999px;border:1px solid var(--line-2);background:#120A16;padding-inline:46px 18px;font-size:16px}
+.search input:focus{outline:none;border-color:var(--amber)}
+.search input::placeholder{color:var(--dim)}
+.search svg{position:absolute;inset-inline-start:16px;top:50%;width:18px;height:18px;transform:translateY(-50%);color:var(--muted)}
+.bchips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-inline:-16px;padding-inline:16px;padding-bottom:2px}
+.bchips::-webkit-scrollbar{display:none}
+.bchips .chip{flex:none}
+.age{display:inline-grid;place-items:center;min-width:44px;height:28px;padding:0 8px;border-radius:999px;border:1px solid var(--line-2);font:600 13px/1 var(--f-b);color:var(--muted);letter-spacing:0;vertical-align:middle;margin-inline-start:12px;text-transform:none}
+.blist .bc{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);font-weight:600;padding-top:18px}
+html[lang=ar] .blist .bc{letter-spacing:0;font-size:15px}
+.bv{display:grid;gap:2px;text-align:end;white-space:nowrap;font-size:15px}
+.bv span{color:var(--muted);font-size:13.5px;margin-inline-end:6px}
+.bv b{font-weight:600}
+.more{margin-top:16px}
+.tea{margin-top:22px;border-radius:20px;border:1px solid var(--line);background:var(--card);padding:16px 18px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between}
+.tea p{font-size:15px;max-width:46ch}
+.tea p b{color:var(--amber-2);font-weight:600}
+@media(min-width:960px){
+  .bchips{flex-wrap:wrap;margin-inline:0;padding-inline:0}
+  .bar-tools{grid-template-columns:320px 1fr;align-items:start}
+  .blist{columns:2;column-gap:48px}
+  .blist .it{break-inside:avoid}
+  .blist .bc{break-after:avoid}
+}
+
+/* reviews */
+.asp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 16px;margin-bottom:34px}
+.ap b{display:block;font:600 40px/1 var(--f-d);color:var(--amber)}
+.ap span{display:block;font-size:14px;color:var(--muted);margin-top:4px;line-height:1.3}
+.ap i{display:block;height:3px;border-radius:3px;background:var(--line);margin-top:10px;overflow:hidden}
+.ap i::after{content:"";display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--amber),var(--amber-2))}
+.revs{display:grid;gap:12px;grid-auto-flow:column;grid-auto-columns:86%;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-16px;padding-inline:16px;scroll-padding-inline:16px;scrollbar-width:none;align-items:start}
+.revs::-webkit-scrollbar{display:none}
+.rv-c{scroll-snap-align:start}
+.swipe{font-size:13px;color:var(--dim);margin-top:10px}
+.rv-c{border-radius:22px;background:var(--card);border:1px solid var(--line);padding:20px}
+.rv-c .stars{color:var(--amber);letter-spacing:2px;font-size:14px}
+.rv-c blockquote{margin-top:8px;font-size:16px;line-height:1.55}
+.rv-c footer{margin-top:12px;font-size:13.5px;color:var(--muted)}
+.rv-c footer b{color:var(--text);font-weight:600}
+.rv-c:first-child blockquote{font:italic 500 23px/1.3 var(--f-d)}
+.allrev{margin-top:20px}
+@media(min-width:700px){.asp{grid-template-columns:repeat(3,minmax(0,1fr))}.revs{grid-auto-flow:row;grid-auto-columns:auto;overflow:visible;margin-inline:0;padding-inline:0;grid-template-columns:repeat(2,minmax(0,1fr))}.swipe{display:none}}
+@media(min-width:1024px){.asp{grid-template-columns:repeat(6,minmax(0,1fr))}.revs{grid-template-columns:repeat(3,minmax(0,1fr))}.rv-c:first-child{grid-row:span 2;display:flex;flex-direction:column;justify-content:center}.rv-c:first-child blockquote{font-size:30px}}
+
+/* find */
+.f-g{display:grid;gap:18px;grid-template-columns:minmax(0,1fr)}
+.card{border-radius:24px;background:var(--card);border:1px solid var(--line);padding:20px}
+.addr{font:italic 600 32px/1.05 var(--f-d)}
+html[lang=ar] .addr{font:600 26px/1.3 var(--f-ar)}
+.addr-s{color:var(--muted);font-size:14.5px;margin-top:6px}
+.mlist{list-style:none;display:grid;gap:8px;margin-top:16px}
+.mlist li{display:flex;align-items:center;gap:10px;font-size:15.5px}
+.mlist i{width:12px;height:12px;border-radius:50%;flex:none}
+.mlist span{color:var(--muted);margin-inline-start:auto;white-space:nowrap}
+.card .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin-top:14px}
+.wd{border-radius:12px;border:1px solid var(--line);text-align:center;padding:8px 2px;font-size:13px;color:var(--muted);line-height:1.3}
+.wd b{display:block;font-size:14px;color:var(--text);font-weight:600}
+.wd.today{border-color:var(--amber);background:var(--amber-soft);color:var(--text)}
+.wd.today b{color:var(--amber-2)}
+.hrs{font:600 30px/1 var(--f-d);margin-top:6px}
+.fchips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.fc{display:inline-flex;align-items:center;gap:7px;padding:6px 11px;border-radius:999px;border:1px solid var(--line);font-size:13.5px}
+.fc::before{content:"";width:6px;height:6px;transform:rotate(45deg);background:var(--amber);flex:none}
+.map{border-radius:24px;overflow:hidden;border:1px solid var(--line);min-height:300px;background:#120A16 var(--star);position:relative}
+.map iframe{width:100%;height:100%;min-height:300px;border:0;display:block;filter:grayscale(.3) brightness(.92)}
+.c-h{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);font-weight:600}
+html[lang=ar] .c-h{letter-spacing:0;font-size:15px}
+@media(min-width:960px){.f-g{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.2fr)}.map{grid-row:span 2;grid-column:3}.f-g .card.wide{grid-column:1/3}}
+
+/* footer */
+.ftr{border-top:1px solid var(--line);padding:40px 0 30px;background:#0E0711;font-size:14.5px;color:var(--muted)}
+.ftr .wrap{display:grid;gap:18px}
+.ftr .wm b{font-size:34px;color:var(--text)}
+.ftr a{text-decoration:none}
+.ftr a:hover{color:var(--text)}
+.ftr .cols{display:grid;gap:0}
+.ftr .cols>*{display:flex;align-items:center;min-height:44px}
+.ftr .fine{font-size:13px;color:var(--dim);border-top:1px solid var(--line);padding-top:16px;line-height:1.5}
+.ftr .fine p+p{margin-top:4px}
+@media(min-width:900px){.ftr .wrap{grid-template-columns:1.2fr 1fr 1fr}.ftr .fine{grid-column:1/-1}}
+
+/* sticky mobile bar */
+.mbar{position:fixed;inset-inline:0;bottom:0;z-index:50;display:flex;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(14,7,17,.96);border-top:1px solid var(--line)}
+.mbar .btn{flex:1;min-height:52px}
+.mbar .call{flex:none;width:52px;padding:0}
+@media(min-width:900px){.mbar{display:none}}
+
+/* reveal (visible by default; animated only when JS adds .anim) */
+.anim .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.anim .rv.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .wisp{opacity:.25}.ring{opacity:0}.bub{opacity:0}
+}
+</style>
+</head>
+<body>
+<div class="demo" id="demoBar">Демо-концепт · пример сайта для «Кафе кальян» от Альхассана Альфаррана · не официальный сайт</div>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="wm" href="#top" aria-label="Кафе кальян — наверх"><small data-t="cafe">кафе</small><b>Кальян</b><i aria-hidden="true"></i></a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#table" data-t="navTable">Стол на вечер</a>
+      <a href="#kitchen" data-t="navKitchen">Кухня</a>
+      <a href="#bar" data-t="navBar">Бар</a>
+      <a href="#reviews" data-t="navReviews">Отзывы</a>
+      <a href="#find" data-t="navFind">Как найти</a>
+    </nav>
+    <div class="hdr-r">
+      <span class="st" id="hdrSt" aria-live="polite"></span>
+      <a class="hdr-tel ltr" id="hdrTel" href="#"></a>
+      <button class="lang" id="langBtn" type="button" lang="ar">العربية</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap">
+    <p class="eye" data-t="eye">Кафе · кальян-бар · бар</p>
+    <h1 class="h1" id="h1"><small data-t="h1s">на Новослободской</small><span dir="ltr" style="display:inline-block">Кальян<span class="dot">.</span></span></h1>
+    <div class="lead">
+      <p id="lead"></p>
+      <div class="metro" id="heroMetro"></div>
+    </div>
+    <a class="rate" id="rate" target="_blank" rel="noopener"></a>
+    <div class="art" aria-hidden="true">
+      <svg id="hookah" viewBox="0 0 240 480" role="presentation">
+        <defs>
+          <radialGradient id="halo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#F4A93C" stop-opacity=".22"/><stop offset="1" stop-color="#F4A93C" stop-opacity="0"/></radialGradient>
+          <radialGradient id="coalG" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FFB95A" stop-opacity=".75"/><stop offset=".45" stop-color="#F4A93C" stop-opacity=".22"/><stop offset="1" stop-color="#F4A93C" stop-opacity="0"/></radialGradient>
+          <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A2246"/><stop offset=".55" stop-color="#2A1733"/><stop offset="1" stop-color="#4A2A2A"/></linearGradient>
+          <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4A93C" stop-opacity=".22"/><stop offset="1" stop-color="#F4A93C" stop-opacity=".05"/></linearGradient>
+          <clipPath id="vaseClip"><path d="M120 334C98 334 94 348 94 360C72 378 58 404 63 430C69 458 96 470 120 470C144 470 171 458 177 430C182 404 168 378 146 360C146 348 142 334 120 334Z"/></clipPath>
+        </defs>
+        <circle cx="120" cy="150" r="118" fill="url(#halo)"/>
+        <g id="smoke">
+          <path class="wisp w1" stroke-width="13" d="M120 112C100 92 142 78 118 54S98 20 124 -6"/>
+          <path class="wisp w2" stroke-width="8" d="M116 112C136 94 96 80 122 58S142 24 110 -2"/>
+          <path class="wisp w3" stroke-width="5" d="M124 112C108 96 152 70 130 42S120 10 136 -10"/>
+          <ellipse class="ring" cx="120" cy="70" rx="20" ry="7"/>
+        </g>
+        <circle cx="120" cy="122" r="40" fill="url(#coalG)"/>
+        <rect class="coal c1" x="101" y="114" width="11" height="9" rx="2" fill="#F4A93C"/>
+        <rect class="coal c2" x="114.5" y="112" width="11" height="10" rx="2" fill="#FFC46B"/>
+        <rect class="coal c3" x="128" y="114" width="11" height="9" rx="2" fill="#F4A93C"/>
+        <path d="M96 126H144L135 160H105Z" fill="#2B1934" stroke="#F4A93C" stroke-width="1.5"/>
+        <path d="M100 136H140M103 146H137" stroke="#F4A93C" stroke-opacity=".35"/>
+        <rect x="113" y="160" width="14" height="10" fill="#2B1934" stroke="#F4A93C" stroke-width="1.2"/>
+        <ellipse cx="120" cy="177" rx="60" ry="9" fill="#241530" stroke="#F4A93C" stroke-width="1.5"/>
+        <ellipse cx="120" cy="175" rx="44" ry="5" fill="none" stroke="#F4A93C" stroke-opacity=".3"/>
+        <rect x="114" y="186" width="12" height="150" fill="#2B1934" stroke="#F4A93C" stroke-width="1.2"/>
+        <path d="M120 204l9 9-9 9-9-9z M120 246l9 9-9 9-9-9z" fill="#F4A93C" fill-opacity=".9"/>
+        <ellipse cx="120" cy="288" rx="15" ry="5" fill="#F4A93C"/>
+        <ellipse cx="120" cy="322" rx="13" ry="4" fill="none" stroke="#F4A93C"/>
+        <circle cx="131" cy="300" r="5" fill="#2B1934" stroke="#F4A93C" stroke-width="1.2"/>
+        <path d="M134 300C182 300 204 330 198 378S212 448 232 454" fill="none" stroke="#3A2446" stroke-width="10" stroke-linecap="round"/>
+        <path d="M134 300C182 300 204 330 198 378S212 448 232 454" fill="none" stroke="#F4A93C" stroke-width="1.3" stroke-dasharray="2 5" stroke-linecap="round"/>
+        <path d="M120 334C98 334 94 348 94 360C72 378 58 404 63 430C69 458 96 470 120 470C144 470 171 458 177 430C182 404 168 378 146 360C146 348 142 334 120 334Z" fill="url(#glass)"/>
+        <g clip-path="url(#vaseClip)">
+          <path d="M50 402C80 396 100 408 120 402S160 396 190 402V480H50Z" fill="url(#water)"/>
+          <circle class="bub b1" cx="116" cy="452" r="2.6"/>
+          <circle class="bub b2" cx="126" cy="446" r="2"/>
+          <circle class="bub b3" cx="120" cy="458" r="1.6"/>
+          <path d="M96 372C92 400 92 440 104 468M144 372C148 400 148 440 136 468" fill="none" stroke="#F4A93C" stroke-opacity=".2"/>
+        </g>
+        <path d="M120 334C98 334 94 348 94 360C72 378 58 404 63 430C69 458 96 470 120 470C144 470 171 458 177 430C182 404 168 378 146 360C146 348 142 334 120 334Z" fill="none" stroke="#F4A93C" stroke-width="1.5"/>
+        <g fill="none" stroke="#F4A93C" stroke-width="1.3" stroke-opacity=".9"><rect x="108" y="408" width="24" height="24"/><rect x="108" y="408" width="24" height="24" transform="rotate(45 120 420)"/></g>
+        <circle cx="120" cy="420" r="3" fill="#F4A93C"/>
+      </svg>
+    </div>
+    <div class="ctas">
+      <a class="btn btn-a" href="#table"><span data-t="ctaTable">Собрать стол на вечер</span></a>
+      <a class="btn btn-o" id="heroBook" target="_blank" rel="noopener"><span data-t="ctaYa">Забронировать на Яндексе</span></a>
+    </div>
+    <figure class="q">
+      <p lang="ru" dir="ltr">«Нашли случайно, искали медь, а&nbsp;нашли золото!»</p>
+      <small><span>Елизавета А.</span> · <span data-t="revSrc">отзыв на Яндекс Картах</span></small>
+    </figure>
+    <div class="stats" id="stats"></div>
+  </div>
+</section>
+
+<section class="sec mod" id="table" aria-labelledby="tblH">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <p class="kick"><svg viewBox="0 0 16 16" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="4" width="8" height="8"/><rect x="4" y="4" width="8" height="8" transform="rotate(45 8 8)"/></g></svg><span data-t="tblKick">Бронь в WhatsApp</span></p>
+      <h2 class="h2" id="tblH" data-t="tblH">Стол на вечер</h2>
+      <p class="sub" data-t="tblSub">Отметьте день, время и компанию — стол на схеме соберётся сам, а готовое сообщение уйдёт в WhatsApp заведения.</p>
+    </div>
+    <div class="mod-g">
+      <div class="stage" id="stage">
+        <div class="stage-top"><output class="stage-t ltr" id="stT">20:00</output><span class="stage-d" id="stD"></span></div>
+        <svg id="tbl" viewBox="0 0 400 400" role="img" aria-label="Схема стола"></svg>
+        <p class="stage-cap" id="stCap"></p>
+      </div>
+      <div class="ctl">
+        <div class="fld">
+          <p class="lbl"><span data-t="fDay">Когда</span></p>
+          <div class="days" id="days" role="group" aria-label="День"></div>
+        </div>
+        <div class="fld">
+          <p class="lbl"><label for="time" data-t="fTime">Во сколько</label><output id="timeOut" class="ltr" for="time">20:00</output></p>
+          <div class="range"><input type="range" id="time" min="720" max="1410" step="30" value="1200"><div class="ends"><span>12:00</span><span>23:30</span></div></div>
+          <p class="note" id="timeNote"></p>
+        </div>
+        <div class="row2">
+          <div class="fld">
+            <p class="lbl"><span data-t="fGuests">Гостей</span></p>
+            <div class="stp"><button type="button" id="gMinus" aria-label="Меньше гостей">−</button><output id="gOut">2</output><button type="button" id="gPlus" aria-label="Больше гостей">+</button></div>
+          </div>
+          <div class="fld">
+            <p class="lbl"><span data-t="fHk">Кальяны</span></p>
+            <div class="stp"><button type="button" id="hMinus" aria-label="Меньше кальянов">−</button><output id="hOut">1</output><button type="button" id="hPlus" aria-label="Больше кальянов">+</button></div>
+          </div>
+        </div>
+        <div class="fld" id="flavF">
+          <p class="lbl"><span data-t="fFlav">Вкус кальяна</span></p>
+          <div class="chips" id="flav" role="group"></div>
+          <p class="lbl" style="margin-top:14px"><span data-t="fStr">Крепость</span></p>
+          <div class="chips" id="str" role="group"></div>
+          <p class="note" data-t="hkNote">Цены на кальяны в карточке не указаны — спросим в том же сообщении.</p>
+        </div>
+        <div class="fld">
+          <p class="lbl"><span data-t="fOcc">Повод</span></p>
+          <div class="chips" id="occ" role="group"></div>
+        </div>
+        <div class="fld">
+          <p class="lbl"><span data-t="fPre">Заранее к столу</span></p>
+          <div class="pre" id="pre"></div>
+        </div>
+        <div class="fld">
+          <p class="lbl"><label for="wish" data-t="fWish">Пожелание</label></p>
+          <textarea id="wish" maxlength="300"></textarea>
+        </div>
+        <div class="sum" id="sum">
+          <div class="sum-r"><span data-t="sPre">Предзаказ по меню</span><b id="sPre"></b></div>
+          <div class="sum-r"><span id="sEstL"></span><b id="sEst"></b></div>
+          <p class="note" id="sNote"></p>
+          <div class="acts">
+            <a class="btn btn-a" id="send" target="_blank" rel="noopener"><svg class="wa-ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg><span data-t="send">Отправить бронь в WhatsApp</span></a>
+            <div class="two">
+              <a class="btn btn-o" id="sumCall"><span data-t="call">Позвонить</span></a>
+              <a class="btn btn-o" id="sumYa" target="_blank" rel="noopener"><span data-t="yaShort">Через Яндекс</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="kitchen" aria-labelledby="kH">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <p class="kick"><svg viewBox="0 0 16 16" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="4" width="8" height="8"/><rect x="4" y="4" width="8" height="8" transform="rotate(45 8 8)"/></g></svg><span id="kKick"></span></p>
+      <h2 class="h2" id="kH" data-t="kH">Кухня</h2>
+      <p class="sub" data-t="kSub">Цены — из карточки на Яндекс Картах. Нажмите «+», и блюдо попадёт в бронь стола.</p>
+    </div>
+    <div class="k-g">
+      <article class="sig rv" id="sig"></article>
+      <div id="klist"></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap divider" aria-hidden="true"><svg viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="4" width="8" height="8"/><rect x="4" y="4" width="8" height="8" transform="rotate(45 8 8)"/></g></svg></div>
+
+<section class="sec" id="bar" aria-labelledby="bH">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <p class="kick"><svg viewBox="0 0 16 16" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="4" width="8" height="8"/><rect x="4" y="4" width="8" height="8" transform="rotate(45 8 8)"/></g></svg><span id="bKick"></span></p>
+      <h2 class="h2" id="bH"><span data-t="bH">Барная карта</span><span class="age">18+</span></h2>
+      <p class="sub" data-t="bSub">Коктейли, шоты и крепкие напитки — состав и объём как в карточке на Яндекс Картах.</p>
+    </div>
+    <div class="bar-tools">
+      <label class="search"><span class="sr" data-t="bSearchL">Поиск по барной карте</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input type="search" id="bq" autocomplete="off"></label>
+      <div class="bchips" id="bchips" role="group"></div>
+    </div>
+    <div class="blist" id="blist"></div>
+    <button class="btn btn-o more" id="bmore" type="button"></button>
+    <div class="tea rv"><p id="teaTxt"></p><a class="btn btn-o" id="teaAsk" target="_blank" rel="noopener"><span data-t="teaAsk">Спросить про чай</span></a></div>
+  </div>
+</section>
+
+<section class="sec mod" id="reviews" aria-labelledby="rH">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <p class="kick"><svg viewBox="0 0 16 16" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="4" width="8" height="8"/><rect x="4" y="4" width="8" height="8" transform="rotate(45 8 8)"/></g></svg><span id="rKick"></span></p>
+      <h2 class="h2" id="rH" data-t="rH">Почему сюда возвращаются</h2>
+    </div>
+    <div class="asp" id="asp"></div>
+    <div class="revs" id="revs"></div>
+    <p class="swipe" data-t="swipe">Листайте отзывы →</p>
+    <a class="btn btn-o allrev" id="allRev" target="_blank" rel="noopener"><span data-t="allRev">Все отзывы на Яндекс Картах</span></a>
+  </div>
+</section>
+
+<section class="sec" id="find" aria-labelledby="fH">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <p class="kick"><svg viewBox="0 0 16 16" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="4" width="8" height="8"/><rect x="4" y="4" width="8" height="8" transform="rotate(45 8 8)"/></g></svg><span class="st" id="findSt"></span></p>
+      <h2 class="h2" id="fH" data-t="fH">Как найти</h2>
+    </div>
+    <div class="f-g">
+      <div class="card">
+        <p class="c-h" data-t="fAddr">Адрес</p>
+        <p class="addr" id="addr" lang="ru" dir="ltr" style="margin-top:8px"></p>
+        <p class="addr-s" id="addrS"></p>
+        <ul class="mlist" id="mlist"></ul>
+        <div class="btns">
+          <a class="btn btn-a" id="route" target="_blank" rel="noopener"><span data-t="route">Построить маршрут</span></a>
+          <a class="btn btn-o" id="findCall"><span class="ltr" id="findTel"></span></a>
+        </div>
+      </div>
+      <div class="card">
+        <p class="c-h" data-t="fHours">Часы работы</p>
+        <p class="hrs ltr" id="hrs"></p>
+        <p class="addr-s" id="hrsT"></p>
+        <div class="week" id="week"></div>
+        <p class="c-h" style="margin-top:22px" data-t="fBill">Средний счёт</p>
+        <p class="hrs" id="bill"></p>
+      </div>
+      <div class="map" id="map"></div>
+      <div class="card wide">
+        <p class="c-h" data-t="fInside">Что есть в заведении</p>
+        <div class="fchips" id="fchips"></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div>
+      <a class="wm" href="#top"><small data-t="cafe">кафе</small><b>Кальян</b><i aria-hidden="true"></i></a>
+      <p style="margin-top:10px" id="ftAddr"></p>
+    </div>
+    <div class="cols">
+      <a class="ltr" id="ftTel" href="#"></a>
+      <a id="ftWa" target="_blank" rel="noopener" data-t="ftWa">Написать в WhatsApp</a>
+      <a id="ftYa" target="_blank" rel="noopener" data-t="ftYa">Карточка на Яндекс Картах</a>
+    </div>
+    <div class="cols">
+      <span id="ftHours"></span>
+      <span id="ftSt" class="st"></span>
+    </div>
+    <div class="fine">
+      <p>Демо-концепт · пример сайта для «Кафе кальян» от Альхассана Альфаррана · не официальный сайт</p>
+      <p>Цены и данные взяты из карточки на Яндекс Картах и могут отличаться.</p>
+    </div>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="Быстрые действия">
+  <a class="btn btn-a" href="#table"><span data-t="mbTable">Стол на вечер</span></a>
+  <a class="btn btn-o call" id="mbCall" aria-label="Позвонить"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 3h3l1.6 4.3-2.1 1.5a11 11 0 0 0 4.7 4.7l1.5-2.1L20 13v3a2 2 0 0 1-2 2A14 14 0 0 1 5 5a2 2 0 0 1 2-2z"/></svg></a>
+</nav>
+
+<script src="data.js"></script>
+<script>
+(function () {
+'use strict';
+var BIZ = window.BIZ;
+if (!BIZ) return;
+var $ = function (s, r) { return (r || document).querySelector(s); };
+var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+var NB = ' ';
+var YBOOK = 'https://yandex.ru/web-maps/webview?booking[permalink]=183033131672&booking[standalone]=true&mode=booking&source=partner-cta';
+var lang = 'ru';
+var reduce = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+var SVGNS = 'http://www.w3.org/2000/svg';
+
+function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+function wa(text) { return 'https://wa.me/' + BIZ.wa + '?text=' + encodeURIComponent(text); }
+function num(n) { return n.toLocaleString('ru-RU').replace(/\s/g, NB); }
+function rub(n) { return n == null ? t('onReq') : num(n) + NB + '₽'; }
+function plural(n, one, few, many) { var a = Math.abs(n) % 100, b = a % 10; return a > 10 && a < 20 ? many : b === 1 ? one : b >= 2 && b <= 4 ? few : many; }
+function feat(k) { for (var i = 0; i < BIZ.features.length; i++) if (BIZ.features[i].k.toLowerCase() === k.toLowerCase()) return BIZ.features[i].v; return null; }
+function hhmm(m) { var h = Math.floor(m / 60) % 24, mm = m % 60; return (h < 10 ? '0' : '') + h + ':' + (mm < 10 ? '0' : '') + mm; }
+function cleanName(s) { return String(s).replace(/,\s*\d+$/, ''); }
+
+/* ---------- strings ---------- */
+var T = {
+  ru: {
+    demo: 'Демо-концепт · пример сайта для «Кафе кальян» от Альхассана Альфаррана · не официальный сайт',
+    cafe: 'кафе', navTable: 'Стол на вечер', navKitchen: 'Кухня', navBar: 'Бар', navReviews: 'Отзывы', navFind: 'Как найти',
+    langBtn: 'العربية', langAttr: 'ar', langAria: 'Переключить на арабский',
+    eye: 'Кафе · кальян-бар · бар', h1s: 'на Новослободской',
+    lead: 'Кальяны, бар и кухня. Каждый день <em>12:00–00:00</em>, в&nbsp;145&nbsp;м от «Менделеевской».',
+    ctaTable: 'Собрать стол на вечер', ctaYa: 'Забронировать на Яндексе',
+    revSrc: 'отзыв на Яндекс Картах', onYa: 'на Яндекс Картах',
+    tblKick: 'Бронь в WhatsApp', tblH: 'Стол на вечер',
+    tblSub: 'Отметьте день, время и компанию — стол на схеме соберётся сам, а готовое сообщение уйдёт в WhatsApp заведения.',
+    fDay: 'Когда', fTime: 'Во сколько', fGuests: 'Гостей', fHk: 'Кальяны', fFlav: 'Вкус кальяна', fStr: 'Крепость', fOcc: 'Повод', fPre: 'Заранее к столу', fWish: 'Пожелание',
+    hkNote: 'Цены на кальяны в карточке не указаны — спросим в том же сообщении.',
+    wishPh: 'Например: стол у окна, будет торт, нужен детский стул…',
+    today: 'Сегодня', tomorrow: 'Завтра',
+    dowS: ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'],
+    monS: ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
+    monG: ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'],
+    flav: ['на выбор мастера', 'фруктовый', 'ягодный', 'свежий, с холодком', 'десертный'],
+    str: ['лёгкий', 'средний', 'крепкий'],
+    strMsg: ['лёгкая', 'средняя', 'крепкая'],
+    occAny: 'Просто вечер',
+    timeNoteToday: 'Сегодня ещё можно с {t}. Заведение работает до 00:00.',
+    timeNote: 'Заведение работает 12:00–00:00.',
+    preEmpty: 'Пока ничего. Добавьте блюда из <a href="#kitchen">кухни</a> — они попадут в сообщение.',
+    sPre: 'Предзаказ по меню', sEst: 'Ориентир на {g}',
+    sNote: 'Ориентир — по среднему счёту из карточки на Яндекс Картах ({b} на гостя). Итог зависит от заказа.',
+    send: 'Отправить бронь в WhatsApp', call: 'Позвонить', yaShort: 'Через Яндекс',
+    capG: 'гостей', capH: 'кальянов', capP: 'блюд', noHk: 'без кальяна',
+    tblAria: 'Схема стола: {g}, {h}, {p}',
+    kKick: 'Специальное меню — шаурма', kH: 'Кухня', kSub: 'Цены — из карточки на Яндекс Картах. Нажмите «+», и блюдо попадёт в бронь стола.',
+    sigK: 'Чем гордятся гости', sigH: 'Шаурма на тарелке',
+    sigQ: '«А арабская шаурма на тарелке! М-м-м... Страсть какая вкусная.»', sigA: 'Алексей К.',
+    addAria: 'Добавить «{n}»', minusAria: 'Убрать одну порцию «{n}»', plusAria: 'Добавить ещё «{n}»',
+    onReq: 'по запросу',
+    bKick: '{n} позиций в карте', bH: 'Барная карта', bSub: 'Коктейли, шоты и крепкие напитки — состав и объём как в карточке на Яндекс Картах.',
+    bSearchL: 'Поиск по барной карте', bSearch: 'Найти: мохито, Jameson, ром…', all: 'Всё',
+    more: 'Показать ещё {n}', less: 'Свернуть', nothing: 'Ничего не нашлось — спросите в WhatsApp, есть ли нужный напиток.',
+    ml: 'мл', l: 'л',
+    tea: '<b>Чай и кофе</b> тоже есть, а чай гости хвалят отдельно. Цен и сортов в карточке нет — спросите в WhatsApp.',
+    teaAsk: 'Спросить про чай', teaMsg: 'Здравствуйте! Подскажите, пожалуйста, какой у вас есть чай и сколько он стоит?',
+    rKick: '{v} · {c} · {r}', rH: 'Почему сюда возвращаются', allRev: 'Все отзывы на Яндекс Картах', swipe: 'Листайте отзывы →',
+    aspCap: { 'Персонал': 'персонал', 'Кальян': 'кальян', 'Атмосфера': 'атмосферу', 'Еда': 'еду', 'Интерьер': 'интерьер', 'Напитки': 'напитки' },
+    fH: 'Как найти', fAddr: 'Адрес', fHours: 'Часы работы', fBill: 'Средний счёт', fInside: 'Что есть в заведении', fFor: 'Подходит для',
+    route: 'Построить маршрут', walk: 'пешком', metroW: 'от «{m}»',
+    addrS: 'Москва · вход со двора уточните по телефону',
+    hrsT: 'Ежедневно, без выходных',
+    mapT: 'Карта: Новослободская ул., 14/19с8',
+    ftWa: 'Написать в WhatsApp', ftYa: 'Карточка на Яндекс Картах',
+    ftDemo: 'Демо-концепт · пример сайта для «Кафе кальян» от Альхассана Альфаррана · не официальный сайт',
+    ftSrc: 'Цены и данные взяты из карточки на Яндекс Картах и могут отличаться.',
+    mbTable: 'Стол на вечер', callAria: 'Позвонить',
+    open: 'Открыто · до {t}', closed: 'Закрыто · откроется в {t}', closedTm: 'Закрыто · откроется завтра в {t}',
+    msgHi: 'Здравствуйте! Хочу забронировать стол в «Кафе кальян» на Новослободской.',
+    msgWhen: 'Когда: {d}, в {t}', msgG: 'Гостей: {g}', msgOcc: 'Повод: {o}',
+    msgHk: 'Кальяны: {n}', msgFlav: 'вкус — {f}', msgStr: 'крепость — {s}', msgHkQ: 'Подскажите, пожалуйста, цену кальяна.',
+    msgPre: 'Заранее к столу:', msgTot: 'Итого по меню: {s}', msgWish: 'Пожелание: {w}', msgEnd: 'Есть ли свободный стол? Спасибо!'
+  },
+  ar: {
+    demo: 'نموذج تجريبي · مثال لموقع «Кафе кальян» من إعداد الحسن الفرّان · ليس الموقع الرسمي',
+    cafe: 'مقهى', navTable: 'طاولة المساء', navKitchen: 'المطبخ', navBar: 'البار', navReviews: 'الآراء', navFind: 'كيف تصل',
+    langBtn: 'Русский', langAttr: 'ru', langAria: 'التبديل إلى الروسية',
+    eye: 'مقهى · لاونج شيشة · بار', h1s: 'في شارع نوفوسلوبودسكايا',
+    lead: 'شيشة وبار ومطبخ. يوميًا <em class="ltr">12:00–00:00</em>، على بُعد 145 م من محطة «Менделеевская».',
+    ctaTable: 'جهّز طاولتك للمساء', ctaYa: 'احجز عبر ياندكس',
+    revSrc: 'رأي على خرائط ياندكس (بالروسية)', onYa: 'على خرائط ياندكس',
+    tblKick: 'الحجز عبر واتساب', tblH: 'طاولتك لهذا المساء',
+    tblSub: 'اختر اليوم والوقت وعدد الضيوف — ستكتمل الطاولة على المخطط تلقائيًا، وتُرسل رسالة جاهزة إلى واتساب المكان.',
+    fDay: 'متى', fTime: 'في أي ساعة', fGuests: 'الضيوف', fHk: 'الشيشة', fFlav: 'نكهة الشيشة', fStr: 'القوة', fOcc: 'المناسبة', fPre: 'طلب مسبق إلى الطاولة', fWish: 'ملاحظة',
+    hkNote: 'أسعار الشيشة غير مذكورة في البطاقة — سنسأل عنها في الرسالة نفسها.',
+    wishPh: 'مثلًا: طاولة قرب النافذة، سنحضر كعكة، نحتاج كرسي أطفال…',
+    today: 'اليوم', tomorrow: 'غدًا',
+    dowS: ['الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت', 'الأحد'],
+    monS: ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'],
+    monG: ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'],
+    flav: ['حسب اختيار المعلّم', 'فواكه', 'توت', 'منعشة بالنعناع', 'حلوة'],
+    str: ['خفيفة', 'متوسطة', 'قوية'],
+    strMsg: ['خفيفة', 'متوسطة', 'قوية'],
+    occAny: 'سهرة عادية',
+    timeNoteToday: 'اليوم ما زال الحجز متاحًا من {t}. المكان يعمل حتى 00:00.',
+    timeNote: 'المكان يعمل من 12:00 حتى 00:00.',
+    preEmpty: 'لا شيء بعد. أضف أطباقًا من <a href="#kitchen">المطبخ</a> — وستُضاف إلى الرسالة.',
+    sPre: 'الطلب المسبق من القائمة', sEst: 'تقدير تقريبي لـ {g}',
+    sNote: 'التقدير مبني على متوسط الفاتورة في بطاقة ياندكس ({b} للضيف). المبلغ النهائي يعتمد على طلبكم.',
+    send: 'إرسال الحجز عبر واتساب', call: 'اتصال', yaShort: 'عبر ياندكس',
+    capG: 'ضيوف', capH: 'شيشة', capP: 'أطباق', noHk: 'بدون شيشة',
+    tblAria: 'مخطط الطاولة: {g}، {h}، {p}',
+    kKick: 'قائمة خاصة — الشاورما', kH: 'المطبخ', kSub: 'الأسعار من بطاقة المكان على خرائط ياندكس. اضغط «+» ليُضاف الطبق إلى حجز الطاولة.',
+    sigK: 'ما يمدحه الضيوف', sigH: 'شاورما بالصحن',
+    sigQ: '«А арабская шаурма на тарелке! М-м-м... Страсть какая вкусная.»', sigA: 'Алексей К.',
+    addAria: 'إضافة «{n}»', minusAria: 'إزالة حصة من «{n}»', plusAria: 'إضافة حصة أخرى من «{n}»',
+    onReq: 'حسب الطلب',
+    bKick: '{n} صنفًا في القائمة', bH: 'قائمة البار', bSub: 'كوكتيلات وشوتات ومشروبات قوية — المكوّنات والأحجام كما في بطاقة ياندكس.',
+    bSearchL: 'البحث في قائمة البار', bSearch: 'ابحث: موهيتو، Jameson…', all: 'الكل',
+    more: 'عرض المزيد ({n})', less: 'إخفاء', nothing: 'لا توجد نتائج — اسأل عبر واتساب إن كان المشروب متوفرًا.',
+    ml: 'مل', l: 'لتر',
+    tea: '<b>الشاي والقهوة</b> متوفران، والضيوف يمدحون الشاي بشكل خاص. الأسعار والأنواع غير مذكورة في البطاقة — اسأل عبر واتساب.',
+    teaAsk: 'اسأل عن الشاي', teaMsg: 'مرحبًا! ما أنواع الشاي المتوفرة لديكم وكم سعرها؟',
+    rKick: '{v} · {c} · {r}', rH: 'لماذا يعود الضيوف', allRev: 'كل الآراء على خرائط ياندكس', swipe: '← اسحب لرؤية المزيد',
+    aspCap: { 'Персонал': 'أشادوا بالطاقم', 'Кальян': 'أشادوا بالشيشة', 'Атмосфера': 'أشادوا بالأجواء', 'Еда': 'أشادوا بالطعام', 'Интерьер': 'أشادوا بالديكور', 'Напитки': 'أشادوا بالمشروبات' },
+    fH: 'كيف تصل', fAddr: 'العنوان', fHours: 'ساعات العمل', fBill: 'متوسط الفاتورة', fInside: 'ما الذي ستجده', fFor: 'مناسب لـ',
+    route: 'رسم المسار', walk: 'سيرًا', metroW: 'من «{m}»',
+    addrS: 'موسكو · اسأل عن المدخل عبر الهاتف',
+    hrsT: 'يوميًا، بلا أيام عطلة',
+    mapT: 'الخريطة: Новослободская ул., 14/19с8',
+    ftWa: 'راسلنا عبر واتساب', ftYa: 'البطاقة على خرائط ياندكس',
+    ftDemo: 'نموذج تجريبي · مثال لموقع «Кафе кальян» من إعداد الحسن الفرّان · ليس الموقع الرسمي',
+    ftSrc: 'الأسعار والبيانات مأخوذة من بطاقة المكان على خرائط ياندكس وقد تختلف.',
+    mbTable: 'طاولة المساء', callAria: 'اتصال',
+    open: 'مفتوح · حتى {t}', closed: 'مغلق · يفتح الساعة {t}', closedTm: 'مغلق · يفتح غدًا الساعة {t}',
+    msgHi: 'مرحبًا! أرغب في حجز طاولة في «Кафе кальян» في شارع نوفوسلوبودسكايا.',
+    msgWhen: 'الموعد: {d}، الساعة {t}', msgG: 'عدد الضيوف: {g}', msgOcc: 'المناسبة: {o}',
+    msgHk: 'الشيشة: {n}', msgFlav: 'النكهة: {f}', msgStr: 'القوة: {s}', msgHkQ: 'كم سعر الشيشة من فضلكم؟',
+    msgPre: 'طلب مسبق إلى الطاولة:', msgTot: 'المجموع حسب القائمة: {s}', msgWish: 'ملاحظة: {w}', msgEnd: 'هل توجد طاولة متاحة؟ شكرًا!'
+  }
+};
+function t(k, vars) {
+  var s = (T[lang] && T[lang][k] != null) ? T[lang][k] : T.ru[k];
+  if (typeof s === 'string' && vars) s = s.replace(/\{(\w+)\}/g, function (m, v) { return vars[v] != null ? vars[v] : m; });
+  return s;
+}
+var CAT_AR = { 'Закуски': 'مقبلات', 'Салаты': 'سلطات', 'Супы': 'شوربات', 'Вермуты': 'فيرموث', 'Текила': 'تيكيلا', 'Ром': 'رَم', 'Горячие блюда': 'أطباق ساخنة', 'Шоты': 'شوتات', 'Джин': 'جين', 'Водка': 'فودكا', 'Коктейли': 'كوكتيلات', 'Виски': 'ويسكي', 'Коньяк': 'كونياك', 'Согревающие коктейли': 'كوكتيلات دافئة', 'Фирменные коктейли': 'كوكتيلات المكان', 'Ликеры/настойки': 'ليكيورات ومنقوعات' };
+var DISH_AR = { 'Картофель фри': 'بطاطس مقلية', 'Жареная моцарелла': 'موتزاريلا مقلية', 'Салат цезарь с курицей': 'سلطة سيزر بالدجاج', 'Салат из свежих овощей': 'سلطة خضار طازجة', 'Теплый салат с говядиной': 'سلطة دافئة بلحم البقر', 'Суп-пюре из чечевицы': 'شوربة عدس كريمية', 'Грибной суп': 'شوربة فطر', 'Шаурма куриная на тарелке': 'شاورما دجاج بالصحن', 'Бургер говядина': 'برغر لحم بقري', 'Бургер куриный': 'برغر دجاج', 'Клаб сэндвич': 'كلوب ساندويتش', 'Шаурма мясная': 'شاورما لحم' };
+var OCC_AR = { 'Свидание': 'موعد غرامي', 'Деловая встреча': 'اجتماع عمل', 'Семейный ужин': 'عشاء عائلي', 'Корпоратив': 'حفلة شركة', 'День Рождения': 'عيد ميلاد', 'Банкет': 'مأدبة' };
+function catName(n) { return lang === 'ar' && CAT_AR[n] ? CAT_AR[n] : n; }
+function dishName(n) { return lang === 'ar' && DISH_AR[n] ? DISH_AR[n] : n; }
+function occName(n) { return n === '*' ? t('occAny') : (lang === 'ar' && OCC_AR[n] ? OCC_AR[n] : n); }
+
+/* ---------- time ---------- */
+function mskNow() { var d = new Date(); return new Date(d.getTime() + (d.getTimezoneOffset() + 180) * 60000); }
+function mm(s) { return +s.slice(0, 2) * 60 + +s.slice(3); }
+function openStatus(now) {
+  now = now || mskNow();
+  if (!BIZ.hours) return null;
+  var day = (now.getDay() + 6) % 7, mins = now.getHours() * 60 + now.getMinutes(), i, iv;
+  var prev = BIZ.hours[(day + 6) % 7];
+  for (i = 0; i < prev.length; i++) { iv = prev[i]; if (mm(iv[1]) <= mm(iv[0]) && mins < mm(iv[1])) return { open: true, text: t('open', { t: iv[1] }) }; }
+  var cur = BIZ.hours[day];
+  for (i = 0; i < cur.length; i++) { iv = cur[i]; var a = mm(iv[0]), b = mm(iv[1]) <= a ? mm(iv[1]) + 1440 : mm(iv[1]); if (mins >= a && mins < b) return { open: true, text: t('open', { t: iv[1] }) }; }
+  for (i = 0; i < cur.length; i++) if (mins < mm(cur[i][0])) return { open: false, text: t('closed', { t: cur[i][0] }) };
+  var nx = BIZ.hours[(day + 1) % 7];
+  if (nx.length) return { open: false, text: t('closedTm', { t: nx[0][0] }) };
+  return null;
+}
+function renderStatus() {
+  var s = openStatus();
+  ['#hdrSt', '#findSt', '#ftSt'].forEach(function (id) {
+    var el = $(id); if (!el) return;
+    if (!s) { el.hidden = true; return; }
+    el.textContent = s.text; el.classList.toggle('off', !s.open);
+  });
+}
+
+/* ---------- data prep ---------- */
+var KITCHEN = ['Закуски', 'Салаты', 'Супы', 'Горячие блюда'];
+var kitchen = [], bar = [], ITEMS = {};
+BIZ.menu.forEach(function (c, ci) {
+  if (KITCHEN.indexOf(c.name) >= 0) {
+    var items = c.items.map(function (it, ii) { var k = 'k' + ci + '_' + ii; ITEMS[k] = it; return { key: k, it: it }; });
+    kitchen.push({ name: c.name, items: items });
+  } else {
+    var groups = [], by = {};
+    c.items.forEach(function (it) {
+      var vol = it.d && /^\s*\d+\s*мл\s*$/i.test(it.d);
+      var name = cleanName(it.t);
+      var g = by[name];
+      if (!g) { g = by[name] = { t: name, comp: vol ? '' : (it.d || ''), vars: [] }; groups.push(g); }
+      g.vars.push({ v: vol ? parseInt(it.d, 10) : null, p: it.p });
+    });
+    bar.push({ name: c.name, groups: groups });
+  }
+});
+kitchen.sort(function (a, b) { return KITCHEN.indexOf(a.name) - KITCHEN.indexOf(b.name); });
+var barCount = bar.reduce(function (s, c) { return s + c.groups.length; }, 0);
+var OCCS = ['*'].concat(String(feat('События') || '').split(/,\s*/).filter(Boolean));
+var BILL = feat('средний счёт');
+var billNums = BILL ? (String(BILL).match(/\d[\d\s]*/g) || []).map(function (x) { return parseInt(x.replace(/\s/g, ''), 10); }) : [];
+
+/* ---------- state ---------- */
+var S = { day: 0, time: 1200, g: 2, h: 1, flav: 0, str: -1, occ: -1, cart: {}, wish: '' };
+function dayDate(i) { var n = mskNow(); return new Date(n.getFullYear(), n.getMonth(), n.getDate() + i); }
+function minToday() {
+  var n = mskNow(), m = n.getHours() * 60 + n.getMinutes();
+  var x = Math.ceil((m + 30) / 30) * 30;
+  return Math.max(720, x);
+}
+function clampTime() {
+  var mn = S.day === 0 ? minToday() : 720;
+  var inp = $('#time');
+  inp.min = Math.min(mn, 1410);
+  if (S.time < mn) S.time = Math.min(mn, 1410);
+  inp.value = S.time;
+}
+function dayLabel(i, full) {
+  var d = dayDate(i), dow = (d.getDay() + 6) % 7;
+  if (full) {
+    var rel = i === 0 ? t('today') : i === 1 ? t('tomorrow') : '';
+    if (lang === 'ar') return (rel ? rel + '، ' : '') + d.getDate() + ' ' + T.ar.monG[d.getMonth()] + ' (' + T.ar.dowS[dow] + ')';
+    return (rel ? rel.toLowerCase() + ', ' : '') + d.getDate() + ' ' + T.ru.monG[d.getMonth()] + ' (' + T.ru.dowS[dow] + ')';
+  }
+  return { top: i === 0 ? t('today') : i === 1 ? t('tomorrow') : t('dowS')[dow], sub: d.getDate() + ' ' + t('monS')[d.getMonth()] };
+}
+
+/* ---------- module ---------- */
+function chipHTML(label, on, data) { return '<button type="button" class="chip" aria-pressed="' + (on ? 'true' : 'false') + '" ' + data + '>' + esc(label) + '</button>'; }
+function renderDays() {
+  var todayOk = minToday() <= 1410, h = '';
+  if (!todayOk && S.day === 0) S.day = 1;
+  for (var i = 0; i < 7; i++) {
+    if (i === 0 && !todayOk) continue;
+    var l = dayLabel(i);
+    h += '<button type="button" class="day" data-day="' + i + '" aria-pressed="' + (S.day === i) + '"><b>' + esc(l.top) + '</b><span>' + esc(l.sub) + '</span></button>';
+  }
+  $('#days').innerHTML = h;
+}
+function renderChips() {
+  $('#flav').innerHTML = t('flav').map(function (f, i) { return chipHTML(f, S.flav === i, 'data-flav="' + i + '"'); }).join('');
+  $('#str').innerHTML = t('str').map(function (f, i) { return chipHTML(f, S.str === i, 'data-str="' + i + '"'); }).join('');
+  $('#occ').innerHTML = OCCS.map(function (o, i) { return chipHTML(occName(o), S.occ === i, 'data-occ="' + i + '"'); }).join('');
+  $('#flav').setAttribute('aria-label', t('fFlav')); $('#str').setAttribute('aria-label', t('fStr')); $('#occ').setAttribute('aria-label', t('fOcc'));
+}
+function cartList() {
+  var out = [];
+  Object.keys(S.cart).forEach(function (k) { if (S.cart[k] > 0 && ITEMS[k]) out.push({ key: k, it: ITEMS[k], q: S.cart[k] }); });
+  return out;
+}
+function cartTotal() { return cartList().reduce(function (s, x) { return s + (x.it.p || 0) * x.q; }, 0); }
+function cartQty() { return cartList().reduce(function (s, x) { return s + x.q; }, 0); }
+
+function svgEl(tag, attrs) { var e = document.createElementNS(SVGNS, tag); for (var a in attrs) e.setAttribute(a, attrs[a]); return e; }
+var prevG = 0, prevH = 0, prevP = 0;
+function renderTable() {
+  var svg = $('#tbl'); svg.innerHTML = '';
+  var cx = 200, cy = 200;
+  var defs = svgEl('defs', {});
+  defs.innerHTML = '<radialGradient id="tw" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#3A2230"/><stop offset="1" stop-color="#1E1119"/></radialGradient><radialGradient id="tc" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FFB95A" stop-opacity=".8"/><stop offset="1" stop-color="#F4A93C" stop-opacity="0"/></radialGradient>';
+  svg.appendChild(defs);
+  /* rug */
+  svg.appendChild(svgEl('circle', { cx: cx, cy: cy, r: 190, fill: 'none', stroke: 'rgba(244,169,60,.10)', 'stroke-width': 1, 'stroke-dasharray': '2 6' }));
+  /* seats */
+  var G = Math.min(S.g, 12);
+  for (var i = 0; i < G; i++) {
+    var a = -Math.PI / 2 + i * 2 * Math.PI / G, x = cx + Math.cos(a) * 148, y = cy + Math.sin(a) * 148;
+    var g = svgEl('g', { transform: 'translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ') rotate(' + (a * 180 / Math.PI + 90).toFixed(1) + ')' });
+    var r = svgEl('rect', { x: -24, y: -15, width: 48, height: 30, rx: 13, fill: '#3B2347', stroke: 'rgba(244,169,60,.45)', 'stroke-width': 1.2 });
+    if (i >= prevG) r.setAttribute('class', 'seat');
+    g.appendChild(r);
+    g.appendChild(svgEl('path', { d: 'M-14 0H14', stroke: 'rgba(243,234,242,.18)', 'stroke-width': 1.2 }));
+    svg.appendChild(g);
+  }
+  if (S.g > 12) { var tx = svgEl('text', { x: cx, y: 392, 'text-anchor': 'middle', fill: '#F4A93C', 'font-size': 15, 'font-family': 'Onest, sans-serif' }); tx.textContent = '+' + (S.g - 12); svg.appendChild(tx); }
+  /* table */
+  svg.appendChild(svgEl('circle', { cx: cx, cy: cy, r: 104, fill: 'url(#tw)', stroke: '#F4A93C', 'stroke-width': 1.6 }));
+  svg.appendChild(svgEl('circle', { cx: cx, cy: cy, r: 94, fill: 'none', stroke: 'rgba(244,169,60,.22)', 'stroke-width': 1 }));
+  var star = svgEl('g', { fill: 'none', stroke: 'rgba(244,169,60,.16)', 'stroke-width': 1 });
+  star.innerHTML = '<rect x="170" y="170" width="60" height="60"/><rect x="170" y="170" width="60" height="60" transform="rotate(45 200 200)"/>';
+  svg.appendChild(star);
+  /* plates */
+  var P = Math.min(cartQty(), 14);
+  for (i = 0; i < P; i++) {
+    var pa = -Math.PI / 2 + Math.PI / Math.max(P, 1) + i * 2 * Math.PI / P;
+    var pgx = cx + Math.cos(pa) * 74, pgy = cy + Math.sin(pa) * 74;
+    var pg = svgEl('g', { transform: 'translate(' + pgx.toFixed(1) + ' ' + pgy.toFixed(1) + ')' });
+    var pl = svgEl('circle', { r: 12.5, fill: '#EDE2EC', 'fill-opacity': .92, stroke: '#F4A93C', 'stroke-width': 1 });
+    if (i >= prevP) pl.setAttribute('class', 'seat');
+    pg.appendChild(pl);
+    pg.appendChild(svgEl('circle', { r: 7.5, fill: 'none', stroke: 'rgba(31,16,4,.25)' }));
+    svg.appendChild(pg);
+  }
+  /* hookahs */
+  var H = Math.min(S.h, 6);
+  for (i = 0; i < H; i++) {
+    var hr = H === 1 ? 0 : 36, ha = -Math.PI / 2 + i * 2 * Math.PI / H;
+    var hx = cx + Math.cos(ha) * hr, hy = cy + Math.sin(ha) * hr;
+    var hg = svgEl('g', { transform: 'translate(' + hx.toFixed(1) + ' ' + hy.toFixed(1) + ')' });
+    var inner = svgEl('g', {});
+    if (i >= prevH) inner.setAttribute('class', 'seat');
+    inner.appendChild(svgEl('circle', { r: 26, fill: 'url(#tc)' }));
+    inner.appendChild(svgEl('circle', { r: 15, fill: '#2B1934', stroke: '#F4A93C', 'stroke-width': 1.4 }));
+    inner.appendChild(svgEl('circle', { r: 8, fill: '#F4A93C' }));
+    inner.appendChild(svgEl('circle', { r: 3.2, fill: '#FFE0A8' }));
+    var sm = svgEl('circle', { r: 16, class: 'tsmoke' }); sm.style.animationDelay = (-i * 1.1) + 's';
+    inner.appendChild(sm);
+    hg.appendChild(inner);
+    svg.appendChild(hg);
+  }
+  prevG = G; prevH = H; prevP = P;
+  /* lamp intensity: brighter by day, deeper by night */
+  var k = (S.time - 720) / (1410 - 720);
+  $('#stage').style.setProperty('--lamp', (0.26 - k * 0.14).toFixed(3));
+  var cap = '<span><b>' + S.g + '</b> ' + esc(t('capG')) + '</span><span>' + (S.h ? '<b>' + S.h + '</b> ' + esc(t('capH')) : esc(t('noHk'))) + '</span><span><b>' + cartQty() + '</b> ' + esc(t('capP')) + '</span>';
+  $('#stCap').innerHTML = cap;
+  svg.setAttribute('aria-label', t('tblAria', { g: S.g + ' ' + t('capG'), h: S.h + ' ' + t('capH'), p: cartQty() + ' ' + t('capP') }));
+}
+function renderPre() {
+  var list = cartList(), box = $('#pre');
+  if (!list.length) { box.innerHTML = '<p class="empty">' + t('preEmpty') + '</p>'; return; }
+  box.innerHTML = '<ul>' + list.map(function (x) {
+    return '<li><span>' + esc(dishName(x.it.t)) + ' × ' + x.q + '</span><span>' + rub(x.it.p == null ? null : x.it.p * x.q) + '</span></li>';
+  }).join('') + '</ul>';
+}
+function guestsWord(n) { if (lang === 'ar') return n === 1 ? 'ضيف واحد' : n === 2 ? 'ضيفين' : n <= 10 ? n + ' ضيوف' : n + ' ضيفًا'; return n + NB + plural(n, 'гостя', 'гостей', 'гостей'); }
+function buildMsg() {
+  var L = [], when = dayLabel(S.day, true), list = cartList(), tot = cartTotal();
+  L.push(t('msgHi'));
+  L.push('');
+  L.push(t('msgWhen', { d: when, t: hhmm(S.time) }));
+  L.push(t('msgG', { g: S.g }));
+  if (S.occ >= 0) L.push(t('msgOcc', { o: occName(OCCS[S.occ]) }));
+  if (S.h > 0) {
+    var parts = [];
+    if (S.flav >= 0) parts.push(t('msgFlav', { f: t('flav')[S.flav] }));
+    if (S.str >= 0) parts.push(t('msgStr', { s: t('strMsg')[S.str] }));
+    L.push(t('msgHk', { n: S.h }) + (parts.length ? (lang === 'ar' ? '، ' : ', ') + parts.join(lang === 'ar' ? '، ' : ', ') : '') + '. ' + t('msgHkQ'));
+  }
+  if (list.length) {
+    L.push('');
+    L.push(t('msgPre'));
+    list.forEach(function (x) {
+      var nm = lang === 'ar' && DISH_AR[x.it.t] ? DISH_AR[x.it.t] + ' (' + x.it.t + ')' : x.it.t;
+      L.push('— ' + nm + ' × ' + x.q + ' — ' + rub(x.it.p == null ? null : x.it.p * x.q));
+    });
+    L.push(t('msgTot', { s: rub(tot) }));
+  }
+  var w = ($('#wish').value || '').trim();
+  if (w) { L.push(''); L.push(t('msgWish', { w: w })); }
+  L.push('');
+  L.push(t('msgEnd'));
+  return L.join('\n');
+}
+function renderSum() {
+  $('#sPre').textContent = cartQty() ? rub(cartTotal()) : '—';
+  if (billNums.length >= 2) {
+    $('#sEstL').textContent = t('sEst', { g: guestsWord(S.g) });
+    $('#sEst').textContent = num(billNums[0] * S.g) + '–' + num(billNums[1] * S.g) + NB + '₽';
+    $('#sNote').innerHTML = esc(t('sNote', { b: '' })).replace('', '<bdi dir="ltr">' + esc(BILL) + '</bdi>');
+  } else { $('#sEstL').parentNode.hidden = true; }
+  $('#send').href = wa(buildMsg());
+}
+function renderTime() {
+  var v = hhmm(S.time);
+  $('#timeOut').textContent = v; $('#stT').textContent = v;
+  $('#stD').textContent = dayLabel(S.day, true);
+  $('#timeNote').textContent = S.day === 0 ? t('timeNoteToday', { t: hhmm(minToday()) }) : t('timeNote');
+  $('#gOut').textContent = S.g; $('#hOut').textContent = S.h;
+  $('#gMinus').disabled = S.g <= 1; $('#gPlus').disabled = S.g >= 20;
+  $('#hMinus').disabled = S.h <= 0; $('#hPlus').disabled = S.h >= 6;
+  $('#flavF').style.opacity = S.h ? '' : '.45';
+}
+function sync() { renderTime(); renderTable(); renderPre(); renderSum(); renderKitchenQty(); }
+
+/* ---------- kitchen ---------- */
+function rowCtl(key, it) {
+  var q = S.cart[key] || 0, n = dishName(it.t);
+  if (!q) return '<button type="button" class="add" data-add="' + key + '" aria-label="' + esc(t('addAria', { n: n })) + '">+</button>';
+  return '<span class="qty"><button type="button" data-dec="' + key + '" aria-label="' + esc(t('minusAria', { n: n })) + '">−</button><output>' + q + '</output><button type="button" data-add="' + key + '" aria-label="' + esc(t('plusAria', { n: n })) + '">+</button></span>';
+}
+function itemRow(x) {
+  var it = x.it, sub = lang === 'ar' && DISH_AR[it.t] ? it.t : (it.d || '');
+  return '<div class="it" data-row="' + x.key + '"><div class="it-n"><b>' + esc(dishName(it.t)) + '</b>' + (sub ? '<small' + (lang === 'ar' ? ' lang="ru" dir="ltr"' : '') + '>' + esc(sub) + (it.v ? ' · ' + esc(it.v) : '') + '</small>' : '') + '</div><span class="it-p">' + rub(it.p) + '</span><span class="ctl-s" data-ctl="' + x.key + '">' + rowCtl(x.key, it) + '</span></div>';
+}
+function renderKitchen() {
+  var shaw = [];
+  kitchen.forEach(function (c) { c.items.forEach(function (x) { if (/шаурма/i.test(x.it.t)) shaw.push(x); }); });
+  $('#kKick').textContent = feat('специальное меню') ? t('kKick') : t('kH');
+  $('#sig').innerHTML = '<p class="kick">' + esc(t('sigK')) + '</p><h3>' + esc(t('sigH')) + '</h3><blockquote lang="ru" dir="ltr">' + esc(t('sigQ')) + '</blockquote><cite>' + esc(t('sigA')) + ' · ' + esc(t('revSrc')) + '</cite><div class="rows">' + shaw.map(itemRow).join('') + '</div>';
+  $('#klist').innerHTML = kitchen.map(function (c) {
+    var rest = c.items.filter(function (x) { return shaw.indexOf(x) < 0; }); if (!rest.length) return '';
+    return '<div class="kcat rv"><h3>' + esc(catName(c.name)) + '</h3>' + rest.map(itemRow).join('') + '</div>';
+  }).join('');
+}
+function renderKitchenQty() {
+  $$('[data-ctl]').forEach(function (el) { var k = el.getAttribute('data-ctl'); el.innerHTML = rowCtl(k, ITEMS[k]); });
+}
+
+/* ---------- bar ---------- */
+var B = { cat: -1, q: '', open: false };
+var BAR_LIMIT = 8;
+function volText(v) { if (v == null) return ''; if (v >= 1000 && v % 1000 === 0) return (v / 1000) + NB + t('l'); if (v >= 500) return String(v / 1000).replace('.', ',') + NB + t('l'); return v + NB + t('ml'); }
+function renderBarChips() {
+  $('#bchips').innerHTML = chipHTML(t('all'), B.cat === -1, 'data-bc="-1"') + bar.map(function (c, i) { return chipHTML(catName(c.name), B.cat === i, 'data-bc="' + i + '"'); }).join('');
+  $('#bchips').setAttribute('aria-label', t('bH'));
+}
+function renderBar() {
+  var q = B.q.trim().toLowerCase(), rows = [], shown = 0, total = 0;
+  bar.forEach(function (c, ci) {
+    if (!q && B.cat !== -1 && B.cat !== ci) return;
+    var gs = c.groups.filter(function (g) { return !q || (g.t + ' ' + g.comp + ' ' + c.name + ' ' + catName(c.name)).toLowerCase().indexOf(q) >= 0; });
+    if (!gs.length) return;
+    total += gs.length;
+    var block = [];
+    gs.forEach(function (g) {
+      if (!B.open && !q && shown >= BAR_LIMIT) return;
+      shown++;
+      var right = g.vars.map(function (v) { return '<div>' + (v.v != null ? '<span>' + volText(v.v) + '</span>' : '') + '<b>' + rub(v.p) + '</b></div>'; }).join('');
+      block.push('<div class="it"><div class="it-n"><b lang="ru" dir="ltr">' + esc(g.t) + '</b>' + (g.comp ? '<small lang="ru" dir="ltr">' + esc(g.comp) + '</small>' : '') + '</div><div class="bv">' + right + '</div></div>');
+    });
+    if (block.length) rows.push('<div><p class="bc">' + esc(catName(c.name)) + '</p>' + block.join('') + '</div>');
+  });
+  $('#blist').innerHTML = rows.length ? rows.join('') : '<p class="sub">' + esc(t('nothing')) + '</p>';
+  var more = $('#bmore'), rest = total - shown;
+  if (q || total <= BAR_LIMIT) { more.hidden = true; }
+  else { more.hidden = false; more.textContent = B.open ? t('less') : t('more', { n: rest }); }
+}
+
+/* ---------- reviews ---------- */
+var REV = [
+  { a: 'Алексей К.', d: 'май 2026', x: 'Одно из лучших заведений в Москве по душевности. Одно из лучших заведений в России по кальянности. Что ещё можно ожидать от кальянной с названием "Кальян"? Которая ещё и работает с 1999 года.' },
+  { a: 'Влад П.', d: 'июнь 2026', x: 'Просто прекрасное место! Великолепные кальяны и бар, мастер — чудесный человек с просто золотыми руками.' },
+  { a: 'Елизавета А.', d: 'июнь 2025', x: 'Обожаем это место с подругой! Приятный приветливый персонал, всегда подскажут и предложат прекрасные кальяны, кальянщик - вообще лучший и позитивный человек! Чай - отдельная похвала!' },
+  { a: 'Мария В.', d: 'март 2025', x: 'Супер место! Замечательный,приветливый,заботливый персонал. Еда напитки -все вкусно. Кальяны лучшие!! Все кальянщики молодцы и делают топовые кальяны.' },
+  { a: 'данила С.', d: 'сентябрь 2024', x: 'Решили провести День Рождения в данном заведении, заранее звонили и бронировали стол, уточняли все интересующие нас вопросы.Отдыхали с подругой, очень крутая атмосфера)' }
+];
+function ratingStr() { return lang === 'ar' ? BIZ.rating.value.toFixed(1) : BIZ.rating.value.toFixed(1).replace('.', ','); }
+function countStr(n, w) {
+  if (lang === 'ar') return n + ' ' + (w === 'r' ? 'رأيًا' : 'تقييمًا');
+  return n + NB + (w === 'r' ? plural(n, 'отзыв', 'отзыва', 'отзывов') : plural(n, 'оценка', 'оценки', 'оценок'));
+}
+function aspCaption(a) {
+  var obj = t('aspCap')[a.text];
+  if (lang === 'ar') return obj;
+  var n = a.positive;
+  return plural(n, 'гость', 'гостя', 'гостей') + ' ' + (plural(n, 1, 2, 2) === 1 ? 'хвалит' : 'хвалят') + ' ' + obj;
+}
+function renderReviews() {
+  $('#rKick').textContent = t('rKick', { v: ratingStr() + ' ★', c: countStr(BIZ.rating.count, 'c'), r: countStr(BIZ.rating.reviews, 'r') });
+  var asp = BIZ.aspects.filter(function (a) { return T.ru.aspCap[a.text]; }).slice(0, 6);
+  var max = Math.max.apply(null, asp.map(function (a) { return a.positive; }));
+  $('#asp').innerHTML = asp.map(function (a) { return '<div class="ap rv"><b>' + a.positive + '</b><span>' + esc(aspCaption(a)) + '</span><i style="--w:' + Math.round(a.positive / max * 100) + '%"></i></div>'; }).join('');
+  $('#revs').innerHTML = REV.map(function (r) {
+    return '<figure class="rv-c rv"><div class="stars" aria-label="5/5">★★★★★</div><blockquote lang="ru" dir="ltr">«' + esc(r.x) + '»</blockquote><footer><b lang="ru">' + esc(r.a) + '</b> · ' + esc(t('revSrc')) + '</footer></figure>';
+  }).join('');
+}
+
+/* ---------- hero, find, footer ---------- */
+function renderHero() {
+  $('#lead').innerHTML = t('lead');
+  $('#heroMetro').innerHTML = BIZ.metro.slice(0, 2).map(function (m) { return '<span class="mi"><i style="background:' + esc(m.color) + '"></i><span lang="ru">' + esc(m.name) + '</span>&nbsp;· <bdi dir="ltr">' + esc(m.distance) + '</bdi></span>'; }).join('');
+  var r = $('#rate'); r.href = BIZ.reviewsUrl;
+  r.innerHTML = '<span class="v ltr">' + ratingStr() + '</span><span><span class="s" aria-hidden="true">★★★★★</span><span class="c" style="display:block">' + countStr(BIZ.rating.count, 'c') + '<br>' + esc(t('onYa')) + '</span></span>';
+  var pick = ['Кальян', 'Персонал', 'Атмосфера'];
+  $('#stats').innerHTML = pick.map(function (n) { var a = BIZ.aspects.filter(function (x) { return x.text === n; })[0]; return a ? '<div class="stat"><b>' + a.positive + '</b><span>' + esc(aspCaption(a)) + '</span></div>' : ''; }).join('');
+}
+var INSIDE = [
+  ['Wi-Fi', 'Wi-Fi', 'Wi-Fi'], ['настольные игры', 'Настольные игры', 'ألعاب طاولة'], ['спортивные трансляции', 'Спортивные трансляции', 'بث المباريات'],
+  ['проектор', 'Проектор', 'جهاز عرض'], ['число экранов', 'Экранов: {v}', 'شاشات: {v}'], ['можно с ноутбуком', 'Можно с ноутбуком', 'مناسب للعمل باللابتوب'],
+  ['Зарядка для телефона', 'Зарядка для телефона', 'شحن الهاتف'], ['кондиционер', 'Кондиционер', 'تكييف'], ['посещение с животными', 'Можно с животными', 'يُسمح بالحيوانات الأليفة'],
+  ['парковка', 'Парковка', 'موقف سيارات'], ['парковщик', 'Парковщик', 'خدمة صفّ السيارات'], ['велопарковка', 'Велопарковка', 'موقف دراجات'],
+  ['доступность входа на инвалидной коляске', 'Вход доступен для коляски', 'مدخل مهيّأ للكراسي المتحركة'], ['Оплата картой', 'Оплата картой', 'الدفع بالبطاقة'],
+  ['кофе с собой', 'Кофе с собой', 'قهوة للأخذ'], ['еда навынос', 'Еда навынос', 'طعام للأخذ'], ['предварительная запись', 'Бронь заранее', 'حجز مسبق']
+];
+function renderFind() {
+  $('#addr').textContent = BIZ.address.replace(/,\s*Москва$/, '');
+  $('#addrS').textContent = lang === 'ar' ? 'موسكو' : 'Москва';
+  $('#mlist').innerHTML = BIZ.metro.map(function (m) { return '<li><i style="background:' + esc(m.color) + '"></i><b lang="ru" style="font-weight:500">' + esc(m.name) + '</b><span>' + esc(m.distance) + '</span></li>'; }).join('');
+  $('#route').href = BIZ.routeUrl;
+  $('#findCall').href = 'tel:' + BIZ.phone; $('#findTel').textContent = BIZ.phoneDisplay;
+  var h = BIZ.hours[0][0];
+  $('#hrs').textContent = h[0] + '–' + h[1];
+  $('#hrsT').textContent = t('hrsT');
+  var today = (mskNow().getDay() + 6) % 7;
+  $('#week').innerHTML = BIZ.hours.map(function (d, i) {
+    var lbl = lang === 'ar' ? ['ن', 'ث', 'ر', 'خ', 'ج', 'س', 'ح'][i] : T.ru.dowS[i];
+    return '<div class="wd' + (i === today ? ' today' : '') + '"' + (i === today ? ' aria-current="date"' : '') + '><b>' + esc(lbl) + '</b><span aria-hidden="true">' + (i === today ? '●' : (d.length ? '·' : '—')) + '</span></div>';
+  }).join('');
+  $('#bill').textContent = BILL || '—';
+  $('#fchips').innerHTML = INSIDE.filter(function (f) { return feat(f[0]); }).map(function (f) { var s = (lang === 'ar' ? f[2] : f[1]).replace('{v}', feat(f[0])); return '<span class="fc">' + esc(s) + '</span>'; }).join('');
+  var map = $('#map');
+  if (!map.firstChild) { var f = document.createElement('iframe'); f.loading = 'lazy'; f.src = BIZ.mapEmbed; f.title = t('mapT'); map.appendChild(f); }
+  else map.firstChild.title = t('mapT');
+}
+function renderFooter() {
+  $('#ftAddr').textContent = BIZ.address;
+  $('#ftTel').href = 'tel:' + BIZ.phone; $('#ftTel').textContent = BIZ.phoneDisplay;
+  $('#ftWa').href = wa(lang === 'ar' ? 'مرحبًا! لدي سؤال.' : 'Здравствуйте! Хочу задать вопрос.');
+  $('#ftYa').href = BIZ.yandexUrl;
+  $('#ftHours').innerHTML = '<span>' + (lang === 'ar' ? 'يوميًا ' : 'Ежедневно ') + '<bdi dir="ltr">' + BIZ.hours[0][0][0] + '–' + BIZ.hours[0][0][1] + '</bdi></span>';
+}
+function renderStatic() {
+  $$('[data-t]').forEach(function (el) { var v = t(el.getAttribute('data-t')); if (typeof v === 'string') el.textContent = v; });
+  var lb = $('#langBtn'); lb.textContent = t('langBtn'); lb.lang = t('langAttr'); lb.setAttribute('aria-label', t('langAria'));
+  $('#wish').placeholder = t('wishPh');
+  $('#bq').placeholder = t('bSearch');
+  $('#bKick').textContent = t('bKick', { n: barCount });
+  $('#teaTxt').innerHTML = t('tea');
+  $('#teaAsk').href = wa(t('teaMsg'));
+  $('#mbCall').setAttribute('aria-label', t('callAria'));
+  $('#gMinus').setAttribute('aria-label', lang === 'ar' ? 'ضيوف أقل' : 'Меньше гостей');
+  $('#gPlus').setAttribute('aria-label', lang === 'ar' ? 'ضيوف أكثر' : 'Больше гостей');
+  $('#hMinus').setAttribute('aria-label', lang === 'ar' ? 'شيشة أقل' : 'Меньше кальянов');
+  $('#hPlus').setAttribute('aria-label', lang === 'ar' ? 'شيشة أكثر' : 'Больше кальянов');
+  $('#days').setAttribute('aria-label', t('fDay'));
+}
+function links() {
+  var tel = 'tel:' + BIZ.phone;
+  $('#hdrTel').href = tel; $('#hdrTel').textContent = BIZ.phoneDisplay;
+  $('#sumCall').href = tel; $('#mbCall').href = tel;
+  $('#heroBook').href = YBOOK; $('#sumYa').href = YBOOK;
+  $('#allRev').href = BIZ.reviewsUrl;
+}
+
+/* ---------- language ---------- */
+function setLang(l) {
+  lang = l === 'ar' ? 'ar' : 'ru';
+  var de = document.documentElement;
+  de.lang = lang; de.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  try { localStorage.setItem('kk-lang', lang); } catch (e) {}
+  renderStatic(); renderStatus(); renderHero(); renderDays(); renderChips(); renderKitchen(); renderBarChips(); renderBar(); renderReviews(); renderFind(); renderFooter();
+  sync();
+  observeReveal();
+}
+window.setLang = setLang;
+
+/* ---------- events ---------- */
+function flashRow(k) { $$('[data-row="' + k + '"]').forEach(function (r) { r.classList.remove('flash'); void r.offsetWidth; r.classList.add('flash'); }); }
+document.addEventListener('click', function (e) {
+  var b = e.target.closest ? e.target.closest('button') : null;
+  if (!b) return;
+  var v;
+  if ((v = b.getAttribute('data-day')) != null) { S.day = +v; clampTime(); renderDays(); sync(); return; }
+  if ((v = b.getAttribute('data-flav')) != null) { S.flav = S.flav === +v ? -1 : +v; if (!S.h) S.h = 1; renderChips(); sync(); return; }
+  if ((v = b.getAttribute('data-str')) != null) { S.str = S.str === +v ? -1 : +v; if (!S.h) S.h = 1; renderChips(); sync(); return; }
+  if ((v = b.getAttribute('data-occ')) != null) { S.occ = S.occ === +v ? -1 : +v; renderChips(); sync(); return; }
+  if ((v = b.getAttribute('data-add')) != null) { S.cart[v] = Math.min((S.cart[v] || 0) + 1, 20); sync(); flashRow(v); var nb = $('[data-ctl="' + v + '"] [data-add]'); if (nb && document.activeElement === document.body) nb.focus(); return; }
+  if ((v = b.getAttribute('data-dec')) != null) { S.cart[v] = Math.max((S.cart[v] || 0) - 1, 0); sync(); return; }
+  if ((v = b.getAttribute('data-bc')) != null) { B.cat = +v; B.open = false; renderBarChips(); renderBar(); return; }
+  if (b.id === 'gMinus') { S.g = Math.max(1, S.g - 1); sync(); return; }
+  if (b.id === 'gPlus') { S.g = Math.min(20, S.g + 1); sync(); return; }
+  if (b.id === 'hMinus') { S.h = Math.max(0, S.h - 1); sync(); return; }
+  if (b.id === 'hPlus') { S.h = Math.min(6, S.h + 1); sync(); return; }
+  if (b.id === 'bmore') { B.open = !B.open; renderBar(); if (!B.open) $('#bar').scrollIntoView({ block: 'start' }); return; }
+  if (b.id === 'langBtn') { setLang(lang === 'ar' ? 'ru' : 'ar'); return; }
+});
+$('#time').addEventListener('input', function () { S.time = +this.value; renderTime(); renderTable(); renderSum(); });
+$('#wish').addEventListener('input', function () { renderSum(); });
+$('#bq').addEventListener('input', function () { B.q = this.value; renderBar(); });
+
+/* ---------- reveal + pausing ---------- */
+var io = null;
+function observeReveal() {
+  if (!io) { $$('.rv').forEach(function (el) { el.classList.add('in'); }); return; }
+  $$('.rv:not(.in)').forEach(function (el) { io.observe(el); });
+}
+if ('IntersectionObserver' in window && !reduce) {
+  document.documentElement.classList.add('anim');
+  io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -6% 0px' });
+  setTimeout(function () { $$('.rv').forEach(function (el) { el.classList.add('in'); }); }, 3000);
+  var pio = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('paused', !e.isIntersecting); }); });
+  pio.observe($('#hookah')); pio.observe($('#tbl'));
+}
+
+/* ---------- init ---------- */
+links();
+var initial = 'ru';
+try { initial = new URLSearchParams(location.search).get('lang') || localStorage.getItem('kk-lang') || 'ru'; } catch (e) {}
+clampTime();
+setLang(initial);
+setInterval(function () { renderStatus(); }, 60000);
+})();
+</script>
+<script src="../map-fix.js" defer></script>
+</body>
+</html>

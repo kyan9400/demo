@@ -1,0 +1,871 @@
+<!doctype html>
+<!--
+  ДЕМО-КОНЦЕПТ · «Мастерская грумера», Солнечная ул., 5, Новое Аристово (д. Юрлово, г. о. Химки)
+
+  1. ИДЕЯ. Это мастерская, а не салон: на стене — инструменты на своих местах, как в столярке
+     (щётка, ножницы, гребень, фен, машинка, каждая — в обведённом контуре), а на крючке —
+     бирка с ценой. Хозяин находит свою породу и сразу видит честную цифру из прайса.
+
+  2. ФИРМЕННЫЙ МОДУЛЬ. «Найдите свою породу»: собака или кошка → поиск и сетка из 31 реальной
+     породы прайса (Хаски, Пудель той, Шпиц, Йорк…) с линейными портретами → бирка: порода,
+     цена комплекса из прайса, что входит (разобрано из описания услуги), добавки из
+     «Универсальных» (разбор колтунов 1 100 ₽/ч, креативный груминг 2 500 ₽) и итог по прайсу →
+     кличка, день, время суток и «что важно знать мастеру» (вопросы, которые, по словам гостя
+     Максима А., задают перед стрижкой: возраст, травмы, дерматит) → заявка в WhatsApp.
+     Для кошек — 4 реальные услуги и пометка из прайса «при помощи хозяина».
+
+  3. АРТ-ДИРЕКШН. Тёплый беж + графит + терракот (seed). Линейная графика графитом: инструменты
+     на перфорированной стене с терракотовыми «обводками-тенями», собаки — одной линией.
+     Бирка из крафт-картона на бечёвке — главный носитель цены. Типографика: Geologica
+     (плотные заголовки, ремесленный гротеск) + JetBrains Mono (цены и надписи на бирках, как
+     штамп). Отличие от «Голливуда»: никакого бархата и афиши — дневной свет, верстак, бирка.
+-->
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#EFE6D8">
+<title>Мастерская грумера — груминг собак и кошек в Новом Аристово (демо)</title>
+<meta name="description" content="Демо-концепт сайта «Мастерская грумера» в Новом Аристово (Юрлово): найдите свою породу, посмотрите цену комплекса из прайса и отправьте заявку на груминг в WhatsApp.">
+<meta property="og:title" content="Мастерская грумера — найдите свою породу (демо)">
+<meta property="og:description" content="5,0 на Яндекс Картах. 31 порода в прайсе — от Чихуахуа до Тибетского мастифа. Цена комплекса и запись в WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://kyan9400.github.io/demo/masterskaya-grumera/">
+<meta property="og:image" content="https://kyan9400.github.io/demo/masterskaya-grumera/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%23EFE6D8'/%3E%3Cg fill='none' stroke='%232A2927' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='13' cy='29' r='5'/%3E%3Ccircle cx='27' cy='29' r='5'/%3E%3Cpath d='M16 25 28 7M24 25 12 7'/%3E%3C/g%3E%3Ccircle cx='20' cy='19' r='2' fill='%23B4532A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --beige:#EFE6D8; --paper:#FAF6EE; --kraft:#D9BE96; --kraft-d:#C4A276; --ink:#2A2927; --mut:#5A554E; --gr:#3A3936;
+  --terra:#B4532A; --terra-d:#8F3F1E; --terra-l:#F3DDCF; --line:rgba(42,41,39,.14);
+  --sans:"Geologica",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; --mono:"JetBrains Mono","PT Mono",ui-monospace,monospace;
+  --r:14px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth;background:var(--beige)}
+body{margin:0;background:var(--beige);color:var(--ink);font:400 16px/1.55 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,p,ul,ol,figure,blockquote{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--terra);outline-offset:3px;border-radius:6px}
+[hidden]{display:none!important}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{width:100%;max-width:1200px;margin-inline:auto;padding-inline:20px}
+.tnum{font-variant-numeric:tabular-nums}
+.mono{font-family:var(--mono)}
+
+.demobar{background:var(--ink);color:#EDE7DC;font-size:12.5px;line-height:1.4;padding:7px 16px;text-align:center}
+.demobar b{color:#fff;font-weight:600}
+
+/* header */
+.hdr{padding-block:14px;border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.mark svg{flex:none}
+.mark b{display:block;font:700 16.5px/1.1 var(--sans);letter-spacing:-.01em}
+.mark small{display:block;font:400 12.5px/1.3 var(--sans);color:var(--mut)}
+.nav{display:none;gap:24px;font-size:15px}
+.nav a{text-decoration:none;color:var(--mut);padding:10px 0}
+.nav a:hover{color:var(--terra)}
+.live{display:inline-flex;align-items:center;gap:8px;font:500 13px/1.2 var(--sans);padding:8px 12px;border-radius:99px;border:1px solid var(--line);background:var(--paper);white-space:nowrap}
+.live .dot{width:9px;height:9px;border-radius:50%;background:#3C8A4E;flex:none}
+.live.closed .dot{background:var(--terra)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border-radius:12px;font:600 16px/1.2 var(--sans);text-decoration:none;border:0;text-align:center;transition:transform .15s ease, background-color .2s, border-color .2s, color .2s}
+.btn:active{transform:translateY(1px) scale(.985)}
+.btn-terra{background:var(--terra);color:#fff}
+.btn-terra:hover{background:#A2481F}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-line{background:transparent;border:1.5px solid rgba(42,41,39,.3);color:var(--ink)}
+.btn-line:hover{border-color:var(--terra);color:var(--terra)}
+.btn svg{flex:none}
+
+/* hero */
+.hero{padding-block:26px 34px}
+.hero .wrap{display:grid;gap:22px}
+.kick{font:500 12.5px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--terra-d)}
+h1{font:800 clamp(44px,13.4vw,104px)/.9 var(--sans);letter-spacing:-.045em;margin-top:12px}
+h1 span{display:block;font-weight:300;letter-spacing:-.04em}
+.lead{font-size:17px;line-height:1.55;margin-top:18px;max-width:31em;color:var(--gr)}
+.lead b{font-weight:600;color:var(--ink)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.hero-cta .btn{flex:1 1 200px}
+.rate{display:inline-flex;align-items:center;gap:14px;margin-top:20px;text-decoration:none;padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:var(--paper);max-width:100%}
+.rate b{font:800 34px/1 var(--sans);letter-spacing:-.03em}
+.rate .st{color:#C47A1D;letter-spacing:2px;font-size:15px}
+.rate span{font-size:14px;line-height:1.35;color:var(--mut)}
+.rate:hover{border-color:var(--terra)}
+.board{position:relative;width:100%;max-width:560px;margin-inline:auto}
+.board svg{display:block;width:100%;height:auto;overflow:visible}
+.swing{transform-origin:388px 40px;animation:swing 6s ease-in-out infinite}
+@keyframes swing{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+.paused .swing,.paused .tail{animation-play-state:paused}
+.tail{transform-origin:316px 300px;animation:wag 1.6s ease-in-out infinite}
+@keyframes wag{0%,100%{transform:rotate(0)}50%{transform:rotate(7deg)}}
+
+/* facts */
+.facts{padding-bottom:28px}
+.facts ul{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;padding:9px 14px;border-radius:99px;background:var(--paper);border:1px solid var(--line)}
+.chip i{width:7px;height:7px;border-radius:50%;background:var(--terra);flex:none}
+
+/* sections */
+.sec{padding-block:56px}
+.eyebrow{font:500 12.5px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--terra-d)}
+.h2{font:800 clamp(34px,9.4vw,64px)/.95 var(--sans);letter-spacing:-.04em;margin-top:10px}
+.h2 span{font-weight:300}
+.sub{color:var(--mut);margin-top:14px;font-size:16.5px;max-width:36em}
+
+/* ===== module ===== */
+.pick{background:var(--paper);border-block:1px solid var(--line)}
+.mod{display:grid;gap:24px;margin-top:26px}
+.mod>*{min-width:0}
+.kind{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:420px}
+.kind button{min-height:52px;border-radius:12px;border:1.5px solid rgba(42,41,39,.22);background:transparent;font:600 16px/1 var(--sans);display:flex;align-items:center;justify-content:center;gap:10px}
+.kind button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.kind svg{width:30px;height:30px;color:currentColor}
+.search{position:relative;margin-top:16px}
+.search input{width:100%;min-height:52px;border-radius:12px;border:1.5px solid rgba(42,41,39,.24);background:#fff;padding:0 16px 0 46px;font-size:16px}
+.search input:focus{outline:none;border-color:var(--terra);box-shadow:0 0 0 3px rgba(180,83,42,.18)}
+.search svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);pointer-events:none}
+.hint{font-size:14px;color:var(--mut);margin-top:10px}
+.breeds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:14px}
+.br{display:grid;grid-template-columns:44px 1fr;align-items:center;gap:10px;min-height:64px;padding:8px 10px;border-radius:12px;border:1.5px solid var(--line);background:#fff;text-align:left;transition:border-color .15s, background-color .15s, transform .15s}
+.br:active{transform:scale(.98)}
+.br svg{width:44px;height:44px;color:var(--ink)}
+.br b{display:block;font:600 14.5px/1.2 var(--sans)}
+.br small{display:block;font:500 13px/1.3 var(--mono);color:var(--terra-d);margin-top:3px}
+.br[aria-pressed="true"]{border-color:var(--terra);background:var(--terra-l)}
+.br.hide{display:none}
+.more-b{margin-top:10px;width:100%}
+.none{display:none;margin-top:12px;padding:14px 16px;border-radius:12px;border:1.5px dashed rgba(42,41,39,.3);font-size:15px}
+.none.on{display:block}
+.none a{color:var(--terra-d);font-weight:600;display:inline-block;padding-block:8px}
+
+/* the tag */
+.tagwrap{position:relative;padding-top:26px}
+.tagwrap::before{content:"";position:absolute;left:50%;top:0;width:2px;height:30px;background:repeating-linear-gradient(var(--kraft-d) 0 4px,transparent 4px 6px);transform:translateX(-50%)}
+.tag{position:relative;background:var(--kraft);border-radius:16px;padding:26px 20px 20px;color:var(--ink);box-shadow:0 18px 40px -22px rgba(42,41,39,.5);background-image:radial-gradient(rgba(42,41,39,.05) 1px,transparent 1.2px);background-size:7px 7px}
+.tag::before{content:"";position:absolute;left:50%;top:10px;width:16px;height:16px;border-radius:50%;background:var(--beige);border:3px solid var(--kraft-d);transform:translateX(-50%)}
+.tag .top{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start;margin-top:10px}
+.tag .who{font:500 12.5px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:#5B4630}
+.tag h3{font:800 30px/1 var(--sans);letter-spacing:-.03em;margin-top:6px;overflow-wrap:anywhere}
+.tag .portrait{width:84px;height:84px;border-radius:50%;background:var(--paper);display:grid;place-items:center;border:2px solid rgba(42,41,39,.18)}
+.tag .portrait svg{width:66px;height:66px;color:var(--ink)}
+.price{font:700 44px/1 var(--mono);letter-spacing:-.04em;margin-top:14px}
+.price small{font:500 14px/1.3 var(--sans);letter-spacing:0;color:#5B4630;display:block;margin-top:6px}
+.steps{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.steps li{font-size:13.5px;line-height:1.2;padding:7px 10px;border-radius:8px;background:rgba(250,246,238,.72)}
+.note{font-size:14.5px;margin-top:12px;padding:10px 12px;border-radius:10px;background:rgba(250,246,238,.72)}
+.tag hr{border:0;border-top:2px dashed rgba(42,41,39,.25);margin:18px 0 14px}
+.lbl{display:block;font:500 12.5px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:#5B4630;margin:16px 0 8px}
+.adds{display:grid;gap:8px}
+.add{display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;min-height:52px;padding:8px 12px;border-radius:12px;border:1.5px solid rgba(42,41,39,.2);background:var(--paper);text-align:left}
+.add .bx{width:24px;height:24px;border-radius:7px;border:2px solid rgba(42,41,39,.45);display:grid;place-items:center}
+.add[aria-pressed="true"]{border-color:var(--terra);background:#fff}
+.add[aria-pressed="true"] .bx{background:var(--terra);border-color:var(--terra)}
+.add .bx svg{opacity:0}
+.add[aria-pressed="true"] .bx svg{opacity:1}
+.add b{font-weight:600;font-size:15px;display:block}
+.add small{display:block;font-size:13px;color:var(--mut);line-height:1.3}
+.add .pr{font:700 14px/1.2 var(--mono);white-space:nowrap;text-align:right}
+.add .pr small{font:500 12px/1.2 var(--mono);color:var(--mut)}
+.total{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-top:16px;padding-top:14px;border-top:2px dashed rgba(42,41,39,.25)}
+.total span{font-size:15px;font-weight:500}
+.total b{font:700 26px/1 var(--mono);letter-spacing:-.03em}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{min-height:44px;padding:0 12px;border-radius:10px;border:1.5px solid rgba(42,41,39,.22);background:var(--paper);font-size:14.5px;font-weight:500}
+.seg button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.days{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.days::-webkit-scrollbar{display:none}
+.days button{flex:none;min-width:58px;min-height:56px;padding:6px 8px;border-radius:10px;border:1.5px solid rgba(42,41,39,.22);background:var(--paper);font:500 13px/1.15 var(--sans);text-align:center}
+.days button b{display:block;font:700 17px/1.1 var(--mono)}
+.days button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.fld{width:100%;min-height:48px;padding:10px 12px;border-radius:10px;border:1.5px solid rgba(42,41,39,.24);background:var(--paper);font-size:16px}
+.fld:focus{outline:none;border-color:var(--terra);box-shadow:0 0 0 3px rgba(180,83,42,.2)}
+.row2{display:grid;gap:10px}
+.send{display:grid;gap:10px;margin-top:20px}
+.send .btn{width:100%}
+.fine{font-size:13.5px;color:#4D4031;margin-top:12px;line-height:1.45}
+.bump{animation:bump .45s ease}
+@keyframes bump{35%{transform:rotate(-2.5deg) scale(1.02)}70%{transform:rotate(1.5deg)}}
+
+/* ===== process ===== */
+.proc{display:grid;gap:10px;margin-top:28px;counter-reset:s}
+.proc li{display:grid;grid-template-columns:56px 1fr;gap:14px;align-items:center;padding:14px 16px;border-radius:var(--r);background:var(--paper);border:1px solid var(--line);counter-increment:s}
+.proc .ic{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;background:var(--beige)}
+.proc .ic svg{width:40px;height:40px}
+.proc b{display:block;font-weight:600;font-size:16.5px}
+.proc b::before{content:counter(s,decimal-leading-zero) "  ";font:500 13px/1 var(--mono);color:var(--terra-d)}
+.proc small{display:block;color:var(--mut);font-size:14px;margin-top:2px}
+.proc li.time{display:block;counter-increment:none;background:transparent;border:1.5px dashed rgba(42,41,39,.3);font-size:15px}
+.time cite{display:block;font-style:normal;color:var(--mut);font-size:13.5px;margin-top:6px}
+
+/* ===== reviews ===== */
+.revs{display:grid;gap:14px;margin-top:28px}
+.rev{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.rev .st{color:#C47A1D;letter-spacing:2px;font-size:14px}
+.rev p{font-size:17px;line-height:1.5;margin-top:8px}
+.rev footer{font-size:13.5px;color:var(--mut);margin-top:12px}
+.rev footer b{color:var(--ink);font-weight:600}
+.rev.big{background:var(--ink);color:#F4EEE4;border-color:var(--ink)}
+.rev.big p{font-size:20px;font-weight:300;line-height:1.45}
+.rev.big footer{color:#CFC6B8}
+.rev.big footer b{color:#fff}
+.rev.big .st{color:#E6B26A}
+.more{margin-top:18px}
+
+/* ===== find ===== */
+.find-g{display:grid;gap:16px;margin-top:28px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.card h3{font:700 24px/1.1 var(--sans);letter-spacing:-.02em}
+.addr{color:var(--mut);margin-top:8px;font-size:15.5px}
+.stops{margin-top:16px;display:grid;gap:8px}
+.stops li{display:flex;align-items:center;gap:10px;font-size:15.5px}
+.stops li span{margin-left:auto;color:var(--mut);white-space:nowrap;font-family:var(--mono);font-size:14px}
+.tip{margin-top:14px;font-size:14.5px;padding:12px 14px;border-radius:10px;background:var(--beige)}
+.tip cite{display:block;font-style:normal;color:var(--mut);font-size:13px;margin-top:4px}
+.card .btns{display:grid;gap:10px;margin-top:18px}
+.wk{margin-top:14px;display:grid;gap:4px}
+.wk li{display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;padding:8px 10px;border-radius:10px;font-size:15px}
+.wk li.today{background:var(--ink);color:#fff;font-weight:600}
+.wk .tr{position:relative;height:6px;border-radius:6px;background:rgba(42,41,39,.1)}
+.wk li.today .tr{background:rgba(255,255,255,.2)}
+.wk .tr i{position:absolute;top:0;bottom:0;border-radius:6px;background:var(--terra);opacity:.6}
+.wk li.today .tr i{opacity:1}
+.pay{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.map{position:relative;min-height:320px;border-radius:var(--r);overflow:hidden;background:#E3D8C6;border:1px solid var(--line)}
+.map .pin{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:var(--gr);font:500 15px/1.5 var(--sans);padding:20px;background-image:radial-gradient(rgba(42,41,39,.18) 1.3px,transparent 1.5px);background-size:18px 18px}
+.map iframe{position:relative;border:0;width:100%;height:100%;min-height:320px;display:block}
+
+/* footer */
+.foot{background:var(--ink);color:#DDD5C8;padding-block:40px calc(110px + env(safe-area-inset-bottom));font-size:14.5px}
+.foot .wrap{display:grid;gap:22px}
+.foot .nm{font:800 26px/1.05 var(--sans);letter-spacing:-.03em;color:#fff}
+.foot a{color:#fff;text-underline-offset:3px;display:inline-block;padding-block:6px}
+.foot .cols{display:grid;gap:16px}
+.foot .cols div{display:flex;flex-direction:column;gap:2px}
+.foot .src{color:#BDB4A6;font-size:13.5px;border-top:1px solid rgba(255,255,255,.14);padding-top:18px;line-height:1.5}
+
+/* sticky */
+.sticky{position:fixed;inset-inline:0;bottom:0;z-index:20;display:flex;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(239,230,216,.96);border-top:1px solid var(--line);box-shadow:0 -10px 30px -18px rgba(42,41,39,.4)}
+.sticky .btn{flex:1;min-height:50px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sticky .call{flex:none;width:56px;padding:0}
+
+@media (min-width:560px){
+  .breeds{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .row2{grid-template-columns:1fr 1fr}
+  .revs{grid-template-columns:1fr 1fr}
+  .rev.big{grid-column:1 / -1}
+  .proc{grid-template-columns:1fr 1fr}
+  .card .btns{grid-template-columns:1fr 1fr}
+}
+@media (min-width:900px){
+  .wrap{padding-inline:40px}
+  .nav{display:flex}
+  .hero{padding-block:44px 52px}
+  .hero .wrap{grid-template-columns:1fr 1fr;align-items:center;gap:40px}
+  .hero-cta .btn{flex:0 0 auto}
+  h1{font-size:clamp(72px,7.4vw,108px)}
+  .lead{font-size:18.5px}
+  .sec{padding-block:88px}
+  .mod{grid-template-columns:1.25fr 1fr;gap:44px;align-items:start}
+  .tagwrap{position:sticky;top:12px}
+  .proc{grid-template-columns:repeat(4,1fr)}
+  .proc li{grid-template-columns:1fr;align-items:start}
+  .find-g{grid-template-columns:1fr 1fr 1.3fr}
+  .map{min-height:100%}
+  .foot{padding-bottom:44px}
+  .foot .wrap{grid-template-columns:1.2fr 2fr}
+  .foot .cols{grid-template-columns:repeat(3,1fr)}
+  .foot .src{grid-column:1 / -1}
+  .sticky{display:none}
+}
+@media (min-width:900px) and (max-width:1100px){
+  .find-g{grid-template-columns:1fr 1fr}
+  .map{grid-column:1 / -1;min-height:340px}
+  .breeds{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .proc{grid-template-columns:1fr 1fr}
+}
+@media (max-width:360px){
+  .wrap{padding-inline:16px}
+  .br{grid-template-columns:36px 1fr;gap:8px;padding:8px}
+  .br svg{width:36px;height:36px}
+  .br b{font-size:14px}
+  .tag{padding-inline:16px}
+  .tag .portrait{width:68px;height:68px}
+  .tag .portrait svg{width:54px;height:54px}
+  .price{font-size:38px}
+  .live{font-size:12px;padding:7px 10px}
+  .mark b{font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<div class="demobar">Демо-концепт · пример сайта для <b>«Мастерская грумера»</b> от Альхассана Альфаррана · не официальный сайт</div>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Мастерская грумера — наверх">
+      <svg width="38" height="38" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="9" fill="#2A2927"/><g fill="none" stroke="#EFE6D8" stroke-width="2.4" stroke-linecap="round"><circle cx="13" cy="29" r="5"/><circle cx="27" cy="29" r="5"/><path d="M16 25 28 7M24 25 12 7"/></g><circle cx="20" cy="19" r="2.2" fill="#E07A4B"/></svg>
+      <span><b>Мастерская грумера</b><small>Новое Аристово, Солнечная, 5</small></span>
+    </a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#pick">Цены по породам</a>
+      <a href="#proc">Что входит</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#find">Как найти</a>
+    </nav>
+    <div class="live" id="live" role="status"><span class="dot" aria-hidden="true"></span><span id="liveText">ежедневно 10:00–21:00</span></div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" id="hero" aria-labelledby="h1">
+  <div class="wrap">
+    <div>
+      <p class="kick">Груминг собак и кошек · Юрлово, Новое Аристово</p>
+      <h1 id="h1">Мастерская <span>грумера</span></h1>
+      <p class="lead" id="lead">Комплекс для <b>31 породы</b> по прайсу — найдите свою и сразу увидите цену. Кошек тоже стрижём и моем.</p>
+      <div class="hero-cta">
+        <a class="btn btn-terra" href="#pick">Найти свою породу</a>
+        <a class="btn btn-line" id="heroCall" href="#"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span id="heroPhone">Позвонить</span></a>
+      </div>
+      <a class="rate" id="rateBadge" href="#" target="_blank" rel="noopener"><b id="rateVal">5,0</b><span><span class="st" aria-hidden="true">★★★★★</span><br><span id="rateCount">114 оценок</span> на Яндекс Картах</span></a>
+    </div>
+    <div class="board" aria-hidden="true">
+      <svg viewBox="0 0 480 420" id="boardSvg">
+        <defs>
+          <pattern id="peg" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="#2A2927" opacity=".16"/></pattern>
+        </defs>
+        <rect x="6" y="6" width="468" height="300" rx="16" fill="#E6D9C4"/>
+        <rect x="6" y="6" width="468" height="300" rx="16" fill="url(#peg)"/>
+        <rect x="6" y="6" width="468" height="300" rx="16" fill="none" stroke="#2A2927" stroke-opacity=".18" stroke-width="2"/>
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <!-- slicker brush -->
+          <g transform="translate(46 40)">
+            <path d="M6 4h48a8 8 0 0 1 8 8v22a8 8 0 0 1-8 8H6a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8zM22 42l6 74h4l6-74" stroke="#B4532A" stroke-width="2" stroke-dasharray="5 5" transform="translate(5 5)"/>
+            <path d="M6 4h48a8 8 0 0 1 8 8v22a8 8 0 0 1-8 8H6a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8zM22 42l6 74h4l6-74" stroke="#2A2927" stroke-width="2.6" fill="#FAF6EE"/>
+            <g fill="#2A2927"><circle cx="10" cy="14" r="1.6"/><circle cx="20" cy="14" r="1.6"/><circle cx="30" cy="14" r="1.6"/><circle cx="40" cy="14" r="1.6"/><circle cx="50" cy="14" r="1.6"/><circle cx="10" cy="23" r="1.6"/><circle cx="20" cy="23" r="1.6"/><circle cx="30" cy="23" r="1.6"/><circle cx="40" cy="23" r="1.6"/><circle cx="50" cy="23" r="1.6"/><circle cx="10" cy="32" r="1.6"/><circle cx="20" cy="32" r="1.6"/><circle cx="30" cy="32" r="1.6"/><circle cx="40" cy="32" r="1.6"/><circle cx="50" cy="32" r="1.6"/></g>
+          </g>
+          <!-- scissors -->
+          <g transform="translate(150 34)">
+            <g stroke="#B4532A" stroke-width="2" stroke-dasharray="5 5" transform="translate(5 5)"><circle cx="16" cy="112" r="14"/><circle cx="54" cy="112" r="14"/><path d="M24 100 46 4M46 100 24 4"/></g>
+            <g stroke="#2A2927" stroke-width="2.8"><circle cx="16" cy="112" r="14" fill="#FAF6EE"/><circle cx="54" cy="112" r="14" fill="#FAF6EE"/><path d="M24 100 46 4M46 100 24 4"/></g>
+            <circle cx="35" cy="52" r="3.2" fill="#B4532A"/>
+          </g>
+          <!-- comb -->
+          <g transform="translate(244 42)">
+            <g stroke="#B4532A" stroke-width="2" stroke-dasharray="5 5" transform="translate(5 5)"><rect x="0" y="0" width="22" height="120" rx="5"/></g>
+            <rect x="0" y="0" width="22" height="120" rx="5" stroke="#2A2927" stroke-width="2.6" fill="#FAF6EE"/>
+            <path d="M22 10h18M22 20h18M22 30h18M22 40h18M22 50h18M22 60h18M22 70h12M22 80h12M22 90h12M22 100h12M22 110h12" stroke="#2A2927" stroke-width="2.4"/>
+          </g>
+          <!-- dryer -->
+          <g transform="translate(316 120)">
+            <g stroke="#B4532A" stroke-width="2" stroke-dasharray="5 5" transform="translate(5 5)"><circle cx="40" cy="36" r="32"/><path d="M72 22h52v28H72M28 66l-8 70h28l4-62"/></g>
+            <path d="M72 22h52v28H72M28 66l-8 70h28l4-62" stroke="#2A2927" stroke-width="2.8" fill="#FAF6EE"/>
+            <circle cx="40" cy="36" r="32" stroke="#2A2927" stroke-width="2.8" fill="#FAF6EE"/>
+            <circle cx="40" cy="36" r="14" stroke="#2A2927" stroke-width="2.2"/>
+            <path d="M40 22v28M26 36h28" stroke="#2A2927" stroke-width="1.6" opacity=".6"/>
+            <g class="air" stroke="#B4532A" stroke-width="2.2"><path d="M134 28h20M134 37h28M134 46h16"/></g>
+          </g>
+          <!-- clipper -->
+          <g transform="translate(40 190)">
+            <g stroke="#B4532A" stroke-width="2" stroke-dasharray="5 5" transform="translate(5 5)"><path d="M10 6h104a14 14 0 0 1 0 28H10a8 8 0 0 1-8-8V14a8 8 0 0 1 8-8z"/></g>
+            <path d="M10 6h104a14 14 0 0 1 0 28H10a8 8 0 0 1-8-8V14a8 8 0 0 1 8-8z" stroke="#2A2927" stroke-width="2.8" fill="#FAF6EE"/>
+            <path d="M2 12H-8M2 18H-8M2 24H-8M2 30H-6" stroke="#2A2927" stroke-width="2.2"/>
+            <rect x="52" y="14" width="22" height="10" rx="5" stroke="#2A2927" stroke-width="2.2"/>
+            <path d="M128 20c30 0 26 44 60 40" stroke="#2A2927" stroke-width="2.2"/>
+          </g>
+        </g>
+        <!-- floor / table -->
+        <path d="M30 360h420" stroke="#2A2927" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M60 360v54M420 360v54" stroke="#2A2927" stroke-width="2.6" stroke-linecap="round"/>
+        <!-- dog: spitz sitting on the table -->
+        <g id="dog" fill="none" stroke="#2A2927" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+          <path id="dogBody" fill="#FAF6EE"/>
+          <path id="dogHead" fill="#FAF6EE"/>
+          <path d="M226 242 234 216 246 236M276 236 288 216 296 242" fill="#FAF6EE"/>
+          <circle cx="250" cy="262" r="2.8" fill="#2A2927" stroke="none"/><circle cx="272" cy="262" r="2.8" fill="#2A2927" stroke="none"/>
+          <path d="M256 276q5 5 10 0" />
+          <ellipse cx="261" cy="272" rx="4.6" ry="3.4" fill="#2A2927" stroke="none"/>
+          <path d="M232 358v-30M290 358v-30"/>
+          <path class="tail" d="M316 318c26-6 34-32 18-46-10-8-24-2-22 10" fill="#FAF6EE"/>
+        </g>
+        <!-- hanging tag -->
+        <g class="swing">
+          <path d="M388 6v40" stroke="#C4A276" stroke-width="2" stroke-dasharray="4 3"/>
+          <rect x="336" y="44" width="112" height="76" rx="10" fill="#D9BE96"/>
+          <circle cx="392" cy="56" r="5" fill="#E6D9C4" stroke="#C4A276" stroke-width="2"/>
+          <text x="392" y="84" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="14" font-weight="500" fill="#2A2927" id="tagName">ШПИЦ</text>
+          <text x="392" y="108" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="19" font-weight="700" fill="#2A2927" id="tagPrice">3 200 ₽</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="facts"><div class="wrap"><ul id="facts" aria-label="Коротко"></ul></div></div>
+
+<section class="sec pick" id="pick" aria-labelledby="pickH">
+  <div class="wrap">
+    <p class="eyebrow">Цены по породам</p>
+    <h2 class="h2" id="pickH">Найдите <span>свою породу</span></h2>
+    <p class="sub">Все цены — из прайса мастерской на Яндекс Картах. Выберите питомца — бирка покажет, что входит и сколько стоит, а заявка уйдёт в WhatsApp.</p>
+    <div class="mod">
+      <div>
+        <div class="kind" role="group" aria-label="Кто у вас">
+          <button type="button" data-kind="dog" aria-pressed="true"><svg viewBox="0 0 80 80" aria-hidden="true"><use href="#h-lab"/></svg>Собака</button>
+          <button type="button" data-kind="cat" aria-pressed="false"><svg viewBox="0 0 80 80" aria-hidden="true"><use href="#h-cat"/></svg>Кошка</button>
+        </div>
+        <div class="search" id="searchBox">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="#5A554E" stroke-width="2"/><path d="m15.5 15.5 5 5" stroke="#5A554E" stroke-width="2" stroke-linecap="round"/></svg>
+          <label class="sr" for="q">Поиск породы</label>
+          <input id="q" type="search" placeholder="Порода: шпиц, хаски, пудель…" autocomplete="off">
+        </div>
+        <p class="hint" id="hint"></p>
+        <div class="breeds" id="breeds" role="group" aria-label="Породы"></div>
+        <button type="button" class="btn btn-line more-b" id="moreB">Показать все породы</button>
+        <div class="none" id="none">Такой породы в прайсе нет — но это не значит «нельзя». <a id="askBreed" href="#" target="_blank" rel="noopener">Спросить цену в WhatsApp →</a></div>
+      </div>
+
+      <div class="tagwrap" id="tagwrap">
+        <article class="tag" id="tag" aria-live="polite" aria-labelledby="tName">
+          <div class="top">
+            <div>
+              <p class="who" id="tWho">Комплекс</p>
+              <h3 id="tName">Шпиц</h3>
+            </div>
+            <div class="portrait" id="tPic"></div>
+          </div>
+          <p class="price tnum" id="tPrice"></p>
+          <ul class="steps" id="tSteps"></ul>
+          <p class="note" id="tNote" hidden></p>
+          <hr>
+          <span class="lbl" id="addL">Добавить</span>
+          <div class="adds" id="adds" role="group" aria-labelledby="addL"></div>
+          <div class="total"><span>Итого по прайсу</span><b class="tnum" id="tTotal"></b></div>
+          <span class="lbl" id="dayL">Какой день удобен</span>
+          <div class="days" id="days" role="group" aria-labelledby="dayL"></div>
+          <span class="lbl" id="partL">Время</span>
+          <div class="seg" id="part" role="group" aria-labelledby="partL"></div>
+          <div class="row2">
+            <div><label class="lbl" for="pname">Кличка</label><input class="fld" id="pname" type="text" maxlength="30" placeholder="Например, Белла"></div>
+            <div><label class="lbl" for="pcom">Пожелания к стрижке</label><input class="fld" id="pcom" type="text" maxlength="160" placeholder="Не коротко, лапы покороче…"></div>
+          </div>
+          <span class="lbl" id="flagL">Что важно знать мастеру</span>
+          <div class="seg" id="flags" role="group" aria-labelledby="flagL"></div>
+          <div class="send">
+            <a class="btn btn-terra" id="send" href="#" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.6-.1 1.1z"/></svg>Записаться в WhatsApp</a>
+            <a class="btn btn-ink" id="tagCall" href="#">Позвонить</a>
+          </div>
+          <p class="fine">Свободное время мастер подтвердит в ответ. Цены по прайсу на Яндекс Картах, точную сумму назовут после осмотра шерсти.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="proc" aria-labelledby="procH">
+  <div class="wrap">
+    <p class="eyebrow">Что входит в комплекс</p>
+    <h2 class="h2" id="procH">Семь шагов <span>за один визит</span></h2>
+    <p class="sub">Так комплекс расписан в прайсе. Модельная стрижка — для пород, где она нужна; остальным — вычёсывание.</p>
+    <ol class="proc" id="procList"></ol>
+  </div>
+</section>
+
+<section class="sec" id="reviews" aria-labelledby="revH" style="padding-top:12px">
+  <div class="wrap">
+    <p class="eyebrow">Почему сюда возвращаются</p>
+    <h2 class="h2" id="revH"><span id="revRate">5,0</span> <span>— так оценивают гости</span></h2>
+    <p class="sub" id="revSub"></p>
+    <div class="revs" id="revs"></div>
+    <a class="btn btn-line more" id="allRevs" href="#" target="_blank" rel="noopener">Все отзывы на Яндекс Картах</a>
+  </div>
+</section>
+
+<section class="sec" id="find" aria-labelledby="findH" style="padding-top:12px">
+  <div class="wrap">
+    <p class="eyebrow">Как найти</p>
+    <h2 class="h2" id="findH">Солнечная, 5 <span>— Новое Аристово</span></h2>
+    <div class="find-g">
+      <div class="card">
+        <h3 id="fAddr"></h3>
+        <p class="addr" id="fFull"></p>
+        <ul class="stops" id="stops"></ul>
+        <p class="tip">Совет от гостя на машине: «нет поворота у самой мастерской и приходится разворачиваться у Мильстрим».<cite>Максим А., отзыв на Яндекс Картах</cite></p>
+        <div class="btns">
+          <a class="btn btn-ink" id="route" href="#" target="_blank" rel="noopener">Построить маршрут</a>
+          <a class="btn btn-line" id="fCall" href="#">Позвонить</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Без выходных</h3>
+        <p class="addr" id="hrsTxt"></p>
+        <ul class="wk" id="week" aria-label="Расписание по дням"></ul>
+        <ul class="pay" id="pay" aria-label="Удобства и оплата"></ul>
+      </div>
+      <div class="map" id="map"><div class="pin">Карта загружается…<br>Солнечная ул., 5, Новое Аристово</div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <p class="nm">Мастерская грумера</p>
+      <p style="margin-top:8px;color:#BDB4A6">Груминг собак и кошек · Юрлово, Новое Аристово</p>
+    </div>
+    <div class="cols">
+      <div id="fContacts"></div>
+      <div id="fHours"></div>
+      <div><a id="fYa" href="#" target="_blank" rel="noopener">Карточка на Яндекс Картах</a><a id="fRev" href="#" target="_blank" rel="noopener">Отзывы гостей</a></div>
+    </div>
+    <p class="src">Демо-концепт · пример сайта для «Мастерская грумера» от Альхассана Альфаррана · не официальный сайт.<br>Цены и данные взяты из карточки на Яндекс Картах и могут отличаться.</p>
+  </div>
+</footer>
+
+<div class="sticky">
+  <a class="btn btn-terra" id="stickyWa" href="#pick">Найти свою породу</a>
+  <a class="btn btn-line call" id="stickyCall" href="#" aria-label="Позвонить"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></a>
+</div>
+
+<!-- line portraits: one line, graphite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="h-spitz" viewBox="0 0 80 80"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path id="fluffPath" d=""/><path d="M24 28 28 12 38 24M42 24 52 12 56 28"/><circle cx="33" cy="42" r="1.8" fill="currentColor" stroke="none"/><circle cx="47" cy="42" r="1.8" fill="currentColor" stroke="none"/><ellipse cx="40" cy="50" rx="3.4" ry="2.4" fill="currentColor" stroke="none"/><path d="M36 55q4 3 8 0"/></g></symbol>
+  <symbol id="h-poodle" viewBox="0 0 80 80"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M28 22c-2-10 6-16 12-16s14 6 12 16"/><path d="M26 30c-8 2-12 14-10 26 2 6 8 6 10 0M54 30c8 2 12 14 10 26-2 6-8 6-10 0"/><path d="M28 24c-2 10 0 26 6 34 3 4 9 4 12 0 6-8 8-24 6-34"/><circle cx="34" cy="38" r="1.8" fill="currentColor" stroke="none"/><circle cx="46" cy="38" r="1.8" fill="currentColor" stroke="none"/><ellipse cx="40" cy="56" rx="3.2" ry="2.3" fill="currentColor" stroke="none"/></g></symbol>
+  <symbol id="h-husky" viewBox="0 0 80 80"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 34 20 8 34 22M46 22 60 8 62 34"/><path d="M34 22h12M18 34c-4 12 2 24 10 30 4 3 8 6 12 6s8-3 12-6c8-6 14-18 10-30"/><path d="M40 24v10M30 36c4-2 6 0 10-2 4 2 6 0 10 2" opacity=".7"/><path d="M28 44c4 6 8 8 12 8s8-2 12-8" opacity=".55"/><circle cx="32" cy="40" r="1.8" fill="currentColor" stroke="none"/><circle cx="48" cy="40" r="1.8" fill="currentColor" stroke="none"/><ellipse cx="40" cy="56" rx="3.6" ry="2.6" fill="currentColor" stroke="none"/></g></symbol>
+  <symbol id="h-shep" viewBox="0 0 80 80"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 34 22 6 36 24M44 24 58 6 56 34"/><path d="M36 24h8M24 34c-2 8 4 14 8 20 2 4 4 14 8 16 4-2 6-12 8-16 4-6 10-12 8-20"/><circle cx="33" cy="38" r="1.8" fill="currentColor" stroke="none"/><circle cx="47" cy="38" r="1.8" fill="currentColor" stroke="none"/><ellipse cx="40" cy="64" rx="3.4" ry="2.4" fill="currentColor" stroke="none"/></g></symbol>
+  <symbol id="h-lab" viewBox="0 0 80 80"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 22c6-8 26-8 32 0 4 6 4 14 2 22-2 10-8 20-18 20S24 54 22 44c-2-8-2-16 2-22z"/><path d="M24 22c-8 0-12 10-10 22 1 6 6 6 8 2M56 22c8 0 12 10 10 22-1 6-6 6-8 2"/><circle cx="33" cy="36" r="1.8" fill="currentColor" stroke="none"/><circle cx="47" cy="36" r="1.8" fill="currentColor" stroke="none"/><ellipse cx="40" cy="50" rx="4" ry="2.8" fill="currentColor" stroke="none"/><path d="M40 53v4M35 58q5 3 10 0"/></g></symbol>
+  <symbol id="h-pug" viewBox="0 0 80 80"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 26c8-10 32-10 40 0 6 8 6 22 0 30-6 8-14 10-20 10s-14-2-20-10c-6-8-6-22 0-30z"/><path d="M22 24 12 18 16 34M58 24 68 18 64 34"/><path d="M34 26q6 4 12 0" opacity=".6"/><circle cx="31" cy="38" r="2.4" fill="currentColor" stroke="none"/><circle cx="49" cy="38" r="2.4" fill="currentColor" stroke="none"/><path d="M30 50c2-6 18-6 20 0M40 46v10M32 58q8 4 16 0"/><ellipse cx="40" cy="46" rx="4" ry="2.6" fill="currentColor" stroke="none"/></g></symbol>
+  <symbol id="h-terrier" viewBox="0 0 80 80"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M26 24 28 10 38 20M42 20 52 10 54 24"/><path d="M24 24h32v20c0 6-2 10-6 12l2 10H28l2-10c-4-2-6-6-6-12z"/><path d="M28 32h9M43 32h9" stroke-width="3"/><circle cx="33" cy="37" r="1.8" fill="currentColor" stroke="none"/><circle cx="47" cy="37" r="1.8" fill="currentColor" stroke="none"/><ellipse cx="40" cy="48" rx="3.4" ry="2.4" fill="currentColor" stroke="none"/><path d="M32 60l2 4M40 60v5M48 60l-2 4" opacity=".6"/></g></symbol>
+  <symbol id="h-cat" viewBox="0 0 80 80"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 36 20 10 34 22M46 22 60 10 62 36"/><path d="M34 22h12M18 36c-2 16 8 28 22 28s24-12 22-28"/><path d="M28 40q4-4 8 0M44 40q4-4 8 0"/><path d="M37 48h6l-3 3z" fill="currentColor"/><path d="M40 51v3M34 56q6 3 12 0M12 46l16 2M12 54l16-2M68 46l-16 2M68 54l-16-2" opacity=".75"/></g></symbol>
+</svg>
+
+<script src="data.js"></script>
+<script>
+(function(){
+'use strict';
+const BIZ = window.BIZ;
+if (!BIZ) return;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const wa = (text) => 'https://wa.me/' + BIZ.wa + '?text=' + encodeURIComponent(text);
+const tel = 'tel:' + BIZ.phone;
+const NB = ' ';
+const rub = (n) => n == null ? 'по запросу' : Number(n).toLocaleString('ru-RU').replace(/\s/g, NB) + NB + '₽';
+const plural = (n, one, few, many) => { const a = Math.abs(n) % 100, b = a % 10; return a > 10 && a < 20 ? many : b === 1 ? one : b >= 2 && b <= 4 ? few : many; };
+const feat = (k) => { const f = (BIZ.features || []).find((x) => x.k === k); return f ? f.v : null; };
+const cap = (s) => s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
+const pad = (n) => String(n).padStart(2, '0');
+const store = { get(k){ try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v){ try { localStorage.setItem(k, v); } catch (e) {} } };
+function mskNow(){ const d = new Date(); return new Date(d.getTime() + (d.getTimezoneOffset() + 180) * 60000); }
+const m2 = (s) => +s.slice(0, 2) * 60 + +s.slice(3);
+
+/* fluffy spitz outline generated once */
+function scallop(cx, cy, rx, ry, n, amp){
+  let d = '';
+  for (let i = 0; i <= n; i++) {
+    const a = i / n * Math.PI * 2 - Math.PI / 2;
+    const x = cx + Math.cos(a) * rx, y = cy + Math.sin(a) * ry;
+    if (i === 0) { d += 'M' + x.toFixed(1) + ' ' + y.toFixed(1); continue; }
+    const am = (i - .5) / n * Math.PI * 2 - Math.PI / 2;
+    const qx = cx + Math.cos(am) * (rx + amp), qy = cy + Math.sin(am) * (ry + amp);
+    d += 'Q' + qx.toFixed(1) + ' ' + qy.toFixed(1) + ' ' + x.toFixed(1) + ' ' + y.toFixed(1);
+  }
+  return d + 'Z';
+}
+document.getElementById('fluffPath').setAttribute('d', scallop(40, 44, 22, 20, 14, 4));
+document.getElementById('dogHead').setAttribute('d', scallop(261, 262, 36, 30, 16, 6));
+document.getElementById('dogBody').setAttribute('d', scallop(262, 318, 52, 44, 18, 7));
+
+function openStatus(now){
+  now = now || mskNow();
+  if (!BIZ.hours) return null;
+  if (BIZ.is24) return { open: true, text: 'Круглосуточно' };
+  const day = (now.getDay() + 6) % 7, mins = now.getHours() * 60 + now.getMinutes();
+  for (const [f, t] of BIZ.hours[(day + 6) % 7]) if (m2(t) <= m2(f) && mins < m2(t)) return { open: true, text: 'Открыто · до ' + t };
+  for (const [f, t] of BIZ.hours[day]) { const a = m2(f), b = m2(t) <= a ? m2(t) + 1440 : m2(t); if (mins >= a && mins < b) return { open: true, text: 'Открыто · до ' + t }; }
+  for (const [f] of BIZ.hours[day]) if (mins < m2(f)) return { open: false, text: 'Закрыто · откроется в ' + f };
+  const names = ['в понедельник', 'во вторник', 'в среду', 'в четверг', 'в пятницу', 'в субботу', 'в воскресенье'];
+  for (let i = 1; i <= 7; i++) { const d = (day + i) % 7; if (BIZ.hours[d].length) return { open: false, text: 'Закрыто · откроется ' + (i === 1 ? 'завтра' : names[d]) + ' в ' + BIZ.hours[d][0][0] }; }
+  return null;
+}
+function renderLive(){ const s = openStatus(); if (!s) return; $('#liveText').textContent = s.text; $('#live').classList.toggle('closed', !s.open); }
+renderLive(); setInterval(renderLive, 60000);
+
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((es) => es.forEach((e) => $('#hero').classList.toggle('paused', !e.isIntersecting)));
+  io.observe($('#hero'));
+}
+
+/* rating + links */
+const rv = BIZ.rating.value.toFixed(1).replace('.', ',');
+const rc = BIZ.rating.count + ' ' + plural(BIZ.rating.count, 'оценка', 'оценки', 'оценок');
+const rr = BIZ.rating.reviews + ' ' + plural(BIZ.rating.reviews, 'отзыв', 'отзыва', 'отзывов');
+$('#rateVal').textContent = rv;
+$('#rateCount').textContent = rc + ' · ' + rr;
+$('#rateBadge').href = BIZ.reviewsUrl;
+$('#rateBadge').setAttribute('aria-label', 'Рейтинг ' + rv + ' из 5, ' + rc + ' на Яндекс Картах');
+$('#revRate').textContent = rv;
+['#heroCall', '#stickyCall', '#fCall', '#tagCall'].forEach((s) => { $(s).href = tel; });
+$('#heroPhone').textContent = BIZ.phoneDisplay;
+$('#route').href = BIZ.routeUrl;
+$('#allRevs').href = BIZ.reviewsUrl; $('#fRev').href = BIZ.reviewsUrl; $('#fYa').href = BIZ.yandexUrl;
+
+/* ===== price model from BIZ.menu ===== */
+const clean = (t) => String(t)
+  .replace(/^Кошки\s*-\s*/i, '')
+  .replace(/\s*-?\s*[Кк]омплекс\s*/g, ' ')
+  .replace(/\s*-\s*\(/, ' (')
+  .replace(/(\d)\s*-\s*(\d)/g, '$1–$2')
+  .replace(/(\d)\s*кг/g, '$1' + NB + 'кг')
+  .replace(/\s+/g, ' ').trim();
+const fixCase = (t) => t.replace('Пудель Той', 'Пудель той').replace('Бернский Зенненхунд', 'Бернский зенненхунд').replace('Вест хайленд', 'Вест-хайленд').replace('Джек рассел', 'Джек-рассел').replace('Керн терьер', 'Керн-терьер');
+const TYPE = (n) => /Шпиц|Йорк|Чихуахуа|Папильон|Мальтийская|Бишон|Мальтипу|Ши-тцу/.test(n) ? 'spitz'
+  : /Пудель|хохлатая/.test(n) ? 'poodle'
+  : /Хаски|Маламут|Самоед|Акита|Сиба/.test(n) ? 'husky'
+  : /овчарка|Доберман|Корги/.test(n) ? 'shep'
+  : /Мопс|бульдог|Бультерьер/.test(n) ? 'pug'
+  : /хайленд|Керн|Джек/i.test(n) ? 'terrier' : 'lab';
+const DOGS = [], CATS = [], EXTRA = [];
+(BIZ.menu || []).forEach((cat) => (cat.items || []).forEach((it, i) => {
+  const o = { id: cat.name + i, raw: it.t, p: it.p, v: it.v || null, d: it.d || '' };
+  if (/Кошки/i.test(cat.name)) { o.name = cap(String(it.t).replace(/^Кошки\s*-\s*/i, '').replace('/комплекс', ' / комплекс').trim()); CATS.push(o); }
+  else if (/Универс/i.test(cat.name)) { o.name = it.t; EXTRA.push(o); }
+  else { o.name = fixCase(clean(it.t)); o.type = TYPE(o.name); DOGS.push(o); }
+}));
+DOGS.sort((a, b) => a.name.localeCompare(b.name, 'ru'));
+const TOP = (BIZ.top || []).map((t) => t.t);
+const prices = DOGS.map((d) => d.p).filter((p) => p != null);
+const minP = Math.min.apply(null, prices), maxP = Math.max.apply(null, prices);
+$('#lead').innerHTML = 'Комплекс для <b>' + DOGS.length + ' ' + plural(DOGS.length, 'породы', 'пород', 'пород') + '</b> по прайсу — от ' + rub(minP) + ' до ' + rub(maxP) + '. Найдите свою и сразу увидите цену. Кошек тоже берут.';
+
+/* facts */
+const facts = [cap(BIZ.hoursText), 'Собаки и кошки'];
+if (feat('парковка')) facts.push('Парковка');
+if (feat('Wi-Fi')) facts.push('Wi-Fi');
+facts.push('Остановка «Аристово» — 253' + NB + 'м');
+const payW = String(feat('способ оплаты') || '');
+if (payW) facts.push('Оплата ' + payW);
+$('#facts').innerHTML = facts.map((f) => '<li class="chip"><i aria-hidden="true"></i>' + esc(f) + '</li>').join('');
+
+/* state */
+let kind = 'dog', sel = null, showAll = !!(window.matchMedia && window.matchMedia('(min-width:900px)').matches), touched = false, day = 0, part = 'Любое';
+const addOn = new Set();
+const flags = new Set();
+const FLAGS = ['Первый раз у грумера', 'Нервничает', 'Есть травмы или дерматит', 'Пожилой питомец'];
+try {
+  const s = JSON.parse(store.get('mg-pick') || 'null');
+  if (s && s.sel && /^Комплекс/.test(s.sel)) sel = s.sel;
+} catch (e) {}
+const list = () => kind === 'dog' ? DOGS : CATS;
+const byId = (id) => DOGS.concat(CATS).find((x) => x.id === id);
+if (!sel || !DOGS.some((d) => d.id === sel)) sel = (DOGS.find((d) => /^Шпиц \(5/.test(d.name)) || DOGS[0]).id;
+
+const pic = (type) => '<svg viewBox="0 0 80 80" aria-hidden="true"><use href="#h-' + type + '"/></svg>';
+const norm = (s) => s.toLowerCase().replace(/ё/g, 'е').replace(/[-–\s]+/g, ' ').trim();
+
+function renderBreeds(){
+  const q = norm($('#q').value || '');
+  const L = list();
+  let shown = 0;
+  const html = L.map((x) => {
+    const match = !q || norm(x.name).includes(q) || norm(x.raw).includes(q);
+    const isTop = TOP.includes(x.raw);
+    const vis = match && (q || showAll || kind === 'cat' || isTop || x.id === sel);
+    if (vis) shown++;
+    return '<button type="button" class="br' + (vis ? '' : ' hide') + '" data-b="' + x.id + '" aria-pressed="' + (x.id === sel) + '">' + pic(x.type || 'cat') + '<span><b>' + esc(x.name) + '</b><small class="tnum">' + rub(x.p) + '</small></span></button>';
+  }).join('');
+  $('#breeds').innerHTML = html;
+  const matches = L.filter((x) => !q || norm(x.name).includes(q) || norm(x.raw).includes(q)).length;
+  $('#none').classList.toggle('on', !!q && matches === 0);
+  $('#askBreed').href = wa('Здравствуйте! У меня ' + ($('#q').value.trim() || 'собака') + ' — такой породы нет в прайсе. Сколько будет стоить комплекс и когда можно записаться?');
+  $('#moreB').hidden = kind === 'cat' || !!q || showAll;
+  $('#moreB').textContent = 'Показать все ' + DOGS.length + ' ' + plural(DOGS.length, 'породу', 'породы', 'пород');
+  $('#hint').textContent = q ? (matches ? 'Нашлось: ' + matches : '') : kind === 'dog' ? (showAll ? 'Все породы из прайса, по алфавиту.' : 'Популярные в прайсе. Остальные — по кнопке ниже или через поиск.') : 'Для кошек в прайсе четыре услуги.';
+  $('#searchBox').hidden = kind === 'cat';
+}
+
+function stepsOf(d){
+  return String(d).replace(/\.$/, '').split(/,\s*/).map((s) => cap(s.trim().replace('вычесывание', 'вычёсывание').replace('подшерстка', 'подшёрстка'))).filter(Boolean);
+}
+function total(){
+  const x = byId(sel); let t = x && x.p ? x.p : 0;
+  EXTRA.forEach((e) => { if (addOn.has(e.id) && e.p) t += e.p; });
+  return t;
+}
+const DAYN = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+const DAYF = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
+const MON = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+function dayDate(i){ const n = mskNow(); return new Date(n.getFullYear(), n.getMonth(), n.getDate() + i); }
+function dayText(i){
+  if (i < 0) return 'любой день';
+  const d = dayDate(i);
+  return (i === 0 ? 'сегодня, ' : i === 1 ? 'завтра, ' : DAYF[d.getDay()] + ', ') + d.getDate() + ' ' + MON[d.getMonth()];
+}
+const PARTS = ['Любое', 'Утром', 'Днём', 'Вечером'];
+function renderTagStatic(){
+  const n = mskNow();
+  const late = n.getHours() * 60 + n.getMinutes() > m2(BIZ.hours[(n.getDay() + 6) % 7][0] ? BIZ.hours[(n.getDay() + 6) % 7][0][1] : '21:00') - 120;
+  let h = '';
+  for (let i = 0; i < 10; i++) {
+    if (i === 0 && late) continue;
+    const d = dayDate(i);
+    h += '<button type="button" data-day="' + i + '" aria-pressed="' + (i === day) + '"><span>' + (i === 0 ? 'сег.' : i === 1 ? 'завтра' : DAYN[d.getDay()]) + '</span><b>' + d.getDate() + '</b></button>';
+  }
+  h += '<button type="button" data-day="-1" aria-pressed="' + (day === -1) + '"><span>любой</span><b>—</b></button>';
+  if (late && day === 0) day = 1;
+  $('#days').innerHTML = h;
+  document.querySelectorAll('#days button').forEach((b) => b.setAttribute('aria-pressed', +b.dataset.day === day));
+  $('#part').innerHTML = PARTS.map((p) => '<button type="button" data-part="' + p + '" aria-pressed="' + (p === part) + '">' + p + (p === 'Утром' ? ' · с 10' : p === 'Вечером' ? ' · до 21' : '') + '</button>').join('');
+  $('#flags').innerHTML = FLAGS.map((f) => '<button type="button" data-flag="' + esc(f) + '" aria-pressed="' + flags.has(f) + '">' + esc(f) + '</button>').join('');
+  $('#adds').innerHTML = EXTRA.map((e) => '<button type="button" class="add" data-add="' + e.id + '" aria-pressed="' + addOn.has(e.id) + '"><span class="bx"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2.5 7.5 6 11l5.5-8" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>' + esc(e.name) + '</b>' + (/колтун/i.test(e.name) ? '<small>Любой породы; цена — от дополнительно потраченного времени</small>' : '') + '</span><span class="pr tnum">' + rub(e.p) + (e.v ? '<br><small>за ' + esc(e.v) + '</small>' : '') + '</span></button>').join('');
+}
+function renderTag(){
+  const x = byId(sel); if (!x) return;
+  $('#tWho').textContent = kind === 'cat' ? 'Кошки · по прайсу' : 'Комплекс · по прайсу';
+  $('#tName').textContent = x.name;
+  $('#tPic').innerHTML = pic(x.type || 'cat');
+  $('#tPrice').innerHTML = rub(x.p) + '<small>' + (kind === 'dog' ? 'комплекс для породы «' + esc(x.name) + '»' : 'кошки · ' + esc(x.name.toLowerCase())) + '</small>';
+  const isCat = kind === 'cat';
+  $('#tSteps').innerHTML = isCat ? '' : stepsOf(x.d).map((s) => '<li>' + esc(s) + '</li>').join('');
+  $('#tSteps').hidden = isCat;
+  const nt = $('#tNote');
+  if (isCat && x.d) { nt.hidden = false; nt.textContent = 'Из прайса: ' + x.d.replace(/\.\s*/g, '. ').trim(); } else nt.hidden = true;
+  const t = total();
+  const hasMat = EXTRA.some((e) => addOn.has(e.id) && /колтун/i.test(e.name));
+  $('#tTotal').textContent = (hasMat ? 'от ' : '') + rub(t);
+  $('#send').href = wa(msg());
+  document.querySelectorAll('#adds .add').forEach((b) => b.setAttribute('aria-pressed', addOn.has(b.dataset.add)));
+  document.querySelectorAll('#flags button').forEach((b) => b.setAttribute('aria-pressed', flags.has(b.dataset.flag)));
+  document.querySelectorAll('#part button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.part === part));
+  document.querySelectorAll('#days button').forEach((b) => b.setAttribute('aria-pressed', +b.dataset.day === day));
+  document.querySelectorAll('.kind button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.kind === kind));
+  // hero tag mirrors the choice
+  const tn = document.getElementById('tagName'), tp = document.getElementById('tagPrice');
+  const short = x.name.replace(/\s*\(.*\)/, '');
+  if (tn) tn.textContent = (short.length > 12 ? short.slice(0, 11) + '…' : short).toUpperCase();
+  if (tp) tp.textContent = rub(x.p);
+  const sw = $('#stickyWa');
+  if (touched) { sw.textContent = 'Записать · ' + short + ' · ' + rub(x.p); sw.href = wa(msg()); sw.target = '_blank'; sw.rel = 'noopener'; }
+  else { sw.textContent = 'Найти свою породу'; sw.href = '#pick'; sw.removeAttribute('target'); sw.removeAttribute('rel'); }
+  store.set('mg-pick', JSON.stringify({ kind, sel }));
+}
+function msg(){
+  const x = byId(sel);
+  const nm = $('#pname').value.trim(), com = $('#pcom').value.trim();
+  const isCat = kind === 'cat';
+  let t = 'Здравствуйте! Хочу записать ' + (isCat ? 'кошку' : 'собаку') + (nm ? ' (' + nm + ')' : '') + ' на груминг в «Мастерскую грумера».\n';
+  if (isCat) t += 'Услуга: ' + x.name + ' — ' + rub(x.p) + ' по прайсу\n';
+  else t += 'Порода: ' + x.name + '\nУслуга: комплекс — ' + rub(x.p) + ' по прайсу\n';
+  EXTRA.forEach((e) => { if (addOn.has(e.id)) t += '+ ' + e.name + ' — ' + rub(e.p) + (e.v ? ' за ' + e.v : '') + '\n'; });
+  const hasMat = EXTRA.some((e) => addOn.has(e.id) && /колтун/i.test(e.name));
+  if (addOn.size) t += 'Итого по прайсу: ' + (hasMat ? 'от ' : '') + rub(total()) + '\n';
+  t += 'Когда удобно: ' + dayText(day) + (part !== 'Любое' ? ', ' + part.toLowerCase() : ', в любое время') + '\n';
+  if (flags.size) t += 'О питомце: ' + [...flags].map((f) => f.toLowerCase()).join('; ') + '\n';
+  if (com) t += 'Пожелания: ' + com + '\n';
+  if (isCat) t += '\nПонимаю, что процедура проходит при помощи хозяина.';
+  t += '\nПодскажите, пожалуйста, свободное время. Спасибо!';
+  return t.replace(/\n\n\n/g, '\n\n');
+}
+function bump(){ const t = $('#tag'); t.classList.remove('bump'); void t.offsetWidth; t.classList.add('bump'); }
+
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('button'); if (!b) return;
+  if (b.dataset.kind) {
+    if (kind === b.dataset.kind) return;
+    kind = b.dataset.kind; $('#q').value = '';
+    sel = (kind === 'cat' ? CATS[0] : (DOGS.find((d) => /^Шпиц \(5/.test(d.name)) || DOGS[0])).id;
+    renderBreeds(); renderTag(); bump(); return;
+  }
+  if (b.dataset.b) {
+    sel = b.dataset.b; touched = true;
+    document.querySelectorAll('#breeds .br').forEach((x) => x.setAttribute('aria-pressed', x.dataset.b === sel));
+    renderTag(); bump();
+    if (window.innerWidth < 900) { const r = $('#tag').getBoundingClientRect(); if (r.top > window.innerHeight * .8) $('#tagwrap').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); }
+    return;
+  }
+  if (b.id === 'moreB') { showAll = true; renderBreeds(); return; }
+  if (b.dataset.add) { const id = b.dataset.add; addOn.has(id) ? addOn.delete(id) : addOn.add(id); renderTag(); return; }
+  if (b.dataset.day != null && b.dataset.day !== undefined && b.closest('#days')) { day = +b.dataset.day; renderTag(); return; }
+  if (b.dataset.part) { part = b.dataset.part; renderTag(); return; }
+  if (b.dataset.flag) { const f = b.dataset.flag; flags.has(f) ? flags.delete(f) : flags.add(f); renderTag(); return; }
+});
+$('#q').addEventListener('input', renderBreeds);
+['#pname', '#pcom'].forEach((s) => $(s).addEventListener('input', renderTag));
+renderTagStatic(); renderBreeds(); renderTag();
+
+/* ===== process (from the longest real description) ===== */
+const longest = DOGS.map((d) => d.d).sort((a, b) => b.length - a.length)[0] || '';
+const ICON = {
+  bath: '<svg viewBox="0 0 40 40" fill="none" stroke="#2A2927" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20h30v5a9 9 0 0 1-9 9H14a9 9 0 0 1-9-9z"/><path d="M10 20V9a4 4 0 0 1 8 0"/><circle cx="25" cy="12" r="2.5" stroke="#B4532A"/><circle cx="31" cy="8" r="1.8" stroke="#B4532A"/><path d="M12 34l-2 3M28 34l2 3"/></svg>',
+  bottle: '<svg viewBox="0 0 40 40" fill="none" stroke="#2A2927" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h8v6h-8zM14 10h12l2 6v18a3 3 0 0 1-3 3H15a3 3 0 0 1-3-3V16z"/><path d="M16 22h8M16 27h8" stroke="#B4532A"/></svg>',
+  towel: '<svg viewBox="0 0 40 40" fill="none" stroke="#2A2927" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h28M10 8v24h20V8"/><path d="M10 26h20M10 22h20" stroke="#B4532A"/></svg>',
+  dryer: '<svg viewBox="0 0 40 40" fill="none" stroke="#2A2927" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="15" r="9"/><path d="M23 11h10v8H23M12 24l-2 12h6l2-12"/><path d="M35 11l3-2M36 15h3M35 19l3 2" stroke="#B4532A"/></svg>',
+  comb: '<svg viewBox="0 0 40 40" fill="none" stroke="#2A2927" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="30" r="5"/><circle cx="22" cy="30" r="5"/><path d="M13 26 26 6M19 26 8 8"/><path d="M30 10h6v24h-6M30 15h3M30 20h3M30 25h3" stroke="#B4532A"/></svg>',
+  paw: '<svg viewBox="0 0 40 40" fill="none" stroke="#2A2927" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 28c0-6 4-10 8-10s8 4 8 10c0 4-4 5-8 3-4 2-8 1-8-3z"/><ellipse cx="11" cy="17" rx="2.6" ry="3.4"/><ellipse cx="17" cy="11" rx="2.6" ry="3.4"/><ellipse cx="23" cy="11" rx="2.6" ry="3.4"/><ellipse cx="29" cy="17" rx="2.6" ry="3.4"/><path d="M30 30l6 6" stroke="#B4532A"/></svg>',
+  ear: '<svg viewBox="0 0 40 40" fill="none" stroke="#2A2927" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 20s5-8 12-8 12 8 12 8-5 8-12 8-12-8-12-8z"/><circle cx="20" cy="20" r="3.4" fill="#2A2927"/><path d="M28 6c4 0 6 3 6 6M6 34c0-4 3-6 6-6" stroke="#B4532A"/></svg>'
+};
+const NOTE = {
+  'Двухфазное купание': 'мытьё в два захода', 'Кондиционирование': 'питание и мягкость шерсти', 'Сушка': '', 'Выдувание подшёрстка': 'профессиональным феном',
+  'Модельная стрижка/вычёсывание': 'стрижка — где нужна, иначе вычёсывание', 'Лапакюр': 'когти и лапы', 'Чистка глаз и ушей': ''
+};
+const pickIcon = (s) => /купан/i.test(s) ? 'bath' : /кондиц/i.test(s) ? 'bottle' : /сушк/i.test(s) ? 'towel' : /выдув/i.test(s) ? 'dryer' : /стриж|вычес|вычёс/i.test(s) ? 'comb' : /лап/i.test(s) ? 'paw' : 'ear';
+const steps = stepsOf(longest);
+$('#procList').innerHTML = steps.map((s) => '<li><span class="ic">' + ICON[pickIcon(s)] + '</span><span><b>' + esc(s) + '</b>' + (NOTE[s] ? '<small>' + esc(NOTE[s]) + '</small>' : '') + '</span></li>').join('') + '<li class="time">Гости пишут, что комплекс занимает около двух часов: «Процедура заняла 2 часа - это стандартное время для комплекса».<cite>Екатерина Б., отзыв на Яндекс Картах</cite></li>';
+$('#procH').innerHTML = (steps.length === 7 ? 'Семь шагов' : steps.length + ' ' + plural(steps.length, 'шаг', 'шага', 'шагов')) + ' <span>за один визит</span>';
+
+/* ===== reviews ===== */
+const byA = (a) => (BIZ.reviews || []).find((r) => r.a === a);
+const REVS = [
+  Object.assign({ big: true }, byA('Влада Л.')),
+  byA('Ира'),
+  byA('tatyana M.'),
+  { a: 'Максим А.', d: 'апрель 2023', x: '…Очень подробно перед стрижкой расспросили о моей собаке, про возраст, про степень агрессивности, есть ли травмы, есть ли дерматит. Уровень внимания просто супер.' },
+  byA('Алена')
+].filter((r) => r && r.x);
+$('#revs').innerHTML = REVS.map((r) => '<figure class="rev' + (r.big ? ' big' : '') + '"><span class="st" aria-label="5 из 5">★★★★★</span><blockquote><p>' + esc(r.x) + '</p></blockquote><footer><b>' + esc(r.a) + '</b> · ' + esc(r.d) + ' · отзыв на Яндекс Картах</footer></figure>').join('');
+$('#revSub').textContent = rv + ' · ' + rc + ' и ' + rr + ' на Яндекс Картах. Вот что пишут хозяева.';
+
+/* ===== find ===== */
+$('#fAddr').textContent = 'Солнечная ул., 5';
+$('#fFull').textContent = BIZ.fullAddress;
+const STOPS = [{ n: 'Аристово', d: '253 м' }, { n: 'Ферма', d: '1,2 км' }];
+const busSvg = '<svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="2" width="11" height="10" rx="2" fill="none" stroke="#B4532A" stroke-width="1.5"/><path d="M2.5 7.5h11" stroke="#B4532A" stroke-width="1.5"/><circle cx="5" cy="13.5" r="1.2" fill="#B4532A"/><circle cx="11" cy="13.5" r="1.2" fill="#B4532A"/></svg>';
+$('#stops').innerHTML = STOPS.map((s) => '<li>' + busSvg + 'Остановка «' + s.n + '»<span>' + s.d.replace(' ', NB) + '</span></li>').join('');
+const DN = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+const today = (mskNow().getDay() + 6) % 7;
+const fmt = (d) => !d.length ? 'выходной' : d.map(([f, t]) => f + '–' + t).join(', ');
+$('#week').innerHTML = BIZ.hours.map((d, i) => '<li' + (i === today ? ' class="today"' : '') + '><b>' + DN[i] + '</b><span class="tr" aria-hidden="true">' + d.map(([f, t]) => { const a = m2(f), b = m2(t) <= a ? 1440 : m2(t); return '<i style="left:' + (a / 14.4).toFixed(2) + '%;width:' + ((b - a) / 14.4).toFixed(2) + '%"></i>'; }).join('') + '</span><span class="tnum">' + fmt(d) + (i === today ? ' · сегодня' : '') + '</span></li>').join('');
+$('#hrsTxt').textContent = cap(BIZ.hoursText) + '. Запись — по телефону или в WhatsApp.';
+const pay = [];
+if (feat('парковка')) pay.push('Парковка');
+if (feat('велопарковка')) pay.push('Велопарковка');
+if (feat('Wi-Fi')) pay.push('Wi-Fi');
+payW.split(',').map((s) => s.trim()).filter(Boolean).forEach((p) => pay.push('Оплата ' + p));
+$('#pay').innerHTML = pay.map((p) => '<li class="chip"><i aria-hidden="true"></i>' + esc(p) + '</li>').join('');
+const ifr = document.createElement('iframe');
+ifr.loading = 'lazy'; ifr.src = BIZ.mapEmbed; ifr.title = 'Мастерская грумера на Яндекс Картах'; ifr.setAttribute('allowfullscreen', '');
+$('#map').appendChild(ifr);
+
+$('#fContacts').innerHTML = '<a href="' + tel + '">' + esc(BIZ.phoneDisplay) + '</a><a href="' + wa('Здравствуйте! Пишу с сайта «Мастерская грумера».') + '" target="_blank" rel="noopener">WhatsApp</a>';
+$('#fHours').innerHTML = '<span>Солнечная ул., 5, Новое Аристово</span><span>' + esc(cap(BIZ.hoursText)) + '</span>';
+})();
+</script>
+<script src="../map-fix.js" defer></script>
+</body>
+</html>

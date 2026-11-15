@@ -1,0 +1,942 @@
+<!doctype html>
+<!--
+  CONCEPT — «Вино и Хинкали», ул. Земляной Вал, 33 (ТРЦ «Атриум», м. Курская) — демо-концепт
+  1. Идея: «Тарелка хинкали». Здесь едят руками и считают поштучно — сайт тоже начинается с тарелки:
+     гость кладёт на неё хинкали по одному, видит счёт и отправляет заказ в WhatsApp.
+  2. Фирменный модуль: «Соберите тарелку» — 8 реальных начинок с ценами из карточки, каждая хинкали появляется
+     на нарисованной тарелке (до 19 штук по кругу, дальше «+N»), счётчик штук и суммы, «≈ на каждого» по числу
+     гостей, набор «как советуют в отзывах», добавки к хинкали (соусы, шотис пури, мини-хачапури, морс).
+     Общая корзина с полным меню → в зале / с собой / доставка, время, гости, вопрос про жареные хинкали
+     и вино → готовое сообщение в WhatsApp. Бронь стола — через Яндекс.
+  3. Арт-дирекшн: винный бордо + кремовая скатерть + тёмная зелень тарелки и виноградной лозы.
+     Prata (винная этикетка) + Onest. Мотив в SVG: хинкали сверху — складки, сходящиеся к «хвостику»,
+     тарелка с орнаментальным бортом и след от бокала вина на скатерти.
+-->
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#6E1A2D">
+<title>Вино и Хинкали — грузинская кухня на Земляном Валу, 33 у Курской (демо)</title>
+<meta name="description" content="Демо-концепт сайта ресторана «Вино и Хинкали» в ТРЦ «Атриум»: соберите тарелку хинкали из 8 начинок, меню с ценами и заказ в WhatsApp. Ежедневно 10:00–23:00, 130 м от метро «Курская».">
+<meta property="og:title" content="Вино и Хинкали — соберите тарелку хинкали (демо)">
+<meta property="og:description" content="8 начинок, меню с ценами, заказ в WhatsApp, 5,0 на Яндекс Картах. Демо-концепт сайта.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://kyan9400.github.io/demo/vino-i-hinkali/">
+<meta property="og:image" content="https://kyan9400.github.io/demo/vino-i-hinkali/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%236E1A2D'/%3E%3Ccircle cx='32' cy='33' r='21' fill='%23F4EAD6'/%3E%3Cg stroke='%23C9AE84' stroke-width='2.2' fill='none' stroke-linecap='round'%3E%3Cpath d='M32 12q6 9 0 18M53 33q-9 5-18 0M32 54q-6-9 0-18M11 33q9-5 18 0M47 18q-4 10-12 12M47 48q-10-4-12-12M17 48q4-10 12-12M17 18q10 4 12 12'/%3E%3C/g%3E%3Ccircle cx='32' cy='33' r='5' fill='%23DCC59E'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F5ECDC; --cream2:#EFE2CB; --paper:#FBF6EC; --ink:#2A1A18; --ink2:#5B4740;
+  --wine:#6E1A2D; --wine2:#8C2840; --wine-ink:#5A1424; --green:#1F3A2C; --green2:#2D5240;
+  --dough:#F4EAD6; --pleat:#CDB28A; --line:rgba(42,26,24,.14);
+  --r:18px; --shadow:0 1px 0 rgba(42,26,24,.06),0 12px 30px -18px rgba(42,26,24,.35);
+  --disp:'Prata',Georgia,serif; --sans:'Onest',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 16px/1.55 var(--sans);overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+button,input,textarea,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--wine2);outline-offset:3px;border-radius:8px}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--disp);font-weight:400;letter-spacing:-.01em;margin:0;line-height:1.08}
+h2{font-size:clamp(32px,7.5vw,54px)}
+.eyebrow{font:600 12px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--wine)}
+.lead{color:var(--ink2);font-size:17px;max-width:58ch}
+.nb{white-space:nowrap}
+
+/* demo bar */
+.demo{background:var(--ink);color:#EFE3D0;font-size:12.5px;line-height:1.4;text-align:center;padding:7px 14px}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:30;background:rgba(245,236,220,.94);border-bottom:1px solid var(--line);-webkit-backdrop-filter:saturate(1.2) blur(6px);backdrop-filter:saturate(1.2) blur(6px)}
+.hdr .wrap{display:flex;align-items:center;gap:16px;min-height:60px}
+.brand{display:flex;align-items:center;gap:10px;min-height:44px;text-decoration:none;font-family:var(--disp);font-size:20px;white-space:nowrap}
+.brand svg{width:34px;height:34px;flex:none}
+.brand i{font-style:normal;color:var(--wine)}
+.nav{display:none;gap:4px;margin-left:auto}
+.nav a{text-decoration:none;font-weight:500;font-size:15px;padding:10px 12px;border-radius:999px;color:var(--ink2)}
+.nav a:hover{background:var(--cream2);color:var(--ink)}
+.status{margin-left:auto;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;padding:6px 11px;border-radius:999px;background:var(--paper);border:1px solid var(--line);white-space:nowrap}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:#9A8B82}
+.status.on::before{background:#2E8B57;box-shadow:0 0 0 3px rgba(46,139,87,.18)}
+.status.off{color:var(--ink2)}
+@media (max-width:439px){.status .sk{display:none}.brand{font-size:18px}.brand svg{width:30px;height:30px}.hdr .wrap{gap:10px}}
+@media (min-width:900px){.nav{display:flex}.status{margin-left:8px}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;border:0;font-weight:600;font-size:16px;text-decoration:none;cursor:pointer;transition:transform .12s,background .2s,box-shadow .2s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-wine{background:var(--wine);color:#FFF6EA;box-shadow:0 10px 24px -12px rgba(110,26,45,.8)}
+.btn-wine:hover{background:var(--wine2)}
+.btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--cream)}
+.btn-green{background:var(--green);color:#F3EAD8}
+.btn svg{width:20px;height:20px;flex:none}
+.link{display:inline-block;padding:11px 0;font-weight:600;color:var(--wine);text-underline-offset:3px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:26px 0 40px;min-height:calc(100vh - 100px);min-height:calc(100svh - 100px)}
+.hero .wrap{display:grid;gap:22px;align-items:center}
+.hero h1{font-size:clamp(42px,11.5vw,92px);line-height:.98;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--wine)}
+.where{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:14.5px;color:var(--ink2);margin:16px 0 0;padding:0;list-style:none}
+.where li{display:flex;align-items:center;gap:6px}
+.dots{display:inline-flex;gap:3px}.dots i{width:9px;height:9px;border-radius:50%;display:block}
+.hero .lead{margin:16px 0 0}
+.rate{display:inline-flex;align-items:center;gap:12px;margin-top:20px;padding:10px 16px 10px 12px;background:var(--paper);border:1px solid var(--line);border-radius:16px;text-decoration:none}
+.rate b{font-family:var(--disp);font-size:30px;font-weight:400;line-height:1}
+.rate .st{color:#C7891E;font-size:15px;letter-spacing:1px;line-height:1}
+.rate small{display:block;color:var(--ink2);font-size:13px;line-height:1.3}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.hero-art{position:relative;width:min(100%,520px);margin:0 auto;aspect-ratio:1}
+.hero-art svg{width:100%;height:100%}
+.hq{position:absolute;left:0;bottom:4%;max-width:230px;background:var(--paper);border-radius:14px;padding:12px 14px;font-size:14px;line-height:1.4;box-shadow:var(--shadow);border:1px solid var(--line)}
+.hq b{display:block;font-weight:600;font-size:12.5px;color:var(--ink2);margin-top:4px}
+.spin{transform-origin:0 0;animation:spin 120s linear infinite}
+.paused .spin,.paused .steam{animation-play-state:paused}
+@keyframes spin{to{transform:rotate(360deg)}}
+.steam{animation:steam 4.5s ease-in-out infinite;opacity:.0}
+.steam:nth-child(2){animation-delay:1.5s}.steam:nth-child(3){animation-delay:3s}
+@keyframes steam{0%{opacity:0;transform:translateY(8px)}40%{opacity:.55}100%{opacity:0;transform:translateY(-26px)}}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:30px}
+.facts div{background:var(--paper);padding:14px 16px}
+.facts b{display:block;font-family:var(--disp);font-weight:400;font-size:24px;line-height:1.1}
+.facts span{font-size:13.5px;color:var(--ink2)}
+@media (min-width:960px){
+  .hero .wrap{grid-template-columns:1.05fr .95fr;gap:40px}
+  .hero{padding:40px 0 56px}
+  .facts{grid-template-columns:repeat(4,minmax(0,1fr));grid-column:1/-1}
+  .hq{left:-30px}
+}
+
+section{padding:64px 0}
+.sec-head{display:grid;gap:12px;margin-bottom:28px}
+
+/* PLATE module */
+.plate-sec{background:var(--green);color:#F3EAD8;position:relative;overflow:hidden}
+.plate-sec .eyebrow{color:#E9B9A6}
+.plate-sec .lead{color:#CFC4AE}
+.plate-sec h2 em{font-style:normal;color:#F0C9A8}
+.vine{position:absolute;inset:0 0 auto 0;height:40px;opacity:.5;pointer-events:none}
+.pgrid{display:grid;gap:26px}
+.stage{position:relative;max-width:460px;width:100%;margin:0 auto}
+.stage svg{width:100%;height:auto}
+.counter{display:flex;align-items:baseline;justify-content:center;gap:14px;margin-top:6px;text-align:center}
+.counter .n{font-family:var(--disp);font-size:64px;line-height:1;color:#FFF3E0;min-width:1.4ch;display:inline-block}
+.counter .n.bump{animation:bump .35s ease}
+@keyframes bump{40%{transform:scale(1.18)}}
+.counter small{display:block;font-size:14px;color:#CFC4AE;text-align:left;line-height:1.35}
+.counter small b{color:#FFF3E0;font-size:20px;font-weight:600}
+.more-badge{fill:var(--wine);}
+.pc-new{animation:drop .45s cubic-bezier(.2,.9,.3,1.3)}
+@keyframes drop{from{transform:translateY(-30px) scale(.6);opacity:0}}
+.pc-g{transform-box:fill-box;transform-origin:center}
+.fills{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.fill{display:grid;grid-template-columns:38px 1fr auto;align-items:center;gap:12px;background:rgba(255,248,235,.06);border:1px solid rgba(255,248,235,.12);border-radius:14px;padding:9px 10px 9px 12px;transition:background .2s,border-color .2s}
+.fill.has{background:rgba(255,248,235,.12);border-color:rgba(240,201,168,.5)}
+.fill svg{width:38px;height:38px}
+.fill .t{font-weight:600;font-size:15.5px;line-height:1.25}
+.fill .t small{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-weight:400;font-size:13px;color:#CFC4AE;margin-top:2px}
+.fill .t .pr{color:#F0C9A8;font-weight:600}
+.step{display:inline-flex;align-items:center;background:rgba(0,0,0,.18);border-radius:999px}
+.step button{width:44px;height:44px;border:0;background:transparent;border-radius:50%;font-size:22px;line-height:1;cursor:pointer;color:inherit}
+.step button:hover{background:rgba(255,255,255,.1)}
+.step button.plus{background:#F3EAD8;color:var(--green)}
+.step output{min-width:26px;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+.ctrl{display:grid;gap:14px;margin-top:16px}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.guests{display:flex;align-items:center;gap:12px;background:rgba(255,248,235,.06);border:1px solid rgba(255,248,235,.12);border-radius:14px;padding:6px 6px 6px 14px;justify-content:space-between}
+.guests span{font-size:15px}
+.guests b{font-weight:600}
+.chipbtn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid rgba(243,234,216,.45);background:transparent;color:#F3EAD8;font-weight:600;font-size:14.5px;cursor:pointer}
+.chipbtn:hover{background:rgba(255,255,255,.08)}
+.chipbtn.solid{background:#F3EAD8;color:var(--green);border-color:#F3EAD8}
+.addons h3{font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#E9B9A6;margin:6px 0 10px}
+.addons ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.addons button{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border-radius:12px;border:1px solid rgba(255,248,235,.18);background:rgba(255,248,235,.05);color:#F3EAD8;cursor:pointer;font-size:14px;text-align:left}
+.addons button b{color:#F0C9A8;font-weight:600;white-space:nowrap}
+.addons button .q{background:#F0C9A8;color:var(--green);border-radius:999px;font-weight:700;font-size:12px;padding:1px 7px}
+.addons button:hover{background:rgba(255,248,235,.12)}
+.sumbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:20px;padding:14px 14px 14px 18px;background:#F3EAD8;color:var(--ink);border-radius:18px}
+.sumbar .s{font-size:14px;color:var(--ink2);line-height:1.35}
+.sumbar .s b{display:block;font-size:20px;color:var(--ink)}
+.pmini{position:sticky;top:60px;z-index:3;display:flex;align-items:center;gap:10px;justify-content:space-between;margin:0 -20px 12px;padding:10px 20px;background:rgba(31,58,44,.96);border-bottom:1px solid rgba(240,201,168,.25)}
+.pm-dots{display:flex;flex-wrap:nowrap;min-width:0;overflow:hidden}
+.pm-dots svg{width:24px;height:24px;flex:none;margin-right:-6px}
+.pm-t{font-weight:600;font-size:15px;white-space:nowrap;color:#FFF3E0}
+@media (min-width:960px){.pmini{display:none}}
+.hint{font-size:13.5px;color:#CFC4AE;margin:10px 0 0}
+@media (min-width:960px){
+  .pgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
+  .stage{position:sticky;top:84px;max-width:min(470px,calc(100vh - 220px))}
+}
+
+/* wine band */
+.wine{background:var(--wine);color:#FBEFE3;padding:56px 0;position:relative;overflow:hidden}
+.wine .wrap{display:grid;gap:22px;align-items:center}
+.wine h2{font-size:clamp(30px,7vw,48px)}
+.wine p{color:#F0D6CB;margin:0;max-width:56ch}
+.wine blockquote{margin:0;font-family:var(--disp);font-size:clamp(22px,5vw,30px);line-height:1.25}
+.wine blockquote cite{display:block;font:500 13px/1.4 var(--sans);font-style:normal;color:#E8C2B6;margin-top:10px}
+.wine .btn{background:#FBEFE3;color:var(--wine)}
+.ring{position:absolute;right:-60px;top:-50px;width:260px;opacity:.22;pointer-events:none}
+@media (min-width:960px){.wine .wrap{grid-template-columns:1fr 1fr;gap:60px}}
+
+/* menu */
+.tools{display:grid;gap:12px;margin-bottom:18px}
+.search{position:relative}
+.search input{width:100%;min-height:52px;border-radius:14px;border:1.5px solid var(--line);background:var(--paper);padding:0 16px 0 46px;font-size:16px}
+.search input:focus{border-color:var(--wine);outline:none;box-shadow:0 0 0 3px rgba(110,26,45,.15)}
+.search svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--ink2)}
+.cats{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 6px;scrollbar-width:none;margin:0 -20px;padding-left:20px;padding-right:20px}
+.cats::-webkit-scrollbar{display:none}
+.cats button{flex:none;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper);cursor:pointer;font-weight:500;font-size:14.5px;white-space:nowrap}
+.cats button small{color:var(--ink2);margin-left:6px;font-size:12px}
+.cats button[aria-pressed="true"]{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.cats button[aria-pressed="true"] small{color:#CDBFAE}
+.mgroup h3{font-size:24px;margin:22px 0 8px;display:flex;align-items:baseline;gap:10px}
+.mgroup h3 small{font:500 13px var(--sans);color:var(--ink2)}
+.mlist{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.mi{display:grid;grid-template-columns:1fr auto;gap:6px 14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.mi .t{font-weight:600;font-size:16px;line-height:1.3}
+.mi .t .pop{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--wine);border:1px solid rgba(110,26,45,.35);border-radius:999px;padding:1px 7px;margin-left:6px;vertical-align:2px}
+.mi .d{font-size:14px;color:var(--ink2);line-height:1.45;margin-top:3px}
+.mi .m{font-size:13.5px;color:var(--ink2);margin-top:3px}
+.mi .m b{color:var(--ink);font-weight:700;font-size:15px}
+.add{min-width:44px;height:44px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;cursor:pointer;font-size:22px;line-height:1;padding:0}
+.add:hover{background:var(--ink);color:var(--cream)}
+.qty{display:inline-flex;align-items:center;border-radius:999px;background:var(--ink);color:var(--cream)}
+.qty button{width:44px;height:44px;border:0;background:transparent;color:inherit;font-size:20px;cursor:pointer;border-radius:50%}
+.qty output{min-width:22px;text-align:center;font-weight:700}
+.showmore{margin:18px auto 0;display:flex}
+.none{padding:26px 0;color:var(--ink2)}
+@media (min-width:960px){
+  .menu-grid{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start}
+  .tools{position:sticky;top:90px}
+  .cats{flex-direction:column;overflow:visible;margin:0;padding:0}
+  .cats button{text-align:left;display:flex;justify-content:space-between;align-items:center}
+  .mlist{grid-template-columns:1fr 1fr;column-gap:36px}
+}
+
+/* reviews */
+.why{background:var(--paper)}
+.score{display:flex;align-items:center;gap:18px;margin-bottom:26px}
+.score b{font-family:var(--disp);font-weight:400;font-size:84px;line-height:.9;color:var(--wine)}
+.score .st{color:#C7891E;font-size:20px;letter-spacing:2px}
+.score p{margin:2px 0 0;color:var(--ink2);font-size:15px}
+.asp{list-style:none;margin:0 0 34px;padding:0;display:grid;gap:14px}
+.asp li{display:grid;grid-template-columns:1fr auto;gap:6px 12px}
+.asp span{font-size:15.5px}
+.asp span b{font-weight:700}
+.asp small{color:var(--ink2);font-size:13px;align-self:end}
+.bar{grid-column:1/-1;height:6px;border-radius:9px;background:var(--cream2);overflow:hidden}
+.bar i{display:block;height:100%;width:var(--w);background:var(--wine);border-radius:9px}
+.revs{display:grid;gap:14px;list-style:none;margin:0;padding:0}
+.rev{background:var(--cream);border-radius:var(--r);padding:20px 20px 18px;position:relative;border:1px solid var(--line)}
+.rev::before{content:"«";position:absolute;right:16px;top:-6px;font-family:var(--disp);font-size:64px;color:rgba(110,26,45,.18);line-height:1}
+.rev p{margin:0;padding-right:22px;font-size:16px;line-height:1.5}
+.rev footer{margin-top:12px;font-size:13.5px;color:var(--ink2)}
+.rev footer b{color:var(--ink);font-weight:600}
+.staff{margin:22px 0 0;font-size:15px;color:var(--ink2)}
+.staff b{color:var(--ink)}
+@media (min-width:960px){
+  .why-grid{display:grid;grid-template-columns:380px 1fr;gap:60px;align-items:start}
+  .revs{grid-template-columns:1fr 1fr}
+  .revs li:first-child{grid-column:1/-1}
+  .revs li:first-child p{font-family:var(--disp);font-size:24px;line-height:1.3}
+}
+
+/* visit */
+.vgrid{display:grid;gap:18px}
+.card{background:var(--paper);border-radius:var(--r);padding:22px;border:1px solid var(--line)}
+.card h3{font-size:26px;margin-bottom:6px}
+.card .addr{color:var(--ink2);margin:0 0 14px}
+.metro{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:8px}
+.metro li{display:flex;align-items:center;gap:10px;font-size:15.5px}
+.metro i{width:12px;height:12px;border-radius:50%;flex:none}
+.metro span{margin-left:auto;color:var(--ink2);font-size:14px}
+.hours{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.hours li{display:flex;justify-content:space-between;padding:9px 12px;border-radius:10px;font-size:15.5px}
+.hours li.today{background:var(--wine);color:#FFF4E8;font-weight:600}
+.feats{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:14px 0 0;padding:0}
+.feats li{font-size:14px;padding:7px 12px;border-radius:999px;background:var(--cream);border:1px solid var(--line)}
+.feats li b{font-weight:700}
+.map{position:relative;border-radius:var(--r);overflow:hidden;min-height:320px;background:var(--cream2) repeating-linear-gradient(45deg,transparent 0 22px,rgba(42,26,24,.04) 22px 23px);border:1px solid var(--line)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vbtns{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+@media (min-width:960px){.vgrid{grid-template-columns:1fr 1fr 1.2fr}.map{min-height:100%}}
+
+/* footer */
+.foot{background:var(--ink);color:#DCCDB9;padding:44px 0 36px;font-size:14.5px}
+.foot .brand{color:#F5ECDC;font-size:24px}
+.foot a{color:#F5ECDC;display:inline-block;padding:12px 0}
+.foot .fg{display:grid;gap:16px}
+.foot p{margin:0}
+.foot .note{color:#AE9E8B;font-size:13px;border-top:1px solid rgba(255,255,255,.12);padding-top:16px;margin-top:10px}
+@media (min-width:960px){.foot .fg{grid-template-columns:1.3fr 1fr 1fr}}
+
+/* mobile bar */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(245,236,220,.97);border-top:1px solid var(--line)}
+.mbar .btn{flex:1;min-height:50px;padding:0 12px;min-width:0}
+.mbar .call{flex:none;width:52px;padding:0;min-height:50px}
+body{padding-bottom:84px}
+@media (min-width:960px){.mbar{display:none}body{padding-bottom:0}}
+.fab{display:none}
+@media (min-width:960px){.fab{display:inline-flex;position:fixed;right:24px;bottom:24px;z-index:40;box-shadow:0 14px 30px -12px rgba(42,26,24,.6)}.fab[hidden]{display:none}}
+
+/* drawer */
+.backdrop{position:fixed;inset:0;background:rgba(30,16,14,.5);opacity:0;pointer-events:none;transition:opacity .25s;z-index:50}
+.backdrop.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;z-index:60;left:0;right:0;bottom:0;max-height:92vh;max-height:92svh;background:var(--paper);border-radius:22px 22px 0 0;transform:translateY(105%);transition:transform .3s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;visibility:hidden}
+.drawer.open{transform:none;visibility:visible}
+@media (min-width:960px){.drawer{left:auto;top:0;width:460px;max-height:none;border-radius:0;transform:translateX(105%)}}
+.dh{display:flex;align-items:center;justify-content:space-between;padding:16px 18px 12px;border-bottom:1px solid var(--line)}
+.dh h2{font-size:28px}
+.x{width:44px;height:44px;border-radius:50%;border:0;background:var(--cream2);font-size:22px;cursor:pointer}
+.db{overflow-y:auto;padding:8px 18px 18px;flex:1;-webkit-overflow-scrolling:touch}
+.ditems{list-style:none;margin:0;padding:0}
+.ditems li{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.ditems .n{flex:1;min-width:0;font-weight:600;font-size:15px;line-height:1.3}
+.ditems .n small{display:block;font-weight:400;color:var(--ink2);font-size:13px;margin-top:2px}
+.dsum{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;font-size:16px}
+.dsum b{font-family:var(--disp);font-weight:400;font-size:30px}
+.fs{border:0;padding:0;margin:14px 0 0}
+.fs legend{font-weight:600;font-size:14px;margin-bottom:8px;padding:0}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg label{position:relative}
+.seg input{position:absolute;opacity:0;width:1px;height:1px}
+.seg span{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--cream);cursor:pointer;font-size:14.5px}
+.seg input:checked+span{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.seg input:focus-visible+span{outline:3px solid var(--wine2);outline-offset:2px}
+.fld{display:block;margin-top:12px}
+.fld span{display:block;font-size:13.5px;color:var(--ink2);margin-bottom:5px}
+.fld input,.fld textarea{width:100%;min-height:48px;border-radius:12px;border:1.5px solid var(--line);background:#fff;padding:10px 14px;font-size:16px}
+.fld textarea{min-height:76px;resize:vertical}
+.check{display:flex;gap:10px;align-items:flex-start;margin-top:12px;font-size:14.5px;cursor:pointer;min-height:44px}
+.check input{width:22px;height:22px;margin:1px 0 0;accent-color:var(--wine);flex:none}
+.inline-step{display:flex;align-items:center;gap:12px;margin-top:12px;justify-content:space-between}
+.inline-step .qty{background:var(--cream2);color:var(--ink)}
+.df{padding:12px 18px calc(14px + env(safe-area-inset-bottom));border-top:1px solid var(--line);display:grid;gap:8px}
+.df .btn{width:100%}
+.df .btn[aria-disabled="true"]{opacity:.5;pointer-events:none}
+.df .sub{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.df .sub .btn{min-height:46px;font-size:14.5px;padding:0 10px}
+.empty{padding:26px 0;color:var(--ink2);text-align:center}
+.toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,20px);background:var(--ink);color:var(--cream);padding:11px 18px;border-radius:999px;font-size:14.5px;opacity:0;pointer-events:none;transition:.25s;z-index:70;max-width:calc(100% - 32px);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (min-width:960px){.toast{bottom:96px}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="demo" id="demoBar">Демо-концепт · пример сайта для «Вино и Хинкали» от Альхассана Альфаррана · не официальный сайт</div>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Вино и Хинкали — в начало"><svg viewBox="-50 -50 100 100" aria-hidden="true" id="logoKh"></svg><span>Вино <i>и</i> Хинкали</span></a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#plate">Тарелка</a><a href="#menu">Меню</a><a href="#why">Отзывы</a><a href="#visit">Как найти</a>
+    </nav>
+    <span class="status" id="status" role="status">…</span>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" id="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Грузинская кухня · ТРЦ «Атриум»</p>
+        <h1>Хинкали, хачапури <em>и&nbsp;вино</em> у&nbsp;Курской</h1>
+        <ul class="where" id="where"></ul>
+        <p class="lead" id="heroLead"></p>
+        <a class="rate" id="rateBadge" target="_blank" rel="noopener">
+          <b id="rateVal">5,0</b>
+          <span><span class="st" aria-hidden="true">★★★★★</span><small id="rateTxt"></small></span>
+        </a>
+        <div class="cta">
+          <a class="btn btn-wine" href="#plate">Собрать тарелку хинкали</a>
+          <a class="btn btn-line" id="heroBook" target="_blank" rel="noopener">Забронировать стол</a>
+        </div>
+      </div>
+      <div class="hero-art" id="heroArt">
+        <svg viewBox="-260 -260 520 520" id="heroSvg" role="img" aria-label="Тарелка хинкали и бокал вина — рисунок"></svg>
+        <p class="hq" id="heroQuote"></p>
+      </div>
+      <div class="facts" id="facts"></div>
+    </div>
+  </section>
+
+  <section class="plate-sec" id="plate" aria-labelledby="plateH">
+    <svg class="vine" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 C 60 0, 120 40, 180 20 S 300 0, 360 20 S 480 40, 540 20 S 660 0, 720 20 S 840 40, 900 20 S 1020 0, 1080 20 S 1180 40, 1200 20" fill="none" stroke="#F0C9A8" stroke-width="1.5"/></svg>
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Фирменная штука сайта</p>
+        <h2 id="plateH">Соберите свою <em>тарелку</em></h2>
+        <p class="lead" id="plateLead"></p>
+      </div>
+      <div class="pgrid">
+        <div class="stage" id="stage">
+          <svg viewBox="-215 -215 430 430" id="plateSvg" role="img" aria-label="Ваша тарелка хинкали"></svg>
+          <div class="counter" aria-live="polite">
+            <span class="n" id="khN">0</span>
+            <small><span id="khWord">хинкали на тарелке</span><br><b id="khSum">0&nbsp;₽</b> <span id="khPer"></span></small>
+          </div>
+        </div>
+        <div class="pcol">
+          <div class="pmini" id="pmini" aria-hidden="true"><span class="pm-dots" id="pmDots"></span><span class="pm-t" id="pmT">Тарелка пустая</span></div>
+          <ul class="fills" id="fills"></ul>
+          <div class="ctrl">
+            <div class="guests">
+              <span>Нас за столом: <b id="gN">2</b></span>
+              <span class="step"><button type="button" id="gMinus" aria-label="Меньше гостей">−</button><button type="button" class="plus" id="gPlus" aria-label="Больше гостей">+</button></span>
+            </div>
+            <div class="row">
+              <button type="button" class="chipbtn solid" id="presetBtn">Как советуют в отзывах</button>
+              <button type="button" class="chipbtn" id="clearPlate">Очистить тарелку</button>
+            </div>
+            <p class="hint" id="presetHint"></p>
+            <div class="addons">
+              <h3>К хинкали</h3>
+              <ul id="addons"></ul>
+            </div>
+          </div>
+          <div class="sumbar">
+            <span class="s">В заказе<b id="sumAll">0&nbsp;₽</b></span>
+            <button type="button" class="btn btn-wine" id="plateGo">Отправить в WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wine" aria-labelledby="wineH">
+    <svg class="ring" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="80" fill="none" stroke="#FBEFE3" stroke-width="10" stroke-dasharray="380 40 60 30" stroke-linecap="round"/></svg>
+    <div class="wrap">
+      <div>
+        <p class="eyebrow" style="color:#E8C2B6">Вино — в названии</p>
+        <h2 id="wineH">Что налить к хинкали — спросите у нас</h2>
+        <p style="margin-top:14px">Винной карты в карточке на Яндекс Картах нет, поэтому не будем выдумывать. Гости пишут про домашнее красное, гранатовое и глинтвейн — напишите, и подскажем, что есть сегодня.</p>
+        <div class="cta"><a class="btn" id="wineWa" target="_blank" rel="noopener">Спросить про вино в WhatsApp</a></div>
+      </div>
+      <blockquote id="wineQuote"></blockquote>
+    </div>
+  </section>
+
+  <section id="menu" aria-labelledby="menuH">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Меню</p>
+        <h2 id="menuH">Всё меню с ценами</h2>
+        <p class="lead" id="menuStat"></p>
+      </div>
+      <div class="menu-grid">
+        <div class="tools">
+          <label class="search"><span class="sr">Поиск по меню</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input type="search" id="q" placeholder="Хачапури, шашлык, сулугуни…" autocomplete="off">
+          </label>
+          <div class="cats" id="cats" role="group" aria-label="Разделы меню"></div>
+        </div>
+        <div id="mlist"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" id="why" aria-labelledby="whyH">
+    <div class="wrap why-grid">
+      <div>
+        <p class="eyebrow">Почему сюда возвращаются</p>
+        <h2 id="whyH" style="margin:12px 0 22px">Гости пишут сами</h2>
+        <div class="score"><b id="scoreVal">5,0</b><div><span class="st" aria-hidden="true">★★★★★</span><p id="scoreTxt"></p></div></div>
+        <ul class="asp" id="asp"></ul>
+      </div>
+      <div>
+        <ul class="revs" id="revs"></ul>
+        <p class="staff">Официантов в отзывах благодарят по имени: <b>Темура, Карину, Олесю, Алесю, Викторию</b>.</p>
+        <p style="margin-top:14px"><a class="link" id="allRevs" target="_blank" rel="noopener">Все отзывы на Яндекс Картах →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit" aria-labelledby="visitH">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Как найти</p>
+        <h2 id="visitH">Земляной Вал, 33 — 130&nbsp;м от&nbsp;«Курской»</h2>
+      </div>
+      <div class="vgrid">
+        <div class="card">
+          <h3>Адрес</h3>
+          <p class="addr" id="addr"></p>
+          <ul class="metro" id="metro"></ul>
+          <p style="margin:0;font-size:14.5px;color:var(--ink2)">Гости пишут: ресторан на 3 этаже ТРЦ «Атриум».<br>Остановка «Курский вокзал» — 88 м.</p>
+          <div class="vbtns">
+            <a class="btn btn-wine" id="route" target="_blank" rel="noopener">Построить маршрут</a>
+            <a class="btn btn-line" id="visitCall">Позвонить</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Часы работы</h3>
+          <p class="addr" id="hoursText"></p>
+          <ul class="hours" id="hours"></ul>
+          <ul class="feats" id="feats"></ul>
+        </div>
+        <div class="map" id="mapBox"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap fg">
+    <div>
+      <p class="brand" style="margin-bottom:10px">Вино и Хинкали</p>
+      <p id="footAddr"></p>
+      <p id="footHours" style="margin-top:4px"></p>
+    </div>
+    <div>
+      <p><a id="footTel"></a></p>
+      <p style="margin-top:6px"><a id="footWa" target="_blank" rel="noopener">Написать в WhatsApp</a></p>
+      <p style="margin-top:6px"><a id="footYa" target="_blank" rel="noopener">Карточка на Яндекс Картах</a></p>
+    </div>
+    <div>
+      <p><a id="footBook" target="_blank" rel="noopener">Забронировать стол на Яндексе</a></p>
+    </div>
+    <p class="note" style="grid-column:1/-1">Демо-концепт · пример сайта для «Вино и Хинкали» от Альхассана Альфаррана · не официальный сайт.<br>Цены и данные взяты из карточки на Яндекс Картах и могут отличаться.</p>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar">
+  <button type="button" class="btn btn-wine" id="mbarGo">Собрать заказ</button>
+  <a class="btn btn-line call" id="mbarCall" aria-label="Позвонить в ресторан"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a>
+</div>
+<button type="button" class="btn btn-wine fab" id="fab" hidden>Заказ</button>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drH">
+  <div class="dh"><h2 id="drH">Ваш заказ</h2><button type="button" class="x" id="drClose" aria-label="Закрыть заказ">×</button></div>
+  <div class="db">
+    <div class="empty" id="drEmpty">Пока пусто. Положите на тарелку пару хинкали — или выберите что-то из меню.<br><br><button type="button" class="btn btn-line" id="drStart">К тарелке</button></div>
+    <ul class="ditems" id="drItems"></ul>
+    <div id="drForm">
+      <div class="dsum"><span>Итого по меню</span><b id="drSum">0&nbsp;₽</b></div>
+      <fieldset class="fs"><legend>Как</legend>
+        <div class="seg">
+          <label><input type="radio" name="mode" value="hall" checked><span>За столом в ресторане</span></label>
+          <label><input type="radio" name="mode" value="take"><span>Заберу с собой</span></label>
+          <label><input type="radio" name="mode" value="deliv"><span>Доставка</span></label>
+        </div>
+      </fieldset>
+      <label class="fld" id="addrFld" hidden><span>Адрес доставки</span><input type="text" id="addrIn" autocomplete="street-address" placeholder="Улица, дом, квартира"></label>
+      <fieldset class="fs"><legend>Когда</legend>
+        <div class="seg">
+          <label><input type="radio" name="when" value="asap" checked><span>Как можно скорее</span></label>
+          <label><input type="radio" name="when" value="at"><span>К определённому времени</span></label>
+        </div>
+      </fieldset>
+      <label class="fld" id="atFld" hidden><span>К какому времени (работаем 10:00–23:00)</span><input type="time" id="atTime" min="10:00" max="23:00" step="900"></label>
+      <div class="inline-step" id="drGuestsRow"><span>Гостей: <b id="drG">2</b></span><span class="qty"><button type="button" id="dgMinus" aria-label="Меньше гостей">−</button><button type="button" id="dgPlus" aria-label="Больше гостей">+</button></span></div>
+      <label class="check"><input type="checkbox" id="fried"><span>Хочу жареные хинкали — подскажите, можно ли</span></label>
+      <label class="check"><input type="checkbox" id="wineQ"><span>Подскажите вино к заказу</span></label>
+      <label class="fld"><span>Пожелание (необязательно)</span><textarea id="note" placeholder="Например: без кинзы, детский стульчик"></textarea></label>
+    </div>
+  </div>
+  <div class="df">
+    <a class="btn btn-wine" id="send" target="_blank" rel="noopener" aria-disabled="true">Отправить заказ в WhatsApp</a>
+    <div class="sub">
+      <a class="btn btn-line" id="drBook" target="_blank" rel="noopener">Стол на Яндексе</a>
+      <a class="btn btn-line" id="drCall">Позвонить</a>
+    </div>
+  </div>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script>
+(function () {
+'use strict';
+var BIZ = window.BIZ;
+var BOOK = 'https://yandex.ru/web-maps/webview?booking[permalink]=60531062638&booking[standalone]=true&mode=booking&source=partner-cta';
+var $ = function (s) { return document.querySelector(s); };
+var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+var wa = function (text) { return 'https://wa.me/' + BIZ.wa + '?text=' + encodeURIComponent(text); };
+var num = function (n) { return n.toLocaleString('ru-RU').replace(/\s/g, ' '); };
+var rub = function (n) { return n == null ? 'по запросу' : num(n) + ' ₽'; };
+var plural = function (n, one, few, many) { var a = Math.abs(n) % 100, b = a % 10; return a > 10 && a < 20 ? many : b === 1 ? one : b >= 2 && b <= 4 ? few : many; };
+var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+function mskNow() { var d = new Date(); return new Date(d.getTime() + (d.getTimezoneOffset() + 180) * 60000); }
+function openStatus(now) {
+  now = now || mskNow();
+  if (!BIZ.hours) return null;
+  if (BIZ.is24) return { open: true, text: 'Круглосуточно' };
+  var day = (now.getDay() + 6) % 7, mins = now.getHours() * 60 + now.getMinutes();
+  var m = function (s) { return +s.slice(0, 2) * 60 + +s.slice(3); };
+  var i, f, t;
+  for (i = 0; i < BIZ.hours[(day + 6) % 7].length; i++) { f = BIZ.hours[(day + 6) % 7][i][0]; t = BIZ.hours[(day + 6) % 7][i][1]; if (m(t) <= m(f) && mins < m(t)) return { open: true, text: 'Открыто · до ' + t }; }
+  for (i = 0; i < BIZ.hours[day].length; i++) { f = BIZ.hours[day][i][0]; t = BIZ.hours[day][i][1]; var a = m(f), b = m(t) <= a ? m(t) + 1440 : m(t); if (mins >= a && mins < b) return { open: true, text: 'Открыто · до ' + t }; }
+  for (i = 0; i < BIZ.hours[day].length; i++) if (mins < m(BIZ.hours[day][i][0])) return { open: false, text: 'Закрыто · откроется в ' + BIZ.hours[day][i][0] };
+  var names = ['в понедельник', 'во вторник', 'в среду', 'в четверг', 'в пятницу', 'в субботу', 'в воскресенье'];
+  for (i = 1; i <= 7; i++) { var d = (day + i) % 7; if (BIZ.hours[d].length) return { open: false, text: 'Закрыто · откроется ' + (i === 1 ? 'завтра' : names[d]) + ' в ' + BIZ.hours[d][0][0] }; }
+  return null;
+}
+
+/* ---------- data index ---------- */
+var ITEMS = [], byTitle = {}, byKey = {};
+BIZ.menu.forEach(function (c, ci) { c.items.forEach(function (it, ii) { var o = { key: ci + '-' + ii, cat: ci, it: it }; ITEMS.push(o); byTitle[it.t] = o; byKey[o.key] = o; }); });
+var popular = {}; (BIZ.top || []).forEach(function (t) { popular[t.t] = 1; });
+var khCat = -1; BIZ.menu.forEach(function (c, i) { if (/хинкали/i.test(c.name)) khCat = i; });
+var KH = khCat >= 0 ? ITEMS.filter(function (o) { return o.cat === khCat; }) : [];
+var feat = function (k) { var f = BIZ.features.filter(function (x) { return x.k === k; })[0]; return f ? f.v : null; };
+var ratingVal = BIZ.rating.value.toFixed(1).replace('.', ',');
+var ratingCount = num(BIZ.rating.count) + ' ' + plural(BIZ.rating.count, 'оценка', 'оценки', 'оценок');
+var reviewsCount = num(BIZ.rating.reviews) + ' ' + plural(BIZ.rating.reviews, 'отзыв', 'отзыва', 'отзывов');
+
+/* knot tint per filling (by keywords in the real title) */
+function tint(t) {
+  t = t.toLowerCase();
+  if (/вишн/.test(t)) return '#8C2840';
+  if (/кревет/.test(t)) return '#D9785E';
+  if (/баран/.test(t)) return '#4E7A52';
+  if (/куриц/.test(t)) return '#C99A3E';
+  if (/гриб/.test(t)) return '#8E7A62';
+  if (/сыр/.test(t)) return '#E6C766';
+  if (/говяд/.test(t)) return '#7A3B2A';
+  return '#5C3A2A';
+}
+var short = function (t) { return t.replace(/^Хинкали\s+/i, '').replace(/^с\s/, 'с ').replace(/^./, function (c) { return c.toUpperCase(); }); };
+
+/* ---------- SVG khinkali, top view ---------- */
+function kh(cx, cy, r, color, opt) {
+  opt = opt || {};
+  var n = opt.pleats || 14, rot = opt.rot || 0, s = '';
+  s += '<g transform="translate(' + cx.toFixed(1) + ' ' + cy.toFixed(1) + ')">';
+  s += '<g class="pc-g' + (opt.cls ? ' ' + opt.cls : '') + '">';
+  s += '<ellipse cx="' + (r * .08).toFixed(1) + '" cy="' + (r * .14).toFixed(1) + '" rx="' + (r * 1.0).toFixed(1) + '" ry="' + (r * .96).toFixed(1) + '" fill="rgba(0,0,0,.28)"/>';
+  s += '<circle r="' + r + '" fill="#F4EAD6"/>';
+  s += '<circle r="' + (r * .97).toFixed(1) + '" fill="url(#doughG)"/>';
+  var p = '';
+  for (var i = 0; i < n; i++) {
+    var a = rot + i / n * Math.PI * 2, b = a + .5;
+    var x1 = Math.cos(a) * r * .93, y1 = Math.sin(a) * r * .93;
+    var qx = Math.cos(b) * r * .55, qy = Math.sin(b) * r * .55;
+    var x2 = Math.cos(a + .9) * r * .17, y2 = Math.sin(a + .9) * r * .17;
+    p += 'M' + x1.toFixed(1) + ' ' + y1.toFixed(1) + 'Q' + qx.toFixed(1) + ' ' + qy.toFixed(1) + ' ' + x2.toFixed(1) + ' ' + y2.toFixed(1);
+  }
+  s += '<path d="' + p + '" fill="none" stroke="#C4A77C" stroke-width="' + Math.max(1, r * .045).toFixed(2) + '" stroke-linecap="round"/>';
+  s += '<circle r="' + (r * .2).toFixed(1) + '" fill="#E4D0AA" stroke="#C4A77C" stroke-width="' + Math.max(.8, r * .03).toFixed(2) + '"/>';
+  s += '<circle r="' + (r * .085).toFixed(1) + '" fill="' + color + '"/>';
+  s += '</g></g>';
+  return s;
+}
+var DEFS = '<defs><radialGradient id="doughG" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#FFF8EA"/><stop offset=".7" stop-color="#F1E2C4"/><stop offset="1" stop-color="#E2CDA5"/></radialGradient>' +
+  '<radialGradient id="plateG" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#2F5543"/><stop offset="1" stop-color="#1A3226"/></radialGradient></defs>';
+function plateRim(R, cls) {
+  var s = '<circle r="' + R + '" fill="#F3EAD8"/><circle r="' + (R - 6) + '" fill="#2A4A3A"/>';
+  s += '<g class="' + (cls || '') + '">';
+  var n = 36;
+  for (var i = 0; i < n; i++) {
+    var a = i / n * Math.PI * 2, rr = R - 17;
+    var x = Math.cos(a) * rr, y = Math.sin(a) * rr, d = 6;
+    var rot = a * 180 / Math.PI;
+    s += '<g transform="translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ') rotate(' + rot.toFixed(1) + ')"><path d="M-' + d + ' 0L0 -' + (d * .7) + 'L' + d + ' 0L0 ' + (d * .7) + 'Z" fill="#D7B98A"/></g>';
+    var a2 = (i + .5) / n * Math.PI * 2;
+    s += '<circle cx="' + (Math.cos(a2) * rr).toFixed(1) + '" cy="' + (Math.sin(a2) * rr).toFixed(1) + '" r="1.8" fill="#E9B9A6"/>';
+  }
+  s += '</g><circle r="' + (R - 29) + '" fill="url(#plateG)" stroke="#D7B98A" stroke-width="1.2" stroke-opacity=".6"/>';
+  return s;
+}
+// slot positions on a plate (1 + 6 + 12 = 19)
+var SLOTS = [[0, 0]];
+(function () { for (var i = 0; i < 6; i++) { var a = -Math.PI / 2 + i / 6 * Math.PI * 2; SLOTS.push([Math.cos(a) * 78, Math.sin(a) * 78]); } for (var j = 0; j < 12; j++) { var b = -Math.PI / 2 + Math.PI / 12 + j / 12 * Math.PI * 2; SLOTS.push([Math.cos(b) * 150, Math.sin(b) * 150]); } })();
+
+/* logo */
+$('#logoKh').innerHTML = DEFS.replace(/doughG/g, 'doughL').replace(/plateG/g, 'plateL') + kh(0, 0, 44, '#6E1A2D', { pleats: 12 }).replace(/doughG/g, 'doughL').replace(/<ellipse[^>]*\/>/, '');
+
+/* ---------- hero ---------- */
+(function () {
+  var s = DEFS;
+  // tablecloth wine-glass ring
+  s += '<g transform="translate(150 -170)"><circle r="78" fill="none" stroke="#6E1A2D" stroke-opacity=".28" stroke-width="9" stroke-dasharray="300 26 90 30" stroke-linecap="round"/><circle r="66" fill="none" stroke="#6E1A2D" stroke-opacity=".12" stroke-width="3"/></g>';
+  s += '<g transform="translate(-10 20)">' + plateRim(215, 'spin');
+  var hues = ['#4E7A52', '#C99A3E', '#7A3B2A', '#E6C766', '#8E7A62', '#D9785E', '#7A3B2A'];
+  var pos = [[0, 0]]; for (var i = 0; i < 6; i++) { var a = -Math.PI / 2 + i / 6 * Math.PI * 2; pos.push([Math.cos(a) * 104, Math.sin(a) * 104]); }
+  pos.forEach(function (p, i) { s += kh(p[0], p[1], 50, hues[i], { pleats: 15, rot: i * .7 }); });
+  s += '<g fill="none" stroke="#F3EAD8" stroke-width="3" stroke-linecap="round" opacity=".9">' +
+    '<path class="steam" d="M-20 -40q-10 -16 0 -30t0 -30"/><path class="steam" d="M10 -40q10 -16 0 -30t0 -30"/><path class="steam" d="M90 -130q-10 -16 0 -30t0 -30"/></g>';
+  s += '</g>';
+  // vine leaf + grapes, bottom-right
+  s += '<g transform="translate(190 205) rotate(-20)"><path d="M0 0c-30-6-56 10-60 34 18-6 30 2 34 16 8-18 26-26 26-50z" fill="#1F3A2C"/><path d="M0 0c-14 14-24 30-26 50" stroke="#F5ECDC" stroke-opacity=".5" stroke-width="1.6" fill="none"/>' +
+    [[-8, 30], [6, 40], [-4, 48], [12, 54], [2, 62], [18, 66], [8, 74]].map(function (g) { return '<circle cx="' + g[0] + '" cy="' + g[1] + '" r="9" fill="#6E1A2D"/><circle cx="' + (g[0] - 3) + '" cy="' + (g[1] - 3) + '" r="2.4" fill="#B24A62"/>'; }).join('') + '</g>';
+  $('#heroSvg').innerHTML = s;
+  var art = $('#heroArt');
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { es.forEach(function (e) { art.classList.toggle('paused', !e.isIntersecting); }); }).observe(art);
+})();
+
+var m0 = BIZ.metro[0];
+$('#where').innerHTML =
+  '<li>' + esc(BIZ.address.replace(', Москва', '')) + '</li>' +
+  '<li><span class="dots">' + BIZ.metro.filter(function (m) { return m.name === m0.name; }).map(function (m) { return '<i style="background:' + m.color + '"></i>'; }).join('') + '</span>' + esc(m0.name) + ' · ' + esc(m0.distance) + '</li>' +
+  '<li>' + esc(BIZ.hoursText.replace(/^./, function (c) { return c.toUpperCase(); })) + '</li>';
+var khMin = KH.reduce(function (m, o) { return o.it.p != null && o.it.p < m ? o.it.p : m; }, 1e9);
+$('#heroLead').textContent = KH.length + ' ' + plural(KH.length, 'начинка', 'начинки', 'начинок') + ' хинкали, хачапури по-аджарски, шашлык на мангале. Соберите тарелку на сайте — заказ уйдёт прямо в наш WhatsApp.';
+$('#rateBadge').href = BIZ.reviewsUrl;
+$('#rateVal').textContent = ratingVal;
+$('#rateTxt').innerHTML = esc(ratingCount) + '<br>на Яндекс Картах';
+$('#heroBook').href = BOOK;
+var iq = BIZ.reviews.filter(function (r) { return r.a === 'Илона Н.'; })[0];
+if (iq) $('#heroQuote').innerHTML = '«Здесь самые вкусные хинкали в городе!»<b>' + esc(iq.a) + ', отзыв на Яндекс Картах</b>';
+else $('#heroQuote').remove();
+var avg = feat('средний счёт'), lunch = feat('цена бизнес-ланча');
+$('#facts').innerHTML = [
+  ['от ' + rub(khMin), 'за штуку'],
+  [String(KH.length), plural(KH.length, 'начинка', 'начинки', 'начинок') + ' — от вишни до креветки'],
+  lunch ? [String(lunch).replace(' ₽', ' ₽'), 'бизнес-ланч'] : null,
+  avg ? [String(avg).replace(' ₽', ' ₽').replace(/(\d)(\d{3})/, '$1 $2'), 'средний счёт по карточке'] : null
+].filter(Boolean).map(function (f) { return '<div><b>' + esc(f[0]) + '</b><span>' + esc(f[1]) + '</span></div>'; }).join('');
+
+/* status */
+function tickStatus() { var st = openStatus(), el = $('#status'); if (!st) { el.hidden = true; return; } var sp = st.text.split(' · '); el.innerHTML = sp.length > 1 ? '<span class="sk">' + esc(sp[0]) + ' · </span>' + esc(sp[1]) : esc(st.text); el.setAttribute('aria-label', st.text); el.className = 'status ' + (st.open ? 'on' : 'off'); }
+tickStatus(); setInterval(tickStatus, 60000);
+
+/* ---------- cart ---------- */
+var cart = {}, seq = [], guests = 2;
+var LS = 'vino-i-hinkali-cart';
+try {
+  var saved = JSON.parse(localStorage.getItem(LS) || '{}');
+  if (saved && saved.c) Object.keys(saved.c).forEach(function (k) { if (byKey[k] && saved.c[k] > 0) cart[k] = Math.min(99, saved.c[k] | 0); });
+  if (saved && saved.g) guests = Math.max(1, Math.min(20, saved.g | 0));
+} catch (e) {}
+KH.forEach(function (o) { for (var i = 0; i < (cart[o.key] || 0); i++) seq.push(o.key); });
+function save() { try { localStorage.setItem(LS, JSON.stringify({ c: cart, g: guests })); } catch (e) {} }
+function lines() { return ITEMS.filter(function (o) { return cart[o.key] > 0; }).sort(function (a, b) { return (a.cat === khCat ? -1 : 0) - (b.cat === khCat ? -1 : 0); }).map(function (o) { return { o: o, q: cart[o.key] }; }); }
+function sum() { return lines().reduce(function (s, l) { return s + (l.o.it.p || 0) * l.q; }, 0); }
+function count() { return lines().reduce(function (s, l) { return s + l.q; }, 0); }
+function khCount() { return KH.reduce(function (s, o) { return s + (cart[o.key] || 0); }, 0); }
+var lastAdded = -1;
+function change(key, d, silent) {
+  var q = (cart[key] || 0) + d; if (q < 0) q = 0; if (q > 99) q = 99;
+  if (q === (cart[key] || 0)) return;
+  if (q) cart[key] = q; else delete cart[key];
+  var o = byKey[key];
+  if (o.cat === khCat) {
+    if (d > 0) { seq.push(key); lastAdded = seq.length - 1; }
+    else { var i = seq.lastIndexOf(key); if (i >= 0) seq.splice(i, 1); lastAdded = -1; }
+  }
+  save(); renderAll();
+  if (d > 0 && !silent) { bump(); if (o.cat !== khCat) toast('Добавлено: ' + o.it.t); }
+}
+function bump() { var n = $('#khN'); n.classList.remove('bump'); void n.offsetWidth; n.classList.add('bump'); }
+var tt; function toast(t) { var el = $('#toast'); el.textContent = t; el.classList.add('show'); clearTimeout(tt); tt = setTimeout(function () { el.classList.remove('show'); }, 1800); }
+
+/* ---------- plate module ---------- */
+$('#plateLead').textContent = 'Нажимайте «+» — хинкали ложатся на тарелку, а счёт считается сам. Цены — из карточки ресторана на Яндекс Картах, ' + rub(khMin) + '–' + rub(KH.reduce(function (m, o) { return Math.max(m, o.it.p || 0); }, 0)) + ' за штуку.';
+$('#fills').innerHTML = KH.map(function (o) {
+  var it = o.it;
+  return '<li class="fill" id="f-' + o.key + '"><svg viewBox="-50 -50 100 100" aria-hidden="true">' + kh(0, 0, 42, tint(it.t), { pleats: 12 }).replace(/<ellipse[^>]*\/>/, '') + '</svg>' +
+    '<span class="t">' + esc(short(it.t)) + '<small><span class="pr">' + rub(it.p) + '</span>' + (it.v ? ' · ' + esc(it.v) : '') + (it.d ? ' · ' + esc(it.d.replace(/^Хинкали\s+/i, '').replace(/^Пикантные хинкали\s+/i, '')) : '') + '</small></span>' +
+    '<span class="step"><button type="button" data-k="' + o.key + '" data-d="-1" aria-label="Убрать одну: ' + esc(it.t) + '">−</button><output>0</output><button type="button" class="plus" data-k="' + o.key + '" data-d="1" aria-label="Добавить одну: ' + esc(it.t) + '">+</button></span></li>';
+}).join('');
+function renderPlate() {
+  var s = DEFS + plateRim(212, '');
+  var shown = seq.slice(0, SLOTS.length);
+  if (!shown.length) {
+    s += '<g opacity=".55">' + SLOTS.map(function (p) { return '<circle cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="33" fill="none" stroke="#F3EAD8" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="4 6"/>'; }).join('') + '</g>';
+    s += '<text y="6" text-anchor="middle" fill="#F3EAD8" font-family="Onest, sans-serif" font-size="17" font-weight="600">Тарелка пока пустая</text>';
+  }
+  shown.forEach(function (k, i) { var p = SLOTS[i]; s += kh(p[0], p[1], 36, tint(byKey[k].it.t), { pleats: 13, rot: i * 1.3, cls: (i === lastAdded && !reduced) ? 'pc-new' : '' }); });
+  if (seq.length > SLOTS.length) {
+    s += '<g transform="translate(150 -150)"><circle r="34" fill="#6E1A2D" stroke="#F3EAD8" stroke-width="3"/><text y="8" text-anchor="middle" fill="#FFF3E0" font-family="Onest, sans-serif" font-size="22" font-weight="700">+' + (seq.length - SLOTS.length) + '</text></g>';
+  }
+  $('#plateSvg').innerHTML = s;
+  lastAdded = -1;
+}
+function renderModule() {
+  var n = khCount(), ks = KH.reduce(function (s, o) { return s + (o.it.p || 0) * (cart[o.key] || 0); }, 0);
+  $('#khN').textContent = n;
+  $('#khWord').textContent = 'хинкали на тарелке';
+  $('#khSum').textContent = rub(ks);
+  $('#khPer').textContent = n && guests > 1 ? '· ≈ ' + (Math.round(n / guests * 10) / 10).toString().replace('.', ',') + ' на каждого' : '';
+  KH.forEach(function (o) { var li = document.getElementById('f-' + o.key); if (!li) return; var q = cart[o.key] || 0; li.querySelector('output').textContent = q; li.classList.toggle('has', q > 0); });
+  $('#gN').textContent = guests; $('#drG').textContent = guests;
+  $('#pmT').textContent = n ? n + ' шт. · ' + rub(ks) : 'Тарелка пустая';
+  $('#pmDots').innerHTML = seq.slice(-10).map(function (k) { return '<svg viewBox="-50 -50 100 100">' + kh(0, 0, 44, tint(byKey[k].it.t), { pleats: 10 }).replace(/<ellipse[^>]*\/>/, '') + '</svg>'; }).join('');
+  var nl = lines().length;
+  $('#sumAll').textContent = nl ? rub(sum()) + ' · ' + nl + ' ' + plural(nl, 'позиция', 'позиции', 'позиций') : '0 ₽';
+  renderAddons();
+}
+var ADD = ['Аджика', 'Мацони', 'Сацебели', 'Шотис пури', 'Хачапури по-аджарски Мини', 'Тёплый салат с хрустящими баклажанами', 'Морс', 'Узвар'];
+function renderAddons() {
+  $('#addons').innerHTML = ADD.map(function (t) { var o = byTitle[t]; if (!o) return ''; var q = cart[o.key] || 0;
+    return '<li><button type="button" data-k="' + o.key + '" data-d="1" aria-label="Добавить: ' + esc(t) + '">' + esc(t) + ' <b>' + rub(o.it.p) + '</b>' + (q ? '<span class="q">×' + q + '</span>' : '<span aria-hidden="true">+</span>') + '</button></li>'; }).join('');
+}
+// preset from reviews: Елизавета К. — с курицей и грибами; reviewHighlight — с бараниной; Надя У./Александр Н. — салат с баклажанами; Илона Н. — мини-хачапури
+var PRESET = [['Хинкали с курицей и грибами', 3], ['Хинкали с бараниной и зеленью', 3], ['Тёплый салат с хрустящими баклажанами', 1], ['Хачапури по-аджарски Мини', 1]];
+$('#presetHint').textContent = 'Набор из того, что гости хвалят по имени: хинкали с курицей и грибами, с бараниной, тёплый салат с баклажанами и мини-хачапури по-аджарски.';
+$('#presetBtn').addEventListener('click', function () {
+  PRESET.forEach(function (p) { var o = byTitle[p[0]]; if (!o) return; var k = o.cat === khCat ? p[1] : 1; for (var i = 0; i < k; i++) change(o.key, 1, true); });
+  bump(); toast('Положили набор «как в отзывах»');
+});
+$('#clearPlate').addEventListener('click', function () { KH.forEach(function (o) { delete cart[o.key]; }); seq = []; save(); renderAll(); });
+function setGuests(g) { guests = Math.max(1, Math.min(20, g)); save(); renderModule(); buildMsg(); }
+$('#gMinus').addEventListener('click', function () { setGuests(guests - 1); });
+$('#gPlus').addEventListener('click', function () { setGuests(guests + 1); });
+$('#dgMinus').addEventListener('click', function () { setGuests(guests - 1); });
+$('#dgPlus').addEventListener('click', function () { setGuests(guests + 1); });
+var stage = $('#stage');
+
+/* ---------- menu ---------- */
+var ORDER = ['Выпечка', 'Закуски и салаты', 'Горячие блюда', 'Основные блюда', 'Супы', 'Хинкали', 'Соусы', 'Напитки', 'Сладкое'];
+var catOrder = BIZ.menu.map(function (c, i) { return i; }).sort(function (a, b) { var x = ORDER.indexOf(BIZ.menu[a].name), y = ORDER.indexOf(BIZ.menu[b].name); return (x < 0 ? 99 : x) - (y < 0 ? 99 : y); });
+var curCat = -1, query = '', expanded = false;
+var prices = ITEMS.filter(function (o) { return o.it.p != null; }).map(function (o) { return o.it.p; });
+$('#menuStat').textContent = ITEMS.length + ' ' + plural(ITEMS.length, 'блюдо', 'блюда', 'блюд') + ' в ' + BIZ.menu.length + ' разделах, от ' + rub(Math.min.apply(null, prices)) + ' до ' + rub(Math.max.apply(null, prices)) + '. Плюсик — и блюдо в том же заказе, что и тарелка.';
+$('#cats').innerHTML = '<button type="button" data-c="-1" aria-pressed="true">Всё меню<small>' + ITEMS.length + '</small></button>' +
+  catOrder.map(function (ci) { return '<button type="button" data-c="' + ci + '" aria-pressed="false">' + esc(BIZ.menu[ci].name) + '<small>' + BIZ.menu[ci].items.length + '</small></button>'; }).join('');
+$('#cats').addEventListener('click', function (e) {
+  var b = e.target.closest('button'); if (!b) return;
+  curCat = +b.dataset.c; expanded = false;
+  [].forEach.call(this.children, function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+  renderList();
+});
+var norm = function (s) { return String(s || '').toLowerCase().replace(/ё/g, 'е'); };
+$('#q').addEventListener('input', function () { query = norm(this.value.trim()); expanded = false; renderList(); });
+function ctl(o) {
+  var q = cart[o.key] || 0, n = esc(o.it.t);
+  if (o.it.p == null) return '<a class="link" href="' + wa('Здравствуйте! Сколько стоит «' + o.it.t + '»?') + '" target="_blank" rel="noopener">Спросить цену</a>';
+  if (!q) return '<button type="button" class="add" data-k="' + o.key + '" data-d="1" aria-label="Добавить в заказ: ' + n + '">+</button>';
+  return '<span class="qty"><button type="button" data-k="' + o.key + '" data-d="-1" aria-label="Убрать одну порцию: ' + n + '">−</button><output>' + q + '</output><button type="button" data-k="' + o.key + '" data-d="1" aria-label="Добавить ещё: ' + n + '">+</button></span>';
+}
+function itemHtml(o) {
+  var it = o.it;
+  return '<li class="mi"><div><div class="t">' + esc(it.t) + (popular[it.t] ? '<span class="pop">часто берут</span>' : '') + '</div>' +
+    (it.d && it.d.length > 6 ? '<div class="d">' + esc(it.d) + '</div>' : '') +
+    '<div class="m"><b>' + rub(it.p) + '</b>' + (it.v ? ' · ' + esc(it.v) : '') + '</div></div>' + ctl(o) + '</li>';
+}
+function renderList() {
+  var cats = curCat < 0 ? catOrder : [curCat];
+  var limit = expanded || query ? 999 : (curCat < 0 ? 8 : 12), shown = 0, total = 0, html = '';
+  var groups = cats.map(function (ci) { return { ci: ci, items: ITEMS.filter(function (o) { return o.cat === ci && (!query || norm(o.it.t + ' ' + (o.it.d || '')).indexOf(query) >= 0); }) }; }).filter(function (g) { return g.items.length; });
+  groups.forEach(function (g) { total += g.items.length; });
+  groups.forEach(function (g) {
+    if (shown >= limit) return;
+    html += '<div class="mgroup"><h3>' + esc(BIZ.menu[g.ci].name) + '<small>' + g.items.length + '</small></h3><ul class="mlist">';
+    g.items.forEach(function (o) { if (shown < limit) { html += itemHtml(o); shown++; } });
+    html += '</ul></div>';
+  });
+  if (!total) html = '<div class="none">По запросу «' + esc(query) + '» в меню ничего нет. <a class="link" href="' + wa('Здравствуйте! Есть ли у вас ' + query + '?') + '" target="_blank" rel="noopener">Спросить в WhatsApp →</a></div>';
+  else if (shown < total) html += '<button type="button" class="btn btn-line showmore" id="more">Показать ещё ' + (total - shown) + '</button>';
+  $('#mlist').innerHTML = html;
+  var mb = $('#more'); if (mb) mb.addEventListener('click', function () { expanded = true; renderList(); });
+}
+
+/* ---------- reviews ---------- */
+$('#scoreVal').textContent = ratingVal;
+$('#scoreTxt').textContent = ratingCount + ' и ' + reviewsCount + ' на Яндекс Картах';
+var ASPW = { 'Еда': ['похвалил еду', 'похвалили еду'], 'Персонал': ['похвалил персонал', 'похвалили персонал'], 'Атмосфера': ['отметил атмосферу', 'отметили атмосферу'], 'Хинкали': ['похвалил хинкали', 'похвалили хинкали'], 'Интерьер': ['отметил интерьер', 'отметили интерьер'], 'Напитки': ['похвалил напитки', 'похвалили напитки'] };
+var ASP = ['Еда', 'Персонал', 'Атмосфера', 'Хинкали', 'Интерьер'];
+$('#asp').innerHTML = ASP.map(function (t) { return BIZ.aspects.filter(function (a) { return a.text === t; })[0]; }).filter(Boolean).map(function (a) {
+  var w = Math.round(a.positive / a.count * 100), v = ASPW[a.text];
+  var word = plural(a.positive, 'гость', 'гостя', 'гостей') + ' ' + (a.positive % 10 === 1 && a.positive % 100 !== 11 ? v[0] : v[1]);
+  return '<li><span><b>' + num(a.positive) + '</b> ' + word + '</span><small>' + w + '% из ' + num(a.count) + '</small><span class="bar"><i style="--w:' + w + '%"></i></span></li>';
+}).join('');
+var PICK = ['Елизавета К.', 'Александр Н.', 'Svetlana', 'Андрей', 'Надя У.'];
+$('#revs').innerHTML = PICK.map(function (n) { return BIZ.reviews.filter(function (r) { return r.a === n && r.r >= 5; })[0]; }).filter(Boolean).map(function (r) {
+  var x = r.x; if (x.length > 220) { var cut = x.slice(0, 220), i = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf('! ')); x = (i > 60 ? cut.slice(0, i + 1) : cut) + ' …'; }
+  return '<li class="rev"><p>' + esc(x) + '</p><footer><b>' + esc(r.a) + '</b> · ' + esc(r.d) + ' · отзыв на Яндекс Картах</footer></li>';
+}).join('');
+$('#allRevs').href = BIZ.reviewsUrl;
+var wq = BIZ.reviews.filter(function (r) { return r.a === 'Илона Н.'; })[0];
+$('#wineQuote').innerHTML = wq ? '«Домашнее красное вино просто шикарное!»<cite>' + esc(wq.a) + ', ' + esc(wq.d) + ' · отзыв на Яндекс Картах</cite>' : '';
+$('#wineWa').href = wa('Здравствуйте! Какое вино у вас есть сегодня и сколько стоит бокал и бутылка домашнего?');
+
+/* ---------- visit ---------- */
+$('#addr').textContent = BIZ.fullAddress;
+$('#metro').innerHTML = BIZ.metro.map(function (m) { return '<li><i style="background:' + m.color + '"></i>' + esc(m.name) + '<span>' + esc(m.distance) + '</span></li>'; }).join('');
+$('#route').href = BIZ.routeUrl;
+$('#hoursText').textContent = BIZ.hoursText.replace(/^./, function (c) { return c.toUpperCase(); });
+var DN = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'], today = (mskNow().getDay() + 6) % 7;
+$('#hours').innerHTML = BIZ.hours.map(function (d, i) {
+  var t = !d.length ? 'выходной' : (d[0][0] === '00:00' && d[0][1] === '00:00') ? 'круглосуточно' : d.map(function (x) { return x[0] + '–' + x[1]; }).join(', ');
+  return '<li' + (i === today ? ' class="today" aria-current="date"' : '') + '><span>' + DN[i] + (i === today ? ' · сегодня' : '') + '</span><span>' + t + '</span></li>';
+}).join('');
+var FEATS = [['детская комната', 'детская комната'], ['детское меню', 'детское меню'], ['бизнес-ланч', 'бизнес-ланч'], ['еда навынос', 'еда навынос'], ['кофе с собой', 'кофе с собой'], ['подарочный сертификат', 'подарочный сертификат'], ['специальное меню', 'сезонное меню'], ['Wi-Fi', 'Wi-Fi'], ['доступность входа на инвалидной коляске', 'вход для колясок'], ['Оплата картой', 'оплата картой'], ['велопарковка', 'велопарковка']];
+$('#feats').innerHTML = FEATS.filter(function (f) { return feat(f[0]); }).map(function (f) { return '<li>' + esc(f[1]) + (f[0] === 'бизнес-ланч' && lunch ? ' · <b>' + esc(String(lunch).replace(' ₽', ' ₽')) + '</b>' : '') + '</li>'; }).join('') +
+  (feat('доставка еды') ? '<li>доставка</li>' : '');
+(function () {
+  var box = $('#mapBox'), f = document.createElement('iframe');
+  f.loading = 'lazy'; f.src = BIZ.mapEmbed; f.title = 'Карта: ' + BIZ.address; f.setAttribute('allowfullscreen', '');
+  box.appendChild(f);
+})();
+var tel = 'tel:' + BIZ.phone;
+['#mbarCall', '#visitCall', '#drCall'].forEach(function (s) { $(s).href = tel; });
+$('#footTel').href = tel; $('#footTel').textContent = BIZ.phoneDisplay;
+$('#footWa').href = wa('Здравствуйте!'); $('#footYa').href = BIZ.yandexUrl;
+$('#footBook').href = BOOK; $('#drBook').href = BOOK;
+$('#footAddr').textContent = BIZ.fullAddress + ' · ТРЦ «Атриум»';
+$('#footHours').textContent = BIZ.hoursText.replace(/^./, function (c) { return c.toUpperCase(); });
+
+/* ---------- drawer + message ---------- */
+var val = function (n) { var el = document.querySelector('input[name="' + n + '"]:checked'); return el ? el.value : ''; };
+(function () { var n = mskNow(), mm = n.getHours() * 60 + n.getMinutes() + 60; mm = Math.ceil(mm / 30) * 30; if (mm < 600 || mm > 1350) mm = 19 * 60; $('#atTime').value = ('0' + Math.floor(mm / 60)).slice(-2) + ':' + ('0' + mm % 60).slice(-2); })();
+function fullName(o) { return o.cat === khCat && !/хинкали/i.test(o.it.t) ? 'Хинкали ' + o.it.t.charAt(0).toLowerCase() + o.it.t.slice(1) : o.it.t; }
+function buildMsg() {
+  var ls = lines(), mode = val('mode');
+  var modeT = { hall: 'за столом в ресторане (подготовьте, пожалуйста, к нашему приходу)', take: 'заберу с собой', deliv: 'доставка' }[mode];
+  var when = val('when') === 'at' ? 'к ' + ($('#atTime').value || '—') : 'как можно скорее';
+  var kc = khCount();
+  var msg = 'Здравствуйте! Хочу сделать заказ в «' + BIZ.name + '» (' + BIZ.address.replace(', Москва', '') + '):\n' +
+    ls.map(function (l) { return '• ' + fullName(l.o) + (l.o.it.v ? ' (' + l.o.it.v + ')' : '') + ' × ' + l.q + ' — ' + rub(l.o.it.p == null ? null : l.o.it.p * l.q); }).join('\n') +
+    (kc ? '\nВсего хинкали: ' + kc + ' шт.' : '') +
+    '\nИтого по меню: ' + rub(sum()) +
+    '\n\nКак: ' + modeT + '\nКогда: ' + when + (mode === 'hall' ? '\nГостей: ' : '\nНа сколько человек: ') + guests;
+  if (mode === 'deliv') msg += '\nАдрес: ' + ($('#addrIn').value.trim() || 'напишу отдельно') + '\nПодскажите, пожалуйста, условия и стоимость доставки.';
+  if ($('#fried').checked) msg += '\nМожно ли сделать хинкали жареными?';
+  if ($('#wineQ').checked) msg += '\nПодскажите, пожалуйста, вино к заказу.';
+  var note = $('#note').value.trim(); if (note) msg += '\nПожелание: ' + note;
+  msg += '\n\nПодтвердите, пожалуйста, заказ.';
+  var a = $('#send'); a.href = wa(msg); a.setAttribute('aria-disabled', ls.length ? 'false' : 'true');
+  return msg;
+}
+function syncForm() { $('#addrFld').hidden = val('mode') !== 'deliv'; $('#atFld').hidden = val('when') !== 'at'; buildMsg(); }
+['change', 'input'].forEach(function (ev) { $('#drForm').addEventListener(ev, syncForm); });
+function renderDrawer() {
+  var ls = lines();
+  $('#drItems').innerHTML = ls.map(function (l) {
+    var n = esc(fullName(l.o));
+    return '<li><span class="n">' + n + '<small>' + (l.o.it.v ? esc(l.o.it.v) + ' · ' : '') + rub(l.o.it.p) + ' · всего ' + rub(l.o.it.p == null ? null : l.o.it.p * l.q) + '</small></span><span class="qty"><button type="button" data-k="' + l.o.key + '" data-d="-1" aria-label="Убрать одну порцию: ' + n + '">−</button><output>' + l.q + '</output><button type="button" data-k="' + l.o.key + '" data-d="1" aria-label="Добавить ещё: ' + n + '">+</button></span></li>';
+  }).join('');
+  $('#drEmpty').hidden = ls.length > 0; $('#drForm').hidden = !ls.length;
+  $('#drSum').textContent = rub(sum());
+  var label = ls.length ? 'Заказ · ' + rub(sum()) : 'Собрать заказ';
+  $('#mbarGo').textContent = label; $('#fab').textContent = label; $('#fab').hidden = !ls.length;
+  buildMsg();
+}
+function renderAll() { renderPlate(); renderModule(); renderList(); renderDrawer(); }
+document.addEventListener('click', function (e) { var b = e.target.closest('[data-k]'); if (!b) return; change(b.dataset.k, +b.dataset.d); });
+var drawer = $('#drawer'), backdrop = $('#backdrop'), lastFocus = null;
+function openCart() { lastFocus = document.activeElement; drawer.classList.add('open'); backdrop.classList.add('open'); document.body.style.overflow = 'hidden'; setTimeout(function () { $('#drClose').focus(); }, 60); }
+function closeCart() { drawer.classList.remove('open'); backdrop.classList.remove('open'); document.body.style.overflow = ''; if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+$('#drClose').addEventListener('click', closeCart); backdrop.addEventListener('click', closeCart);
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && drawer.classList.contains('open')) closeCart(); });
+$('#plateGo').addEventListener('click', function () { if (!lines().length) { toast('Сначала положите на тарелку хотя бы одну хинкали'); return; } openCart(); });
+$('#mbarGo').addEventListener('click', function () { if (lines().length) openCart(); else document.getElementById('plate').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' }); });
+$('#fab').addEventListener('click', openCart);
+$('#drStart').addEventListener('click', function () { closeCart(); document.getElementById('plate').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' }); });
+
+renderAll(); syncForm();
+window.__buildMsg = buildMsg;
+})();
+</script>
+<script src="../map-fix.js" defer></script>
+</body>
+</html>

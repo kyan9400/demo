@@ -1,0 +1,826 @@
+<!doctype html>
+<!--
+  КОНЦЕПТ · демо №44 · «Athele Sofia», Малый Николопесковский пер., 4
+
+  1. Идея. Ателье «невидимой починки»: гости раз за разом пишут, что после ремонта
+     «не найти место, где была реставрация». Сайт — лист кутюрной выкройки, на котором
+     разрыв зашивают латунной строчкой прямо на глазах, и он исчезает.
+
+  2. Фирменный модуль. «Что нужно сделать?»: вещь → работа. Под каждой работой —
+     настоящая строчка из отзыва про такую же починку («гости пишут»). Цена показывается,
+     только если она есть в карточке (одна позиция — «Удалить зацепы»), для остального —
+     честный вопрос мастеру в WhatsApp с пометкой «фото прикреплю». Заказ собирается
+     в «лекало заказа»: работы, срочность, день визита (только будни — по графику пн–пт).
+
+  3. Арт-дирекшн. Кутюр: чёрный + слоновая кость + латунь, одна латунь как акцент.
+     Шрифты: Cormorant Garamond (заголовки, курсив), Jost (текст). Мотив: линии выкроек —
+     контур детали, припуск пунктиром, долевая со стрелками, надсечки, сетка раскройного стола.
+-->
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0f0e0c">
+<title>Athele Sofia — ремонт одежды, кожа и мех у м. Смоленская (демо)</title>
+<meta name="description" content="Демо-концепт сайта для ателье «Athele Sofia» в Малом Николопесковском переулке: что нужно сделать с вещью, отзывы гостей и заявка мастеру в WhatsApp.">
+<meta property="og:title" content="Athele Sofia — ремонт одежды, кожа и мех (демо)">
+<meta property="og:description" content="Выберите вещь и работу — заявка с фото уходит мастеру в WhatsApp. Малый Николопесковский пер., 4 · 5,0 на Яндекс Картах.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kyan9400.github.io/demo/athele-sofia/">
+<meta property="og:image" content="https://kyan9400.github.io/demo/athele-sofia/og.jpg">
+<meta property="og:locale" content="ru_RU">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230f0e0c'/%3E%3Cpath d='M14 50 L26 12 L38 50' fill='none' stroke='%23f2ebdd' stroke-width='3'/%3E%3Cpath d='M18 38h17' stroke='%23f2ebdd' stroke-width='3'/%3E%3Cpath d='M44 18v32' stroke='%23cfa96a' stroke-width='2.5' stroke-dasharray='4 3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f0e0c; --ink-2:#1a1815; --ink-3:#26231e; --line-d:rgba(242,235,221,.16);
+  --ivory:#f2ebdd; --ivory-2:#faf6ee; --dim-d:#a89f90;
+  --text:#1a1815; --dim:#5d5548; --line-l:rgba(26,24,21,.16);
+  --brass:#cfa96a; --brass-2:#b48c4f; --brass-t:#80602e;
+  --serif:"Cormorant Garamond","Times New Roman",serif; --sans:Jost,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--ink);color:var(--ivory);font:400 16px/1.6 var(--sans);padding-bottom:calc(78px + env(safe-area-inset-bottom,0px));-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@supports (overflow:clip){body{overflow-x:clip}}
+a{color:inherit}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer;-webkit-tap-highlight-color:transparent;background:none;border:0}
+svg{display:block}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:4px}
+.paper :focus-visible{outline-color:var(--brass-t)}
+.wrap{width:100%;max-width:1220px;margin:0 auto;padding:0 16px}
+.nb{white-space:nowrap}
+[hidden]{display:none!important}
+.paused,.paused *{animation-play-state:paused!important}
+
+.demo-bar{background:#000;color:var(--dim-d);font-size:12.5px;line-height:1.4;text-align:center;padding:7px 14px;border-bottom:1px solid var(--line-d)}
+
+/* buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:14px 24px;border-radius:2px;font:500 16px/1.2 var(--sans);letter-spacing:.02em;text-decoration:none;text-align:center;transition:transform .15s,background .2s,color .2s,box-shadow .2s}
+.btn:active{transform:translateY(1px) scale(.985)}
+.btn svg{flex:none;width:21px;height:21px}
+.btn-brass{background:var(--brass);color:#16130e}
+.btn-brass::after{content:"";position:absolute;inset:4px;border:1px dashed rgba(22,19,14,.45);pointer-events:none}
+.btn-brass:hover{background:#dbb87c}
+.btn-line{box-shadow:inset 0 0 0 1px currentColor}
+.btn-line:hover{background:rgba(207,169,106,.12)}
+.btn-ink{background:var(--ink);color:var(--ivory)}
+.btn-ink::after{content:"";position:absolute;inset:4px;border:1px dashed rgba(207,169,106,.55);pointer-events:none}
+.btn-ink:hover{background:var(--ink-3)}
+
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px 6px}
+.mark{display:inline-flex;flex-direction:column;text-decoration:none;min-height:44px;justify-content:center}
+.mark b{font:italic 600 27px/1 var(--serif);letter-spacing:.01em}
+.mark small{font-size:11px;letter-spacing:.2em;white-space:nowrap;text-transform:uppercase;color:var(--brass);margin-top:4px}
+.nav{display:none}
+.status{display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:6px 12px;border:1px solid var(--line-d);border-radius:999px;font-size:13px;white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis;color:var(--ivory)}
+.status::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:#7fd29a}
+.status.closed::before{background:#e48e7a}
+
+/* hero */
+.hero{position:relative;padding:22px 0 54px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--line-d) 1px,transparent 1px),linear-gradient(90deg,var(--line-d) 1px,transparent 1px);background-size:48px 48px;opacity:.28;-webkit-mask-image:linear-gradient(180deg,#000 0,transparent 85%);mask-image:linear-gradient(180deg,#000 0,transparent 85%)}
+.hero-grid{position:relative;display:grid;gap:30px}
+.where{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14px;color:var(--dim-d)}
+.where span{display:inline-flex;align-items:center;gap:7px}
+.m-dot{flex:none;display:inline-block;width:9px;height:9px;border-radius:50%;box-shadow:0 0 0 2px rgba(255,255,255,.12)}
+h1{margin-top:18px;font-weight:400}
+.h-name{display:block;font:italic 500 clamp(70px,21vw,150px)/.86 var(--serif);letter-spacing:-.025em;margin-left:-.04em}
+.h-name em{font-style:normal;color:var(--brass)}
+.h-sub{display:block;margin-top:16px;font:500 13px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--brass)}
+.lead{margin-top:18px;max-width:31em;font-size:17px;line-height:1.55;color:#ded5c5}
+.rate{display:inline-flex;align-items:center;gap:14px;margin-top:22px;min-height:56px;padding:8px 18px 8px 8px;border:1px solid var(--line-d);text-decoration:none}
+.rate b{display:grid;place-items:center;width:56px;height:40px;background:var(--brass);color:#16130e;font:600 26px/1 var(--serif)}
+.rate span{font-size:13.5px;line-height:1.35;color:var(--dim-d)}
+.rate span em{display:block;font-style:normal;color:var(--ivory);font-size:15px;letter-spacing:.06em}
+.cta{display:grid;gap:10px;margin-top:22px}
+
+/* pattern piece */
+.piece{position:relative;margin:0 auto;width:100%;max-width:440px}
+.piece svg{width:100%;height:auto;overflow:visible}
+.piece .ln{fill:none;stroke:var(--ivory);stroke-width:1.4}
+.piece .sa{fill:none;stroke:rgba(242,235,221,.45);stroke-width:1;stroke-dasharray:5 5}
+.piece .gr{stroke:var(--brass);stroke-width:1.2;fill:none}
+.piece .gh{fill:var(--brass)}
+.piece text{font-family:var(--sans);font-size:12px;letter-spacing:.22em;fill:var(--dim-d);text-transform:uppercase}
+.piece .big{font-family:var(--serif);font-style:italic;font-size:21px;letter-spacing:0;fill:var(--ivory);text-transform:none}
+.piece .tear{fill:none;stroke:#f2ebdd;stroke-width:1.6;stroke-linejoin:round;animation:tear 10s ease-in-out infinite}
+.piece .hole{fill:#0f0e0c;animation:tear 10s ease-in-out infinite}
+.piece .st{fill:none;stroke:var(--brass);stroke-width:1.8;stroke-linecap:round;stroke-dasharray:14;stroke-dashoffset:14;animation:stitch 10s ease-in-out infinite}
+.piece .st:nth-child(2){animation-delay:.18s}.piece .st:nth-child(3){animation-delay:.36s}.piece .st:nth-child(4){animation-delay:.54s}.piece .st:nth-child(5){animation-delay:.72s}.piece .st:nth-child(6){animation-delay:.9s}.piece .st:nth-child(7){animation-delay:1.08s}
+.piece .needle{animation:needle 10s ease-in-out infinite}
+@keyframes tear{0%,22%{opacity:1}52%,88%{opacity:0}100%{opacity:1}}
+@keyframes stitch{0%,14%{stroke-dashoffset:14;opacity:1}30%{stroke-dashoffset:0;opacity:1}55%,88%{stroke-dashoffset:0;opacity:.14}100%{stroke-dashoffset:14;opacity:0}}
+@keyframes needle{0%,10%{transform:translate(0,0);opacity:0}16%{opacity:1}36%{transform:translate(0,70px);opacity:1}46%,100%{transform:translate(0,70px);opacity:0}}
+.piece figcaption{position:relative;margin:-6px 0 0;padding:16px 0 0 18px;border-left:1px solid var(--brass)}
+.piece figcaption q{display:block;font:italic 500 23px/1.22 var(--serif);quotes:"«" "»"}
+.piece figcaption span{display:block;margin-top:8px;font-size:13px;color:var(--dim-d)}
+
+/* section heads */
+.sec{position:relative;padding:62px 0}
+.kicker{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--brass)}
+.kicker::after{content:"";flex:1;max-width:120px;border-top:1px dashed currentColor;opacity:.7}
+.sec h2{margin-top:12px;font:italic 500 clamp(42px,11vw,76px)/.95 var(--serif);letter-spacing:-.02em}
+.sec .intro{margin-top:14px;max-width:36em;font-size:16.5px}
+
+/* paper sections */
+.paper{background:var(--ivory);color:var(--text)}
+.paper .kicker{color:var(--brass-t)}
+.paper .intro{color:var(--dim)}
+.grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(128,96,46,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(128,96,46,.12) 1px,transparent 1px);background-size:24px 24px}
+.paper .wrap{position:relative}
+
+/* module */
+.mod{display:grid;gap:22px;margin-top:30px}
+.step{display:flex;align-items:baseline;gap:10px;margin:0 0 12px;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-t);font-weight:500}
+.step b{font:italic 600 22px/1 var(--serif);letter-spacing:0;color:var(--text)}
+.box{background:var(--ivory-2);border:1px solid var(--line-l);padding:18px 16px 20px}
+.gar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.gar button{position:relative;display:flex;align-items:center;gap:10px;min-height:58px;padding:9px 10px;text-align:start;border:1px solid var(--line-l);background:#fff;font-size:14.5px;line-height:1.2;transition:background .2s,border-color .2s,color .2s}
+.gar button svg{flex:none;width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.gar button .c{position:absolute;top:5px;right:6px;min-width:19px;height:19px;padding:0 5px;border-radius:10px;background:var(--brass);color:#16130e;font-size:11.5px;line-height:19px;text-align:center;font-weight:600}
+.gar button[aria-pressed="true"]{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.gar button[aria-pressed="true"] svg{stroke:var(--brass)}
+.gar button:hover{border-color:var(--text)}
+.g-note{margin:14px 0 0;font-size:14.5px;color:var(--dim);border-left:2px solid var(--brass-2);padding-left:12px}
+.jobs{display:grid;gap:10px;margin-top:4px}
+.job{position:relative;display:block;border:1px solid var(--line-l);background:#fff;transition:border-color .2s,box-shadow .2s}
+.job.on{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.job-h{display:flex;align-items:center;gap:12px;width:100%;min-height:58px;padding:12px 14px;text-align:start}
+.chk{flex:none;position:relative;width:24px;height:24px;border:1.5px solid var(--text);border-radius:2px;transition:background .2s}
+.job.on .chk{background:var(--ink)}
+.job.on .chk::after{content:"";position:absolute;left:7px;top:2px;width:6px;height:12px;border:solid var(--brass);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.job-t{flex:1;min-width:0;font-size:16px;line-height:1.3;font-weight:500}
+.job-p{flex:none;font-size:14px;text-align:end;color:var(--dim);line-height:1.25}
+.job-p b{display:block;color:var(--text);font-size:17px;font-weight:600;white-space:nowrap}
+.job-p.ask{font-size:13px;max-width:7.5em}
+.job-q{margin:0 14px 12px 50px;padding-top:10px;border-top:1px dashed var(--line-l);font-size:14.5px;line-height:1.45;color:var(--dim)}
+.job-q i{font:italic 500 17px/1.3 var(--serif);color:var(--text)}
+.job-q small{display:block;margin-top:3px;font-size:12.5px;letter-spacing:.02em}
+.job .qty{display:flex;align-items:center;gap:10px;margin:0 14px 12px 50px}
+.qty button{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--text);font-size:20px;line-height:1}
+.qty output{min-width:2.2em;text-align:center;font-weight:600;font-size:17px}
+.qty span{font-size:13.5px;color:var(--dim)}
+.days{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;max-width:440px}
+.days button{min-height:52px;min-width:0;padding:6px 2px;border:1px solid var(--line-l);background:#fff;line-height:1.15;text-align:center}
+.days button b{display:block;font-weight:500;font-size:15px}
+.days button small{display:block;font-size:12.5px;color:var(--dim)}
+.days button[aria-pressed="true"]{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.days button[aria-pressed="true"] small{color:var(--brass)}
+.toggle{display:flex;align-items:flex-start;gap:12px;margin-top:14px;padding:12px 14px;min-height:56px;border:1px solid var(--line-l);background:#fff;cursor:pointer}
+.toggle input{flex:none;width:22px;height:22px;margin-top:1px;accent-color:#1a1815}
+.toggle b{display:block;font-weight:500}
+.toggle small{display:block;font-size:13.5px;color:var(--dim)}
+.note{display:block;width:100%;margin-top:12px;min-height:92px;padding:12px 14px;border:1px solid var(--line-l);background:#fff;font-size:16px;line-height:1.45;resize:vertical;color:var(--text)}
+.note::placeholder{color:#857c6d}
+.price-src{margin-top:16px;font-size:14px;color:var(--dim)}
+
+/* the ticket = pattern card */
+.ticket{position:relative;background:var(--ink);color:var(--ivory);padding:26px 20px 22px}
+.ticket::before{content:"";position:absolute;inset:8px;border:1px dashed rgba(207,169,106,.5);pointer-events:none}
+.ticket .notch{position:absolute;width:14px;height:8px;background:var(--ivory);clip-path:polygon(0 0,100% 0,50% 100%)}
+.ticket h3{font:italic 500 32px/1 var(--serif)}
+.ticket .sub{margin-top:6px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass)}
+.t-empty{margin-top:18px;color:var(--dim-d);font-size:15px}
+.t-list{list-style:none;margin-top:18px;border-top:1px solid var(--line-d)}
+.t-list li{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line-d);font-size:15px;line-height:1.35}
+.t-list li span small{display:block;color:var(--dim-d);font-size:13px}
+.t-list li em{flex:none;font-style:normal;color:var(--brass);text-align:end;font-size:14px;white-space:nowrap}
+.t-list li.new{animation:pop .5s ease}
+@keyframes pop{from{background:rgba(207,169,106,.22)}to{background:transparent}}
+.t-meta{margin-top:12px;font-size:14px;color:#ddd3c2;display:grid;gap:4px}
+.t-sum{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px}
+.t-sum span{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim-d)}
+.t-sum b{font:600 30px/1 var(--serif);color:var(--brass)}
+.t-hint{display:flex;gap:10px;align-items:flex-start;margin-top:16px;padding:12px;border:1px solid var(--line-d);font-size:14px;color:#ddd3c2}
+.t-hint svg{flex:none;width:22px;height:22px;stroke:var(--brass);fill:none;stroke-width:1.5}
+.ticket .btn{width:100%;margin-top:14px}
+.t-clear{display:block;margin:10px auto 0;min-height:44px;padding:0 12px;font-size:14px;color:var(--dim-d);text-decoration:underline;text-underline-offset:3px}
+
+/* reviews */
+.dark{background:var(--ink);color:var(--ivory)}
+.dark .intro{color:#d6cdbd}
+.lines-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.lines-bg svg{position:absolute;right:-120px;top:20px;width:520px;height:auto;opacity:.1;fill:none;stroke:var(--ivory);stroke-width:1}
+.masters{margin-top:24px;display:grid;gap:12px}
+.masters p{font:italic 500 24px/1.25 var(--serif)}
+.masters p small{display:block;margin-top:6px;font:400 14px/1.4 var(--sans);color:var(--dim-d)}
+.asp{display:grid;gap:18px;margin-top:34px}
+.asp-i{border-top:1px solid var(--line-d);padding-top:14px}
+.asp-i .n{display:flex;align-items:baseline;gap:12px}
+.asp-i .n b{font:600 54px/1 var(--serif);color:var(--brass)}
+.asp-i .n span{font-size:15px;line-height:1.35}
+.asp-i .n span small{display:block;color:var(--dim-d);font-size:13.5px}
+.ruler{position:relative;height:18px;margin-top:12px;background-image:repeating-linear-gradient(90deg,rgba(242,235,221,.35) 0 1px,transparent 1px 10px);background-size:100% 8px;background-repeat:no-repeat}
+.ruler i{position:absolute;left:0;bottom:0;height:4px;width:0;background:var(--brass);transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+.revs{display:grid;gap:14px;margin-top:34px}
+.rev{position:relative;padding:30px 18px 18px;border:1px solid var(--line-d);background:var(--ink-2)}
+.rev::before{content:"«";position:absolute;top:-15px;left:14px;padding:0 8px;height:30px;background:var(--ink);font:italic 600 42px/30px var(--serif);color:var(--brass)}
+.rev p{font:italic 500 21px/1.32 var(--serif)}
+.rev footer{margin-top:14px;font-size:13.5px;color:var(--dim-d)}
+.rev footer b{color:var(--ivory);font-weight:500}
+.rev-more{margin-top:14px}
+.rev-all{display:inline-flex;align-items:center;gap:8px;min-height:48px;margin-top:20px;color:var(--brass);font-size:15.5px;text-underline-offset:4px}
+
+/* visit */
+.visit{display:grid;gap:22px;margin-top:30px}
+.addr{background:var(--ivory-2);border:1px solid var(--line-l);padding:22px 18px}
+.addr h3{font:italic 500 34px/1.05 var(--serif)}
+.addr .sub{margin-top:8px;color:var(--dim);font-size:15px}
+.metro{list-style:none;margin-top:16px;display:grid;gap:4px}
+.metro li{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line-l);font-size:15.5px}
+.metro li span:first-child{display:inline-flex;align-items:center;gap:9px}
+.metro .d{color:var(--dim)}
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin-top:20px}
+.week div{padding:9px 2px;text-align:center;border:1px solid var(--line-l);font-size:12.5px;line-height:1.3;background:#fff}
+.week div b{display:block;font-size:14px;font-weight:600}
+.week .off{color:#7a7264;background:transparent}
+.week .today{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.week .today b{color:var(--brass)}
+.today-l{margin-top:10px;font-size:14.5px;color:var(--dim)}
+.addr .btns{display:grid;gap:10px;margin-top:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chips span{display:inline-flex;align-items:center;min-height:36px;padding:6px 12px;border:1px solid var(--line-l);background:#fff;font-size:14px}
+.feat h4{margin-top:22px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-t);font-weight:500}
+.feat p{margin-top:10px;font-size:14.5px;color:var(--dim)}
+.map{position:relative;min-height:320px;border:1px solid var(--line-l);background:#e6dece}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.85) contrast(1.05)}
+.map .corner{position:absolute;width:22px;height:22px;border:solid var(--brass-t);pointer-events:none;z-index:1}
+.map .c1{top:-6px;left:-6px;border-width:2px 0 0 2px}.map .c2{bottom:-6px;right:-6px;border-width:0 2px 2px 0}
+
+/* footer */
+.foot{padding:46px 0 34px;border-top:1px solid var(--line-d);font-size:14.5px;color:var(--dim-d)}
+.foot .mark b{color:var(--ivory)}
+.foot-g{display:grid;gap:18px;margin-top:20px}
+.foot a{color:var(--ivory);text-underline-offset:3px}
+#fTel{display:inline-flex;align-items:center;min-height:44px}
+.foot .fl{display:flex;flex-wrap:wrap;gap:6px 18px}
+.foot .fl a{display:inline-flex;align-items:center;min-height:44px}
+.foot .src{margin-top:20px;font-size:13px;line-height:1.5}
+
+/* mobile action bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(15,14,12,.96);border-top:1px solid var(--line-d)}
+.bar .btn{flex:1;min-height:52px;padding:10px 14px;font-size:15.5px}
+.bar .call{flex:none;width:56px;padding:0}
+
+@media (min-width:600px){
+  .gar{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .cta{grid-auto-flow:column;justify-content:start}
+  .revs{grid-template-columns:1fr 1fr}
+  .asp{grid-template-columns:1fr 1fr;gap:28px}
+  .addr .btns{grid-template-columns:1fr 1fr}
+}
+@media (min-width:900px){
+  body{padding-bottom:0}
+  .bar{display:none}
+  .top{padding:20px 32px 8px;max-width:1220px;margin:0 auto}
+  .nav{display:flex;gap:28px;font-size:14.5px;letter-spacing:.06em}
+  .nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;color:#ddd3c2;border-bottom:1px solid transparent}
+  .nav a:hover{color:var(--brass);border-color:var(--brass)}
+  .wrap{padding:0 32px}
+  .hero{padding:30px 0 90px;min-height:calc(100vh - 110px);min-height:calc(100svh - 110px);display:flex;align-items:center}
+  .hero>.wrap{width:100%}
+  .hero-grid{grid-template-columns:1.12fr .88fr;align-items:center;gap:56px}
+  .sec{padding:100px 0}
+  .mod{grid-template-columns:minmax(0,1.35fr) minmax(0,.9fr);gap:30px;align-items:start}
+  .ticket{position:sticky;top:24px;padding:32px 28px 26px}
+  .box{padding:24px 24px 26px}
+  .gar{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .revs{grid-template-columns:repeat(3,1fr)}
+  .rev.hid{display:block!important}
+  .rev-more{display:none}
+  .rev-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:end}
+  .asp{margin-top:0}
+  .visit{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:30px;align-items:stretch}
+  .map{min-height:100%}
+  .foot-g{grid-template-columns:1.2fr 1fr 1fr}
+}
+@media (min-width:1500px){
+  .h-name{font-size:172px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .piece .tear,.piece .hole{animation:none;opacity:0}
+  .piece .st{animation:none;stroke-dashoffset:0;opacity:.5}
+  .piece .needle{animation:none;opacity:0}
+  .ruler i{transition:none}
+  .t-list li.new{animation:none}
+}
+</style>
+</head>
+<body>
+<div class="demo-bar">Демо-концепт · пример сайта для «Athele Sofia» от Альхассана Альфаррана · не официальный сайт</div>
+
+<header class="top">
+  <a class="mark" href="#top" aria-label="Athele Sofia — в начало"><b>Athele Sofia</b><small>ателье · кожа · мех</small></a>
+  <nav class="nav" aria-label="Разделы">
+    <a href="#order">Что нужно сделать</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#visit">Как найти</a>
+  </nav>
+  <span class="status" id="st1">пн–пт 10:00–20:00</span>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="where" id="where"></p>
+      <h1><span class="h-name">Athele <em>S</em>ofia</span><span class="h-sub">Ремонт одежды · кожевенная мастерская · меховое ателье</span></h1>
+      <p class="lead">Подшить, ушить, зашить разрыв или прожог. Гости в отзывах пишут одно и то же: после ремонта не найти места, где он был.</p>
+      <a class="rate" id="rate" href="#" target="_blank" rel="noopener"><b id="rVal">5,0</b><span><em id="rCnt"></em><span id="rRev"></span></span></a>
+      <div class="cta">
+        <a class="btn btn-brass" href="#order">Что нужно сделать?</a>
+        <a class="btn btn-line" data-wa="Здравствуйте! Хочу отдать вещь в ремонт. Могу прислать фото — подскажете цену и срок?" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+          Написать мастеру
+        </a>
+      </div>
+    </div>
+    <figure class="piece" id="piece">
+      <svg viewBox="0 0 380 450" role="img" aria-label="Деталь выкройки пальто: разрыв зашивают латунной строчкой, и он исчезает">
+        <!-- seam allowance -->
+        <path class="sa" d="M96 22 L196 10 Q214 46 250 58 L330 74 Q312 140 326 196 L344 432 L60 432 L52 210 Q40 140 96 22 Z"/>
+        <!-- outline: coat front -->
+        <path class="ln" d="M104 34 L194 24 Q212 58 246 70 L316 84 Q300 146 314 198 L330 420 L72 420 L66 212 Q54 146 104 34 Z"/>
+        <!-- lapel / center front -->
+        <path class="ln" d="M104 34 L150 150 L120 200 L72 420" opacity=".55"/>
+        <!-- dart -->
+        <path class="ln" d="M212 236 L232 360 L252 236" opacity=".8"/>
+        <!-- notches -->
+        <path class="ln" d="M314 126 l10 -2 M318 154 l10 -1 M66 300 l-10 0 M66 312 l-10 0"/>
+        <!-- grain line -->
+        <path class="gr" d="M170 210 V 392"/>
+        <path class="gh" d="M170 202 l-6 14 h12 Z M170 400 l-6 -14 h12 Z"/>
+        <text x="178" y="300" transform="rotate(90 178 300)">долевая</text>
+        <text x="190" y="118">полочка</text>
+        <text x="190" y="134">крой 2 дет.</text>
+        <text class="big" x="196" y="172">пальто</text>
+        <!-- the repair -->
+        <g transform="translate(96 290) scale(1.35)">
+          <path class="hole" d="M0 0 L10 -8 L18 4 L28 -6 L36 6 L46 -4 L54 6 L46 12 L36 10 L28 14 L18 10 L10 14 Z"/>
+          <path class="tear" d="M0 0 L10 -8 L18 4 L28 -6 L36 6 L46 -4 L54 6 L46 12 L36 10 L28 14 L18 10 L10 14 Z"/>
+          <g>
+            <path class="st" d="M2 -10 L6 18"/>
+            <path class="st" d="M11 -12 L15 18"/>
+            <path class="st" d="M20 -10 L24 20"/>
+            <path class="st" d="M29 -12 L33 20"/>
+            <path class="st" d="M38 -8 L42 20"/>
+            <path class="st" d="M47 -10 L51 18"/>
+          </g>
+          <g class="needle">
+            <path d="M68 -70 L68 -16" stroke="#cfa96a" stroke-width="2" stroke-linecap="round"/>
+            <ellipse cx="68" cy="-64" rx="1.6" ry="4" fill="none" stroke="#0f0e0c" stroke-width="1.2"/>
+            <path d="M68 -64 Q90 -40 64 -20" fill="none" stroke="#cfa96a" stroke-width="1" stroke-dasharray="3 3"/>
+          </g>
+        </g>
+        <text x="72" y="444">ремонт · 1 место</text>
+      </svg>
+      <figcaption><q>От сожжённого места и следа не осталось!</q><span>Полина С. — про розовое пальто из альпаки · отзыв на Яндекс Картах</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec paper" id="order" aria-labelledby="orderH">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="kicker">Заявка мастеру</p>
+    <h2 id="orderH">Что нужно сделать?</h2>
+    <p class="intro">Выберите вещь и работу. Цена из прайса — сразу; если её нет в карточке, мастер назовёт её по фото в WhatsApp.</p>
+    <div class="mod">
+      <div class="box">
+        <p class="step"><b>1</b> Вещь</p>
+        <div class="gar" id="gar" role="group" aria-label="Вещь"></div>
+        <p class="g-note" id="gNote" hidden></p>
+        <p class="step" style="margin-top:26px"><b>2</b> Работа <span id="jobsFor" style="text-transform:none;letter-spacing:0;color:var(--dim)"></span></p>
+        <div class="jobs" id="jobs"></div>
+        <p class="step" style="margin-top:26px"><b>3</b> Когда удобно принести</p>
+        <div class="days" id="days" role="group" aria-label="День визита"></div>
+        <label class="toggle"><input type="checkbox" id="urg"><span><b>Нужно срочно</b><small>Гости пишут, что срочные заказы здесь выручают — уточните у мастера.</small></span></label>
+        <label for="note" class="step" style="margin-top:20px"><b>4</b> Пару слов о вещи</label>
+        <textarea class="note" id="note" maxlength="300" placeholder="Например: шифоновое платье, укоротить на 5 см, нужно к пятнице"></textarea>
+        <p class="price-src" id="priceSrc"></p>
+      </div>
+      <aside class="ticket" id="ticket" aria-live="polite">
+        <span class="notch" style="top:0;left:30%" aria-hidden="true"></span><span class="notch" style="top:0;left:64%" aria-hidden="true"></span>
+        <h3>Лекало заказа</h3>
+        <p class="sub" id="tAddr">Athele Sofia</p>
+        <div id="tBody"></div>
+        <div class="t-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3l2-2.5h6L17 7h3v12H4z"/><circle cx="12" cy="13" r="3.6"/></svg><span>После отправки прикрепите фото вещи — так мастер быстрее назовёт цену и срок.</span></div>
+        <a class="btn btn-brass" id="send" href="#" target="_blank" rel="noopener">Отправить в WhatsApp</a>
+        <button type="button" class="t-clear" id="clear" hidden>Очистить заказ</button>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec dark" id="reviews" aria-labelledby="revH">
+  <div class="lines-bg" aria-hidden="true"><svg viewBox="0 0 400 520"><path d="M60 20 L240 8 Q262 60 300 70 L380 90 Q360 170 376 240 L392 510 L20 510 L14 250 Q4 170 60 20 Z" stroke-dasharray="6 6"/><path d="M70 34 L236 22 Q256 70 294 82 L364 100 Q346 172 360 244 L376 496 L34 496 L28 252 Q18 176 70 34 Z"/></svg></div>
+  <div class="wrap" style="position:relative">
+    <div class="rev-g">
+      <div>
+        <p class="kicker">Отзывы</p>
+        <h2 id="revH">Почему сюда возвращаются</h2>
+        <div class="masters">
+          <p>«София волшебная фея и мастер своего дела»<small>Лана Л. · гости часто пишут о мастере Софии по имени, а Юлия М. благодарит мастера Тамару за срочный и непростой заказ</small></p>
+        </div>
+      </div>
+      <div class="asp" id="asp"></div>
+    </div>
+    <div class="revs" id="revs"></div>
+    <button type="button" class="btn btn-line rev-more" id="revMore" style="width:100%">Показать ещё отзывы</button>
+    <a class="rev-all" id="revAll" href="#" target="_blank" rel="noopener">Все отзывы на Яндекс Картах →</a>
+  </div>
+</section>
+
+<section class="sec paper" id="visit" aria-labelledby="visH">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="kicker">Как найти</p>
+    <h2 id="visH">Малый Николопесковский, 4</h2>
+    <div class="visit">
+      <div class="addr">
+        <h3 id="aStatus">Пн–пт, 10:00–20:00</h3>
+        <p class="sub" id="aSub"></p>
+        <div class="week" id="week"></div>
+        <p class="today-l" id="todayL"></p>
+        <ul class="metro" id="metro"></ul>
+        <div class="btns">
+          <a class="btn btn-ink" id="route" href="#" target="_blank" rel="noopener">Построить маршрут</a>
+          <a class="btn btn-line" data-tel href="#" id="telBtn">Позвонить</a>
+        </div>
+        <div class="feat">
+          <h4>Работы из карточки</h4>
+          <div class="chips" id="fWork"></div>
+          <h4>Удобно</h4>
+          <div class="chips" id="fConv"></div>
+          <h4>Оплата</h4>
+          <div class="chips" id="fPay"></div>
+          <p>«…удобно, что можно поделить оплату на аванс и подрасчёт» — Арсений, отзыв на Яндекс Картах</p>
+        </div>
+      </div>
+      <div class="map">
+        <span class="corner c1" aria-hidden="true"></span><span class="corner c2" aria-hidden="true"></span>
+        <iframe id="mapF" title="Карта: Athele Sofia на Яндекс Картах" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="mark" href="#top"><b>Athele Sofia</b><small>ателье · кожа · мех</small></a>
+    <div class="foot-g">
+      <div><span id="fAddr"></span><br><a data-tel href="#" id="fTel"></a></div>
+      <div class="fl"><a data-wa="Здравствуйте! Хочу отдать вещь в ремонт. Могу прислать фото — подскажете цену и срок?" href="#" target="_blank" rel="noopener">WhatsApp</a><a id="fYa" href="#" target="_blank" rel="noopener">Яндекс Карты</a></div>
+      <div class="fl"><a href="#order">Что нужно сделать</a><a href="#reviews">Отзывы</a></div>
+    </div>
+    <p class="src">Демо-концепт · пример сайта для «Athele Sofia» от Альхассана Альфаррана · не официальный сайт.<br>Цены и данные взяты из карточки на Яндекс Картах и могут отличаться.</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Быстрые действия">
+  <a class="btn btn-brass" id="barGo" href="#order">Что нужно сделать?</a>
+  <a class="btn btn-line call" data-tel href="#" aria-label="Позвонить в ателье"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></a>
+</nav>
+
+<script src="data.js"></script>
+<script>
+(function () {
+'use strict';
+var BIZ = window.BIZ;
+if (!BIZ) return;
+var NB = ' ';
+var $ = function (s, r) { return (r || document).querySelector(s); };
+var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+var wa = function (text) { return 'https://wa.me/' + BIZ.wa + '?text=' + encodeURIComponent(text); };
+var rub = function (n) { return n == null ? 'по запросу' : Number(n).toLocaleString('ru-RU').replace(/[\s ]/g, NB) + NB + '₽'; };
+var plural = function (n, one, few, many) { var a = Math.abs(n) % 100, b = a % 10; return a > 10 && a < 20 ? many : b === 1 ? one : b >= 2 && b <= 4 ? few : many; };
+var lowerFirst = function (s) { return s.charAt(0).toLowerCase() + s.slice(1); };
+var upperFirst = function (s) { return s.charAt(0).toUpperCase() + s.slice(1); };
+var setText = function (sel, v) { var el = $(sel); if (el) el.textContent = v; };
+var store = {
+  get: function (k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } },
+  set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+};
+var R = BIZ.rating || {};
+var ratingText = R.value != null ? Number(R.value).toFixed(1).replace('.', ',') : '';
+var shortAddr = (BIZ.address || '').replace(/,\s*Москва$/, '');
+var HT = (BIZ.hoursText || '').replace(/(\D)-(\D)/g, '$1–$2').replace(/ /g, NB);
+var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- time (Moscow) ---------- */
+function mskNow() { var d = new Date(); return new Date(d.getTime() + (d.getTimezoneOffset() + 180) * 60000); }
+var m2 = function (s) { return +s.slice(0, 2) * 60 + +s.slice(3); };
+var DAY_ACC = ['в понедельник', 'во вторник', 'в среду', 'в четверг', 'в пятницу', 'в субботу', 'в воскресенье'];
+var DAY_NOM = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'];
+var DAY_S = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+var MON_G = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+var MON_S = ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл', 'авг', 'сен', 'окт', 'нояб', 'дек'];
+function openStatus(now) {
+  now = now || mskNow();
+  if (!BIZ.hours) return null;
+  if (BIZ.is24) return { open: true, text: 'Круглосуточно', short: 'Круглосуточно' };
+  var day = (now.getDay() + 6) % 7, mins = now.getHours() * 60 + now.getMinutes(), i, iv;
+  var prev = BIZ.hours[(day + 6) % 7] || [];
+  for (i = 0; i < prev.length; i++) { iv = prev[i]; if (m2(iv[1]) <= m2(iv[0]) && mins < m2(iv[1])) return { open: true, text: 'Открыто · до ' + iv[1], short: 'Открыто до ' + iv[1] }; }
+  var today = BIZ.hours[day] || [];
+  for (i = 0; i < today.length; i++) { iv = today[i]; var a = m2(iv[0]), b = m2(iv[1]) <= a ? m2(iv[1]) + 1440 : m2(iv[1]); if (mins >= a && mins < b) return { open: true, text: 'Открыто · до ' + iv[1], short: 'Открыто до ' + iv[1] }; }
+  for (i = 0; i < today.length; i++) { iv = today[i]; if (mins < m2(iv[0])) return { open: false, text: 'Закрыто · откроется в ' + iv[0], short: 'Закрыто до ' + iv[0] }; }
+  for (i = 1; i <= 7; i++) { var d = (day + i) % 7; if ((BIZ.hours[d] || []).length) { var f = BIZ.hours[d][0][0]; var when = i === 1 ? 'завтра' : DAY_ACC[d]; return { open: false, text: 'Закрыто · откроется ' + when + ' в ' + f, short: 'Закрыто до ' + (i === 1 ? 'завтра' : DAY_S[d].toLowerCase()) + ', ' + f }; } }
+  return null;
+}
+function renderStatus() {
+  var st = openStatus(), s1 = $('#st1');
+  if (st && s1) { s1.textContent = st.short; s1.title = st.text + ' · ' + HT; s1.classList.toggle('closed', !st.open); }
+  var now = mskNow(), day = (now.getDay() + 6) % 7;
+  setText('#aStatus', st ? st.text : HT);
+  var td = (BIZ.hours || [])[day] || [];
+  setText('#todayL', 'Сегодня ' + DAY_NOM[day] + ' — ' + (td.length ? td.map(function (iv) { return iv[0] + '–' + iv[1]; }).join(', ') : 'выходной') + '. Работают по будням.');
+  var week = $('#week');
+  if (week) week.innerHTML = (BIZ.hours || []).map(function (ivs, d) {
+    var t = ivs.length ? ivs.map(function (iv) { return iv[0].replace(/:00$/, '') + '–' + iv[1].replace(/:00$/, ''); }).join(', ') : 'вых.';
+    return '<div class="' + (d === day ? 'today' : '') + (ivs.length ? '' : ' off') + '"' + (d === day ? ' aria-current="date"' : '') + '><b>' + DAY_S[d] + '</b>' + esc(t) + '</div>';
+  }).join('');
+}
+
+/* ---------- facts ---------- */
+function renderFacts() {
+  $$('[data-tel]').forEach(function (a) { a.href = 'tel:' + BIZ.phone; });
+  $$('[data-wa]').forEach(function (a) { a.href = wa(a.getAttribute('data-wa')); });
+  setText('#fTel', BIZ.phoneDisplay);
+  $('#where').innerHTML = (BIZ.metro || []).slice(0, 2).map(function (m) {
+    return '<span><i class="m-dot" style="background:' + esc(m.color) + '"></i>' + esc(m.name) + ' · ' + esc(m.distance).replace(' ', NB) + '</span>';
+  }).join('') + '<span>' + esc(shortAddr) + '</span>';
+  var cnt = R.count + NB + plural(R.count, 'оценка', 'оценки', 'оценок');
+  var rev = R.reviews + NB + plural(R.reviews, 'отзыв', 'отзыва', 'отзывов');
+  setText('#rVal', ratingText); setText('#rCnt', ratingText + ' · ' + cnt); setText('#rRev', rev + ' на Яндекс Картах');
+  $('#rate').href = BIZ.reviewsUrl; $('#rate').setAttribute('aria-label', 'Рейтинг ' + ratingText + ' — ' + cnt + ', ' + rev + ' на Яндекс Картах');
+  $('#revAll').href = BIZ.reviewsUrl; $('#fYa').href = BIZ.yandexUrl; $('#route').href = BIZ.routeUrl;
+  setText('#tAddr', BIZ.name + ' · ' + shortAddr);
+  var m0 = (BIZ.metro || [])[0];
+  setText('#aSub', BIZ.fullAddress + (m0 ? ' · ' + m0.distance + ' от метро «' + m0.name + '»' : '') + ' · остановка «Кинотеатр Октябрь» — 390 м');
+  setText('#fAddr', BIZ.address + ' · ' + HT);
+  var mf = $('#mapF'); if (mf && BIZ.mapEmbed) mf.src = BIZ.mapEmbed;
+  $('#metro').innerHTML = (BIZ.metro || []).map(function (m) {
+    return '<li><span><i class="m-dot" style="background:' + esc(m.color) + '"></i>' + esc(m.name) + '</span><span class="d">' + esc(m.distance) + ' пешком</span></li>';
+  }).join('');
+  var F = {}; (BIZ.features || []).forEach(function (f) { F[f.k] = f.v; });
+  var work = (BIZ.categories || []).map(upperFirst);
+  [['подгонка', 'Подгонка'], ['ремонт трикотажа', 'Ремонт трикотажа'], ['покраска изделий', 'Покраска изделий'], ['химчистка изделий', 'Химчистка изделий']].forEach(function (p) { if (F[p[0]] === true) work.push(p[1]); });
+  var conv = [];
+  if (F['предварительная запись'] === true) conv.push('Предварительная запись');
+  if (F['доставка'] === true) conv.push('Есть доставка — условия уточните');
+  if (F['гарантия'] === true) conv.push('Гарантия');
+  if (F['парковка'] === true) conv.push('Парковка');
+  if (F['Можно с собакой'] === true) conv.push('Можно с собакой');
+  if (F['доступность помещения на инвалидной коляске']) conv.push('На коляске: ' + F['доступность помещения на инвалидной коляске']);
+  var pay = typeof F['способ оплаты'] === 'string' ? F['способ оплаты'].split(/,\s*/).map(upperFirst) : [];
+  var chip = function (a) { return a.map(function (c) { return '<span>' + esc(c) + '</span>'; }).join(''); };
+  $('#fWork').innerHTML = chip(work); $('#fConv').innerHTML = chip(conv); $('#fPay').innerHTML = chip(pay);
+}
+
+/* ---------- module model ---------- */
+var ICON = {
+  trousers: '<path d="M9 3h12l2 24h-5l-3-15-3 15H7z"/><path d="M9 7h12" stroke-dasharray="2 2"/>',
+  dress: '<path d="M12 3h6l-1 6 6 18H7l6-18z"/><path d="M11 13h8"/>',
+  coat: '<path d="M11 3h8l5 4-1 20H7L6 7z"/><path d="M15 6v21M11 3l4 8 4-8"/><circle cx="17.5" cy="15" r=".6"/><circle cx="17.5" cy="20" r=".6"/>',
+  leather: '<path d="M10 5c2 2 8 2 10 0l4 3-1 19H7L6 8z"/><path d="M10 5c-1 3 1 4 5 4s6-1 5-4" stroke-dasharray="1.5 1.5"/><path d="M15 9v18"/>',
+  knit: '<path d="M10 4h10l5 5-3 3-2-2v17H10V10l-2 2-3-3z"/><path d="M10 23h10M12 4c0 3 6 3 6 0" stroke-dasharray="1.5 1.5"/>',
+  fine: '<circle cx="15" cy="15" r="10"/><circle cx="15" cy="15" r="7.5" stroke-dasharray="2 2"/><path d="M11 17c2-4 5-4 8-1"/><path d="M22 4l-6 10"/>',
+  other: '<path d="M4 15a11 11 0 0 1 22 0c-2-2-4-2-5.5 0-1.5-2-4-2-5.5 0-1.5-2-4-2-5.5 0C8 13 6 13 4 15z"/><path d="M15 4v20a2.5 2.5 0 0 1-5 0"/>'
+};
+var GAR = [
+  { k: 'trousers', n: 'Брюки, джинсы', jobs: [
+    { id: 'hem', t: 'Подшить или укоротить', q: { x: 'Небольшую работу (подшить брюки) делают быстро. Аккуратно, чисто, доброжелательно.', a: 'Дарья Г.' } },
+    { id: 'take', t: 'Ушить по фигуре или в поясе', q: { x: 'Отдала ушить брюки - все сделали идеально, брюки сидят теперь супер)', a: 'Ая К.' } },
+    { id: 'holes', t: 'Зашить дырки и протёртости', q: { x: 'Джинсы словно только с прилавка, дырок как и не бывало…', a: 'Гузель Д.' } }
+  ] },
+  { k: 'dress', n: 'Платье, юбка', jobs: [
+    { id: 'dhem', t: 'Укоротить и подшить край', q: { x: 'А в итоге край выглядит теперь даже лучше, чем из магазина.', a: 'Екатерина Г., про шифоновое платье' } },
+    { id: 'dfit', t: 'Ушить по фигуре', q: { x: 'Из самого сложного - ушивали по фигуре платье брючной плотной ткани. По итогу село потрясающе.', a: 'polina' } },
+    { id: 'dtear', t: 'Зашить разрыв незаметно', q: { x: 'На платье я даже не нашла то место, где была реставрация)', a: 'Наталья Л.' } },
+    { id: 'remake', t: 'Сшить одну вещь из нескольких', q: { x: 'Я пришла с нестандартным запросом... нужно было сшить из 3х вещей одну, платье', a: 'Лана Л.' } }
+  ] },
+  { k: 'coat', n: 'Пальто, куртка', jobs: [
+    { id: 'burn', t: 'Восстановить прожог или разрыв', q: { x: 'Спасла моё любимое розовое пальто из Альпаки. От сожжённого места и следа не осталось!', a: 'Полина С.' } },
+    { id: 'cfit', t: 'Подогнать по фигуре', f: 'подгонка' },
+    { id: 'cdye', t: 'Покраска', f: 'покраска изделий' },
+    { id: 'cclean', t: 'Химчистка', f: 'химчистка изделий' }
+  ] },
+  { k: 'leather', n: 'Кожа и мех', note: 'Кожевенная мастерская и меховое ателье — так Athele Sofia указано на Яндекс Картах. Цен на эти работы в карточке нет: пришлите фото, мастер ответит.', jobs: [
+    { id: 'lrep', t: 'Ремонт изделия из кожи' },
+    { id: 'frep', t: 'Ремонт меха' },
+    { id: 'ldye', t: 'Покраска изделия', f: 'покраска изделий' },
+    { id: 'lclean', t: 'Химчистка изделия', f: 'химчистка изделий' }
+  ] },
+  { k: 'knit', n: 'Трикотаж', jobs: [
+    { id: 'krep', t: 'Ремонт трикотажа', f: 'ремонт трикотажа' }
+  ] },
+  { k: 'fine', n: 'Вышивка, тонкие ткани', jobs: [
+    { id: 'emb', t: 'Убрать распустившиеся нитки на вышивке', q: { x: 'Нужно было убрать распустивший нитки на вышивке и зашить разрыв на платье. Мастер все сделала идеально.', a: 'Наталья Л.' } },
+    { id: 'chif', t: 'Тонкий ремонт шифона и струящихся тканей', q: { x: 'Юбка и брюки из струящейся ткани были отлично и быстро подшиты.', a: 'Софья Ф.' } }
+  ] },
+  { k: 'other', n: 'Зонт и другое', jobs: [
+    { id: 'umb', t: 'Починить зонт', q: { x: 'Спасли мой зонт! Большое спасибо! Аккуратная и быстрая работа', a: 'Екатерина П.' } },
+    { id: 'own', t: 'Другое — опишу в сообщении' }
+  ] }
+];
+// Real price list from data.js → attach every priced item to a garment by keywords.
+var FEAT = {}; (BIZ.features || []).forEach(function (f) { FEAT[f.k] = f.v; });
+var GBY = {}; GAR.forEach(function (g) { GBY[g.k] = g; g.jobs = g.jobs.filter(function (j) { return !j.f || FEAT[j.f]; }); });
+var PRICED = [];
+(BIZ.menu || []).forEach(function (cat, ci) {
+  (cat.items || []).forEach(function (it, ii) {
+    var h = (it.t + ' ' + (it.d || '')).toLowerCase();
+    var g = /зацеп|трикотаж|свитер|джемпер/.test(h) ? 'knit' : /брюк|джинс/.test(h) ? 'trousers' : /плать|юбк/.test(h) ? 'dress' : /пальто|куртк|шуб|мех|кож/.test(h) ? 'coat' : 'other';
+    var job = { id: 'm' + ci + '_' + ii, t: it.t, p: it.p, v: it.v, d: it.d, priced: true };
+    if (g === 'knit') job.q = null;
+    GBY[g].jobs.unshift(job); PRICED.push(job);
+  });
+});
+var JOB = {}; GAR.forEach(function (g) { g.jobs.forEach(function (j) { j.g = g; JOB[j.id] = j; }); });
+
+var saved = store.get('athele-order') || {};
+var state = { gar: GBY[saved.gar] ? saved.gar : 'trousers', sel: {}, order: [], day: null, urg: !!saved.urg, note: typeof saved.note === 'string' ? saved.note.slice(0, 300) : '' };
+if (saved.sel) Object.keys(saved.sel).forEach(function (id) { if (JOB[id]) { state.sel[id] = Math.max(1, Math.min(20, saved.sel[id] | 0)); state.order.push(id); } });
+var save = function () { store.set('athele-order', { gar: state.gar, sel: state.sel, urg: state.urg, note: state.note }); };
+
+function renderGar() {
+  $('#gar').innerHTML = GAR.map(function (g) {
+    var n = g.jobs.filter(function (j) { return state.sel[j.id]; }).length;
+    return '<button type="button" data-g="' + g.k + '" aria-pressed="' + (state.gar === g.k) + '"><svg viewBox="0 0 30 30" aria-hidden="true">' + ICON[g.k] + '</svg><span>' + esc(g.n) + '</span>' + (n ? '<i class="c" aria-label="выбрано ' + n + '">' + n + '</i>' : '') + '</button>';
+  }).join('');
+}
+function priceHtml(j) {
+  if (j.priced) return '<span class="job-p"><b>' + rub(j.p) + '</b>' + (j.v ? 'за ' + esc(j.v) : 'по прайсу') + '</span>';
+  return '<span class="job-p ask">цена — по фото в WhatsApp</span>';
+}
+function jobHtml(j) {
+  var on = !!state.sel[j.id];
+  var h = '<div class="job' + (on ? ' on' : '') + '" data-j="' + j.id + '">' +
+    '<button type="button" class="job-h" data-toggle="' + j.id + '" aria-pressed="' + on + '"><span class="chk" aria-hidden="true"></span><span class="job-t">' + esc(j.t) + '</span>' + priceHtml(j) + '</button>';
+  if (j.priced && on) h += '<div class="qty"><button type="button" data-q="-1" data-id="' + j.id + '" aria-label="Меньше">−</button><output>' + state.sel[j.id] + '</output><button type="button" data-q="1" data-id="' + j.id + '" aria-label="Больше">+</button><span>шт. · ' + rub(j.p * state.sel[j.id]) + '</span></div>';
+  if (j.q) h += '<p class="job-q">Гости пишут: <i>«' + esc(j.q.x) + '»</i><small>' + esc(j.q.a) + ', отзыв на Яндекс Картах</small></p>';
+  else if (j.priced && j.d) h += '<p class="job-q">' + esc(j.d) + '</p>';
+  return h + '</div>';
+}
+function renderJobs() {
+  var g = GBY[state.gar];
+  setText('#jobsFor', '· ' + lowerFirst(g.n));
+  $('#jobs').innerHTML = g.jobs.map(jobHtml).join('');
+  var gn = $('#gNote'); gn.hidden = !g.note; gn.textContent = g.note || '';
+}
+
+/* upcoming open days (weekends are closed → skipped) */
+var DAYS = [];
+function upcomingDays() {
+  var now = mskNow(), out = [], mins = now.getHours() * 60 + now.getMinutes();
+  for (var i = 0; i < 14 && out.length < 5; i++) {
+    var dt = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
+    var d = (dt.getDay() + 6) % 7, ivs = (BIZ.hours || [])[d] || [];
+    if (!ivs.length) continue;
+    if (i === 0 && mins >= m2(ivs[ivs.length - 1][1]) - 30) continue;
+    var date = dt.getDate() + ' ' + MON_G[dt.getMonth()];
+    out.push({ key: dt.getFullYear() + '-' + (dt.getMonth() + 1) + '-' + dt.getDate(), top: i === 0 ? 'Сегодня' : i === 1 ? 'Завтра' : DAY_S[d], sub: dt.getDate() + NB + MON_S[dt.getMonth()], msg: (i === 0 ? 'сегодня' : i === 1 ? 'завтра' : DAY_ACC[d]) + ', ' + date });
+  }
+  return out;
+}
+function renderDays() {
+  DAYS = upcomingDays();
+  if (state.day && !DAYS.some(function (d) { return d.key === state.day; })) state.day = null;
+  $('#days').innerHTML = DAYS.map(function (d) { return '<button type="button" data-day="' + d.key + '" aria-pressed="' + (state.day === d.key) + '"><b>' + d.top + '</b><small>' + d.sub + '</small></button>'; }).join('');
+}
+
+function picked() { return state.order.filter(function (id) { return state.sel[id]; }).map(function (id) { return JOB[id]; }); }
+function message() {
+  var items = picked(), L = ['Здравствуйте! Пишу с сайта ателье.'];
+  var ask = items.some(function (j) { return !j.priced; });
+  if (items.length) {
+    L.push('Что нужно сделать:');
+    items.forEach(function (j) {
+      var n = state.sel[j.id];
+      L.push('• ' + j.g.n + ' — ' + lowerFirst(j.t) + (j.priced ? (n > 1 ? ' × ' + n : '') + ' — ' + rub(j.p * n) + ' по прайсу' : ''));
+    });
+  } else L.push('Хочу отдать вещь в ремонт.');
+  if (state.urg) L.push('Нужно срочно.');
+  var day = DAYS.filter(function (d) { return d.key === state.day; })[0];
+  if (day) L.push('Удобно принести: ' + day.msg + '.');
+  if (state.note.trim()) L.push('Подробности: ' + state.note.trim());
+  L.push(ask || !items.length ? 'Подскажите, пожалуйста, цену и срок — фото вещи прикреплю следующим сообщением.' : 'Подскажите, пожалуйста, когда можно принести? Могу прислать фото.');
+  return L.join('\n');
+}
+function renderTicket(newId) {
+  var items = picked(), body = $('#tBody');
+  if (!items.length) {
+    body.innerHTML = '<p class="t-empty">Пока пусто. Выберите вещь и работу — или просто напишите мастеру, что случилось.</p>';
+  } else {
+    var sum = 0, hasPrice = false, ask = 0;
+    items.forEach(function (j) { if (j.priced && j.p != null) { sum += j.p * state.sel[j.id]; hasPrice = true; } else ask++; });
+    var day = DAYS.filter(function (d) { return d.key === state.day; })[0];
+    body.innerHTML = '<ul class="t-list">' + items.map(function (j) {
+      var n = state.sel[j.id];
+      return '<li' + (j.id === newId ? ' class="new"' : '') + '><span>' + esc(upperFirst(j.t)) + (n > 1 ? ' × ' + n : '') + '<small>' + esc(j.g.n) + '</small></span><em>' + (j.priced ? rub(j.p * n) : 'по фото') + '</em></li>';
+    }).join('') + '</ul>' +
+      '<div class="t-meta">' + (state.urg ? '<span>Срочно</span>' : '') + (day ? '<span>Принесу ' + esc(day.msg) + '</span>' : '') + '</div>' +
+      (hasPrice ? '<div class="t-sum"><span>' + (ask ? 'Из прайса' : 'По прайсу') + '</span><b>' + rub(sum) + '</b></div>' : '');
+  }
+  var n = items.length;
+  $('#send').href = wa(message());
+  $('#send').textContent = n ? 'Отправить в WhatsApp · ' + n + NB + plural(n, 'работа', 'работы', 'работ') : 'Написать мастеру в WhatsApp';
+  $('#clear').hidden = !n;
+  var bar = $('#barGo');
+  if (n) { bar.href = '#ticket'; bar.textContent = 'Заказ · ' + n + NB + plural(n, 'работа', 'работы', 'работ'); }
+  else { bar.href = '#order'; bar.textContent = 'Что нужно сделать?'; }
+}
+function renderPriceSrc() {
+  var p = PRICED.filter(function (j) { return j.p != null; });
+  setText('#priceSrc', p.length ? 'В карточке на Яндекс Картах ' + (p.length === 1 ? 'одна позиция с ценой: ' : p.length + ' ' + plural(p.length, 'позиция', 'позиции', 'позиций') + ' с ценой, например ') + p[0].t.toLowerCase() + ' — ' + rub(p[0].p) + (p[0].v ? ' за ' + p[0].v.replace(/\.$/, '') : '') + '. Остальное мастер оценивает по фото.' : '');
+}
+
+function refreshAll(newId) { renderGar(); renderJobs(); renderTicket(newId); save(); }
+function bind() {
+  $('#gar').addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-g]'); if (!b) return;
+    state.gar = b.getAttribute('data-g'); renderGar(); renderJobs(); save();
+  });
+  $('#jobs').addEventListener('click', function (e) {
+    var t = e.target.closest('[data-toggle]'), q = e.target.closest('[data-q]');
+    if (t) {
+      var id = t.getAttribute('data-toggle');
+      if (state.sel[id]) { delete state.sel[id]; state.order = state.order.filter(function (x) { return x !== id; }); refreshAll(); }
+      else { state.sel[id] = 1; state.order.push(id); refreshAll(id); }
+      var again = $('[data-toggle="' + id + '"]'); if (again) again.focus({ preventScroll: true });
+    } else if (q) {
+      var qid = q.getAttribute('data-id'), nv = Math.max(1, Math.min(20, (state.sel[qid] || 1) + (+q.getAttribute('data-q'))));
+      state.sel[qid] = nv; refreshAll();
+      var b2 = $('[data-id="' + qid + '"][data-q="' + q.getAttribute('data-q') + '"]'); if (b2) b2.focus({ preventScroll: true });
+    }
+  });
+  $('#days').addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-day]'); if (!b) return;
+    var k = b.getAttribute('data-day'); state.day = state.day === k ? null : k;
+    $$('#days button').forEach(function (x) { x.setAttribute('aria-pressed', String(x.getAttribute('data-day') === state.day)); });
+    renderTicket();
+  });
+  $('#urg').checked = state.urg;
+  $('#urg').addEventListener('change', function (e) { state.urg = e.target.checked; renderTicket(); save(); });
+  $('#note').value = state.note;
+  $('#note').addEventListener('input', function (e) { state.note = e.target.value.slice(0, 300); renderTicket(); save(); });
+  $('#clear').addEventListener('click', function () {
+    state.sel = {}; state.order = []; state.day = null; state.urg = false; state.note = '';
+    $('#urg').checked = false; $('#note').value = ''; renderDays(); refreshAll();
+  });
+}
+
+/* ---------- reviews ---------- */
+var REVS = [
+  { a: 'Полина С.', d: 'май 2022', x: 'София мастерица на все руки! Спасла моё любимое розовое пальто из Альпаки. От сожжённого места и следа не осталось! Дефект был исправлен , как будто ничего и не было) Швы лучше чем заводские.' },
+  { a: 'Гузель Д.', d: 'февраль 2023', x: 'Я в восторге!!! На джинсах были дырки между ног, протертости, увидев результат я пришла в шок !!! Джинсы словно только с прилавка, дырок как и не бывало…' },
+  { a: 'Алексей И.', d: 'август 2022', x: 'Великолепный мастер София! Пришёл в обед с просьбой подшить брюки. Заказ был срочный, так как на следующий день была свадьба у знакомого. Замеры мастером произведены были профессионально. Брюки были готовы к вечеру.' },
+  { a: 'Екатерина Г.', d: 'декабрь 2021', x: 'Отдавала укоротить и подшить тонкое шифоновое платье. Переживала, вдруг испортят или сделают неаккуратно. А в итоге край выглядит теперь даже лучше, чем из магазина.' },
+  { a: 'polina', d: 'июль 2025', x: 'Три вещи принесла сразу, все три вернулись ко мне быстро и идеально сидящими, в 1000% раз лучше, чем были! Из самого сложного - ушивали по фигуре платье брючной плотной ткани. По итогу село потрясающе.' },
+  { a: 'Джулия Б.', d: 'август 2026', x: 'В этом ателье обслуживаюсь давно! Качество нравиться! Все чётко и в срок. Специалисты вежливые. Всегда подскажут , как лучше сделать. О готовности заказа сообщают.' }
+];
+function renderReviews() {
+  $('#revs').innerHTML = REVS.map(function (r, i) {
+    return '<article class="rev' + (i >= 3 ? ' hid' : '') + '"' + (i >= 3 ? ' hidden' : '') + '><p>' + esc(r.x) + '</p><footer><b>' + esc(r.a) + '</b> · ' + esc(r.d) + ' · отзыв на Яндекс Картах</footer></article>';
+  }).join('');
+  var NAMES = { 'Персонал': ['персонал', 'мастеров и персонал'], 'Время ожидания': ['сроки', 'скорость и сроки'] };
+  $('#asp').innerHTML = (BIZ.aspects || []).map(function (a) {
+    var nm = NAMES[a.text] ? NAMES[a.text][1] : lowerFirst(a.text);
+    var w = a.count ? Math.round(a.positive / a.count * 100) : 0;
+    return '<div class="asp-i"><div class="n"><b>' + a.positive + '</b><span>' + plural(a.positive, 'гость хвалит', 'гостя хвалят', 'гостей хвалят') + ' ' + esc(nm) + '<small>из ' + a.count + NB + plural(a.count, 'упоминания', 'упоминаний', 'упоминаний') + ' в отзывах</small></span></div><div class="ruler"><i data-w="' + w + '"></i></div></div>';
+  }).join('');
+}
+function fillRulers() { $$('#asp .ruler i').forEach(function (i) { i.style.width = i.getAttribute('data-w') + '%'; }); }
+
+function observe() {
+  var piece = $('#piece'), asp = $('#asp');
+  if (!('IntersectionObserver' in window)) { fillRulers(); return; }
+  if (piece) new IntersectionObserver(function (es) { es.forEach(function (e) { piece.classList.toggle('paused', !e.isIntersecting); }); }).observe(piece);
+  var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { fillRulers(); io.disconnect(); } }); }, { threshold: .2 });
+  io.observe(asp);
+  setTimeout(fillRulers, 4000);
+}
+
+function boot() {
+  renderFacts(); renderStatus(); renderDays(); renderGar(); renderJobs(); renderTicket(); renderPriceSrc(); renderReviews(); bind(); observe();
+  $('#revMore').addEventListener('click', function () { $$('#revs .hid').forEach(function (r) { r.hidden = false; }); this.hidden = true; });
+  setInterval(function () { renderStatus(); renderDays(); renderTicket(); }, 60000);
+}
+try { boot(); } catch (e) { if (window.console) console.warn(e); }
+})();
+</script>
+<script src="../map-fix.js" defer></script>
+</body>
+</html>

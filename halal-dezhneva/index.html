@@ -1,0 +1,682 @@
+<!doctype html>
+<!--
+  ДЕМО-КОНЦЕПТ · «Халяль», Москва, проезд Дежнёва, 23 (остановка «Полярная улица») · двуязычный RU / AR
+
+  1. ИДЕЯ. Соседский халяль-магазин, куда ходят «к своим»: за мясом, тёплыми лепёшками из своего тандыра,
+     выпечкой и сухофруктами — и к продавцам, которых благодарят в отзывах. Прайса и ассортимента
+     в карточке нет, и сайт этого не скрывает: на жёлтых ценниках вместо цифр написано «цена? — спросите».
+     Честность и становится приёмом.
+
+  2. ФИРМЕННЫЙ МОДУЛЬ «Что нужно?» — список покупок на тетрадном листе. Слова-категории — это вопросы,
+     а не обещания: «Покупатели берут здесь» (мясо, лепёшки, выпечка, сухофрукты — названы в отзывах)
+     и «Спросить, есть ли» (баранина, говядина, курица, фарш + своё слово). У каждой строки — примерное
+     количество (кг / шт / г), выбор «есть ли и почём» или «только есть ли», когда зайду (по часам работы
+     из данных) → готовое сообщение в WhatsApp: «есть ли сегодня и почём?». Цен и наличия не выдумываем.
+
+  3. АРТ-ДИРЕКШН (seed): свежий зелёный + белый + жёлтые ценники; рынок, честность, «свои». Мотив —
+     полосатая маркиза над витриной с фестонами, качающиеся на нитке жёлтые ценники, тетрадь в клетку
+     для списка. Шрифты: Geologica (вывесочный гротеск, заголовки и текст), Caveat (рукописные ценники
+     и список), Tajawal (арабская версия). Акцент — жёлтый ценника; зелёный — фон и действие.
+-->
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0E5A2E">
+<title>«Халяль» на Дежнёва, 23 — соседский халяль-магазин (демо)</title>
+<meta name="description" content="Демо-концепт сайта магазина «Халяль» на проезде Дежнёва, 23: мясо, лепёшки из своего тандыра, выпечка, сухофрукты. Составьте список и спросите в WhatsApp, что есть сегодня и почём.">
+<meta property="og:title" content="«Халяль» на Дежнёва — спросите, что есть сегодня (демо)">
+<meta property="og:description" content="Соседский халяль-магазин у остановки «Полярная улица». 4,3 на Яндекс Картах. Список покупок — в WhatsApp в одно касание.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://kyan9400.github.io/demo/halal-dezhneva/">
+<meta property="og:image" content="https://kyan9400.github.io/demo/halal-dezhneva/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%230E5A2E'/%3E%3Cpath d='M10 12h20v20l-10 4-10-4z' fill='%23FFD84A'/%3E%3Ccircle cx='20' cy='17' r='2.6' fill='%230E5A2E'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;500;600;700;800&family=Caveat:wght@500;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<script>try{var L0=new URLSearchParams(location.search).get('lang')||localStorage.getItem('hal-lang');if(L0==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl';}}catch(e){}</script>
+<style>
+:root{
+  --g:#0E5A2E; --g2:#137A3F; --gd:#083B1E; --gl:#E3F1E6; --white:#FFFFFF; --bg:#F6F9F4; --y:#FFD84A; --yd:#E9B800; --ink:#13231A; --mut:#4E5E54;
+  --line:rgba(19,35,26,.13); --paper:#FFFDF6; --grid:rgba(14,90,46,.09);
+  --f:"Geologica",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; --hand:"Caveat","Segoe Print",cursive;
+}
+html[lang=ar]{--f:"Tajawal",system-ui,"Segoe UI",Tahoma,Arial,sans-serif;--hand:"Tajawal",sans-serif}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth;background:var(--gd)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--f);-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+@media (min-width:900px){body{padding-bottom:0}}
+h1,h2,h3,p,ul,ol,figure,blockquote{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+:focus-visible{outline:3px solid var(--yd);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.demobar{background:var(--gd);color:rgba(255,255,255,.82);font-size:12.5px;line-height:1.4;padding:8px 20px;text-align:center}
+
+/* header */
+.hdr{background:var(--g);color:#fff}
+.hdr .wrap{display:flex;align-items:center;gap:14px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-height:44px}
+.brand b{font-weight:800;font-size:21px;letter-spacing:.02em;text-transform:uppercase}
+html[lang=ar] .brand b{letter-spacing:0}
+.brand .ar{font-family:"Tajawal",sans-serif;font-weight:700;font-size:18px;color:var(--y)}
+html[lang=ar] .brand .ar{display:none}
+.nav{display:none;gap:22px;margin-inline-start:auto;font-size:15px}
+.nav a{text-decoration:none;color:rgba(255,255,255,.82);padding:10px 0}
+.nav a:hover{color:#fff}
+.lang{margin-inline-start:auto;min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid rgba(255,255,255,.4);background:transparent;color:#fff;font-weight:600;font-size:15px;white-space:nowrap}
+.lang[lang=ar]{font-family:"Tajawal",sans-serif}
+@media (min-width:900px){.nav{display:flex}.lang{margin-inline-start:12px}}
+
+/* awning */
+.awning{height:34px;background:repeating-linear-gradient(90deg,var(--g2) 0 40px,#fff 40px 80px);position:relative}
+.awning::after{content:"";position:absolute;left:0;right:0;top:100%;height:16px;background:radial-gradient(circle at 20px 0,var(--g2) 19.5px,transparent 20.5px) 0 0/80px 16px repeat-x,radial-gradient(circle at 60px 0,#fff 19.5px,transparent 20.5px) 0 0/80px 16px repeat-x;filter:drop-shadow(0 3px 2px rgba(0,0,0,.08))}
+
+/* hero */
+.hero{background:var(--bg);position:relative;overflow:hidden}
+.hero .wrap{display:grid;gap:22px;padding-top:40px;padding-bottom:44px;position:relative}
+.ghost{display:none;position:absolute;inset-inline-end:16px;top:30px;font:800 clamp(120px,20vw,260px)/1 "Tajawal",sans-serif;color:var(--gl);pointer-events:none;user-select:none;z-index:0}
+.hero .txt{position:relative;z-index:1}
+.status{display:inline-flex;align-items:center;gap:9px;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:14.5px;font-weight:600}
+.status i{width:9px;height:9px;border-radius:50%;background:#22A05A;flex:none}
+.status.closed i{background:#C0392B}
+.hero h1{font-weight:800;font-size:clamp(44px,12.4vw,88px);line-height:.95;letter-spacing:-.03em;margin-top:18px;color:var(--gd)}
+html[lang=ar] .hero h1{letter-spacing:0;line-height:1.15}
+.hero h1 .hl{background:linear-gradient(transparent 58%,var(--y) 58% 92%,transparent 92%);padding:0 .06em}
+.lead{font-size:17.5px;line-height:1.55;color:var(--mut);margin-top:18px;max-width:31em}
+.lead b{color:var(--ink);font-weight:600}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.rate{display:inline-flex;align-items:center;gap:12px;padding:10px 16px 10px 12px;background:#fff;border:1px solid var(--line);border-radius:14px;text-decoration:none;font-size:14px;color:var(--mut);min-height:56px}
+.rate b{font-weight:800;font-size:30px;color:var(--gd);line-height:1}
+.rate .st{color:#D9A400;letter-spacing:2px;font-size:13px;display:block}
+.stop{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;background:#fff;border:1px solid var(--line);border-radius:14px;font-size:14px;color:var(--mut);min-height:56px}
+.stop b{display:block;color:var(--ink);font-size:15px}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:0 24px;border-radius:12px;border:0;font-weight:700;font-size:16px;text-decoration:none;transition:transform .12s ease,background .2s ease;text-align:center;line-height:1.2}
+.btn:active{transform:scale(.97)}
+.btn svg{flex:none}
+.btn-g{background:var(--g);color:#fff}
+.btn-g:hover{background:var(--g2)}
+.btn-y{background:var(--y);color:var(--gd);box-shadow:0 4px 0 var(--yd)}
+.btn-y:hover{background:#FFE06A}
+.btn-line{background:#fff;color:var(--ink);border:1.5px solid rgba(19,35,26,.25)}
+.btn-line:hover{border-color:var(--ink)}
+.ctas .btn{flex:1 1 auto}
+@media (min-width:600px){.ctas .btn{flex:0 0 auto}}
+
+/* hanging tags */
+.rail{position:relative;z-index:1;height:300px;margin:0 -6px}
+.rail::before{content:"";position:absolute;left:0;right:0;top:14px;height:4px;border-radius:2px;background:var(--gd)}
+.tag{position:absolute;top:16px;width:46%;max-width:200px;transform-origin:50% 0;animation:swing 4.5s ease-in-out infinite alternate}
+.tag:nth-child(-n+2){z-index:2}
+.tag:nth-child(1){inset-inline-start:2%;animation-delay:-1s}
+.tag:nth-child(2){inset-inline-start:52%;width:44%;animation-delay:-2.2s}
+.tag:nth-child(3){inset-inline-start:6%;animation-delay:-3s}
+.tag:nth-child(4){inset-inline-start:54%;width:44%;animation-delay:-.4s}
+.tag .str{display:block;width:2px;margin:0 auto;background:var(--gd);opacity:.7}
+.tag:nth-child(1) .str{height:18px}.tag:nth-child(2) .str{height:52px}.tag:nth-child(3) .str{height:150px}.tag:nth-child(4) .str{height:166px}
+.tag .card{position:relative;background:var(--y);border-radius:10px;padding:16px 14px 12px;box-shadow:0 10px 18px -10px rgba(8,59,30,.5);clip-path:polygon(14% 0,86% 0,100% 16%,100% 100%,0 100%,0 16%)}
+.tag .card::before{content:"";position:absolute;top:7px;left:50%;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:var(--bg);box-shadow:inset 0 0 0 2px rgba(8,59,30,.3)}
+.tag h3{font-weight:800;font-size:19px;line-height:1.1;color:var(--gd);margin-top:6px}
+.tag .pr{display:flex;align-items:baseline;justify-content:space-between;gap:6px;border-top:1.5px dashed rgba(8,59,30,.35);margin-top:8px;padding-top:6px}
+.tag .pr span{font-size:12px;color:rgba(8,59,30,.75);font-weight:600}
+.tag .pr b{font:700 26px/1 var(--hand);color:var(--gd)}
+html[lang=ar] .tag .pr b{font-size:19px}
+@keyframes swing{from{transform:rotate(-3deg)}to{transform:rotate(3deg)}}
+.paused .tag{animation-play-state:paused}
+@media (min-width:900px){
+  .ghost{display:block}
+  .hero .wrap{grid-template-columns:1.15fr .85fr;align-items:center;padding-top:64px;padding-bottom:80px;min-height:calc(100vh - 150px);min-height:calc(100svh - 150px)}
+  .rail{height:420px}
+  .tag .card{padding:20px 18px 14px}
+  .tag h3{font-size:23px}
+  .tag:nth-child(3) .str{height:200px}.tag:nth-child(4) .str{height:230px}
+}
+
+/* sections */
+.sec{padding:64px 0}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--g);background:var(--gl);padding:5px 10px;border-radius:6px}
+html[lang=ar] .eyebrow{letter-spacing:0;font-size:14.5px}
+.h2{font-weight:800;font-size:clamp(34px,8.8vw,58px);line-height:1;letter-spacing:-.025em;margin-top:14px;color:var(--gd)}
+html[lang=ar] .h2{letter-spacing:0;line-height:1.2}
+.h2 .hl{background:linear-gradient(transparent 58%,var(--y) 58% 92%,transparent 92%)}
+.sub{font-size:16.5px;color:var(--mut);max-width:38em;margin-top:14px}
+
+/* module */
+.need{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ngrid{display:grid;gap:22px;margin-top:28px}
+.ngrid>*{min-width:0}
+.field select{max-width:100%}
+.pick h3{font-size:15px;font-weight:700;color:var(--mut);margin:18px 0 10px}
+.pick h3:first-child{margin-top:0}
+.pick h3 small{display:block;font-weight:400;font-size:13.5px}
+.words{display:flex;flex-wrap:wrap;gap:8px}
+.word{min-height:48px;padding:0 16px;border-radius:12px;border:1.5px solid rgba(19,35,26,.2);background:var(--bg);font-size:17px;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:background .2s,border-color .2s,transform .12s}
+.word::before{content:"+";font-weight:700;color:var(--g)}
+.word[aria-pressed=true]{background:var(--g);border-color:var(--g);color:#fff}
+.word[aria-pressed=true]::before{content:"✓";color:var(--y)}
+.word:active{transform:scale(.96)}
+.word.known{border-color:var(--g);background:var(--gl)}
+.word.known[aria-pressed=true]{background:var(--g)}
+.own{display:flex;gap:8px;margin-top:12px}
+.own input{flex:1;min-width:0;min-height:48px;border-radius:12px;border:1.5px solid rgba(19,35,26,.22);padding:0 12px;font-size:16px;background:#fff}
+.own button{min-height:48px;padding:0 16px;border-radius:12px;border:0;background:var(--gd);color:#fff;font-weight:700}
+.src{font-size:13.5px;color:var(--mut);margin-top:10px}
+
+.pad{position:relative;background:var(--paper);border-radius:6px 6px 18px 18px;box-shadow:0 18px 40px -26px rgba(8,59,30,.55),0 0 0 1px var(--line);padding:30px 18px 20px;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px;background-position:-1px -1px}
+.pad::before{content:"";position:absolute;left:0;right:0;top:0;height:14px;border-radius:6px 6px 0 0;background:repeating-linear-gradient(90deg,transparent 0 14px,var(--gd) 14px 20px,transparent 20px 30px);opacity:.75}
+.pad h3{font:700 34px/1 var(--hand);color:var(--gd)}
+html[lang=ar] .pad h3{font-size:26px;font-weight:800}
+.pad .meta{font-size:13.5px;color:var(--mut);margin-top:4px}
+.lines{display:grid;gap:6px;margin-top:14px}
+.lines li{display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:center;padding:8px 0;border-bottom:1.5px dashed rgba(14,90,46,.25)}
+.lines .nm{font:700 25px/1.1 var(--hand);color:var(--ink);min-width:0;overflow-wrap:anywhere}
+html[lang=ar] .lines .nm{font-size:19px}
+.lines .nm small{display:block;font:400 13px/1.3 var(--f);color:var(--mut);margin-top:2px}
+.step{display:flex;align-items:center;gap:2px}
+.step button{width:44px;height:44px;border-radius:10px;border:0;background:var(--gl);color:var(--gd);font-size:20px;font-weight:700}
+.step output{min-width:58px;text-align:center;font-weight:700;font-size:15px;white-space:nowrap}
+.rm{grid-column:1/-1;justify-self:start;background:none;border:0;color:var(--mut);font-size:13.5px;text-decoration:underline;min-height:44px;padding:0 4px;margin:-8px 0 -10px}
+.blank{font:600 24px/1.25 var(--hand);color:rgba(19,35,26,.45);padding:12px 0}
+html[lang=ar] .blank{font-size:18px}
+.grp{display:grid;gap:8px;margin-top:16px}
+.grp>span{font-size:14px;font-weight:700;color:var(--mut)}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg button{min-height:44px;padding:0 14px;border-radius:10px;border:1.5px solid rgba(19,35,26,.2);background:#fff;font-size:15px;font-weight:600}
+.seg button[aria-pressed=true]{background:var(--gd);border-color:var(--gd);color:#fff}
+.field select{width:100%;min-height:48px;border-radius:12px;border:1.5px solid rgba(19,35,26,.22);background:#fff;padding:0 12px;font-size:16px}
+.preview{white-space:pre-wrap;font-size:14px;line-height:1.45;background:#fff;border-radius:10px;padding:12px 14px;border-inline-start:4px solid var(--y);max-height:220px;overflow:auto}
+.send{margin-top:16px;display:grid;gap:10px}
+.bump{animation:bump .35s ease}
+@keyframes bump{40%{transform:scale(1.04)}}
+@media (min-width:900px){.ngrid{grid-template-columns:1fr 1fr;gap:40px;align-items:start}.pad{position:sticky;top:16px;padding:34px 26px 24px}}
+
+/* praise */
+.praise{display:grid;gap:14px;margin-top:28px}
+.pc{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;overflow:hidden}
+.pc .k{display:inline-block;background:var(--y);color:var(--gd);font-weight:800;font-size:15px;padding:4px 10px;border-radius:6px;transform:rotate(-2deg)}
+.pc h3{font-weight:800;font-size:24px;line-height:1.15;margin-top:12px;color:var(--gd)}
+.pc blockquote{margin-top:10px;font-size:16px}
+.pc cite{display:block;font-style:normal;font-size:13.5px;color:var(--mut);margin-top:8px}
+@media (min-width:860px){.praise{grid-template-columns:repeat(3,1fr)}}
+
+/* reviews */
+.revs{display:grid;gap:14px;margin-top:28px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.rev .st{color:#D9A400;letter-spacing:2px}
+.rev blockquote{font-size:16px}
+.rev footer{font-size:13.5px;color:var(--mut);margin-top:auto}
+.rev footer b{color:var(--ink)}
+.allr{margin-top:22px}
+.revhead{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px}
+.big{display:flex;align-items:center;gap:14px}
+.big b{font-weight:800;font-size:56px;line-height:1;color:var(--gd)}
+.big span{font-size:14px;color:var(--mut)}
+@media (min-width:760px){.revs{grid-template-columns:repeat(2,1fr)}}
+
+/* find */
+.find{background:#fff;border-top:1px solid var(--line)}
+.fgrid{display:grid;gap:14px;margin-top:28px}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:20px}
+.card h3{font-weight:800;font-size:21px;color:var(--gd)}
+.addr{color:var(--mut);margin-top:6px;font-size:15px}
+.lst{display:grid;gap:9px;margin-top:14px}
+.lst li{display:flex;align-items:center;gap:10px;font-size:15px}
+.lst li span{margin-inline-start:auto;color:var(--mut);white-space:nowrap}
+.mdot{width:18px;height:18px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:10px;font-weight:800;flex:none}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.btns .btn{flex:1 1 160px}
+.wk{display:grid;gap:4px;margin-top:12px}
+.wk li{display:flex;justify-content:space-between;gap:10px;padding:8px 12px;border-radius:10px;font-size:15px}
+.wk li.td{background:var(--g);color:#fff;font-weight:700}
+.map{position:relative;min-height:300px;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--gl)}
+.map .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;color:var(--gd);font-weight:600}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media (min-width:900px){.fgrid{grid-template-columns:1fr 1fr 1.25fr}.map{min-height:100%}}
+
+/* footer */
+.foot{background:var(--gd);color:rgba(255,255,255,.8);padding:40px 0 36px;font-size:14.5px}
+.foot .brand b{color:#fff}
+.foot .cols{display:grid;gap:12px;margin:16px 0 22px}
+.foot .cols a{color:#fff;display:inline-flex;align-items:center;min-height:44px}
+.foot .small{font-size:13px;line-height:1.5;border-top:1px solid rgba(255,255,255,.18);padding-top:16px}
+@media (min-width:760px){.foot .cols{grid-template-columns:repeat(3,1fr)}}
+
+.sticky{position:fixed;inset-inline:0;bottom:0;z-index:50;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:var(--gd);border-top:3px solid var(--y)}
+.sticky .main{flex:1;min-width:0}
+.sticky .call{width:56px;padding:0;flex:none;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+@media (min-width:900px){.sticky{display:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="demobar" data-t="demobar">Демо-концепт · пример сайта для «Халяль» от Альхассана Альфаррана · не официальный сайт</div>
+
+<header class="hdr" id="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Халяль — наверх" data-ta="brandAria"><b data-t="brand">Халяль</b><span class="ar" lang="ar">حلال</span></a>
+    <nav class="nav" aria-label="Разделы" data-ta="navAria">
+      <a href="#need" data-t="nav1">Что нужно?</a>
+      <a href="#praise" data-t="nav2">За что хвалят</a>
+      <a href="#reviews" data-t="nav3">Отзывы</a>
+      <a href="#find" data-t="nav4">Как найти</a>
+    </nav>
+    <button type="button" class="lang" id="langBtn" lang="ar">العربية</button>
+  </div>
+</header>
+<div class="awning" aria-hidden="true"></div>
+
+<main>
+<section class="hero" id="hero" aria-labelledby="h1">
+  <span class="ghost" aria-hidden="true">حلال</span>
+  <div class="wrap">
+    <div class="txt">
+      <p class="status" id="status"><i aria-hidden="true"></i><span id="statusT">…</span></p>
+      <h1 id="h1" data-t="h1">Свой халяль <span class="hl">на&nbsp;Дежнёва</span></h1>
+      <p class="lead" data-t="lead">Небольшой магазин у&nbsp;остановки «Полярная улица». Покупатели пишут про <b>мясо</b>, лепёшки, сухофрукты, выпечку и&nbsp;<b>свой тандыр</b> — и&nbsp;про приветливых продавцов.</p>
+      <div class="badges">
+        <a class="rate" id="rateBadge" href="#" target="_blank" rel="noopener"><b id="rateVal">4,3</b><span><span class="st" aria-hidden="true">★★★★☆</span><span id="rateCount"></span></span></a>
+        <span class="stop"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="15" rx="3" fill="#0E5A2E"/><rect x="6.5" y="6" width="11" height="5" rx="1" fill="#fff"/><circle cx="8" cy="15" r="1.3" fill="#fff"/><circle cx="16" cy="15" r="1.3" fill="#fff"/><path d="M7 18v2M17 18v2" stroke="#0E5A2E" stroke-width="2.4" stroke-linecap="round"/></svg><span><b data-t="stop1">162 м</b><span data-t="stop1s">до остановки «Полярная улица»</span></span></span>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-y" href="#need" data-t="cta1">Составить список</a>
+        <a class="btn btn-line" id="heroCall" href="#"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><bdi dir="ltr" id="heroTel">+7 (909) 957-77-23</bdi></a>
+      </div>
+    </div>
+    <div class="rail" aria-hidden="true" id="rail"></div>
+  </div>
+</section>
+
+<section class="sec need" id="need" aria-labelledby="needH">
+  <div class="wrap">
+    <p class="eyebrow" data-t="nEye">Список в WhatsApp</p>
+    <h2 class="h2" id="needH" data-t="nH">Что <span class="hl">нужно?</span></h2>
+    <p class="sub" data-t="nSub">Цен и&nbsp;списка товаров в&nbsp;карточке магазина нет — и&nbsp;мы их не&nbsp;придумываем. Отметьте, что ищете, и&nbsp;отправьте вопрос: продавцы ответят, что есть сегодня и&nbsp;почём.</p>
+    <div class="ngrid">
+      <div class="pick">
+        <h3 data-t="g1">Покупатели берут здесь<small>названо в отзывах на Яндекс Картах</small></h3>
+        <div class="words" id="w1"></div>
+        <h3 data-t="g2">Спросить, есть ли<small>в отзывах не упоминалось — просто вопрос</small></h3>
+        <div class="words" id="w2"></div>
+        <form class="own" id="ownF" autocomplete="off"><label class="sr" for="ownI" data-t="ownL">Своё слово</label><input id="ownI" maxlength="40" placeholder="Своё слово: например, бастурма" data-tp="ownP"><button type="submit" data-t="ownB">Добавить</button></form>
+        <div class="grp"><span data-t="askL">Спросить</span><div class="seg" id="askSeg"></div></div>
+        <label class="grp field"><span data-t="whenL">Когда зайду</span><select id="when"></select></label>
+        <p class="src" data-t="src">Мясо, лепёшки, сухофрукты — Елена Р.; выпечка и свой тандыр — Александр Т.</p>
+      </div>
+      <div class="pad" id="pad" aria-labelledby="padH">
+        <h3 id="padH" data-t="padH">Мой список</h3>
+        <p class="meta" id="padMeta"></p>
+        <ul class="lines" id="lines"></ul>
+        <p class="blank" id="blank" data-t="blank">Пока пусто — нажмите слово слева, например «мясо».</p>
+        <div class="grp"><span data-t="prevL">Сообщение, которое уйдёт</span><div class="preview" id="preview"></div></div>
+        <div class="send">
+          <a class="btn btn-g" id="send" href="#" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.300 1.7 2.1 1.200 1 2.100 1.300 2.400 1.500.3.1.5.1.7-.1l.9-1.100c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.1z"/></svg><span id="sendT">Спросить в WhatsApp</span></a>
+          <a class="btn btn-line" id="padCall" href="#" data-t="padCall">Или позвонить</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="praise" aria-labelledby="praiseH">
+  <div class="wrap">
+    <p class="eyebrow" data-t="pEye">Из отзывов</p>
+    <h2 class="h2" id="praiseH" data-t="pH">За что <span class="hl">хвалят</span></h2>
+    <div class="praise" id="pcs"></div>
+  </div>
+</section>
+
+<section class="sec" id="reviews" aria-labelledby="revH" style="padding-top:0">
+  <div class="wrap">
+    <div class="revhead">
+      <div><p class="eyebrow" id="revEye">Отзывы покупателей</p><h2 class="h2" id="revH" data-t="rH">«Не первый раз <span class="hl">покупаю</span>»</h2></div>
+      <div class="big"><b id="bigRate">4,3</b><span id="bigCount"></span></div>
+    </div>
+    <div class="revs" id="revs"></div>
+    <div class="allr"><a class="btn btn-line" id="allRevs" href="#" target="_blank" rel="noopener" data-t="allR">Все отзывы на Яндекс Картах</a></div>
+  </div>
+</section>
+
+<section class="sec find" id="find" aria-labelledby="findH">
+  <div class="wrap">
+    <p class="eyebrow" data-t="fEye">Как найти</p>
+    <h2 class="h2" id="findH" data-t="fH">Проезд Дежнёва, <span class="hl">23</span></h2>
+    <div class="fgrid">
+      <div class="card">
+        <h3 data-t="fAddr">пр. Дежнёва, 23</h3>
+        <p class="addr" id="fFull"></p>
+        <ul class="lst" id="stops"></ul>
+        <ul class="lst" id="metro"></ul>
+        <div class="btns">
+          <a class="btn btn-g" id="route" href="#" target="_blank" rel="noopener" data-t="route">Построить маршрут</a>
+          <a class="btn btn-line" id="fCall" href="#" data-t="call">Позвонить</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3 data-t="hrsH">Часы работы</h3>
+        <p class="addr" id="hrsNow"></p>
+        <ul class="wk" id="week"></ul>
+      </div>
+      <div class="map" id="map"><div class="ph" data-t="mapPh">Карта загружается…<br>пр. Дежнёва, 23</div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="brand" href="#top"><b data-t="brand">Халяль</b><span class="ar" lang="ar">حلال</span></a>
+    <div class="cols">
+      <div><a id="fTel" href="#" dir="ltr">+7 (909) 957-77-23</a><br><a id="fWa" href="#" target="_blank" rel="noopener">WhatsApp</a></div>
+      <div id="fHours"></div>
+      <div><a id="fYa" href="#" target="_blank" rel="noopener" data-t="fYa">Карточка на Яндекс Картах</a></div>
+    </div>
+    <p class="small" data-t="fNote">Демо-концепт · пример сайта для «Халяль» от Альхассана Альфаррана · не официальный сайт.<br>Цены и данные взяты из карточки на Яндекс Картах и могут отличаться.</p>
+  </div>
+</footer>
+
+<nav class="sticky" aria-label="Быстрые действия" data-ta="stickyAria">
+  <a class="btn btn-y main" id="stickyMain" href="#need" data-t="stickyMain">Что нужно? Спросить</a>
+  <a class="btn call" id="stickyCall" href="#" aria-label="Позвонить" data-ta="callAria"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></a>
+</nav>
+
+<script src="data.js"></script>
+<script>
+(function () {
+'use strict';
+var BIZ = window.BIZ;
+if (!BIZ) return;
+var $ = function (s) { return document.querySelector(s); };
+var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
+var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+var wa = function (text) { return 'https://wa.me/' + BIZ.wa + '?text=' + encodeURIComponent(text); };
+var tel = 'tel:' + BIZ.phone;
+var plural = function (n, one, few, many) { var a = Math.abs(n) % 100, b = a % 10; return a > 10 && a < 20 ? many : b === 1 ? one : b >= 2 && b <= 4 ? few : many; };
+var pad2 = function (n) { return String(n).padStart(2, '0'); };
+function mskNow() { var d = new Date(); return new Date(d.getTime() + (d.getTimezoneOffset() + 180) * 60000); }
+var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+var lang = 'ru';
+var mm = function (s) { return +s.slice(0, 2) * 60 + +s.slice(3); };
+
+var AR = {
+  demobar: 'نموذج تجريبي · مثال لموقع متجر «حلال» من إعداد الحسن الفرّان · ليس الموقع الرسمي',
+  brand: 'حلال', nav1: 'ماذا تحتاج؟', nav2: 'لماذا يمدحوننا', nav3: 'الآراء', nav4: 'كيف تصل',
+  h1: 'متجر حلال <span class="hl">في ديجنيوفا</span>',
+  lead: 'متجر صغير قرب موقف «شارع بوليارنايا». يكتب الزبائن عن <b>اللحم</b> والخبز والفواكه المجففة والمعجنات و<b>تنّور المحل</b> — وعن البائعين الودودين.',
+  stop1: '162 م', stop1s: 'إلى موقف «شارع بوليارنايا»',
+  cta1: 'اكتب قائمتك',
+  nEye: 'القائمة عبر واتساب', nH: 'ماذا <span class="hl">تحتاج؟</span>',
+  nSub: 'لا توجد في بطاقة المتجر أسعار ولا قائمة بضائع — ولن نخترعها. اختر ما تبحث عنه وأرسل سؤالك: سيجيبك البائعون عمّا يتوفر اليوم وبكم.',
+  g1: 'يشتريه الزبائن هنا<small>مذكور في الآراء على خرائط ياندكس</small>',
+  g2: 'اسأل إن كان متوفرًا<small>لم يُذكر في الآراء — مجرد سؤال</small>',
+  ownL: 'كلمة من عندك', ownP: 'كلمة من عندك: مثلًا بسطرمة', ownB: 'أضف',
+  src: 'اللحم والخبز والفواكه المجففة — يلينا ر.؛ المعجنات والتنور الخاص — ألكسندر ت.',
+  padH: 'قائمتي', blank: 'القائمة فارغة — اضغط على كلمة، مثلًا «لحم».',
+  askL: 'السؤال', whenL: 'متى سأمرّ', prevL: 'الرسالة التي ستُرسل', padCall: 'أو اتصل',
+  pEye: 'من الآراء', pH: 'لماذا <span class="hl">يمدحوننا</span>',
+  rH: '«لست أشتري <span class="hl">لأول مرة</span>»', allR: 'كل الآراء على خرائط ياندكس',
+  fEye: 'كيف تصل', fH: 'ممر ديجنيوفا، <span class="hl">23</span>', fAddr: 'ممر ديجنيوفا، 23',
+  route: 'رسم المسار', call: 'اتصال', hrsH: 'ساعات العمل', mapPh: 'جارٍ تحميل الخريطة…<br>ممر ديجنيوفا، 23',
+  fYa: 'البطاقة على خرائط ياندكس',
+  fNote: 'نموذج تجريبي · مثال لموقع متجر «حلال» من إعداد الحسن الفرّان · ليس الموقع الرسمي.<br>الأسعار والبيانات مأخوذة من البطاقة على خرائط ياندكس وقد تختلف.',
+  stickyMain: 'ماذا تحتاج؟ اسأل',
+  brandAria: 'حلال — إلى الأعلى', navAria: 'الأقسام', stickyAria: 'إجراءات سريعة', callAria: 'اتصال'
+};
+var RU = {};
+$$('[data-t]').forEach(function (el) { var k = el.getAttribute('data-t'); if (!(k in RU)) RU[k] = el.innerHTML; });
+$$('[data-ta]').forEach(function (el) { RU[el.getAttribute('data-ta')] = el.getAttribute('aria-label'); });
+$$('[data-tp]').forEach(function (el) { RU[el.getAttribute('data-tp')] = el.getAttribute('placeholder'); });
+
+var S = {
+  ru: {
+    open: 'Открыто · до ', closedAt: 'Закрыто · откроется в ', closedTom: 'Закрыто · откроется завтра в ',
+    rateCnt: function () { return BIZ.rating.count + ' ' + plural(BIZ.rating.count, 'оценка', 'оценки', 'оценок') + ' · ' + BIZ.rating.reviews + ' ' + plural(BIZ.rating.reviews, 'отзыв', 'отзыва', 'отзывов'); },
+    tagPrice: 'цена?', tagAsk: 'спросите', tagFrom: 'из отзывов',
+    units: { kg: 'кг', pc: 'шт', g: 'г' },
+    ask: ['Есть ли и почём', 'Только есть ли'],
+    q: [[': есть ли в наличии и почём?', ': есть ли в наличии?'], [': есть ли сегодня и почём?', ': есть ли сегодня?'], [': будет ли завтра и почём?', ': будет ли завтра?']],
+    approx: 'около ',
+    unsure: 'пока не знаю, когда', today: 'сегодня около ', tom: 'завтра около ',
+    hi: 'Здравствуйте! Пишу в «Халяль» на Дежнёва, 23.', visit: 'Хочу зайти ', visitNo: '', pls: '\nПодскажите, пожалуйста:\n', bye: '\nСпасибо!',
+    empty: 'Здравствуйте! Пишу в «Халяль» на Дежнёва, 23. Подскажите, пожалуйста, что сегодня есть из мяса и почём?',
+    sendN: function (n) { return 'Спросить про ' + n + ' ' + plural(n, 'позицию', 'позиции', 'позиций'); }, send0: 'Спросить в WhatsApp',
+    stickyN: function (n) { return 'Отправить список · ' + n; },
+    meta: function (n) { return n ? n + ' ' + plural(n, 'строка', 'строки', 'строк') + ' · цены назовут в ответ' : 'цены назовут в ответ'; },
+    rm: 'убрать', less: 'Меньше: ', more: 'Больше: ',
+    days: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'], todayM: ' · сегодня',
+    hrsNow: function (st) { return st ? st.text + '. По московскому времени.' : ''; },
+    fHours: 'пн–сб 09:00–20:30<br>вс 09:00–19:00',
+    stop: 'остановка', metroW: 'м.', full: BIZ.fullAddress,
+    revEye: 'Отзывы покупателей', revSrc: 'отзыв на Яндекс Картах',
+    big: function () { return BIZ.rating.count + ' ' + plural(BIZ.rating.count, 'оценка', 'оценки', 'оценок') + '<br>на Яндекс Картах'; }
+  },
+  ar: {
+    open: 'مفتوح · حتى ', closedAt: 'مغلق · يفتح الساعة ', closedTom: 'مغلق · يفتح غدًا الساعة ',
+    rateCnt: function () { return BIZ.rating.count + ' تقييمًا · ' + BIZ.rating.reviews + ' رأيًا'; },
+    tagPrice: 'السعر؟', tagAsk: 'اسأل', tagFrom: 'من الآراء',
+    units: { kg: 'كغ', pc: 'قطعة', g: 'غ' },
+    ask: ['هل يتوفر وبكم', 'هل يتوفر فقط'],
+    q: [[': هل يتوفر وكم سعره؟', ': هل يتوفر؟'], [': هل يتوفر اليوم وكم سعره؟', ': هل يتوفر اليوم؟'], [': هل سيتوفر غدًا وكم سعره؟', ': هل سيتوفر غدًا؟']],
+    approx: 'نحو ',
+    unsure: 'لا أعرف الموعد بعد', today: 'اليوم نحو الساعة ', tom: 'غدًا نحو الساعة ',
+    hi: 'مرحبًا! أكتب إلى متجر «حلال» في ممر ديجنيوفا، 23.', visit: 'أنوي المرور ', pls: '\nمن فضلكم:\n', bye: '\nشكرًا!',
+    empty: 'مرحبًا! أكتب إلى متجر «حلال» في ممر ديجنيوفا، 23. ما المتوفر اليوم من اللحم وبكم من فضلكم؟',
+    sendN: function (n) { return 'اسأل عن الأصناف (' + n + ')'; }, send0: 'اسأل عبر واتساب',
+    stickyN: function (n) { return 'أرسل القائمة · ' + n; },
+    meta: function (n) { return n ? 'عدد البنود: ' + n + ' · ستُذكر الأسعار في الرد' : 'ستُذكر الأسعار في الرد'; },
+    rm: 'احذف', less: 'أقل: ', more: 'أكثر: ',
+    days: ['الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت', 'الأحد'], todayM: ' · اليوم',
+    hrsNow: function (st) { return st ? st.text + '. بتوقيت موسكو.' : ''; },
+    fHours: 'الاثنين–السبت 09:00–20:30<br>الأحد 09:00–19:00',
+    stop: 'موقف', metroW: 'مترو', full: 'موسكو، ممر ديجنيوفا، 23',
+    revEye: 'آراء الزبائن (بالروسية)', revSrc: 'رأي على خرائط ياندكس',
+    big: function () { return BIZ.rating.count + ' تقييمًا<br>على خرائط ياندكس'; }
+  }
+};
+var s = function (k) { return S[lang][k]; };
+
+/* live status from BIZ.hours, Moscow time */
+function openStatus(now) {
+  now = now || mskNow();
+  if (!BIZ.hours) return null;
+  var day = (now.getDay() + 6) % 7, mins = now.getHours() * 60 + now.getMinutes(), i, p;
+  for (i = 0; i < BIZ.hours[(day + 6) % 7].length; i++) { p = BIZ.hours[(day + 6) % 7][i]; if (mm(p[1]) <= mm(p[0]) && mins < mm(p[1])) return { open: true, text: s('open') + p[1] }; }
+  for (i = 0; i < BIZ.hours[day].length; i++) { p = BIZ.hours[day][i]; var a = mm(p[0]), b = mm(p[1]) <= a ? mm(p[1]) + 1440 : mm(p[1]); if (mins >= a && mins < b) return { open: true, text: s('open') + p[1] }; }
+  for (i = 0; i < BIZ.hours[day].length; i++) { p = BIZ.hours[day][i]; if (mins < mm(p[0])) return { open: false, text: s('closedAt') + p[0] }; }
+  var nd = (day + 1) % 7; if (BIZ.hours[nd].length) return { open: false, text: s('closedTom') + BIZ.hours[nd][0][0] };
+  return null;
+}
+
+/* ---------- words: the first group is named in reviews, the second is only a question ---------- */
+var W = [
+  { id: 'meat', k: 1, u: 'kg', ru: 'Мясо', ar: 'لحم' },
+  { id: 'bread', k: 1, u: 'pc', ru: 'Лепёшки', ar: 'خبز' },
+  { id: 'bake', k: 1, u: 'pc', ru: 'Выпечка', ar: 'معجنات' },
+  { id: 'dried', k: 1, u: 'g', ru: 'Сухофрукты', ar: 'فواكه مجففة' },
+  { id: 'lamb', k: 0, u: 'kg', ru: 'Баранина', ar: 'لحم ضأن' },
+  { id: 'beef', k: 0, u: 'kg', ru: 'Говядина', ar: 'لحم بقري' },
+  { id: 'chicken', k: 0, u: 'kg', ru: 'Курица', ar: 'دجاج' },
+  { id: 'mince', k: 0, u: 'kg', ru: 'Фарш', ar: 'لحم مفروم' }
+];
+var UNIT = { kg: { st: 0.5, d: 1, max: 20 }, pc: { st: 1, d: 2, max: 50 }, g: { st: 250, d: 500, max: 5000 } };
+var byId = {}; W.forEach(function (w) { byId[w.id] = w; });
+var list = []; // {id, q} or {own:'text', q}
+var askMode = 0, kinds = [0];
+var nm = function (r) { return r.own ? r.own : (lang === 'ar' ? byId[r.id].ar : byId[r.id].ru); };
+var unitOf = function (r) { return r.own ? null : byId[r.id].u; };
+var fmtQ = function (r) {
+  var u = unitOf(r); if (!u) return ''; var v = r.q, un = s('units')[u];
+  if (lang === 'ar' && u === 'pc') un = v === 1 ? 'قطعة' : v === 2 ? 'قطعتان' : v <= 10 ? 'قطع' : 'قطعة';
+  return (u === 'kg' && lang !== 'ar' ? String(v).replace('.', ',') : v) + ' ' + un;
+};
+var idx = function (id) { for (var i = 0; i < list.length; i++) if (list[i].id === id) return i; return -1; };
+
+function renderWords() {
+  var h = function (k) { return W.filter(function (w) { return w.k === k; }).map(function (w) {
+    var on = idx(w.id) >= 0;
+    return '<button type="button" class="word' + (k ? ' known' : '') + '" data-w="' + w.id + '" aria-pressed="' + on + '">' + esc(lang === 'ar' ? w.ar : w.ru) + '</button>';
+  }).join(''); };
+  $('#w1').innerHTML = h(1); $('#w2').innerHTML = h(0);
+}
+function fillWhen() {
+  var sel = $('#when'), keep = sel.value, n = mskNow(), day = (n.getDay() + 6) % 7, mins = n.getHours() * 60 + n.getMinutes(), o = [s('unsure')];
+  kinds = [0];
+  var t = BIZ.hours[day][0];
+  if (t) { var start = Math.max(mm(t[0]), Math.ceil((mins + 30) / 30) * 30); for (var m = start; m <= mm(t[1]) - 30; m += 30) { o.push(s('today') + pad2(Math.floor(m / 60)) + ':' + pad2(m % 60)); kinds.push(1); } }
+  var nt = BIZ.hours[(day + 1) % 7][0];
+  if (nt) for (var m2 = mm(nt[0]) + 60; m2 <= mm(nt[1]) - 30; m2 += 60) { o.push(s('tom') + pad2(Math.floor(m2 / 60)) + ':' + pad2(m2 % 60)); kinds.push(2); }
+  sel.innerHTML = o.map(function (x, i) { return '<option value="' + i + '">' + esc(x) + '</option>'; }).join('');
+  if (keep && +keep < o.length) sel.value = keep;
+}
+function msg() {
+  if (!list.length) return s('empty');
+  var t = s('hi'), w = $('#when');
+  if (w.selectedIndex > 0) t += ' ' + s('visit') + w.options[w.selectedIndex].text + '.';
+  t += s('pls');
+  var Q = qText();
+  list.forEach(function (r, i) {
+    var q = fmtQ(r);
+    t += (i + 1) + '. ' + nm(r) + (q ? ' — ' + s('approx') + q : '') + Q + '\n';
+  });
+  return t + s('bye');
+}
+function qText() { var k = kinds[$('#when').selectedIndex] || 0; return s('q')[k][askMode]; }
+function renderPad() {
+  var Q = qText().replace(/^: /, '');
+  $('#lines').innerHTML = list.map(function (r, i) {
+    var u = unitOf(r), lab = nm(r);
+    return '<li><span class="nm">' + esc(lab) + '<small>' + esc(Q) + '</small></span>' +
+      (u ? '<span class="step"><button type="button" data-dec="' + i + '" aria-label="' + esc(s('less') + lab) + '">−</button><output>' + esc(fmtQ(r)) + '</output><button type="button" data-inc="' + i + '" aria-label="' + esc(s('more') + lab) + '">+</button></span>' : '<span></span>') +
+      '<button type="button" class="rm" data-rm="' + i + '">' + esc(s('rm')) + '</button></li>';
+  }).join('');
+  $('#blank').hidden = list.length > 0;
+  $('#padMeta').textContent = s('meta')(list.length);
+  $('#askSeg').innerHTML = s('ask').map(function (l, i) { return '<button type="button" data-ask="' + i + '" aria-pressed="' + (i === askMode) + '">' + esc(l) + '</button>'; }).join('');
+  var m = msg();
+  $('#preview').textContent = m;
+  $('#send').href = wa(m);
+  $('#sendT').textContent = list.length ? s('sendN')(list.length) : s('send0');
+  var sm = $('#stickyMain');
+  if (list.length) { sm.textContent = s('stickyN')(list.length); sm.href = wa(m); sm.target = '_blank'; sm.rel = 'noopener'; }
+  else { sm.innerHTML = lang === 'ar' ? AR.stickyMain : RU.stickyMain; sm.href = '#need'; sm.removeAttribute('target'); }
+  store.set('hal-list', JSON.stringify({ l: list, a: askMode }));
+}
+function bump() { var p = $('#pad'); p.classList.remove('bump'); void p.offsetWidth; p.classList.add('bump'); }
+document.addEventListener('click', function (e) {
+  var b = e.target.closest && e.target.closest('button'); if (!b) return;
+  var d = b.dataset;
+  if (d.w) { var i = idx(d.w); if (i >= 0) list.splice(i, 1); else { list.push({ id: d.w, q: UNIT[byId[d.w].u].d }); bump(); } renderWords(); renderPad(); return; }
+  if (d.inc != null || d.dec != null) {
+    var r = list[+(d.inc != null ? d.inc : d.dec)]; if (!r) return; var U = UNIT[unitOf(r)];
+    r.q = Math.min(U.max, Math.max(U.st, Math.round((r.q + (d.inc != null ? U.st : -U.st)) * 100) / 100)); renderPad(); return;
+  }
+  if (d.rm != null) { list.splice(+d.rm, 1); renderWords(); renderPad(); return; }
+  if (d.ask != null) { askMode = +d.ask; renderPad(); return; }
+});
+$('#ownF').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var v = $('#ownI').value.replace(/\s+/g, ' ').trim();
+  if (!v) { $('#ownI').focus(); return; }
+  if (list.length < 15) list.push({ own: v.slice(0, 40), q: null });
+  $('#ownI').value = ''; bump(); renderPad();
+});
+$('#when').addEventListener('change', renderPad);
+try { var sv = JSON.parse(store.get('hal-list') || 'null'); if (sv && sv.l) { list = sv.l.filter(function (r) { return r && ((r.id && byId[r.id] && typeof r.q === 'number') || (r.own && typeof r.own === 'string')); }).slice(0, 15); askMode = sv.a === 1 ? 1 : 0; } } catch (e) {}
+
+/* ---------- hero tags ---------- */
+function renderRail() {
+  var T = lang === 'ar' ? ['لحم', 'خبز', 'معجنات', 'فواكه مجففة'] : ['Мясо', 'Лепёшки', 'Выпечка', 'Сухофрукты'];
+  $('#rail').innerHTML = T.map(function (t) { return '<div class="tag"><span class="str"></span><div class="card"><h3>' + esc(t) + '</h3><div class="pr"><span>' + esc(s('tagPrice')) + '</span><b>' + esc(s('tagAsk')) + '</b></div></div></div>'; }).join('');
+}
+
+/* ---------- praise from reviews (verbatim fragments) ---------- */
+var PC = [
+  { k: ['Мясо', 'اللحم'], h: ['За мясом — сюда', 'يأتون من أجل اللحم'], x: ['Эльмира К. пишет, что будет брать мясо только здесь, Елена Р. — что часто покупает мясо, сухофрукты и лепёшки.', 'تكتب إلميرا ك. أنها لن تشتري اللحم إلا من هنا، وتكتب يلينا ر. أنها كثيرًا ما تشتري اللحم والفواكه المجففة والخبز.'] },
+  { k: ['Продавцы', 'البائعون'], h: ['Встречают по-соседски', 'استقبال كالجيران'], x: ['Гости благодарят продавщицу, которая «от души обслужила», и пишут, что люди здесь вежливые.', 'يشكر الزبائن البائعة التي خدمتهم «من القلب»، ويكتبون أن الناس هنا مهذبون.'] },
+  { k: ['Тандыр', 'التنور'], h: ['Свой тандыр и выпечка', 'تنّور خاص ومعجنات'], x: ['Александр Т.: небольшой магазин, «есть выпечка и свой тандыр».', 'ألكسندر ت.: متجر صغير، فيه معجنات وتنّور خاص.'] }
+];
+function renderPraise() {
+  var L = lang === 'ar' ? 1 : 0;
+  $('#pcs').innerHTML = PC.map(function (p) { return '<article class="pc"><span class="k">' + esc(p.k[L]) + '</span><h3>' + esc(p.h[L]) + '</h3><blockquote>' + esc(p.x[L]) + '</blockquote></article>'; }).join('');
+}
+var REVS = [
+  { a: 'Эльмира К.', d: 'ноябрь 2024', x: 'Мясо супер буду только у вас брать, а женщина продавщица очень хорошая, прям от души обслужила дай Аллагь вам здоровья вы очень хорошая, да и все сотрудники хорошие' },
+  { a: 'Елена Р.', d: 'август 2024', x: 'Часто покупаю здесь мясо,сухофрукты и лепешки.Качество и обслуживание всегда хорошее.' },
+  { a: 'Ольга П.', d: 'сентябрь 2026', x: 'Место классное. Люди вежливые. А еда очень вкусная. Не первый раз покупаю 👍' },
+  { a: 'Александр Т.', d: 'сентябрь 2024', x: 'Небольшой магаз, есть выпечка и свой тандыр.' }
+];
+function renderRevs() {
+  $('#revEye').textContent = s('revEye');
+  $('#revs').innerHTML = REVS.map(function (r) { return '<figure class="rev"><span class="st" aria-hidden="true">★★★★★</span><blockquote lang="ru" dir="ltr">«' + esc(r.x) + '»</blockquote><footer><b>' + esc(r.a) + '</b> · <span lang="ru">' + esc(r.d) + '</span> · ' + esc(s('revSrc')) + '</footer></figure>'; }).join('');
+}
+function rateTxt() { var v = BIZ.rating.value.toFixed(1); return lang === 'ar' ? v : v.replace('.', ','); }
+function renderRating() {
+  $('#rateVal').textContent = rateTxt(); $('#bigRate').textContent = rateTxt();
+  $('#rateCount').textContent = s('rateCnt')();
+  $('#bigCount').innerHTML = s('big')();
+  $('#rateBadge').setAttribute('aria-label', (lang === 'ar' ? 'التقييم ' : 'Рейтинг ') + rateTxt() + (lang === 'ar' ? ' من 5، ' : ' из 5, ') + s('rateCnt')());
+}
+function renderStatus() {
+  var st = openStatus();
+  $('#statusT').textContent = st ? st.text : '';
+  $('#status').classList.toggle('closed', !!st && !st.open);
+  $('#hrsNow').textContent = s('hrsNow')(st);
+}
+function renderFind() {
+  $('#fFull').textContent = s('full');
+  var stops = [['Полярная улица', 'شارع بوليارنايا', '162'], ['МФЦ Южное Медведково', 'مركز الخدمات «يوجنويه ميدفيدكوفو»', '289']];
+  var bus = '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="15" rx="3" fill="#0E5A2E"/><rect x="6.5" y="6" width="11" height="5" rx="1" fill="#fff"/><circle cx="8" cy="15" r="1.3" fill="#fff"/><circle cx="16" cy="15" r="1.3" fill="#fff"/></svg>';
+  $('#stops').innerHTML = stops.map(function (x) { return '<li>' + bus + '<b>' + esc(s('stop') + ' «' + (lang === 'ar' ? x[1] : x[0]) + '»') + '</b><span>' + x[2] + ' ' + (lang === 'ar' ? 'م' : 'м') + '</span></li>'; }).join('');
+  var mAr = { 'Бабушкинская': 'بابوشكينسكايا', 'Отрадное': 'أوترادنويه', 'Свиблово': 'سفيبلوفو' };
+  $('#metro').innerHTML = (BIZ.metro || []).map(function (m) {
+    var dist = lang === 'ar' ? m.distance.replace(',', '.').replace('км', 'كم') : m.distance;
+    return '<li><span class="mdot" style="background:' + esc(m.color) + '" aria-hidden="true">М</span>' + esc(s('metroW') + ' ' + (lang === 'ar' ? (mAr[m.name] || m.name) : m.name)) + '<span>' + esc(dist) + '</span></li>';
+  }).join('');
+  var today = (mskNow().getDay() + 6) % 7;
+  $('#week').innerHTML = s('days').map(function (d, i) {
+    var h = BIZ.hours[i], t = h.length ? h.map(function (p) { return p[0] + '–' + p[1]; }).join(', ') : '—';
+    return '<li class="' + (i === today ? 'td' : '') + '"' + (i === today ? ' aria-current="date"' : '') + '><span>' + esc(d) + (i === today ? esc(s('todayM')) : '') + '</span><span dir="ltr">' + esc(t) + '</span></li>';
+  }).join('');
+  $('#fHours').innerHTML = s('fHours');
+}
+
+function setLang(l) {
+  lang = l === 'ar' ? 'ar' : 'ru';
+  var de = document.documentElement; de.lang = lang; de.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  store.set('hal-lang', lang);
+  var D = lang === 'ar' ? AR : RU;
+  $$('[data-t]').forEach(function (el) { var k = el.getAttribute('data-t'); if (D[k] != null) el.innerHTML = D[k]; });
+  $$('[data-ta]').forEach(function (el) { var k = el.getAttribute('data-ta'); if (D[k] != null) el.setAttribute('aria-label', D[k]); });
+  $$('[data-tp]').forEach(function (el) { var k = el.getAttribute('data-tp'); if (D[k] != null) el.setAttribute('placeholder', D[k]); });
+  var lb = $('#langBtn');
+  lb.textContent = lang === 'ar' ? 'Русский' : 'العربية'; lb.lang = lang === 'ar' ? 'ru' : 'ar';
+  lb.setAttribute('aria-label', lang === 'ar' ? 'Переключить на русский' : 'التبديل إلى العربية');
+  document.title = lang === 'ar' ? 'متجر «حلال» في ممر ديجنيوفا، 23 (демо)' : '«Халяль» на Дежнёва, 23 — соседский халяль-магазин (демо)';
+  fillWhen(); renderStatus(); renderRating(); renderRail(); renderWords(); renderPad(); renderPraise(); renderRevs(); renderFind();
+}
+window.setLang = setLang;
+
+['#heroCall', '#fCall', '#fTel', '#stickyCall', '#padCall'].forEach(function (q) { $(q).href = tel; });
+$('#heroTel').textContent = BIZ.phoneDisplay; $('#fTel').textContent = BIZ.phoneDisplay;
+$('#fWa').href = wa('Здравствуйте! Пишу с сайта магазина «Халяль» на Дежнёва, 23.');
+$('#rateBadge').href = BIZ.reviewsUrl; $('#allRevs').href = BIZ.reviewsUrl;
+$('#route').href = BIZ.routeUrl; $('#fYa').href = BIZ.yandexUrl;
+(function () { var f = document.createElement('iframe'); f.loading = 'lazy'; f.src = BIZ.mapEmbed; f.title = 'Карта: ' + BIZ.address; $('#map').appendChild(f); })();
+if ('IntersectionObserver' in window) { var io = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('paused', !e.isIntersecting); }); }); io.observe($('#hero')); }
+
+var initial = 'ru';
+try { initial = new URLSearchParams(location.search).get('lang') || localStorage.getItem('hal-lang') || 'ru'; } catch (e) {}
+setLang(initial);
+setInterval(function () { renderStatus(); }, 60000);
+})();
+</script>
+<script src="../map-fix.js" defer></script>
+</body>
+</html>

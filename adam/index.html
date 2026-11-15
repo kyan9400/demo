@@ -1,0 +1,1458 @@
+<!doctype html>
+<!--
+  CONCEPT — «Адам», Большая Грузинская, 76 (демо-концепт)
+  1. Идея: «Маленький Бейрут у Белорусской». Гости раз за разом пишут про фонтанчик с лепестками роз,
+     кофе на песке с кардамоном и мезе с лепёшкой «чтобы макать» — сайт и есть этот зал: арка-ниша,
+     фонтан, латунный поднос.
+  2. Фирменный модуль: «Шесть мезе на одном подносе». В меню есть «Мезе сет — 6 блюд мезе на выбор,
+     2 990 ₽, 800 г». Гость выбирает мезе из реального списка, и латунный поднос заполняется пиалами
+     (у каждой свой цвет: хумус, мутабаль, мухаммара…), к сету — лепёшка и кофе из меню; сет уходит
+     в заказ (стол в зале / навынос / доставка, день и время) → готовое сообщение в WhatsApp.
+     Ниже: «что советуют гости» (цитаты из отзывов + блюда с ценами), полное меню с поиском и корзиной.
+  3. Арт-дирекшн: благородный левантийский стиль — тёплый известняк и слоновая кость, гранат,
+     латунь; тонкая антиква Cormorant Garamond + Manrope, для арабского El Messiri.
+     Мотивы в SVG: стрельчатая арка-ниша с зелижем, латунный фонарь, фонтан с лепестками роз,
+     восьмиконечная звезда как водяной знак, латунный поднос с пиалами мезе.
+-->
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F5EEE1">
+<title>«Адам» — ливанская кухня на Большой Грузинской, 76 (демо)</title>
+<meta name="description" content="Демо-концепт сайта ресторана «Адам» у метро «Белорусская»: соберите мезе-сет из шести блюд, меню с ценами, бронь стола и заказ в WhatsApp. Ежедневно 08:00–23:00, 4,9 на Яндекс Картах.">
+<meta property="og:title" content="«Адам» — маленький Бейрут у Белорусской (демо)">
+<meta property="og:description" content="Мезе-сет на выбор, меню с ценами, бронь стола в WhatsApp. 4,9 на Яндекс Картах. Демо-концепт сайта.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://kyan9400.github.io/demo/adam/">
+<meta property="og:image" content="https://kyan9400.github.io/demo/adam/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23F5EEE1'/%3E%3Cg fill='%239B1D33'%3E%3Crect x='17' y='17' width='30' height='30' rx='2'/%3E%3Crect x='17' y='17' width='30' height='30' rx='2' transform='rotate(45 32 32)'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='7' fill='%23D6B062'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>try{var L0=new URLSearchParams(location.search).get('lang')||localStorage.getItem('adam-lang');if(L0==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl';}}catch(e){}</script>
+<style>
+:root{
+  --ivory:#F5EEE1; --stone:#EBE1CE; --card:#FBF7EF; --sand:#E2D3B6;
+  --ink:#2A1B15; --muted:#67574B; --line:rgba(42,27,21,.14); --line-2:rgba(42,27,21,.08);
+  --pom:#9B1D33; --pom-d:#7C1527; --pom-l:#F3DCDD;
+  --brass:#C29A4B; --brass-l:#E4C88B; --brass-t:#7A5A1E;
+  --night:#24140F; --night-2:#321D16; --cream:#F4E8D4; --cream-m:#CDBBA2;
+  --ok:#2F7A4B;
+  --serif:'Cormorant Garamond', 'Times New Roman', serif;
+  --sans:'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --r:18px;
+  --bar:0px;
+}
+[dir=rtl]{ --serif:'El Messiri', 'Cormorant Garamond', serif; --sans:'El Messiri', 'Manrope', system-ui, sans-serif; }
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--ivory);color:var(--ink);font:400 16px/1.55 var(--sans);overflow-x:hidden;padding-bottom:calc(var(--bar) + env(safe-area-inset-bottom))}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--pom);outline-offset:3px;border-radius:6px}
+.wrap{width:100%;max-width:1200px;margin-inline:auto;padding-inline:20px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.ar-only{display:none}[dir=rtl] .ar-only{display:revert}[dir=rtl] .ru-only{display:none}
+
+/* demo bar */
+.demo{font-size:12.5px;line-height:1.4;text-align:center;padding:7px 16px;background:var(--ink);color:#EADCC6}
+.demo b{color:#fff;font-weight:600}
+
+/* header */
+.hdr{border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;gap:14px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-inline-end:auto}
+.brand svg{width:34px;height:34px;flex:none}
+.brand b{font:700 28px/1 var(--serif);letter-spacing:.01em}
+.brand small{display:block;font:600 10.5px/1.2 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--brass-t)}
+[dir=rtl] .brand small{letter-spacing:0;font-size:12px}
+.nav{display:none;gap:22px}
+.nav a{font-size:14.5px;font-weight:600;text-decoration:none;color:var(--muted);padding:10px 0}
+.nav a:hover{color:var(--pom)}
+.pill{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;white-space:nowrap}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px rgba(47,122,75,.15);flex:none}
+.pill.closed i{background:var(--pom);box-shadow:0 0 0 4px rgba(155,29,51,.14)}
+.hdr .pill{display:none}
+.lang{min-height:44px;min-width:44px;padding:0 14px;border:1px solid var(--line);background:var(--card);border-radius:999px;font-weight:700;font-size:14px;cursor:pointer}
+.lang:hover{border-color:var(--pom);color:var(--pom)}
+.lang .ar-lbl{font-family:'El Messiri',serif;font-size:16px}
+@media (min-width:900px){.nav{display:flex}.hdr .pill{display:inline-flex}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:26px 0 40px}
+.hero .wrap{display:grid;gap:22px;position:relative}
+.wm{position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cg fill='none' stroke='%23C29A4B' stroke-opacity='.28' stroke-width='1'%3E%3Crect x='30' y='30' width='36' height='36'/%3E%3Crect x='30' y='30' width='36' height='36' transform='rotate(45 48 48)'/%3E%3Ccircle cx='48' cy='48' r='9'/%3E%3Cpath d='M0 48h12M84 48h12M48 0v12M48 84v12'/%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,transparent 85%);mask-image:linear-gradient(180deg,#000 0%,transparent 85%)}
+.kicker{font:700 12px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--brass-t);display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
+[dir=rtl] .kicker{letter-spacing:0;font-size:14px}
+.kicker .dot{width:4px;height:4px;border-radius:50%;background:var(--brass)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;letter-spacing:-.01em}
+[dir=rtl] h1,[dir=rtl] h2,[dir=rtl] h3{letter-spacing:0}
+.h1{font-size:clamp(46px,13.2vw,96px);line-height:.92;margin:14px 0 0;font-weight:600}
+.h1 em{font-style:italic;color:var(--pom);font-weight:600}
+.h1 span{display:block}
+[dir=rtl] .h1{line-height:1.2;font-size:clamp(40px,11vw,80px)}
+[dir=rtl] .h1 em{font-style:normal}
+.lead{font-size:17px;line-height:1.6;color:var(--muted);max-width:34em;margin:16px 0 0}
+.lead b{color:var(--ink);font-weight:600}
+.rate{display:inline-flex;align-items:center;gap:12px;margin-top:20px;text-decoration:none;padding:10px 16px 10px 12px;border-radius:14px;background:var(--card);border:1px solid var(--line);min-height:44px}
+.rate .num{font:700 30px/1 var(--serif);color:var(--ink)}
+.rate .st{color:var(--brass);font-size:14px;letter-spacing:1px;line-height:1}
+.rate small{display:block;font-size:13px;color:var(--muted);line-height:1.3}
+.rate:hover{border-color:var(--brass)}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:0 22px;border-radius:999px;border:1.5px solid transparent;font-weight:700;font-size:15.5px;text-decoration:none;cursor:pointer;transition:transform .15s ease,background .2s,border-color .2s,color .2s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn svg{width:19px;height:19px;flex:none}
+.btn.pri{background:var(--pom);color:#fff}
+.btn.pri:hover{background:var(--pom-d)}
+.btn.out{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn.out:hover{background:var(--ink);color:var(--ivory)}
+.btn.brass{background:var(--brass-l);color:var(--night)}
+.btn.brass:hover{background:#EDD49E}
+.btn.ghost-n{border-color:rgba(244,232,212,.4);color:var(--cream);background:transparent}
+.btn.ghost-n:hover{border-color:var(--cream)}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
+.facts{list-style:none;margin:26px 0 0;padding:16px 0 0;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:14px 18px}
+.facts li{font-size:14px;line-height:1.35;color:var(--muted);display:flex;gap:9px;align-items:flex-start}
+.facts b{display:block;color:var(--ink);font-weight:700;font-size:15px}
+.facts .md{width:10px;height:10px;border-radius:50%;flex:none;margin-top:4px}
+.facts .ic{width:18px;height:18px;flex:none;color:var(--brass-t);margin-top:1px}
+.arch{position:relative;max-width:420px;width:100%;margin-inline:auto}
+.arch svg{width:100%;height:auto}
+.arch-cap{position:absolute;inset-inline:0;bottom:-6px;text-align:center;font:italic 500 16px/1.3 var(--serif);color:var(--muted)}
+[dir=rtl] .arch-cap{font-style:normal;font-size:15px}
+@media (min-width:900px){
+  .hero{padding:50px 0 70px}
+  .hero .wrap{grid-template-columns:1.1fr .9fr;align-items:center;gap:40px}
+  .arch{max-width:470px}
+  .facts{grid-template-columns:repeat(4,1fr)}
+}
+
+/* hero animations */
+.petal{transform-box:fill-box;transform-origin:center;animation:fall 13s linear infinite}
+.petal.p2{animation-duration:16s;animation-delay:-5s}.petal.p3{animation-duration:11s;animation-delay:-8s}.petal.p4{animation-duration:18s;animation-delay:-2s}
+@keyframes fall{0%{transform:translate(0,-40px) rotate(0);opacity:0}8%{opacity:1}50%{transform:translate(22px,190px) rotate(160deg)}88%{opacity:1}100%{transform:translate(-8px,380px) rotate(340deg);opacity:0}}
+.float{transform-box:fill-box;transform-origin:center;animation:bob 5s ease-in-out infinite}
+.float.f2{animation-delay:-1.6s;animation-duration:6s}.float.f3{animation-delay:-3s;animation-duration:7s}
+@keyframes bob{0%,100%{transform:translate(0,0) rotate(0)}50%{transform:translate(4px,-2px) rotate(14deg)}}
+.ripple{transform-box:fill-box;transform-origin:center;animation:rip 4s ease-out infinite}
+.ripple.r2{animation-delay:-2s}
+@keyframes rip{0%{transform:scale(.3);opacity:.8}100%{transform:scale(1.15);opacity:0}}
+.jet{stroke-dasharray:6 9;animation:jet 1.1s linear infinite}
+@keyframes jet{to{stroke-dashoffset:-30}}
+.lantern{transform-box:view-box;transform-origin:200px 40px;animation:swing 6s ease-in-out infinite}
+@keyframes swing{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+.glow{animation:glow 3.4s ease-in-out infinite}
+@keyframes glow{0%,100%{opacity:.55}50%{opacity:.9}}
+.paused *{animation-play-state:paused!important}
+@media (max-width:699px){.mz-it .ds{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.pk blockquote{font-size:17px}.pk h3{font-size:23px}}
+
+/* sections */
+section{scroll-margin-top:12px}
+.sec{padding:64px 0}
+.sec-h{max-width:720px}
+.sec-h h2{font-size:clamp(36px,9vw,60px);line-height:1;margin-top:10px}
+[dir=rtl] .sec-h h2{line-height:1.25;font-size:clamp(32px,8vw,52px)}
+.sec-h h2 em{font-style:italic;color:var(--pom)}
+[dir=rtl] .sec-h h2 em{font-style:normal}
+.sec-h p{color:var(--muted);font-size:16px;margin:12px 0 0}
+.orn{display:flex;align-items:center;gap:12px;color:var(--brass)}
+.orn::before,.orn::after{content:"";height:1px;background:currentColor;opacity:.6;flex:1}
+.orn svg{width:18px;height:18px}
+
+/* meze module (dark) */
+.meze{background:var(--night);color:var(--cream);position:relative;overflow:hidden;overflow:clip}
+.meze::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.6;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23C29A4B' stroke-opacity='.12'%3E%3Crect x='38' y='38' width='44' height='44'/%3E%3Crect x='38' y='38' width='44' height='44' transform='rotate(45 60 60)'/%3E%3Cpath d='M60 0v16M60 104v16M0 60h16M104 60h16'/%3E%3C/g%3E%3C/svg%3E")}
+.meze .wrap{position:relative}
+.meze .kicker{color:var(--brass-l)}
+.meze .kicker .dot{background:var(--brass-l)}
+.meze .sec-h p{color:var(--cream-m)}
+.meze .sec-h h2 em{color:var(--brass-l)}
+.mz-grid{display:grid;gap:26px;margin-top:28px}
+.tray-box{position:relative}
+.tray{width:100%;max-width:440px;margin-inline:auto}
+.tray .bw{transform-box:fill-box;transform-origin:center}
+.tray .bw.pop{animation:pop .45s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pop{0%{transform:scale(.4);opacity:0}100%{transform:scale(1);opacity:1}}
+.tray .slot{cursor:pointer}
+.mz-count{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:6px;flex-wrap:wrap}
+.mz-count .c{font:600 28px/1 var(--serif)}
+[dir=rtl] .mz-count .c{font-size:24px}
+.mz-count .c b{color:var(--brass-l)}
+.dots{display:flex;gap:6px}
+.dots i{width:22px;height:6px;border-radius:3px;background:rgba(244,232,212,.18);transition:background .25s}
+.dots i.on{background:var(--brass-l)}
+.mz-quote{margin:18px 0 0;padding:14px 16px;border-inline-start:2px solid var(--brass);background:rgba(244,232,212,.05);border-radius:0 12px 12px 0;font:italic 500 19px/1.35 var(--serif);color:var(--cream)}
+[dir=rtl] .mz-quote{border-radius:12px 0 0 12px}
+.mz-quote footer{font:500 13px/1.4 var(--sans);color:var(--cream-m);margin-top:6px;font-style:normal}
+.mz-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.mz-it{display:flex;align-items:center;gap:12px;padding:10px 10px 10px 12px;border-radius:14px;background:rgba(244,232,212,.05);border:1px solid rgba(244,232,212,.1);transition:border-color .2s,background .2s}
+.mz-it.has{border-color:rgba(228,200,139,.55);background:rgba(228,200,139,.08)}
+.mz-it .sw{width:34px;height:34px;flex:none}
+.mz-it .tx{flex:1;min-width:0}
+.mz-it .nm{font-weight:700;font-size:15.5px;line-height:1.25;display:block}
+.mz-it .ds{display:block;font-size:13.5px;line-height:1.4;color:var(--cream-m);margin-top:2px}
+.mz-it .pr{font-size:12.5px;color:var(--cream-m);white-space:nowrap}
+.stp{display:flex;align-items:center;gap:2px;flex:none}
+.stp button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(244,232,212,.28);background:transparent;cursor:pointer;display:grid;place-items:center;font-size:22px;line-height:1;color:var(--cream)}
+.stp button:hover:not([disabled]){border-color:var(--brass-l);color:var(--brass-l)}
+.stp button[disabled]{opacity:.3;cursor:not-allowed}
+.stp b{min-width:22px;text-align:center;font-weight:800}
+.stp .minus{display:none}
+.has .stp .minus{display:grid}
+.mz-extra h3{font-size:24px;margin:24px 0 10px;color:var(--cream)}
+.chk{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:14px;border:1px solid rgba(244,232,212,.14);cursor:pointer;min-height:56px;margin-bottom:8px}
+.chk input{width:22px;height:22px;accent-color:var(--brass);flex:none}
+.chk span{flex:1;font-weight:600;font-size:15px;line-height:1.3}
+.chk small{display:block;font-weight:400;color:var(--cream-m);font-size:13px}
+.chk em{font-style:normal;font-weight:700;white-space:nowrap}
+.chk:has(input:checked){border-color:rgba(228,200,139,.55);background:rgba(228,200,139,.08)}
+.mz-sum{margin-top:18px;padding:18px;border-radius:var(--r);background:var(--cream);color:var(--ink)}
+.mz-sum .row{display:flex;justify-content:space-between;gap:12px;font-size:15px;padding:3px 0}
+.mz-sum .row.grand{font:700 26px/1.2 var(--serif);border-top:1px solid var(--line);margin-top:8px;padding-top:10px}
+[dir=rtl] .mz-sum .row.grand{font-size:22px}
+.mz-sum .note{font-size:13px;color:var(--muted);margin:8px 0 0}
+.mz-sum .btns{display:grid;gap:8px;margin-top:14px}
+.mz-tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.mz-tools .btn{min-height:44px;font-size:14px;padding:0 16px}
+@media (min-width:900px){
+  .mz-grid{grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .tray-col{position:sticky;top:20px}
+  .mz-sum .btns{grid-template-columns:1fr 1fr}
+}
+
+/* picks */
+.picks{display:grid;gap:14px;margin-top:28px}
+.pk{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:12px;position:relative}
+.pk .cat{font:700 11.5px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--brass-t)}
+[dir=rtl] .pk .cat{letter-spacing:0;font-size:13px}
+.pk h3{font-size:26px;line-height:1.1}
+[dir=rtl] .pk h3{font-size:22px;line-height:1.35}
+.pk blockquote{margin:0;font:italic 500 18px/1.4 var(--serif);color:var(--ink);flex:1}
+.pk blockquote::before{content:"“";display:block;font:700 44px/0.6 var(--serif);color:var(--pom);margin:10px 0 2px}
+.pk .by{font-size:13px;color:var(--muted)}
+.pk .ft{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line-2);padding-top:12px}
+.pk .pr{font:700 22px/1 var(--serif)}
+.pk.ask{background:var(--pom);color:#fff;border-color:var(--pom)}
+.pk.ask .cat{color:#F6D6A0}
+.pk.ask blockquote{color:#fff}
+.pk.ask blockquote::before{color:#F6D6A0}
+.pk.ask .by{color:#F2D2D6}
+.pk.ask p{margin:0;font-size:15px;color:#FBE7E9}
+.add{min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;font-weight:700;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:background .2s,color .2s,transform .15s}
+.add:hover{background:var(--ink);color:var(--ivory)}
+.add:active{transform:scale(.95)}
+.add.done{background:var(--ok);border-color:var(--ok);color:#fff}
+@media (min-width:700px){.picks{grid-template-columns:1fr 1fr}}
+@media (min-width:1050px){.picks{grid-template-columns:repeat(3,1fr)}}
+
+/* menu */
+.menu-bar{margin-top:24px;display:grid;gap:12px}
+.search{position:relative}
+.search input{width:100%;min-height:52px;border-radius:999px;border:1px solid var(--line);background:var(--card);padding-inline:48px 18px;font-size:16px}
+.search input:focus{border-color:var(--pom);outline:none;box-shadow:0 0 0 3px rgba(155,29,51,.15)}
+.search svg{position:absolute;inset-inline-start:17px;top:50%;width:20px;height:20px;transform:translateY(-50%);color:var(--muted)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 8px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-weight:600;font-size:14.5px;cursor:pointer;white-space:nowrap}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.chip small{opacity:.6;font-weight:500;margin-inline-start:4px}
+.items{list-style:none;margin:14px 0 0;padding:0;display:grid}
+.it{display:grid;grid-template-columns:1fr auto;gap:4px 14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.it .nm{font-weight:700;font-size:16px;line-height:1.3}
+.it .nm small{display:block;font-weight:500;color:var(--muted);font-size:13px}
+.it .ds{grid-column:1;font-size:14px;color:var(--muted);line-height:1.45;margin:0}
+.it .meta{display:flex;flex-direction:column;align-items:flex-end;gap:8px;grid-row:1 / span 2;grid-column:2}
+.it .pr{font:700 21px/1 var(--serif);white-space:nowrap}
+.it .vol{font-size:12.5px;color:var(--muted)}
+.it .ct{font-size:12px;color:var(--brass-t);font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+[dir=rtl] .it .ct{letter-spacing:0}
+.qty{display:flex;align-items:center;gap:2px}
+.qty button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);font-size:20px;cursor:pointer;display:grid;place-items:center;line-height:1}
+.qty button:hover{border-color:var(--pom);color:var(--pom)}
+.qty b{min-width:22px;text-align:center}
+.more{margin-top:18px}
+.empty{padding:30px 0;color:var(--muted)}
+@media (min-width:900px){
+  .items{grid-template-columns:1fr 1fr;column-gap:48px}
+  .menu-bar{grid-template-columns:minmax(260px,340px) 1fr;align-items:start}
+}
+
+/* reviews */
+.rev{background:var(--stone)}
+.rv-top{display:grid;gap:28px;margin-top:28px}
+.big-rate{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.big-rate .n{font:600 96px/.8 var(--serif);color:var(--pom)}
+.big-rate .st{color:var(--brass);font-size:20px;letter-spacing:3px}
+.big-rate small{display:block;color:var(--muted);font-size:14px}
+.asp{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.asp li{display:grid;grid-template-columns:110px 1fr auto;gap:12px;align-items:center;font-size:14.5px}
+.asp .bar{height:8px;border-radius:4px;background:rgba(42,27,21,.1);overflow:hidden}
+.asp .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--brass),var(--pom));border-radius:4px;transform-origin:left;transition:transform 1s ease}
+[dir=rtl] .asp .bar i{transform-origin:right;background:linear-gradient(270deg,var(--brass),var(--pom))}
+.asp .v{font-size:13.5px;color:var(--muted);white-space:nowrap}
+.asp .v b{color:var(--ink)}
+.quotes{display:grid;gap:14px;margin-top:30px}
+.q{background:var(--card);border-radius:var(--r);padding:22px;border:1px solid var(--line-2);display:flex;flex-direction:column;gap:12px}
+.q blockquote{margin:0;font:500 19px/1.42 var(--serif);flex:1}
+.q .st{color:var(--brass);letter-spacing:2px;font-size:13px}
+.q footer{font-size:13.5px;color:var(--muted)}
+.q footer b{color:var(--ink)}
+.all{margin-top:22px}
+@media (min-width:700px){.quotes{grid-template-columns:1fr 1fr}}
+@media (min-width:1050px){.quotes{grid-template-columns:repeat(3,1fr)}.rv-top{grid-template-columns:.8fr 1.2fr;align-items:center}}
+
+/* find */
+.find-g{display:grid;gap:18px;margin-top:28px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.addr{font:600 32px/1.05 var(--serif)}
+[dir=rtl] .addr{font-size:26px;line-height:1.35}
+.addr small{display:block;font:500 14px/1.4 var(--sans);color:var(--muted);margin-top:8px}
+.ways{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}
+.ways li{display:flex;align-items:center;gap:10px;font-size:15px}
+.ways .mdot{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;flex:none;background:#fff;border:1px solid var(--line)}
+.ways .mdot i{width:11px;height:11px;border-radius:50%}
+.ways .ic{width:22px;height:22px;flex:none;color:var(--muted)}
+.ways .dist{margin-inline-start:auto;color:var(--muted);font-size:14px;white-space:nowrap}
+.find-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.week{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:2px}
+.week li{display:flex;justify-content:space-between;padding:9px 12px;border-radius:10px;font-size:15px}
+.week li.today{background:var(--pom-l);font-weight:700;color:var(--pom-d)}
+.map{position:relative;border-radius:var(--r);overflow:hidden;min-height:320px;background:var(--sand);border:1px solid var(--line)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.map .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;color:var(--muted);font-size:14px}
+.feats{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.feats span{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;background:var(--ivory);border:1px solid var(--line);font-size:14px;font-weight:600}
+.feats span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--brass);flex:none}
+.branch{display:flex;gap:14px;align-items:flex-start;margin-top:16px;padding-top:16px;border-top:1px solid var(--line-2);font-size:14.5px;color:var(--muted)}
+.branch b{color:var(--ink);display:block;font-size:15.5px}
+.card h3{font-size:26px}
+@media (min-width:900px){
+  .find-g{grid-template-columns:1fr 1fr}
+  .map{min-height:100%}
+}
+
+/* footer */
+.ftr{background:var(--night);color:var(--cream-m);padding:44px 0 34px;font-size:14px}
+.ftr .wrap{display:grid;gap:18px}
+.ftr .brand b{color:var(--cream)}
+.ftr .brand small{color:var(--brass-l)}
+.ftr a{color:var(--cream)}
+.ftr p{margin:0}
+.ftr .demo-n{border-top:1px solid rgba(244,232,212,.14);padding-top:16px;font-size:13px}
+
+/* sticky bar */
+.sbar{position:fixed;inset-inline:0;bottom:0;z-index:40;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(245,238,225,.97);border-top:1px solid var(--line);display:flex;gap:10px}
+.sbar .btn{flex:1;min-height:52px}
+.sbar .call{flex:none;width:52px;padding:0;border-color:var(--ink)}
+.sbar .badge{display:inline-grid;place-items:center;min-width:24px;height:24px;padding:0 7px;border-radius:12px;background:#fff;color:var(--pom);font-size:13px;font-weight:800}
+.sbar .bump{animation:bump .4s ease}
+@keyframes bump{50%{transform:scale(1.25)}}
+@media (min-width:900px){.sbar{inset-inline:auto 24px;bottom:24px;padding:0;background:none;border:0}.sbar .call{display:none}.sbar .btn{box-shadow:0 10px 30px rgba(42,27,21,.25);padding:0 26px}}
+
+/* drawer */
+.ov{position:fixed;inset:0;background:rgba(36,20,15,.55);z-index:60;opacity:0;pointer-events:none;transition:opacity .25s}
+.ov.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;z-index:61;inset-inline:0;bottom:0;max-height:92svh;max-height:92vh;background:var(--ivory);border-radius:22px 22px 0 0;transform:translateY(105%);transition:transform .3s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;visibility:hidden}
+@supports (height:1svh){.drawer{max-height:92svh}}
+.drawer.on{transform:none;visibility:visible}
+.dr-h{display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:1px solid var(--line)}
+.dr-h h2{font-size:32px}
+.x{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);cursor:pointer;display:grid;place-items:center}
+.x svg{width:18px;height:18px}
+.dr-b{overflow-y:auto;padding:14px 20px 20px;flex:1;overscroll-behavior:contain}
+.dr-f{padding:14px 20px calc(14px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:var(--card)}
+.lines{list-style:none;margin:0;padding:0}
+.ln{display:grid;grid-template-columns:1fr auto;gap:4px 10px;padding:12px 0;border-bottom:1px solid var(--line-2);align-items:center}
+.ln .nm{font-weight:700;font-size:15px;line-height:1.3}
+.ln .nm small{display:block;font-weight:500;color:var(--muted);font-size:13px;margin-top:2px}
+.ln .pr{font-weight:700;white-space:nowrap;font-size:15px}
+.ln .qty{grid-column:1 / -1;justify-content:flex-start}
+.dr-empty{color:var(--muted);font-size:15px;padding:6px 0 4px;margin:0}
+.fld{margin-top:18px}
+.fld>label,.fld>.lb{display:block;font-weight:700;font-size:14px;margin-bottom:8px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.seg.two{grid-template-columns:1fr 1fr}
+.seg button{min-height:48px;border-radius:12px;border:1px solid var(--line);background:var(--card);font-weight:600;font-size:14.5px;cursor:pointer;padding:4px 6px;line-height:1.2}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.inp{width:100%;min-height:50px;border-radius:12px;border:1px solid var(--line);background:var(--card);padding:10px 14px;font-size:16px}
+textarea.inp{min-height:76px;resize:vertical}
+.inp:focus{outline:none;border-color:var(--pom);box-shadow:0 0 0 3px rgba(155,29,51,.15)}
+.hint{font-size:13px;color:var(--muted);margin:8px 0 0}
+.guests{display:flex;align-items:center;gap:10px}
+.guests b{font:700 26px/1 var(--serif);min-width:32px;text-align:center}
+.tot{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.tot span{color:var(--muted);font-size:14px}
+.tot b{font:700 28px/1 var(--serif)}
+.dr-f .btn{width:100%}
+.dr-f .hint{text-align:center}
+@media (min-width:900px){
+  .drawer{inset-inline:auto 0;top:0;bottom:0;width:460px;max-height:none;border-radius:0;transform:translateX(105%)}
+  [dir=rtl] .drawer{transform:translateX(-105%)}
+  .drawer.on,[dir=rtl] .drawer.on{transform:none}
+}
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translate(-50%,20px);background:var(--ink);color:var(--ivory);padding:10px 18px;border-radius:999px;font-size:14px;font-weight:600;z-index:70;opacity:0;transition:.25s;pointer-events:none;max-width:calc(100% - 32px);text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.rv{opacity:1}
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.js .rv.in{opacity:1;transform:none}
+.arch{max-width:340px}
+.arch-cap{position:static;margin:10px 0 0}
+.rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 20px 12px;margin-inline:-20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rail::-webkit-scrollbar{display:none}
+.rail>*{flex:0 0 84%;scroll-snap-align:center}
+.rail-hint{display:flex;gap:6px;justify-content:center;margin-top:4px}
+.rail-hint i{width:6px;height:6px;border-radius:50%;background:var(--line)}
+@media (min-width:700px){.rail{display:grid;overflow:visible;padding:0;margin-inline:0}.rail>*{flex:none}.rail-hint{display:none}}
+.branch .ic{width:24px;height:24px;flex:none;color:var(--brass-t);margin-top:2px}
+.wk-days{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:14px}
+.wk-days span{text-align:center;white-space:nowrap;overflow:hidden;padding:9px 0;border-radius:10px;background:var(--ivory);font-size:13.5px;font-weight:600;color:var(--muted)}
+.wk-days span.today{background:var(--pom);color:#fff}
+.wk-line{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;font-size:15px}
+.wk-line b{font:700 28px/1 var(--serif)}
+@media (min-width:900px){.arch{max-width:460px}}
+.brand small{font-size:11.5px}
+.ftr p a{display:inline-block;padding:12px 0}
+[hidden]{display:none!important}
+@media (max-width:380px){.wk-days{gap:2px}.wk-days span{font-size:11.5px}}
+.wk-line b{font-size:24px;white-space:nowrap}
+.wk-line span{padding-inline-end:10px}
+@media (max-width:699px){.chk small{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}}
+</style>
+</head>
+<body>
+<div class="demo" id="demoBar"></div>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Адам">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><g fill="#9B1D33"><rect x="10" y="10" width="20" height="20" rx="1.5"/><rect x="10" y="10" width="20" height="20" rx="1.5" transform="rotate(45 20 20)"/></g><circle cx="20" cy="20" r="5.2" fill="#E4C88B"/><circle cx="20" cy="20" r="2" fill="#9B1D33"/></svg>
+      <span><b id="brandName">Адам</b><small data-t="brandSub"></small></span>
+    </a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#meze" data-t="navMeze"></a><a href="#menu" data-t="navMenu"></a><a href="#reviews" data-t="navRev"></a><a href="#find" data-t="navFind"></a>
+    </nav>
+    <span class="pill" id="hdrStatus"><i></i><span></span></span>
+    <button class="lang" id="langBtn" type="button"></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="h1">
+    <div class="wm" aria-hidden="true"></div>
+    <div class="wrap">
+      <div>
+        <div class="kicker"><span class="pill" id="heroStatus"><i></i><span></span></span><span class="dot"></span><span data-t="heroKicker"></span></div>
+        <h1 class="h1" id="h1"></h1>
+        <p class="lead" id="lead"></p>
+        <a class="rate" id="rateBadge" target="_blank" rel="noopener">
+          <span class="num" id="rateNum"></span>
+          <span><span class="st" aria-hidden="true">★★★★★</span><small id="rateCount"></small></span>
+        </a>
+        <div class="ctas">
+          <a class="btn pri" href="#meze" id="ctaMeze"></a>
+          <button class="btn out" type="button" id="ctaTable"></button>
+        </div>
+        <ul class="facts" id="facts"></ul>
+      </div>
+      <div class="arch" id="archBox">
+        <svg viewBox="0 0 400 540" role="img" id="archSvg">
+          <title id="archTitle"></title>
+          <defs>
+            <pattern id="zel" width="40" height="40" patternUnits="userSpaceOnUse">
+              <rect width="40" height="40" fill="#EADCC3"/>
+              <g fill="none" stroke="#C29A4B" stroke-opacity=".55" stroke-width="1">
+                <rect x="12" y="12" width="16" height="16"/><rect x="12" y="12" width="16" height="16" transform="rotate(45 20 20)"/>
+                <path d="M0 0l8 8M40 0l-8 8M0 40l8-8M40 40l-8-8"/>
+              </g>
+              <circle cx="20" cy="20" r="2.4" fill="#9B1D33" fill-opacity=".5"/>
+            </pattern>
+            <linearGradient id="niche" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E1A14"/><stop offset="1" stop-color="#4A2A1F"/></linearGradient>
+            <radialGradient id="lamp" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#F6D78F" stop-opacity=".75"/><stop offset="1" stop-color="#F6D78F" stop-opacity="0"/></radialGradient>
+            <linearGradient id="brassG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E4C88B"/><stop offset=".5" stop-color="#C29A4B"/><stop offset="1" stop-color="#8E6A2A"/></linearGradient>
+            <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FB3B0"/><stop offset="1" stop-color="#3F7C7A"/></linearGradient>
+            <clipPath id="archClip"><path d="M48 540V250C48 140 120 66 200 30c80 36 152 110 152 220v290z"/></clipPath>
+            <symbol id="pt" viewBox="-10 -10 20 20"><path d="M0-8C6-7 9-1 6 4 4 7 0 8 0 8S-4 7-6 4C-9-1-6-7 0-8z"/><path d="M0-6C0-1 0 3 0 7" stroke="#fff" stroke-opacity=".25" stroke-width=".8" fill="none"/></symbol>
+          </defs>
+          <!-- outer tiled frame -->
+          <path d="M20 540V246C20 122 104 36 200 0c96 36 180 122 180 246v294z" fill="url(#zel)"/>
+          <path d="M20 540V246C20 122 104 36 200 0c96 36 180 122 180 246v294z" fill="none" stroke="#C29A4B" stroke-width="2"/>
+          <path d="M38 540V250C38 134 114 56 200 20c86 36 162 114 162 230v290z" fill="none" stroke="#9B1D33" stroke-width="2.5"/>
+          <!-- niche -->
+          <path d="M48 540V250C48 140 120 66 200 30c80 36 152 110 152 220v290z" fill="url(#niche)"/>
+          <g clip-path="url(#archClip)">
+            <circle class="glow" cx="200" cy="170" r="130" fill="url(#lamp)"/>
+            <!-- lattice window (mashrabiya) -->
+            <g opacity=".22" stroke="#E4C88B" fill="none" stroke-width="1">
+              <path d="M110 120h180M110 150h180M110 180h180M110 210h180M110 240h180M110 270h180"/>
+              <path d="M110 110l170 170M140 110l150 150M170 110l120 120M110 140l140 140M110 170l110 110M290 110L120 280M260 110L110 260M230 110L110 230M290 140L150 280M290 170L180 280"/>
+            </g>
+            <!-- lantern -->
+            <g class="lantern">
+              <path d="M200 30v52" stroke="#C29A4B" stroke-width="1.6"/>
+              <path d="M186 82h28l6 10h-40z" fill="url(#brassG)"/>
+              <path d="M180 92h40l-6 50h-28z" fill="#F6D78F" fill-opacity=".85"/>
+              <path d="M180 92h40l-6 50h-28z" fill="none" stroke="url(#brassG)" stroke-width="2.4"/>
+              <path d="M193 92v50M207 92v50M182 108h36M184 124h32" stroke="#8E6A2A" stroke-width="1.4"/>
+              <path d="M186 142h28l-6 10h-16z" fill="url(#brassG)"/>
+              <circle cx="200" cy="157" r="3" fill="#C29A4B"/>
+            </g>
+            <!-- falling petals -->
+            <use href="#pt" class="petal" x="120" y="110" width="16" height="16" fill="#C2334B"/>
+            <use href="#pt" class="petal p2" x="250" y="90" width="13" height="13" fill="#D9566A"/>
+            <use href="#pt" class="petal p3" x="290" y="150" width="15" height="15" fill="#A8233A"/>
+            <use href="#pt" class="petal p4" x="160" y="70" width="12" height="12" fill="#E07B88"/>
+          </g>
+          <!-- fountain -->
+          <g>
+            <ellipse cx="200" cy="520" rx="150" ry="16" fill="#1A0D09" opacity=".35"/>
+            <!-- basin body: octagonal tiled -->
+            <path d="M64 430h272l-14 92H78z" fill="url(#zel)"/>
+            <path d="M64 430h272l-14 92H78z" fill="none" stroke="#C29A4B" stroke-width="2"/>
+            <path d="M78 450h244M80 500h240" stroke="#9B1D33" stroke-width="2" opacity=".7"/>
+            <!-- water surface -->
+            <ellipse cx="200" cy="430" rx="138" ry="20" fill="url(#water)"/>
+            <ellipse cx="200" cy="430" rx="138" ry="20" fill="none" stroke="#E4C88B" stroke-width="3"/>
+            <ellipse class="ripple" cx="200" cy="432" rx="90" ry="12" fill="none" stroke="#DCEFEA" stroke-width="1.4"/>
+            <ellipse class="ripple r2" cx="200" cy="432" rx="90" ry="12" fill="none" stroke="#DCEFEA" stroke-width="1.4"/>
+            <!-- column + top bowl -->
+            <path d="M192 432V372h16v60" fill="url(#brassG)"/>
+            <path d="M158 366h84c-6 14-22 20-42 20s-36-6-42-20z" fill="url(#brassG)"/>
+            <ellipse cx="200" cy="366" rx="42" ry="6" fill="#5E9A97"/>
+            <path d="M196 366v-18h8v18" fill="url(#brassG)"/>
+            <!-- jets -->
+            <g fill="none" stroke="#CFE8E4" stroke-width="2.2" stroke-linecap="round">
+              <path class="jet" d="M200 348c-10-30-40-30-52 18"/>
+              <path class="jet" d="M200 348c10-30 40-30 52 18"/>
+              <path class="jet" d="M160 384c-14 10-22 24-26 44"/>
+              <path class="jet" d="M240 384c14 10 22 24 26 44"/>
+            </g>
+            <!-- floating petals -->
+            <use href="#pt" class="float" x="112" y="420" width="16" height="16" fill="#C2334B"/>
+            <use href="#pt" class="float f2" x="150" y="430" width="13" height="13" fill="#E07B88"/>
+            <use href="#pt" class="float f3" x="240" y="424" width="15" height="15" fill="#A8233A"/>
+            <use href="#pt" class="float" x="276" y="430" width="12" height="12" fill="#D9566A"/>
+            <use href="#pt" class="float f2" x="200" y="437" width="11" height="11" fill="#C2334B"/>
+          </g>
+        </svg>
+        <p class="arch-cap" id="archCap"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="meze sec" id="meze" aria-labelledby="mzH">
+    <div class="wrap">
+      <div class="sec-h">
+        <div class="kicker" id="mzKicker"></div>
+        <h2 id="mzH"></h2>
+        <p id="mzSub"></p>
+      </div>
+      <div class="mz-grid">
+        <div class="tray-col">
+          <div class="tray-box"><svg class="tray" id="tray" viewBox="0 0 400 400" role="img" aria-labelledby="trayT"><title id="trayT"></title></svg></div>
+          <div class="mz-count"><span class="c" id="mzCount"></span><span class="dots" id="mzDots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+          <div class="mz-tools">
+            <button class="btn ghost-n" type="button" id="mzAuto"></button>
+            <button class="btn ghost-n" type="button" id="mzClear"></button>
+          </div>
+          <blockquote class="mz-quote" id="mzQuote" lang="ru" dir="ltr"></blockquote>
+        </div>
+        <div>
+          <ul class="mz-list" id="mzList"></ul>
+          <div class="mz-extra">
+            <h3 id="mzExH"></h3>
+            <div id="mzExtras"></div>
+          </div>
+          <div class="mz-sum" id="mzSum" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="picks" aria-labelledby="pkH">
+    <div class="wrap">
+      <div class="sec-h">
+        <div class="kicker" data-t="pkKicker"></div>
+        <h2 id="pkH"></h2>
+        <p data-t="pkSub"></p>
+      </div>
+      <div class="picks rail" id="picksGrid"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="menu" aria-labelledby="mnH" style="padding-top:20px">
+    <div class="wrap">
+      <div class="orn" aria-hidden="true"><svg viewBox="0 0 20 20"><g fill="currentColor"><rect x="5" y="5" width="10" height="10"/><rect x="5" y="5" width="10" height="10" transform="rotate(45 10 10)"/></g></svg></div>
+      <div class="sec-h" style="margin-top:40px">
+        <div class="kicker" id="mnKicker"></div>
+        <h2 id="mnH"></h2>
+        <p id="mnSub"></p>
+      </div>
+      <div class="menu-bar">
+        <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" type="search" autocomplete="off"></div>
+        <div class="chips" id="chips" role="toolbar"></div>
+      </div>
+      <ul class="items" id="items"></ul>
+      <div class="more"><button class="btn out" type="button" id="moreBtn" hidden></button></div>
+    </div>
+  </section>
+
+  <section class="rev sec" id="reviews" aria-labelledby="rvH">
+    <div class="wrap">
+      <div class="sec-h">
+        <div class="kicker" data-t="rvKicker"></div>
+        <h2 id="rvH"></h2>
+      </div>
+      <div class="rv-top">
+        <div class="big-rate"><span class="n" id="bigRate"></span><span><span class="st" aria-hidden="true">★★★★★</span><small id="bigRateTxt"></small></span></div>
+        <div><h3 style="font-size:24px;margin-bottom:12px" data-t="aspH"></h3><ul class="asp" id="asp"></ul></div>
+      </div>
+      <div class="quotes rail" id="quotes"></div>
+      <div class="all"><a class="btn out" id="allRev" target="_blank" rel="noopener"></a></div>
+    </div>
+  </section>
+
+  <section class="sec" id="find" aria-labelledby="fdH">
+    <div class="wrap">
+      <div class="sec-h">
+        <div class="kicker" data-t="fdKicker"></div>
+        <h2 id="fdH"></h2>
+      </div>
+      <div class="find-g">
+        <div class="card">
+          <div class="addr" id="addr"></div>
+          <ul class="ways" id="ways"></ul>
+          <div class="find-btns">
+            <a class="btn pri" id="routeBtn" target="_blank" rel="noopener"></a>
+            <a class="btn out" id="callBtn"></a>
+          </div>
+          <div class="branch" id="branch"></div>
+        </div>
+        <div class="map" id="mapBox"><div class="ph" id="mapPh"></div></div>
+        <div class="card">
+          <h3 data-t="hoursH"></h3>
+          <p class="pill" id="findStatus" style="margin:10px 0 0"><i></i><span></span></p>
+          <ul class="week" id="week"></ul>
+        </div>
+        <div class="card">
+          <h3 data-t="featH"></h3>
+          <div class="feats" id="feats"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Адам">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><g fill="#C29A4B"><rect x="10" y="10" width="20" height="20" rx="1.5"/><rect x="10" y="10" width="20" height="20" rx="1.5" transform="rotate(45 20 20)"/></g><circle cx="20" cy="20" r="5.2" fill="#24140F"/></svg>
+      <span><b>Адам</b><small data-t="brandSub"></small></span>
+    </a>
+    <p id="ftrAddr"></p>
+    <p><a id="ftrTel"></a> · <a id="ftrWa" target="_blank" rel="noopener">WhatsApp</a> · <a id="ftrYa" target="_blank" rel="noopener"></a></p>
+    <p data-t="srcNote"></p>
+    <p class="demo-n" id="ftrDemo"></p>
+  </div>
+</footer>
+
+<div class="sbar" id="sbar">
+  <button class="btn pri" type="button" id="barMain"></button>
+  <a class="btn out call" id="barCall"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+</div>
+
+<div class="ov" id="ov"></div>
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drH">
+  <div class="dr-h"><h2 id="drH"></h2><button class="x" type="button" id="drClose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="dr-b" id="drBody">
+    <ul class="lines" id="lines"></ul>
+    <div class="fld"><span class="lb" data-t="fMode"></span><div class="seg" id="segMode"></div><p class="hint" id="modeHint"></p></div>
+    <div class="fld" id="fGuests"><span class="lb" data-t="fGuests"></span><div class="guests qty"><button type="button" id="gMinus">−</button><b id="gN">2</b><button type="button" id="gPlus">+</button></div><p class="hint" id="gHint" hidden></p></div>
+    <div class="fld"><span class="lb" data-t="fDay"></span><div class="seg two" id="segDay"></div></div>
+    <div class="fld"><label for="timeSel" data-t="fTime"></label><select class="inp" id="timeSel"></select></div>
+    <div class="fld" id="fAddr" hidden><label for="addrIn" data-t="fAddr"></label><input class="inp" id="addrIn" autocomplete="street-address"></div>
+    <div class="fld"><label for="nameIn" data-t="fName"></label><input class="inp" id="nameIn" autocomplete="given-name"></div>
+    <div class="fld"><label for="noteIn" data-t="fNote"></label><textarea class="inp" id="noteIn"></textarea></div>
+  </div>
+  <div class="dr-f">
+    <div class="tot" id="drTot"><span data-t="total"></span><b id="drTotV"></b></div>
+    <a class="btn pri" id="send" target="_blank" rel="noopener"></a>
+    <p class="hint" data-t="sendHint"></p>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script>
+(function () {
+'use strict';
+var BIZ = window.BIZ;
+document.documentElement.classList.add('js');
+var $ = function (s, r) { return (r || document).querySelector(s); };
+var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+var wa = function (text) { return 'https://wa.me/' + BIZ.wa + '?text=' + encodeURIComponent(text); };
+var NB = ' ';
+var fmt = function (n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, NB); };
+var plural = function (n, one, few, many) { var a = Math.abs(n) % 100, b = a % 10; return a > 10 && a < 20 ? many : b === 1 ? one : b >= 2 && b <= 4 ? few : many; };
+var arPl = function (n, one, two, few, many) { var m = n % 100; return n === 1 ? one : n === 2 ? two : (m >= 3 && m <= 10) ? n + ' ' + few : n + ' ' + many; };
+var pad = function (n) { return String(n).padStart(2, '0'); };
+var mins = function (s) { return +s.slice(0, 2) * 60 + +s.slice(3); };
+var hhmm = function (v) { return pad(Math.floor(v / 60) % 24) + ':' + pad(v % 60); };
+var lang = 'ru';
+var rub = function (n) { return n == null ? (lang === 'ar' ? 'السعر عند الطلب' : 'по запросу') : fmt(n) + NB + '₽'; };
+var R = BIZ.rating;
+var rateTxt = function () { var v = (+R.value).toFixed(1); return lang === 'ar' ? v : v.replace('.', ','); };
+var feat = function (k) { var f = (BIZ.features || []).filter(function (x) { return x.k === k; })[0]; return f ? f.v : null; };
+
+/* ---------- data helpers ---------- */
+var ALL = [];
+(BIZ.menu || []).forEach(function (c) { c.items.forEach(function (it) { ALL.push({ t: it.t, p: it.p, v: it.v, d: it.d, cat: c.name }); }); });
+var byT = function (t) { return ALL.filter(function (x) { return x.t === t; })[0] || null; };
+var cleanD = function (d) { return d ? d.replace(/\.\.+/g, '.').replace(/\s+,/g, ',').replace(/,(?=\S)/g, ', ').trim() : ''; };
+var volOk = function (v) { return v && !/^0,\d+ мл$/.test(v) && v !== '1 шт.'; };
+var weightOf = function (d) { var m = (d || '').match(/(\d+)\s?(г|мл)\.?$/); return m ? m[1] + NB + m[2] : ''; };
+var dropWeight = function (d) { return cleanD(d).replace(/\.?\s*\d+\s?(г|мл)\.?$/, '').replace(/\.$/, '') ; };
+
+/* Arabic names (category + popular + featured items). Others stay Russian. */
+var CAT_AR = { 'Салаты': 'السلطات', 'Супы': 'الشوربات', 'Чай': 'الشاي', 'Блюда на мангале': 'مشاوي على الفحم', 'Кофе': 'القهوة', 'Завтрак': 'الفطور', 'Холодные напитки': 'مشروبات باردة', 'Гарнир': 'أطباق جانبية', 'Добавка к чаю': 'إضافات للشاي', 'Лепешки из печи': 'فطائر من الفرن', 'Хлеб из печи': 'خبز من الفرن', 'Мезе': 'المازة', 'Рыба из печи': 'سمك من الفرن', 'DIP IT': 'DIP IT' };
+var IT_AR = {
+  'Зеленый салат с креветками': 'سلطة خضراء بالروبيان', 'Суп Пити': 'شوربة بيتي بلحم الضأن',
+  'Медальон из говяжьей вырезки с соусом каймак': 'ميدالية فيليه البقر بصلصة القيمق', 'Лангустины на огне': 'لانغوستين على النار',
+  'Шашлык из лосося': 'شيش السلمون', 'Лепешка с заатором и каймаком': 'منقوشة بالزعتر والقيمق', 'Мезе сет': 'طبق مازة مشكّل',
+  'Лосось в томатном соусе с артишок': 'سلمون بصلصة الطماطم مع الخرشوف', 'Сибас с соусом из тахина и гранат': 'قاروص بصلصة الطحينة والرمان',
+  'Фалафель с тахиной': 'فلافل بالطحينة', 'Хумус Ливанский': 'حمص لبناني', 'Паста из Авокадо': 'معجون الأفوكادو', 'Мутабаль': 'متبّل',
+  'Мухаммара': 'محمّرة', 'Бабагануж': 'بابا غنوج', 'Лябне': 'لبنة', 'Азиза': 'عزيزة', 'Харисса': 'هريسة', 'Тахина': 'طحينة',
+  'Маслины и оливки из туниса': 'زيتون تونسي أسود وأخضر', 'Лафа': 'خبز لافا', 'Нежная пита с сыром': 'خبز بيتا بالجبن',
+  'Пиде с мясом': 'بيدا باللحم', 'Пиде с сыром': 'بيدا بالجبن', 'Шакшука классическая с 2 или 3 яйцами': 'شكشوكة كلاسيكية ببيضتين أو ثلاث',
+  'Шакшука с баклажаном и каймак': 'شكشوكة بالباذنجان والقيمق', 'Традиционный ливанский завтрак': 'فطور لبناني تقليدي',
+  'Омлет с сыром халлуми': 'أومليت بجبن الحلوم', 'ФаваБин (Фул Мудаммас)': 'فول مدمّس',
+  'Хачука с тантуни, сыром халлуми и яйцом пашет': 'خاتشوكا بالتانتوني وجبن الحلوم وبيضة مسلوقة',
+  'Ливанский кофе на песке черный с кардамоном 0,2': 'قهوة لبنانية على الرمل بالهيل 0,2',
+  'Ливанский кофе на песке черный 0,2л': 'قهوة لبنانية على الرمل 0,2', 'Ливанский кофе с молоком и кардамоном 0,2': 'قهوة لبنانية بالحليب والهيل 0,2',
+  'Сицилийский апельсин с лепестками роз 0,5': 'برتقال صقلي ببتلات الورد 0,5', 'Чай с розой 0,4': 'شاي بالورد 0,4',
+  'Шиштаук': 'شيش طاووق', 'Люля-кебаб из баранины': 'كباب لحم الضأن', 'Шашлык из седла барашка': 'شيش من ظهر الخروف',
+  'Арабский рис Манди': 'أرز مندي عربي', 'Курвит': 'قرنبيط مقلي', 'Сабих': 'صبيح', 'Киби нейи': 'كبة نيّة'
+};
+var nameOf = function (t) { return lang === 'ar' && IT_AR[t] ? IT_AR[t] : t; };
+var catOf = function (c) { return lang === 'ar' && CAT_AR[c] ? CAT_AR[c] : c; };
+
+/* ---------- strings ---------- */
+var DAYS = {
+  ruS: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+  ruF: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
+  ruAcc: ['в понедельник', 'во вторник', 'в среду', 'в четверг', 'в пятницу', 'в субботу', 'в воскресенье'],
+  ar: ['الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت', 'الأحد']
+};
+var MON = { ru: ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'],
+  ar: ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'] };
+var M0 = (BIZ.metro || [])[0];
+var METRO_AR = { 'Белорусская': 'بيلوروسكايا', 'Маяковская': 'ماياكوفسكايا', 'Менделеевская': 'منديلييفسكايا', 'Новослободская': 'نوفوسلوبودسكايا' };
+var mAr = function (n) { return METRO_AR[n] || n; };
+var dist = function (d) { return lang === 'ar' ? String(d).replace(/\s?м$/, ' م') : d; };
+var LSEP = function () { return lang === 'ar' ? '، ' : ', '; };
+var S = {
+  ru: {
+    demo: 'Демо-концепт · пример сайта для «' + BIZ.name + '» от Альхассана Альфаррана · не официальный сайт',
+    brandSub: 'ливанская кухня', navMeze: 'Мезе-сет', navMenu: 'Меню', navRev: 'Отзывы', navFind: 'Как найти',
+    langBtn: '<span class="ar-lbl" lang="ar">العربية</span>', langAria: 'Switch to Arabic — التبديل إلى العربية',
+    heroKicker: 'Большая Грузинская, 76',
+    h1: ['Маленький', '<em>Бейрут</em>', 'у Белорусской'],
+    lead: 'Мезе и лепёшки из своей печи, мясо и рыба с мангала, кофе на песке с кардамоном. Завтраки — с <b>08:00</b>. А в центре зала — фонтанчик с лепестками роз: гости пишут о нём в отзывах.',
+    rateCount: function () { return fmt(R.count) + NB + plural(R.count, 'оценка', 'оценки', 'оценок') + ' · ' + fmt(R.reviews) + NB + plural(R.reviews, 'отзыв', 'отзыва', 'отзывов') + ' на Яндекс Картах'; },
+    rateAria: function () { return 'Оценка ' + rateTxt() + ' на Яндекс Картах. Открыть отзывы'; },
+    ctaMeze: 'Собрать мезе-сет', ctaTable: 'Забронировать стол',
+    fMetro: function (m) { return 'от «' + m.name + '»'; }, fHours: 'ежедневно', fBill: 'средний счёт', fHalal: 'халяль', fHalalS: 'кухня и мангал',
+    archTitle: 'Арка-ниша с фонарём и фонтаном, в котором плавают лепестки роз',
+    archCap: '«Фонтан с лепестками роз. Маленькая сказка.» — Элла, отзыв на Яндекс Картах',
+    stOpen: function (t) { return 'Открыто · до ' + t; }, st24: 'Круглосуточно',
+    stToday: function (t) { return 'Закрыто · откроется в ' + t; }, stTomorrow: function (t) { return 'Закрыто · откроется завтра в ' + t; },
+    stDay: function (d, t) { return 'Закрыто · откроется ' + DAYS.ruAcc[d] + ' в ' + t; },
+    mzKicker: function (s) { return 'Мезе сет · ' + rub(s.p) + ' · ' + weightOf(s.d); },
+    mzH: 'Шесть мезе на <em>одном подносе</em>',
+    mzSub: 'В меню так и написано: «6 блюд мезе на выбор». Выберите свои — поднос заполнится, а состав уйдёт в WhatsApp ресторана.',
+    trayT: 'Латунный поднос на шесть пиал мезе',
+    mzCount: function (n) { return n === 6 ? 'Поднос <b>полный</b>' : 'Выбрано <b>' + n + '</b> из 6'; },
+    mzAuto: 'Собрать за меня', mzClear: 'Очистить',
+    mzQuote: function () { return '«Обязательно стоит взять разные мезе, к ним лепешку, чтобы макать, и как вишенку - кофе!»<footer>Зоя Е. · отзыв на Яндекс Картах</footer>'; },
+    mzExH: 'К сету — чем макать и чем запить',
+    sep: 'по отдельности', add: 'Добавить', remove: 'Убрать',
+    sumSet: function (n) { return 'Мезе сет · ' + n + ' из 6'; },
+    sumSep: 'Эти мезе по отдельности по меню', total: 'Итого', sumNote: 'Какие мезе входят в сет, подтвердят в WhatsApp.',
+    need: function (n) { return 'Выберите ещё ' + n + ' ' + plural(n, 'мезе', 'мезе', 'мезе'); },
+    toCart: function (s) { return 'В заказ · ' + s; }, askSet: 'Спросить про сет',
+    askSetMsg: function (picks, extras, tot) {
+      return 'Здравствуйте! Пишу с сайта «' + BIZ.name + '».\nХочу мезе сет (6 на выбор): ' + picks + '.' + (extras ? '\nК нему: ' + extras + '.' : '') +
+        '\nПо меню выходит ' + tot + '. Можно такой состав?';
+    },
+    pkKicker: 'Из отзывов на Яндекс Картах', pkH: 'Что <em>советуют</em> гости',
+    pkSub: 'Не наш выбор — их. Блюдо, цена из меню и слова гостя, как они есть.',
+    pkAdd: '+ В заказ', pkAdded: '✓ В заказе', revSrc: 'отзыв на Яндекс Картах',
+    knafeCat: 'Десерт, которого нет в меню', knafeH: 'Кнафе',
+    knafeP: 'Гости хвалят кнафе, но в меню на Яндекс Картах его нет. Спросите, есть ли сегодня.',
+    knafeBtn: 'Спросить про кнафе', knafeMsg: 'Здравствуйте! Пишу с сайта «' + BIZ.name + '». Подскажите, есть ли сегодня кнафе?',
+    mnKicker: function (c, n) { return n + ' ' + plural(n, 'позиция', 'позиции', 'позиций') + ' · ' + c + ' ' + plural(c, 'раздел', 'раздела', 'разделов'); },
+    mnH: 'Меню <em>с ценами</em>', mnSub: 'Как в карточке на Яндекс Картах. Добавляйте в заказ — в конце всё уйдёт одним сообщением в WhatsApp.',
+    search: 'Найти: хумус, шакшука, кофе…', searchL: 'Поиск по меню', chipTop: 'Популярное', chipAll: 'Всё меню',
+    more: function (n) { return 'Показать ещё ' + n; }, nothing: function (q) { return 'По запросу «' + q + '» ничего нет. Спросите в WhatsApp — подскажут.'; },
+    rvKicker: 'Отзывы', rvH: 'Почему сюда <em>возвращаются</em>',
+    bigRate: function () { return fmt(R.count) + NB + plural(R.count, 'оценка', 'оценки', 'оценок') + ' и ' + fmt(R.reviews) + NB + plural(R.reviews, 'отзыв', 'отзыва', 'отзывов') + ' на Яндекс Картах'; },
+    aspH: 'Что хвалят в отзывах', aspV: function (p, c) { return '<b>' + fmt(p) + '</b> из ' + fmt(c); },
+    allRev: 'Все отзывы на Яндекс Картах',
+    fdKicker: 'Как найти', fdH: function () { return M0 ? M0.distance.replace(/\s?м$/, NB + 'метров') + ' <em>от ' + M0.name.replace(/ая$/, 'ой') + '</em>' : 'Как найти'; },
+    addrSub: 'Москва · столики на улице летом',
+    metro: function (n) { return 'м. ' + n; }, stop: function (n) { return 'Остановка «' + n + '»'; },
+    route: 'Построить маршрут', call: 'Позвонить', hoursH: 'Часы работы',
+    branchT: function (b) { return 'Есть ещё ' + b.name; }, branchS: function (b) { return b.address.replace(/, Москва$/, '') + ' · ' + b.hoursText; },
+    mapPh: 'Карта загружается… Если не появилась — нажмите «Построить маршрут».', mapT: 'Карта: ресторан «Адам» на Большой Грузинской',
+    featH: 'Полезно знать',
+    srcNote: 'Цены и данные взяты из карточки на Яндекс Картах и могут отличаться.',
+    ftrDemo: 'Демо-концепт · пример сайта для «' + BIZ.name + '» от Альхассана Альфаррана · не официальный сайт',
+    ya: 'Яндекс Карты',
+    barTable: 'Забронировать стол', barCart: function (n, s) { return 'Заказ · ' + s; }, callAria: 'Позвонить в ресторан',
+    drH: 'Ваш заказ', drEmpty: 'Пока без блюд — можно просто забронировать стол. Или добавьте мезе-сет и блюда из меню.',
+    fMode: 'Как удобнее', modes: { table: 'Стол в зале', take: 'Навынос', dlv: 'Доставка' },
+    modeHint: { table: 'Зал небольшой, 10–12 столов — гости советуют бронировать заранее.', take: 'Заберёте сами — заказ соберут к выбранному времени.', dlv: 'Стоимость и время доставки уточнят в ответ.' },
+    fGuests: 'Сколько гостей', gHint: 'Гости пишут, что для большой компании зал маловат — лучше уточнить заранее.',
+    fDay: 'День', today: 'Сегодня', tomorrow: 'Завтра', fTime: 'Время', asap: 'Как можно скорее',
+    fAddr: 'Адрес доставки', fAddrPh: 'Улица, дом, квартира', fName: 'Имя (необязательно)', fNamePh: 'Как к вам обращаться', fNote: 'Пожелания (необязательно)', fNotePh: 'Например: без острого, столик на улице',
+    send: 'Отправить в WhatsApp', sendHint: 'Откроется WhatsApp с готовым текстом — его можно поправить перед отправкой.',
+    closeAria: 'Закрыть', minus: 'Убрать одну', plus: 'Добавить ещё',
+    added: function (n) { return '«' + n + '» — в заказе'; }, setAdded: 'Мезе сет — в заказе',
+    setName: 'Мезе сет (6 на выбор)', closedToday: 'Сегодня уже закрыто — выберите завтра.',
+    msg: function (o) {
+      var L = ['Здравствуйте! Пишу с сайта «' + BIZ.name + '».'];
+      var when = (o.day === 0 ? 'сегодня' : 'завтра') + ' (' + o.date + ')' + (o.asap ? ', как можно скорее' : ' в ' + o.time);
+      if (o.mode === 'table') L.push('Хочу забронировать стол на ' + o.guests + ' ' + plural(o.guests, 'гостя', 'гостей', 'гостей') + ' — ' + when + '.');
+      if (o.mode === 'take') L.push('Хочу заказать навынос, заберу ' + when + '.');
+      if (o.mode === 'dlv') L.push('Хочу заказать доставку — ' + when + '.' + (o.addr ? '\nАдрес: ' + o.addr + '.' : '') + '\nПодскажите стоимость и время доставки.');
+      if (o.lines.length) {
+        L.push('');
+        L.push(o.mode === 'table' ? 'Блюда к столу:' : 'Заказ:');
+        o.lines.forEach(function (l) { L.push('• ' + l.name + (l.q > 1 ? ' × ' + l.q : '') + ' — ' + l.sum); });
+        L.push('Итого по меню: ' + o.total);
+      }
+      if (o.name) L.push('', 'Меня зовут ' + o.name + '.');
+      if (o.note) L.push('Пожелания: ' + o.note);
+      L.push('', 'Подтвердите, пожалуйста.');
+      return L.join('\n');
+    },
+    feats: {
+      'халяль': 'Халяль', 'завтрак': 'Завтраки с 08:00', 'летняя веранда': 'Летняя веранда', 'посещение с животными': 'С собакой до 35 см',
+      'особенности заведения': 'Своя пекарня', 'кофе с собой': 'Кофе с собой', 'еда навынос': 'Еда навынос', 'доставка еды': 'Доставка',
+      'способ оплаты': 'Карта, наличные, СБП, QR', 'средний счёт': function (v) { return 'Средний счёт ' + v; },
+      'количество столов в зале для посадки': function (v) { return v + ' столов в зале'; }, 'Питьевая вода': 'Питьевая вода',
+      'предварительная запись': 'Бронь стола'
+    }
+  },
+  ar: {
+    demo: 'نموذج تجريبي · مثال لموقع مطعم «آدم» من إعداد الحسن الفرّان · ليس الموقع الرسمي',
+    brandSub: 'مطبخ لبناني', navMeze: 'طبق المازة', navMenu: 'القائمة', navRev: 'المراجعات', navFind: 'كيف تصل',
+    langBtn: 'Русский', langAria: 'Переключить на русский',
+    heroKicker: 'شارع بولشايا غروزينسكايا، 76',
+    h1: ['<em>بيروت الصغيرة</em>', 'قرب محطة بيلوروسكايا'],
+    lead: 'مازة وخبز من فرننا، لحوم وأسماك على الفحم، وقهوة على الرمل بالهيل. الفطور من الساعة <b>08:00</b>. وفي وسط القاعة نافورة صغيرة تطفو فيها بتلات الورد، يكتب عنها الضيوف في مراجعاتهم.',
+    rateCount: function () { return arPl(R.count, 'تقييم واحد', 'تقييمان', 'تقييمات', 'تقييمًا') + ' · ' + arPl(R.reviews, 'مراجعة واحدة', 'مراجعتان', 'مراجعات', 'مراجعة') + ' على خرائط ياندكس'; },
+    rateAria: function () { return 'التقييم ' + rateTxt() + ' على خرائط ياندكس. فتح المراجعات'; },
+    ctaMeze: 'اجمع طبق المازة', ctaTable: 'احجز طاولة',
+    fMetro: function (m) { return 'من محطة «' + mAr(m.name) + '»'; }, fHours: 'يوميًا', fBill: 'متوسط الفاتورة', fHalal: 'حلال', fHalalS: 'المطبخ والمشاوي',
+    archTitle: 'قوس بفانوس ونافورة تطفو فيها بتلات الورد',
+    archCap: '«نافورة ببتلات الورد. حكاية صغيرة» — من مراجعة إيلّا على خرائط ياندكس',
+    stOpen: function (t) { return 'مفتوح الآن · حتى ' + t; }, st24: 'مفتوح على مدار الساعة',
+    stToday: function (t) { return 'مغلق الآن · يفتح الساعة ' + t; }, stTomorrow: function (t) { return 'مغلق الآن · يفتح غدًا الساعة ' + t; },
+    stDay: function (d, t) { return 'مغلق الآن · يفتح يوم ' + DAYS.ar[d] + ' الساعة ' + t; },
+    mzKicker: function (s) { return 'طبق مازة مشكّل · ' + rub(s.p) + ' · ' + weightOf(s.d).replace('г', 'غ'); },
+    mzH: 'ست مازات على <em>صينية واحدة</em>',
+    mzSub: 'هكذا كُتب في القائمة: «6 أطباق مازة من اختيارك». اختر ما تحب، فتمتلئ الصينية، ثم يُرسل التشكيل إلى واتساب المطعم.',
+    trayT: 'صينية نحاسية لستة أطباق مازة',
+    mzCount: function (n) { return n === 6 ? 'الصينية <b>مكتملة</b>' : 'اخترت <b>' + n + '</b> من 6'; },
+    mzAuto: 'اختر عني', mzClear: 'إفراغ',
+    mzQuote: function () { return '«Обязательно стоит взять разные мезе, к ним лепешку, чтобы макать, и как вишенку - кофе!»<footer>Зоя Е. · مراجعة على خرائط ياندكس (بالروسية)</footer>'; },
+    mzExH: 'مع الطبق: خبز للغمس ومشروب',
+    sep: 'منفردًا', add: 'إضافة', remove: 'إزالة',
+    sumSet: function (n) { return 'طبق المازة · ' + n + ' من 6'; },
+    sumSep: 'سعر هذه المازات منفردةً حسب القائمة', total: 'المجموع', sumNote: 'سيؤكد المطعم في واتساب أي المازات تدخل في الطبق.',
+    need: function (n) { return n === 1 ? 'اختر مازة واحدة أخرى' : n === 2 ? 'اختر مازتين أخريين' : 'اختر ' + n + ' مازات أخرى'; },
+    toCart: function (s) { return 'إلى الطلب · ' + s; }, askSet: 'اسأل عن الطبق',
+    askSetMsg: function (picks, extras, tot) {
+      return 'مرحبًا! أكتب إليكم من موقع «آدم».\nأريد طبق مازة مشكّل (6 من اختياري): ' + picks + '.' + (extras ? '\nومعه: ' + extras + '.' : '') +
+        '\nحسب القائمة المجموع ' + tot + '. هل هذا التشكيل ممكن؟';
+    },
+    pkKicker: 'من مراجعات خرائط ياندكس', pkH: 'بماذا <em>ينصح</em> الضيوف',
+    pkSub: 'ليس اختيارنا بل اختيارهم: الطبق وسعره من القائمة وكلمات الضيف كما هي (بالروسية).',
+    pkAdd: '+ إلى الطلب', pkAdded: '✓ في الطلب', revSrc: 'مراجعة على خرائط ياندكس',
+    knafeCat: 'حلوى ليست في القائمة', knafeH: 'كنافة',
+    knafeP: 'يمدح الضيوف الكنافة، لكنها غير مذكورة في القائمة على خرائط ياندكس. اسأل إن كانت متوفرة اليوم.',
+    knafeBtn: 'اسأل عن الكنافة', knafeMsg: 'مرحبًا! أكتب إليكم من موقع «آدم». هل الكنافة متوفرة اليوم؟',
+    mnKicker: function (c, n) { return n + ' صنفًا · ' + c + ' قسمًا'; },
+    mnH: 'القائمة <em>بالأسعار</em>', mnSub: 'كما في بطاقة المطعم على خرائط ياندكس. أضف ما تريد، وفي النهاية يُرسل كل شيء في رسالة واحدة إلى واتساب.',
+    search: 'ابحث: حمص، شكشوكة، قهوة…', searchL: 'البحث في القائمة', chipTop: 'الأكثر طلبًا', chipAll: 'القائمة كاملة',
+    more: function (n) { return 'عرض ' + n + ' أخرى'; }, nothing: function (q) { return 'لا نتائج لـ«' + q + '». اسأل في واتساب.'; },
+    rvKicker: 'المراجعات', rvH: 'لماذا <em>يعود</em> الضيوف',
+    bigRate: function () { return arPl(R.count, 'تقييم واحد', 'تقييمان', 'تقييمات', 'تقييمًا') + ' و' + arPl(R.reviews, 'مراجعة واحدة', 'مراجعتان', 'مراجعات', 'مراجعة') + ' على خرائط ياندكس'; },
+    aspH: 'ما يمدحه الضيوف', aspV: function (p, c) { return '<b>' + p + '</b> من ' + c; },
+    allRev: 'كل المراجعات على خرائط ياندكس',
+    fdKicker: 'كيف تصل', fdH: function () { return M0 ? M0.distance.replace(/\s?м$/, ' متر') + ' <em>من محطة ' + mAr(M0.name) + '</em>' : 'كيف تصل'; },
+    addrSub: 'موسكو · طاولات في الخارج صيفًا',
+    metro: function (n) { return 'مترو ' + mAr(n); }, stop: function (n) { return 'موقف «' + n + '»'; },
+    route: 'خط السير', call: 'اتصل', hoursH: 'ساعات العمل',
+    branchT: function (b) { return 'ولدينا أيضًا ' + b.name; }, branchS: function (b) { return b.address.replace(/, Москва$/, '') + ' · يوميًا ' + b.hoursText.replace(/^ежедневно,\s*/, ''); },
+    mapPh: 'جارٍ تحميل الخريطة… إن لم تظهر فاضغط «خط السير».', mapT: 'خريطة: مطعم «آدم»',
+    featH: 'معلومات مفيدة',
+    srcNote: 'الأسعار والبيانات مأخوذة من بطاقة المطعم على خرائط ياندكس وقد تختلف.',
+    ftrDemo: 'نموذج تجريبي · مثال لموقع «آدم» من إعداد الحسن الفرّان · ليس الموقع الرسمي',
+    ya: 'خرائط ياندكس',
+    barTable: 'احجز طاولة', barCart: function (n, s) { return 'الطلب · ' + s; }, callAria: 'اتصل بالمطعم',
+    drH: 'طلبك', drEmpty: 'لا أطباق بعد — يمكنك حجز طاولة فقط، أو إضافة طبق المازة وأطباق من القائمة.',
+    fMode: 'كيف يناسبك', modes: { table: 'طاولة في القاعة', take: 'سفري', dlv: 'توصيل' },
+    modeHint: { table: 'القاعة صغيرة، 10–12 طاولة، وينصح الضيوف بالحجز مسبقًا.', take: 'تستلمه بنفسك، ويُجهَّز الطلب للوقت الذي تختاره.', dlv: 'سيُخبرونك في الرد بتكلفة التوصيل ووقته.' },
+    fGuests: 'عدد الضيوف', gHint: 'يكتب الضيوف أن القاعة صغيرة على المجموعات الكبيرة، فالأفضل التنسيق مسبقًا.',
+    fDay: 'اليوم', today: 'اليوم', tomorrow: 'غدًا', fTime: 'الوقت', asap: 'في أقرب وقت',
+    fAddr: 'عنوان التوصيل', fAddrPh: 'الشارع، المبنى، الشقة', fName: 'الاسم (اختياري)', fNamePh: 'كيف نناديك', fNote: 'ملاحظات (اختياري)', fNotePh: 'مثلًا: بدون حار، طاولة في الخارج',
+    send: 'إرسال إلى واتساب', sendHint: 'سيفتح واتساب برسالة جاهزة، ويمكنك تعديلها قبل الإرسال.',
+    closeAria: 'إغلاق', minus: 'إزالة واحدة', plus: 'إضافة واحدة',
+    added: function (n) { return '«' + n + '» في الطلب'; }, setAdded: 'طبق المازة في الطلب',
+    setName: 'طبق مازة مشكّل (6 من اختياري)', closedToday: 'المطعم مغلق اليوم، اختر الغد.',
+    msg: function (o) {
+      var L = ['مرحبًا! أكتب إليكم من موقع «آدم».'];
+      var when = (o.day === 0 ? 'اليوم' : 'غدًا') + ' (' + o.date + ')' + (o.asap ? '، في أقرب وقت' : ' الساعة ' + o.time);
+      if (o.mode === 'table') L.push('أريد حجز طاولة لـ' + arPl(o.guests, 'شخص واحد', 'شخصين', 'أشخاص', 'شخصًا') + ' — ' + when + '.');
+      if (o.mode === 'take') L.push('أريد طلبًا سفريًا، سأستلمه ' + when + '.');
+      if (o.mode === 'dlv') L.push('أريد طلبًا مع التوصيل — ' + when + '.' + (o.addr ? '\nالعنوان: ' + o.addr + '.' : '') + '\nأخبروني من فضلكم بتكلفة التوصيل ووقته.');
+      if (o.lines.length) {
+        L.push('');
+        L.push(o.mode === 'table' ? 'أطباق للطاولة:' : 'الطلب:');
+        o.lines.forEach(function (l) { L.push('• ' + l.name + (l.q > 1 ? ' × ' + l.q : '') + ' — ' + l.sum); });
+        L.push('المجموع حسب القائمة: ' + o.total);
+      }
+      if (o.name) L.push('', 'اسمي ' + o.name + '.');
+      if (o.note) L.push('ملاحظات: ' + o.note);
+      L.push('', 'أرجو التأكيد.');
+      return L.join('\n');
+    },
+    feats: {
+      'халяль': 'حلال', 'завтрак': 'فطور من 08:00', 'летняя веранда': 'شرفة صيفية', 'посещение с животными': 'مسموح بالكلاب حتى 35 سم',
+      'особенности заведения': 'مخبز خاص', 'кофе с собой': 'قهوة سفري', 'еда навынос': 'طعام سفري', 'доставка еды': 'توصيل',
+      'способ оплаты': 'بطاقة، نقدًا، СБП، QR', 'средний счёт': function (v) { return 'متوسط الفاتورة ' + v; },
+      'количество столов в зале для посадки': function (v) { return v + ' طاولة في القاعة'; }, 'Питьевая вода': 'مياه شرب',
+      'предварительная запись': 'حجز الطاولات'
+    }
+  }
+};
+var t = function (k) { var v = S[lang][k]; if (v === undefined) v = S.ru[k]; return typeof v === 'function' ? v.apply(null, Array.prototype.slice.call(arguments, 1)) : v; };
+
+/* ---------- time ---------- */
+function mskNow() { var d = new Date(); return new Date(d.getTime() + (d.getTimezoneOffset() + 180) * 60000); }
+function statusNow(now) {
+  now = now || mskNow();
+  if (!BIZ.hours) return null;
+  if (BIZ.is24) return { open: true, is24: true };
+  var day = (now.getDay() + 6) % 7, m = now.getHours() * 60 + now.getMinutes(), i, f, a, b;
+  var prev = BIZ.hours[(day + 6) % 7];
+  for (i = 0; i < prev.length; i++) if (mins(prev[i][1]) <= mins(prev[i][0]) && m < mins(prev[i][1])) return { open: true, until: prev[i][1] };
+  var td = BIZ.hours[day];
+  for (i = 0; i < td.length; i++) { a = mins(td[i][0]); b = mins(td[i][1]) <= a ? mins(td[i][1]) + 1440 : mins(td[i][1]); if (m >= a && m < b) return { open: true, until: td[i][1] }; }
+  for (i = 0; i < td.length; i++) if (m < mins(td[i][0])) return { open: false, in: 0, day: day, at: td[i][0] };
+  for (i = 1; i <= 7; i++) { f = (day + i) % 7; if (BIZ.hours[f].length) return { open: false, in: i, day: f, at: BIZ.hours[f][0][0] }; }
+  return null;
+}
+function statusText(st) {
+  if (!st) return '';
+  if (st.is24) return t('st24');
+  if (st.open) return t('stOpen', st.until);
+  return st.in === 0 ? t('stToday', st.at) : st.in === 1 ? t('stTomorrow', st.at) : t('stDay', st.day, st.at);
+}
+
+/* ---------- cart ---------- */
+var cart = [];  // {id, t, p, q, picks?}
+var KEY = 'adam-cart-v1';
+try { var c0 = JSON.parse(localStorage.getItem(KEY) || '[]'); if (Array.isArray(c0)) cart = c0.filter(function (l) { return l && l.id && l.q > 0; }); } catch (e) {}
+function save() { try { localStorage.setItem(KEY, JSON.stringify(cart)); } catch (e) {} }
+function lineOf(id) { return cart.filter(function (l) { return l.id === id; })[0]; }
+function addItem(title, d) {
+  var it = byT(title); if (!it) return;
+  var id = 'm:' + title, l = lineOf(id);
+  if (l) l.q = Math.max(0, l.q + (d || 1)); else if ((d || 1) > 0) cart.push({ id: id, t: title, p: it.p, q: 1 });
+  cart = cart.filter(function (x) { return x.q > 0; });
+  save(); syncCart();
+}
+function qtyOf(title) { var l = lineOf('m:' + title); return l ? l.q : 0; }
+function cartCount() { return cart.reduce(function (s, l) { return s + l.q; }, 0); }
+function cartTotal() { return cart.reduce(function (s, l) { return s + (l.p || 0) * l.q; }, 0); }
+function lineName(l) {
+  if (l.picks) return t('setName') + ': ' + l.picks.map(function (p) { return nameOf(p.t).toLowerCase() + (p.n > 1 ? ' ×' + p.n : ''); }).join(LSEP());
+  return nameOf(l.t);
+}
+
+/* ---------- meze module ---------- */
+var SET = byT('Мезе сет');
+var MZ_STYLE = {
+  'Хумус Ливанский': { c: '#E2C48E', s: '#C9A266', g: ['#B3462A', '#6E7A2A'], oil: 1 },
+  'Паста из Авокадо': { c: '#A7B65E', s: '#7E9140', g: ['#E7D9B5', '#B3462A'] },
+  'Мутабаль': { c: '#DCCDAE', s: '#BBA67E', g: ['#A51E36', '#A51E36', '#5E7A2E'], oil: 1 },
+  'Мухаммара': { c: '#C4542E', s: '#9E3A1C', g: ['#7A4A26', '#E8C27D'] },
+  'Бабагануж': { c: '#A87C52', s: '#86603C', g: ['#4F7D2E', '#A51E36', '#4F7D2E'] },
+  'Лябне': { c: '#F4EEE2', s: '#E2D7C2', g: ['#4F8A3A', '#4F8A3A'], oil: 1 },
+  'Азиза': { c: '#D2462F', s: '#A9311F', g: ['#EADCC0', '#6E7A2A'] },
+  'Маслины и оливки из туниса': { c: '#6A6A2E', s: '#3E3A22', g: ['#2A2418', '#86893A', '#2A2418'], olives: 1 }
+};
+var MEZE = ((BIZ.menu || []).filter(function (c) { return c.name === 'Мезе'; })[0] || { items: [] }).items.filter(function (i) { return MZ_STYLE[i.t]; });
+var AUTO = ['Хумус Ливанский', 'Мутабаль', 'Мухаммара', 'Бабагануж', 'Лябне', 'Азиза'];
+var EXTRAS = ['Лафа', 'Лепешка с заатором и каймаком', 'Ливанский кофе на песке черный с кардамоном 0,2'].map(byT).filter(Boolean);
+var picks = []; // array of titles, length <= 6
+var extrasOn = {};
+var lastPop = -1;
+try { var p0 = JSON.parse(localStorage.getItem('adam-meze') || '[]'); if (Array.isArray(p0)) picks = p0.filter(function (x) { return MZ_STYLE[x]; }).slice(0, 6); } catch (e) {}
+function savePicks() { try { localStorage.setItem('adam-meze', JSON.stringify(picks)); } catch (e) {} }
+
+var POS = [];
+for (var i = 0; i < 6; i++) { var ang = (-90 + 60 * i) * Math.PI / 180; POS.push([200 + 104 * Math.cos(ang), 200 + 104 * Math.sin(ang)]); }
+var GOFF = [[-10, -8], [9, -11], [12, 6], [-6, 11], [2, 1], [-13, 3]];
+function bowlSvg(x, y, title, r, idx) {
+  var st = MZ_STYLE[title]; r = r || 40;
+  var k = r / 40, h = '';
+  h += '<circle cx="' + x + '" cy="' + (y + 4 * k) + '" r="' + r + '" fill="#000" opacity=".22"/>';
+  h += '<circle cx="' + x + '" cy="' + y + '" r="' + r + '" fill="#F2E9D8" stroke="#9B1D33" stroke-width="' + (2.2 * k) + '"/>';
+  h += '<circle cx="' + x + '" cy="' + y + '" r="' + (r - 5 * k) + '" fill="none" stroke="#C29A4B" stroke-width="' + (1 * k) + '" stroke-dasharray="' + (2 * k) + ' ' + (3 * k) + '"/>';
+  h += '<circle cx="' + x + '" cy="' + y + '" r="' + (r - 9 * k) + '" fill="' + st.c + '"/>';
+  if (st.olives) {
+    [[-10, -8, 0], [8, -10, 1], [11, 7, 2], [-8, 10, 1], [0, 0, 0], [-15, 2, 2]].forEach(function (o) {
+      h += '<ellipse cx="' + (x + o[0] * k) + '" cy="' + (y + o[1] * k) + '" rx="' + (6 * k) + '" ry="' + (4.4 * k) + '" fill="' + st.g[o[2]] + '" transform="rotate(' + (o[0] * 3) + ' ' + (x + o[0] * k) + ' ' + (y + o[1] * k) + ')"/>';
+    });
+  } else {
+    h += '<path d="M' + (x - 18 * k) + ' ' + y + 'a' + (18 * k) + ' ' + (18 * k) + ' 0 1 1 ' + (18 * k) + ' ' + (18 * k) + 'a' + (11 * k) + ' ' + (11 * k) + ' 0 1 1 ' + (-8 * k) + ' ' + (-12 * k) + '" fill="none" stroke="' + st.s + '" stroke-width="' + (3.2 * k) + '" stroke-linecap="round"/>';
+    if (st.oil) h += '<ellipse cx="' + (x + 3 * k) + '" cy="' + (y + 2 * k) + '" rx="' + (9 * k) + '" ry="' + (6 * k) + '" fill="#C9A23A" opacity=".55"/>';
+    st.g.forEach(function (c, j) { for (var q = 0; q < 2; q++) { var o = GOFF[(j * 2 + q) % 6]; h += '<circle cx="' + (x + (o[0] + j * 2) * k) + '" cy="' + (y + (o[1] - q * 3) * k) + '" r="' + (2.3 * k) + '" fill="' + c + '"/>'; } });
+  }
+  return h;
+}
+function renderTray() {
+  var h = '<title id="trayT">' + esc(t('trayT')) + '</title>';
+  h += '<defs><radialGradient id="tg" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#EBCF8E"/><stop offset=".55" stop-color="#C69C4C"/><stop offset="1" stop-color="#8A6326"/></radialGradient></defs>';
+  h += '<circle cx="200" cy="206" r="192" fill="#000" opacity=".3"/>';
+  h += '<circle cx="200" cy="200" r="192" fill="url(#tg)"/>';
+  h += '<circle cx="200" cy="200" r="180" fill="none" stroke="#7A5418" stroke-opacity=".5" stroke-width="1.5"/>';
+  h += '<circle cx="200" cy="200" r="172" fill="none" stroke="#FBE7B5" stroke-opacity=".45" stroke-width="1"/>';
+  for (var a = 0; a < 48; a++) { var rr = a * 7.5 * Math.PI / 180; h += '<path d="M' + (200 + 176 * Math.cos(rr)) + ' ' + (200 + 176 * Math.sin(rr)) + 'L' + (200 + 186 * Math.cos(rr)) + ' ' + (200 + 186 * Math.sin(rr)) + '" stroke="#7A5418" stroke-opacity=".45" stroke-width="1.2"/>'; }
+  // engraved centre star
+  h += '<g fill="none" stroke="#7A5418" stroke-opacity=".5" stroke-width="1.3"><rect x="160" y="160" width="80" height="80"/><rect x="160" y="160" width="80" height="80" transform="rotate(45 200 200)"/><circle cx="200" cy="200" r="28"/></g>';
+  var hasBread = EXTRAS.some(function (e) { return extrasOn[e.t] && e.cat !== 'Кофе'; });
+  if (hasBread) {
+    h += '<g class="bw' + (lastPop === 9 ? ' pop' : '') + '"><circle cx="200" cy="203" r="46" fill="#000" opacity=".2"/><circle cx="200" cy="200" r="46" fill="#DDAE68"/><circle cx="200" cy="200" r="38" fill="#E8C484"/>';
+    [[-18, -12], [12, -20], [20, 8], [-8, 18], [0, -2], [-24, 6], [14, 22], [26, -6]].forEach(function (o) { h += '<ellipse cx="' + (200 + o[0]) + '" cy="' + (200 + o[1]) + '" rx="2.4" ry="1.4" fill="#5A3A1A" opacity=".7"/>'; });
+    if (extrasOn['Лепешка с заатором и каймаком']) h += '<circle cx="192" cy="196" r="9" fill="#6E7A2A" opacity=".55"/><circle cx="210" cy="208" r="7" fill="#F4EEE2"/>';
+    h += '</g>';
+  }
+  var hasCoffee = EXTRAS.some(function (e) { return extrasOn[e.t] && e.cat === 'Кофе'; });
+  if (hasCoffee) {
+    h += '<g class="bw' + (lastPop === 8 ? ' pop' : '') + '" transform="translate(338 330)"><circle r="26" fill="#000" opacity=".25" cy="3"/><circle r="26" fill="#F2E9D8" stroke="#9B1D33" stroke-width="2"/><circle r="18" fill="#3B2216"/><circle r="12" fill="#6B4128" opacity=".7"/><path d="M24 -6h12a6 6 0 0 1 0 12h-12" fill="none" stroke="#F2E9D8" stroke-width="4"/></g>';
+  }
+  for (var s = 0; s < 6; s++) {
+    var x = POS[s][0], y = POS[s][1];
+    if (picks[s]) {
+      h += '<g class="bw slot' + (lastPop === s ? ' pop' : '') + '" data-slot="' + s + '" role="button" tabindex="0" aria-label="' + esc(t('remove') + ': ' + nameOf(picks[s])) + '">' + bowlSvg(x, y, picks[s], 42) + '</g>';
+    } else {
+      h += '<g><circle cx="' + x + '" cy="' + y + '" r="40" fill="#5C3E14" fill-opacity=".28" stroke="#FBE7B5" stroke-opacity=".7" stroke-width="1.5" stroke-dasharray="5 6"/><text x="' + x + '" y="' + (y + 8) + '" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="26" font-weight="600" fill="#FBE7B5" fill-opacity=".85">' + (s + 1) + '</text></g>';
+    }
+  }
+  $('#tray').innerHTML = h;
+  lastPop = -1;
+}
+function countOf(title) { return picks.filter(function (p) { return p === title; }).length; }
+function renderMzList() {
+  $('#mzList').innerHTML = MEZE.map(function (m) {
+    var n = countOf(m.t), full = picks.length >= 6;
+    return '<li class="mz-it' + (n ? ' has' : '') + '">' +
+      '<svg class="sw" viewBox="0 0 84 84" aria-hidden="true">' + bowlSvg(42, 40, m.t, 38) + '</svg>' +
+      '<span class="tx"><span class="nm">' + esc(nameOf(m.t)) + (lang === 'ar' ? ' <small lang="ru" style="font-weight:500;opacity:.7">' + esc(m.t) + '</small>' : '') + '</span>' +
+      '<span class="ds"' + (lang === 'ar' ? ' lang="ru"' : '') + '>' + esc(dropWeight(m.d)) + '</span>' +
+      '<span class="pr">' + esc(weightOf(m.d)) + ' · ' + esc(t('sep')) + ' ' + rub(m.p) + '</span></span>' +
+      '<span class="stp"><button type="button" class="minus" data-mz="' + esc(m.t) + '" data-d="-1" aria-label="' + esc(t('remove') + ': ' + nameOf(m.t)) + '">−</button>' +
+      (n ? '<b>' + n + '</b>' : '') +
+      '<button type="button" data-mz="' + esc(m.t) + '" data-d="1" aria-label="' + esc(t('add') + ': ' + nameOf(m.t)) + '"' + (full ? ' disabled' : '') + '>+</button></span></li>';
+  }).join('');
+}
+function renderMzExtras() {
+  $('#mzExtras').innerHTML = EXTRAS.map(function (e) {
+    var d = e.d ? dropWeight(e.d) : '';
+    return '<label class="chk"><input type="checkbox" data-ex="' + esc(e.t) + '"' + (extrasOn[e.t] ? ' checked' : '') + '><span>' + esc(nameOf(e.t)) + (d ? '<small' + (lang === 'ar' ? ' lang="ru"' : '') + '>' + esc(d) + '</small>' : '') + '</span><em>' + rub(e.p) + '</em></label>';
+  }).join('');
+}
+function mzTotals() {
+  var sep = picks.reduce(function (s, p) { var it = byT(p); return s + (it && it.p || 0); }, 0);
+  var ex = EXTRAS.filter(function (e) { return extrasOn[e.t]; });
+  var exSum = ex.reduce(function (s, e) { return s + (e.p || 0); }, 0);
+  return { sep: sep, ex: ex, exSum: exSum, total: (SET ? SET.p : 0) + exSum };
+}
+function groupedPicks() {
+  var g = [];
+  picks.forEach(function (p) { var x = g.filter(function (y) { return y.t === p; })[0]; if (x) x.n++; else g.push({ t: p, n: 1 }); });
+  return g;
+}
+function renderMzSum() {
+  var n = picks.length, T = mzTotals(), h = '';
+  h += '<div class="row"><span>' + esc(t('sumSet', n)) + '</span><b>' + rub(SET && SET.p) + '</b></div>';
+  T.ex.forEach(function (e) { h += '<div class="row"><span>' + esc(nameOf(e.t)) + '</span><b>' + rub(e.p) + '</b></div>'; });
+  h += '<div class="row grand"><span>' + esc(t('total')) + '</span><span>' + rub(T.total) + '</span></div>';
+  if (n) h += '<p class="note">' + esc(t('sumSep')) + ': ' + rub(T.sep) + '. ' + esc(t('sumNote')) + '</p>';
+  else h += '<p class="note">' + esc(t('sumNote')) + '</p>';
+  var gp = groupedPicks().map(function (p) { return nameOf(p.t).toLowerCase() + (p.n > 1 ? ' ×' + p.n : ''); }).join(LSEP());
+  var exs = T.ex.map(function (e) { return nameOf(e.t).toLowerCase() + ' — ' + rub(e.p); }).join(LSEP());
+  h += '<div class="btns"><button class="btn pri" type="button" id="mzAdd"' + (n < 6 ? ' disabled' : '') + '>' + esc(n < 6 ? t('need', 6 - n) : t('toCart', rub(T.total))) + '</button>' +
+    '<a class="btn out" id="mzAsk" target="_blank" rel="noopener"' + (n ? ' href="' + esc(wa(t('askSetMsg', gp, exs, rub(T.total)))) + '"' : ' aria-disabled="true" style="opacity:.45;pointer-events:none"') + '>' + IC.wa + esc(t('askSet')) + '</a></div>';
+  $('#mzSum').innerHTML = h;
+  $('#mzCount').innerHTML = t('mzCount', n);
+  $$('#mzDots i').forEach(function (d, i) { d.classList.toggle('on', i < n); });
+}
+function renderMeze() { renderTray(); renderMzList(); renderMzSum(); }
+function mzAddSet() {
+  if (picks.length < 6 || !SET) return;
+  var g = groupedPicks(), id = 'set:' + picks.slice().sort().join('|'), l = lineOf(id);
+  if (l) l.q++; else cart.push({ id: id, t: SET.t, p: SET.p, q: 1, picks: g });
+  EXTRAS.forEach(function (e) { if (extrasOn[e.t]) { var L = lineOf('m:' + e.t); if (L) L.q++; else cart.push({ id: 'm:' + e.t, t: e.t, p: e.p, q: 1 }); } });
+  save(); syncCart(); toast(t('setAdded')); openDrawer();
+}
+
+/* ---------- picks (guests' advice) ---------- */
+var PICKS = [
+  { t: 'Шакшука с баклажаном и каймак', a: 'Nikita D.', x: 'Для меня тут лучшая шакшука в городе (с баклажаном и каймак), также советую попробовать хачуку.' },
+  { t: 'Хачука с тантуни, сыром халлуми и яйцом пашет', a: 'Дарья С.', x: 'Мои фавориты - чай с розой и хачука с тантуни и сыром, десерт из канафи.' },
+  { t: 'Ливанский кофе на песке черный с кардамоном 0,2', a: 'Stranger', x: 'Великолепный кофе на песке с кардамоном; отличная подача.' },
+  { t: 'Сицилийский апельсин с лепестками роз 0,5', a: 'Алексей И.', x: 'Максимально рекомендую попробовать свежую выпечку (хачука ), арабский кофе, сицилийский лимонад с апельсином и лепестками роз, хумус.' },
+  { t: 'Лепешка с заатором и каймаком', a: 'Марина С.', x: 'Особенно понравилось сочетание специй и текстур, а лепёшка с каймаком стала настоящим украшением стола.' }
+].filter(function (p) { return byT(p.t); });
+var KNAFE = { a: 'Лариса З.', x: 'Отдельно рекомендую взять кнафе, здесь он потрясающий.' };
+function renderPicks() {
+  var h = PICKS.map(function (p) {
+    var it = byT(p.t), q = qtyOf(p.t);
+    return '<article class="pk rv"><span class="cat">' + esc(catOf(it.cat)) + '</span><h3>' + esc(nameOf(p.t)) + '</h3>' +
+      '<blockquote lang="ru" dir="ltr">' + esc(p.x) + '</blockquote><span class="by"><b>' + esc(p.a) + '</b> · ' + esc(t('revSrc')) + '</span>' +
+      '<div class="ft"><span class="pr">' + rub(it.p) + '</span><button type="button" class="add' + (q ? ' done' : '') + '" data-pk="' + esc(p.t) + '">' + esc(q ? t('pkAdded') + (q > 1 ? ' ×' + q : '') : t('pkAdd')) + '</button></div></article>';
+  }).join('');
+  h += '<article class="pk ask rv"><span class="cat">' + esc(t('knafeCat')) + '</span><h3>' + esc(t('knafeH')) + '</h3>' +
+    '<blockquote lang="ru" dir="ltr">' + esc(KNAFE.x) + '</blockquote><span class="by"><b>' + esc(KNAFE.a) + '</b> · ' + esc(t('revSrc')) + '</span><p>' + esc(t('knafeP')) + '</p>' +
+    '<div class="ft" style="border-color:rgba(255,255,255,.2)"><a class="btn brass" style="min-height:46px" target="_blank" rel="noopener" href="' + esc(wa(t('knafeMsg'))) + '">' + IC.wa + esc(t('knafeBtn')) + '</a></div></article>';
+  $('#picksGrid').innerHTML = h;
+}
+
+/* ---------- menu ---------- */
+var curCat = '__top', query = '', expanded = false, LIMIT = 8;
+function renderChips() {
+  var c = [{ k: '__top', n: t('chipTop'), c: (BIZ.top || []).length }].concat((BIZ.menu || []).map(function (m) { return { k: m.name, n: catOf(m.name), c: m.items.length }; }));
+  c.push({ k: '__all', n: t('chipAll'), c: ALL.length });
+  $('#chips').innerHTML = c.map(function (x) { return '<button type="button" class="chip" data-cat="' + esc(x.k) + '" aria-pressed="' + (curCat === x.k && !query) + '">' + esc(x.n) + '<small>' + x.c + '</small></button>'; }).join('');
+}
+function listItems() {
+  var q = query.trim().toLowerCase().replace(/ё/g, 'е');
+  if (q) return ALL.filter(function (i) { var s = (i.t + ' ' + (i.d || '') + ' ' + i.cat + ' ' + (IT_AR[i.t] || '') + ' ' + (CAT_AR[i.cat] || '')).toLowerCase().replace(/ё/g, 'е'); return s.indexOf(q) >= 0; });
+  if (curCat === '__top') return (BIZ.top || []).map(function (x) { return byT(x.t) || { t: x.t, p: x.p, v: x.v, cat: '' }; });
+  if (curCat === '__all') return ALL;
+  return ALL.filter(function (i) { return i.cat === curCat; });
+}
+function itemRow(i, showCat) {
+  var q = qtyOf(i.t), d = cleanD(i.d), ar = lang === 'ar';
+  return '<li class="it">' +
+    '<span class="nm">' + (showCat ? '<span class="ct">' + esc(catOf(i.cat)) + '</span><br>' : '') + esc(nameOf(i.t)) + (ar && IT_AR[i.t] ? '<small lang="ru">' + esc(i.t) + '</small>' : '') + '</span>' +
+    (d ? '<p class="ds"' + (ar ? ' lang="ru" dir="ltr" style="text-align:right"' : '') + '>' + esc(d) + '</p>' : '<span></span>') +
+    '<span class="meta"><span class="pr">' + rub(i.p) + '</span>' + (volOk(i.v) ? '<span class="vol">' + esc(i.v) + '</span>' : '') +
+    (q ? '<span class="qty"><button type="button" data-it="' + esc(i.t) + '" data-d="-1" aria-label="' + esc(t('minus') + ': ' + nameOf(i.t)) + '">−</button><b>' + q + '</b><button type="button" data-it="' + esc(i.t) + '" data-d="1" aria-label="' + esc(t('plus') + ': ' + nameOf(i.t)) + '">+</button></span>'
+       : '<button type="button" class="add" data-it="' + esc(i.t) + '" data-d="1" aria-label="' + esc(t('add') + ': ' + nameOf(i.t)) + '">' + esc(t('pkAdd')) + '</button>') +
+    '</span></li>';
+}
+function renderItems() {
+  var L = listItems(), showCat = !!query || curCat === '__top' || curCat === '__all';
+  var shown = expanded || L.length <= LIMIT + 2 ? L : L.slice(0, LIMIT);
+  $('#items').innerHTML = L.length ? shown.map(function (i) { return itemRow(i, showCat); }).join('') : '<li class="empty">' + esc(t('nothing', query)) + ' <a href="' + esc(wa((lang === 'ar' ? 'مرحبًا! هل لديكم ' : 'Здравствуйте! Подскажите, есть ли у вас ') + query + '?')) + '" target="_blank" rel="noopener">WhatsApp →</a></li>';
+  var mb = $('#moreBtn');
+  if (shown.length < L.length) { mb.hidden = false; mb.textContent = t('more', L.length - shown.length); } else mb.hidden = true;
+}
+
+/* ---------- reviews / find ---------- */
+var QUOTE_IDX = [2, 9, 8, 3, 7, 1];
+function renderReviews() {
+  $('#bigRate').textContent = rateTxt();
+  $('#bigRateTxt').textContent = t('bigRate');
+  var A = (BIZ.aspects || []).filter(function (a) { return a.count && a.positive / a.count >= 0.75; }).slice(0, 7);
+  var max = A.reduce(function (m, a) { return Math.max(m, a.positive); }, 1);
+  var AR_ASP = { 'Еда': 'الطعام', 'Атмосфера': 'الأجواء', 'Персонал': 'الطاقم', 'Напитки': 'المشروبات', 'Кофе': 'القهوة', 'Мясо': 'اللحم', 'Интерьер': 'الديكور', 'Помещение': 'المكان' };
+  $('#asp').innerHTML = A.map(function (a) {
+    return '<li><span>' + esc(lang === 'ar' ? (AR_ASP[a.text] || a.text) : a.text) + '</span><span class="bar"><i style="transform:scaleX(' + (a.positive / max).toFixed(3) + ')"></i></span><span class="v">' + t('aspV', a.positive, a.count) + '</span></li>';
+  }).join('');
+  var Q = (BIZ.reviews || []).filter(function (r) { return r.r >= 4; });
+  var sel = QUOTE_IDX.map(function (i) { return Q[i]; }).filter(Boolean);
+  if (sel.length < 3) sel = Q.slice(0, 6);
+  $('#quotes').innerHTML = sel.slice(0, 6).map(function (r) {
+    return '<figure class="q rv" style="margin:0"><span class="st" aria-hidden="true">★★★★★</span><blockquote lang="ru" dir="ltr">«' + esc(r.x) + '»</blockquote><footer><b>' + esc(r.a) + '</b> · ' + esc(t('revSrc')) + (r.d ? ' · <span lang="ru">' + esc(r.d) + '</span>' : '') + '</footer></figure>';
+  }).join('');
+  var ar = $('#allRev'); ar.href = BIZ.reviewsUrl; ar.innerHTML = esc(t('allRev')) + ' →';
+}
+var IC = {
+  wa: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>',
+  route: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>',
+  phone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>',
+  bus: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="3" width="14" height="15" rx="3"/><path d="M5 11h14M8 18v2M16 18v2"/><circle cx="8.5" cy="14.5" r="1"/><circle cx="15.5" cy="14.5" r="1"/></svg>',
+  clock: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+  coin: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 8h3.5a2.5 2.5 0 0 1 0 5H9.5V8zm0 5v4m-1.5-2h5"/></svg>',
+  star: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="7" y="7" width="10" height="10"/><rect x="7" y="7" width="10" height="10" transform="rotate(45 12 12)"/></svg>'
+};
+function renderFind() {
+  $('#addr').innerHTML = esc(BIZ.address.replace(/, Москва$/, '')) + '<small>' + esc(t('addrSub')) + '</small>';
+  var rows = (BIZ.metro || []).map(function (m) { return '<li><span class="mdot"><i style="background:' + esc(m.color) + '"></i></span><span>' + esc(t('metro', m.name)) + '</span><span class="dist">' + esc(dist(m.distance)) + '</span></li>'; });
+  [{ name: 'Большая Грузинская улица', distance: '164 м' }, { name: 'Дом кино', distance: '180 м' }].forEach(function (s) { rows.push('<li>' + IC.bus.replace('class="ic"', 'class="ic"') + '<span>' + esc(t('stop', s.name)) + '</span><span class="dist">' + esc(dist(s.distance)) + '</span></li>'); });
+  $('#ways').innerHTML = rows.join('');
+  var rb = $('#routeBtn'); rb.href = BIZ.routeUrl; rb.innerHTML = IC.route + esc(t('route'));
+  var cb = $('#callBtn'); cb.href = 'tel:' + BIZ.phone; cb.innerHTML = IC.phone + '<bdi dir="ltr">' + esc(BIZ.phoneDisplay) + '</bdi>';
+  var br = (BIZ.branches || []).filter(function (b) { return b.name !== BIZ.name; })[0];
+  $('#branch').innerHTML = br ? IC.star + '<span><b>' + esc(t('branchT', br)) + '</b><span lang="ru" dir="auto" style="display:block">' + esc(t('branchS', br)) + '</span></span>' : '';
+  $('#branch').hidden = !br;
+  $('#mapPh').textContent = t('mapPh');
+  var ifr = $('#mapBox iframe');
+  if (ifr) ifr.title = t('mapT');
+  var F = t('feats'), chips = [];
+  (BIZ.features || []).forEach(function (f) {
+    var lab = F[f.k]; if (!lab || !f.v) return;
+    if (f.k === 'особенности заведения' && String(f.v).indexOf('пекарня') < 0) return;
+    chips.push(typeof lab === 'function' ? lab(f.v) : lab);
+  });
+  $('#feats').innerHTML = chips.map(function (c) { return '<span>' + esc(c) + '</span>'; }).join('');
+}
+function renderWeek() {
+  var today = (mskNow().getDay() + 6) % 7, str = function (h) { return h.length ? h.map(function (p) { return p[0] + '–' + p[1]; }).join(', ') : (lang === 'ar' ? 'مغلق' : 'выходной'); };
+  var same = BIZ.hours.every(function (h) { return str(h) === str(BIZ.hours[0]); });
+  if (same) {
+    $('#week').innerHTML = '<li class="wk-line" style="padding:0"><span>' + esc(lang === 'ar' ? 'يوميًا، بلا أيام عطلة' : 'Ежедневно, без выходных') + '</span><b dir="ltr">' + esc(str(BIZ.hours[0])) + '</b></li><li style="padding:0;display:block"><div class="wk-days">' +
+      BIZ.hours.map(function (_, d) { return '<span' + (d === today ? ' class="today"' : '') + '>' + esc(lang === 'ar' ? ['إثنين', 'ثلاثاء', 'أربعاء', 'خميس', 'جمعة', 'سبت', 'أحد'][d] : DAYS.ruS[d]) + '</span>'; }).join('') + '</div></li>';
+    return;
+  }
+  $('#week').innerHTML = BIZ.hours.map(function (h, d) {
+    return '<li' + (d === today ? ' class="today"' : '') + '><span>' + esc(lang === 'ar' ? DAYS.ar[d] : DAYS.ruF[d]) + '</span><span dir="ltr">' + esc(str(h)) + '</span></li>';
+  }).join('');
+}
+function renderStatus() {
+  var st = statusNow(), txt = statusText(st);
+  ['#hdrStatus', '#heroStatus', '#findStatus'].forEach(function (s) { var el = $(s); if (!el) return; el.classList.toggle('closed', !!st && !st.open); el.querySelector('span').textContent = txt; el.hidden = !txt; });
+}
+function renderHero() {
+  $('#h1').innerHTML = t('h1').map(function (w) { return '<span>' + w + '</span>'; }).join('');
+  $('#lead').innerHTML = t('lead');
+  $('#rateNum').textContent = rateTxt();
+  $('#rateCount').textContent = t('rateCount');
+  var rb = $('#rateBadge'); rb.href = BIZ.reviewsUrl; rb.setAttribute('aria-label', t('rateAria'));
+  $('#ctaMeze').textContent = t('ctaMeze');
+  $('#ctaTable').innerHTML = IC.wa + esc(t('ctaTable'));
+  var f = [];
+  if (M0) f.push('<li><span class="md" style="background:' + esc(M0.color) + '"></span><span><b>' + esc(dist(M0.distance)) + '</b>' + esc(t('fMetro', M0)) + '</span></li>');
+  var h0 = BIZ.hours[0] && BIZ.hours[0][0];
+  if (h0) f.push('<li>' + IC.clock + '<span><b dir="ltr">' + h0[0] + '–' + h0[1] + '</b>' + esc(t('fHours')) + '</span></li>');
+  var bill = feat('средний счёт');
+  if (bill) f.push('<li>' + IC.coin + '<span><b>' + esc(bill.replace(/ ₽$/, NB + '₽')) + '</b>' + esc(t('fBill')) + '</span></li>');
+  if (feat('халяль')) f.push('<li>' + IC.star + '<span><b>' + esc(t('fHalal')) + '</b>' + esc(t('fHalalS')) + '</span></li>');
+  $('#facts').innerHTML = f.join('');
+  $('#archTitle').textContent = t('archTitle');
+  $('#archCap').textContent = t('archCap');
+}
+
+/* ---------- drawer / order ---------- */
+var ord = { mode: 'table', guests: 2, day: 0, time: '', asap: false };
+try { var o0 = JSON.parse(localStorage.getItem('adam-ord') || '{}'); if (o0 && o0.mode) { ord.mode = o0.mode; ord.guests = o0.guests || 2; } } catch (e) {}
+function saveOrd() { try { localStorage.setItem('adam-ord', JSON.stringify({ mode: ord.mode, guests: ord.guests })); } catch (e) {} }
+function slots(dayOff) {
+  var now = mskNow(), d = ((now.getDay() + 6) % 7 + dayOff) % 7, H = BIZ.hours[d] || [], out = [];
+  var cur = now.getHours() * 60 + now.getMinutes();
+  H.forEach(function (p) {
+    var a = mins(p[0]), b = mins(p[1]) <= a ? mins(p[1]) + 1440 : mins(p[1]);
+    for (var m = a; m <= b - 30; m += 30) { if (dayOff === 0 && m < cur + 30) continue; out.push(hhmm(m)); }
+  });
+  return out;
+}
+function dateLabel(dayOff) { var d = mskNow(); d.setDate(d.getDate() + dayOff); return d.getDate() + ' ' + MON[lang][d.getMonth()]; }
+function renderDrawerStatic() {
+  $('#drH').textContent = t('drH');
+  $('#drClose').setAttribute('aria-label', t('closeAria'));
+  var M = t('modes');
+  $('#segMode').innerHTML = ['table', 'take', 'dlv'].filter(function (k) { return k !== 'dlv' || feat('доставка еды'); }).map(function (k) { return '<button type="button" data-mode="' + k + '" aria-pressed="' + (ord.mode === k) + '">' + esc(M[k]) + '</button>'; }).join('');
+  $('#addrIn').placeholder = t('fAddrPh'); $('#nameIn').placeholder = t('fNamePh'); $('#noteIn').placeholder = t('fNotePh');
+  $('#gMinus').setAttribute('aria-label', t('minus')); $('#gPlus').setAttribute('aria-label', t('plus'));
+  $('#gHint').textContent = t('gHint');
+}
+function renderTimes() {
+  var s0 = slots(0);
+  if (!s0.length && ord.day === 0) ord.day = 1;
+  $('#segDay').innerHTML = [0, 1].map(function (d) { return '<button type="button" data-day="' + d + '" aria-pressed="' + (ord.day === d) + '"' + (d === 0 && !s0.length ? ' disabled style="opacity:.4"' : '') + '>' + esc(d ? t('tomorrow') : t('today')) + ' · ' + esc(dateLabel(d)) + '</button>'; }).join('');
+  var S2 = slots(ord.day), opts = '';
+  if (ord.mode !== 'table' && ord.day === 0 && statusNow() && statusNow().open) opts += '<option value="asap">' + esc(t('asap')) + '</option>';
+  opts += S2.map(function (x) { return '<option value="' + x + '">' + x + '</option>'; }).join('');
+  var sel = $('#timeSel'); sel.innerHTML = opts;
+  var want = ord.asap ? 'asap' : ord.time;
+  if (want && $$('option', sel).some(function (o) { return o.value === want; })) sel.value = want;
+  else {
+    var def = S2.filter(function (x) { return x >= '19:00'; })[0] || S2[0];
+    if (ord.mode !== 'table' && $('option[value=asap]', sel)) sel.value = 'asap'; else if (def) sel.value = def;
+  }
+  ord.asap = sel.value === 'asap'; ord.time = ord.asap ? '' : sel.value;
+}
+function buildMsg() {
+  var lines = cart.map(function (l) { return { name: lineName(l), q: l.q, sum: rub(l.p == null ? null : l.p * l.q) }; });
+  return t('msg', { mode: ord.mode, guests: ord.guests, day: ord.day, date: dateLabel(ord.day), time: ord.time, asap: ord.asap, addr: $('#addrIn').value.trim(), name: $('#nameIn').value.trim(), note: $('#noteIn').value.trim(), lines: lines, total: rub(cartTotal()) });
+}
+function syncDrawer() {
+  $('#lines').innerHTML = cart.length ? cart.map(function (l, i) {
+    var nm = l.picks ? esc(t('setName')) + '<small>' + esc(l.picks.map(function (p) { return nameOf(p.t) + (p.n > 1 ? ' ×' + p.n : ''); }).join(LSEP())) + '</small>' : esc(nameOf(l.t)) + (lang === 'ar' && IT_AR[l.t] ? '<small lang="ru">' + esc(l.t) + '</small>' : '');
+    return '<li class="ln"><span class="nm">' + nm + '</span><span class="pr">' + rub(l.p == null ? null : l.p * l.q) + '</span><span class="qty"><button type="button" data-ln="' + i + '" data-d="-1" aria-label="' + esc(t('minus')) + '">−</button><b>' + l.q + '</b><button type="button" data-ln="' + i + '" data-d="1" aria-label="' + esc(t('plus')) + '">+</button></span></li>';
+  }).join('') : '<li><p class="dr-empty">' + esc(t('drEmpty')) + '</p></li>';
+  $$('#segMode button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-mode') === ord.mode)); });
+  $('#modeHint').textContent = t('modeHint')[ord.mode];
+  $('#fGuests').hidden = ord.mode !== 'table';
+  $('#fAddr').hidden = ord.mode !== 'dlv';
+  $('#gN').textContent = ord.guests;
+  $('#gHint').hidden = ord.guests < 6;
+  renderTimes();
+  $('#drTot').hidden = !cart.length;
+  $('#drTotV').textContent = rub(cartTotal());
+  var s = $('#send'); s.href = wa(buildMsg()); s.innerHTML = IC.wa + esc(t('send'));
+}
+function syncCart() {
+  var n = cartCount(), b = $('#barMain');
+  b.innerHTML = n ? IC.wa + esc(t('barCart', n, rub(cartTotal()))) + ' <span class="badge">' + n + '</span>' : IC.wa + esc(t('barTable'));
+  var bd = $('.badge', b); if (bd) { bd.classList.remove('bump'); void bd.offsetWidth; bd.classList.add('bump'); }
+  renderItems(); renderPicks(); observeReveal(true);
+  if ($('#drawer').classList.contains('on')) syncDrawer();
+}
+var lastFocus = null;
+function openDrawer(mode) {
+  if (mode) { ord.mode = mode; saveOrd(); }
+  lastFocus = document.activeElement;
+  syncDrawer();
+  $('#drawer').classList.add('on'); $('#ov').classList.add('on');
+  document.body.style.overflow = 'hidden';
+  setTimeout(function () { try { $('#drClose').focus({ preventScroll: true }); } catch (e) {} }, 50);
+}
+function closeDrawer() {
+  $('#drawer').classList.remove('on'); $('#ov').classList.remove('on');
+  document.body.style.overflow = '';
+  if (lastFocus && lastFocus.focus) try { lastFocus.focus({ preventScroll: true }); } catch (e) {}
+}
+var tt;
+function toast(s) { var el = $('#toast'); el.textContent = s; el.classList.add('on'); clearTimeout(tt); tt = setTimeout(function () { el.classList.remove('on'); }, 1800); }
+
+/* ---------- reveal & motion ---------- */
+var io = null;
+function observeReveal(instant) {
+  if (!io || instant) { $$('.rv').forEach(function (el) { if (!io || instant && el.getBoundingClientRect().top < innerHeight * 1.5) el.classList.add('in'); }); }
+  if (io) $$('.rv:not(.in)').forEach(function (el) { io.observe(el); });
+}
+if ('IntersectionObserver' in window) {
+  io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -6% 0px' });
+  var pio = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('paused', !e.isIntersecting); }); });
+  pio.observe($('#archBox'));
+}
+setTimeout(function () { $$('.rv').forEach(function (el) { el.classList.add('in'); }); }, 2500);
+
+/* ---------- language ---------- */
+function setLang(l) {
+  lang = l === 'ar' ? 'ar' : 'ru';
+  var H = document.documentElement; H.lang = lang; H.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  try { localStorage.setItem('adam-lang', lang); } catch (e) {}
+  $$('[data-t]').forEach(function (el) { el.textContent = t(el.getAttribute('data-t')); });
+  $('#demoBar').textContent = t('demo');
+  $('#ftrDemo').textContent = t('ftrDemo');
+  var lb = $('#langBtn'); lb.innerHTML = t('langBtn'); lb.setAttribute('aria-label', t('langAria'));
+  $('#brandName').textContent = lang === 'ar' ? 'آدم' : BIZ.name;
+  $('#mzKicker').textContent = SET ? t('mzKicker', SET) : '';
+  $('#mzH').innerHTML = t('mzH'); $('#mzSub').textContent = t('mzSub');
+  $('#mzAuto').textContent = t('mzAuto'); $('#mzClear').textContent = t('mzClear');
+  $('#mzQuote').innerHTML = t('mzQuote'); $('#mzExH').textContent = t('mzExH');
+  $('#pkH').innerHTML = t('pkH');
+  var cats = (BIZ.menu || []).length;
+  $('#mnKicker').textContent = t('mnKicker', cats, ALL.length);
+  $('#mnH').innerHTML = t('mnH'); $('#mnSub').textContent = t('mnSub');
+  var qi = $('#q'); qi.placeholder = t('search'); qi.setAttribute('aria-label', t('searchL'));
+  $('#chips').setAttribute('aria-label', t('navMenu'));
+  $('#rvH').innerHTML = t('rvH'); $('#fdH').innerHTML = t('fdH');
+  $('#ftrAddr').textContent = BIZ.fullAddress + ' · ' + BIZ.hoursText;
+  var ft = $('#ftrTel'); ft.href = 'tel:' + BIZ.phone; ft.textContent = BIZ.phoneDisplay; ft.dir = 'ltr';
+  $('#ftrWa').href = wa(lang === 'ar' ? 'مرحبًا! أكتب إليكم من موقع «آدم».' : 'Здравствуйте! Пишу с сайта «' + BIZ.name + '».');
+  var fy = $('#ftrYa'); fy.href = BIZ.yandexUrl; fy.textContent = t('ya');
+  var bc = $('#barCall'); bc.href = 'tel:' + BIZ.phone; bc.setAttribute('aria-label', t('callAria'));
+  renderHero(); renderStatus(); renderMzExtras(); renderMeze(); renderChips(); renderItems(); renderPicks(); renderReviews(); renderFind(); renderWeek(); renderDrawerStatic(); syncCart();
+  observeReveal(true);
+}
+window.setLang = setLang;
+
+/* ---------- events ---------- */
+document.addEventListener('click', function (e) {
+  var b = e.target.closest ? e.target.closest('button, [data-slot]') : null;
+  if (!b) return;
+  var A = function (k) { return b.getAttribute(k); };
+  if (A('data-mz') != null) {
+    var mt = A('data-mz');
+    if (+A('data-d') > 0) { if (picks.length < 6) { picks.push(mt); lastPop = picks.length - 1; } }
+    else { var ix = picks.lastIndexOf(mt); if (ix >= 0) picks.splice(ix, 1); }
+    savePicks(); renderMeze(); return;
+  }
+  if (A('data-slot') != null) { picks.splice(+A('data-slot'), 1); savePicks(); renderMeze(); return; }
+  if (A('data-it') != null) { var d = +A('data-d'); addItem(A('data-it'), d); if (d > 0 && qtyOf(A('data-it')) === 1) toast(t('added', nameOf(A('data-it')))); return; }
+  if (A('data-pk') != null) { addItem(A('data-pk'), 1); toast(t('added', nameOf(A('data-pk')))); return; }
+  if (A('data-cat') != null) { curCat = A('data-cat'); query = ''; $('#q').value = ''; expanded = false; renderChips(); renderItems(); return; }
+  if (A('data-ln') != null) { var l = cart[+A('data-ln')]; if (l) { l.q += +A('data-d'); cart = cart.filter(function (x) { return x.q > 0; }); save(); syncCart(); } return; }
+  if (A('data-mode') != null) { ord.mode = A('data-mode'); ord.time = ''; ord.asap = false; saveOrd(); syncDrawer(); return; }
+  if (A('data-day') != null) { ord.day = +A('data-day'); ord.time = ''; syncDrawer(); return; }
+  switch (b.id) {
+    case 'mzAuto': picks = AUTO.filter(function (x) { return MZ_STYLE[x] && MEZE.some(function (m) { return m.t === x; }); }).slice(0, 6); lastPop = -1; savePicks(); renderMeze(); $$('#tray .slot').forEach(function (g) { g.classList.add('pop'); }); break;
+    case 'mzClear': picks = []; savePicks(); renderMeze(); break;
+    case 'mzAdd': mzAddSet(); break;
+    case 'moreBtn': expanded = true; renderItems(); break;
+    case 'ctaTable': openDrawer('table'); break;
+    case 'barMain': openDrawer(cart.length ? null : 'table'); break;
+    case 'drClose': closeDrawer(); break;
+    case 'gMinus': ord.guests = Math.max(1, ord.guests - 1); saveOrd(); syncDrawer(); break;
+    case 'gPlus': ord.guests = Math.min(12, ord.guests + 1); saveOrd(); syncDrawer(); break;
+    case 'langBtn': setLang(lang === 'ar' ? 'ru' : 'ar'); break;
+  }
+});
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && $('#drawer').classList.contains('on')) closeDrawer();
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.getAttribute && e.target.getAttribute('data-slot') != null) { e.preventDefault(); e.target.click(); }
+});
+$('#ov').addEventListener('click', closeDrawer);
+$('#mzExtras').addEventListener('change', function (e) {
+  var k = e.target.getAttribute('data-ex'); if (!k) return;
+  extrasOn[k] = e.target.checked;
+  if (e.target.checked) { var ex = byT(k); lastPop = ex && ex.cat === 'Кофе' ? 8 : 9; }
+  renderTray(); renderMzSum();
+});
+var qt;
+$('#q').addEventListener('input', function (e) { clearTimeout(qt); qt = setTimeout(function () { query = e.target.value; expanded = false; renderChips(); renderItems(); }, 90); });
+$('#timeSel').addEventListener('change', function (e) { ord.asap = e.target.value === 'asap'; ord.time = ord.asap ? '' : e.target.value; $('#send').href = wa(buildMsg()); });
+['#addrIn', '#nameIn', '#noteIn'].forEach(function (s) { $(s).addEventListener('input', function () { $('#send').href = wa(buildMsg()); }); });
+
+/* map iframe (lazy) */
+(function () {
+  var f = document.createElement('iframe');
+  f.loading = 'lazy'; f.src = BIZ.mapEmbed; f.title = 'Карта'; f.setAttribute('allowfullscreen', '');
+  $('#mapBox').appendChild(f);
+})();
+
+/* bottom bar padding */
+function padBar() { var sb = $('#sbar'); var h = innerWidth < 900 ? sb.offsetHeight : 0; document.body.style.setProperty('--bar', h + 'px'); }
+
+var initial = 'ru';
+try { initial = new URLSearchParams(location.search).get('lang') || localStorage.getItem('adam-lang') || 'ru'; } catch (e) {}
+setLang(initial);
+padBar();
+window.addEventListener('resize', padBar);
+setInterval(function () { renderStatus(); renderWeek(); }, 30000);
+})();
+</script>
+<script src="../map-fix.js" defer></script>
+</body>
+</html>

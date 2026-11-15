@@ -1,0 +1,1045 @@
+<!doctype html>
+<!--
+  КОНЦЕПТ · демо №52 · «Голливуд», груминг-салон, Коммунарка, Саларьевская, 9
+
+  1. Идея. Салон называется «Голливуд», в прайсе есть «Голливудская стрижка» и «Голливудский
+     комплекс», а гостья пишет, что её Холли вернулась домой «как голливудская звезда».
+     Поэтому сайт — премьера: афиша с лампочками, красная дорожка и звезда на Аллее славы,
+     в которую вписывается кличка вашего питомца.
+
+  2. Фирменный модуль. «Кастинг: кто сегодня звезда?» — дубль 1: кто придёт (собака, кошка,
+     мейн-кун, а ещё кролик, морская свинка, лиса, экзотика — так в карточке салона);
+     дубль 2: размер собаки S–XXL с весом из прайса; дубль 3: программа и допуслуги ровно
+     для этого размера с реальными ценами и итогом. Справа «звезда» с кличкой и афишей визита:
+     «Записаться онлайн» (YClients салона) или готовое сообщение в WhatsApp. Для животных без
+     цен в прайсе — честный вопрос «сколько будет стоить». Плюс прайс одной таблицей
+     «программа × размер», клик по цене переносит выбор в кастинг.
+
+  3. Арт-дирекшн. Ночь премьеры: тёплый чёрный, красная дорожка (бархат, модуль лежит прямо
+     на ней), латунь — единственный акцент для действий и звёзд, коралловый терраццо только
+     в звезде Аллеи славы. Шрифты: Oswald (буквы афиши, цены), Playfair Display italic
+     (гламурные заголовки), Manrope (текст). Мотив: лампочки афиши, лучи прожекторов,
+     звезда с лапой в медальоне, нумерация шагов «дублями» с хлопушкой.
+-->
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#141015">
+<title>«Голливуд» — груминг-салон в Коммунарке, Саларьевская, 9 (демо)</title>
+<meta name="description" content="Демо-концепт сайта груминг-салона «Голливуд» в Коммунарке: выберите питомца и размер — программы и цены из прайса салона, запись онлайн или в WhatsApp.">
+<meta property="og:title" content="«Голливуд» — красная дорожка для собак и котиков (демо)">
+<meta property="og:description" content="Груминг в Коммунарке, Саларьевская, 9. Питомец и размер → программа и цена из прайса → запись онлайн или в WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kyan9400.github.io/demo/gollivud-grooming/">
+<meta property="og:image" content="https://kyan9400.github.io/demo/gollivud-grooming/og.jpg">
+<meta property="og:locale" content="ru_RU">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23931a2a'/%3E%3Cpath d='M32 7l7.3 15.6 17 2-12.6 11.7 3.4 16.9L32 44.6l-15.1 8.6 3.4-16.9L7.7 24.6l17-2z' fill='%23e5bd63'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@1,700;1,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141015; --ink-2:#1d181f; --ink-3:#2a232c; --line:rgba(247,237,220,.14);
+  --cream:#f7eddc; --mute:#c3b6a6;
+  --brass:#e5bd63; --brass-2:#c79a3b; --brass-ink:#1b1309;
+  --carpet:#931a2a; --carpet-2:#7a1322; --carpet-3:#ab2a3e; --on-carpet:#f3d9cf;
+  --coral:#e59b92;
+  --f-sign:Oswald,"Arial Narrow",Impact,sans-serif;
+  --f-glam:"Playfair Display",Georgia,"Times New Roman",serif;
+  --f-text:Manrope,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--ink);color:var(--cream);font:400 16px/1.55 var(--f-text);-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+@media (min-width:900px){body{padding-bottom:0}}
+a{color:inherit}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0;-webkit-tap-highlight-color:transparent}
+svg{display:block}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px;border-radius:8px}
+[hidden]{display:none!important}
+.wrap{width:100%;max-width:1220px;margin:0 auto;padding:0 16px}
+@media (min-width:768px){.wrap{padding:0 32px}}
+.nb{white-space:nowrap}
+.vh{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}
+
+/* demo bar */
+.demo-bar{background:#0c090d;color:var(--mute);font-size:12.5px;line-height:1.4;text-align:center;padding:7px 14px;border-bottom:1px solid var(--line)}
+
+/* buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:14px 22px;border-radius:999px;font:700 16px/1.2 var(--f-text);text-decoration:none;text-align:center;transition:transform .15s,background .2s,box-shadow .2s;border:0}
+.btn:active{transform:scale(.97)}
+.btn svg{flex:none;width:21px;height:21px}
+.btn-brass{background:linear-gradient(180deg,#f0cf7f,var(--brass) 45%,var(--brass-2));color:var(--brass-ink);box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 -2px 0 rgba(0,0,0,.18) inset,0 10px 24px -12px rgba(229,189,99,.6)}
+.btn-brass:hover{box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 -2px 0 rgba(0,0,0,.18) inset,0 14px 30px -12px rgba(229,189,99,.8)}
+.btn-line{color:var(--cream);box-shadow:inset 0 0 0 1.5px rgba(247,237,220,.45)}
+.btn-line:hover{background:rgba(247,237,220,.07)}
+.btn-wa svg{color:#4fd47a}
+
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;min-height:44px}
+.brand svg{width:30px;height:30px}
+.brand b{font:800 italic 25px/1 var(--f-glam);letter-spacing:-.01em}
+.nav{display:none}
+.status{display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:7px 13px;border:1px solid var(--line);border-radius:999px;font-size:13.5px;font-weight:600;white-space:nowrap}
+.status::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:#5fd68f;box-shadow:0 0 0 4px rgba(95,214,143,.16)}
+.st-s{display:none}
+@media (max-width:399px){.st-l{display:none}.st-s{display:inline}.status{font-size:13px;padding:7px 11px}.brand b{font-size:22px}}
+.status.closed::before{background:#ff8a7a;box-shadow:0 0 0 4px rgba(255,138,122,.16)}
+.top-r{display:flex;align-items:center;gap:14px}
+.top-book{display:none}
+@media (min-width:900px){
+  .nav{display:flex;gap:4px}
+  .nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;text-decoration:none;font-weight:600;font-size:15px;color:var(--mute);border-radius:999px}
+  .nav a:hover{color:var(--cream);background:rgba(247,237,220,.06)}
+  .top-book{display:inline-flex;min-height:44px;padding:10px 20px;font-size:15px}
+}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:10px 0 56px;isolation:isolate}
+.beams{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.beam{position:absolute;bottom:-6%;width:230px;height:125%;transform-origin:50% 100%;background:linear-gradient(to top,rgba(255,226,160,.17),rgba(255,226,160,.05) 55%,transparent 85%);clip-path:polygon(44% 100%,56% 100%,100% 0,0 0);animation:sweep 11s ease-in-out infinite alternate}
+.beam.b1{left:-60px;transform:rotate(22deg)}
+.beam.b2{right:-60px;transform:rotate(-22deg);animation-delay:-5.5s;animation-name:sweep2}
+@keyframes sweep{from{transform:rotate(30deg)}to{transform:rotate(6deg)}}
+@keyframes sweep2{from{transform:rotate(-30deg)}to{transform:rotate(-6deg)}}
+.floor{position:absolute;left:0;right:0;bottom:0;height:120px;z-index:-1;background:linear-gradient(to top,rgba(147,26,42,.38),transparent)}
+.paused .beam,.paused .bulbs i{animation-play-state:paused}
+.hero-grid{display:grid;gap:34px;align-items:center}
+.hero-grid>*{min-width:0}
+@media (max-width:359px){.sign-in{padding:12px 4px 10px}.sign-sub{letter-spacing:.14em;font-size:12px}}
+.eyebrow{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:14.5px;color:var(--mute);margin-top:8px}
+.eyebrow b{color:var(--cream);font-weight:700}
+.m-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;vertical-align:0;box-shadow:0 0 0 2px rgba(255,255,255,.15)}
+
+/* marquee sign */
+.sign{position:relative;margin:20px 0 0;padding:13px;border-radius:18px;background:#2b1b12;box-shadow:0 0 0 2px var(--brass-2),0 30px 60px -30px rgba(229,189,99,.45)}
+.bulbs{position:absolute;inset:0;border-radius:18px;pointer-events:none}
+.bulbs i{position:absolute;inset:0;border-radius:18px;background:radial-gradient(circle,#fff1c9 0 2.4px,rgba(255,215,130,.55) 3.2px,transparent 4.6px) 0 0/16px 16px;-webkit-mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);padding:13px;animation:blink 1.6s steps(1) infinite}
+.bulbs i+i{background-position:8px 8px;animation-delay:-.8s}
+@keyframes blink{0%{opacity:1}50%{opacity:.25}}
+.sign-in{position:relative;border-radius:8px;background:linear-gradient(180deg,#201419,#140d10);padding:14px 10px 12px;text-align:center;box-shadow:inset 0 0 0 1px rgba(229,189,99,.35)}
+.sign-pre{display:block;font:600 13px/1 var(--f-sign);letter-spacing:.34em;text-transform:uppercase;color:var(--brass);padding-left:.34em}
+h1{margin:0}
+.sign-name{display:block;font:700 clamp(44px,15vw,124px)/.95 var(--f-sign);letter-spacing:.04em;text-transform:uppercase;color:#fff6e4;text-shadow:0 0 18px rgba(255,214,140,.35),0 2px 0 #7a5420;padding:6px 0 4px}
+.sign-sub{display:block;font:600 13px/1.2 var(--f-sign);letter-spacing:.22em;text-transform:uppercase;color:var(--mute);padding-left:.22em}
+.tagline{margin-top:24px;font:800 italic clamp(30px,8.6vw,54px)/1.04 var(--f-glam);letter-spacing:-.015em}
+.tagline em{font-style:inherit;color:var(--brass)}
+.lead{margin-top:14px;max-width:34em;color:var(--mute);font-size:16px}
+.lead b{color:var(--cream);font-weight:600}
+.hero-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:20px}
+.rate{display:inline-flex;align-items:center;gap:12px;min-height:54px;padding:9px 16px 9px 12px;border-radius:16px;border:1px solid var(--line);text-decoration:none;background:rgba(247,237,220,.03)}
+.rate b{font:700 30px/1 var(--f-sign);color:var(--brass)}
+.rate .st{color:var(--brass);font-size:14px;letter-spacing:2px;line-height:1}
+.rate span{display:block;font-size:13.5px;line-height:1.35;color:var(--mute)}
+.rate span em{display:block;font-style:normal;color:var(--cream);font-weight:700}
+.cta{display:grid;gap:10px;margin-top:22px}
+@media (min-width:560px){.cta{grid-template-columns:auto auto;justify-content:start}}
+
+/* walk of fame star tile */
+.star-tile{position:relative;width:100%;max-width:380px;margin:0 auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.55))}
+.star-tile svg{width:100%;height:auto}
+.hero-star{position:relative}
+.hero-star .star-tile{transform:rotate(-4deg)}
+.quote-tag{position:relative;max-width:300px;margin:-26px auto 0;transform:rotate(2deg);background:var(--cream);color:#2a1a12;border-radius:6px;padding:12px 16px 12px;box-shadow:0 18px 30px -16px rgba(0,0,0,.8);font-size:14px;line-height:1.4}
+.quote-tag q{display:block;font:800 italic 21px/1.15 var(--f-glam);quotes:"«" "»";color:var(--carpet)}
+.quote-tag small{display:block;margin-top:5px;font-size:13px;color:#5c4a3e}
+.star-cta{display:flex;justify-content:center;margin-top:16px}
+.star-cta a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 6px;color:var(--brass);font-weight:700;text-decoration:none;border-bottom:1.5px dashed rgba(229,189,99,.5)}
+
+@media (min-width:1000px){
+  .hero{padding:20px 0 64px}
+  .hero-grid{grid-template-columns:1.1fr .9fr;gap:60px}
+  .sign{max-width:640px}
+  .hero-star .star-tile{max-width:440px}
+}
+
+/* sections */
+.sec{position:relative;padding:64px 0}
+@media (min-width:1000px){.sec{padding:100px 0}}
+.kicker{display:inline-flex;align-items:center;gap:10px;font:600 13.5px/1 var(--f-sign);letter-spacing:.26em;text-transform:uppercase;color:var(--brass)}
+.kicker::before{content:"";width:26px;height:1.5px;background:currentColor}
+h2{margin-top:12px;font:800 italic clamp(34px,9.4vw,66px)/1.02 var(--f-glam);letter-spacing:-.02em}
+.sec-lead{margin-top:12px;max-width:40em;color:var(--mute);font-size:16px}
+.sec-h{margin-bottom:30px}
+
+/* ===== carpet (the module) ===== */
+.carpet{background-color:var(--carpet);background-image:repeating-linear-gradient(90deg,rgba(0,0,0,.07) 0 2px,transparent 2px 6px),linear-gradient(180deg,rgba(0,0,0,.25),transparent 140px,transparent calc(100% - 140px),rgba(0,0,0,.25));color:var(--cream)}
+.carpet::before,.carpet::after{content:"";position:absolute;top:0;bottom:0;width:8px;background:linear-gradient(90deg,#c79a3b,#f0cf7f 50%,#a57a26)}
+.carpet::before{left:0}.carpet::after{right:0}
+.carpet .kicker{color:#ffd98a}
+.carpet .sec-lead{color:var(--on-carpet)}
+.cast-grid{display:grid;gap:22px}
+@media (min-width:1000px){.cast-grid{grid-template-columns:minmax(0,1.25fr) minmax(360px,.85fr);gap:36px;align-items:start}}
+.step{background:rgba(20,8,12,.34);border:1px solid rgba(255,220,200,.16);border-radius:22px;padding:20px 16px 18px}
+.step+.step{margin-top:14px}
+@media (min-width:600px){.step{padding:24px 24px 22px}}
+.step-h{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.clap{flex:none;width:44px;height:36px}
+.step-h small{display:block;font:600 12.5px/1 var(--f-sign);letter-spacing:.22em;text-transform:uppercase;color:#ffd98a}
+.step-h h3{font:700 21px/1.15 var(--f-text);letter-spacing:-.01em;margin-top:4px}
+
+.pets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.pet{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:96px;padding:10px 6px;border-radius:16px;background:rgba(255,240,228,.06);box-shadow:inset 0 0 0 1px rgba(255,225,205,.18);text-align:center;transition:background .2s,box-shadow .2s,transform .15s}
+.pet svg{width:40px;height:40px;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.pet span{font-weight:700;font-size:14.5px;line-height:1.15}
+.pet:active{transform:scale(.96)}
+.pet[aria-pressed=true]{background:var(--cream);color:var(--carpet-2);box-shadow:0 0 0 2px var(--brass),0 10px 20px -10px rgba(0,0,0,.6)}
+.pets-more{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.pets-more .pet{min-height:74px;padding:8px 4px}
+.pets-more .pet svg{width:30px;height:30px}
+.pets-more .pet span{font-size:13px}
+@media (min-width:600px){.pets{grid-template-columns:repeat(3,1fr)}.pet{min-height:110px}}
+
+.sizes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;align-items:end}
+.size{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:2px;min-height:118px;padding:10px 2px 10px;border-radius:14px;background:rgba(255,240,228,.06);box-shadow:inset 0 0 0 1px rgba(255,225,205,.18);transition:background .2s,transform .15s}
+.size svg{width:44px;height:44px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transform-origin:50% 100%;margin-bottom:4px}
+.size b{font:700 22px/1 var(--f-sign);letter-spacing:.02em}
+.size span{font-size:12.5px;line-height:1.2;color:var(--on-carpet);white-space:nowrap}
+.size:active{transform:scale(.96)}
+.size[aria-pressed=true]{background:var(--cream);color:var(--carpet-2)}
+.size[aria-pressed=true] span{color:#7a3a35}
+.size-note{margin-top:12px;font-size:14.5px;color:var(--on-carpet)}
+
+.progs{display:grid;gap:8px}
+.prog{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:10px;align-items:center;width:100%;min-height:58px;padding:12px 14px 12px 12px;border-radius:14px;background:rgba(255,240,228,.06);box-shadow:inset 0 0 0 1px rgba(255,225,205,.16);text-align:left;transition:background .2s,box-shadow .2s}
+.prog .ck{width:24px;height:24px;border-radius:50%;box-shadow:inset 0 0 0 2px rgba(255,225,205,.55);display:grid;place-items:center}
+.prog .ck::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--carpet);transform:scale(0);transition:transform .2s}
+.prog .nm{font-weight:700;font-size:15.5px;line-height:1.25}
+.prog .nm .gold{display:inline-block;margin-left:6px;padding:2px 7px 1px;border-radius:999px;background:var(--brass);color:var(--brass-ink);font:600 11.5px/1.3 var(--f-sign);letter-spacing:.08em;text-transform:uppercase;vertical-align:2px}
+.prog .nm .hot{display:inline-block;margin-left:6px;padding:2px 7px 1px;border-radius:999px;box-shadow:inset 0 0 0 1px currentColor;font:600 11.5px/1.3 var(--f-sign);letter-spacing:.08em;text-transform:uppercase;vertical-align:2px;opacity:.9}
+.prog .ds{display:block;margin-top:3px;font-size:13.5px;line-height:1.4;color:var(--on-carpet);font-weight:500}
+.prog .pr{font:600 19px/1 var(--f-sign);white-space:nowrap;letter-spacing:.01em}
+.prog[aria-pressed=true]{background:var(--cream);color:#2a1414;box-shadow:0 0 0 2px var(--brass)}
+.prog[aria-pressed=true] .ds{color:#6b4a44}
+.prog[aria-pressed=true] .ck{box-shadow:inset 0 0 0 2px var(--carpet)}
+.prog[aria-pressed=true] .ck::after{transform:scale(1)}
+.missing{margin-top:12px;font-size:14px;line-height:1.45;color:var(--on-carpet)}
+.missing a{color:#ffd98a;font-weight:700}
+.sub-h{margin:22px 0 10px;font:600 13px/1 var(--f-sign);letter-spacing:.2em;text-transform:uppercase;color:#ffd98a}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:9px 14px;border-radius:999px;background:rgba(255,240,228,.06);box-shadow:inset 0 0 0 1px rgba(255,225,205,.22);font-weight:600;font-size:14.5px;line-height:1.2;text-align:left;transition:background .2s,transform .15s}
+.chip i{font:600 15px/1 var(--f-sign);font-style:normal;color:#ffd98a;white-space:nowrap}
+.chip::before{content:"+";font-weight:800;font-size:16px;line-height:1;opacity:.7}
+.chip.nop::before{display:none}
+.chip:active{transform:scale(.96)}
+.chip[aria-pressed=true]{background:var(--cream);color:#2a1414}
+.chip[aria-pressed=true]::before{content:"✓";opacity:1;color:var(--carpet)}
+.chip[aria-pressed=true] i{color:var(--carpet)}
+.exl{display:grid;gap:6px}
+@media (min-width:600px){.exl{grid-template-columns:1fr 1fr}}
+.exr{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:10px;align-items:center;min-height:46px;padding:8px 12px;border-radius:12px;background:rgba(255,240,228,.06);box-shadow:inset 0 0 0 1px rgba(255,225,205,.16);text-align:left;font-weight:600;font-size:14.5px;line-height:1.25;transition:background .2s,transform .15s}
+.exr .bx{width:20px;height:20px;border-radius:6px;box-shadow:inset 0 0 0 2px rgba(255,225,205,.55);display:grid;place-items:center;font-size:13px;line-height:1;color:transparent}
+.exr i{font:600 16px/1 var(--f-sign);font-style:normal;color:#ffd98a;white-space:nowrap}
+.exr:active{transform:scale(.98)}
+.exr[aria-pressed=true]{background:var(--cream);color:#2a1414}
+.exr[aria-pressed=true] .bx{background:var(--carpet);box-shadow:none;color:#fff}
+.exr[aria-pressed=true] i{color:var(--carpet)}
+.more-btn{display:inline-flex;align-items:center;min-height:44px;margin-top:8px;padding:0 4px;font-weight:700;color:#ffd98a;text-decoration:underline;text-underline-offset:4px}
+
+/* the playbill card */
+.bill{position:relative;background:var(--ink);border-radius:24px;padding:18px 16px 18px;box-shadow:0 0 0 2px var(--brass-2),0 30px 60px -30px rgba(0,0,0,.8)}
+@media (min-width:600px){.bill{padding:24px}}
+@media (min-width:1000px){.bill{position:sticky;top:16px;max-height:calc(100vh - 32px);max-height:calc(100svh - 32px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}}
+.bill-top{display:grid;grid-template-columns:118px minmax(0,1fr);gap:14px;align-items:center}
+.bill-top .star-tile{max-width:118px;filter:none}
+.bill-top small{display:block;font:600 12.5px/1 var(--f-sign);letter-spacing:.22em;text-transform:uppercase;color:var(--brass)}
+.bill-top b{display:block;margin-top:6px;font:800 italic 26px/1.08 var(--f-glam);overflow-wrap:anywhere}
+.bill-top span{display:block;margin-top:6px;font-size:14px;color:var(--mute)}
+@media (min-width:1000px){.bill-top{grid-template-columns:128px minmax(0,1fr);gap:18px}.bill-top .star-tile{max-width:128px}.bill-top b{font-size:30px}.bill .fine{font-size:12.5px}}
+.field{display:block;margin-top:14px}
+.field span{display:block;font-size:13.5px;font-weight:600;color:var(--mute);margin-bottom:6px}
+.field input{width:100%;min-height:50px;padding:12px 14px;border-radius:12px;border:1px solid rgba(247,237,220,.22);background:var(--ink-2);font-size:16px;color:var(--cream)}
+.field input::placeholder{color:#8f8376}
+.field input:focus{outline:none;border-color:var(--brass);box-shadow:0 0 0 3px rgba(229,189,99,.25)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bill .sub-h{color:var(--brass);margin:18px 0 8px}
+.bill .chip{background:rgba(247,237,220,.05);box-shadow:inset 0 0 0 1px var(--line);font-size:14px;padding:9px 13px}
+.bill .chip::before{display:none}
+.bill .chip[aria-pressed=true]{background:var(--brass);color:var(--brass-ink)}
+.lines{margin-top:18px;border-top:1px dashed rgba(229,189,99,.4);padding-top:12px;list-style:none}
+.lines li{display:flex;justify-content:space-between;gap:14px;padding:6px 0;font-size:14.5px;line-height:1.35}
+.lines li span:last-child{font:600 16px/1.3 var(--f-sign);white-space:nowrap;color:var(--cream)}
+.lines li.empty{color:var(--mute)}
+.lines li.empty span:last-child{font:500 14.5px/1.35 var(--f-text);color:var(--mute);white-space:normal}
+.total{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:8px;padding-top:12px;border-top:1px dashed rgba(229,189,99,.4)}
+.total span{font-weight:700}
+.total b{font:700 34px/1 var(--f-sign);color:var(--brass);white-space:nowrap}
+.total b.ask{font:700 17px/1.2 var(--f-text);color:var(--mute);white-space:normal;text-align:right}
+.bump{animation:bump .35s ease}
+@keyframes bump{40%{transform:scale(1.08)}}
+.bill-actions{display:grid;gap:10px;margin-top:18px}
+.fine{margin-top:12px;font-size:13px;line-height:1.45;color:var(--mute)}
+.fine a{color:var(--cream);display:inline-block;padding:13px 0;margin:-13px 0}
+
+/* ===== price matrix ===== */
+.price-sec{background:var(--ink)}
+.mx-wrap{position:relative;margin:0 -16px;padding:0 16px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+@media (min-width:768px){.mx-wrap{margin:0;padding:0}}
+table.mx{width:100%;min-width:560px;border-collapse:separate;border-spacing:0}
+.mx th,.mx td{padding:0;text-align:center}
+.mx thead th{padding:0 4px 12px;font:600 13px/1.2 var(--f-sign);letter-spacing:.06em;color:var(--mute);vertical-align:bottom}
+.mx thead th b{display:block;font-size:24px;color:var(--cream);letter-spacing:.02em}
+.mx thead th:first-child{text-align:left}
+.mx tbody th{position:sticky;left:0;z-index:1;background:var(--ink);text-align:left;padding:10px 12px 10px 0;font:700 15px/1.25 var(--f-text);border-top:1px solid var(--line);min-width:140px}
+.mx tbody th .gold{color:var(--brass)}
+.mx tbody td{border-top:1px solid var(--line);padding:4px 2px}
+.mx td button{width:100%;min-height:48px;border-radius:10px;font:600 17px/1 var(--f-sign);white-space:nowrap;transition:background .2s,color .2s}
+.mx td button:hover{background:var(--carpet);color:#fff}
+.mx td .na{color:#6f6458;font:500 16px/48px var(--f-sign)}
+.mx tr.hw th,.mx tr.hw td{background:#1f1a19}
+@media (max-width:599px){table.mx{min-width:340px}.mx tbody th{min-width:0;width:34%;font-size:13.5px;padding-right:6px}.mx td button{font-size:15.5px;min-height:46px;padding:0}.mx thead th{padding:0 1px 10px;font-size:11px}.mx thead th b{font-size:20px}.mx thead th:first-child{font-size:12px}}
+.mx-hint{margin-top:12px;font-size:14px;color:var(--mute)}
+.lists{display:grid;gap:18px;margin-top:40px}
+@media (min-width:900px){.lists{grid-template-columns:repeat(3,1fr);gap:24px}}
+.plist{border-radius:20px;padding:20px 18px;background:var(--ink-2);box-shadow:inset 0 0 0 1px var(--line)}
+.plist h3{font:800 italic 26px/1.1 var(--f-glam)}
+.plist p.s{margin-top:4px;font-size:14px;color:var(--mute)}
+.plist ul{list-style:none;margin-top:12px}
+.plist li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;border-top:1px solid var(--line);font-size:15px;line-height:1.35}
+.plist li span:last-child{font:600 17px/1.2 var(--f-sign);white-space:nowrap;color:var(--brass)}
+.plist li small{display:block;margin-top:2px;color:var(--mute);font-size:13.5px;line-height:1.4}
+
+/* ===== backstage ===== */
+.back{background:var(--ink-2)}
+.nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.num{padding:16px 12px;border-radius:18px;background:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.num b{display:block;font:700 clamp(36px,11vw,64px)/1 var(--f-sign);color:var(--brass)}
+.num span{display:block;margin-top:6px;font-size:14px;line-height:1.3;color:var(--mute)}
+.num span em{font-style:normal;color:var(--cream);font-weight:700}
+.nums-src{margin-top:10px;font-size:13.5px;color:var(--mute)}
+.perks{display:grid;gap:12px;margin-top:34px;list-style:none}
+@media (min-width:800px){.perks{grid-template-columns:repeat(2,1fr)}}
+.perk{display:grid;grid-template-columns:48px minmax(0,1fr);gap:14px;align-items:start;padding:16px;border-radius:18px;background:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.perk{padding:14px}
+.perk svg{width:48px;height:48px;fill:none;stroke:var(--brass);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.perk b{display:block;font-size:16.5px;line-height:1.3}
+.perk span{display:block;margin-top:4px;font-size:14px;color:var(--mute)}
+.credits{margin-top:40px;padding:28px 18px;border-radius:22px;text-align:center;background:#0e0b0f;box-shadow:inset 0 0 0 1px var(--line)}
+.credits small{font:600 12.5px/1 var(--f-sign);letter-spacing:.3em;text-transform:uppercase;color:var(--mute)}
+.credits p.r{margin-top:12px;font:600 14px/1 var(--f-sign);letter-spacing:.24em;text-transform:uppercase;color:var(--brass)}
+.credits p.n{margin-top:10px;font:800 italic clamp(30px,8vw,50px)/1.1 var(--f-glam)}
+.credits p.n span{color:var(--brass);font-size:.6em;vertical-align:.2em}
+.credits p.t{margin:14px auto 0;max-width:34em;font-size:14.5px;color:var(--mute)}
+
+.revs{display:grid;gap:14px;margin-top:40px}
+@media (min-width:760px){.revs{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1100px){.revs{grid-template-columns:repeat(3,1fr)}}
+.rev{position:relative;display:flex;flex-direction:column;padding:22px 20px 18px;border-radius:20px;background:var(--cream);color:#2a1d16}
+.rev::before{content:"";position:absolute;left:18px;right:18px;top:0;height:5px;border-radius:0 0 4px 4px;background:var(--carpet)}
+.rev .stars{color:#b8831f;letter-spacing:3px;font-size:15px}
+.rev blockquote{margin-top:10px;font-size:15.5px;line-height:1.5;flex:1}
+.rev footer{margin-top:14px;font-size:13.5px;color:#6b5a4e}
+.rev footer b{color:#2a1d16;font-size:15px}
+.js .revs.short .rev:nth-child(n+5){display:none}
+@media (min-width:760px){.js .revs.short .rev:nth-child(n+5){display:flex}.rev-more{display:none!important}}
+.rev-more{display:flex;justify-content:center;margin-top:10px}
+.rev-more button{min-height:44px;padding:0 10px;font-weight:700;color:var(--brass);text-decoration:underline;text-underline-offset:4px}
+.rev-all{display:flex;justify-content:center;margin-top:22px}
+
+/* ===== find us ===== */
+.where-grid{display:grid;gap:18px}
+@media (min-width:1000px){.where-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px}}
+.addr-card{border-radius:22px;padding:22px 18px;background:var(--ink-2);box-shadow:inset 0 0 0 1px var(--line)}
+.addr-card h3{font:800 italic clamp(28px,7.4vw,40px)/1.08 var(--f-glam)}
+.addr-card .dist{margin-top:6px;color:var(--mute);font-size:15px}
+.metro{list-style:none;margin-top:18px}
+.metro li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line);font-size:15.5px}
+.metro li span:last-child{color:var(--mute);white-space:nowrap}
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin-top:20px}
+.week div{padding:10px 2px;border-radius:10px;text-align:center;font:500 13px/1.3 var(--f-sign);color:var(--mute);background:rgba(247,237,220,.04)}
+.week div b{display:block;font-size:14.5px;color:var(--cream);letter-spacing:.04em}
+.week div.today{background:var(--brass);color:var(--brass-ink)}
+.week div.today b{color:var(--brass-ink)}
+.feat{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.feat span{display:inline-flex;align-items:center;min-height:34px;padding:6px 12px;border-radius:999px;font-size:13.5px;font-weight:600;box-shadow:inset 0 0 0 1px var(--line);color:var(--cream)}
+.addr-actions{display:grid;gap:10px;margin-top:22px}
+@media (min-width:560px) and (max-width:999px),(min-width:1200px){.addr-actions{grid-template-columns:1fr 1fr}}
+.addr-actions .btn{white-space:nowrap;padding-inline:16px}
+.map{position:relative;min-height:340px;border-radius:22px;overflow:hidden;background:var(--ink-3);box-shadow:inset 0 0 0 1px var(--line)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:saturate(.85)}
+.map-pin{position:absolute;left:14px;top:14px;right:64px;max-width:320px;padding:12px 14px;border-radius:14px;background:var(--ink);box-shadow:0 0 0 1.5px var(--brass-2);font-size:14px;line-height:1.4}
+.map-pin b{display:block;font-size:15.5px}
+@media (min-width:1000px){.map{min-height:100%}}
+
+/* footer */
+.foot{padding:46px 0 34px;background:#0c090d;border-top:1px solid var(--line);font-size:14.5px;color:var(--mute)}
+.foot-grid{display:grid;gap:22px}
+@media (min-width:900px){.foot-grid{grid-template-columns:1.2fr 1fr 1fr}}
+.foot b{color:var(--cream)}
+.foot a{display:flex;align-items:center;min-height:44px;color:var(--cream)}
+.foot-grid>div{display:flex;flex-direction:column;align-items:flex-start}
+.foot .note{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;line-height:1.5}
+
+/* running total pill (mobile) */
+.pill{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:19;display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:8px 18px;border-radius:999px;background:var(--cream);color:#2a1414;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 12px 26px -10px rgba(0,0,0,.7),0 0 0 2px var(--brass);transform:translate(-50%,0);transition:opacity .25s,transform .25s;white-space:nowrap}
+.pill b{font:700 19px/1 var(--f-sign);color:var(--carpet)}
+.pill.off{opacity:0;transform:translate(-50%,16px);pointer-events:none}
+@media (min-width:1000px){.pill{display:none}}
+/* sticky bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:minmax(0,1fr) 54px 54px;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(14,10,15,.96);border-top:1px solid var(--line)}
+.bar .btn{min-height:54px;padding:12px 14px;font-size:15.5px}
+.bar .ic{display:grid;place-items:center;min-height:54px;border-radius:999px;box-shadow:inset 0 0 0 1.5px rgba(247,237,220,.35)}
+.bar .ic svg{width:23px;height:23px}
+.bar .ic.wa{color:#4fd47a}
+@media (min-width:900px){.bar{display:none}}
+
+.reveal{transition:opacity .6s ease,transform .6s ease}
+.js .reveal.pre{opacity:0;transform:translateY(18px)}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .beam,.bulbs i{animation:none!important}
+  .reveal{transition:none}.js .reveal.pre{opacity:1;transform:none}
+  .bump{animation:none}
+}
+</style>
+</head>
+<body>
+<div class="demo-bar">Демо-концепт · пример сайта для «Голливуд» от Альхассана Альфаррана · не официальный сайт</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-dog" viewBox="0 0 48 48"><path d="M15 18c-5-1-9 4-8.4 11.5.3 3.6 3 5 5.4 3.4"/><path d="M33 18c5-1 9 4 8.4 11.5-.3 3.6-3 5-5.4 3.4"/><path d="M14 22c0-6 4.5-9 10-9s10 3 10 9v8c0 6-4.5 10-10 10s-10-4-10-10z"/><circle cx="19.5" cy="25" r="1.3" fill="currentColor"/><circle cx="28.5" cy="25" r="1.3" fill="currentColor"/><path d="M21.6 31.2h4.8L24 33.6z" fill="currentColor"/><path d="M24 33.6v2.2M21 36.4c1.6 1.1 4.4 1.1 6 0"/></symbol>
+    <symbol id="i-cat" viewBox="0 0 48 48"><path d="M11 31 12 9l9 8.4q3-1 6 0L36 9l1 22q0 10-13 10T11 31z"/><circle cx="19" cy="27" r="1.4" fill="currentColor"/><circle cx="29" cy="27" r="1.4" fill="currentColor"/><path d="M22.4 31.5h3.2L24 33.3z" fill="currentColor"/><path d="M5 30l9 1.5M5 35l9-1.5M43 30l-9 1.5M43 35l-9-1.5"/></symbol>
+    <symbol id="i-coon" viewBox="0 0 48 48"><path d="M10 31 11 11l9 7.4q4-1.2 8 0l9-7.4 1 20q0 6-3.5 8.5l1.5 3-4-1-1 3.5-2.5-2.6L24 44l-1.5-1.6L20 45l-1-3.5-4 1 1.5-3Q10 37 10 31z"/><path d="M11 11 9 4M37 11l2-7"/><circle cx="19" cy="27" r="1.4" fill="currentColor"/><circle cx="29" cy="27" r="1.4" fill="currentColor"/><path d="M22.4 31.5h3.2L24 33.3z" fill="currentColor"/></symbol>
+    <symbol id="i-rabbit" viewBox="0 0 48 48"><path d="M19.5 22C16 13 16 5 19 4s4.5 8 4 17M28.5 22C32 13 32 5 29 4s-4.5 8-4 17"/><circle cx="24" cy="32" r="10.5"/><circle cx="20" cy="31" r="1.2" fill="currentColor"/><circle cx="28" cy="31" r="1.2" fill="currentColor"/><path d="M22.5 35h3L24 36.5z" fill="currentColor"/></symbol>
+    <symbol id="i-guinea" viewBox="0 0 48 48"><path d="M7 30c0-8 7-14 17-14s17 6 17 13c0 6-6 10-17 10S7 36 7 30z"/><path d="M14 18.5c-1.5-2.5 0-5 2.5-4.5M30 17c1-2.4 3.6-2.6 4.6-.4"/><circle cx="13.5" cy="27" r="1.3" fill="currentColor"/><path d="M8 31.5h2.5"/><path d="M14 39v2.5M33 39v2.5"/></symbol>
+    <symbol id="i-fox" viewBox="0 0 48 48"><path d="M8 10l10 9h12l10-9-2 16-14 15L10 26z"/><path d="M15 27l9 7 9-7"/><circle cx="18.5" cy="25" r="1.3" fill="currentColor"/><circle cx="29.5" cy="25" r="1.3" fill="currentColor"/><path d="M22.5 36.5h3L24 38.2z" fill="currentColor"/></symbol>
+    <symbol id="i-exo" viewBox="0 0 48 48"><path d="M24 6l4.5 12.2L41 19l-9.8 8 3.4 12.6L24 32.4l-10.6 7.2 3.4-12.6L7 19l12.5-.8z"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol>
+    <symbol id="i-tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11 11 0 0 0 5.2 5.2l1.4-2.1 4.2 1.6V17a2.5 2.5 0 0 1-2.7 2.5A15.8 15.8 0 0 1 2.5 6.2 2.5 2.5 0 0 1 5 3.5z"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4M8 14h2M14 14h2M8 17h2"/></g></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></g></symbol>
+    <symbol id="clap" viewBox="0 0 44 36"><rect x="3" y="13" width="38" height="21" rx="3" fill="#160b0e"/><path d="M3 13h38" stroke="#ffd98a" stroke-width="1.5"/><g transform="rotate(-14 3 12)"><rect x="3" y="4" width="38" height="8" rx="2" fill="#f7eddc"/><path d="M9 4l-4 8M17 4l-4 8M25 4l-4 8M33 4l-4 8M41 4l-4 8" stroke="#160b0e" stroke-width="3.2"/></g><path d="M9 21h12M9 27h20" stroke="#f7eddc" stroke-width="2" stroke-linecap="round" opacity=".75"/></symbol>
+  </defs>
+</svg>
+
+<header class="wrap top">
+  <a class="brand" href="#top" aria-label="«Голливуд» — наверх">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2l3.7 8.3 9 .9-6.8 6.1 2 8.9L16 21.6l-7.9 4.6 2-8.9-6.8-6.1 9-.9z" fill="#e5bd63"/><circle cx="16" cy="15" r="3.4" fill="#931a2a"/></svg>
+    <b>Голливуд</b>
+  </a>
+  <nav class="nav" aria-label="Разделы">
+    <a href="#cast">Кастинг</a><a href="#price">Прайс</a><a href="#back">Отзывы</a><a href="#where">Как добраться</a>
+  </nav>
+  <div class="top-r">
+    <span class="status" id="st1"><span class="st-l">ежедневно, 10:00–21:00</span><span class="st-s">10:00–21:00</span></span>
+    <a class="btn btn-brass top-book" data-book href="#cast" target="_blank" rel="noopener">Записаться онлайн</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" id="hero">
+  <div class="beams" aria-hidden="true"><div class="beam b1"></div><div class="beam b2"></div></div>
+  <div class="floor" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-txt">
+      <p class="eyebrow"><span><i class="m-dot" id="mDot"></i><b id="mName">Саларьево</b> · <span id="mDist">750 м</span></span><span id="hAddr">Саларьевская улица, 9 · Коммунарка</span></p>
+      <div class="sign">
+        <div class="bulbs" aria-hidden="true"><i></i><i></i></div>
+        <div class="sign-in">
+          <span class="sign-pre" aria-hidden="true">груминг-салон</span>
+          <h1><span class="sign-name">Голливуд</span><span class="vh"> — груминг-салон в Коммунарке</span></h1>
+          <span class="sign-sub" aria-hidden="true">в главных ролях — ваши питомцы</span>
+        </div>
+      </div>
+      <p class="tagline">Красная дорожка для собак <em>и&nbsp;котиков</em></p>
+      <p class="lead">Стрижка, вычесывание, тримминг и SPA — для собак от&nbsp;S до&nbsp;XXL, котиков и мейн-кунов. В карточке салона отмечено, что сюда можно и <b>кроликам, морским свинкам и даже лисам</b>.</p>
+      <div class="hero-row">
+        <a class="rate" id="rate" href="#back">
+          <b id="rVal">5,0</b>
+          <span><span class="st" aria-hidden="true">★★★★★</span><em id="rCnt">360 оценок</em><span id="rRev">271 отзыв на Яндекс Картах</span></span>
+        </a>
+      </div>
+      <div class="cta">
+        <a class="btn btn-brass" data-book href="#cast" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-cal"/></svg>Записаться онлайн</a>
+        <a class="btn btn-line" href="#cast">Подобрать программу и цену</a>
+      </div>
+    </div>
+    <div class="hero-star">
+      <div class="star-tile" data-star="hero" aria-hidden="true"></div>
+      <div class="quote-tag"><q>как голливудская звезда</q><small>— Pretty W. о своей Холли после груминга, отзыв на Яндекс Картах</small></div>
+      <div class="star-cta"><a href="#cast" id="nameJump">Вписать кличку своего питомца ↓</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec carpet" id="cast" aria-labelledby="castH">
+  <div class="wrap">
+    <div class="sec-h reveal">
+      <p class="kicker">Кастинг</p>
+      <h2 id="castH">Кто сегодня звезда?</h2>
+      <p class="sec-lead">Выберите питомца и размер — покажем программы и цены из прайса «Голливуда». Дальше запись онлайн или готовое сообщение администратору в WhatsApp.</p>
+    </div>
+    <div class="cast-grid">
+      <div class="steps">
+        <div class="step">
+          <div class="step-h"><svg class="clap" aria-hidden="true"><use href="#clap"/></svg><div><small>Дубль 1</small><h3>Кто придёт</h3></div></div>
+          <div class="pets" id="pets"></div>
+        </div>
+        <div class="step" id="sizeStep">
+          <div class="step-h"><svg class="clap" aria-hidden="true"><use href="#clap"/></svg><div><small>Дубль 2</small><h3>Какого размера</h3></div></div>
+          <div class="sizes" id="sizes"></div>
+          <p class="size-note" id="sizeNote"></p>
+        </div>
+        <div class="step">
+          <div class="step-h"><svg class="clap" aria-hidden="true"><use href="#clap"/></svg><div><small id="take3">Дубль 3</small><h3 id="progH">Программа</h3></div></div>
+          <div class="progs" id="progs"></div>
+          <p class="missing" id="missing" hidden></p>
+          <div id="exWrap">
+            <p class="sub-h" id="exH">Можно добавить</p>
+            <div class="exl" id="extras"></div>
+            <button class="more-btn" id="exMore" type="button" hidden>Показать ещё</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="bill" id="bill" aria-label="Ваша запись">
+        <div class="bill-top">
+          <div class="star-tile" data-star="bill" aria-hidden="true"></div>
+          <div><small>Афиша визита</small><b id="billName">Ваш питомец</b><span id="billPet">собака · M</span></div>
+        </div>
+        <div class="two">
+          <label class="field"><span>Кличка</span><input id="petName" type="text" maxlength="24" autocomplete="off" placeholder="Например, Холли"></label>
+          <label class="field"><span>Порода</span><input id="petBreed" type="text" maxlength="40" autocomplete="off" placeholder="Необязательно"></label>
+        </div>
+        <p class="sub-h">Когда удобно</p>
+        <div class="chips" id="when"></div>
+        <div class="chips" id="time" style="margin-top:8px"></div>
+        <p class="sub-h">Мастер</p>
+        <div class="chips" id="master"></div>
+        <ul class="lines" id="lines" aria-live="polite"></ul>
+        <div class="total"><span>Итого по прайсу</span><b id="total">—</b></div>
+        <div class="bill-actions">
+          <a class="btn btn-brass" data-book href="#cast" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-cal"/></svg>Записаться онлайн</a>
+          <a class="btn btn-line btn-wa" id="send" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Отправить в WhatsApp</a>
+        </div>
+        <p class="fine">Онлайн-запись откроет систему YClients салона. В WhatsApp уйдёт готовый текст с питомцем, программой и итогом — администратор подтвердит время и точную стоимость. Или позвоните: <a data-tel href="#" class="ph">+7 (915) 302-58-88</a>.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec price-sec" id="price" aria-labelledby="priceH">
+  <div class="wrap">
+    <div class="sec-h reveal">
+      <p class="kicker">Прайс</p>
+      <h2 id="priceH">Все цены — одной афишей</h2>
+      <p class="sec-lead">Комплексы для собак по размеру. Нажмите на цену — она перейдёт в кастинг вместе с размером.</p>
+    </div>
+    <div class="mx-wrap"><table class="mx" id="mx"></table></div>
+    <p class="mx-hint" id="mxHint"></p>
+    <div class="lists" id="lists"></div>
+  </div>
+</section>
+
+<section class="sec back" id="back" aria-labelledby="backH">
+  <div class="wrap">
+    <div class="sec-h reveal">
+      <p class="kicker">За кадром</p>
+      <h2 id="backH">Почему сюда возвращаются</h2>
+      <p class="sec-lead" id="backLead">5,0 на Яндекс Картах — и вот что гости пишут чаще всего.</p>
+    </div>
+    <div class="nums" id="nums"></div>
+    <p class="nums-src">Упоминания с плюсом в отзывах на Яндекс Картах.</p>
+    <ul class="perks">
+      <li class="perk"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="9" width="38" height="25" rx="4"/><path d="M17 41h14M24 34v7"/><path d="M21 17l8 4.5-8 4.5z" fill="#e5bd63"/></svg><div><b>Стрижку можно смотреть по видео</b><span>Гости пишут, что за процессом следят на экране у ресепшн — Наталья П., Марина К., Анна Ж., Дарья К.</span></div></li>
+      <li class="perk"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 20h24v8a10 10 0 0 1-10 10h-4A10 10 0 0 1 9 28z"/><path d="M33 23h3a4 4 0 0 1 0 8h-4"/><path d="M16 8c-2 3 2 4 0 7M23 8c-2 3 2 4 0 7"/></svg><div><b>Пока ждёте — чай или кофе</b><span>Об этом вспоминают Анна А., Олег Д. и Марина К.</span></div></li>
+      <li class="perk"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 26v-6a4 4 0 0 1 4-4h24a4 4 0 0 1 4 4v6"/><path d="M5 26a3 3 0 0 1 6 0v3h26v-3a3 3 0 0 1 6 0v8H5z" fill="rgba(229,189,99,.25)"/><path d="M9 34v4M39 34v4"/></svg><div><b>Фотозона с ярко-жёлтым диваном</b><span>«Идеально чистый, без единого пятнышка и волосика», — Наталья П. Фото питомцев висят на большой доске, пишет Павел В.</span></div></li>
+      <li class="perk"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="13" y="18" width="22" height="23" rx="5"/><path d="M19 18v-5h10v5M22 13V9h4v4"/><path d="M34 8l3-2M36 12h4M34 16l3 2"/></svg><div><b>Финальный штрих — духи</b><span>«В завершении стрижки всегда предлагают выбрать духи, побрызгать своего питомца», — Павел В.</span></div></li>
+    </ul>
+    <div class="credits reveal">
+      <small>Титры · по отзывам гостей</small>
+      <p class="r">Чаще всего благодарят мастеров</p>
+      <p class="n">Татьяна <span>★</span> Анастасия</p>
+      <p class="t">А ещё — администраторов, которые встречают с улыбкой, отвечают «на миллион вопросов» и помогают с записью.</p>
+    </div>
+    <div class="revs short" id="revs"></div>
+    <div class="rev-more"><button type="button" id="revMore">Ещё 2 отзыва</button></div>
+    <div class="rev-all"><a class="btn btn-line" id="revAll" href="#" target="_blank" rel="noopener">Все отзывы на Яндекс Картах</a></div>
+  </div>
+</section>
+
+<section class="sec" id="where" aria-labelledby="whereH">
+  <div class="wrap">
+    <div class="sec-h reveal">
+      <p class="kicker">Как добраться</p>
+      <h2 id="whereH">Премьера — каждый день</h2>
+      <p class="sec-lead" id="whereLead">Ежедневно, 10:00–21:00, по предварительной записи.</p>
+    </div>
+    <div class="where-grid">
+      <div class="addr-card">
+        <h3 id="street">Саларьевская улица, 9</h3>
+        <p class="dist" id="district">Коммунарка, Новомосковский округ</p>
+        <ul class="metro" id="metro"></ul>
+        <div class="week" id="week"></div>
+        <div class="feat" id="feat"></div>
+        <div class="addr-actions">
+          <a class="btn btn-brass" id="route" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-route"/></svg>Построить маршрут</a>
+          <a class="btn btn-line" data-tel href="#"><svg aria-hidden="true"><use href="#i-tel"/></svg><span class="ph">+7 (915) 302-58-88</span></a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe id="mapF" title="«Голливуд» на Яндекс Картах" loading="lazy"></iframe>
+        <div class="map-pin"><b>«Голливуд»</b><span id="mapA">Саларьевская улица, 9</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><p><b>«Голливуд»</b> — груминг-салон для собак, кошек и не только.</p><p id="fAddr" style="margin-top:6px">Саларьевская улица, 9 · ежедневно, 10:00–21:00</p></div>
+      <div><a data-tel href="#" class="ph">+7 (915) 302-58-88</a><a id="fWa" href="#" target="_blank" rel="noopener">Написать в WhatsApp</a></div>
+      <div><a data-book href="#cast" target="_blank" rel="noopener">Онлайн-запись (YClients)</a><a id="fYa" href="#" target="_blank" rel="noopener">Карточка на Яндекс Картах</a></div>
+    </div>
+    <p class="note">Демо-концепт · пример сайта для «Голливуд» от Альхассана Альфаррана · не официальный сайт.<br>Цены и данные взяты из карточки на Яндекс Картах и могут отличаться.</p>
+  </div>
+</footer>
+
+<a class="pill off" id="pill" href="#bill" aria-hidden="true" tabindex="-1">Ваш визит: <b id="pillSum">—</b> ↓</a>
+<nav class="bar" aria-label="Быстрые действия">
+  <a class="btn btn-brass" data-book href="#cast" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-cal"/></svg>Записаться онлайн</a>
+  <a class="ic wa" id="barWa" href="#" target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+  <a class="ic" data-tel href="#" aria-label="Позвонить в салон"><svg aria-hidden="true"><use href="#i-tel"/></svg></a>
+</nav>
+
+<script src="data.js"></script>
+<script>
+(function () {
+'use strict';
+document.documentElement.classList.add('js');
+var BIZ = window.BIZ;
+if (!BIZ) return;
+var $ = function (s, r) { return (r || document).querySelector(s); };
+var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+var wa = function (text) { return 'https://wa.me/' + BIZ.wa + '?text=' + encodeURIComponent(text); };
+var NB = ' ';
+var rub = function (n) { return n == null ? 'по запросу' : Number(n).toLocaleString('ru-RU').replace(/\s/g, NB) + NB + '₽'; };
+var plural = function (n, one, few, many) { var a = Math.abs(n) % 100, b = a % 10; return a > 10 && a < 20 ? many : b === 1 ? one : b >= 2 && b <= 4 ? few : many; };
+var setText = function (sel, v) { var el = $(sel); if (el) el.textContent = v; };
+var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var store = {
+  get: function (k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } },
+  set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+};
+var R = BIZ.rating || {};
+var ratingText = R.value != null ? Number(R.value).toFixed(1).replace('.', ',') : '';
+var addrParts = (BIZ.address || '').split(/,\s*/);
+var street = addrParts.slice(-2).join(',' + ' ').replace(/ (\d)/, ' $1');
+var district = (addrParts.filter(function (p) { return /^район /.test(p); })[0] || '').replace(/^район /, '');
+
+/* ---------- time (Moscow) ---------- */
+function mskNow() { var d = new Date(); return new Date(d.getTime() + (d.getTimezoneOffset() + 180) * 60000); }
+var m2 = function (s) { return +s.slice(0, 2) * 60 + +s.slice(3); };
+var DAY_ACC = ['в понедельник', 'во вторник', 'в среду', 'в четверг', 'в пятницу', 'в субботу', 'в воскресенье'];
+var DAY_S = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+function openStatus(now) {
+  now = now || mskNow();
+  if (!BIZ.hours) return null;
+  if (BIZ.is24) return { open: true, text: 'Круглосуточно' };
+  var day = (now.getDay() + 6) % 7, mins = now.getHours() * 60 + now.getMinutes(), i, iv;
+  var prev = BIZ.hours[(day + 6) % 7] || [];
+  for (i = 0; i < prev.length; i++) { iv = prev[i]; if (m2(iv[1]) <= m2(iv[0]) && mins < m2(iv[1])) return { open: true, text: 'Открыто · до ' + iv[1] }; }
+  var today = BIZ.hours[day] || [];
+  for (i = 0; i < today.length; i++) { iv = today[i]; var a = m2(iv[0]), b = m2(iv[1]) <= a ? m2(iv[1]) + 1440 : m2(iv[1]); if (mins >= a && mins < b) return { open: true, text: 'Открыто · до ' + iv[1] }; }
+  for (i = 0; i < today.length; i++) { iv = today[i]; if (mins < m2(iv[0])) return { open: false, text: 'Закрыто · откроется в ' + iv[0] }; }
+  for (i = 1; i <= 7; i++) { var d = (day + i) % 7; if ((BIZ.hours[d] || []).length) return { open: false, text: 'Закрыто · откроется ' + (i === 1 ? 'завтра' : DAY_ACC[d]) + ' в ' + BIZ.hours[d][0][0] }; }
+  return null;
+}
+function renderStatus() {
+  var st = openStatus(), s1 = $('#st1');
+  if (st && s1) { s1.innerHTML = '<span class="st-l">' + esc(st.text) + '</span><span class="st-s">' + esc(st.open ? st.text.replace('Открыто · ', '') : 'Закрыто') + '</span>'; s1.title = st.text + ' · ' + (BIZ.hoursText || ''); s1.classList.toggle('closed', !st.open); }
+  var day = (mskNow().getDay() + 6) % 7, week = $('#week');
+  if (week) week.innerHTML = (BIZ.hours || []).map(function (ivs, d) {
+    var t = ivs.length ? ivs.map(function (iv) { return iv[0].replace(/:00$/, '') + '–' + iv[1].replace(/:00$/, ''); }).join(', ') : 'выходной';
+    return '<div class="' + (d === day ? 'today' : '') + '"' + (d === day ? ' aria-current="date"' : '') + '><b>' + DAY_S[d] + '</b>' + esc(t) + '</div>';
+  }).join('');
+}
+
+/* ---------- walk of fame star ---------- */
+function starPts(cx, cy, R1, r1) {
+  var p = [];
+  for (var i = 0; i < 10; i++) { var a = -Math.PI / 2 + i * Math.PI / 5, rr = i % 2 ? r1 : R1; p.push((cx + rr * Math.cos(a)).toFixed(1) + ',' + (cy + rr * Math.sin(a)).toFixed(1)); }
+  return p.join(' ');
+}
+var TERRAZZO = (function () {
+  var s = '', seed = 7;
+  var rnd = function () { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; };
+  var cols = ['#f6c9c0', '#b9645d', '#fff2ea', '#9d4f4a', '#d77f77'];
+  for (var i = 0; i < 26; i++) s += '<circle cx="' + (rnd() * 46).toFixed(1) + '" cy="' + (rnd() * 46).toFixed(1) + '" r="' + (0.6 + rnd() * 1.5).toFixed(2) + '" fill="' + cols[i % cols.length] + '"/>';
+  return s;
+})();
+function starSVG(uid) {
+  var pts = starPts(150, 160, 140, 64), inner = starPts(150, 160, 126, 57);
+  var toes = [[136, 196], [145.5, 189], [154.5, 189], [164, 196]].map(function (t) { return '<ellipse cx="' + t[0] + '" cy="' + t[1] + '" rx="4.3" ry="5.2"/>'; }).join('');
+  return '<svg viewBox="0 0 300 300">' +
+    '<defs><pattern id="tz' + uid + '" width="46" height="46" patternUnits="userSpaceOnUse"><rect width="46" height="46" fill="#e59b92"/>' + TERRAZZO + '</pattern>' +
+    '<linearGradient id="br' + uid + '" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f5d88f"/><stop offset=".5" stop-color="#c79a3b"/><stop offset="1" stop-color="#f0cf7f"/></linearGradient>' +
+    '<pattern id="ch' + uid + '" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#2a2326"/><circle cx="3" cy="4" r=".8" fill="#3a3236"/><circle cx="8" cy="8" r=".6" fill="#1d181a"/></pattern></defs>' +
+    '<rect x="4" y="4" width="292" height="292" rx="6" fill="url(#ch' + uid + ')" stroke="url(#br' + uid + ')" stroke-width="5"/>' +
+    '<polygon points="' + pts + '" fill="url(#tz' + uid + ')" stroke="url(#br' + uid + ')" stroke-width="6" stroke-linejoin="round"/>' +
+    '<polygon points="' + inner + '" fill="none" stroke="#f3cfc8" stroke-opacity=".55" stroke-width="1.4" stroke-linejoin="round"/>' +
+    '<text class="star-name" x="150" y="148" text-anchor="middle" font-family="Oswald, Arial Narrow, sans-serif" font-weight="700" font-size="27" letter-spacing="1.5" fill="#5d3a0c">ВАШ ПИТОМЕЦ</text>' +
+    '<circle cx="150" cy="200" r="27" fill="#f3b3aa" stroke="url(#br' + uid + ')" stroke-width="3.5"/>' +
+    '<g fill="#7a4e12"><path d="M150 199c7 0 12.5 5.6 12.5 10.4 0 3.6-3 5.4-6.4 5.4-2.6 0-4-1.4-6.1-1.4s-3.5 1.4-6.1 1.4c-3.4 0-6.4-1.8-6.4-5.4 0-4.8 5.5-10.4 12.5-10.4z"/>' + toes + '</g>' +
+    '</svg>';
+}
+function setStarName(name) {
+  var label = (name || '').trim().toUpperCase() || 'ВАШ ПИТОМЕЦ';
+  $$('.star-name').forEach(function (t) {
+    t.textContent = label;
+    var fs = label.length <= 9 ? 30 : Math.max(15, Math.round(30 * 9 / label.length));
+    t.setAttribute('font-size', fs);
+    t.removeAttribute('textLength'); t.removeAttribute('lengthAdjust');
+    try { if (t.getComputedTextLength && t.getComputedTextLength() > 200) { t.setAttribute('textLength', '200'); t.setAttribute('lengthAdjust', 'spacingAndGlyphs'); } } catch (e) {}
+  });
+}
+$$('[data-star]').forEach(function (el) { el.innerHTML = starSVG(el.getAttribute('data-star')); });
+
+/* ---------- price model ---------- */
+var SIZE_ORDER = ['S', 'M', 'L', 'XL', 'XXL'];
+var SIZE_W = {};
+var fix = function (s) { return String(s).replace('Менй-кун', 'Мейн-кун').replace('Голливудских комплекс', 'Голливудский комплекс').replace(/Купание и Сушка/, 'Купание и сушка').replace(/Купание \+ Сушка/, 'Купание + сушка'); };
+function parseSizes(part) {
+  if (!part || !/^(XXL|XL|L|M|S)\b/.test(part)) return null;
+  var w = part.match(/\(([^)]+)\)/);
+  var codes = part.match(/XXL|XL|L|M|S/g) || [];
+  if (w && codes.length === 1) SIZE_W[codes[0]] = w[1];
+  if (codes.length === 2 && /-|–/.test(part)) {
+    var a = SIZE_ORDER.indexOf(codes[0]), b = SIZE_ORDER.indexOf(codes[1]);
+    return SIZE_ORDER.slice(a, b + 1);
+  }
+  return codes;
+}
+var ITEMS = [], TOP = {};
+(BIZ.top || []).forEach(function (t) { TOP[t.t] = 1; });
+(BIZ.menu || []).forEach(function (cat, ci) {
+  var cn = cat.name || '';
+  var g = /^Котики$/i.test(cn) ? 'catProg' : /^Котики\s*\|/i.test(cn) ? 'catExtra' : /Мейн-кун/i.test(cn) ? 'coonProg' : null;
+  var parsed = (cat.items || []).map(function (it) {
+    var parts = String(it.t).split(/\s*\|\s*/);
+    return { it: it, parts: parts, sizes: parseSizes(parts[1]) };
+  });
+  if (!g) g = parsed.some(function (x) { return x.sizes && /\(/.test(x.parts[1] || ''); }) ? 'dogProg' : 'dogExtra';
+  parsed.forEach(function (x, ii) {
+    var name = x.sizes ? x.parts[0] : (g === 'catProg' || g === 'catExtra' || g === 'coonProg') ? (x.parts.slice(1).join(' | ') || x.parts[0]) : x.it.t;
+    ITEMS.push({ id: ci + '-' + ii, cat: cn, g: g, t: x.it.t, name: fix(name), p: x.it.p == null ? null : Number(x.it.p), d: x.it.d || '', sizes: x.sizes, hw: /^Голливуд/i.test(name) || /Голливуд/i.test(name), top: !!TOP[x.it.t] });
+  });
+});
+var byId = {}; ITEMS.forEach(function (i) { byId[i.id] = i; });
+var PROG_ORDER = ['Купание и сушка', 'Гигиенический уход', 'Вычесывание', 'Голливудский вычес', 'Стрижка', 'Голливудская стрижка', 'Тримминг', 'Голливудский тримминг'];
+var first = function (t) { var m = String(t || '').match(/^.*?[.!](\s|$)/); return m ? m[0].trim() : String(t || ''); };
+var DOG_BASES = [];
+ITEMS.forEach(function (i) { if (i.g === 'dogProg' && DOG_BASES.indexOf(i.name) < 0) DOG_BASES.push(i.name); });
+DOG_BASES.sort(function (a, b) { var x = PROG_ORDER.indexOf(a), y = PROG_ORDER.indexOf(b); return (x < 0 ? 99 : x) - (y < 0 ? 99 : y); });
+var DESC = {
+  'Голливудский вычес': 'Голливудская версия комплекса',
+  'Голливудская стрижка': 'Голливудская версия комплекса',
+  'Голливудский тримминг': 'Голливудская версия комплекса'
+};
+function dogProg(base, size) { for (var i = 0; i < ITEMS.length; i++) { var it = ITEMS[i]; if (it.g === 'dogProg' && it.name === base && it.sizes && it.sizes.indexOf(size) >= 0) return it; } return null; }
+
+/* ---------- pets ---------- */
+var FEAT = {}; (BIZ.features || []).forEach(function (f) { FEAT[f.k] = f.v; });
+var SERVICES = String(FEAT['услуги груминга'] || 'купание, стрижка, вычесывание').split(/,\s*/);
+var PETS = [
+  { k: 'dog', label: 'Собака', icon: 'i-dog', msg: 'собака' },
+  { k: 'cat', label: 'Кошка', icon: 'i-cat', msg: 'кошка' },
+  { k: 'coon', label: 'Мейн-кун', icon: 'i-coon', msg: 'мейн-кун (большая кошка)' },
+  { k: 'rabbit', label: 'Кролик', icon: 'i-rabbit', msg: 'кролик', other: 1 },
+  { k: 'guinea', label: 'Морская свинка', icon: 'i-guinea', msg: 'морская свинка', other: 1, short: 'Свинка' },
+  { k: 'fox', label: 'Лиса', icon: 'i-fox', msg: 'лиса', other: 1 },
+  { k: 'exo', label: 'Экзотика', icon: 'i-exo', msg: 'экзотическое животное', other: 1 }
+];
+var petByK = {}; PETS.forEach(function (p) { petByK[p.k] = p; });
+
+var saved = store.get('gollivud-cast') || {};
+var S = {
+  pet: petByK[saved.pet] ? saved.pet : 'dog',
+  size: SIZE_ORDER.indexOf(saved.size) >= 0 ? saved.size : 'M',
+  prog: null, extras: [], wishes: [],
+  name: typeof saved.name === 'string' ? saved.name.slice(0, 24) : '',
+  breed: typeof saved.breed === 'string' ? saved.breed.slice(0, 40) : '',
+  when: null, time: null, master: null
+};
+var exOpen = false;
+
+function renderPets() {
+  var main = PETS.filter(function (p) { return !p.other; }), more = PETS.filter(function (p) { return p.other; });
+  var btn = function (p) { return '<button type="button" class="pet" data-pet="' + p.k + '" aria-pressed="' + (S.pet === p.k) + '"' + (p.short ? ' aria-label="' + p.label + '"' : '') + '><svg aria-hidden="true"><use href="#' + p.icon + '"/></svg><span>' + esc(p.short || p.label) + '</span></button>'; };
+  $('#pets').innerHTML = main.map(btn).join('') + '<div class="pets-more">' + more.map(btn).join('') + '</div>';
+}
+function renderSizes() {
+  $('#sizeStep').hidden = S.pet !== 'dog';
+  setText('#take3', S.pet === 'dog' ? 'Дубль 3' : 'Дубль 2');
+  if (S.pet !== 'dog') return;
+  $('#sizes').innerHTML = SIZE_ORDER.map(function (c, i) {
+    var w = SIZE_W[c] || '';
+    return '<button type="button" class="size" data-size="' + c + '" aria-pressed="' + (S.size === c) + '" aria-label="Размер ' + c + (w ? ', ' + w : '') + '"><svg aria-hidden="true" style="transform:scale(' + (0.5 + i * 0.125).toFixed(3) + ')"><use href="#i-dog"/></svg><b>' + c + '</b><span>' + esc(w.replace(/ кг$/, NB + 'кг')) + '</span></button>';
+  }).join('');
+  setText('#sizeNote', 'Размер — по весу собаки: ' + (SIZE_W[S.size] || '') + '. Сомневаетесь — администратор подскажет.');
+}
+function currentProgs() {
+  if (S.pet === 'dog') return DOG_BASES.map(function (b) { return dogProg(b, S.size); }).filter(Boolean);
+  if (S.pet === 'cat') return ITEMS.filter(function (i) { return i.g === 'catProg'; });
+  if (S.pet === 'coon') return ITEMS.filter(function (i) { return i.g === 'coonProg'; });
+  return [];
+}
+function currentExtras() {
+  if (S.pet === 'dog') return ITEMS.filter(function (i) { return i.g === 'dogExtra' && (!i.sizes || i.sizes.indexOf(S.size) >= 0); });
+  if (S.pet === 'cat' || S.pet === 'coon') return ITEMS.filter(function (i) { return i.g === 'catExtra'; });
+  return [];
+}
+function renderProgs() {
+  var pet = petByK[S.pet], list = currentProgs();
+  var miss = $('#missing'), exWrap = $('#exWrap');
+  if (pet.other) {
+    setText('#progH', 'Что нужно сделать');
+    $('#progs').innerHTML = '<p class="missing" style="margin-top:0">Для этого гостя цен в прайсе нет — отметьте, что нужно, и администратор назовёт стоимость в WhatsApp. Услуги из карточки салона:</p><div class="chips">' +
+      SERVICES.map(function (s) { var on = S.wishes.indexOf(s) >= 0; return '<button type="button" class="chip" data-wish="' + esc(s) + '" aria-pressed="' + on + '">' + esc(s.charAt(0).toUpperCase() + s.slice(1)) + '</button>'; }).join('') + '</div>';
+    miss.hidden = true; exWrap.hidden = true; return;
+  }
+  setText('#progH', S.pet === 'dog' ? 'Программа для размера ' + S.size : S.pet === 'cat' ? 'Программа для котика' : 'Программа для мейн-куна');
+  if (S.prog && !list.some(function (i) { return i.id === S.prog; })) S.prog = null;
+  $('#progs').innerHTML = list.map(function (i) {
+    var on = S.prog === i.id;
+    var ds = first(i.d) || DESC[i.name] || '';
+    var nm = esc(i.name).replace(/^Голливудск(ий|ая|ое)\s/, function (m) { return m; });
+    return '<button type="button" class="prog" data-prog="' + i.id + '" aria-pressed="' + on + '"><span class="ck" aria-hidden="true"></span><span><span class="nm">' + nm + (i.hw ? '<span class="gold">★ Голливуд</span>' : '') + (i.top ? '<span class="hot">популярное</span>' : '') + '</span>' + (ds && !i.hw ? '<span class="ds">' + esc(ds) + '</span>' : '') + '</span><span class="pr">' + rub(i.p) + '</span></button>';
+  }).join('');
+  if (S.pet === 'dog') {
+    var absent = DOG_BASES.filter(function (b) { return !dogProg(b, S.size); });
+    if (absent.length) {
+      miss.innerHTML = 'Для размера ' + S.size + ' в прайсе нет: ' + esc(absent.join(', ').toLowerCase()) + '. <a href="' + esc(wa('Здравствуйте! Пишу с сайта. У меня собака размера ' + S.size + ' (' + (SIZE_W[S.size] || '') + '). Можно ли сделать: ' + absent.join(', ').toLowerCase() + '? Сколько это будет стоить?')) + '" target="_blank" rel="noopener">Спросить в WhatsApp</a>';
+      miss.hidden = false;
+    } else miss.hidden = true;
+  } else miss.hidden = true;
+  exWrap.hidden = false;
+  var ex = currentExtras(), ids = ex.map(function (i) { return i.id; });
+  S.extras = S.extras.filter(function (id) { return ids.indexOf(id) >= 0; });
+  var limit = exOpen ? ex.length : 5;
+  $('#extras').innerHTML = ex.map(function (i, n) {
+    var on = S.extras.indexOf(i.id) >= 0;
+    return '<button type="button" class="exr" data-ex="' + i.id + '" aria-pressed="' + on + '"' + (n >= limit && !on ? ' hidden' : '') + '><span class="bx" aria-hidden="true">✓</span><span>' + esc(i.name) + '</span><i>' + rub(i.p) + '</i></button>';
+  }).join('');
+  var hiddenN = ex.filter(function (i, n) { return n >= limit && S.extras.indexOf(i.id) < 0; }).length;
+  var mb = $('#exMore'); mb.hidden = !hiddenN; mb.textContent = 'Показать ещё ' + hiddenN;
+  setText('#exH', S.pet === 'dog' ? 'Можно добавить — дополнительно и SPA' : 'Можно добавить');
+}
+var WHEN = ['Сегодня', 'Завтра', 'На выходных', 'Любой день'];
+var TIME = ['Утром', 'Днём', 'Вечером'];
+var MASTERS = [{ k: 'Любой мастер', v: null }, { k: 'Татьяна', v: 'Татьяне' }, { k: 'Анастасия', v: 'Анастасии' }];
+function renderChoices() {
+  $('#when').innerHTML = WHEN.map(function (w) { return '<button type="button" class="chip" data-when="' + w + '" aria-pressed="' + (S.when === w) + '">' + w + '</button>'; }).join('');
+  $('#time').innerHTML = TIME.map(function (w) { return '<button type="button" class="chip" data-time="' + w + '" aria-pressed="' + (S.time === w) + '">' + w + '</button>'; }).join('');
+  $('#master').innerHTML = MASTERS.map(function (m) { return '<button type="button" class="chip" data-master="' + m.k + '" aria-pressed="' + ((S.master || 'Любой мастер') === m.k) + '">' + m.k + '</button>'; }).join('');
+}
+function petLine() {
+  var p = petByK[S.pet];
+  return S.pet === 'dog' ? 'собака · ' + S.size + ' (' + (SIZE_W[S.size] || '') + ')' : p.label.toLowerCase();
+}
+var lastTotal = null;
+var pillState = { cast: false, bill: false, total: 0 };
+function updatePill() {
+  var p = $('#pill'); if (!p) return;
+  var on = pillState.cast && !pillState.bill && pillState.total > 0;
+  p.classList.toggle('off', !on); p.setAttribute('aria-hidden', on ? 'false' : 'true'); p.tabIndex = on ? 0 : -1;
+}
+function renderBill() {
+  setText('#billName', S.name.trim() || 'Ваш питомец');
+  setText('#billPet', petLine() + (S.breed.trim() ? ' · ' + S.breed.trim() : ''));
+  setStarName(S.name);
+  var lines = [], total = 0, pet = petByK[S.pet];
+  if (S.prog && byId[S.prog]) { var pi = byId[S.prog]; lines.push([pi.name + (S.pet === 'dog' ? ' · ' + S.size : ''), pi.p]); total += pi.p || 0; }
+  S.extras.forEach(function (id) { var e = byId[id]; if (e) { lines.push([e.name, e.p]); total += e.p || 0; } });
+  var ul = $('#lines');
+  if (pet.other) {
+    ul.innerHTML = S.wishes.length ? S.wishes.map(function (w) { return '<li><span>' + esc(w.charAt(0).toUpperCase() + w.slice(1)) + '</span><span>?</span></li>'; }).join('') : '<li class="empty"><span>Отметьте, что нужно сделать</span></li>';
+  } else {
+    ul.innerHTML = lines.length ? lines.map(function (l) { return '<li><span>' + esc(l[0]) + '</span><span>' + rub(l[1]) + '</span></li>'; }).join('') : '<li class="empty"><span>Выберите программу или доп. услугу</span></li>';
+  }
+  var tb = $('#total');
+  if (pet.other) { tb.textContent = 'цену уточните в WhatsApp'; tb.className = 'ask'; }
+  else if (!lines.length) { tb.textContent = '—'; tb.className = ''; }
+  else {
+    tb.textContent = rub(total); tb.className = '';
+    if (lastTotal !== total && !reduce) { tb.classList.remove('bump'); void tb.offsetWidth; tb.classList.add('bump'); }
+  }
+  lastTotal = total;
+  pillState.total = pet.other ? 0 : (lines.length ? total : 0); setText('#pillSum', rub(total)); updatePill();
+  $('#send').href = wa(buildMessage(lines, total));
+  store.set('gollivud-cast', { pet: S.pet, size: S.size, name: S.name, breed: S.breed });
+}
+function buildMessage(lines, total) {
+  var pet = petByK[S.pet], m = ['Здравствуйте! Хочу записать питомца в «Голливуд» — пишу с сайта.'];
+  var who = 'Питомец: ' + (S.pet === 'dog' ? 'собака, размер ' + S.size + ' (' + (SIZE_W[S.size] || '') + ')' : pet.msg);
+  if (S.name.trim()) who += ', кличка ' + S.name.trim();
+  if (S.breed.trim()) who += ', порода: ' + S.breed.trim();
+  m.push(who);
+  if (pet.other) {
+    m.push(S.wishes.length ? 'Что нужно: ' + S.wishes.join(', ') + '.' : 'Подскажите, какие процедуры вы делаете для такого питомца?');
+    m.push('Сколько это будет стоить?');
+  } else {
+    if (S.prog && byId[S.prog]) { var pi = byId[S.prog]; m.push('Программа: ' + pi.name + (S.pet === 'dog' ? ' (' + S.size + ')' : '') + ' — ' + rub(pi.p)); }
+    else m.push('Программу пока не выбрали — подскажите, что лучше подойдёт.');
+    var ex = S.extras.map(function (id) { var e = byId[id]; return e ? e.name + ' — ' + rub(e.p) : null; }).filter(Boolean);
+    if (ex.length) m.push('Дополнительно: ' + ex.join('; '));
+    if (lines.length) m.push('Итого по прайсу: ' + rub(total));
+  }
+  var when = [S.when, S.time && S.time.toLowerCase()].filter(Boolean).join(', ');
+  if (S.when === 'Любой день' && !S.time) when = 'в любой день';
+  if (when) m.push('Когда удобно: ' + when.charAt(0).toLowerCase() + when.slice(1));
+  if (S.master) m.push('Если можно — к мастеру ' + S.master + '.');
+  m.push('Подскажите, пожалуйста, свободное время.');
+  return m.join('\n');
+}
+function renderAll() { renderPets(); renderSizes(); renderProgs(); renderChoices(); renderBill(); }
+
+document.addEventListener('click', function (e) {
+  var b = e.target.closest && e.target.closest('button');
+  if (!b) return;
+  var v;
+  if ((v = b.getAttribute('data-pet'))) { if (S.pet !== v) { S.pet = v; S.prog = null; S.extras = []; S.wishes = []; exOpen = false; } renderPets(); renderSizes(); renderProgs(); renderBill(); return; }
+  if ((v = b.getAttribute('data-size'))) { S.size = v; var base = S.prog && byId[S.prog] ? byId[S.prog].name : null; renderSizes(); if (base) { var np = dogProg(base, v); S.prog = np ? np.id : null; } renderProgs(); renderBill(); return; }
+  if ((v = b.getAttribute('data-prog'))) { S.prog = S.prog === v ? null : v; $$('#progs .prog').forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-prog') === S.prog); }); renderBill(); return; }
+  if ((v = b.getAttribute('data-ex'))) { var k = S.extras.indexOf(v); if (k >= 0) S.extras.splice(k, 1); else S.extras.push(v); b.setAttribute('aria-pressed', k < 0); renderBill(); return; }
+  if ((v = b.getAttribute('data-wish'))) { var w = S.wishes.indexOf(v); if (w >= 0) S.wishes.splice(w, 1); else S.wishes.push(v); b.setAttribute('aria-pressed', w < 0); renderBill(); return; }
+  if ((v = b.getAttribute('data-when'))) { S.when = S.when === v ? null : v; renderChoices(); renderBill(); return; }
+  if ((v = b.getAttribute('data-time'))) { S.time = S.time === v ? null : v; renderChoices(); renderBill(); return; }
+  if ((v = b.getAttribute('data-master'))) { var mm = MASTERS.filter(function (x) { return x.k === v; })[0]; S.master = mm ? mm.v : null; renderChoices(); renderBill(); return; }
+  if (b.id === 'exMore') { exOpen = true; renderProgs(); return; }
+  if ((v = b.getAttribute('data-mx'))) {
+    var it = byId[v]; if (!it) return;
+    S.pet = 'dog'; S.size = b.getAttribute('data-sz'); S.prog = it.id; S.extras = []; S.wishes = [];
+    renderAll();
+    var c = $('#cast'); if (c) c.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    return;
+  }
+});
+$('#petName').addEventListener('input', function () { S.name = this.value.slice(0, 24); renderBill(); });
+$('#petBreed').addEventListener('input', function () { S.breed = this.value.slice(0, 40); renderBill(); });
+$('#revMore').addEventListener('click', function () { $('#revs').classList.remove('short'); this.parentNode.remove(); });
+$('#nameJump').addEventListener('click', function (e) {
+  e.preventDefault();
+  var inp = $('#petName'), bill = $('#bill');
+  (bill || inp).scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  setTimeout(function () { try { inp.focus({ preventScroll: true }); } catch (er) { inp.focus(); } }, reduce ? 0 : 600);
+});
+
+/* ---------- price matrix & lists ---------- */
+function renderPrice() {
+  var head = '<thead><tr><th scope="col">Комплекс</th>' + SIZE_ORDER.map(function (c) { return '<th scope="col"><b>' + c + '</b>' + esc((SIZE_W[c] || '').replace(/ кг$/, NB + 'кг')) + '</th>'; }).join('') + '</tr></thead>';
+  var body = '<tbody>' + DOG_BASES.map(function (b) {
+    var hw = /^Голливуд/.test(b);
+    return '<tr' + (hw ? ' class="hw"' : '') + '><th scope="row">' + (hw ? '<span class="gold">★ </span>' : '') + esc(b) + '</th>' + SIZE_ORDER.map(function (c) {
+      var it = dogProg(b, c);
+      return '<td>' + (it ? '<button type="button" data-mx="' + it.id + '" data-sz="' + c + '" aria-label="' + esc(b + ', ' + c + ' — ' + rub(it.p) + ', выбрать') + '">' + esc(Number(it.p).toLocaleString('ru-RU').replace(/\s/g, NB)) + '</button>' : '<span class="na" aria-label="нет в прайсе">—</span>') + '</td>';
+    }).join('') + '</tr>';
+  }).join('') + '</tbody>';
+  $('#mx').innerHTML = '<caption class="vh">Цены на комплексы для собак по размерам, ₽</caption>' + head + body;
+  setText('#mxHint', 'Цены в рублях. «—» — такого размера нет в прайсе, спросите в WhatsApp.');
+
+  var block = function (title, sub, items, collapse) {
+    var lim = collapse ? 4 : items.length;
+    return '<div class="plist"><h3>' + esc(title) + '</h3>' + (sub ? '<p class="s">' + esc(sub) + '</p>' : '') + '<ul>' + items.map(function (i, n) {
+      return '<li' + (n >= lim ? ' hidden data-more' : '') + '><span>' + esc(i.name) + (i.sizes && i.g === 'dogExtra' ? ' · ' + esc(i.sizes.length > 2 ? i.sizes[0] + '–' + i.sizes[i.sizes.length - 1] : i.sizes.join(' и ')) : '') + (i.d ? '<small>' + esc(first(i.d)) + '</small>' : '') + '</span><span>' + rub(i.p) + '</span></li>';
+    }).join('') + '</ul>' + (items.length > lim ? '<button type="button" class="more-btn" data-open-list style="color:var(--brass)">Показать ещё ' + (items.length - lim) + '</button>' : '') + '</div>';
+  };
+  var cat = ITEMS.filter(function (i) { return i.g === 'catProg' || i.g === 'catExtra'; });
+  var coon = ITEMS.filter(function (i) { return i.g === 'coonProg'; });
+  var ex = ITEMS.filter(function (i) { return i.g === 'dogExtra'; });
+  $('#lists').innerHTML = block('Котики', 'Комплексы и уход для кошек', cat, true) + block('Мейн-куны', 'И другие большие кошки', coon, true) + block('Дополнительно и SPA', 'Можно добавить к любому комплексу', ex, true);
+  $$('[data-open-list]').forEach(function (btn) {
+    btn.addEventListener('click', function () { $$('[data-more]', btn.parentNode).forEach(function (li) { li.hidden = false; }); btn.remove(); });
+  });
+}
+
+/* ---------- facts ---------- */
+var REVIEWS = [
+  { a: 'Елена У.', d: 'февраль 2025', x: 'Всё прекрасно- атмосфера, уютно, а мастер Татьяна профессионал! За час вычесала "гору" подшерстка! Наша кошка Симона была, на удивление спокойна и кажется благодарна)))' },
+  { a: 'Марина К.', d: 'сентябрь 2025', x: 'В Голливуд мы пришли на первую стрижку. Первая и для щенка и для меня как для хозяйки. … Топ мастер Анастасия сделала прекрасную стрижку, а главное нашла подход к питомцу и он был совершенно спокоен.' },
+  { a: 'Павел В.', d: 'декабрь 2025', x: 'Мастер своего дела, Анастасия, аккуратно, бережно, красиво подстригает нашего пушистика, Брейна. … В завершении стрижки всегда предлагают выбрать духи, побрызгать своего питомца.' },
+  { a: 'Софья К.', d: 'август 2025', x: 'Регулярно ходим в «Голливуд» к мастерам Татьяне и Анастасии! … У девушек получилось договориться с нашими собачками и подстричь когти, хотя обычно для нас это огромная проблема)' },
+  { a: 'Наталья П.', d: 'март 2024', x: 'Супер грумминг салон! Чисто просто идеально!!!! Ярко желтый диван, где фотают животных больших и маленьких ИДЕАЛЬНО чистый, без единого пятнышка и волосика 🙏 спасибо Татьяне 💐 …' },
+  { a: 'Олег Д.', d: 'май 2024', x: 'Администраторы всегда встретят с хорошим настроением, предлагают кофе,что не мало важно, когда утром привозишь собаку на стрижку))). Мастера профи своего дела.' }
+];
+function renderFacts() {
+  $$('[data-tel]').forEach(function (a) { a.href = 'tel:' + BIZ.phone; });
+  $$('.ph').forEach(function (a) { a.textContent = BIZ.phoneDisplay; });
+  $$('[data-book]').forEach(function (a) { if (BIZ.bookingUrl) a.href = BIZ.bookingUrl; else { a.removeAttribute('target'); a.href = '#cast'; } });
+  var gen = wa('Здравствуйте! Пишу с сайта. Хочу записать питомца в «Голливуд» — подскажите свободное время?');
+  $('#barWa').href = gen; $('#fWa').href = gen;
+  var m0 = (BIZ.metro || [])[0];
+  if (m0) { $('#mDot').style.background = m0.color; setText('#mName', m0.name); setText('#mDist', m0.distance); }
+  setText('#hAddr', street + (district ? ' · ' + district : ''));
+  var cnt = R.count + NB + plural(R.count, 'оценка', 'оценки', 'оценок');
+  var rev = R.reviews + NB + plural(R.reviews, 'отзыв', 'отзыва', 'отзывов');
+  setText('#rVal', ratingText); setText('#rCnt', cnt); setText('#rRev', rev + ' на Яндекс Картах');
+  $('#rate').href = BIZ.reviewsUrl; $('#rate').target = '_blank'; $('#rate').rel = 'noopener';
+  $('#rate').setAttribute('aria-label', 'Рейтинг ' + ratingText + ' — ' + cnt + ', ' + rev + ' на Яндекс Картах');
+  setText('#backLead', ratingText + ' · ' + cnt + ' на Яндекс Картах. Вот что гости пишут чаще всего.');
+  $('#revAll').href = BIZ.reviewsUrl; $('#fYa').href = BIZ.yandexUrl; $('#route').href = BIZ.routeUrl;
+  setText('#street', street); setText('#mapA', street + (district ? ', ' + district : ''));
+  setText('#district', (district ? district + ' · ' : '') + (m0 ? m0.distance + ' от метро «' + m0.name + '»' : ''));
+  setText('#whereLead', (BIZ.hoursText ? BIZ.hoursText.charAt(0).toUpperCase() + BIZ.hoursText.slice(1) : '') + (FEAT['предварительная запись'] ? ', по предварительной записи.' : '.'));
+  $('#fAddr').innerHTML = esc(street + (district ? ', ' + district : '')) + ' · ' + esc(BIZ.hoursText || '').replace(/(\d\d:\d\d–\d\d:\d\d)/g, '<span class="nb">$1</span>');
+  var mf = $('#mapF'); if (mf && BIZ.mapEmbed) mf.src = BIZ.mapEmbed;
+  $('#metro').innerHTML = (BIZ.metro || []).map(function (m) {
+    return '<li><span><i class="m-dot" style="background:' + esc(m.color) + '"></i>' + esc(m.name) + '</span><span>' + esc(m.distance) + '</span></li>';
+  }).join('') + '<li><span>Остановка «Саларьево Парк»</span><span>86 м</span></li>';
+  var f = [];
+  if (FEAT['парковка'] === true) f.push('Парковка');
+  if (FEAT['велопарковка'] === true) f.push('Велопарковка');
+  if (FEAT['Оплата картой'] === true) f.push('Оплата картой');
+  if (/СБП/.test(FEAT['способ оплаты'] || '')) f.push('СБП и QR-код');
+  if (/наличн/.test(FEAT['способ оплаты'] || '')) f.push('Наличные');
+  if (FEAT['Wi-Fi'] === true) f.push('Wi-Fi');
+  if (FEAT['доступность помещения на инвалидной коляске']) f.push('Доступно на коляске');
+  if (FEAT['кнопка вызова персонала'] === true) f.push('Кнопка вызова персонала');
+  $('#feat').innerHTML = f.map(function (x) { return '<span>' + esc(x) + '</span>'; }).join('');
+  var AL = { 'Персонал': 'персонал', 'Чистота': 'чистоту', 'Интерьер': 'интерьер' };
+  $('#nums').innerHTML = (BIZ.aspects || []).slice(0, 3).map(function (a) {
+    var n = a.positive != null ? a.positive : a.count;
+    return '<div class="num"><b>' + n + '</b><span>' + plural(n, 'раз', 'раза', 'раз') + ' похвалили <em>' + esc(AL[a.text] || a.text.toLowerCase()) + '</em></span></div>';
+  }).join('');
+  $('#revs').innerHTML = REVIEWS.map(function (r) {
+    return '<figure class="rev reveal"><span class="stars" aria-label="5 из 5">★★★★★</span><blockquote>' + esc(r.x) + '</blockquote><footer><b>' + esc(r.a) + '</b> · ' + esc(r.d) + '<br>отзыв на Яндекс Картах</footer></figure>';
+  }).join('');
+}
+
+/* ---------- motion ---------- */
+function motion() {
+  var hero = $('#hero');
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.target.id === 'cast') pillState.cast = x.isIntersecting; else pillState.bill = x.isIntersecting; }); updatePill(); }, { rootMargin: '0px 0px -45% 0px' }).observe($('#cast'));
+    new IntersectionObserver(function (en) { en.forEach(function (x) { pillState.bill = x.isIntersecting; }); updatePill(); }, { threshold: 0.25 }).observe($('#bill'));
+    new IntersectionObserver(function (en) { en.forEach(function (x) { hero.classList.toggle('paused', !x.isIntersecting); }); }).observe(hero);
+    if (!reduce) {
+      var io = new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.remove('pre'); io.unobserve(x.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+      $$('.reveal').forEach(function (el) { var r = el.getBoundingClientRect(); if (r.top > innerHeight) { el.classList.add('pre'); io.observe(el); } });
+      setTimeout(function () { $$('.reveal.pre').forEach(function (el) { el.classList.remove('pre'); }); }, 4000);
+    }
+  }
+}
+
+renderFacts();
+renderStatus();
+setInterval(renderStatus, 60000);
+$('#petName').value = S.name; $('#petBreed').value = S.breed;
+renderAll();
+renderPrice();
+motion();
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { setStarName(S.name); });
+})();
+</script>
+<script src="../map-fix.js" defer></script>
+</body>
+</html>

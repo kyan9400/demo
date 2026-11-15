@@ -1,0 +1,1368 @@
+<!doctype html>
+<!--
+  КОНЦЕПТ · демо №61 · «X-Repair», Никитский бульвар, 5
+
+  1. Идея. Сайт — это чертёж «разобранного» телефона и смета к нему: цену ремонта видно
+     ещё до визита. Так о сервисе и пишут в отзывах — цену называют заранее и не меняют.
+
+  2. Фирменный модуль. «Сколько стоит ремонт»: устройство → модель → что случилось,
+     по настоящему прайсу из карточки (466 позиций, 27 разделов), плюс мгновенный поиск
+     вида «13 pro аккумулятор». Выбранное собирается в «смету» с итогом по прайсу и днём
+     визита → «Записаться на ремонт» в WhatsApp с моделью, поломкой и ценой.
+     В первом экране детали разобранного телефона кликабельны: экран, плата, аккумулятор,
+     разъём, камера — каждая ведёт в поиск по своим ценам.
+
+  3. Арт-дирекшн. Точный техно-минимализм: светлая «миллиметровка» и графит, один акцент —
+     электрик-синий (как подсветка дисплея). Шрифты: Onest (заголовки и текст),
+     JetBrains Mono (цены, номера шагов, подписи как на техническом чертеже).
+     Мотив: изометрический «взрыв-схема» телефона в SVG, выноски-лидеры с подписями,
+     координатная сетка и метки размеров.
+-->
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#f2f4f7">
+<title>X-Repair — ремонт iPhone, MacBook и Android на Никитском бульваре (демо)</title>
+<meta name="description" content="Демо-концепт сайта для X-Repair на Никитском бульваре, 5: цена ремонта по модели и поломке из настоящего прайса, запись на ремонт в WhatsApp.">
+<meta property="og:title" content="X-Repair — цена ремонта ещё до визита (демо)">
+<meta property="og:description" content="Выберите устройство, модель и поломку — цена из прайса сразу, заявка уходит мастеру в WhatsApp. Никитский бульвар, 5, м. Арбатская.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kyan9400.github.io/demo/x-repair/">
+<meta property="og:image" content="https://kyan9400.github.io/demo/x-repair/og.jpg">
+<meta property="og:locale" content="ru_RU">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2311161d'/%3E%3Cpath d='M19 19l26 26M45 19L19 45' stroke='%232f5bff' stroke-width='7' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%23f2f4f7'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f2f4f7; --paper-2:#ffffff; --paper-3:#e7ebf0;
+  --ink:#11161d; --ink-2:#47505d; --ink-3:#6a7380;
+  --line:rgba(17,22,29,.11); --line-2:rgba(17,22,29,.2);
+  --blue:#2350f0; --blue-2:#1a3fc7; --blue-soft:#e3e9ff; --blue-ink:#1636b0;
+  --gr:#11161d; --gr-2:#1a212b; --gr-3:#262f3b; --gr-txt:#e8ecf2; --gr-dim:#9aa5b4; --gr-line:rgba(232,236,242,.12);
+  --ok:#14915a;
+  --sans:Onest,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Consolas,monospace;
+  --r:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--sans);padding-bottom:calc(82px + env(safe-area-inset-bottom,0px));-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (min-width:900px){body{padding-bottom:0}}
+a{color:inherit}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer;-webkit-tap-highlight-color:transparent;background:none;border:0}
+svg{display:block}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:8px}
+.dark :focus-visible{outline-color:#8aa4ff}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 16px}
+@media (min-width:768px){.wrap{padding:0 32px}}
+.nb{white-space:nowrap}
+.mono{font-family:var(--mono);font-feature-settings:"zero" 0}
+.vh{position:absolute!important;width:1px!important;height:1px!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important}
+[hidden]{display:none!important}
+
+/* demo bar */
+.demo-bar{background:var(--gr);color:#b7c0cc;font-size:12.5px;line-height:1.4;text-align:center;padding:7px 14px}
+
+/* header */
+.hdr{position:relative;z-index:5;border-bottom:1px solid var(--line);background:var(--paper)}
+.hdr .wrap{display:flex;align-items:center;gap:14px;min-height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:20px;letter-spacing:-.02em}
+.logo svg{width:34px;height:34px}
+.nav{display:none;gap:4px;margin-inline-start:18px}
+.nav a{font-size:15px;font-weight:500;color:var(--ink-2);text-decoration:none;padding:10px 12px;border-radius:10px}
+.nav a:hover{color:var(--ink);background:var(--paper-3)}
+.hdr-r{margin-inline-start:auto;display:flex;align-items:center;gap:10px}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:500;color:var(--ink-2);white-space:nowrap}
+.status i{width:8px;height:8px;border-radius:50%;background:#9aa3ad;flex:none}
+.status.on i{background:var(--ok);box-shadow:0 0 0 4px rgba(20,145,90,.15)}
+.hdr-tel{display:none;font-family:var(--mono);font-size:14.5px;font-weight:500;text-decoration:none;padding:10px 12px;border-radius:10px;border:1px solid var(--line-2)}
+.hdr-tel:hover{border-color:var(--ink)}
+@media (min-width:900px){.nav{display:flex}.hdr-tel{display:inline-block}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:13px 22px;border-radius:14px;font-weight:600;font-size:16px;line-height:1.2;text-decoration:none;text-align:center;transition:transform .12s,background .2s,box-shadow .2s,border-color .2s;border:1.5px solid transparent}
+.btn:active{transform:translateY(1px) scale(.985)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-blue{background:var(--blue);color:#fff;box-shadow:0 1px 0 rgba(0,0,0,.08),0 10px 24px -12px rgba(35,80,240,.8)}
+.btn-blue:hover{background:var(--blue-2)}
+.btn-line{border-color:var(--line-2);color:var(--ink);background:transparent}
+.btn-line:hover{border-color:var(--ink)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#000}
+.dark .btn-line{border-color:var(--gr-line);color:var(--gr-txt)}
+.dark .btn-line:hover{border-color:var(--gr-txt)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px),linear-gradient(rgba(17,22,29,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(17,22,29,.045) 1px,transparent 1px);background-size:96px 96px,96px 96px,24px 24px,24px 24px;background-position:-1px -1px;-webkit-mask-image:linear-gradient(180deg,#000 40%,transparent);mask-image:linear-gradient(180deg,#000 40%,transparent)}
+.hero .wrap{position:relative;display:grid;gap:8px;padding-top:30px;padding-bottom:28px}
+.eyebrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;font-family:var(--mono);font-size:12.5px;letter-spacing:.02em;color:var(--ink-2);text-transform:uppercase}
+.eyebrow .tag{background:var(--ink);color:#fff;padding:4px 8px;border-radius:6px}
+.metro-dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-inline-end:6px;vertical-align:0}
+h1{font-weight:800;font-size:clamp(34px,10.2vw,72px);line-height:.98;letter-spacing:-.045em;margin:18px 0 16px}
+h1 em{font-style:normal;color:var(--blue)}
+.lead{font-size:17px;color:var(--ink-2);max-width:34em}
+.lead b{color:var(--ink);font-weight:600}
+.rate{display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px;margin:22px 0 22px}
+.rate a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:10px 14px 10px 12px;min-height:48px}
+.rate a:hover{border-color:var(--line-2)}
+.rate .big{font-family:var(--mono);font-size:22px;font-weight:700;letter-spacing:-.02em}
+.stars{display:flex;gap:2px}
+.stars svg{width:15px;height:15px;fill:var(--blue)}
+.rate small{display:block;font-size:13px;color:var(--ink-2);line-height:1.25}
+.rate .y{font-size:13px;color:var(--ink-3)}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.cta .btn{flex:1 1 200px}
+@media (min-width:600px){.cta .btn{flex:0 0 auto}}
+.specs{display:grid;grid-template-columns:repeat(3,1fr);margin-top:26px;border-top:1px solid var(--line-2)}
+.specs div{padding:12px 10px 0 0}
+.specs b{display:block;font-family:var(--mono);font-size:clamp(20px,5.6vw,30px);font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.specs span{font-size:13px;color:var(--ink-2);line-height:1.3;display:block;margin-top:3px}
+
+.xp{position:relative;margin:8px -6px 0;max-width:560px;justify-self:center;width:calc(100% + 12px)}
+.xp svg{width:100%;height:auto;overflow:visible}
+.xp-hint{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);text-align:center;margin-top:2px}
+.xp-hint b{color:var(--blue);font-weight:500}
+.ly{cursor:pointer;outline:none}
+.ly .lift{transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.ly:hover .lift,.ly:focus-visible .lift{transform:translateY(-7px)}
+.ly .edge{transition:stroke .2s}
+.ly:hover .edge,.ly:focus-visible .edge{stroke:var(--blue)}
+.ly .lbl{transition:fill .2s}
+.ly:hover .lbl,.ly:focus-visible .lbl{fill:var(--blue)}
+.ly:focus-visible .hit{stroke:var(--blue);stroke-width:2;stroke-dasharray:4 4}
+.lbl{font:600 15px var(--sans);fill:var(--ink)}
+.lbl-s{font:500 11.5px var(--mono);fill:var(--ink-2)}
+.dim{font:500 11px var(--mono);fill:var(--ink-3)}
+.float{animation:fl 6s ease-in-out infinite}
+.f2{animation-delay:-1.2s}.f3{animation-delay:-2.4s}.f4{animation-delay:-3.6s}.f5{animation-delay:-4.8s}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.paused .float{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){.float{animation:none}.ly .lift{transition:none}html{scroll-behavior:auto}}
+@media (min-width:1000px){
+  .hero .wrap{grid-template-columns:1.12fr .88fr;align-items:center;gap:40px;padding-top:56px;padding-bottom:56px}
+  .xp{margin:0;width:100%}
+}
+
+/* sections */
+.sec{padding:56px 0}
+@media (min-width:900px){.sec{padding:96px 0}}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-ink);display:flex;align-items:center;gap:10px}
+.kicker::before{content:"";width:22px;height:1.5px;background:currentColor}
+.dark .kicker{color:#8aa4ff}
+h2{font-weight:800;font-size:clamp(30px,7.6vw,56px);line-height:1.02;letter-spacing:-.04em;margin:12px 0 14px;max-width:16ch}
+.sub{color:var(--ink-2);font-size:16.5px;max-width:38em}
+.dark .sub{color:var(--gr-dim)}
+
+/* finder */
+.finder{background:var(--paper-2);border-bottom:1px solid var(--line)}
+.f-grid{display:grid;gap:22px;margin-top:28px}
+@media (min-width:1000px){.f-grid{grid-template-columns:minmax(0,1fr) 380px;gap:36px;align-items:start}}
+.search{position:relative}
+.search label{display:block;font-size:14px;font-weight:600;margin-bottom:8px}
+.s-box{position:relative}
+.s-box svg{position:absolute;left:16px;top:50%;width:22px;height:22px;transform:translateY(-50%);color:var(--ink-3);pointer-events:none}
+.s-box input{width:100%;min-height:58px;border:1.5px solid var(--line-2);border-radius:16px;background:var(--paper);padding:14px 52px 14px 50px;font-size:17px;outline:none;transition:border-color .2s,background .2s,box-shadow .2s}
+.s-box input:focus{border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px var(--blue-soft)}
+.s-box input::placeholder{color:#7b8491}
+.s-clear{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:12px;display:grid;place-items:center;color:var(--ink-2)}
+.s-clear:hover{background:var(--paper-3)}
+.s-clear svg{position:static;transform:none;width:18px;height:18px;color:currentColor}
+.s-try{display:flex;flex-wrap:wrap;gap:6px 8px;margin-top:10px;font-size:13.5px;color:var(--ink-2);align-items:center}
+.s-try button{font-family:var(--mono);font-size:13px;padding:8px 10px;min-height:36px;border-radius:9px;border:1px dashed var(--line-2);color:var(--ink)}
+.s-try button:hover{border-color:var(--blue);color:var(--blue-ink)}
+.s-res{margin-top:12px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--paper-2)}
+.s-head{display:flex;justify-content:space-between;gap:10px;padding:10px 14px;font-family:var(--mono);font-size:12.5px;color:var(--ink-2);background:var(--paper);border-bottom:1px solid var(--line)}
+.s-none{padding:18px 16px;font-size:15px;color:var(--ink-2)}
+.s-none .btn{margin-top:12px}
+.more-btn{display:block;width:100%;min-height:48px;font-size:14.5px;font-weight:600;color:var(--blue-ink);border-top:1px solid var(--line)}
+.more-btn:hover{background:var(--paper)}
+
+.row{display:grid;grid-template-columns:38px minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 14px;border-top:1px solid var(--line);text-align:left;width:100%;min-height:60px;transition:background .15s}
+.row:first-child{border-top:0}
+.row:hover{background:#f7f9fc}
+.row .ic{width:38px;height:38px;border-radius:10px;background:var(--paper);display:grid;place-items:center;color:var(--ink);border:1px solid var(--line)}
+.row .ic svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.row .t{font-size:15.5px;font-weight:500;line-height:1.3;display:block}
+.row .t mark{background:var(--blue-soft);color:inherit;border-radius:3px;padding:0 1px}
+.row .m{display:block;font-size:13px;color:var(--ink-3);line-height:1.35;margin-top:2px}
+.row .pr{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:700;font-size:15.5px;white-space:nowrap}
+.row .add{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;border:1.5px solid var(--line-2);color:var(--ink);transition:background .15s,border-color .15s,color .15s,transform .15s}
+.row .add svg{width:16px;height:16px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round}
+.row[aria-pressed="true"]{background:#f3f6ff}
+.row[aria-pressed="true"] .add{background:var(--blue);border-color:var(--blue);color:#fff}
+.row[aria-pressed="true"] .ic{background:var(--blue);border-color:var(--blue);color:#fff}
+.row.pop{animation:pop .35s ease}
+@keyframes pop{40%{transform:scale(.985)}}
+.tagg{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:500;color:var(--ink-2);border:1px solid var(--line-2);border-radius:5px;padding:0 5px;margin-inline-start:6px;vertical-align:1px;white-space:nowrap}
+
+.or{display:flex;align-items:center;gap:14px;margin:30px 0 18px;font-family:var(--mono);font-size:12.5px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em}
+.or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
+.step{border:1px solid var(--line);border-radius:18px;padding:16px;background:var(--paper-2);margin-top:12px}
+.step-h{display:flex;align-items:baseline;gap:12px;margin-bottom:12px}
+.step-h .n{font-family:var(--mono);font-size:12.5px;font-weight:700;color:#fff;background:var(--ink);border-radius:6px;padding:3px 7px}
+.step.done .step-h .n{background:var(--blue)}
+.step-h h3{font-size:18px;font-weight:700;letter-spacing:-.01em}
+.step-h .sel{margin-inline-start:auto;font-size:13.5px;color:var(--blue-ink);font-weight:600;text-align:right}
+.step-h .sel button{color:var(--ink-2);font-weight:500;text-decoration:underline;text-underline-offset:3px;padding:6px 0 6px 6px;min-height:32px}
+.step.lock{opacity:.55}
+.step.lock .step-b{display:none}
+.lock-n{font-size:14.5px;color:var(--ink-2)}
+.devs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+@media (min-width:560px){.devs{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (min-width:1000px){.devs{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.dev{display:flex;align-items:center;gap:10px;min-height:64px;padding:10px 12px;border:1.5px solid var(--line);border-radius:14px;text-align:left;transition:border-color .15s,background .15s,transform .12s}
+.dev:hover{border-color:var(--line-2)}
+.dev:active{transform:scale(.98)}
+.dev svg{width:30px;height:30px;flex:none;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
+.dev b{display:block;font-size:15.5px;font-weight:600;line-height:1.15}
+.dev small{display:block;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-top:2px}
+.dev[aria-pressed="true"]{border-color:var(--blue);background:var(--blue-soft)}
+.dev[aria-pressed="true"] svg{color:var(--blue)}
+.m-filter{width:100%;min-height:48px;border:1.5px solid var(--line-2);border-radius:12px;padding:10px 14px;font-size:16px;background:var(--paper);margin-bottom:10px;outline:none}
+.m-filter:focus{border-color:var(--blue);background:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:9px 14px;border-radius:11px;border:1.5px solid var(--line);font-size:15px;font-weight:500;transition:border-color .15s,background .15s,color .15s}
+.chip:hover{border-color:var(--line-2)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip .mono{font-weight:500}
+.chip.ghost{border-style:dashed;color:var(--ink-2)}
+.chip.ghost[aria-pressed="true"]{color:#fff;border-style:solid}
+.gen{display:block;width:100%;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.05em;text-transform:uppercase;margin:6px 0 -2px}
+.gen:first-child{margin-top:0}
+.faults{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+@media (max-width:767px){.faults .row .m{display:none}.step{padding:14px 12px}.row{gap:10px;padding:10px 10px 10px 12px}.faults{margin:0 -4px}}
+.f-note{font-size:13.5px;color:var(--ink-2);margin-top:10px}
+.f-ask{display:inline-flex;align-items:center;gap:6px;color:var(--blue-ink);font-weight:600;text-decoration:underline;text-underline-offset:3px;padding:6px 0;min-height:44px}
+
+/* ticket */
+.ticket{position:relative;background:var(--gr);color:var(--gr-txt);border-radius:20px;padding:22px 18px 18px;overflow:hidden}
+@media (min-width:1000px){.ticket{position:sticky;top:18px}}
+.ticket::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--gr-line) 1px,transparent 1px),linear-gradient(90deg,var(--gr-line) 1px,transparent 1px);background-size:24px 24px;opacity:.35;-webkit-mask-image:linear-gradient(180deg,#000,transparent 55%);mask-image:linear-gradient(180deg,#000,transparent 55%)}
+.ticket>*{position:relative}
+.t-top{display:flex;justify-content:space-between;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;color:var(--gr-dim);text-transform:uppercase;letter-spacing:.06em}
+.t-top b{color:#8aa4ff;font-weight:500}
+.t-dev{font-size:24px;font-weight:800;letter-spacing:-.03em;margin:12px 0 4px;line-height:1.1}
+.t-dev.empty{font-size:18px;font-weight:600;color:var(--gr-dim);letter-spacing:0}
+.t-list{list-style:none;margin:14px 0 0;border-top:1px dashed var(--gr-line)}
+.t-list li{display:grid;grid-template-columns:minmax(0,1fr) auto 36px;gap:8px;align-items:center;padding:10px 0;border-bottom:1px dashed var(--gr-line);font-size:14.5px;line-height:1.3}
+.t-list .p{font-family:var(--mono);font-weight:700;white-space:nowrap}
+.t-list .x{width:36px;height:36px;border-radius:9px;display:grid;place-items:center;color:var(--gr-dim)}
+.t-list .x:hover{background:var(--gr-3);color:#fff}
+.t-list .x svg{width:14px;height:14px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round}
+.t-list .g{display:block;font-size:12px;color:var(--gr-dim);margin-top:2px}
+.t-empty{font-size:14.5px;color:var(--gr-dim);padding:12px 0 4px}
+.t-sum{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:14px 0 4px}
+.t-sum span{font-size:14px;color:var(--gr-dim)}
+.t-sum b{font-family:var(--mono);font-size:30px;letter-spacing:-.03em;font-weight:700}
+.t-sum b.bump{animation:bump .4s ease}
+@keyframes bump{40%{transform:scale(1.06);color:#8aa4ff}}
+.t-fine{font-size:12.5px;color:var(--gr-dim);line-height:1.45}
+.t-lbl{display:block;font-size:13.5px;font-weight:600;margin:16px 0 8px;color:var(--gr-txt)}
+.days{display:flex;flex-wrap:wrap;gap:6px}
+.days button{min-height:44px;padding:8px 12px;border-radius:10px;border:1.5px solid var(--gr-line);font-size:14px;color:var(--gr-txt)}
+.days button:hover{border-color:var(--gr-dim)}
+.days button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.ticket textarea{width:100%;min-height:76px;resize:vertical;border-radius:12px;border:1.5px solid var(--gr-line);background:var(--gr-2);color:var(--gr-txt);padding:12px;font-size:16px;line-height:1.4;outline:none}
+.ticket textarea:focus{border-color:#8aa4ff}
+.ticket textarea::placeholder{color:#8792a1}
+.t-act{display:grid;gap:8px;margin-top:16px}
+.t-act .btn{width:100%}
+.t-act .btn-blue{box-shadow:none}
+.ticket .btn-line{border-color:rgba(232,236,242,.28);color:var(--gr-txt)}
+.ticket .btn-line:hover{border-color:var(--gr-txt)}
+.t-photo{font-size:12.5px;color:var(--gr-dim);margin-top:10px;display:flex;gap:8px;align-items:flex-start}
+.t-photo svg{width:16px;height:16px;flex:none;margin-top:1px;stroke:currentColor;fill:none;stroke-width:1.6}
+
+/* price list */
+.plist{margin-top:28px;border-top:1px solid var(--line-2)}
+@media (min-width:900px){.plist{display:grid;grid-template-columns:1fr 1fr;column-gap:36px;border-top:0}.plist details{break-inside:avoid}.pl-col{border-top:1px solid var(--line-2)}}
+.plist details{border-bottom:1px solid var(--line)}
+.plist summary{list-style:none;display:flex;align-items:center;gap:12px;min-height:56px;padding:10px 2px;cursor:pointer;font-weight:600;font-size:16px}
+.plist summary::-webkit-details-marker{display:none}
+.plist summary .c{margin-inline-start:auto;font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--ink-3);white-space:nowrap}
+.plist summary .pm{width:22px;height:22px;flex:none;position:relative}
+.plist summary .pm::before,.plist summary .pm::after{content:"";position:absolute;left:4px;right:4px;top:10px;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s}
+.plist summary .pm::after{transform:rotate(90deg)}
+.plist details[open] summary .pm::after{transform:rotate(0)}
+.plist summary:hover{color:var(--blue-ink)}
+.pl-items{padding:0 0 14px}
+.pl-it{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-top:1px dotted var(--line-2);font-size:15px}
+.pl-it:first-child{border-top:0}
+.pl-it .p{font-family:var(--mono);font-weight:600;white-space:nowrap}
+.pl-all{display:none}
+@media (max-width:899px){.plist.cut details:nth-of-type(n+7){display:none}.plist.cut .pl-col+.pl-col{display:none}.pl-all{display:flex;margin-top:12px;width:100%}}
+.pl-more{min-height:44px;font-weight:600;font-size:14.5px;color:var(--blue-ink);padding:8px 0}
+
+/* extras */
+.extra{display:grid;gap:28px;margin-top:30px}
+@media (min-width:900px){.extra{grid-template-columns:1.1fr .9fr;gap:48px}}
+.blk h3{font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin-bottom:12px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{display:inline-flex;align-items:center;gap:8px;font-size:15px;padding:9px 13px;border-radius:11px;background:var(--paper-2);border:1px solid var(--line)}
+.tags span::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--blue);flex:none}
+.pay{font-size:15.5px;color:var(--ink-2);line-height:1.6;max-width:36em}
+@media (max-width:599px){.tags{gap:6px}.tags span{font-size:14px;padding:7px 10px}.pops li:nth-child(n+7){display:none}}
+.pops{list-style:none;border:1px solid var(--line);border-radius:16px;background:var(--paper-2);overflow:hidden}
+.pops li{border-top:1px solid var(--line)}
+.pops li:first-child{border-top:0}
+.pops button{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:10px;align-items:center;width:100%;text-align:left;padding:11px 14px;min-height:50px;font-size:15px}
+.pops button:hover{background:#f7f9fc}
+.pops .k{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+.pops .p{font-family:var(--mono);font-weight:700;white-space:nowrap}
+
+/* reviews */
+.dark{background:var(--gr);color:var(--gr-txt)}
+.asp{display:grid;grid-template-columns:1fr 1fr;gap:18px 14px;margin-top:30px}
+.asp div:first-child{grid-column:1/-1}
+@media (min-width:700px){.asp{grid-template-columns:repeat(5,1fr);gap:16px}.asp div:first-child{grid-column:auto}}
+.asp div{border-top:1px solid var(--gr-line);padding-top:12px}
+.asp b{display:block;font-family:var(--mono);font-size:30px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.asp span{display:block;font-size:14.5px;color:var(--gr-txt);margin-top:6px}
+.asp small{display:block;font-size:12.5px;color:var(--gr-dim);margin-top:2px}
+.asp .bar{height:4px;background:var(--gr-3);border-radius:2px;margin-top:10px;overflow:hidden}
+.asp .bar i{display:block;height:100%;background:#5b7cff;border-radius:2px}
+.masters{margin-top:28px;font-size:16.5px;color:var(--gr-txt);max-width:42em}
+.masters b{color:#a9bcff;font-weight:600}
+.revs{display:grid;gap:12px;margin-top:30px}
+@media (max-width:699px){.revs{grid-auto-flow:column;grid-auto-columns:86%;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-16px;padding:0 16px 6px;scroll-padding:0 16px;scrollbar-width:none}.revs::-webkit-scrollbar{display:none}.rev{scroll-snap-align:start}}
+.swipe{display:none;font-family:var(--mono);font-size:12.5px;color:var(--gr-dim);margin-top:10px}
+@media (max-width:699px){.swipe{display:block}}
+@media (min-width:700px){.revs{grid-template-columns:1fr 1fr}}
+@media (min-width:1100px){.revs{grid-template-columns:repeat(3,1fr)}}
+.rev{background:var(--gr-2);border:1px solid var(--gr-line);border-radius:18px;padding:20px 18px;display:flex;flex-direction:column;gap:14px}
+.rev q{quotes:none;font-size:16px;line-height:1.55;color:var(--gr-txt)}
+.rev .who{margin-top:auto;display:flex;align-items:center;gap:10px;font-size:14px}
+.rev .av{width:34px;height:34px;border-radius:10px;background:var(--gr-3);display:grid;place-items:center;font-weight:700;font-size:14px;color:#a9bcff;flex:none}
+.rev .who small{display:block;color:var(--gr-dim);font-size:12.5px}
+.rev .st{display:flex;gap:2px}
+.rev .st svg{width:13px;height:13px;fill:#7d97ff}
+.all-rev{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.all-rev .note{font-size:14px;color:var(--gr-dim)}
+
+/* visit */
+.visit{display:grid;gap:18px;margin-top:30px}
+@media (min-width:900px){.visit{grid-template-columns:420px minmax(0,1fr);gap:28px}}
+.card{background:var(--paper-2);border:1px solid var(--line);border-radius:20px;padding:20px 18px}
+.addr{font-size:24px;font-weight:800;letter-spacing:-.03em;line-height:1.15}
+.addr-s{font-size:14.5px;color:var(--ink-2);margin-top:4px}
+.metro{list-style:none;margin:16px 0 0;display:grid;gap:8px}
+.metro li{display:flex;align-items:center;gap:10px;font-size:15.5px}
+.metro li .d{margin-inline-start:auto;font-family:var(--mono);font-size:13.5px;color:var(--ink-2)}
+.metro .ln{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;color:#fff;font:700 11px var(--sans);flex:none}
+.week{list-style:none;margin-top:18px;border-top:1px solid var(--line)}
+.week li{display:flex;justify-content:space-between;gap:10px;padding:8px 10px;margin:0 -10px;font-size:15px;border-radius:10px}
+.week li span:last-child{font-family:var(--mono);font-size:14px}
+.week li.off{color:var(--ink-3)}
+.week li.today{background:var(--blue-soft);font-weight:600;color:var(--blue-ink)}
+.v-btns{display:grid;gap:8px;margin-top:18px}
+@media (min-width:500px){.v-btns{grid-template-columns:1fr 1fr}}
+.map{position:relative;min-height:340px;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:var(--paper-3)}
+.map::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:32px 32px}
+.map .pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);text-align:center;font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+.map .pin svg{width:34px;height:42px;margin:0 auto 4px}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media (min-width:900px){.map{min-height:100%}}
+
+/* footer */
+.foot{background:var(--gr);color:var(--gr-dim);padding:40px 0 30px;font-size:14px;border-top:1px solid var(--gr-line)}
+.foot .wrap{display:grid;gap:22px}
+@media (min-width:900px){.foot .wrap{grid-template-columns:1.2fr 1fr 1fr}}
+.foot .logo{color:var(--gr-txt)}
+.foot a{color:var(--gr-txt);text-decoration:none}
+.foot p a{display:inline-flex;align-items:center;min-height:44px}
+.foot p+p{margin-top:0}
+.foot a:hover{text-decoration:underline}
+.foot p+p{margin-top:6px}
+.foot .fine{grid-column:1/-1;border-top:1px solid var(--gr-line);padding-top:18px;font-size:13px;line-height:1.5}
+
+/* sticky bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(242,244,247,.96);border-top:1px solid var(--line);display:flex;gap:8px}
+.bar .btn{min-height:54px}
+.bar .main{flex:1;min-width:0}
+.bar .main span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .call{width:54px;padding:0;flex:none}
+@media (min-width:900px){.bar{display:none}}
+.toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--blue);color:#fff;font-size:14.5px;padding:11px 16px;border-radius:12px;z-index:40;box-shadow:0 10px 30px -10px rgba(17,22,29,.5);transition:opacity .25s,transform .25s;max-width:calc(100% - 32px);text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media (min-width:900px){.toast{bottom:28px}}
+</style>
+</head>
+<body>
+<div class="demo-bar">Демо-концепт · пример сайта для «X-Repair» от Альхассана Альфаррана · не официальный сайт</div>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="X-Repair — наверх">
+      <svg viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#11161d"/><path d="M10 10l14 14M24 10L10 24" stroke="#2f5bff" stroke-width="3.6" stroke-linecap="round"/><circle cx="17" cy="17" r="2.2" fill="#f2f4f7"/></svg>
+      <span>X-Repair</span>
+    </a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#finder">Цена ремонта</a>
+      <a href="#price">Прайс</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#visit">Как добраться</a>
+    </nav>
+    <div class="hdr-r">
+      <span class="status" id="status"><i></i><span>Часы работы</span></span>
+      <a class="hdr-tel" data-tel href="#">+7</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="top">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="tag">X-Repair</span><span id="hero-addr">Никитский бульвар, 5</span><span id="hero-metro"></span></div>
+      <h1><span class="nb">Цена ремонта —</span><br><em class="nb">ещё до визита</em></h1>
+      <p class="lead"><b id="lead-dev">iPhone, MacBook, iPad, Android и ноутбуки.</b> Выберите модель и что случилось — покажем цену из прайса сервиса, а заявка уйдёт мастеру в WhatsApp.</p>
+      <div class="rate">
+        <a id="rate-link" href="#" target="_blank" rel="noopener">
+          <span class="big" id="rate-v">5,0</span>
+          <span><span class="stars" id="rate-stars" aria-hidden="true"></span><small id="rate-c"></small></span>
+        </a>
+        <span class="y">на Яндекс Картах</span>
+      </div>
+      <div class="cta">
+        <a class="btn btn-blue" href="#finder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>Узнать цену ремонта</a>
+        <a class="btn btn-line" data-tel href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3.5l1.7 4.3-2.3 1.5a11 11 0 0 0 6.8 6.8l1.5-2.3 4.3 1.7V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.1 1.5 1.5 0 0 1 5 3.5z"/></svg><span id="hero-tel">Позвонить</span></a>
+      </div>
+      <div class="specs">
+        <div><b class="mono" id="sp-n">466</b><span>цен в прайсе</span></div>
+        <div><b class="mono" id="sp-c">27</b><span>разделов: от iPhone до DELL</span></div>
+        <div><b class="mono" id="sp-min">500 ₽</b><span>диагностика по прайсу</span></div>
+      </div>
+    </div>
+
+    <figure class="xp" id="xp">
+      <svg viewBox="0 0 430 430" role="group" aria-label="Разобранный телефон: нажмите на деталь, чтобы найти цену">
+        <defs>
+          <linearGradient id="gScr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a66ff"/><stop offset=".55" stop-color="#2350f0"/><stop offset="1" stop-color="#1636b0"/></linearGradient>
+          <linearGradient id="gBack" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a3340"/><stop offset="1" stop-color="#11161d"/></linearGradient>
+          <pattern id="pGrid" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M8 0H0V8" fill="none" stroke="rgba(255,255,255,.14)" stroke-width=".6"/></pattern>
+        </defs>
+        <!-- dimension marks -->
+        <g aria-hidden="true">
+          <path d="M18 70v300" stroke="#9aa3ad" stroke-width="1" stroke-dasharray="2 4"/>
+          <path d="M14 70h8M14 370h8" stroke="#9aa3ad"/>
+          <text class="dim" x="10" y="226" transform="rotate(-90 10 226)">X-R · EXPLODED VIEW · 01</text>
+        </g>
+        <!-- spine -->
+        <path d="M181 80V360" stroke="#9aa3ad" stroke-width="1" stroke-dasharray="3 5" aria-hidden="true"/>
+
+        <!-- 5: back glass + camera -->
+        <g class="ly" data-q="камера" tabindex="0" role="button" aria-label="Камера и заднее стекло — найти цену">
+          <g class="float f5"><g class="lift">
+            <g transform="translate(181,262) matrix(.866,.5,-.866,.5,0,0)">
+              <rect class="hit" x="-6" y="-6" width="104" height="196" rx="18" fill="transparent"/>
+              <rect class="edge" x="0" y="0" width="92" height="184" rx="15" fill="url(#gBack)" stroke="#11161d" stroke-width="1.4"/>
+              <rect x="9" y="9" width="36" height="36" rx="9" fill="#323c4a" stroke="#4a5666"/>
+              <circle cx="20" cy="20" r="6.5" fill="#0b0f14" stroke="#6b7889"/><circle cx="34" cy="34" r="6.5" fill="#0b0f14" stroke="#6b7889"/><circle cx="34" cy="20" r="2.5" fill="#e8ecf2" opacity=".7"/>
+              <circle cx="20" cy="20" r="2" fill="#3a66ff"/><circle cx="34" cy="34" r="2" fill="#3a66ff"/>
+            </g>
+            <path d="M262 308H286" stroke="#11161d" stroke-width="1"/><circle cx="262" cy="308" r="2.5" fill="#11161d"/>
+            <text class="lbl" x="292" y="306">Камера</text><text class="lbl-s" x="292" y="322" data-cnt="camera,back,faceid">— цен</text>
+          </g></g>
+        </g>
+
+        <!-- 4: frame + port -->
+        <g class="ly" data-q="разъем зарядки" tabindex="0" role="button" aria-label="Разъём зарядки — найти цену">
+          <g class="float f4"><g class="lift">
+            <g transform="translate(181,212) matrix(.866,.5,-.866,.5,0,0)">
+              <rect class="hit" x="-6" y="-6" width="104" height="196" rx="18" fill="transparent"/>
+              <rect class="edge" x="0" y="0" width="92" height="184" rx="15" fill="#e7ebf0" stroke="#11161d" stroke-width="1.4"/>
+              <rect x="5" y="5" width="82" height="174" rx="11" fill="#f2f4f7" stroke="#9aa3ad" stroke-width=".8"/>
+              <rect x="33" y="179" width="26" height="5" rx="2.5" fill="#2350f0"/>
+              <rect x="92" y="40" width="3" height="22" rx="1.5" fill="#11161d"/><rect x="-3" y="34" width="3" height="14" rx="1.5" fill="#11161d"/><rect x="-3" y="54" width="3" height="14" rx="1.5" fill="#11161d"/>
+            </g>
+            <path d="M262 258H286" stroke="#11161d" stroke-width="1"/><circle cx="262" cy="258" r="2.5" fill="#11161d"/>
+            <text class="lbl" x="292" y="256">Разъём</text><text class="lbl-s" x="292" y="272" data-cnt="port">— цен</text>
+          </g></g>
+        </g>
+
+        <!-- 3: battery -->
+        <g class="ly" data-q="аккумулятор" tabindex="0" role="button" aria-label="Аккумулятор — найти цену">
+          <g class="float f3"><g class="lift">
+            <g transform="translate(181,162) matrix(.866,.5,-.866,.5,0,0)">
+              <rect class="hit" x="-6" y="-6" width="104" height="196" rx="18" fill="transparent"/>
+              <rect class="edge" x="0" y="0" width="92" height="184" rx="15" fill="none" stroke="#9aa3ad" stroke-width="1" stroke-dasharray="3 4"/>
+              <rect x="14" y="52" width="64" height="104" rx="8" fill="#11161d" stroke="#11161d"/>
+              <rect x="40" y="46" width="12" height="6" rx="2" fill="#11161d"/>
+              <rect x="22" y="66" width="48" height="6" rx="3" fill="#2350f0"/>
+              <text x="24" y="100" fill="#e8ecf2" style="font:700 11px var(--mono)">Li-ion</text>
+              <path d="M24 112h44M24 120h30" stroke="#47505d" stroke-width="2" stroke-linecap="round"/>
+            </g>
+            <path d="M262 208H286" stroke="#11161d" stroke-width="1"/><circle cx="262" cy="208" r="2.5" fill="#11161d"/>
+            <text class="lbl" x="292" y="206">Аккумулятор</text><text class="lbl-s" x="292" y="222" data-cnt="battery">— цен</text>
+          </g></g>
+        </g>
+
+        <!-- 2: board -->
+        <g class="ly" data-q="не включается" tabindex="0" role="button" aria-label="Плата: не включается или после воды — найти цену">
+          <g class="float f2"><g class="lift">
+            <g transform="translate(181,112) matrix(.866,.5,-.866,.5,0,0)">
+              <rect class="hit" x="-6" y="-6" width="104" height="196" rx="18" fill="transparent"/>
+              <rect class="edge" x="0" y="0" width="92" height="184" rx="15" fill="none" stroke="#9aa3ad" stroke-width="1" stroke-dasharray="3 4"/>
+              <path d="M8 8h76v44H50v124H8z" fill="#1c6b4e" stroke="#11161d" stroke-width="1.2" stroke-linejoin="round"/>
+              <rect x="16" y="16" width="22" height="22" rx="3" fill="#11161d"/><rect x="44" y="16" width="14" height="10" rx="2" fill="#11161d"/><rect x="62" y="16" width="16" height="16" rx="2" fill="#2a3340"/>
+              <rect x="16" y="60" width="14" height="20" rx="2" fill="#11161d"/><rect x="16" y="92" width="22" height="12" rx="2" fill="#2a3340"/><rect x="18" y="140" width="16" height="16" rx="2" fill="#11161d"/>
+              <path d="M38 27h6M27 38v22M23 80v12M27 104v36" stroke="#8be0b8" stroke-width="1.2" fill="none" opacity=".85"/>
+              <circle cx="27" cy="27" r="3" fill="#3a66ff"/>
+            </g>
+            <path d="M262 158H286" stroke="#11161d" stroke-width="1"/><circle cx="262" cy="158" r="2.5" fill="#11161d"/>
+            <text class="lbl" x="292" y="156">Плата · вода</text><text class="lbl-s" x="292" y="172" data-cnt="power,water,board">— цен</text>
+          </g></g>
+        </g>
+
+        <!-- 1: screen -->
+        <g class="ly" data-q="экран" tabindex="0" role="button" aria-label="Экран — найти цену">
+          <g class="float"><g class="lift">
+            <g transform="translate(181,62) matrix(.866,.5,-.866,.5,0,0)">
+              <rect class="hit" x="-6" y="-6" width="104" height="196" rx="18" fill="transparent"/>
+              <rect class="edge" x="0" y="0" width="92" height="184" rx="15" fill="#11161d" stroke="#11161d" stroke-width="1.4"/>
+              <rect x="4" y="4" width="84" height="176" rx="12" fill="url(#gScr)"/>
+              <rect x="4" y="4" width="84" height="176" rx="12" fill="url(#pGrid)"/>
+              <rect x="34" y="10" width="24" height="7" rx="3.5" fill="#11161d"/>
+              <path d="M4 60L60 4h18L4 78z" fill="#fff" opacity=".12"/>
+              <path d="M62 120l-10 10 6 6-12 14 3 6" stroke="#fff" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+              <path d="M52 130l-12-2M58 136l8 6" stroke="#fff" stroke-width="1" fill="none" stroke-linecap="round" opacity=".6"/>
+            </g>
+            <path d="M262 108H286" stroke="#11161d" stroke-width="1"/><circle cx="262" cy="108" r="2.5" fill="#11161d"/>
+            <text class="lbl" x="292" y="106">Экран</text><text class="lbl-s" x="292" y="122" data-cnt="screen">— цен</text>
+          </g></g>
+        </g>
+      </svg>
+      <figcaption class="xp-hint">Нажмите на деталь — <b>покажем её цены</b></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="finder sec" id="finder" aria-labelledby="f-title">
+  <div class="wrap">
+    <div class="kicker">Смета до ремонта</div>
+    <h2 id="f-title">Сколько стоит починить именно ваш</h2>
+    <p class="sub">Цены — из прайса X-Repair на Яндекс Картах. Найдите модель и поломку поиском или пройдите три шага, а потом отправьте заявку мастеру в WhatsApp.</p>
+
+    <div class="f-grid">
+      <div>
+        <div class="search">
+          <label for="q">Модель или поломка</label>
+          <div class="s-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+            <input id="q" type="search" inputmode="search" autocomplete="off" placeholder="Например, 13 pro аккумулятор" aria-describedby="s-head">
+            <button class="s-clear" id="q-clear" type="button" aria-label="Очистить поиск" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+          </div>
+          <div class="s-try" id="s-try"><span>Попробуйте:</span></div>
+          <div class="s-res" id="s-res" hidden>
+            <div class="s-head" id="s-head" aria-live="polite"></div>
+            <div id="s-list"></div>
+          </div>
+        </div>
+
+        <div class="or">или по шагам</div>
+
+        <div class="step" id="st1">
+          <div class="step-h"><span class="n">01</span><h3>Устройство</h3><span class="sel" id="st1-sel"></span></div>
+          <div class="step-b"><div class="devs" id="devs"></div></div>
+        </div>
+        <div class="step lock" id="st2">
+          <div class="step-h"><span class="n">02</span><h3>Модель</h3><span class="sel" id="st2-sel"></span></div>
+          <p class="lock-n" id="st2-lock">Сначала выберите устройство</p>
+          <div class="step-b" id="st2-b">
+            <input class="m-filter" id="m-filter" type="search" autocomplete="off" placeholder="Найти модель" aria-label="Найти модель" hidden>
+            <div class="chips" id="models"></div>
+          </div>
+        </div>
+        <div class="step lock" id="st3">
+          <div class="step-h"><span class="n">03</span><h3>Что случилось</h3><span class="sel" id="st3-sel"></span></div>
+          <p class="lock-n" id="st3-lock">Сначала выберите модель</p>
+          <div class="step-b">
+            <div class="faults" id="faults"></div>
+            <p class="f-note" id="f-note"></p>
+            <a class="f-ask" id="f-ask" target="_blank" rel="noopener" href="#">Нет вашей поломки? Спросите мастера в WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="ticket" id="ticket" aria-labelledby="t-title">
+        <div class="t-top"><span id="t-title">Заявка на ремонт</span><b id="t-count">0 работ</b></div>
+        <div class="t-dev empty" id="t-dev">Устройство не выбрано</div>
+        <ul class="t-list" id="t-list"></ul>
+        <p class="t-empty" id="t-empty">Выберите модель и поломку — здесь соберётся смета с ценами из прайса.</p>
+        <div class="t-sum"><span>Итого по прайсу</span><b id="t-sum">0&nbsp;₽</b></div>
+        <p class="t-fine">Точную стоимость мастер подтвердит после диагностики. Цены взяты из карточки на Яндекс Картах.</p>
+        <span class="t-lbl" id="days-l">Когда удобно прийти</span>
+        <div class="days" id="days" role="group" aria-labelledby="days-l"></div>
+        <label class="t-lbl" for="note">Что происходит с устройством</label>
+        <textarea id="note" maxlength="400" placeholder="Например: упал, после этого полосы на экране"></textarea>
+        <div class="t-act">
+          <a class="btn btn-blue" id="send" target="_blank" rel="noopener" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.2 21.8l5.1-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7c-1.5 0-2.9-.4-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.9 2c0 1.2.9 2.3 1 2.5.1.2 1.7 2.6 4.1 3.7 1.5.7 2.1.7 2.9.6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.4-.2z"/></svg><span id="send-t">Записаться на ремонт</span></a>
+          <a class="btn btn-line" data-tel href="#">Позвонить мастеру</a>
+        </div>
+        <p class="t-photo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="3"/><circle cx="12" cy="12.5" r="3.5"/></svg>В чате можно приложить фото поломки — так мастеру проще ответить.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="price" aria-labelledby="p-title">
+  <div class="wrap">
+    <div class="kicker">Прайс целиком</div>
+    <h2 id="p-title">Все <span id="p-n">466</span> позиций — по&nbsp;разделам</h2>
+    <p class="sub">Тот же прайс, что в карточке на Яндекс Картах. Раздел раскрывается по нажатию.</p>
+    <div class="plist cut" id="plist"></div>
+    <button type="button" class="btn btn-line pl-all" id="pl-all">Показать все разделы</button>
+
+    <div class="extra">
+      <div class="blk">
+        <h3>Ещё в карточке сервиса</h3>
+        <div class="tags" id="extras"></div>
+        <h3 style="margin-top:24px">Оплата</h3>
+        <p class="pay" id="pay"></p>
+      </div>
+      <div class="blk">
+        <h3>Чаще всего ищут</h3>
+        <ul class="pops" id="pops"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark sec" id="reviews" aria-labelledby="r-title">
+  <div class="wrap">
+    <div class="kicker">Почему сюда возвращаются</div>
+    <h2 id="r-title"><span id="r-rate">5,0</span> — и цена та, что назвали</h2>
+    <p class="sub" id="r-sub"></p>
+    <div class="asp" id="asp"></div>
+    <p class="masters">Мастеров благодарят по имени — <b>Павла</b>, <b>Владислава</b>, <b>Александра</b>, а в текстах отзывов то и дело встречаются «за час» и «на следующий день».</p>
+    <div class="revs" id="revs"></div>
+    <p class="swipe" aria-hidden="true">← листайте отзывы →</p>
+    <div class="all-rev">
+      <a class="btn btn-line" id="all-rev" target="_blank" rel="noopener" href="#">Все отзывы на Яндекс Картах</a>
+      <span class="note" id="rev-note"></span>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="visit" aria-labelledby="v-title">
+  <div class="wrap">
+    <div class="kicker">Как добраться</div>
+    <h2 id="v-title">Бульварное кольцо, у&nbsp;Арбатских Ворот</h2>
+    <div class="visit">
+      <div class="card">
+        <div class="addr" id="v-addr">Никитский бульвар, 5</div>
+        <div class="addr-s">Москва · остановка «Арбатские Ворота» — 78&nbsp;м</div>
+        <ul class="metro" id="v-metro"></ul>
+        <ul class="week" id="week"></ul>
+        <div class="v-btns">
+          <a class="btn btn-ink" id="route" target="_blank" rel="noopener" href="#">Построить маршрут</a>
+          <a class="btn btn-line" data-tel href="#">Позвонить</a>
+        </div>
+      </div>
+      <div class="map" id="map">
+        <div class="pin" aria-hidden="true"><svg viewBox="0 0 34 42"><path d="M17 41s15-14 15-25A15 15 0 0 0 2 16c0 11 15 25 15 25z" fill="#2350f0"/><circle cx="17" cy="16" r="5.5" fill="#fff"/></svg>Никитский бул., 5</div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#top" aria-label="X-Repair — наверх"><svg viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#262f3b"/><path d="M10 10l14 14M24 10L10 24" stroke="#5b7cff" stroke-width="3.6" stroke-linecap="round"/><circle cx="17" cy="17" r="2.2" fill="#f2f4f7"/></svg><span>X-Repair</span></a>
+      <p style="margin-top:12px">Ремонт телефонов, ноутбуков и техники Apple</p>
+    </div>
+    <div>
+      <p id="f-addr"></p>
+      <p id="f-hours"></p>
+    </div>
+    <div>
+      <p><a data-tel href="#" id="f-tel"></a></p>
+      <p><a id="f-wa" target="_blank" rel="noopener" href="#">Написать в WhatsApp</a></p>
+      <p><a id="f-ya" target="_blank" rel="noopener" href="#">Карточка на Яндекс Картах</a></p>
+    </div>
+    <div class="fine">
+      Демо-концепт · пример сайта для «X-Repair» от Альхассана Альфаррана · не официальный сайт.<br>
+      Цены и данные взяты из карточки на Яндекс Картах и могут отличаться.
+    </div>
+  </div>
+</footer>
+
+<div class="bar" id="bar">
+  <a class="btn btn-blue main" id="bar-main" href="#finder"><span id="bar-t">Узнать цену ремонта</span></a>
+  <a class="btn btn-line call" data-tel href="#" aria-label="Позвонить в X-Repair"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3.5l1.7 4.3-2.3 1.5a11 11 0 0 0 6.8 6.8l1.5-2.3 4.3 1.7V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.1 1.5 1.5 0 0 1 5 3.5z"/></svg></a>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script>
+(function () {
+'use strict';
+var BIZ = window.BIZ;
+if (!BIZ) return;
+var $ = function (s, r) { return (r || document).querySelector(s); };
+var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+var NB = ' ';
+var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+var wa = function (text) { return 'https://wa.me/' + BIZ.wa + '?text=' + encodeURIComponent(text); };
+var num = function (n) { return Number(n).toLocaleString('ru-RU').replace(/[\s ]/g, NB); };
+var rub = function (n) { return n == null ? 'по запросу' : num(n) + NB + '₽'; };
+var plural = function (n, one, few, many) { var a = Math.abs(n) % 100, b = a % 10; return a > 10 && a < 20 ? many : b === 1 ? one : b >= 2 && b <= 4 ? few : many; };
+var norm = function (s) { return String(s || '').toLowerCase().replace(/ё/g, 'е').replace(/[^a-zа-я0-9.]+/g, ' ').replace(/(^|\s)\.|\.(\s|$)/g, ' ').replace(/\s+/g, ' ').trim(); };
+var store = {
+  get: function (k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } },
+  set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+};
+var toastT;
+function toast(msg) { var t = $('#toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(function () { t.classList.remove('on'); }, 2200); }
+
+/* ---------- facts ---------- */
+var ratingText = Number(BIZ.rating.value).toFixed(1).replace('.', ',');
+var STAR = '<svg viewBox="0 0 20 20"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg>';
+function stars(n) { var s = ''; for (var i = 0; i < n; i++) s += STAR; return s; }
+
+function mskNow() { var d = new Date(); return new Date(d.getTime() + (d.getTimezoneOffset() + 180) * 60000); }
+var m2 = function (s) { return +s.slice(0, 2) * 60 + +s.slice(3); };
+function openStatus(now) {
+  now = now || mskNow();
+  if (!BIZ.hours) return null;
+  if (BIZ.is24) return { open: true, text: 'Круглосуточно' };
+  var day = (now.getDay() + 6) % 7, mins = now.getHours() * 60 + now.getMinutes(), i, iv;
+  var prev = BIZ.hours[(day + 6) % 7] || [];
+  for (i = 0; i < prev.length; i++) { iv = prev[i]; if (m2(iv[1]) <= m2(iv[0]) && mins < m2(iv[1])) return { open: true, text: 'Открыто · до ' + iv[1] }; }
+  var today = BIZ.hours[day] || [];
+  for (i = 0; i < today.length; i++) { iv = today[i]; var a = m2(iv[0]), b = m2(iv[1]) <= a ? m2(iv[1]) + 1440 : m2(iv[1]); if (mins >= a && mins < b) return { open: true, text: 'Открыто · до ' + iv[1] }; }
+  for (i = 0; i < today.length; i++) if (mins < m2(today[i][0])) return { open: false, text: 'Закрыто · откроется в ' + today[i][0] };
+  var names = ['в понедельник', 'во вторник', 'в среду', 'в четверг', 'в пятницу', 'в субботу', 'в воскресенье'];
+  for (i = 1; i <= 7; i++) { var d = (day + i) % 7; if ((BIZ.hours[d] || []).length) return { open: false, text: 'Закрыто · откроется ' + (i === 1 ? 'завтра' : names[d]) + ' в ' + BIZ.hours[d][0][0] }; }
+  return null;
+}
+var DAY_NOM = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+var DAY_SH = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+var DAY_ACC = ['в понедельник', 'во вторник', 'в среду', 'в четверг', 'в пятницу', 'в субботу', 'в воскресенье'];
+var MON_G = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+
+function renderFacts() {
+  var st = openStatus(), el = $('#status');
+  if (st) { el.classList.toggle('on', st.open); $('span', el).textContent = st.text; } else el.hidden = true;
+  $$('[data-tel]').forEach(function (a) { a.href = 'tel:' + BIZ.phone; });
+  $('.hdr-tel').textContent = BIZ.phoneDisplay;
+  $('#f-tel').textContent = BIZ.phoneDisplay;
+  $('#f-wa').href = wa('Здравствуйте! Пишу по поводу ремонта.');
+  $('#f-ya').href = BIZ.yandexUrl;
+  $('#f-addr').textContent = BIZ.fullAddress;
+  $('#f-hours').textContent = hoursLine();
+  $('#rate-link').href = BIZ.reviewsUrl;
+  $('#rate-v').textContent = ratingText;
+  $('#rate-stars').innerHTML = stars(5);
+  $('#rate-c').textContent = BIZ.rating.count + ' ' + plural(BIZ.rating.count, 'оценка', 'оценки', 'оценок') + ' · ' + BIZ.rating.reviews + ' ' + plural(BIZ.rating.reviews, 'отзыв', 'отзыва', 'отзывов');
+  var m = (BIZ.metro || [])[0];
+  if (m) $('#hero-metro').innerHTML = '<span class="metro-dot" style="background:' + esc(m.color) + '"></span>м. ' + esc(m.name) + ' · ' + esc(m.distance.replace(' ', NB));
+  $('#route').href = BIZ.routeUrl;
+  $('#all-rev').href = BIZ.reviewsUrl;
+  $('#r-rate').textContent = ratingText;
+  $('#v-addr').textContent = BIZ.address.replace(/,\s*Москва$/, '').replace('бул.', 'бульвар');
+  $('#v-metro').innerHTML = (BIZ.metro || []).map(function (x) {
+    return '<li><span class="ln" style="background:' + esc(x.color) + '" aria-hidden="true">М</span><span>' + esc(x.name) + '</span><span class="d">' + esc(x.distance.replace(' ', NB)) + '</span></li>';
+  }).join('');
+  var now = mskNow(), today = (now.getDay() + 6) % 7;
+  $('#week').innerHTML = (BIZ.hours || []).map(function (ivs, d) {
+    var t = ivs.length ? ivs.map(function (iv) { return iv[0] + '–' + iv[1]; }).join(', ') : 'выходной';
+    return '<li class="' + (d === today ? 'today ' : '') + (ivs.length ? '' : 'off') + '"><span>' + DAY_NOM[d] + (d === today ? ' · сегодня' : '') + '</span><span>' + t + '</span></li>';
+  }).join('');
+  /* map: lazy iframe */
+  if (BIZ.mapEmbed) {
+    var mapEl = $('#map'), put = function () { if (mapEl.querySelector('iframe')) return; var f = document.createElement('iframe'); f.loading = 'lazy'; f.src = BIZ.mapEmbed; f.title = 'X-Repair на карте'; f.setAttribute('allowfullscreen', ''); mapEl.appendChild(f); };
+    if ('IntersectionObserver' in window) { var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { put(); io.disconnect(); } }, { rootMargin: '400px' }); io.observe(mapEl); } else put();
+  }
+}
+function hoursLine() {
+  var h = BIZ.hours || [], open = [], closed = [];
+  h.forEach(function (ivs, d) { (ivs.length ? open : closed).push(d); });
+  var t = BIZ.hoursText ? BIZ.hoursText.replace('-', '–') : '';
+  if (closed.length) t += ', ' + closed.map(function (d) { return DAY_SH[d].toLowerCase(); }).join(', ') + ' — выходной';
+  return t;
+}
+
+/* ---------- price model ---------- */
+var ANDROID = /^(Samsung|Huawei|Vivo|Xiaomi|Honor|Tecno|realme|Infinix|OPPO)$/i;
+var DEV = {
+  iphone: { n: 'iPhone', w: 'iPhone', syn: 'айфон ифон iphone телефон смартфон' },
+  ipad: { n: 'iPad', w: 'iPad', syn: 'айпад планшет ipad' },
+  macbook: { n: 'MacBook', w: 'MacBook', syn: 'макбук mac мак ноутбук ноут' },
+  imac: { n: 'iMac', w: 'iMac', syn: 'аймак imac моноблок компьютер' },
+  watch: { n: 'Apple Watch', w: 'Apple Watch', syn: 'часы эпл вотч watch' },
+  android: { n: 'Android', w: 'Android', syn: 'андроид телефон смартфон самсунг галакси ксиоми сяоми редми хуавей хонор виво оппо техно реалми инфиникс' },
+  laptop: { n: 'Ноутбук', w: 'ноутбук', syn: 'ноутбук ноут леново асер асус делл тошиба эйч пи' },
+  other: { n: 'Другое', w: '', syn: '' }
+};
+var DEV_ORDER = ['iphone', 'android', 'macbook', 'laptop', 'ipad', 'imac', 'watch', 'other'];
+var GLYPH = {
+  iphone: '<rect x="8" y="2.5" width="14" height="25" rx="3.2"/><path d="M13 5.5h4"/>',
+  android: '<rect x="8" y="2.5" width="14" height="25" rx="2.4"/><circle cx="15" cy="6" r=".9"/><path d="M12.5 24.5h5"/>',
+  macbook: '<rect x="5" y="6" width="20" height="14" rx="1.6"/><path d="M2 22.5h26l-1.4 2H3.4z"/>',
+  laptop: '<rect x="5" y="5.5" width="20" height="14.5" rx="1"/><path d="M3 20h24l1.5 4h-27zM12.5 22h5"/>',
+  ipad: '<rect x="5.5" y="3" width="19" height="24" rx="2.6"/><circle cx="15" cy="5.6" r=".7"/>',
+  imac: '<rect x="3.5" y="4" width="23" height="16" rx="1.8"/><path d="M3.5 16.5h23M12.5 20l-1 5h7l-1-5M10 25.5h10"/>',
+  watch: '<rect x="8.5" y="8" width="13" height="14" rx="3.4"/><path d="M11 8l1-5h6l1 5M11 22l1 5h6l1-5M21.5 13.5h1.5"/>',
+  other: '<circle cx="15" cy="15" r="10"/><path d="M11 15h8M15 11v8"/>'
+};
+var FAULTS = [
+  ['faceid', /face id|truedepth/, 'Face ID', 'face id фейс айди truedepth'],
+  ['back', /задн|корпус/, 'Заднее стекло, корпус', 'заднее стекло корпус крышка задняя'],
+  ['home', /кнопк/, 'Кнопка Home', 'кнопка home хоум домой'],
+  ['screen', /экран|диспле|стекл/, 'Экран, стекло', 'экран дисплей стекло разбил разбит трещина сенсор полосы'],
+  ['battery', /аккумулятор/, 'Аккумулятор', 'аккумулятор батарея батарейка акб садится разряжается'],
+  ['port', /разъем|разъём|заряжа|зарядк|питани/, 'Зарядка, разъём', 'зарядка разъем разъём заряжается не заряжается питание гнездо порт'],
+  ['power', /не включа/, 'Не включается', 'не включается не работает умер кирпич'],
+  ['water', /вод[аыу]|залити/, 'После воды', 'вода воды залил залития утопил влага намок'],
+  ['camera', /камер/, 'Камера', 'камера объектив фото'],
+  ['audio', /динамик|микрофон/, 'Динамик, микрофон', 'динамик микрофон звук не слышно'],
+  ['data', /данных/, 'Восстановление данных', 'данные восстановление фото файлы'],
+  ['ssd', /ssd|hdd|накопител/, 'Замена SSD', 'ssd hdd диск память накопитель'],
+  ['clean', /чистк|охлажд|термопаст/, 'Чистка, перегрев', 'чистка перегрев греется шумит термопаста охлаждение пыль'],
+  ['keys', /клавиатур/, 'Клавиатура', 'клавиатура кнопки клавиши'],
+  ['board', /плат[аы]|flexgate/, 'Плата', 'плата материнская flexgate шлейф'],
+  ['diag', /диагностик/, 'Диагностика', 'диагностика проверка'],
+  ['general', null, 'Ремонт', 'ремонт']
+];
+var F_BY = {}; FAULTS.forEach(function (f, i) { F_BY[f[0]] = { k: f[0], re: f[1], n: f[2], syn: f[3], o: i }; });
+var F_ORDER = ['screen', 'battery', 'port', 'power', 'water', 'camera', 'back', 'faceid', 'home', 'audio', 'keys', 'clean', 'ssd', 'board', 'data', 'diag', 'general'];
+var ICON = {
+  screen: '<rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 7l3 3.5-2 2 3.5 3.5"/>',
+  battery: '<rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21.5 10.5v3M6.5 10v4M9.5 10v4"/>',
+  port: '<path d="M8.5 3v5M15.5 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"/>',
+  power: '<path d="M12 3v8M7 6.5a7 7 0 1 0 10 0"/>',
+  water: '<path d="M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z"/>',
+  camera: '<rect x="3" y="6" width="18" height="13" rx="3"/><circle cx="12" cy="12.5" r="3.5"/><path d="M9 6l1.5-2h3L15 6"/>',
+  faceid: '<path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16M9 9.5v1M15 9.5v1M12 10v3h-1M9.5 15.5c1.5 1.2 3.5 1.2 5 0"/>',
+  back: '<rect x="6" y="2.5" width="12" height="19" rx="2.5"/><rect x="8.5" y="5" width="4.5" height="4.5" rx="1.2"/>',
+  home: '<rect x="6" y="2.5" width="12" height="19" rx="2.5"/><circle cx="12" cy="18" r="1.4"/>',
+  audio: '<path d="M5 10v4h3l4 4V6L8 10zM16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"/>',
+  data: '<ellipse cx="12" cy="6" rx="7" ry="2.5"/><path d="M5 6v12c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V6M5 12c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5"/>',
+  ssd: '<rect x="3" y="7" width="18" height="10" rx="2"/><path d="M7 11h4M7 14h2M16 12h1"/>',
+  clean: '<circle cx="12" cy="12" r="1.6"/><path d="M12 10.4C12 6 14 3.5 16 4.5s0 4.5-4 5.9M13.6 12c4.4 0 6.9 2 5.9 4s-4.5 0-5.9-4M12 13.6C12 18 10 20.5 8 19.5s0-4.5 4-5.9M10.4 12C6 12 3.5 10 4.5 8s4.5 0 5.9 4"/>',
+  keys: '<rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h1M9.5 10h1M13 10h1M16.5 10h1M7 14h10"/>',
+  board: '<rect x="6" y="6" width="12" height="12" rx="1.5"/><path d="M9 3v3M12 3v3M15 3v3M9 18v3M12 18v3M15 18v3M3 9h3M3 12h3M3 15h3M18 9h3M18 12h3M18 15h3"/>',
+  diag: '<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5M7.5 11h1.8l1-2 1.6 4 1-2h1.6"/>',
+  general: '<path d="M14.5 4a5 5 0 0 0-4.7 6.6L3.5 17a2 2 0 1 0 2.8 2.8l6.4-6.3a5 5 0 0 0 6.6-4.7l-3 3-3-1-1-3 3-3z"/>'
+};
+function icon(k) { return '<svg viewBox="0 0 24 24" aria-hidden="true">' + (ICON[k] || ICON.general) + '</svg>'; }
+
+function devOf(cat) {
+  var m;
+  if (/iPhone/.test(cat) || /^Ремонт телефонов$/.test(cat)) return { dev: 'iphone', brand: '' };
+  if (/MacBook/.test(cat)) return { dev: 'macbook', brand: '' };
+  if (/iPad/.test(cat)) return { dev: 'ipad', brand: '' };
+  if (/Apple Watch/.test(cat)) return { dev: 'watch', brand: '' };
+  if (/iMac/.test(cat)) return { dev: 'imac', brand: '' };
+  if ((m = cat.match(/^Ремонт ноутбуков\s+(.+)$/))) return { dev: 'laptop', brand: m[1] };
+  if (/^Ремонт ноутбуков$/.test(cat)) return { dev: 'laptop', brand: '' };
+  if (/Android/.test(cat)) return { dev: 'android', brand: '' };
+  if ((m = cat.match(/^Ремонт\s+(.+)$/)) && ANDROID.test(m[1])) return { dev: 'android', brand: m[1] };
+  return { dev: 'other', brand: '' };
+}
+function faultOf(t) { t = t.toLowerCase(); for (var i = 0; i < FAULTS.length - 1; i++) if (FAULTS[i][1].test(t)) return FAULTS[i][0]; return 'general'; }
+var STRIP = [/^(замена|ремонт)\s+(экрана|дисплея|заднего стекла|стекла|корпуса|кнопки home|аккумулятора|разъема зарядки|разъема питания|камеры|face id(\s*\/\s*truedepth)?|динамика или микрофона|клавиатуры|материнской платы|системы охлаждения|питания и зарядки|ssd\s*\/\s*(hdd|накопителя)|flexgate)\s+/i, /^(диагностика|восстановление данных|чистка)\s+/i, /^(не включается|после залития|после попадания воды)\s+/i, /\s+(не включается|не заряжается|после воды|после залития|и термопаста)$/i, /^ремонт\s+(телефонов\s+)?/i, /(^|\s)ноутбук(а|ов)?(\s|$)/i, /^(iPhone|iPad|MacBook|iMac|Apple Watch)(\s|$)/, /^(не включается|после воды|после залития)$/i];
+function modelOf(t, dev) {
+  var s = t;
+  for (var k = 0; k < 3; k++) STRIP.forEach(function (r) { s = s.replace(r, ' ').replace(/\s+/g, ' ').trim(); });
+  if (dev === 'laptop' || dev === 'other' || dev === 'watch' || dev === 'imac') return '';
+  if (dev === 'android' && (ANDROID.test(s) || /^android$/i.test(s))) return '';
+  return s;
+}
+
+var ITEMS = [], CATS = [];
+var TOP = {}; (BIZ.top || []).forEach(function (x, i) { TOP[x.t] = i + 1; });
+(BIZ.menu || []).forEach(function (cat, ci) {
+  var d = devOf(cat.name || '');
+  CATS.push({ name: cat.name, items: cat.items || [], ci: ci });
+  (cat.items || []).forEach(function (it, ii) {
+    if (!it || !it.t) return;
+    var b = d.brand;
+    if (d.dev === 'android' && !b) { var mm = it.t.match(/телефонов\s+(\S+)/); b = mm && ANDROID.test(mm[1]) ? mm[1] : ''; }
+    var f = faultOf(it.t), model = modelOf(it.t, d.dev);
+    var x = { id: ci + '-' + ii, t: it.t, p: typeof it.p === 'number' ? it.p : null, d: it.d || '', v: it.v || '', cat: cat.name, dev: d.dev, brand: b, model: model, f: f, top: TOP[it.t] || 0 };
+    x.hay = norm([it.t, cat.name, DEV[d.dev].syn, F_BY[f].syn, b].join(' ')).split(' ');
+    x.mt = norm(model).split(' ').filter(Boolean);
+    ITEMS.push(x);
+  });
+});
+var BY_ID = {}; ITEMS.forEach(function (x) { BY_ID[x.id] = x; });
+var count = function (keys) { var ks = keys.split(','); return ITEMS.filter(function (x) { return ks.indexOf(x.f) >= 0; }).length; };
+
+/* models */
+function brandFull(brand, model) {
+  if (!model) return brand;
+  return model.toLowerCase().indexOf(brand.toLowerCase()) === 0 ? model : brand + ' ' + model;
+}
+function iphoneRank(m) {
+  var g = 0, v = 0, mm;
+  if ((mm = m.match(/^(\d+)/))) g = +mm[1];
+  else if (/^SE/i.test(m)) g = 8.5;
+  else if (/^XS/i.test(m)) g = 10.2;
+  else if (/^XR/i.test(m)) g = 10.1;
+  else if (/^X/i.test(m)) g = 10;
+  if (/Pro Max/i.test(m)) v = 3; else if (/Pro/i.test(m)) v = 2; else if (/Plus|Max/i.test(m)) v = 1; else if (/Mini/i.test(m)) v = -1;
+  return { g: g, v: v };
+}
+function genOf(dev, m) {
+  if (dev === 'iphone') { var r = iphoneRank(m); return r.g >= 11 ? 'iPhone ' + Math.floor(r.g) : r.g >= 10 ? 'iPhone X' : 'iPhone 6s–8, SE'; }
+  if (dev === 'ipad') return /^mini/i.test(m) ? 'iPad mini' : /^Air/i.test(m) ? 'iPad Air' : /^Pro/i.test(m) ? 'iPad Pro' : 'iPad';
+  if (dev === 'macbook') return /^Air/i.test(m) ? 'MacBook Air' : 'MacBook Pro';
+  return '';
+}
+function modelsFor(dev) {
+  var seen = {}, out = [];
+  ITEMS.forEach(function (x) {
+    if (x.dev !== dev) return;
+    var key = x.brand + '|' + x.model;
+    if (seen[key]) { seen[key].n++; return; }
+    if (dev === 'ipad' && x.model && /\//.test(x.model) && !/\d\.\d/.test(x.model)) return;
+    if (dev === 'ipad' && /^\d+-\d+$/.test(x.model) && ITEMS.some(function (y) { return y.dev === 'ipad' && y.model === x.model && y.f === 'battery'; })) return;
+    seen[key] = { key: key, brand: x.brand, model: x.model, n: 1 };
+    out.push(seen[key]);
+  });
+  if (dev === 'iphone') out.sort(function (a, b) { if (!a.model) return 1; if (!b.model) return -1; var A = iphoneRank(a.model), B = iphoneRank(b.model); return B.g - A.g || A.v - B.v; });
+  else if (dev === 'android' || dev === 'laptop') {
+    var bo = {}; out.forEach(function (m, i) { if (!(m.brand in bo)) bo[m.brand] = i; });
+    out.sort(function (a, b) { if (!a.brand && b.brand) return 1; if (!b.brand && a.brand) return -1; return bo[a.brand] - bo[b.brand] || (!a.model) - (!b.model); });
+  } else out.sort(function (a, b) { if (!a.model) return 1; if (!b.model) return -1; return genOf(dev, a.model).localeCompare(genOf(dev, b.model)) || a.model.localeCompare(b.model, 'ru', { numeric: true }); });
+  return out;
+}
+function chipLabel(dev, m, list) {
+  if (dev === 'android' || dev === 'laptop') {
+    if (!m.brand) return dev === 'laptop' ? 'Другой ноутбук' : 'Другой Android';
+    if (!m.model) { var hasModels = list.some(function (o) { return o.brand === m.brand && o.model; }); return hasModels ? m.brand + ' · другая модель' : m.brand; }
+    return m.model;
+  }
+  if (!m.model) return 'Другая модель';
+  return m.model.replace(/(\d)-(\d)/g, '$1–$2');
+}
+function deviceName(dev, brand, model) {
+  if (dev === 'android') return brand ? (model ? brandFull(brand, model) : brand) : 'Android';
+  if (dev === 'laptop') return 'Ноутбук' + (brand ? ' ' + brand : '');
+  return DEV[dev].n + (model ? ' ' + model.replace(/(\d)-(\d)/g, '$1–$2') : '');
+}
+/* does price row model R cover the chosen model C? (iPad ranges like "7-10", lists like "9/10/Air/Pro") */
+function parseM(s) { var m = String(s).match(/^(?:(mini|air|pro)\s)?(\d+)(?:-(\d+))?$/i); return m ? { pre: (m[1] || '').toLowerCase(), lo: +m[2], hi: +(m[3] || m[2]) } : null; }
+function covers(R, C) {
+  if (R === C) return true;
+  if (!R || !C) return false;
+  var r = parseM(R), c = parseM(C);
+  if (r && c && r.pre === c.pre && r.lo <= c.lo && c.hi <= r.hi) return true;
+  if (/\//.test(R) && !/\d\.\d/.test(R)) {
+    var first = C.split(' ')[0].toLowerCase();
+    return R.split('/').some(function (p) { p = p.trim(); if (p === C || p.toLowerCase() === first && !/^\d/.test(p)) return true; var pp = parseM(p); return pp && c && pp.pre === c.pre && pp.lo <= c.lo && c.hi <= pp.hi; });
+  }
+  return false;
+}
+function rowsFor(dev, brand, model) {
+  var cand = [];
+  ITEMS.forEach(function (x) {
+    if (x.dev !== dev) return;
+    var rank = 0;
+    if (x.brand === brand && x.model === model) rank = 4;
+    else if (x.brand === brand && model && covers(x.model, model)) rank = 3;
+    else if (x.brand === brand && !x.model) rank = 2;
+    else if (!x.brand && !x.model && brand) rank = 1;
+    if (rank) cand.push({ x: x, rank: rank });
+  });
+  var best = {};
+  cand.forEach(function (c) { best[c.x.f] = Math.max(best[c.x.f] || 0, c.rank); });
+  return cand.filter(function (c) { return c.rank === best[c.x.f]; })
+    .sort(function (a, b) { return F_ORDER.indexOf(a.x.f) - F_ORDER.indexOf(b.x.f) || (a.x.p || 0) - (b.x.p || 0); })
+    .map(function (c) { return { x: c.x, general: (model || brand) && c.rank <= 2 && !(c.rank === 2 && !model) }; });
+}
+
+/* ---------- state ---------- */
+var state = { dev: null, mkey: null, sel: [], day: null, note: '', q: '' };
+var saved = store.get('xr-ticket');
+if (saved && typeof saved === 'object') {
+  if (saved.dev && DEV[saved.dev]) state.dev = saved.dev;
+  if (typeof saved.mkey === 'string') state.mkey = saved.mkey;
+  if (Array.isArray(saved.sel)) state.sel = saved.sel.filter(function (id) { return BY_ID[id]; }).slice(0, 12);
+  if (typeof saved.note === 'string') state.note = saved.note.slice(0, 400);
+}
+var save = function () { store.set('xr-ticket', { dev: state.dev, mkey: state.mkey, sel: state.sel, note: state.note }); };
+function curModel() { if (!state.dev || state.mkey == null) return null; var p = state.mkey.split('|'); return { brand: p[0], model: p.slice(1).join('|') }; }
+
+/* ---------- step 1 ---------- */
+var DEVS = DEV_ORDER.filter(function (d) { return ITEMS.some(function (x) { return x.dev === d; }); });
+function renderDevs() {
+  $('#devs').innerHTML = DEVS.map(function (d) {
+    var n = ITEMS.filter(function (x) { return x.dev === d; }).length;
+    return '<button type="button" class="dev" data-dev="' + d + '" aria-pressed="' + (state.dev === d) + '"><svg viewBox="0 0 30 30" aria-hidden="true">' + GLYPH[d] + '</svg><span><b>' + esc(DEV[d].n) + '</b><small>' + n + ' ' + plural(n, 'цена', 'цены', 'цен') + '</small></span></button>';
+  }).join('');
+}
+$('#devs').addEventListener('click', function (e) {
+  var b = e.target.closest('[data-dev]'); if (!b) return;
+  pickDevice(b.getAttribute('data-dev'), true);
+});
+function pickDevice(d, scroll) {
+  if (state.dev !== d) { state.dev = d; state.mkey = null; state.sel = []; $('#m-filter').value = ''; }
+  var ms = modelsFor(d);
+  if (ms.length === 1) state.mkey = ms[0].key;
+  save(); renderAll();
+  if (scroll) scrollToStep(state.mkey != null ? '#st3' : '#st2');
+}
+function scrollToStep(sel) {
+  if (window.innerWidth >= 1000) return;
+  var el = $(sel); if (!el) return;
+  var y = el.getBoundingClientRect().top + window.pageYOffset - 12;
+  window.scrollTo({ top: y, behavior: reduce() ? 'auto' : 'smooth' });
+}
+function reduce() { try { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } }
+
+/* ---------- step 2 ---------- */
+function renderModels() {
+  var st2 = $('#st2');
+  if (!state.dev) { st2.classList.add('lock'); $('#st2-lock').hidden = false; $('#st2-sel').textContent = ''; return; }
+  var ms = modelsFor(state.dev);
+  st2.classList.remove('lock'); $('#st2-lock').hidden = true;
+  st2.classList.toggle('done', state.mkey != null);
+  var cm = curModel();
+  $('#st2-sel').innerHTML = cm ? esc(ms.length === 1 ? 'Любая модель' : deviceName(state.dev, cm.brand, cm.model)) : '';
+  var filt = $('#m-filter');
+  filt.hidden = ms.length < 14;
+  filt.placeholder = state.dev === 'iphone' ? 'Найти модель, например 13 Pro' : 'Найти модель';
+  var fq = norm(filt.value);
+  var html = '', lastGen = null;
+  var group = state.dev === 'iphone' || state.dev === 'ipad' || state.dev === 'macbook';
+  ms.forEach(function (m) {
+    var label = chipLabel(state.dev, m, ms);
+    if (fq && norm(label + ' ' + m.brand).indexOf(fq) < 0) return;
+    if (group && !fq) {
+      var g = m.model ? genOf(state.dev, m.model) : 'Не нашли свою';
+      if (g !== lastGen) { html += '<span class="gen">' + esc(g) + '</span>'; lastGen = g; }
+    } else if ((state.dev === 'android' || state.dev === 'laptop') && !fq) {
+      var g2 = m.brand || 'Не нашли свой';
+      if (g2 !== lastGen && ms.filter(function (o) { return o.brand === m.brand; }).length > 1) { html += '<span class="gen">' + esc(g2) + '</span>'; }
+      lastGen = g2;
+    }
+    var ghost = !m.model && (!m.brand || (state.dev !== 'android' && state.dev !== 'laptop'));
+    html += '<button type="button" class="chip' + (ghost ? ' ghost' : '') + '" data-m="' + esc(m.key) + '" aria-pressed="' + (state.mkey === m.key) + '">' + esc(label) + '</button>';
+  });
+  if (!html) html = '<p class="lock-n">Такой модели нет в прайсе — выберите «Другая модель» или спросите в WhatsApp.</p>';
+  $('#models').innerHTML = html;
+}
+$('#models').addEventListener('click', function (e) {
+  var b = e.target.closest('[data-m]'); if (!b) return;
+  var k = b.getAttribute('data-m');
+  if (state.mkey !== k) { state.mkey = k; state.sel = []; }
+  save(); renderAll(); scrollToStep('#st3');
+});
+$('#m-filter').addEventListener('input', renderModels);
+
+/* ---------- step 3 ---------- */
+function rowHtml(x, opts) {
+  opts = opts || {};
+  var on = state.sel.indexOf(x.id) >= 0;
+  var meta = opts.meta != null ? opts.meta : (x.d || '');
+  return '<button type="button" class="row" data-id="' + x.id + '" aria-pressed="' + on + '">' +
+    '<span class="ic">' + icon(x.f) + '</span>' +
+    '<span><span class="t">' + (opts.title || esc(x.t)) + (opts.general ? '<span class="tagg">общая цена</span>' : '') + '</span>' + (meta ? '<span class="m">' + esc(meta) + '</span>' : '') + '</span>' +
+    '<span class="pr">' + rub(x.p) + '<span class="add" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="' + (on ? 'M3.5 8.5l3 3 6-7' : 'M8 3v10M3 8h10') + '"/></svg></span></span></button>';
+}
+function shortT(x) {
+  var s = ' ' + x.t + ' ';
+  if (x.model) s = s.split(' ' + x.model + ' ').join(' ');
+  s = s.replace(/\s(iPhone|iPad|MacBook|iMac|Apple Watch|Android)(?=\s)/g, ' ');
+  if (x.brand) s = s.split(' ' + x.brand + ' ').join(' ');
+  s = s.replace(/\sноутбука(?=\s)/g, ' ').replace(/\s+/g, ' ').trim();
+  if (s.split(' ').length < 2) return x.t;
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+function renderFaults() {
+  var st3 = $('#st3'), cm = curModel();
+  if (!cm) { st3.classList.add('lock'); st3.classList.remove('done'); $('#st3-lock').hidden = false; $('#st3-sel').textContent = ''; return; }
+  st3.classList.remove('lock'); $('#st3-lock').hidden = true;
+  var rows = rowsFor(state.dev, cm.brand, cm.model);
+  var nSel = state.sel.length;
+  st3.classList.toggle('done', nSel > 0);
+  $('#st3-sel').textContent = nSel ? 'выбрано: ' + nSel : '';
+  $('#faults').innerHTML = rows.map(function (r) { return rowHtml(r.x, { general: r.general, title: esc(shortT(r.x)) }); }).join('') || '<p class="s-none">Для этой модели в прайсе нет строк — спросите мастера.</p>';
+  var anyGen = rows.some(function (r) { return r.general; });
+  $('#f-note').textContent = anyGen ? '«Общая цена» — строка прайса для всех моделей; для вашей мастер уточнит.' : '';
+  $('#f-note').hidden = !anyGen;
+  var dn = deviceName(state.dev, cm.brand, cm.model);
+  $('#f-ask').href = wa('Здравствуйте! У меня ' + dn + '. Проблема: … Сколько будет стоить ремонт? Могу прислать фото.');
+}
+function toggleRow(id, fromSearch) {
+  var x = BY_ID[id]; if (!x) return;
+  var key = x.brand + '|' + x.model;
+  if (state.dev !== x.dev || (fromSearch && state.mkey !== key && !inCurrent(x))) {
+    var switched = state.dev && (state.sel.length > 0);
+    state.dev = x.dev; state.mkey = key; state.sel = [];
+    if (modelsFor(x.dev).length === 1) state.mkey = modelsFor(x.dev)[0].key;
+    if (switched) toast('Заявка теперь для: ' + deviceName(x.dev, x.brand, x.model));
+  }
+  var i = state.sel.indexOf(id);
+  if (i >= 0) state.sel.splice(i, 1); else { state.sel.push(id); if (fromSearch) toast('Добавлено в заявку: ' + rub(x.p)); }
+  save(); renderAll(true);
+}
+function inCurrent(x) {
+  var cm = curModel(); if (!cm || state.dev !== x.dev) return false;
+  return rowsFor(state.dev, cm.brand, cm.model).some(function (r) { return r.x.id === x.id; });
+}
+document.addEventListener('click', function (e) {
+  var b = e.target.closest('.row[data-id]'); if (!b) return;
+  var fromSearch = !!b.closest('#s-list');
+  b.classList.remove('pop'); void b.offsetWidth; b.classList.add('pop');
+  toggleRow(b.getAttribute('data-id'), fromSearch);
+});
+
+/* ---------- search ---------- */
+var CYR = { 'айфон': 'iphone', 'ифон': 'iphone', 'айпад': 'ipad', 'макбук': 'macbook', 'аймак': 'imac', 'самсунг': 'samsung', 'галакси': 'galaxy', 'ксиоми': 'xiaomi', 'сяоми': 'xiaomi', 'редми': 'redmi', 'хуавей': 'huawei', 'хонор': 'honor', 'виво': 'vivo', 'оппо': 'oppo', 'техно': 'tecno', 'текно': 'tecno', 'реалми': 'realme', 'леново': 'lenovo', 'асус': 'asus', 'асер': 'acer', 'делл': 'dell', 'тошиба': 'toshiba', 'про': 'pro', 'макс': 'max', 'мини': 'mini', 'плюс': 'plus', 'эйр': 'air', 'аир': 'air', 'ультра': 'ultra', 'хр': 'xr', 'хс': 'xs', 'се': 'se' };
+function stem(w) { if (/^\d/.test(w) || /^[a-z]/.test(w)) return w; return w.length > 6 ? w.slice(0, w.length - 2) : w.length > 4 ? w.slice(0, w.length - 1) : w; }
+function qWords(q) { return norm(q).split(' ').filter(Boolean).map(function (w) { return CYR[w] || w; }); }
+function search(q) {
+  var ws = qWords(q); if (!ws.length) return [];
+  var out = [];
+  for (var i = 0; i < ITEMS.length; i++) {
+    var x = ITEMS[i], ok = true;
+    for (var j = 0; j < ws.length && ok; j++) {
+      var w = ws[j], s = stem(w), hit = false;
+      for (var k = 0; k < x.hay.length; k++) { var h = x.hay[k]; if (/^\d/.test(w) ? h === w : h.indexOf(s) === 0) { hit = true; break; } }
+      ok = hit;
+    }
+    if (!ok) continue;
+    var extra = x.mt.filter(function (t) { return ws.indexOf(t) < 0; }).length;
+    var score = -extra * 2 + (x.top ? 3 - x.top / 10 : 0) + (x.model ? 0 : -0.5);
+    out.push({ x: x, s: score });
+  }
+  out.sort(function (a, b) { return b.s - a.s || DEV_ORDER.indexOf(a.x.dev) - DEV_ORDER.indexOf(b.x.dev) || (a.x.p || 0) - (b.x.p || 0); });
+  return out.map(function (o) { return o.x; });
+}
+function hl(t, ws) {
+  var h = esc(t);
+  ws.forEach(function (w) {
+    var s = stem(w); if (s.length < 2 && !/^\d/.test(s)) return;
+    var re = new RegExp('(^|[\\s(/])(' + s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + (/^\d/.test(s) ? '(?![\\d])' : '') + ')', 'gi');
+    h = h.replace(re, '$1<mark>$2</mark>');
+  });
+  return h;
+}
+var shown = 8, sTimer;
+function renderSearch() {
+  var q = state.q.trim(), box = $('#s-res');
+  $('#q-clear').hidden = !q;
+  if (!q) { box.hidden = true; return; }
+  var res = search(q), ws = qWords(q);
+  box.hidden = false;
+  if (!res.length) {
+    $('#s-head').textContent = 'Ничего не нашли';
+    $('#s-list').innerHTML = '<div class="s-none">В прайсе нет «' + esc(q) + '». Напишите мастеру — он подскажет цену для вашей модели.<br><a class="btn btn-ink" target="_blank" rel="noopener" href="' + esc(wa('Здравствуйте! Сколько стоит: ' + q + '?')) + '">Спросить в WhatsApp</a></div>';
+    return;
+  }
+  $('#s-head').innerHTML = '<span>Найдено: ' + res.length + ' ' + plural(res.length, 'позиция', 'позиции', 'позиций') + '</span><span>нажмите, чтобы добавить</span>';
+  var html = res.slice(0, shown).map(function (x) { return rowHtml(x, { title: hl(x.t, ws), meta: x.cat }); }).join('');
+  if (res.length > shown) html += '<button type="button" class="more-btn" id="s-more">Показать ещё ' + Math.min(8, res.length - shown) + ' из ' + (res.length - shown) + '</button>';
+  $('#s-list').innerHTML = html;
+}
+$('#q').addEventListener('input', function () { state.q = this.value; shown = 8; clearTimeout(sTimer); sTimer = setTimeout(renderSearch, 60); });
+$('#q-clear').addEventListener('click', function () { state.q = ''; $('#q').value = ''; renderSearch(); $('#q').focus(); });
+$('#s-res').addEventListener('click', function (e) { if (e.target.closest('#s-more')) { shown += 8; renderSearch(); } });
+var TRY = ['13 Pro аккумулятор', 'экран 15', 'MacBook Air M1', 'после воды', 'Galaxy A56'];
+$('#s-try').insertAdjacentHTML('beforeend', TRY.map(function (t) { return '<button type="button" data-try="' + esc(t) + '">' + esc(t) + '</button>'; }).join(''));
+$('#s-try').addEventListener('click', function (e) { var b = e.target.closest('[data-try]'); if (!b) return; setQuery(b.getAttribute('data-try')); });
+function setQuery(t) { state.q = t; $('#q').value = t; shown = 8; renderSearch(); }
+
+/* hero hotspots */
+$$('.ly').forEach(function (g) {
+  var go = function () {
+    setQuery(g.getAttribute('data-q'));
+    var y = $('#finder .search').getBoundingClientRect().top + window.pageYOffset - 16;
+    window.scrollTo({ top: y, behavior: reduce() ? 'auto' : 'smooth' });
+  };
+  g.addEventListener('click', go);
+  g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+});
+$$('[data-cnt]').forEach(function (t) { var n = count(t.getAttribute('data-cnt')); t.textContent = n + ' ' + plural(n, 'цена', 'цены', 'цен') + ' →'; });
+
+/* ---------- ticket ---------- */
+function upcomingDays() {
+  var now = mskNow(), out = [], mins = now.getHours() * 60 + now.getMinutes();
+  for (var i = 0; i < 9 && out.length < 5; i++) {
+    var dt = new Date(now.getTime() + i * 86400000), d = (dt.getDay() + 6) % 7, ivs = (BIZ.hours || [])[d] || [];
+    if (!ivs.length) continue;
+    if (i === 0 && !ivs.some(function (iv) { return mins < m2(iv[1]) - 60; })) continue;
+    var dd = dt.getDate() + ' ' + MON_G[dt.getMonth()];
+    out.push({ key: dt.getFullYear() + '-' + (dt.getMonth() + 1) + '-' + dt.getDate(), btn: i === 0 ? 'Сегодня' : i === 1 ? 'Завтра' : DAY_SH[d] + ', ' + dt.getDate(), msg: (i === 0 ? 'сегодня' : i === 1 ? 'завтра' : DAY_ACC[d]) + ', ' + dd + ' (' + ivs.map(function (v) { return v[0] + '–' + v[1]; }).join(', ') + ')' });
+  }
+  return out;
+}
+var DAYS = [];
+function renderDays() {
+  DAYS = upcomingDays();
+  if (state.day && !DAYS.some(function (d) { return d.key === state.day; })) state.day = null;
+  $('#days').innerHTML = DAYS.map(function (d) { return '<button type="button" data-day="' + d.key + '" aria-pressed="' + (state.day === d.key) + '">' + esc(d.btn) + '</button>'; }).join('');
+}
+$('#days').addEventListener('click', function (e) {
+  var b = e.target.closest('[data-day]'); if (!b) return;
+  var k = b.getAttribute('data-day'); state.day = state.day === k ? null : k;
+  renderDays(); renderSend();
+});
+$('#note').value = state.note;
+$('#note').addEventListener('input', function () { state.note = this.value.slice(0, 400); save(); renderSend(); });
+
+var lastSum = -1;
+function selItems() { return state.sel.map(function (id) { return BY_ID[id]; }).filter(Boolean); }
+function generalSet() {
+  var cm = curModel(), g = {};
+  if (!cm) return g;
+  rowsFor(state.dev, cm.brand, cm.model).forEach(function (r) { if (r.general) g[r.x.id] = 1; });
+  return g;
+}
+function renderTicket(bump) {
+  var cm = curModel(), its = selItems(), gs = generalSet();
+  var dn = state.dev ? (cm ? deviceName(state.dev, cm.brand, cm.model) : DEV[state.dev].n + ' · выберите модель') : 'Устройство не выбрано';
+  var td = $('#t-dev'); td.textContent = dn; td.classList.toggle('empty', !cm);
+  $('#t-count').textContent = its.length + ' ' + plural(its.length, 'работа', 'работы', 'работ');
+  $('#t-list').innerHTML = its.map(function (x) {
+    return '<li><span>' + esc(x.t) + (gs[x.id] ? '<span class="g">общая цена прайса — уточнит мастер</span>' : '') + '</span><span class="p">' + rub(x.p) + '</span><button type="button" class="x" data-rm="' + x.id + '" aria-label="Убрать: ' + esc(x.t) + '"><svg viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8"/></svg></button></li>';
+  }).join('');
+  $('#t-empty').hidden = its.length > 0;
+  var sum = its.reduce(function (s, x) { return s + (x.p || 0); }, 0);
+  var sb = $('#t-sum'); sb.textContent = rub(sum);
+  if (bump && sum !== lastSum) { sb.classList.remove('bump'); void sb.offsetWidth; sb.classList.add('bump'); }
+  lastSum = sum;
+  renderSend();
+}
+$('#t-list').addEventListener('click', function (e) {
+  var b = e.target.closest('[data-rm]'); if (!b) return;
+  var i = state.sel.indexOf(b.getAttribute('data-rm')); if (i >= 0) state.sel.splice(i, 1);
+  save(); renderAll(true);
+});
+function message() {
+  var cm = curModel(), its = selItems(), gs = generalSet();
+  var L = ['Здравствуйте! Хочу записаться на ремонт в X-Repair.', ''];
+  if (state.dev) L.push('Устройство: ' + (cm ? deviceName(state.dev, cm.brand, cm.model) : DEV[state.dev].n));
+  if (its.length) {
+    L.push(its.length > 1 ? 'Что нужно сделать:' : 'Что нужно сделать:');
+    its.forEach(function (x) { L.push('• ' + x.t + ' — ' + rub(x.p) + (gs[x.id] ? ' (общая цена из прайса, уточните для моей модели)' : '')); });
+    if (its.length > 1) L.push('Итого по прайсу: ' + rub(its.reduce(function (s, x) { return s + (x.p || 0); }, 0)));
+  } else L.push('Что случилось: опишу в чате.');
+  var d = DAYS.filter(function (x) { return x.key === state.day; })[0];
+  L.push('');
+  if (d) L.push('Удобно прийти: ' + d.msg);
+  if (state.note.trim()) L.push('Что происходит: ' + state.note.trim());
+  L.push('Подскажите, пожалуйста, когда можно подъехать?');
+  return L.join('\n');
+}
+function renderSend() {
+  var its = selItems(), sum = its.reduce(function (s, x) { return s + (x.p || 0); }, 0);
+  $('#send').href = wa(message());
+  $('#send-t').textContent = its.length ? 'Записаться на ремонт · ' + rub(sum) : 'Записаться на ремонт';
+  var bt = $('#bar-t'), bm = $('#bar-main');
+  if (its.length) { bt.textContent = 'Заявка · ' + its.length + ' · ' + rub(sum); bm.setAttribute('href', '#ticket'); }
+  else { bt.textContent = 'Узнать цену ремонта'; bm.setAttribute('href', '#finder'); }
+}
+
+function renderAll(bump) {
+  $$('#devs .dev').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-dev') === state.dev)); });
+  $('#st1').classList.toggle('done', !!state.dev);
+  $('#st1-sel').textContent = state.dev ? DEV[state.dev].n : '';
+  renderModels(); renderFaults(); renderTicket(bump);
+  if (state.q) renderSearch();
+}
+
+/* ---------- price list (lazy) ---------- */
+function renderPriceList() {
+  var half = Math.ceil(CATS.length / 2);
+  var col = function (arr) {
+    return '<div class="pl-col">' + arr.map(function (c) {
+      var n = c.items.length;
+      var ps = c.items.map(function (i) { return i.p; }).filter(function (p) { return typeof p === 'number'; });
+      var range = ps.length ? (Math.min.apply(null, ps) === Math.max.apply(null, ps) ? rub(ps[0]) : num(Math.min.apply(null, ps)) + '–' + rub(Math.max.apply(null, ps))) : '';
+      return '<details data-ci="' + c.ci + '"><summary><span class="pm" aria-hidden="true"></span><span>' + esc(c.name) + '</span><span class="c">' + n + ' · ' + range + '</span></summary><div class="pl-items"></div></details>';
+    }).join('') + '</div>';
+  };
+  $('#plist').innerHTML = col(CATS.slice(0, half)) + col(CATS.slice(half));
+  $('#pl-all').textContent = 'Показать все ' + CATS.length + ' ' + plural(CATS.length, 'раздел', 'раздела', 'разделов');
+  $('#pl-all').addEventListener('click', function () { $('#plist').classList.remove('cut'); this.hidden = true; });
+  $$('#plist details').forEach(function (d) {
+    d.addEventListener('toggle', function () { if (d.open && !d._r) { d._r = 1; fillCat(d, 10); } });
+  });
+}
+function fillCat(d, lim) {
+  var c = CATS.filter(function (x) { return String(x.ci) === d.getAttribute('data-ci'); })[0];
+  var box = $('.pl-items', d);
+  box.innerHTML = c.items.slice(0, lim).map(function (i) { return '<div class="pl-it"><span>' + esc(i.t) + (i.v ? ' <span class="tagg">' + esc(i.v) + '</span>' : '') + '</span><span class="p">' + rub(typeof i.p === 'number' ? i.p : null) + '</span></div>'; }).join('') +
+    (c.items.length > lim ? '<button type="button" class="pl-more">Показать ещё ' + (c.items.length - lim) + '</button>' : '');
+  var mb = $('.pl-more', box); if (mb) mb.addEventListener('click', function () { fillCat(d, lim + 40); });
+}
+
+/* ---------- extras ---------- */
+function renderExtras() {
+  var F = {}; (BIZ.features || []).forEach(function (f) { F[f.k] = f.v; });
+  var keys = ['ремонт дронов и квадрокоптеров', 'ремонт игровых приставок и аксессуаров', 'ремонт мониторов', 'ремонт оборудования для майнинга', 'сборка компьютеров', 'восстановление данных', 'замена стекла на часах', 'сервисное обслуживание', 'гарантия', 'предварительная запись', 'Wi-Fi', 'Можно с собакой', 'лифт'];
+  var tags = keys.filter(function (k) { return F[k] === true; }).map(function (k) { return k.charAt(0).toUpperCase() + k.slice(1); });
+  if ((BIZ.categories || []).some(function (c) { return /фотоаппарат/i.test(c); })) tags.splice(4, 0, 'Ремонт фотоаппаратов');
+  $('#extras').innerHTML = tags.map(function (t) { return '<span>' + esc(t) + '</span>'; }).join('');
+  var pay = String(F['способ оплаты'] || '').split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+  var pl = pay.join(', '); $('#pay').textContent = pl.charAt(0).toUpperCase() + pl.slice(1) + '.';
+  $('#pops').innerHTML = (BIZ.top || []).slice(0, 10).map(function (t, i) {
+    return '<li><button type="button" data-pop="' + esc(t.t) + '"><span class="k">' + String(i + 1).padStart(2, '0') + '</span><span>' + esc(t.t) + '</span><span class="p">' + rub(t.p) + '</span></button></li>';
+  }).join('');
+  $('#pops').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-pop]'); if (!b) return;
+    var x = ITEMS.filter(function (i) { return i.t === b.getAttribute('data-pop'); })[0];
+    if (!x) return;
+    if (state.sel.indexOf(x.id) < 0) toggleRow(x.id, true); else toast('Уже в заявке');
+    var t = $('#ticket'); window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset - 12, behavior: reduce() ? 'auto' : 'smooth' });
+  });
+  var cnt = ITEMS.length;
+  $('#sp-n').textContent = cnt; $('#p-n').textContent = cnt;
+  $('#sp-c').textContent = CATS.length;
+  var diag = ITEMS.filter(function (x) { return x.f === 'diag' && x.p != null; }).map(function (x) { return x.p; });
+  if (diag.length) $('#sp-min').textContent = rub(Math.min.apply(null, diag)); else $('#sp-min').parentNode.hidden = true;
+}
+
+/* ---------- reviews ---------- */
+var REVIEWS = [
+  { a: 'Александр С.', d: 'февраль 2023', x: '…Обзвонил 4-5 сервисов, здесь лучшая цена, доп услуг не навязывали. iPhone 13 про макс перестал заряжаться, в другом сервисе после диагностики захотели 21 тр, здесь сделали за 9 тр.' },
+  { a: 'Татьяна Т.', d: 'январь 2024', x: 'Павел - золотых рук мастер. В двух сервисных центрах не смогли ничего сделать (айфон заблокировался), уже я потеряла надежду. … 15-20 минут и телефон работал. Рекомендую.' },
+  { a: 'Arseniy K.', d: 'сентябрь 2021', x: '…Был приятно удивлен, что сроки ремонта были быстрей, чем заранее запланированные. И цена была той же, что мы обговаривали перед ремонтом.' },
+  { a: 'Баграт Б.', d: 'февраль 2019', x: 'Очень адекватные ребята. Поменяли экран очень быстро. Плюс убрали пыль бесплатнл, динамики тоже почистили. И главное без всякого давайте 100₽ за это и еще за это 150₽.' },
+  { a: 'Роман Б.', d: 'июнь 2025', x: 'Замечательный сервис. Принёс ноутбук с вырванным коннектором. Был испорчен тесктолит. Другие сервисы просили большие деньги, здесь за не большую сумму и пару часов всё сделали. Спасибо большое!' },
+  { a: 'Ирина М.', d: 'октябрь 2024', x: 'Я довольна ремонтом ноутбука. Утром отдала и просила сделать побыстрее. Всё сделали к вечеру. Обслуживание вежливое, ноутбук работает.' }
+];
+function renderReviews() {
+  var A = BIZ.aspects || [];
+  var aspName = { 'Время ожидания': 'время ожидания', 'Качество товаров': 'качество', 'Замена дисплея': 'замену дисплея', 'Замена аккумулятора': 'замену аккумулятора', 'Диагностика': 'диагностику' };
+  $('#asp').innerHTML = A.slice(0, 5).map(function (a) {
+    var pct = a.count ? Math.round(a.positive / a.count * 100) : 0;
+    return '<div><b>' + a.positive + '</b><span>хвалят ' + esc(aspName[a.text] || a.text.toLowerCase()) + '</span><small>из ' + a.count + ' ' + plural(a.count, 'упоминания', 'упоминаний', 'упоминаний') + '</small><div class="bar" aria-hidden="true"><i style="width:' + pct + '%"></i></div></div>';
+  }).join('');
+  $('#r-sub').textContent = ratingText + ' · ' + BIZ.rating.count + ' ' + plural(BIZ.rating.count, 'оценка', 'оценки', 'оценок') + ' и ' + BIZ.rating.reviews + ' ' + plural(BIZ.rating.reviews, 'отзыв', 'отзыва', 'отзывов') + ' на Яндекс Картах. Гости пишут, что цену называют заранее и после ремонта она не меняется.';
+  $('#revs').innerHTML = REVIEWS.map(function (r) {
+    return '<figure class="rev"><div class="st" aria-label="5 из 5">' + stars(5) + '</div><q>' + esc(r.x) + '</q><figcaption class="who"><span class="av" aria-hidden="true">' + esc(r.a.charAt(0)) + '</span><span>' + esc(r.a) + '<small>отзыв на Яндекс Картах · ' + esc(r.d) + '</small></span></figcaption></figure>';
+  }).join('');
+  $('#rev-note').textContent = BIZ.rating.reviews + ' ' + plural(BIZ.rating.reviews, 'отзыв', 'отзыва', 'отзывов') + ', показаны выдержки';
+}
+
+/* ---------- pause animation off-screen ---------- */
+if ('IntersectionObserver' in window) {
+  var xp = $('#xp');
+  new IntersectionObserver(function (es) { xp.classList.toggle('paused', !es[0].isIntersecting); }).observe(xp);
+}
+
+renderFacts(); renderDevs(); renderDays(); renderPriceList(); renderExtras(); renderReviews(); renderAll(false);
+setInterval(function () { var st = openStatus(), el = $('#status'); if (st) { el.classList.toggle('on', st.open); $('span', el).textContent = st.text; } }, 60000);
+
+window.XR = { state: state, message: message, search: search, rowsFor: rowsFor, modelsFor: modelsFor };
+})();
+</script>
+<script src="../map-fix.js" defer></script>
+</body>
+</html>

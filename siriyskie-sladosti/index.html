@@ -1,0 +1,1021 @@
+<!doctype html>
+<!--
+  CONCEPT — «Сирийские сладости, арабское кофе», Манежная площадь, 1с2 (демо-концепт)
+  1. Идея: «Уголок Сирии на Манежной» — слова гостя из отзыва. Крошечная точка у «Охотного Ряда»,
+     где варят кофе с кардамоном на песке и угощают разной пахлавой. Прайса в карточке нет,
+     поэтому сайт честно не называет цен, а превращает вопрос «что сегодня есть и сколько стоит?»
+     в готовое сообщение продавцу.
+  2. Фирменный модуль: «Соберите поднос». Гость отмечает пахлаву / другие сладости / кофе на песке /
+     чай, повод и сколько их, выбирает одну из трёх точек с этим номером и время прихода. Латунный
+     поднос наполняется ромбиками пахлавы и чашками кофе, а внизу собирается текст в WhatsApp:
+     «что сегодня есть, сколько будет стоить, можно отложить к 18:00?». RU/AR, сообщение на языке гостя.
+     В герое — джезва (ركوة) в горячем песке: нажмите — пенка поднимается.
+  3. Арт-дирекшн: дамасская лавка сладостей при дневном свете — сливочный фон, фисташковый
+     (главный акцент), розовая вода и тёплое золото для орнамента. Alegreya (каллиграфичный курсив
+     для заголовков) + Commissioner для текста, Amiri для арабского. Мотив — ромб пахлавы:
+     решётка ромбов как паттерн, ромбическая рамка героя, ромбы-разделители.
+-->
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FBF5EA">
+<title>Сирийские сладости и кофе на песке — Манежная площадь, 1с2 (демо)</title>
+<meta name="description" content="Демо-концепт сайта точки «Сирийские сладости, арабское кофе» у метро «Охотный Ряд»: пахлава, кофе с кардамоном на песке, вопрос продавцу в WhatsApp в один тап. Ежедневно 10:00–22:00.">
+<meta property="og:title" content="«Уголок Сирии на Манежной» — сирийские сладости и кофе на песке (демо)">
+<meta property="og:description" content="Пахлава и кофе с кардамоном на песке у «Охотного Ряда». Соберите поднос — продавец ответит в WhatsApp. Демо-концепт сайта, RU/AR.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://kyan9400.github.io/demo/siriyskie-sladosti/">
+<meta property="og:image" content="https://kyan9400.github.io/demo/siriyskie-sladosti/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23FBF5EA'/%3E%3Cpath d='M32 8 56 32 32 56 8 32z' fill='%23D8A84A'/%3E%3Cpath d='M32 17 47 32 32 47 17 32z' fill='%23F1D48C'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%234A6A22'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,500;1,700;1,800&family=Commissioner:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<script>try{var L0=new URLSearchParams(location.search).get('lang')||localStorage.getItem('ssl-lang');if(L0==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl';}}catch(e){}</script>
+<style>
+:root{
+  --cream:#FBF5EA; --paper:#FFFBF3; --sand:#F1E4CB; --sand-2:#E6D2AE;
+  --ink:#33231A; --muted:#6B5646; --line:rgba(51,35,26,.14); --line-2:rgba(51,35,26,.07);
+  --pist:#4A6A22; --pist-d:#3A551A; --pist-m:#7E9B4A; --pist-l:#E4EBD2;
+  --rose:#C45A6E; --rose-t:#A23F55; --rose-l:#F7E3E4;
+  --gold:#C9973F; --gold-l:#F1D48C; --gold-t:#86601C;
+  --copper:#A6542E; --copper-d:#7C3B1F;
+  --serif:'Alegreya', Georgia, 'Times New Roman', serif;
+  --sans:'Commissioner', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --r:20px;
+}
+[dir=rtl]{ --serif:'Amiri', 'Alegreya', serif; --sans:'Amiri', 'Commissioner', system-ui, sans-serif; }
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 16px/1.55 var(--sans);overflow-x:hidden;padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+[dir=rtl] body{font-size:18px;line-height:1.7}
+@media (min-width:900px){body{padding-bottom:0}}
+svg{display:block;max-width:100%}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--rose-t);outline-offset:3px;border-radius:8px}
+.wrap{width:100%;max-width:1180px;margin-inline:auto;padding-inline:20px}
+@media (min-width:768px){.wrap{padding-inline:32px}}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+bdi{unicode-bidi:isolate}
+[dir=rtl] [lang=ru]{font-family:'Commissioner',system-ui,sans-serif}
+[dir=rtl] .q blockquote[lang=ru],[dir=rtl] .br h3[lang=ru],[dir=rtl] .addr [lang=ru],[dir=rtl] .mq-track span[lang=ru]{font-family:'Alegreya',Georgia,serif}
+[dir=rtl] .q blockquote[lang=ru],[dir=rtl] .mq-track span[lang=ru]{font-style:italic}
+
+/* demo bar */
+.demo{font-size:12.5px;line-height:1.4;text-align:center;padding:7px 16px;background:var(--pist-d);color:#EEF2E2}
+[dir=rtl] .demo{font-size:13px}
+
+/* header */
+.hdr{border-bottom:1px solid var(--line);background:var(--cream)}
+.hdr .wrap{display:flex;align-items:center;gap:14px;min-height:66px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-inline-end:auto;min-width:0}
+.brand svg{width:34px;height:34px;flex:none}
+.brand b{display:block;font:800 21px/1.05 var(--serif);font-style:italic;white-space:nowrap}
+.brand small{display:block;font:600 11px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-t);white-space:nowrap}
+[dir=rtl] .brand b{font-style:normal;font-size:22px}
+[dir=rtl] .brand small{letter-spacing:0;font-size:13px;text-transform:none}
+.nav{display:none;gap:24px}
+.nav a{font-size:14.5px;font-weight:600;text-decoration:none;color:var(--muted);padding:10px 0}
+.nav a:hover{color:var(--pist)}
+[dir=rtl] .nav a{font-size:17px}
+.pill{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;white-space:nowrap}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--pist-m);box-shadow:0 0 0 4px rgba(126,155,74,.2);flex:none}
+.pill.closed i{background:var(--rose);box-shadow:0 0 0 4px rgba(196,90,110,.16)}
+.hdr .pill{display:none}
+.lang{min-height:44px;min-width:44px;padding:0 14px;border:1px solid var(--line);background:var(--paper);border-radius:999px;font-weight:700;font-size:14px;cursor:pointer;flex:none}
+.lang:hover{border-color:var(--pist);color:var(--pist)}
+.lang[lang=ar]{font-family:'Amiri',serif;font-size:17px}
+@media (min-width:980px){.nav{display:flex}.hdr .pill{display:inline-flex}}
+@media (max-width:359px){.brand small{display:none}.brand b{font-size:19px}}
+
+/* lattice background */
+.lattice{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='36' viewBox='0 0 56 36'%3E%3Cpath d='M28 0 56 18 28 36 0 18z' fill='none' stroke='%23C9973F' stroke-opacity='.22'/%3E%3Ccircle cx='28' cy='18' r='1.6' fill='%237E9B4A' fill-opacity='.35'/%3E%3C/svg%3E")}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:26px 0 34px}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,#000,transparent 75%);mask-image:linear-gradient(180deg,#000,transparent 75%);opacity:.9}
+.hero .wrap{position:relative;display:grid;gap:12px}
+.kicker{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;font:600 12.5px/1.35 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--gold-t)}
+[dir=rtl] .kicker{letter-spacing:0;text-transform:none;font-size:15px}
+.kicker .dm{width:7px;height:7px;background:var(--rose);transform:rotate(45deg);flex:none}
+.h1{font:800 clamp(44px,12.6vw,104px)/.92 var(--serif);font-style:italic;letter-spacing:-.02em;margin:14px 0 0}
+.h1 span{display:block}
+.h1 em{color:var(--pist);font-style:italic}
+[dir=rtl] .h1{font-style:normal;font-weight:700;letter-spacing:0;line-height:1.25;font-size:clamp(40px,11vw,86px)}
+[dir=rtl] .h1 em{font-style:normal}
+.whose{margin:12px 0 0;font-size:14px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.whose::before{content:"";width:22px;height:1.5px;background:var(--gold);flex:none}
+[dir=rtl] .whose{font-size:16px}
+.lead{font-size:17.5px;line-height:1.6;color:var(--muted);max-width:32em;margin:16px 0 0}
+.lead b{color:var(--ink);font-weight:600}
+[dir=rtl] .lead{font-size:20px}
+.rate{display:inline-flex;align-items:center;gap:12px;margin-top:20px;text-decoration:none;padding:10px 16px 10px 12px;border-radius:16px;background:var(--paper);border:1px solid var(--line);min-height:44px;max-width:100%}
+.rate .num{font:800 30px/1 var(--serif)}
+.stars{position:relative;display:inline-block;font-size:14px;letter-spacing:2px;line-height:1;color:var(--sand-2)}
+.stars b{position:absolute;inset-inline-start:0;top:0;overflow:hidden;white-space:nowrap;color:var(--gold);font-weight:400}
+.rate small{display:block;font-size:13px;color:var(--muted);line-height:1.35;margin-top:3px}
+[dir=rtl] .rate small{font-size:15px}
+.rate:hover{border-color:var(--gold)}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:0 22px;border-radius:999px;border:1.5px solid transparent;font-weight:700;font-size:15.5px;text-decoration:none;cursor:pointer;transition:transform .15s ease,background .2s,border-color .2s,color .2s;text-align:center}
+[dir=rtl] .btn{font-size:18px}
+.btn:active{transform:scale(.97)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn.pri{background:var(--pist);color:#fff}
+.btn.pri:hover{background:var(--pist-d)}
+.btn.out{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn.out:hover{background:var(--ink);color:var(--cream)}
+.metro{display:flex;flex-wrap:wrap;gap:8px 16px;margin:22px 0 0;padding:0;list-style:none;font-size:14.5px}
+.metro li{display:inline-flex;align-items:center;gap:7px}
+.metro i{width:10px;height:10px;border-radius:50%;flex:none}
+.metro span{color:var(--muted)}
+[dir=rtl] .metro{font-size:16px}
+
+/* hero art */
+.art{position:relative;margin:6px auto 0;width:min(100%,520px)}
+.cezve-btn{all:unset;display:block;width:100%;cursor:pointer;border-radius:24px;-webkit-tap-highlight-color:transparent}
+.cezve-btn:focus-visible{outline:3px solid var(--rose-t);outline-offset:4px}
+.art svg{width:100%;height:auto}
+.hint{position:absolute;inset-inline-end:6%;top:9%;font:italic 600 15px/1.2 var(--serif);color:var(--rose-t);display:flex;align-items:center;gap:6px;pointer-events:none}
+[dir=rtl] .hint{font-style:normal;font-size:17px}
+.hint::after{content:"";width:28px;height:1.5px;background:currentColor}
+.steam path{fill:none;stroke:#B9A58C;stroke-width:3;stroke-linecap:round;opacity:0;animation:steam 3.6s ease-in-out infinite}
+.steam path:nth-child(2){animation-delay:1.2s}.steam path:nth-child(3){animation-delay:2.4s}
+@keyframes steam{0%{opacity:0;transform:translateY(10px)}35%{opacity:.75}100%{opacity:0;transform:translateY(-34px)}}
+.foam{transform-box:fill-box;transform-origin:50% 100%;transition:transform .7s cubic-bezier(.3,1.6,.5,1)}
+.boil .foam{transform:scaleY(3.4) translateY(-2px)}
+.bub circle{opacity:0}
+.boil .bub circle{animation:bub 1s ease-out infinite}
+.boil .bub circle:nth-child(2){animation-delay:.3s}.boil .bub circle:nth-child(3){animation-delay:.6s}
+@keyframes bub{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(-14px)}}
+.paused .steam path,.paused .mq-track{animation-play-state:paused}
+
+@media (min-width:900px){
+  .hero{padding:46px 0 60px}
+  .hero .wrap{grid-template-columns:1.08fr .92fr;align-items:center;gap:40px}
+  .art{margin:0}
+}
+
+/* marquee ribbon */
+.mq{background:var(--pist);color:#F4F1E0;overflow:hidden;border-block:1px solid var(--pist-d)}
+.mq-track{display:flex;width:max-content;animation:mq 38s linear infinite}
+[dir=rtl] .mq-track{animation-name:mqr}
+.mq-track span{display:inline-flex;align-items:center;gap:18px;padding:14px 9px;font:italic 700 20px/1 var(--serif);white-space:nowrap}
+.mq-track span[lang=ar]{font:700 22px/1 'Amiri',serif;font-style:normal}
+.mq-track span::after{content:"";width:8px;height:8px;background:var(--gold-l);transform:rotate(45deg)}
+@keyframes mq{to{transform:translateX(-50%)}}
+@keyframes mqr{to{transform:translateX(50%)}}
+
+/* sections */
+.sec{padding:60px 0}
+@media (min-width:900px){.sec{padding:96px 0}}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:700 12.5px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--rose-t);margin:0}
+.eyebrow::before{content:"";width:9px;height:9px;background:currentColor;transform:rotate(45deg)}
+[dir=rtl] .eyebrow{letter-spacing:0;font-size:15px;text-transform:none}
+.h2{font:800 clamp(34px,8.6vw,60px)/1 var(--serif);font-style:italic;letter-spacing:-.015em;margin:12px 0 0}
+.h2 em{color:var(--pist)}
+[dir=rtl] .h2{font-style:normal;font-weight:700;letter-spacing:0;line-height:1.3}
+.sub{font-size:16.5px;color:var(--muted);max-width:36em;margin:14px 0 0}
+[dir=rtl] .sub{font-size:19px}
+.divider{display:flex;justify-content:center;gap:10px;padding:0;margin:0}
+.divider i{width:9px;height:9px;transform:rotate(45deg);background:var(--gold)}
+.divider i:nth-child(2){background:var(--pist-m)}.divider i:nth-child(3){background:var(--rose)}
+
+/* module */
+.mod{background:var(--paper);border-block:1px solid var(--line-2)}
+.mod-grid{display:grid;gap:30px}
+.step{margin-top:26px}
+.step h3{display:flex;align-items:center;gap:10px;font:700 15px/1.3 var(--sans);margin:0 0 12px}
+[dir=rtl] .step h3{font-size:18px}
+.step h3 b{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:8px;transform:rotate(45deg);background:var(--gold-l);font-size:12.5px;flex:none}
+.step h3 b span{transform:rotate(-45deg)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:8px 16px;border-radius:14px;border:1.5px solid var(--line);background:var(--cream);font-weight:600;font-size:15px;cursor:pointer;text-align:start;transition:border-color .2s,background .2s,transform .12s}
+[dir=rtl] .chip{font-size:17px}
+.chip:active{transform:scale(.97)}
+.chip small{display:block;font-weight:500;font-size:12.5px;color:var(--muted);line-height:1.25}
+[dir=rtl] .chip small{font-size:14px}
+.chip .tick{width:20px;height:20px;border-radius:6px;border:1.5px solid var(--line);display:grid;place-items:center;flex:none;background:#fff}
+.chip .tick svg{width:12px;height:12px;opacity:0}
+.chip[aria-pressed=true],.chip[aria-checked=true]{border-color:var(--pist);background:var(--pist-l)}
+.chip[aria-pressed=true] .tick{background:var(--pist);border-color:var(--pist)}
+.chip[aria-pressed=true] .tick svg{opacity:1}
+.chip.big{flex:1 1 100%}
+@media (min-width:520px){.chip.big{flex:1 1 calc(50% - 8px)}}
+.counter{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 12px 10px 16px;border:1.5px solid var(--line);border-radius:16px;background:var(--cream);max-width:420px}
+.counter+.counter{margin-top:10px}
+.counter label{font-weight:600;font-size:15px}
+[dir=rtl] .counter label{font-size:17px}
+.stp{display:flex;align-items:center;gap:6px}
+.stp button{width:44px;height:44px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font-size:22px;font-weight:600;cursor:pointer;display:grid;place-items:center;line-height:1}
+.stp button:active{transform:scale(.94)}
+.stp button:disabled{opacity:.4;cursor:default}
+.stp output{min-width:34px;text-align:center;font:800 24px/1 var(--serif)}
+.branches-pick{display:grid;gap:8px}
+.bp{display:flex;align-items:center;gap:12px;min-height:56px;padding:10px 14px;border:1.5px solid var(--line);border-radius:16px;background:var(--cream);cursor:pointer;text-align:start;width:100%}
+.bp .dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--line);flex:none;display:grid;place-items:center}
+.bp[aria-checked=true]{border-color:var(--pist);background:var(--pist-l)}
+.bp[aria-checked=true] .dot{border-color:var(--pist)}
+.bp[aria-checked=true] .dot::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--pist)}
+.bp b{display:block;font-weight:600;font-size:15px}
+.bp small{display:block;font-size:13px;color:var(--muted)}
+[dir=rtl] .bp b{font-size:17px}[dir=rtl] .bp small{font-size:14.5px}
+.when{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.when select{min-height:46px;border-radius:14px;border:1.5px solid var(--line);background:#fff;padding:0 14px;font-size:16px;font-weight:700;font-variant-numeric:tabular-nums;cursor:pointer}
+.note{font-size:13.5px;color:var(--rose-t);margin:8px 0 0}
+[dir=rtl] .note{font-size:15.5px}
+
+.mod-side{display:grid;gap:16px;align-content:start}
+.tray-card{border-radius:28px;background:radial-gradient(120% 90% at 50% 10%,#FFF7E6,var(--sand));border:1px solid var(--line-2);padding:16px 14px 10px;position:relative}
+.tray-card svg{width:100%;height:auto;max-width:420px;margin:0 auto}
+.tray-cap{text-align:center;font:italic 600 16px/1.3 var(--serif);color:var(--muted);margin:4px 0 6px}
+[dir=rtl] .tray-cap{font-style:normal;font-size:18px}
+.pc{transform-box:fill-box;transform-origin:center;animation:pop .35s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+.ticket{background:#fff;border-radius:20px;border:1px solid var(--line);padding:18px 18px 16px;position:relative}
+.ticket::before{content:"";position:absolute;inset-inline:18px;top:-1px;height:4px;background:repeating-linear-gradient(90deg,var(--gold) 0 10px,transparent 10px 16px);border-radius:0 0 4px 4px}
+.ticket h3{margin:0 0 8px;font:700 13px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--gold-t)}
+[dir=rtl] .ticket h3{letter-spacing:0;font-size:15px}
+.ticket pre{margin:0;white-space:pre-wrap;word-break:break-word;font:500 14.5px/1.55 var(--sans);color:var(--ink)}
+[dir=rtl] .ticket pre{font-size:17px}
+.send-row{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:14px}
+.btn.icon{width:52px;padding:0;border-color:var(--line);background:var(--cream);color:var(--ink)}
+.small{font-size:13px;color:var(--muted);margin:10px 0 0}
+[dir=rtl] .small{font-size:15px}
+@media (min-width:900px){
+  .mod-grid{grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}
+  .mod-side{position:sticky;top:20px}
+}
+
+/* reviews wall */
+.rv-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px}
+.wall{display:grid;gap:14px;margin-top:30px}
+.q{margin:0;padding:22px 22px 18px;border-radius:var(--r);background:var(--paper);border:1px solid var(--line-2);position:relative}
+.q blockquote{margin:0;font:italic 600 21px/1.35 var(--serif)}
+.q.k2 blockquote{font-size:25px}
+.q.pist{background:var(--pist);color:#F7F6EA;border-color:transparent}
+.q.rose{background:var(--rose-l)}
+.q.gold{background:var(--sand)}
+.q figcaption{margin-top:14px;font-size:13.5px;color:var(--muted);font-family:'Commissioner',system-ui,sans-serif}
+.q.pist figcaption{color:#DCE4C4}
+.q figcaption b{color:inherit;font-weight:700}
+.q .st{color:var(--gold);letter-spacing:2px;font-size:13px;font-family:'Commissioner',sans-serif;display:block;margin-bottom:10px}
+.q.pist .st{color:var(--gold-l)}
+[dir=rtl] .q figcaption{font-size:15px}
+.rv-note{font-size:13.5px;color:var(--muted);margin:10px 0 0}
+[dir=rtl] .rv-note{font-size:16px}
+.rate-tile{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;background:transparent;border:1.5px dashed var(--gold)}
+.rate-tile .big{font:800 72px/1 var(--serif);color:var(--pist)}
+.rate-tile .stars{font-size:18px}
+.rate-tile p{margin:6px 0 4px;font-size:14.5px;color:var(--muted)}
+[dir=rtl] .rate-tile p{font-size:17px}
+#rvNote{display:none}
+@media (max-width:699px){#allRv{display:none}}
+.lnk{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:700;color:var(--pist);text-decoration:none;border-bottom:1.5px solid currentColor}
+.lnk:hover{color:var(--pist-d)}
+@media (min-width:700px){.wall{grid-template-columns:repeat(2,1fr)}.rate-tile{grid-column:1/-1}}
+@media (min-width:1050px){.wall{grid-template-columns:repeat(3,1fr)}.q.k2{grid-row:span 2;display:flex;flex-direction:column;justify-content:center}.q.k2 blockquote{font-size:31px}.rate-tile{grid-column:span 2}}
+
+/* branches */
+.br-grid{display:grid;gap:14px;margin-top:30px}
+.br{border-radius:var(--r);border:1px solid var(--line);background:var(--paper);padding:20px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+.br.main{border-color:var(--pist);box-shadow:inset 0 0 0 1px var(--pist)}
+.br .tag{align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:var(--pist-l);color:var(--pist-d)}
+[dir=rtl] .br .tag{letter-spacing:0;font-size:14px}
+.br h3{margin:0;font:700 22px/1.2 var(--serif)}
+.br p{margin:0;font-size:14.5px;color:var(--muted)}
+[dir=rtl] .br p{font-size:16.5px}
+.br .row{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:14px}
+.br .acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}
+.btn.sm{min-height:44px;padding:0 16px;font-size:14.5px}
+[dir=rtl] .btn.sm{font-size:16.5px}
+.br .dm-bg{position:absolute;inset-inline-end:-30px;top:-30px;width:110px;height:110px;transform:rotate(45deg);border:1.5px solid var(--gold);opacity:.25;border-radius:8px}
+@media (min-width:860px){.br-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* find */
+.find-grid{display:grid;gap:16px;margin-top:30px}
+.card{border-radius:var(--r);background:var(--paper);border:1px solid var(--line);padding:22px}
+.card h3{margin:0 0 6px;font:700 13px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--gold-t)}
+[dir=rtl] .card h3{letter-spacing:0;font-size:15px}
+.addr{font:800 26px/1.15 var(--serif);margin:0}
+.addr-sub{margin:6px 0 0;color:var(--muted);font-size:14.5px}
+.sched{width:100%;border-collapse:collapse;margin-top:6px;font-size:15px}
+.sched td{padding:8px 0;border-bottom:1px dashed var(--line)}
+.sched td:last-child{text-align:end;font-variant-numeric:tabular-nums}
+.sched tr.today td{font-weight:700;color:var(--pist-d)}
+.sched tr.today td:first-child::after{content:attr(data-today);margin-inline-start:8px;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--pist-l)}
+[dir=rtl] .sched{font-size:17px}
+.feat{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:8px 12px;border-radius:12px;background:var(--pist-l);font-size:14px;font-weight:600;color:var(--pist-d)}
+.map{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--sand) center/56px 36px;min-height:320px;position:relative}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media (min-width:900px){.find-grid{grid-template-columns:1fr 1fr 1.3fr}.map{grid-row:span 1}}
+
+/* footer */
+.ftr{background:var(--ink);color:#E9DECE;padding:46px 0 30px}
+.ftr .wrap{display:grid;gap:22px}
+.ftr .fb{font:800 28px/1.1 var(--serif);font-style:italic;color:#fff}
+[dir=rtl] .ftr .fb{font-style:normal}
+.ftr a{color:#fff;display:inline-block;padding-block:12px}
+.ftr p{margin:0;font-size:14.5px;line-height:1.6}
+.ftr .fine{font-size:12.5px;color:#BFAF9C;border-top:1px solid rgba(255,255,255,.14);padding-top:18px}
+[dir=rtl] .ftr p{font-size:16.5px}[dir=rtl] .ftr .fine{font-size:14px}
+
+/* sticky bar */
+.bar{position:fixed;inset-inline:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 56px;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(251,245,234,.97);border-top:1px solid var(--line)}
+.bar .btn{min-height:54px}
+@media (min-width:900px){.bar{display:none}}
+
+/* reveal */
+.anim .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.anim .rv.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<div class="demo" data-t="demo">Демо-концепт · пример сайта для «Сирийские сладости, арабское кофе» от Альхассана Альфаррана · не официальный сайт</div>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Сирийские сладости, арабское кофе">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 38 20 20 38 2 20z" fill="#D8A84A"/><path d="M20 9 31 20 20 31 9 20z" fill="#F1D48C"/><path d="M9 20h22M20 9v22" stroke="#C9973F" stroke-width="1"/><circle cx="20" cy="20" r="4" fill="#4A6A22"/></svg>
+      <span><b data-t="brandB">Сирийские сладости</b><small data-t="brandS">арабское кофе · Манежная</small></span>
+    </a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#tray" data-t="nav1">Поднос</a>
+      <a href="#reviews" data-t="nav2">Отзывы</a>
+      <a href="#points" data-t="nav3">Три точки</a>
+      <a href="#find" data-t="nav4">Как найти</a>
+    </nav>
+    <span class="pill" id="pillHdr"><i></i><span></span></span>
+    <button class="lang" id="langBtn" type="button" lang="ar" aria-label="Переключить на арабский">العربية</button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero lattice" id="hero">
+    <div class="wrap">
+      <div>
+        <p class="kicker"><span data-t="kick1">Манежная площадь, 1с2</span><span class="dm"></span><span id="kickMetro"></span></p>
+        <h1 class="h1" id="h1"></h1>
+        <p class="whose" data-t="whose">так написал гость в отзыве на Яндекс Картах</p>
+        <p class="lead" data-t-html="lead"></p>
+        <a class="rate" id="rate" target="_blank" rel="noopener"></a>
+        <div class="ctas">
+          <a class="btn pri" href="#tray"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 22 12 12 22 2 12z" opacity=".35"/><path fill="currentColor" d="M12 6.5 17.5 12 12 17.5 6.5 12z"/></svg><span data-t="cta1">Собрать поднос</span></a>
+          <a class="btn out" id="heroCall"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 3h3l1.6 4.3-2.1 1.5a11 11 0 0 0 4.7 4.7l1.5-2.1L20 13v3a2 2 0 0 1-2 2A14 14 0 0 1 5 5a2 2 0 0 1 2-2z"/></svg><span data-t="call">Позвонить</span></a>
+        </div>
+        <ul class="metro" id="metro"></ul>
+      </div>
+      <div class="art" id="art">
+        <button class="cezve-btn" id="cezve" type="button" aria-label="Сварить кофе на песке">
+          <svg viewBox="0 0 480 470" aria-hidden="true">
+            <defs>
+              <pattern id="lat" width="36" height="24" patternUnits="userSpaceOnUse"><path d="M18 0 36 12 18 24 0 12z" fill="none" stroke="#C9973F" stroke-opacity=".35"/><circle cx="18" cy="12" r="1.4" fill="#7E9B4A" fill-opacity=".5"/></pattern>
+              <linearGradient id="cop" x1="0" x2="1"><stop offset="0" stop-color="#7C3B1F"/><stop offset=".45" stop-color="#C8714A"/><stop offset=".6" stop-color="#E0936A"/><stop offset="1" stop-color="#8E4526"/></linearGradient>
+              <linearGradient id="brass" x1="0" x2="1"><stop offset="0" stop-color="#9C7230"/><stop offset=".5" stop-color="#E8C77A"/><stop offset="1" stop-color="#9C7230"/></linearGradient>
+              <radialGradient id="sandG" cx=".5" cy=".35" r=".7"><stop offset="0" stop-color="#EBCB8C"/><stop offset="1" stop-color="#C99A55"/></radialGradient>
+              <pattern id="grain" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="2" r="1" fill="#9C7230" fill-opacity=".55"/><circle cx="5" cy="5.5" r=".8" fill="#FFF3D6" fill-opacity=".9"/><circle cx="5.5" cy="1" r=".5" fill="#7C5A22" fill-opacity=".5"/></pattern>
+            </defs>
+            <path d="M240 18 462 238 240 458 18 238z" fill="#F7E3E4"/>
+            <path d="M240 18 462 238 240 458 18 238z" fill="url(#lat)"/>
+            <path d="M240 34 446 238 240 442 34 238z" fill="none" stroke="#C9973F" stroke-width="1.5"/>
+            <path d="M240 18 462 238 240 458 18 238z" fill="none" stroke="#C9973F" stroke-width="3"/>
+            <g class="steam"><path d="M226 150c-10-16 10-24 0-42"/><path d="M246 146c-10-18 12-26 0-46"/><path d="M266 152c-10-14 9-22 0-38"/></g>
+            <!-- handle -->
+            <path d="M286 228 420 190q8-2 10 6l1 4q1 7-7 9L292 248z" fill="#6E3F22"/>
+            <path d="M296 230 418 197" stroke="#9A6036" stroke-width="2" stroke-linecap="round"/>
+            <!-- cezve body -->
+            <path d="M204 170q36-7 72 0l-8 24q30 52 22 110q-50 18-100 0q-8-58 22-110z" fill="url(#cop)"/>
+            <path d="M204 170 186 164q-4 0-2 4l18 12z" fill="#A6542E"/>
+            <ellipse cx="240" cy="171" rx="36" ry="7" fill="#5A2A14"/>
+            <g class="foam"><ellipse cx="240" cy="171" rx="31" ry="4.6" fill="#C79A6B"/><ellipse cx="236" cy="170" rx="18" ry="2.2" fill="#E3C39A"/></g>
+            <g class="bub"><circle cx="230" cy="164" r="2.4" fill="#E3C39A"/><circle cx="249" cy="162" r="1.8" fill="#E3C39A"/><circle cx="240" cy="160" r="2" fill="#E3C39A"/></g>
+            <path d="M214 196q26 6 52 0" stroke="#F2B38E" stroke-width="2" fill="none" opacity=".6"/>
+            <!-- tray with sand -->
+            <ellipse cx="240" cy="318" rx="176" ry="44" fill="url(#brass)"/>
+            <ellipse cx="240" cy="312" rx="164" ry="36" fill="#8C6428"/>
+            <ellipse cx="240" cy="310" rx="158" ry="31" fill="url(#sandG)"/>
+            <path d="M176 300q64-34 128 0q-64 12-128 0z" fill="#E2BC78"/>
+            <ellipse cx="240" cy="310" rx="158" ry="31" fill="url(#grain)"/>
+            <path d="M108 312q30-10 60-4M318 306q36-6 70 6M150 326q40 8 84 4M268 330q40 0 76-10" stroke="#B98C4A" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".75"/>
+            <!-- cardamom -->
+            <g transform="translate(372 352) rotate(-24)"><ellipse rx="17" ry="8.5" fill="#8DA552"/><path d="M-15 0h30" stroke="#5E7A2C" stroke-width="1.4"/></g>
+            <g transform="translate(400 336) rotate(18)"><ellipse rx="14" ry="7" fill="#7E9B4A"/><path d="M-12 0h24" stroke="#58702A" stroke-width="1.3"/></g>
+            <g transform="translate(386 374) rotate(60)"><ellipse rx="12" ry="6" fill="#9BB463"/><path d="M-10 0h20" stroke="#5E7A2C" stroke-width="1.2"/></g>
+            <!-- baklava plate -->
+            <ellipse cx="128" cy="394" rx="86" ry="20" fill="#FFFBF3" stroke="#C9973F" stroke-width="2"/>
+            <g id="bakl">
+              <path d="M88 372 116 360 144 372 116 384z" fill="#D8A84A"/><path d="M88 372v8l28 12v-8z" fill="#B7832F"/><path d="M144 372v8l-28 12v-8z" fill="#C9973F"/><circle cx="116" cy="372" r="4" fill="#5E8A2A"/>
+              <path d="M120 386 148 374 176 386 148 398z" fill="#E1B457"/><path d="M120 386v8l28 12v-8z" fill="#B7832F"/><path d="M176 386v8l-28 12v-8z" fill="#C9973F"/><circle cx="148" cy="386" r="4" fill="#5E8A2A"/>
+              <path d="M70 390 98 378 126 390 98 402z" fill="#D29E43"/><path d="M70 390v7l28 12v-7z" fill="#B7832F"/><path d="M126 390v7l-28 12v-7z" fill="#C9973F"/><circle cx="98" cy="390" r="4" fill="#5E8A2A"/>
+            </g>
+          </svg>
+        </button>
+        <span class="hint" data-t="hint">нажмите на джезву</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="mq" id="mq" aria-hidden="true"><div class="mq-track" id="mqTrack"></div></div>
+
+  <section class="sec mod" id="tray" aria-labelledby="modH">
+    <div class="wrap mod-grid">
+      <div>
+        <p class="eyebrow" data-t="modEy">Отложить к приходу</p>
+        <h2 class="h2" id="modH" data-t-html="modH"></h2>
+        <p class="sub" data-t="modP"></p>
+
+        <div class="step">
+          <h3><b><span>1</span></b><span data-t="s1">Что положить на поднос</span></h3>
+          <div class="chips" id="items"></div>
+        </div>
+        <div class="step">
+          <h3><b><span>2</span></b><span data-t="s2">Повод</span></h3>
+          <div class="chips" id="occ" role="radiogroup"></div>
+        </div>
+        <div class="step">
+          <h3><b><span>3</span></b><span data-t="s3">Сколько вас</span></h3>
+          <div class="counter"><label id="pplL" data-t="ppl">Гостей</label><div class="stp"><button type="button" id="pplM" aria-label="Меньше">−</button><output id="pplV" aria-labelledby="pplL">2</output><button type="button" id="pplP" aria-label="Больше">+</button></div></div>
+          <div class="counter" id="cupsRow" hidden><label id="cupL" data-t="cups">Чашек кофе</label><div class="stp"><button type="button" id="cupM" aria-label="Меньше">−</button><output id="cupV" aria-labelledby="cupL">2</output><button type="button" id="cupP" aria-label="Больше">+</button></div></div>
+        </div>
+        <div class="step">
+          <h3><b><span>4</span></b><span data-t="s4">Где заберёте</span></h3>
+          <div class="branches-pick" id="bpick" role="radiogroup"></div>
+        </div>
+        <div class="step">
+          <h3><b><span>5</span></b><span data-t="s5">Когда зайдёте</span></h3>
+          <div class="when"><div class="chips" id="dayPick" role="radiogroup"></div><label class="sr" for="timeIn" data-t="timeL">Время</label><select id="timeIn" dir="ltr"></select></div>
+          <p class="note" id="timeNote" hidden></p>
+        </div>
+      </div>
+
+      <div class="mod-side">
+        <div class="tray-card">
+          <svg viewBox="0 0 360 300" id="traySvg" role="img" aria-label="Поднос">
+            <defs>
+              <radialGradient id="tr" cx=".5" cy=".45" r=".6"><stop offset="0" stop-color="#F4DB9E"/><stop offset=".85" stop-color="#D7AE5E"/><stop offset="1" stop-color="#A97E34"/></radialGradient>
+              <linearGradient id="pz" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EBC06A"/><stop offset="1" stop-color="#C38E35"/></linearGradient>
+            </defs>
+            <ellipse cx="180" cy="158" rx="150" ry="134" fill="#9C7230" opacity=".28"/>
+            <circle cx="180" cy="150" r="138" fill="url(#tr)"/>
+            <circle cx="180" cy="150" r="124" fill="none" stroke="#9C7230" stroke-width="1.5" stroke-dasharray="2 6"/>
+            <circle cx="180" cy="150" r="116" fill="#EFD08A" opacity=".55"/>
+            <g id="trayPieces"></g>
+          </svg>
+          <p class="tray-cap" id="trayCap"></p>
+        </div>
+        <div class="ticket">
+          <h3 data-t="msgH">Сообщение продавцу</h3>
+          <pre id="msg"></pre>
+          <div class="send-row">
+            <a class="btn pri" id="send" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.8-1.1-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3 0 .2 0 .7-.1 1.3z"/></svg><span data-t="send">Отправить в WhatsApp</span></a>
+            <a class="btn icon" id="modCall" aria-label="Позвонить"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 3h3l1.6 4.3-2.1 1.5a11 11 0 0 0 4.7 4.7l1.5-2.1L20 13v3a2 2 0 0 1-2 2A14 14 0 0 1 5 5a2 2 0 0 1 2-2z"/></svg></a>
+          </div>
+          <p class="small" data-t="msgNote">Цен в карточке нет — продавец назовёт их в ответ. Гости пишут, что цены не завышены.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="reviews" aria-labelledby="rvH">
+    <div class="wrap">
+      <div class="rv-head">
+        <div>
+          <p class="eyebrow" data-t="rvEy">Отзывы</p>
+          <h2 class="h2" id="rvH" data-t-html="rvH"></h2>
+          <p class="rv-note" id="rvNote"></p>
+        </div>
+        <a class="lnk" id="allRv" target="_blank" rel="noopener" data-t="allRv">Все отзывы на Яндекс Картах</a>
+      </div>
+      <div class="wall" id="wall"></div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <section class="sec" id="points" aria-labelledby="brH">
+    <div class="wrap">
+      <p class="eyebrow" data-t="brEy">Три точки</p>
+      <h2 class="h2" id="brH" data-t-html="brH"></h2>
+      <p class="sub" data-t="brP"></p>
+      <div class="br-grid" id="brGrid"></div>
+    </div>
+  </section>
+
+  <section class="sec mod" id="find" aria-labelledby="fH">
+    <div class="wrap">
+      <p class="eyebrow" data-t="fEy">Как найти</p>
+      <h2 class="h2" id="fH" data-t-html="fH"></h2>
+      <div class="find-grid">
+        <div class="card">
+          <h3 data-t="addrH">Адрес</h3>
+          <p class="addr" id="addr"></p>
+          <p class="addr-sub" id="addrSub"></p>
+          <ul class="metro" id="metro2"></ul>
+          <div class="ctas"><a class="btn pri sm" id="route" target="_blank" rel="noopener" data-t="route">Построить маршрут</a><a class="btn out sm" id="ymap" target="_blank" rel="noopener" data-t="ymap">Яндекс Карты</a></div>
+          <span class="feat" id="feat"></span>
+        </div>
+        <div class="card">
+          <h3 data-t="hoursH">Часы работы</h3>
+          <p class="pill" id="pillFind" style="margin:6px 0 4px"><i></i><span></span></p>
+          <table class="sched" id="sched"></table>
+        </div>
+        <div class="map lattice"><iframe id="mapFrame" loading="lazy" title="Карта"></iframe></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div>
+      <p class="fb" data-t="brandB">Сирийские сладости</p>
+      <p id="ftrInfo"></p>
+    </div>
+    <p class="fine"><span data-t="demo"></span><br><span data-t="src">Цены и данные взяты из карточки на Яндекс Картах и могут отличаться.</span></p>
+  </div>
+</footer>
+
+<div class="bar" id="bar">
+  <a class="btn pri" id="barWa" target="_blank" rel="noopener"><span data-t="barWa">Спросить в WhatsApp</span></a>
+  <a class="btn icon" id="barCall" aria-label="Позвонить"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 3h3l1.6 4.3-2.1 1.5a11 11 0 0 0 4.7 4.7l1.5-2.1L20 13v3a2 2 0 0 1-2 2A14 14 0 0 1 5 5a2 2 0 0 1 2-2z"/></svg></a>
+</div>
+
+<script src="data.js"></script>
+<script>
+(function () {
+'use strict';
+var BIZ = window.BIZ;
+var $ = function (s) { return document.querySelector(s); };
+var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
+var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+var wa = function (text) { return 'https://wa.me/' + BIZ.wa + '?text=' + encodeURIComponent(text); };
+var plural = function (n, one, few, many) { var a = Math.abs(n) % 100, b = a % 10; return a > 10 && a < 20 ? many : b === 1 ? one : b >= 2 && b <= 4 ? few : many; };
+/* Arabic counted noun: 1, 2, 3–10 plural, 11–99 accusative singular, otherwise singular */
+var arCount = function (n, f) { var a = n % 100; if (n === 1) return f[0]; if (n === 2) return f[1]; if (a >= 3 && a <= 10) return n + ' ' + f[2]; if (a >= 11 && a <= 99) return n + ' ' + f[3]; return n + ' ' + f[4]; };
+var lang = 'ru';
+
+var T = {
+ru: {
+  demo: 'Демо-концепт · пример сайта для «' + BIZ.name + '» от Альхассана Альфаррана · не официальный сайт',
+  brandB: 'Сирийские сладости', brandS: 'арабское кофе · Манежная',
+  nav1: 'Поднос', nav2: 'Отзывы', nav3: 'Три точки', nav4: 'Как найти',
+  langBtn: 'العربية', langAttr: 'ar', langAria: 'Переключить на арабский',
+  kick1: 'Манежная площадь, 1с2',
+  h1: '<span>Уголок</span><span>Сирии <em>на</em></span><span><em>Манежной</em></span>',
+  whose: 'так гость назвал это место в отзыве на Яндекс Картах',
+  lead: 'Пахлава, сирийские сладости и <b>кофе с кардамоном, сваренный на песке</b>. Точка в 64 метрах от метро «Охотный Ряд», каждый день 10:00–22:00.',
+  cta1: 'Собрать поднос', call: 'Позвонить', hint: 'нажмите на джезву', cezveAria: 'Сварить кофе на песке',
+  modEy: 'Отложить к приходу',
+  modH: 'Соберите поднос — <em>цену скажут</em> в WhatsApp',
+  modP: 'Отметьте, что хотите и к какому часу зайдёте. Сообщение с вашим выбором уйдёт продавцу, он ответит, что сегодня на прилавке и сколько это стоит.',
+  s1: 'Что положить на поднос', s2: 'Повод', s3: 'Сколько вас', s4: 'Где заберёте', s5: 'Когда зайдёте',
+  ppl: 'Гостей', cups: 'Чашек кофе', less: 'Меньше', more: 'Больше', timeL: 'Время',
+  today: 'Сегодня', tomorrow: 'Завтра',
+  msgH: 'Сообщение продавцу', send: 'Отправить в WhatsApp',
+  msgNote: 'Цен в карточке нет — продавец назовёт их в ответ. Гости пишут, что цены не завышены.',
+  trayAria: 'Поднос с выбранными сладостями', trayEmpty: 'Поднос пока пуст — отметьте, что положить',
+  rvEy: 'Отзывы', rvH: 'Гости пишут, что это <em>оригинал</em>',
+  allRv: 'Все отзывы на Яндекс Картах', revSrc: 'отзыв на Яндекс Картах',
+  brEy: 'Три точки', brH: 'Один номер — <em>три прилавка</em>',
+  brP: 'На Яндекс Картах с этим телефоном связаны ещё две точки «Сирийских сладостей». Выберите ту, что ближе.',
+  brMain: 'Эта точка', brPick: 'Заберу здесь', brRoute: 'Маршрут', brNoHours: 'часы уточните',
+  fEy: 'Как найти', fH: 'У метро <em>«Охотный Ряд»</em>',
+  addrH: 'Адрес', hoursH: 'Часы работы', route: 'Построить маршрут', ymap: 'Яндекс Карты',
+  todayTag: 'сегодня', mapTitle: 'Карта: Манежная площадь, 1с2',
+  src: 'Цены и данные взяты из карточки на Яндекс Картах и могут отличаться.',
+  barWa: 'Спросить в WhatsApp', callAria: 'Позвонить',
+  days: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
+  daysIn: ['в понедельник', 'во вторник', 'в среду', 'в четверг', 'в пятницу', 'в субботу', 'в воскресенье'],
+  open: 'Открыто · до ', closedAt: 'Закрыто · откроется в ', closedTom: 'Закрыто · откроется завтра в ', closedDay: function (d, t) { return 'Закрыто · откроется ' + d + ' в ' + t; },
+  daily: 'ежедневно',
+  timeOut: function (h) { return 'Эта точка работает ' + h + ' — проверьте время.'; },
+  closedToday: 'Сегодня эта точка уже закрыта — поставили завтра.',
+  rating: function (r) { return r.count + ' ' + plural(r.count, 'оценка', 'оценки', 'оценок') + ' · ' + r.reviews + ' ' + plural(r.reviews, 'отзыв', 'отзыва', 'отзывов'); },
+  ratingSrc: 'на Яндекс Картах',
+  metroDist: function (m) { return m.distance; },
+  wheel: 'доступность входа на инвалидной коляске: доступно',
+  ftr: function () { return BIZ.fullAddress + ' · ' + BIZ.hoursText + ' · '; },
+  items: [
+    { id: 'pk', t: 'Пахлава ассорти', s: 'разная — на вкус продавца' },
+    { id: 'sw', t: 'Другие сирийские сладости', s: 'что есть сегодня' },
+    { id: 'cf', t: 'Кофе на песке с кардамоном', s: 'с собой' },
+    { id: 'te', t: 'Чай', s: 'какой есть в продаже' }
+  ],
+  occ: [{ id: 'self', t: 'Себе к кофе' }, { id: 'guest', t: 'В гости' }, { id: 'gift', t: 'В подарок' }, { id: 'party', t: 'На праздник' }],
+  marquee: ['пахлава', 'кофе на песке', 'кардамон', 'не приторные сладости', 'Манежная площадь', 'оригинал, а не копия'],
+  cap: function (s) {
+    var p = [];
+    if (s.pk) p.push('пахлава');
+    if (s.sw) p.push('сладости');
+    if (s.cf) p.push(s.cups + ' ' + plural(s.cups, 'чашка', 'чашки', 'чашек') + ' кофе');
+    if (s.te) p.push('чай');
+    return p.length ? p.join(' · ') + ' — на ' + s.ppl + ' ' + plural(s.ppl, 'гостя', 'гостей', 'гостей') : '';
+  },
+  msg: function (s, br, when) {
+    var L = ['Здравствуйте! Пишу с сайта.'];
+    var it = [];
+    if (s.pk) it.push('— пахлаву ассорти, на ваш вкус');
+    if (s.sw) it.push('— другие сирийские сладости: что из них есть?');
+    if (s.cf) it.push('— кофе на песке с кардамоном, ' + s.cups + ' ' + plural(s.cups, 'чашка', 'чашки', 'чашек') + ', с собой');
+    if (s.te) it.push('— чай: какой есть в продаже?');
+    if (it.length) { L.push('Хочу взять:'); L = L.concat(it); } else L.push('Хочу зайти за сладостями и кофе.');
+    var oc = { self: 'себе к кофе', guest: 'в гости', gift: 'в подарок', party: 'на праздник' }[s.occ];
+    L.push('Повод: ' + oc + ', нас ' + s.ppl + '.');
+    if (s.occ === 'gift') L.push('Получится упаковать в подарок?');
+    L.push(when.day === 0 ? 'Подскажите, пожалуйста, что сегодня есть и сколько это будет стоить?' : 'Подскажите, пожалуйста, что будет завтра и сколько это будет стоить?');
+    L.push('Зайду на точку: ' + shortAddr(br.address) + ' — ' + (when.day === 0 ? 'сегодня' : 'завтра') + ' около ' + when.time + '. Можно отложить к этому времени?');
+    return L.join('\n');
+  },
+  barMsg: 'Здравствуйте! Пишу с сайта. Подскажите, пожалуйста, какие сладости сегодня есть и сколько стоят?'
+},
+ar: {
+  demo: 'نموذج تجريبي · مثال لموقع «' + BIZ.name + '» من إعداد الحسن الفرّان · ليس الموقع الرسمي',
+  brandB: 'حلويات سورية', brandS: 'وقهوة عربية · ساحة مانيجنايا',
+  nav1: 'الصينية', nav2: 'آراء الزوار', nav3: 'ثلاثة فروع', nav4: 'العنوان',
+  langBtn: 'Русский', langAttr: 'ru', langAria: 'التبديل إلى الروسية',
+  kick1: 'ساحة مانيجنايا، موسكو',
+  h1: '<span>ركنٌ من <em>سوريا</em></span><span>في ساحة مانيجنايا</span>',
+  whose: 'هكذا وصف أحد الزوار المكان على خرائط ياندكس',
+  lead: 'بقلاوة وحلويات سورية و<b>قهوة بالهيل تُحضَّر على الرمل</b>. على بعد 64 مترًا من مترو «Охотный Ряд»، يوميًا من 10:00 إلى 22:00.',
+  cta1: 'جهّز صينيتك', call: 'اتصال', hint: 'اضغط على الركوة', cezveAria: 'تحضير القهوة على الرمل',
+  modEy: 'احجز قبل وصولك',
+  modH: 'جهّز صينيتك — <em>والسعر</em> عبر واتساب',
+  modP: 'اختر ما تريد ومتى ستأتي. ستصل رسالتك إلى البائع، وسيخبرك بما يتوفر اليوم وبالسعر.',
+  s1: 'ماذا نضع على الصينية؟', s2: 'المناسبة', s3: 'كم عددكم؟', s4: 'من أي فرع ستستلم؟', s5: 'متى ستأتي؟',
+  ppl: 'عدد الأشخاص', cups: 'أكواب القهوة', less: 'أقل', more: 'أكثر', timeL: 'الوقت',
+  today: 'اليوم', tomorrow: 'غدًا',
+  msgH: 'رسالتك إلى البائع', send: 'إرسال عبر واتساب',
+  msgNote: 'الأسعار غير مذكورة في بطاقة المكان — سيخبرك بها البائع. ويكتب الزوار أن الأسعار معقولة.',
+  trayAria: 'صينية بالحلويات المختارة', trayEmpty: 'الصينية فارغة — اختر ما تريد',
+  rvEy: 'آراء الزوار', rvH: 'يكتب الزوار أنها <em>الأصلية</em>',
+  allRv: 'جميع المراجعات على خرائط ياندكس', revSrc: 'مراجعة على خرائط ياندكس',
+  brEy: 'ثلاثة فروع', brH: 'رقم واحد — <em>ثلاثة فروع</em>',
+  brP: 'على خرائط ياندكس يرتبط هذا الرقم بنقطتين أخريين لـ«الحلويات السورية». اختر الأقرب إليك.',
+  brMain: 'هذا الفرع', brPick: 'سأستلم من هنا', brRoute: 'المسار', brNoHours: 'استفسر عن المواعيد',
+  fEy: 'العنوان', fH: 'قرب مترو <em>«Охотный Ряд»</em>',
+  addrH: 'العنوان', hoursH: 'ساعات العمل', route: 'إنشاء مسار', ymap: 'خرائط ياندكس',
+  todayTag: 'اليوم', mapTitle: 'الخريطة: ساحة مانيجنايا، 1 مبنى 2',
+  src: 'الأسعار والبيانات مأخوذة من بطاقة المكان على خرائط ياندكس وقد تختلف.',
+  barWa: 'اسأل عبر واتساب', callAria: 'اتصال',
+  days: ['الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت', 'الأحد'],
+  daysIn: ['يوم الاثنين', 'يوم الثلاثاء', 'يوم الأربعاء', 'يوم الخميس', 'يوم الجمعة', 'يوم السبت', 'يوم الأحد'],
+  open: 'مفتوح · حتى ', closedAt: 'مغلق · يفتح الساعة ', closedTom: 'مغلق · يفتح غدًا الساعة ', closedDay: function (d, t) { return 'مغلق · يفتح ' + d + ' الساعة ' + t; },
+  daily: 'يوميًا',
+  timeOut: function (h) { return 'يعمل هذا الفرع ' + h + ' — تحقّق من الوقت.'; },
+  closedToday: 'هذا الفرع مغلق الآن — اخترنا الغد.',
+  rating: function (r) { return arCount(r.count, ['تقييم واحد', 'تقييمان', 'تقييمات', 'تقييمًا', 'تقييم']) + ' · ' + arCount(r.reviews, ['مراجعة واحدة', 'مراجعتان', 'مراجعات', 'مراجعةً', 'مراجعة']); },
+  ratingSrc: 'على خرائط ياندكس',
+  metroDist: function (m) { return m.distance.replace(/[\s ]км$/, ' كم').replace(/[\s ]м$/, ' م'); },
+  wheel: 'المدخل مهيّأ للكراسي المتحركة',
+  ftr: function () { return '<bdi lang="ru" dir="ltr">' + esc(BIZ.fullAddress) + '</bdi> · يوميًا <bdi dir="ltr">10:00–22:00</bdi> · '; },
+  items: [
+    { id: 'pk', t: 'بقلاوة مشكّلة', s: 'أنواع مختلفة حسب اختيار البائع' },
+    { id: 'sw', t: 'حلويات سورية أخرى', s: 'ما يتوفر اليوم' },
+    { id: 'cf', t: 'قهوة على الرمل بالهيل', s: 'سفري' },
+    { id: 'te', t: 'شاي', s: 'الأنواع المتوفرة للبيع' }
+  ],
+  occ: [{ id: 'self', t: 'لنفسي مع القهوة' }, { id: 'guest', t: 'لزيارة' }, { id: 'gift', t: 'هدية' }, { id: 'party', t: 'لمناسبة' }],
+  marquee: ['بقلاوة', 'قهوة على الرمل', 'هيل', 'حلويات غير مفرطة الحلاوة', 'ساحة مانيجنايا', 'الأصلية لا التقليد'],
+  cap: function (s) {
+    var p = [];
+    if (s.pk) p.push('بقلاوة');
+    if (s.sw) p.push('حلويات');
+    if (s.cf) p.push('قهوة: ' + s.cups);
+    if (s.te) p.push('شاي');
+    return p.length ? p.join(' · ') + ' — عدد الأشخاص: ' + s.ppl : '';
+  },
+  msg: function (s, br, when) {
+    var L = ['مرحبًا! أكتب إليكم من الموقع.'];
+    var it = [];
+    if (s.pk) it.push('— بقلاوة مشكّلة حسب اختياركم');
+    if (s.sw) it.push('— حلويات سورية أخرى: ما المتوفر منها؟');
+    if (s.cf) it.push('— قهوة على الرمل بالهيل، عدد الأكواب: ' + s.cups + '، سفري');
+    if (s.te) it.push('— شاي: ما الأنواع المتوفرة؟');
+    if (it.length) { L.push('أريد أن آخذ:'); L = L.concat(it); } else L.push('أريد أن أمرّ لشراء الحلويات والقهوة.');
+    var oc = { self: 'لنفسي مع القهوة', guest: 'لزيارة', gift: 'هدية', party: 'لمناسبة' }[s.occ];
+    L.push('المناسبة: ' + oc + '، عدد الأشخاص: ' + s.ppl + '.');
+    if (s.occ === 'gift') L.push('هل يمكن تغليفها كهدية؟');
+    L.push(when.day === 0 ? 'من فضلكم، ماذا يتوفر اليوم وكم سيكلّف ذلك؟' : 'من فضلكم، ماذا سيتوفر غدًا وكم سيكلّف ذلك؟');
+    L.push('سآتي إلى فرع: ' + shortAddr(br.address) + ' — ' + (when.day === 0 ? 'اليوم' : 'غدًا') + ' نحو الساعة ' + when.time + '. هل يمكن حجز الطلب لي حتى ذلك الوقت؟');
+    return L.join('\n');
+  },
+  barMsg: 'مرحبًا! أكتب إليكم من الموقع. من فضلكم، ما الحلويات المتوفرة اليوم وكم أسعارها؟'
+}
+};
+var t = function (k) { return T[lang][k]; };
+/* msg() needs the day: pass it through */
+
+/* ---------- time (Moscow) ---------- */
+function mskNow() { var d = new Date(); return new Date(d.getTime() + (d.getTimezoneOffset() + 180) * 60000); }
+var mm = function (s) { return +s.slice(0, 2) * 60 + +s.slice(3); };
+var hhmm = function (m) { m = ((m % 1440) + 1440) % 1440; return String(Math.floor(m / 60)).padStart(2, '0') + ':' + String(m % 60).padStart(2, '0'); };
+/* weekly hours for a branch: main from BIZ.hours, others parsed from "ежедневно, 10:00–21:00" */
+function branchHours(b, i) {
+  if (i === 0 && BIZ.hours) return BIZ.hours;
+  var m = /ежедневно,\s*(\d\d:\d\d)\s*[–-]\s*(\d\d:\d\d)/.exec(b.hoursText || '');
+  if (!m) return null;
+  var w = []; for (var d = 0; d < 7; d++) w.push([[m[1], m[2]]]); return w;
+}
+function statusOf(H, now) {
+  now = now || mskNow();
+  if (!H) return null;
+  var day = (now.getDay() + 6) % 7, mins = now.getHours() * 60 + now.getMinutes();
+  var k, f, to;
+  var prev = H[(day + 6) % 7];
+  for (k = 0; k < prev.length; k++) { f = prev[k][0]; to = prev[k][1]; if (mm(to) <= mm(f) && mins < mm(to)) return { open: true, text: t('open') + to }; }
+  for (k = 0; k < H[day].length; k++) { var a = mm(H[day][k][0]), b = mm(H[day][k][1]) <= a ? mm(H[day][k][1]) + 1440 : mm(H[day][k][1]); if (mins >= a && mins < b) return { open: true, text: t('open') + H[day][k][1] }; }
+  for (k = 0; k < H[day].length; k++) if (mins < mm(H[day][k][0])) return { open: false, text: t('closedAt') + H[day][k][0] };
+  for (var i = 1; i <= 7; i++) { var d = (day + i) % 7; if (H[d].length) return { open: false, text: i === 1 ? t('closedTom') + H[d][0][0] : t('closedDay')(t('daysIn')[d], H[d][0][0]) }; }
+  return null;
+}
+function setPill(el, st) {
+  if (!el) return;
+  if (!st) { el.hidden = true; return; }
+  el.hidden = false; el.classList.toggle('closed', !st.open);
+  el.querySelector('span').textContent = st.text;
+}
+var shortAddr = function (a) { return String(a || '').replace(/,\s*Москва$/, ''); };
+var uniq = function (arr) { var o = []; (arr || []).forEach(function (x) { if (o.indexOf(x) < 0) o.push(x); }); return o; };
+var routeTo = function (c) { return 'https://yandex.ru/maps/?rtext=~' + c[0] + '%2C' + c[1] + '&rtt=auto'; };
+
+/* ---------- state ---------- */
+var S = { pk: true, sw: false, cf: true, te: false, occ: 'guest', ppl: 2, cups: 2, br: 0, day: 0, time: '18:00', touchedTime: false };
+try { var saved = JSON.parse(localStorage.getItem('ssl-tray') || 'null'); if (saved && typeof saved === 'object') ['pk', 'sw', 'cf', 'te', 'occ', 'ppl', 'cups', 'br'].forEach(function (k) { if (k in saved) S[k] = saved[k]; }); } catch (e) {}
+if (!BIZ.branches || !BIZ.branches[S.br]) S.br = 0;
+function save() { try { localStorage.setItem('ssl-tray', JSON.stringify({ pk: S.pk, sw: S.sw, cf: S.cf, te: S.te, occ: S.occ, ppl: S.ppl, cups: S.cups, br: S.br })); } catch (e) {} }
+
+function branches() { return (BIZ.branches && BIZ.branches.length) ? BIZ.branches : [{ name: BIZ.name, address: BIZ.address, hoursText: BIZ.hoursText, metro: (BIZ.metro || []).map(function (m) { return m.name; }), coords: BIZ.coords }]; }
+
+function defaultWhen() {
+  var H = branchHours(branches()[S.br], S.br), now = mskNow();
+  var day = (now.getDay() + 6) % 7, mins = now.getHours() * 60 + now.getMinutes();
+  if (!H || !H[day].length) return { day: 0, time: hhmm(Math.ceil((mins + 30) / 15) * 15), moved: false };
+  var o = mm(H[day][0][0]), c = mm(H[day][0][1]); if (c <= o) c += 1440;
+  var tt = Math.ceil((mins + 30) / 15) * 15;
+  if (tt < o) tt = o + 30;
+  if (tt <= c - 15) return { day: 0, time: hhmm(tt), moved: false };
+  var nd = (day + 1) % 7, no = H[nd].length ? mm(H[nd][0][0]) : o;
+  return { day: 1, time: hhmm(no + 60), moved: true };
+}
+function applyDefaultWhen() { var w = defaultWhen(); S.day = w.day; S.time = w.time; S.moved = w.moved; }
+
+/* time slots every 15 min inside the chosen branch's hours; today starts from now + 15 min */
+var timesKey = '';
+function renderTimes() {
+  var H = branchHours(branches()[S.br], S.br), now = mskNow();
+  var d = ((now.getDay() + 6) % 7 + S.day) % 7, o = 600, c = 1320;
+  if (H && H[d][0]) { o = mm(H[d][0][0]); c = mm(H[d][0][1]); if (c <= o) c += 1440; }
+  var from = o;
+  if (S.day === 0) { var n = now.getHours() * 60 + now.getMinutes(); from = Math.max(o, Math.ceil((n + 15) / 15) * 15); }
+  var opts = []; for (var x = from; x <= c - 15; x += 15) opts.push(hhmm(x));
+  if (!opts.length) opts.push(S.time);
+  if (opts.indexOf(S.time) < 0) S.time = opts[0];
+  var key = opts.join(',');
+  var sel = $('#timeIn');
+  if (key !== timesKey) { sel.innerHTML = opts.map(function (v) { return '<option value="' + v + '">' + v + '</option>'; }).join(''); timesKey = key; }
+  sel.value = S.time;
+}
+
+/* ---------- render: static bits ---------- */
+function renderMetro(el) {
+  el.innerHTML = (BIZ.metro || []).map(function (m) {
+    return '<li><i style="background:' + esc(m.color) + '"></i><b lang="ru" dir="ltr">' + esc(m.name) + '</b><span>' + esc(t('metroDist')(m)) + '</span></li>';
+  }).join('');
+}
+function renderHero() {
+  $('#h1').innerHTML = t('h1');
+  var m0 = BIZ.metro && BIZ.metro[0];
+  $('#kickMetro').innerHTML = m0 ? (lang === 'ar' ? 'مترو <bdi lang="ru" dir="ltr">«' + esc(m0.name) + '»</bdi> · ' + esc(t('metroDist')(m0)) : 'м. «' + esc(m0.name) + '» · ' + esc(m0.distance)) : '';
+  var r = BIZ.rating, val = lang === 'ar' ? r.value.toFixed(1) : r.value.toFixed(1).replace('.', ',');
+  var rate = $('#rate'); rate.href = BIZ.reviewsUrl;
+  rate.innerHTML = '<span class="num" dir="ltr">' + val + '</span><span><span class="stars" aria-hidden="true">★★★★★<b style="width:' + (r.value / 5 * 100).toFixed(0) + '%">★★★★★</b></span><small>' + esc(t('rating')(r)) + ' ' + esc(t('ratingSrc')) + '</small></span>';
+  renderMetro($('#metro'));
+  $('#cezve').setAttribute('aria-label', t('cezveAria'));
+  var mq = t('marquee').concat(lang === 'ar' ? T.ru.marquee.slice(0, 3) : T.ar.marquee.slice(0, 3));
+  var one = mq.map(function (w) { var isAr = /[\u0600-\u06FF]/.test(w); return '<span' + (isAr ? ' lang="ar" dir="rtl"' : ' lang="ru"') + '>' + esc(w) + '</span>'; }).join('');
+  $('#mqTrack').innerHTML = one + one;
+}
+
+/* ---------- module ---------- */
+var tickSvg = '<span class="tick"><svg viewBox="0 0 12 12"><path d="M2 6.5 5 9l5-6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></span>';
+function renderModule() {
+  $('#items').innerHTML = t('items').map(function (it) {
+    return '<button type="button" class="chip big" data-item="' + it.id + '" aria-pressed="' + (!!S[it.id]) + '">' + tickSvg + '<span>' + esc(it.t) + '<small>' + esc(it.s) + '</small></span></button>';
+  }).join('');
+  $('#occ').innerHTML = t('occ').map(function (o) {
+    return '<button type="button" class="chip" role="radio" data-occ="' + o.id + '" aria-checked="' + (S.occ === o.id) + '">' + esc(o.t) + '</button>';
+  }).join('');
+  $('#bpick').innerHTML = branches().map(function (b, i) {
+    var H = branchHours(b, i), h = H ? H[0][0][0] + '–' + H[0][0][1] : t('brNoHours');
+    return '<button type="button" class="bp" role="radio" data-br="' + i + '" aria-checked="' + (S.br === i) + '"><span class="dot"></span><span><b lang="ru" dir="ltr">' + esc(shortAddr(b.address)) + '</b><small>' + esc(t('daily')) + ' <bdi dir="ltr">' + esc(h) + '</bdi> · <bdi lang="ru">' + esc(uniq(b.metro).join(', ')) + '</bdi></small></span></button>';
+  }).join('');
+  $('#dayPick').innerHTML = ['today', 'tomorrow'].map(function (k, i) {
+    return '<button type="button" class="chip" role="radio" data-day="' + i + '" aria-checked="' + (S.day === i) + '">' + esc(t(k)) + '</button>';
+  }).join('');
+  ['pplM', 'cupM'].forEach(function (id) { $('#' + id).setAttribute('aria-label', t('less')); });
+  ['pplP', 'cupP'].forEach(function (id) { $('#' + id).setAttribute('aria-label', t('more')); });
+  sync();
+}
+
+/* baklava lattice positions inside the tray, nearest to centre first */
+var SLOTS = (function () {
+  var out = [], w = 50, h = 34, cx = 180, cy = 150;
+  for (var i = -8; i <= 8; i++) for (var j = -10; j <= 10; j++) {
+    if ((i + j) % 2) continue;
+    var x = cx + i * w / 2, y = cy + j * h / 2;
+    var far = Math.max(Math.hypot(x - cx + w / 2, y - cy), Math.hypot(x - cx - w / 2, y - cy), Math.hypot(x - cx, y - cy + h / 2), Math.hypot(x - cx, y - cy - h / 2));
+    if (far < 108) out.push({ x: x, y: y, d: Math.hypot(x - cx, (y - cy) * 1.2) });
+  }
+  return out.sort(function (a, b) { return a.d - b.d || a.x - b.x; });
+})();
+function renderTray() {
+  var g = $('#trayPieces'), parts = [], k = 0;
+  var nPk = S.pk ? Math.min(2 + S.ppl * 2, 20) : 0;
+  var nSw = S.sw ? Math.min(1 + S.ppl, 10) : 0;
+  /* interleave so that sweets sit among baklava */
+  var i, order = [];
+  var a = 0, b = 0;
+  for (i = 0; i < nPk + nSw; i++) { if (b < nSw && (i % 3 === 2 || a >= nPk)) { order.push('sw'); b++; } else { order.push('pk'); a++; } }
+  order.forEach(function (kind, idx) {
+    var s = SLOTS[idx]; if (!s) return;
+    var delay = (idx * 0.03).toFixed(2) + 's';
+    if (kind === 'pk') {
+      var shade = ['#E1B457', '#D8A84A', '#E8C06A', '#D29E43'][idx % 4];
+      parts.push('<g class="pc" style="animation-delay:' + delay + '"><path d="M' + (s.x - 24) + ' ' + s.y + 'L' + s.x + ' ' + (s.y - 16) + 'L' + (s.x + 24) + ' ' + s.y + 'L' + s.x + ' ' + (s.y + 16) + 'Z" fill="' + shade + '" stroke="#B7832F" stroke-width="1.3"/><path d="M' + (s.x - 14) + ' ' + s.y + 'L' + s.x + ' ' + (s.y - 9.3) + 'L' + (s.x + 14) + ' ' + s.y + 'L' + s.x + ' ' + (s.y + 9.3) + 'Z" fill="none" stroke="#F6DA9A" stroke-width="1.2"/><circle cx="' + s.x + '" cy="' + s.y + '" r="4.2" fill="#5E8A2A"/></g>');
+    } else {
+      parts.push('<g class="pc" style="animation-delay:' + delay + '"><circle cx="' + s.x + '" cy="' + s.y + '" r="14" fill="#E9A3AE" stroke="#C45A6E" stroke-width="1.3"/><circle cx="' + s.x + '" cy="' + s.y + '" r="7.5" fill="#F7E3E4"/><circle cx="' + s.x + '" cy="' + s.y + '" r="3.2" fill="#7E9B4A"/></g>');
+    }
+  });
+  /* cups and tea glasses around the rim */
+  var rim = [];
+  var nC = S.cf ? Math.min(S.cups, 10) : 0, nT = S.te ? Math.min(S.ppl, 6) : 0, tot = nC + nT;
+  for (i = 0; i < tot; i++) {
+    var ang = (-90 + 30 + i * (300 / Math.max(tot, 10))) * Math.PI / 180;
+    var x = 180 + Math.cos(ang) * 120, y = 150 + Math.sin(ang) * 112;
+    var dl = ((nPk + nSw) * 0.03 + i * 0.05).toFixed(2) + 's';
+    if (i < nC) rim.push('<g class="pc" style="animation-delay:' + dl + '"><circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="14" fill="#FFFBF3" stroke="#C9973F" stroke-width="1.5"/><circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="9.5" fill="#5A2A14"/><circle cx="' + (x - 2).toFixed(1) + '" cy="' + (y - 2).toFixed(1) + '" r="5" fill="#C79A6B"/></g>');
+    else rim.push('<g class="pc" style="animation-delay:' + dl + '"><circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="12" fill="#B5541E" fill-opacity=".85" stroke="#FFF3D6" stroke-width="2"/><circle cx="' + (x - 3).toFixed(1) + '" cy="' + (y - 3).toFixed(1) + '" r="3" fill="#FFE2B8" fill-opacity=".8"/></g>');
+  }
+  g.innerHTML = parts.join('') + rim.join('');
+  var cap = t('cap')(S);
+  $('#trayCap').textContent = cap || t('trayEmpty');
+  $('#traySvg').setAttribute('aria-label', t('trayAria') + (cap ? ': ' + cap : ''));
+}
+var lastTrayKey = '';
+function sync() {
+  $$('#items .chip').forEach(function (c) { c.setAttribute('aria-pressed', String(!!S[c.dataset.item])); });
+  $$('#occ .chip').forEach(function (c) { c.setAttribute('aria-checked', String(S.occ === c.dataset.occ)); });
+  $$('#bpick .bp').forEach(function (c) { c.setAttribute('aria-checked', String(S.br === +c.dataset.br)); });
+  $$('#dayPick .chip').forEach(function (c) { c.setAttribute('aria-checked', String(S.day === +c.dataset.day)); });
+  $('#pplV').textContent = S.ppl; $('#cupV').textContent = S.cups;
+  $('#pplM').disabled = S.ppl <= 1; $('#pplP').disabled = S.ppl >= 30;
+  $('#cupM').disabled = S.cups <= 1; $('#cupP').disabled = S.cups >= 30;
+  $('#cupsRow').hidden = !S.cf;
+  renderTimes();
+  /* time note */
+  var br = branches()[S.br], H = branchHours(br, S.br), note = '';
+  if (H) {
+    var now = mskNow(), d = ((now.getDay() + 6) % 7 + S.day) % 7, iv = H[d][0];
+    if (iv) { var o = mm(iv[0]), c = mm(iv[1]), x = mm(S.time); if (c <= o) c += 1440; if (x < o || x >= c) note = t('timeOut')(iv[0] + '–' + iv[1]); }
+  }
+  if (!note && S.moved && S.day === 1 && !S.touchedTime) note = t('closedToday');
+  var tn = $('#timeNote'); tn.textContent = note; tn.hidden = !note;
+  var key = [S.pk, S.sw, S.cf, S.te, S.ppl, S.cups].join('|') + lang;
+  if (key !== lastTrayKey) { renderTray(); lastTrayKey = key; }
+  var text = t('msg')(S, br, { day: S.day, time: S.time });
+  $('#msg').textContent = text;
+  $('#send').href = wa(text);
+  $('#barWa').href = wa(text);
+  save();
+}
+function onModClick(e) {
+  var el = e.target.closest('button'); if (!el) return;
+  if (el.dataset.item) { S[el.dataset.item] = !S[el.dataset.item]; }
+  else if (el.dataset.occ) S.occ = el.dataset.occ;
+  else if (el.dataset.br != null) { S.br = +el.dataset.br; if (!S.touchedTime) applyDefaultWhen(); }
+  else if (el.dataset.day != null) { S.day = +el.dataset.day; S.moved = false; }
+  else if (el.id === 'pplM') S.ppl = Math.max(1, S.ppl - 1);
+  else if (el.id === 'pplP') { S.ppl = Math.min(30, S.ppl + 1); if (S.cf && S.cups < S.ppl && S.cups === S.ppl - 1) S.cups = S.ppl; }
+  else if (el.id === 'cupM') S.cups = Math.max(1, S.cups - 1);
+  else if (el.id === 'cupP') S.cups = Math.min(30, S.cups + 1);
+  else return;
+  sync();
+}
+
+/* ---------- reviews ---------- */
+var EXTRA = [{ a: 'Анна Э.', r: 5, d: 'июль 2025', x: 'сами из египта, конечно египетские и сирийские сладости немного отличаются, но мы хвалим, очень понравилось, + продавцы сами из арабских стран, по этому чувствуется эта добрая душа все как родное shokran✋❤️' }];
+function renderReviews() {
+  var list = (BIZ.reviews || []).filter(function (r) { return r.r >= 4; });
+  var byA = {}; list.forEach(function (r) { byA[r.a] = r; });
+  EXTRA.forEach(function (r) { if (!byA[r.a]) { list.push(r); byA[r.a] = r; } });
+  var order = ['Татьяна К.', 'Ульяна', 'Олег L.', 'Ангелина К.', 'Анна Э.', 'Наталья К.'];
+  var picked = order.map(function (a) { return byA[a]; }).filter(Boolean);
+  list.forEach(function (r) { if (picked.indexOf(r) < 0 && picked.length < 6) picked.push(r); });
+  var tone = ['pist k2', 'rose', '', 'gold', '', 'rose'];
+  $('#wall').innerHTML = picked.slice(0, 6).map(function (r, i) {
+    var x = r.x.length > 220 ? r.x.slice(0, r.x.lastIndexOf(' ', 216)) + '…' : r.x;
+    return '<figure class="q rv ' + tone[i] + '"><span class="st" aria-label="' + r.r + ' из 5">' + '★★★★★'.slice(0, r.r) + '</span><blockquote lang="ru" dir="ltr">«' + esc(x) + '»</blockquote><figcaption><b lang="ru">' + esc(r.a) + '</b> · ' + esc(r.d) + ' · ' + esc(t('revSrc')) + '</figcaption></figure>';
+  }).join('') + '<div class="q rate-tile rv"><span class="big" dir="ltr">' + (lang === 'ar' ? BIZ.rating.value.toFixed(1) : BIZ.rating.value.toFixed(1).replace('.', ',')) + '</span><div><span class="stars" aria-hidden="true">★★★★★<b style="width:' + (BIZ.rating.value / 5 * 100).toFixed(0) + '%">★★★★★</b></span><p>' + esc(t('rating')(BIZ.rating)) + ' ' + esc(t('ratingSrc')) + '</p><a class="lnk" target="_blank" rel="noopener" href="' + esc(BIZ.reviewsUrl) + '">' + esc(t('allRv')) + '</a></div></div>';
+  $('#allRv').href = BIZ.reviewsUrl;
+  var r = BIZ.rating, val = lang === 'ar' ? r.value.toFixed(1) : r.value.toFixed(1).replace('.', ',');
+  $('#rvNote').innerHTML = '<bdi dir="ltr">' + val + '</bdi> · ' + esc(t('rating')(r)) + ' ' + esc(t('ratingSrc')) + (lang === 'ar' ? ' · المراجعات بالروسية كما نُشرت' : '');
+}
+
+/* ---------- branches ---------- */
+function renderBranches() {
+  $('#brGrid').innerHTML = branches().map(function (b, i) {
+    var H = branchHours(b, i), st = statusOf(H);
+    var h = H ? t('daily') + ' <bdi dir="ltr">' + esc(H[0][0][0] + '–' + H[0][0][1]) + '</bdi>' : esc(t('brNoHours'));
+    return '<article class="br rv' + (i === 0 ? ' main' : '') + '">' + (i === 0 ? '<span class="tag">' + esc(t('brMain')) + '</span>' : '') +
+      '<h3 lang="ru" dir="ltr">' + esc(shortAddr(b.address)) + '</h3>' +
+      '<p lang="ru">«' + esc(b.name) + '»</p>' +
+      '<div class="row"><span>' + h + '</span>' + (st ? '<span class="pill' + (st.open ? '' : ' closed') + '"><i></i><span>' + esc(st.text) + '</span></span>' : '') + '</div>' +
+      '<p>' + (lang === 'ar' ? 'مترو: ' : 'м. ') + '<bdi lang="ru">' + esc(uniq(b.metro).join(', ')) + '</bdi></p>' +
+      '<div class="acts"><button type="button" class="btn pri sm" data-pickbr="' + i + '">' + esc(t('brPick')) + '</button><a class="btn out sm" target="_blank" rel="noopener" href="' + esc(routeTo(b.coords)) + '">' + esc(t('brRoute')) + '</a></div></article>';
+  }).join('');
+}
+
+/* ---------- find ---------- */
+function renderFind() {
+  $('#addr').innerHTML = '<span lang="ru" dir="ltr">' + esc(shortAddr(BIZ.address)) + '</span>';
+  $('#addrSub').textContent = lang === 'ar' ? 'موسكو' : 'Москва';
+  renderMetro($('#metro2'));
+  $('#route').href = BIZ.routeUrl; $('#ymap').href = BIZ.yandexUrl;
+  var f = (BIZ.features || []).filter(function (x) { return /коляск/.test(x.k) && x.v === 'доступно'; })[0];
+  var fe = $('#feat'); fe.hidden = !f; fe.textContent = '♿ ' + t('wheel');
+  var day = (mskNow().getDay() + 6) % 7;
+  $('#sched').innerHTML = (BIZ.hours || []).map(function (iv, i) {
+    var h = iv.length ? iv.map(function (p) { return p[0] + '–' + p[1]; }).join(', ') : (lang === 'ar' ? 'مغلق' : 'выходной');
+    return '<tr' + (i === day ? ' class="today"' : '') + '><td' + (i === day ? ' data-today="' + esc(t('todayTag')) + '"' : '') + '>' + esc(t('days')[i]) + '</td><td dir="ltr">' + esc(h) + '</td></tr>';
+  }).join('');
+  var mf = $('#mapFrame'); if (!mf.getAttribute('src')) mf.src = BIZ.mapEmbed; mf.title = t('mapTitle');
+  $('#ftrInfo').innerHTML = t('ftr')() + '<a href="tel:' + esc(BIZ.phone) + '" dir="ltr">' + esc(BIZ.phoneDisplay) + '</a> · <a href="' + esc(BIZ.yandexUrl) + '" target="_blank" rel="noopener">' + esc(t('ymap')) + '</a>';
+}
+function renderStatus() {
+  var st = statusOf(BIZ.hours);
+  setPill($('#pillHdr'), st); setPill($('#pillFind'), st);
+}
+
+/* ---------- language ---------- */
+function setLang(l) {
+  lang = l === 'ar' ? 'ar' : 'ru';
+  var de = document.documentElement; de.lang = lang; de.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  try { localStorage.setItem('ssl-lang', lang); } catch (e) {}
+  $$('[data-t]').forEach(function (el) { var v = t(el.getAttribute('data-t')); if (typeof v === 'string') el.textContent = v; });
+  $$('[data-t-html]').forEach(function (el) { el.innerHTML = t(el.getAttribute('data-t-html')); });
+  var lb = $('#langBtn'); lb.textContent = t('langBtn'); lb.lang = t('langAttr'); lb.setAttribute('aria-label', t('langAria'));
+  ['#heroCall', '#modCall', '#barCall'].forEach(function (s) { $(s).href = 'tel:' + BIZ.phone; });
+  $('#modCall').setAttribute('aria-label', t('callAria')); $('#barCall').setAttribute('aria-label', t('callAria'));
+  document.title = lang === 'ar' ? 'حلويات سورية وقهوة على الرمل — ساحة مانيجنايا (демо)' : 'Сирийские сладости и кофе на песке — Манежная площадь, 1с2 (демо)';
+  lastTrayKey = '';
+  renderHero(); renderModule(); renderReviews(); renderBranches(); renderFind(); renderStatus();
+  observeReveal();
+}
+window.setLang = setLang;
+
+/* ---------- reveal with fail-safe ---------- */
+var io = null;
+function observeReveal() {
+  if (!io) { $$('.rv').forEach(function (el) { el.classList.add('in'); }); return; }
+  $$('.rv:not(.in)').forEach(function (el) { io.observe(el); });
+}
+var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+if ('IntersectionObserver' in window && !reduce) {
+  document.documentElement.classList.add('anim');
+  io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -6% 0px' });
+  setTimeout(function () { $$('.rv').forEach(function (el) { el.classList.add('in'); }); }, 3000);
+}
+if ('IntersectionObserver' in window) {
+  var pio = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('paused', !e.isIntersecting); }); });
+  pio.observe($('#art')); pio.observe($('#mq'));
+}
+
+/* ---------- init ---------- */
+applyDefaultWhen();
+$('#tray').addEventListener('click', onModClick);
+$('#timeIn').addEventListener('change', function (e) { if (e.target.value) { S.time = e.target.value; S.touchedTime = true; S.moved = false; sync(); } });
+$('#brGrid').addEventListener('click', function (e) {
+  var b = e.target.closest('[data-pickbr]'); if (!b) return;
+  S.br = +b.dataset.pickbr; if (!S.touchedTime) applyDefaultWhen(); sync();
+  var tr = $('#tray'); if (tr.scrollIntoView) tr.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+});
+var boilT;
+$('#cezve').addEventListener('click', function () {
+  var a = $('#art'); a.classList.remove('boil'); void a.offsetWidth; a.classList.add('boil');
+  clearTimeout(boilT); boilT = setTimeout(function () { a.classList.remove('boil'); }, 1700);
+});
+$('#langBtn').addEventListener('click', function () { setLang(lang === 'ar' ? 'ru' : 'ar'); });
+var initial = 'ru';
+try { initial = new URLSearchParams(location.search).get('lang') || localStorage.getItem('ssl-lang') || 'ru'; } catch (e) {}
+setLang(initial);
+setInterval(renderStatus, 60000);
+})();
+</script>
+<script src="../map-fix.js" defer></script>
+</body>
+</html>

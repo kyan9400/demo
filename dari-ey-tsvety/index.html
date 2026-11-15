@@ -1,0 +1,1086 @@
+<!doctype html>
+<!--
+  CONCEPT — «Дари ей цветы», Зубовский бульвар, 29, у «Парка культуры» (демо-концепт)
+  1. Идея: «Ботанический атлас, который не закрывается». Каждый букет из их карточки — гравюра-таблица
+     атласа с номером и составом, а главное, ради чего приходят ночью и в 6:30 утра, — слова к цветам.
+  2. Фирменный модуль: «Открытка к букету» — кому (маме, любимой, начальнице, учителю…) → повод →
+     текст открытки (готовые варианты на «ты»/«вы», можно переписать, живое превью рукописной карточки) →
+     три настоящих букета из каталога под этот выбор (у поштучных цветов — счётчик стеблей: нечётное число
+     для радостных поводов, чётное для печальных) → заберу сам / доставка (условия не обещаем — спрашиваем)
+     → время → живое превью сообщения → WhatsApp. В атласе любой букет можно «положить» в открытку.
+  3. Арт-дирекшн: ботанический атлас XIX века — кремовая бумага, тёмно-зелёная тушь, пыльно-розовые
+     акварельные заливки со сдвигом, как в старой литографии. Old Standard TT (заголовки, курсив),
+     Golos Text (текст), Marck Script (рука на открытке). Мотив: тонкие линейные цветы, нарисованные
+     по реальному составу (гортензия, пион «Сара Бернар», эустома, протея…), рамки таблиц, круг 24 часов.
+-->
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F4EEE2">
+<title>Дари ей цветы — круглосуточный цветочный на Зубовском бульваре, 29 (демо)</title>
+<meta name="description" content="Демо-концепт сайта магазина «Дари ей цветы» у «Парка культуры»: букеты с ценами, открытка с вашими словами и заказ в WhatsApp. Круглосуточно, 5,0 на Яндекс Картах.">
+<meta property="og:title" content="Дари ей цветы — круглосуточно на Зубовском бульваре (демо)">
+<meta property="og:description" content="Букеты из карточки с ценами, подпишите открытку и отправьте заказ в WhatsApp. 5,0 на Яндекс Картах. Демо-концепт сайта.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://kyan9400.github.io/demo/dari-ey-tsvety/">
+<meta property="og:image" content="https://kyan9400.github.io/demo/dari-ey-tsvety/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F4EEE2'/%3E%3Crect x='5' y='5' width='54' height='54' rx='10' fill='none' stroke='%231D3328' stroke-width='2'/%3E%3Ccircle cx='34' cy='28' r='12' fill='%23C9898A' opacity='.6'/%3E%3Cpath d='M32 50V30M32 40c-6-2-10-7-10-11M26 22a6 6 0 0 1 12 0a6 6 0 0 1-12 0' fill='none' stroke='%231D3328' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Golos+Text:wght@400;500;600;700&family=Marck+Script&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4EEE2; --paper-2:#EAE1CF; --card:#FBF7EF; --edge:#E2D7C2;
+  --ink:#1D3328; --ink-2:#3A5244; --dim:#56685C; --line:rgba(29,51,40,.16); --line-2:rgba(29,51,40,.3);
+  --rose:#C9898A; --rose-deep:#A9545B; --rose-ink:#94464E; --rose-soft:#F1DEDA;
+  --leaf:#5E8A6C; --ochre:#D3AE62; --lilac:#9C8DB4;
+  --green:#173026; --green-2:#1F3C30; --green-ink:#F4EEE2; --green-dim:#B9C8BC; --green-line:rgba(244,238,226,.16);
+  --ok:#3E8D5C;
+  --f-d:"Old Standard TT","Times New Roman",Georgia,serif;
+  --f-b:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --f-h:"Marck Script","Segoe Script",cursive;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--paper)}
+body{font:16px/1.55 var(--f-b);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;padding-bottom:calc(84px + env(safe-area-inset-bottom,0px));overflow-x:hidden}
+@media(min-width:900px){body{padding-bottom:0}}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;-webkit-tap-highlight-color:transparent}
+input,textarea{font:inherit;color:inherit}
+h1,h2,h3{font-weight:400}
+svg{display:block}
+:focus-visible{outline:2px solid var(--rose-ink);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+[id]{scroll-margin-top:70px}
+.nb{white-space:nowrap}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* demo bar + header */
+.demo-bar{background:var(--green);color:var(--green-dim);font-size:12.5px;line-height:1.4;padding:7px 16px;text-align:center}
+.top{position:sticky;top:0;z-index:40;background:rgba(244,238,226,.96);border-bottom:1px solid var(--line)}
+.top-in{width:min(1200px,100% - 32px);margin-inline:auto;height:58px;display:flex;align-items:center;gap:14px}
+.brand{display:inline-flex;align-items:center;gap:10px;min-height:44px;margin-right:auto;text-decoration:none;white-space:nowrap}
+.brand svg{width:28px;height:28px;flex:none}
+.brand b{font:400 21px/1 var(--f-d)}
+.brand b i{color:var(--rose-ink)}
+.nav{display:none;gap:26px;font-size:15px}
+.nav a{text-decoration:none;padding:12px 0;color:var(--ink-2)}
+.nav a:hover{color:var(--rose-ink)}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px;border:1px solid var(--line-2);white-space:nowrap;color:var(--ink)}
+.dot{display:inline-block;flex:none;width:8px;height:8px;border-radius:50%;background:var(--ok);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(62,141,92,.45)}70%,100%{box-shadow:0 0 0 8px rgba(62,141,92,0)}}
+.status .long{display:none}
+@media(min-width:520px){.status .long{display:inline}.status .short{display:none}}
+.top-wa{display:none!important}
+@media(min-width:900px){.nav{display:flex}.top-in{height:66px;gap:28px}.top-wa{display:inline-flex!important}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;transition:transform .15s,background .2s,border-color .2s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn-ink:hover{background:var(--green-2)}
+.btn-line{border:1px solid var(--line-2);color:var(--ink)}
+.btn-line:hover{border-color:var(--ink)}
+.btn-rose{background:var(--rose-soft);color:var(--ink);border:1px solid #DDBDB8}
+.btn-cream{background:var(--paper);color:var(--ink)}
+.btn-cream:hover{background:#fff}
+.btn-sm{min-height:44px;padding:0 16px;font-size:14.5px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-in{display:grid;gap:10px;padding:30px 0 34px;min-height:calc(100vh - 92px);min-height:calc(100svh - 92px);align-content:start}
+.kicker{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13.5px;color:var(--dim);letter-spacing:.02em}
+.kicker span{display:inline-flex;align-items:center;gap:7px}
+.mdot{width:9px;height:9px;border-radius:50%;flex:none;display:inline-block}
+h1{font:400 clamp(58px,18vw,140px)/.88 var(--f-d);letter-spacing:-.025em;margin:14px 0 0}
+h1 i{display:block;color:var(--rose-ink);padding-left:.42em}
+.lead{font-size:17px;color:var(--ink-2);max-width:36ch;margin-top:18px}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:20px}
+.rating{display:inline-flex;align-items:center;gap:12px;text-decoration:none;padding:8px 16px 8px 10px;border-radius:999px;border:1px solid var(--line-2);background:var(--card);max-width:100%}
+.rating .num{font:400 28px/1 var(--f-d)}
+.stars{display:flex;gap:2px;color:var(--rose-deep)}
+.stars svg{width:13px;height:13px}
+.rating small{font-size:13px;color:var(--dim);line-height:1.25}
+.clock{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;line-height:1.3;color:var(--ink-2)}
+.clock svg{width:46px;height:46px;flex:none}
+.clock b{display:block;font:400 20px/1 var(--f-d);color:var(--ink);font-variant-numeric:tabular-nums}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+@media(max-width:899.98px){.hero-cta{flex-wrap:nowrap;margin-top:20px}.hero-cta .btn{flex:1 1 auto;padding:0 14px;font-size:15px;gap:8px}.hero-in{padding-top:22px}h1{margin-top:10px}.lead{margin-top:14px}.meta{margin-top:16px;gap:10px}}
+@media(max-width:359.98px){.hero-cta{flex-wrap:wrap}}
+.plate{position:relative;margin-top:8px;background:var(--card);border:1px solid var(--edge);padding:10px;box-shadow:0 30px 60px -40px rgba(29,51,40,.45)}
+.plate-in{border:1px solid var(--line-2);position:relative}
+.plate svg.fig{width:100%;height:auto}
+.plate figcaption{border-top:1px solid var(--line);padding:12px 14px 14px;display:grid;gap:4px}
+.plate .pt{display:flex;justify-content:space-between;gap:10px;align-items:baseline;font:400 20px/1.2 var(--f-d)}
+.plate .pt i{color:var(--rose-ink)}
+.plate .pt span{font:600 15px/1 var(--f-b);white-space:nowrap}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13.5px;color:var(--dim)}
+.legend b{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;border:1px solid var(--ink-2);font-size:11px;font-weight:600;color:var(--ink);margin-right:5px}
+.plate-tag{position:absolute;top:18px;right:18px;font:italic 400 13px/1 var(--f-d);color:var(--dim);letter-spacing:.06em}
+.draw .s{stroke-dasharray:1;stroke-dashoffset:0;animation:draw 2.6s cubic-bezier(.5,0,.3,1) both}
+.draw .w,.draw .lf,.draw .wo,.draw .wd,.draw .wl{animation:wash 1.6s 1.4s ease both}
+@keyframes draw{from{stroke-dashoffset:1}}
+@keyframes wash{from{opacity:0}}
+.sway{transform-box:fill-box;transform-origin:50% 100%;animation:sway 8s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(-.7deg)}to{transform:rotate(.7deg)}}
+.paused .sway{animation-play-state:paused}
+@media(min-width:900px){
+  .hero-in{grid-template-columns:1.1fr .9fr;align-items:center;gap:56px;padding:44px 0 56px;min-height:min(840px,calc(100svh - 100px))}
+  .lead{font-size:19px}
+  .plate{margin-top:0;transform:rotate(1.2deg)}
+}
+
+/* sections */
+.sec{padding:64px 0}
+.sec-h{display:grid;gap:10px;margin-bottom:26px}
+.eyebrow{font:italic 400 15px/1.2 var(--f-d);color:var(--rose-ink);letter-spacing:.04em}
+h2{font:400 clamp(36px,9vw,64px)/1 var(--f-d);letter-spacing:-.02em}
+h2 i{color:var(--rose-ink)}
+.sec-h p{color:var(--ink-2);max-width:56ch}
+@media(min-width:900px){.sec{padding:96px 0}.sec-h{margin-bottom:40px}}
+
+/* module (dark green) */
+.mod{background:var(--green);color:var(--green-ink)}
+.mod h2 i,.mod .eyebrow{color:#E7B7B4}
+.mod .sec-h p{color:var(--green-dim)}
+.mod-grid{display:grid;gap:22px;grid-template-columns:minmax(0,1fr)}
+.mod-grid>*{min-width:0}
+.step{border-top:1px solid var(--green-line);padding-top:18px}
+.step-h{display:flex;align-items:baseline;gap:12px;margin-bottom:14px}
+.step-h b{font:italic 400 22px/1 var(--f-d);color:#E7B7B4;min-width:24px}
+.step-h h3{font:600 17px/1.3 var(--f-b)}
+.step-h small{margin-left:auto;font-size:13px;color:var(--green-dim);white-space:nowrap}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--green-line);font-size:15px;color:var(--green-ink);transition:background .2s,border-color .2s,color .2s,transform .15s}
+.chip:active{transform:scale(.96)}
+.chip:hover{border-color:rgba(244,238,226,.4)}
+.chip[aria-pressed="true"]{background:var(--paper);color:var(--ink);border-color:var(--paper);font-weight:600}
+.field{display:grid;gap:6px;margin-top:12px}
+.field label{font-size:13.5px;color:var(--green-dim)}
+.field input,.field textarea{width:100%;min-height:48px;border-radius:12px;border:1px solid var(--green-line);background:rgba(244,238,226,.06);padding:12px 14px;font-size:16px;color:var(--green-ink)}
+.field textarea{min-height:104px;resize:vertical;line-height:1.45}
+.field input::placeholder,.field textarea::placeholder{color:#8FA597}
+.field input:focus,.field textarea:focus{outline:none;border-color:#E7B7B4;background:rgba(244,238,226,.1)}
+.row2{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.tline{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px;font-size:13px;color:var(--green-dim)}
+.linkbtn{min-height:44px;padding:0 4px;display:inline-flex;align-items:center;gap:8px;color:#E7B7B4;font-weight:600;font-size:14.5px;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+/* the card preview */
+.note-wrap{position:relative;padding:8px 4px 10px}
+.note{position:relative;background:var(--card);color:var(--ink);border-radius:4px;padding:26px 24px 22px;min-height:260px;box-shadow:0 24px 50px -24px rgba(0,0,0,.55);transform:rotate(-1.6deg);transition:transform .4s}
+.note::before{content:"";position:absolute;inset:8px;border:1px solid var(--edge);pointer-events:none}
+.note .n-head{display:flex;justify-content:space-between;font:italic 400 13px/1 var(--f-d);color:var(--dim);letter-spacing:.06em}
+.note .n-text{font:400 clamp(23px,6.4vw,30px)/1.3 var(--f-h);margin-top:18px;white-space:pre-wrap;word-break:break-word;min-height:3.9em;position:relative}
+.note .n-text.empty{color:#A29A88}
+.note .n-sign{font:400 22px/1.2 var(--f-h);text-align:right;margin-top:10px;color:var(--rose-ink);min-height:1.2em;word-break:break-word}
+.note .n-spr{position:absolute;right:16px;bottom:14px;width:64px;height:64px;opacity:.9}
+.note .n-to{font-size:13px;color:var(--dim);margin-top:16px;padding-right:70px}
+.note.bump{animation:bump .4s}
+@keyframes bump{50%{transform:rotate(-.6deg) scale(1.015)}}
+/* picks */
+.picks{display:grid;gap:12px}
+.pick{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center;text-align:left;background:rgba(244,238,226,.05);border:1px solid var(--green-line);border-radius:16px;padding:10px 14px 10px 10px;color:var(--green-ink);transition:border-color .2s,background .2s;width:100%}
+.pick .pa{background:var(--card);border-radius:10px;overflow:hidden}
+.pick .pa svg{width:100%;height:auto}
+.pick h4{font:400 21px/1.15 var(--f-d)}
+.pick .pp{font-weight:700;font-size:16px;margin-top:6px}
+.pick .pp small{font-weight:400;color:var(--green-dim);font-size:13.5px}
+.pick .pd{font-size:13.5px;color:var(--green-dim);margin-top:4px;line-height:1.4}
+.pick[aria-pressed="true"]{border-color:#E7B7B4;background:rgba(231,183,180,.12)}
+.pick .ck{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:#E7B7B4;margin-top:6px;opacity:0;transition:opacity .2s}
+.pick[aria-pressed="true"] .ck{opacity:1}
+.qty{display:none;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px;padding:12px 14px;border-radius:14px;background:rgba(244,238,226,.06);border:1px solid var(--green-line)}
+.qty.on{display:flex}
+.qty .st{display:inline-flex;align-items:center;border:1px solid var(--green-line);border-radius:999px}
+.qty .st button{width:44px;height:44px;font-size:22px;line-height:1;border-radius:50%}
+.qty .st output{min-width:44px;text-align:center;font:400 24px/1 var(--f-d)}
+.qty p{font-size:13.5px;color:var(--green-dim);flex:1 1 180px}
+.inline-in{display:none;margin-top:12px}
+.inline-in.on{display:grid}
+.inline-in input{width:100%;min-height:48px;border-radius:12px;border:1px solid var(--green-line);background:rgba(244,238,226,.06);padding:12px 14px;font-size:16px;color:var(--green-ink);color-scheme:dark}
+.hint{font-size:13.5px;color:var(--green-dim);margin-top:10px}
+.sum{background:var(--paper);color:var(--ink);border-radius:18px;padding:20px;display:grid;gap:14px}
+.sum-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.sum-h span{font:italic 400 15px/1.2 var(--f-d);color:var(--rose-ink)}
+.sum-h b{font:400 30px/1 var(--f-d);white-space:nowrap}
+.preview{font-size:14px;line-height:1.5;white-space:pre-wrap;word-break:break-word;background:var(--card);border:1px dashed var(--line-2);border-radius:12px;padding:12px 14px;max-height:230px;overflow:auto;color:var(--ink-2)}
+.sum .btn{width:100%;white-space:normal;text-align:center;line-height:1.25;padding:10px 18px}
+.sum small{font-size:13px;color:var(--dim)}
+@media(min-width:900px){
+  .mod-grid{grid-template-columns:minmax(0,1fr) 420px;gap:28px 56px;align-items:start}
+  .mod-l{grid-column:1}
+  .mod-r{grid-column:2;grid-row:1 / span 3;position:sticky;top:90px;display:grid;gap:20px}
+  .picks{grid-template-columns:repeat(3,1fr)}
+  .pick{grid-template-columns:1fr;padding:10px;align-content:start}
+  .pick .pa{aspect-ratio:200/220}
+  .pick > div:last-child{padding:4px 6px 6px}
+}
+
+/* atlas */
+.index{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.ix{min-height:44px;padding:0 14px;border-radius:999px;border:1px solid var(--line-2);font-size:15px;display:inline-flex;align-items:center;gap:8px;transition:background .2s,color .2s}
+.ix sup{font-size:11px;color:var(--dim);font-weight:600}
+.ix[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.ix[aria-pressed="true"] sup{color:var(--green-dim)}
+.sort{display:flex;gap:4px;align-items:center;flex-wrap:wrap;margin-bottom:22px;font-size:14px;color:var(--dim)}
+.sort .sl{display:none}
+@media(min-width:640px){.sort .sl{display:inline}}
+.sort button{min-height:44px;padding:0 10px;color:var(--ink-2);border-bottom:1px solid transparent}
+.sort button[aria-pressed="true"]{color:var(--ink);font-weight:600;border-bottom-color:var(--rose-ink)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tab{background:var(--card);border:1px solid var(--edge);display:flex;flex-direction:column;min-width:0}
+.tab .tn{display:flex;white-space:nowrap;justify-content:space-between;gap:6px;padding:9px 10px 0;font:italic 400 12.5px/1 var(--f-d);color:var(--dim);letter-spacing:.05em}
+.tab .tn em{font-style:normal;font:600 11.5px/1 var(--f-b);letter-spacing:.06em;text-transform:uppercase;color:var(--rose-ink)}
+.tab svg{width:100%;height:auto}
+.tab .tb{padding:4px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1;border-top:1px solid var(--line);margin-inline:8px;padding-inline:4px}
+.tab h3{font:400 18px/1.15 var(--f-d);margin-top:8px;overflow-wrap:anywhere}
+.tab .tc{font:italic 400 13.5px/1.3 var(--f-d);color:var(--dim);overflow-wrap:anywhere}
+.tab .tp{font-weight:700;font-size:15.5px;margin-top:auto;padding-top:6px}
+.tab .tp small{font-weight:400;color:var(--dim);font-size:13px}
+.tab .ta{display:flex;gap:6px;margin-top:8px}
+.tab .ta button,.tab .ta a{flex:1;min-height:44px;border-radius:999px;font-size:13.5px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none}
+.tab .ta .tk{background:var(--ink);color:var(--paper)}
+.tab .ta .tw{border:1px solid var(--line-2);flex:0 0 44px}
+.tab .ta .tw svg{width:18px;height:18px}
+.more{display:flex;justify-content:center;margin-top:24px}
+@media(min-width:640px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.tab h3{font-size:20px}}
+.extra{margin-top:46px;display:grid;gap:18px;border-top:1px solid var(--line);padding-top:30px}
+.extra h3{font:400 28px/1.1 var(--f-d)}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{display:inline-flex;align-items:center;gap:8px;min-height:38px;padding:6px 14px;border-radius:999px;background:var(--paper-2);font-size:14.5px;color:var(--ink)}
+.tag svg{width:14px;height:14px;flex:none}
+@media(min-width:900px){.extra{grid-template-columns:320px 1fr;align-items:start}}
+
+/* reviews */
+.rv-top{display:grid;gap:26px;grid-template-columns:minmax(0,1fr)}
+.asp-cap{font-size:13.5px;color:var(--dim);margin-bottom:4px}
+.big{display:flex;align-items:flex-end;gap:16px}
+.big b{font:400 clamp(84px,24vw,150px)/.8 var(--f-d);letter-spacing:-.04em}
+.big div{padding-bottom:6px}
+.big .stars svg{width:18px;height:18px}
+.big p{font-size:14.5px;color:var(--dim);margin-top:6px}
+.names{font:italic 400 19px/1.35 var(--f-d);color:var(--ink-2);max-width:32ch}
+.names b{font-weight:400;color:var(--rose-ink)}
+.asp{display:grid;gap:14px}
+.asp li{list-style:none;display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:baseline}
+.asp span{font-size:15.5px}
+.asp em{font-style:normal;font-size:13.5px;color:var(--dim);white-space:nowrap}
+.asp em b{font:400 22px/1 var(--f-d);color:var(--ink);margin-right:3px}
+.asp i{grid-column:1 / -1;height:6px;border-radius:6px;background:var(--paper-2);position:relative;overflow:hidden}
+.asp i::after{content:"";position:absolute;inset:0;width:var(--w);background:linear-gradient(90deg,var(--leaf),var(--rose));border-radius:6px}
+.revs{display:grid;gap:14px;margin-top:40px}
+.rev{background:var(--card);border:1px solid var(--edge);padding:22px 20px 18px;position:relative}
+.rev::before{content:"";position:absolute;top:16px;left:20px;width:40px;height:14px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 14'%3E%3Cpath d='M1 7h30' stroke='%2356685C' stroke-width='1' fill='none'/%3E%3Ccircle cx='8' cy='4' r='2.6' fill='%235E8A6C' opacity='.4'/%3E%3Ccircle cx='15' cy='10' r='2.6' fill='%235E8A6C' opacity='.4'/%3E%3Ccircle cx='22' cy='4' r='2.4' fill='%235E8A6C' opacity='.4'/%3E%3Ccircle cx='34' cy='7' r='5' fill='%23C9898A' opacity='.7'/%3E%3C/svg%3E") no-repeat}
+.rev p{font-size:16px;line-height:1.55;margin-top:18px}
+.rev footer{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:14px;font-size:13.5px;color:var(--dim)}
+.rev footer b{color:var(--ink);font-weight:600}
+.rv-link{display:inline-flex;margin-top:22px}
+@media(min-width:900px){.rv-top{grid-template-columns:1fr 1.1fr;gap:56px;align-items:end}.revs{grid-template-columns:repeat(3,1fr);gap:18px}.rev:first-child{grid-column:span 2}.rev:first-child p{font:400 24px/1.35 var(--f-d)}}
+
+/* visit */
+.visit{background:var(--paper-2);border-top:1px solid var(--line)}
+.vis{display:grid;gap:18px}
+.addr{background:var(--card);border:1px solid var(--edge);padding:22px 20px;display:grid;gap:16px}
+.addr h3{font:400 30px/1.1 var(--f-d)}
+.addr .sub{color:var(--dim);font-size:15px}
+.mlist{display:grid;gap:8px;list-style:none}
+.mlist li{display:flex;align-items:center;gap:10px;font-size:15.5px}
+.mlist .dots{width:24px;flex:none}
+.mlist li > span:last-child{margin-left:auto;color:var(--dim);font-size:14px;white-space:nowrap}
+.mlist .dots{display:inline-flex;gap:3px}
+.stops{font-size:14px;color:var(--dim)}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.week div{text-align:center;padding:8px 0;border-radius:10px;font-size:13px;color:var(--dim);border:1px solid var(--line)}
+.week div b{display:block;font-weight:600;color:var(--ink);font-size:13.5px}
+.week .td{background:var(--ink);color:var(--green-dim);border-color:var(--ink)}
+.week .td b{color:var(--paper)}
+.addr .acts{display:flex;flex-wrap:wrap;gap:10px}
+.addr .acts .btn{flex:1 1 auto}
+.map{min-height:300px;background:var(--card) repeating-linear-gradient(45deg,transparent 0 14px,rgba(29,51,40,.04) 14px 15px);border:1px solid var(--edge);position:relative;overflow:hidden}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.map .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font:italic 400 18px/1.3 var(--f-d);color:var(--dim);padding:20px}
+@media(min-width:900px){.vis{grid-template-columns:440px 1fr}.map{min-height:520px}}
+
+/* footer */
+.foot{background:var(--green);color:var(--green-dim);padding:48px 0 34px;font-size:14.5px}
+.foot-in{display:grid;gap:22px}
+.foot .fb{font:400 34px/1 var(--f-d);color:var(--green-ink)}
+.foot .fb i{color:#E7B7B4}
+.foot a{color:var(--green-ink)}
+.foot .fl{display:grid;gap:0}
+.foot .fl a{display:flex;align-items:center;min-height:44px}
+.foot .note-s{font-size:13px;border-top:1px solid var(--green-line);padding-top:18px;line-height:1.5}
+@media(min-width:900px){.foot-in{grid-template-columns:1.3fr 1fr 1fr}.foot .note-s{grid-column:1 / -1}}
+
+/* dock */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(244,238,226,.97);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:flex;gap:10px}
+.dock .btn{flex:1}
+.dock .call{flex:0 0 52px;width:52px;padding:0}
+@media(min-width:900px){.dock{display:none}}
+
+.reveal{transition:opacity .7s ease,transform .7s ease}
+.reveal.pre{opacity:0;transform:translateY(18px)}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+
+/* svg classes */
+.bq .s{fill:none;stroke:var(--ink);stroke-width:1.15;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.bq .s2{fill:none;stroke:var(--ink);stroke-width:.8;stroke-linecap:round;vector-effect:non-scaling-stroke;opacity:.7}
+.bq .bg{fill:var(--card)}
+.bq .w{fill:var(--rose);opacity:.42}
+.bq .wd{fill:var(--rose-deep);opacity:.55}
+.bq .wo{fill:var(--ochre);opacity:.55}
+.bq .wl{fill:var(--lilac);opacity:.42}
+.bq .lf{fill:var(--leaf);opacity:.28}
+.bq .pp{fill:var(--paper-2)}
+.bq .dk{fill:var(--ink)}
+.bq .num{font:600 11px var(--f-b);fill:var(--ink)}
+</style>
+</head>
+<body>
+<div class="demo-bar">Демо-концепт · пример сайта для «Дари ей цветы» от Альхассана Альфаррана · не официальный сайт</div>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="#top" aria-label="Дари ей цветы — наверх">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="17.5" cy="12.5" r="7" fill="#C9898A" opacity=".55"/><path d="M16 29V15M16 22c-4-1-7-4-7-7M11 10.5a5 5 0 0 1 10 0a5 5 0 0 1-10 0M14 10.5a2 2 0 0 1 4 0" fill="none" stroke="#1D3328" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <b>Дари ей <i>цветы</i></b>
+    </a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#card">Открытка</a><a href="#atlas">Атлас букетов</a><a href="#reviews">Отзывы</a><a href="#visit">Как найти</a>
+    </nav>
+    <span class="status" id="status"><i class="dot"></i><span class="long">Открыто круглосуточно</span><span class="short">24/7</span></span>
+    <a class="btn btn-ink btn-sm top-wa" id="topWa" href="#" target="_blank" rel="noopener">Написать</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" id="hero">
+  <div class="wrap hero-in">
+    <div>
+      <div class="kicker" id="kicker"></div>
+      <h1>Дари ей <i>цветы</i></h1>
+      <p class="lead">Цветочный на Зубовском бульваре, 29 — <strong>открыт круглосуточно</strong>. Готовые букеты и сборные под ваш повод, открытка с вашими словами, заказ в&nbsp;WhatsApp.</p>
+      <div class="meta">
+        <a class="rating" id="rating" href="#" target="_blank" rel="noopener"></a>
+        <div class="clock" aria-live="polite"><svg viewBox="0 0 48 48" id="dial" aria-hidden="true"></svg><div><b id="clockT">00:00</b><span id="clockS">по Москве — открыто</span></div></div>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-ink" href="#card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="6" width="17" height="12" rx="1.5"/><path d="M7 10h10M7 13.5h6"/></svg>Подписать открытку</a>
+        <a class="btn btn-line" id="heroWa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg>WhatsApp</a>
+      </div>
+    </div>
+    <figure class="plate" id="plate">
+      <div class="plate-in">
+        <span class="plate-tag">Табл. I</span>
+        <svg class="fig bq" id="heroFig" viewBox="0 0 400 420" role="img" aria-label="Линейный рисунок: Евро букет — гортензия, роза пионовидная, кустовая роза, эвкалипт"></svg>
+        <figcaption>
+          <div class="pt"><span style="font:inherit;white-space:normal"><i id="heroName">Евро букет</i></span><span id="heroPrice"></span></div>
+          <div class="legend" id="heroLegend"></div>
+        </figcaption>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section class="sec mod" id="card">
+  <div class="wrap">
+    <div class="sec-h">
+      <span class="eyebrow">Открытка к букету</span>
+      <h2>Сначала — слова. <i>Потом цветы</i></h2>
+      <p>Скажите, кому и по какому поводу, — подскажем текст открытки и три букета из нашей витрины. Флорист получит всё одним сообщением в WhatsApp.</p>
+    </div>
+    <div class="mod-grid">
+      <div class="mod-l">
+        <div class="step">
+          <div class="step-h"><b>1</b><h3>Кому дарим?</h3></div>
+          <div class="chips" id="recs" role="group" aria-label="Кому"></div>
+        </div>
+        <div class="step" style="margin-top:22px">
+          <div class="step-h"><b>2</b><h3>Какой повод?</h3></div>
+          <div class="chips" id="occs" role="group" aria-label="Повод"></div>
+        </div>
+        <div class="step" style="margin-top:22px">
+          <div class="step-h"><b>3</b><h3>Что написать</h3><small id="formality"></small></div>
+          <div class="row2">
+            <div class="field" style="margin-top:0"><label for="salut">Обращение</label><input id="salut" maxlength="40" autocomplete="off"></div>
+            <div class="field" style="margin-top:0"><label for="sign">Подпись</label><input id="sign" maxlength="40" placeholder="Например: Саша" autocomplete="off"></div>
+          </div>
+          <div class="field"><label for="ctext">Текст открытки</label><textarea id="ctext" maxlength="220" rows="3"></textarea></div>
+          <div class="tline"><button type="button" class="linkbtn" id="another"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v5h-5"/></svg>Другой вариант</button><span id="count">0 / 220</span></div>
+        </div>
+      </div>
+
+      <div class="mod-r">
+        <div class="note-wrap">
+          <div class="note" id="note">
+            <div class="n-head"><span>Дари ей цветы</span><span>Зубовский бул., 29</span></div>
+            <div class="n-text" id="nText"></div>
+            <div class="n-sign" id="nSign"></div>
+            <div class="n-to" id="nTo"></div>
+            <svg class="n-spr bq" viewBox="0 0 64 64" aria-hidden="true" id="nSpr"></svg>
+          </div>
+        </div>
+        <div class="sum" id="sum">
+          <div class="sum-h"><span id="sumL">Итого по витрине</span><b id="sumT">—</b></div>
+          <div class="preview" id="preview" aria-live="polite"></div>
+          <a class="btn btn-ink" id="send" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>Отправить флористу в WhatsApp</a>
+          <small>Цена — по карточке на Яндекс Картах; наличие и итог подтвердит флорист. Открытки в магазине есть — их стоимость уточните.</small>
+        </div>
+      </div>
+
+      <div class="mod-l">
+        <div class="step">
+          <div class="step-h"><b>4</b><h3>Букет к этим словам</h3><small id="pickNote"></small></div>
+          <div class="picks" id="picks"></div>
+          <div class="qty" id="qty">
+            <div class="st"><button type="button" id="qMinus" aria-label="Меньше стеблей">−</button><output id="qVal">15</output><button type="button" id="qPlus" aria-label="Больше стеблей">+</button></div>
+            <p id="qHint"></p>
+          </div>
+          <div class="tline"><button type="button" class="linkbtn" id="morePicks">Ещё варианты</button><a class="linkbtn" href="#atlas">Весь атлас</a></div>
+        </div>
+        <div class="step" style="margin-top:22px">
+          <div class="step-h"><b>5</b><h3>Как получить и когда</h3></div>
+          <div class="chips" id="recv" role="group" aria-label="Получение">
+            <button type="button" class="chip" data-v="pickup" aria-pressed="true">Заберу сам(а)</button>
+            <button type="button" class="chip" data-v="delivery" aria-pressed="false">Нужна доставка</button>
+          </div>
+          <div class="inline-in" id="addrBox"><div class="field" style="margin-top:0"><label for="addr">Адрес доставки</label><input id="addr" maxlength="120" placeholder="Улица, дом, подъезд" autocomplete="off"></div><p class="hint">Доставка есть. Стоимость и время назовёт флорист — сайт их не обещает.</p></div>
+          <div class="chips" id="when" role="group" aria-label="Когда" style="margin-top:12px">
+            <button type="button" class="chip" data-v="now" aria-pressed="true">Как можно скорее</button>
+            <button type="button" class="chip" data-v="today" aria-pressed="false">Сегодня к часу</button>
+            <button type="button" class="chip" data-v="tomorrow" aria-pressed="false">Завтра</button>
+          </div>
+          <div class="inline-in" id="timeBox"><div class="field" style="margin-top:0"><label for="time">Ко времени</label><input id="time" type="time" value="10:00"></div></div>
+          <p class="hint" id="nightHint"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="atlas">
+  <div class="wrap">
+    <div class="sec-h">
+      <span class="eyebrow">Атлас букетов</span>
+      <h2>Вся витрина — <i id="atlasCount">66 таблиц</i></h2>
+      <p>Каждая позиция из нашей карточки, нарисованная по составу. Выберите растение в указателе — покажем всё, где оно есть.</p>
+    </div>
+    <div class="index" id="index" role="group" aria-label="Указатель растений"></div>
+    <div class="sort" id="sort" role="group" aria-label="Порядок"><span class="sl">Порядок:</span>
+      <button type="button" data-v="pop" aria-pressed="true">сначала популярные</button>
+      <button type="button" data-v="asc" aria-pressed="false">дешевле</button>
+      <button type="button" data-v="desc" aria-pressed="false">дороже</button>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="more"><button type="button" class="btn btn-line" id="showAll">Показать все</button></div>
+
+    <div class="extra">
+      <div><span class="eyebrow">Кроме букетов</span><h3 style="margin-top:8px">Что ещё есть в магазине</h3></div>
+      <div class="tags" id="tags"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="reviews" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="rv-top">
+      <div>
+        <span class="eyebrow">Почему сюда возвращаются</span>
+        <div class="big" style="margin-top:16px"><b id="bigR">5,0</b><div><div class="stars" id="bigStars"></div><p id="bigC"></p></div></div>
+        <p class="names" style="margin-top:22px" id="names"></p>
+      </div>
+      <div><p class="asp-cap">Что отмечают в отзывах на Яндекс Картах: сколько упоминаний — с похвалой</p><ul class="asp" id="asp"></ul></div>
+    </div>
+    <div class="revs" id="revs"></div>
+    <a class="btn btn-line rv-link" id="allRev" href="#" target="_blank" rel="noopener">Все отзывы на Яндекс Картах</a>
+  </div>
+</section>
+
+<section class="sec visit" id="visit">
+  <div class="wrap">
+    <div class="sec-h">
+      <span class="eyebrow">Как найти</span>
+      <h2>Зубовский бульвар, <i>29</i></h2>
+    </div>
+    <div class="vis">
+      <div class="addr">
+        <div><h3 id="vAddr"></h3><p class="sub">Открыто круглосуточно, без выходных — можно зайти и в 6:30 утра.</p></div>
+        <ul class="mlist" id="metro"></ul>
+        <p class="stops" id="stops"></p>
+        <div class="week" id="week"></div>
+        <div class="acts">
+          <a class="btn btn-ink" id="route" href="#" target="_blank" rel="noopener">Построить маршрут</a>
+          <a class="btn btn-line" id="visitCall" href="#"></a>
+        </div>
+      </div>
+      <div class="map" id="map"><div class="ph">Зубовский бульвар, 29<br>карта загружается…</div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div><div class="fb">Дари ей <i>цветы</i></div><p style="margin-top:12px">Магазин цветов · круглосуточно<br><span id="fAddr"></span></p></div>
+    <div class="fl"><a id="fCall" href="#"></a><a id="fWa" href="#" target="_blank" rel="noopener">Написать в WhatsApp</a><a id="fYa" href="#" target="_blank" rel="noopener">Карточка на Яндекс Картах</a></div>
+    <div class="fl"><a href="#card">Открытка к букету</a><a href="#atlas">Атлас букетов</a><a href="#visit">Как найти</a></div>
+    <p class="note-s">Демо-концепт · пример сайта для «Дари ей цветы» от Альхассана Альфаррана · не официальный сайт.<br>Цены и данные взяты из карточки на Яндекс Картах и могут отличаться.</p>
+  </div>
+</footer>
+
+<div class="dock">
+  <a class="btn btn-ink" id="dockWa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>Написать флористу</a>
+  <a class="btn btn-line call" id="dockCall" href="#" aria-label="Позвонить в магазин"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+</div>
+
+<script src="data.js"></script>
+<script>
+(function () {
+'use strict';
+var BIZ = window.BIZ;
+if (!BIZ) return;
+var $ = function (s) { return document.querySelector(s); };
+var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+var wa = function (text) { return 'https://wa.me/' + BIZ.wa + '?text=' + encodeURIComponent(text); };
+var rub = function (n) { return n == null ? 'по запросу' : n.toLocaleString('ru-RU').replace(/\s/g, ' ') + ' ₽'; };
+var plural = function (n, one, few, many) { var a = Math.abs(n) % 100, b = a % 10; return a > 10 && a < 20 ? many : b === 1 ? one : b >= 2 && b <= 4 ? few : many; };
+var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+function mskNow() { var d = new Date(); return new Date(d.getTime() + (d.getTimezoneOffset() + 180) * 60000); }
+var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+var store = {
+  get: function (k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } },
+  set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+};
+var STAR = '<svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg>';
+var WAI = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg>';
+
+/* ---------- basics ---------- */
+var hello = 'Здравствуйте! Пишу с сайта. Хочу заказать цветы — подскажите, пожалуйста, что есть сейчас?';
+['#topWa', '#heroWa', '#dockWa', '#fWa'].forEach(function (s) { $(s).href = wa(hello); });
+['#dockCall', '#visitCall', '#fCall'].forEach(function (s) { $(s).href = 'tel:' + BIZ.phone; });
+$('#visitCall').textContent = BIZ.phoneDisplay;
+$('#fCall').textContent = BIZ.phoneDisplay;
+$('#fYa').href = BIZ.yandexUrl;
+$('#allRev').href = BIZ.reviewsUrl;
+$('#route').href = BIZ.routeUrl;
+$('#fAddr').textContent = BIZ.fullAddress;
+$('#vAddr').textContent = BIZ.address.replace(/,\s*Москва$/, '');
+
+var rVal = BIZ.rating.value.toFixed(1).replace('.', ',');
+var rCnt = BIZ.rating.count + ' ' + plural(BIZ.rating.count, 'оценка', 'оценки', 'оценок');
+var rRev = BIZ.rating.reviews + ' ' + plural(BIZ.rating.reviews, 'отзыв', 'отзыва', 'отзывов');
+$('#rating').href = BIZ.reviewsUrl;
+$('#rating').innerHTML = '<span class="num">' + rVal + '</span><span><span class="stars">' + STAR.repeat(5) + '</span><small>' + rCnt + ' на Яндекс Картах</small></span>';
+$('#rating').setAttribute('aria-label', 'Рейтинг ' + rVal + ', ' + rCnt + ' на Яндекс Картах');
+
+/* metro: merge same station (two lines of «Парк культуры») */
+var MET = [];
+BIZ.metro.forEach(function (m) { var e = MET.find(function (x) { return x.name === m.name; }); if (e) e.colors.push(m.color); else MET.push({ name: m.name, distance: m.distance, colors: [m.color] }); });
+var dotsOf = function (m) { return '<span class="dots">' + m.colors.map(function (c) { return '<i class="mdot" style="background:' + c + '"></i>'; }).join('') + '</span>'; };
+$('#kicker').innerHTML = '<span>' + dotsOf(MET[0]) + esc(MET[0].name) + ' · ' + esc(MET[0].distance) + '</span><span>Зубовский бульвар, 29</span>';
+$('#metro').innerHTML = MET.map(function (m) { return '<li>' + dotsOf(m) + esc(m.name) + '<span>' + esc(m.distance.replace(' ', ' ')) + ' пешком</span></li>'; }).join('');
+/* bus stops — from the Yandex card (lead file) */
+var STOPS = [{ name: 'Зубовская площадь', distance: '115 м' }, { name: 'Смоленский бульвар', distance: '320 м' }];
+$('#stops').textContent = 'Остановки рядом: ' + STOPS.map(function (s) { return s.name + ' — ' + s.distance.replace(' ', ' '); }).join(', ') + '.';
+var DN = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'], today = (mskNow().getDay() + 6) % 7;
+$('#week').innerHTML = BIZ.hours.map(function (h, i) {
+  var t = !h.length ? 'выходной' : (h[0][0] === '00:00' && h[0][1] === '00:00') ? '24 ч' : h.map(function (x) { return x[0] + '–' + x[1]; }).join(', ');
+  return '<div class="' + (i === today ? 'td' : '') + '"' + (i === today ? ' aria-current="date"' : '') + '><b>' + DN[i] + '</b>' + t + '</div>';
+}).join('');
+
+/* ---------- live clock & 24h dial ---------- */
+(function dial() {
+  var o = '<circle cx="24" cy="24" r="21" fill="none" stroke="var(--line-2)" stroke-width="1"/>';
+  o += '<circle cx="24" cy="24" r="18" fill="none" stroke="var(--ok)" stroke-width="3" opacity=".8"/>';
+  for (var i = 0; i < 24; i++) { var a = i / 24 * Math.PI * 2, r1 = i % 6 ? 20 : 18.5; o += '<line x1="' + (24 + Math.sin(a) * r1).toFixed(2) + '" y1="' + (24 - Math.cos(a) * r1).toFixed(2) + '" x2="' + (24 + Math.sin(a) * 22).toFixed(2) + '" y2="' + (24 - Math.cos(a) * 22).toFixed(2) + '" stroke="var(--ink)" stroke-width="' + (i % 6 ? .6 : 1.2) + '"/>'; }
+  o += '<g id="hand"><line x1="24" y1="24" x2="24" y2="8" stroke="var(--rose-deep)" stroke-width="1.8" stroke-linecap="round"/><circle cx="24" cy="24" r="2.4" fill="var(--ink)"/></g>';
+  $('#dial').innerHTML = o;
+})();
+function tick() {
+  var n = mskNow(), h = n.getHours(), m = n.getMinutes();
+  $('#clockT').textContent = pad(h) + ':' + pad(m);
+  $('#clockS').textContent = (BIZ.is24 ? 'по Москве — открыто, как всегда' : 'по Москве');
+  var hand = document.getElementById('hand'); if (hand) hand.setAttribute('transform', 'rotate(' + ((h + m / 60) / 24 * 360).toFixed(1) + ' 24 24)');
+  var nh = $('#nightHint');
+  if (nh) nh.textContent = (h < 7 || h >= 22) ? 'Сейчас ' + pad(h) + ':' + pad(m) + ' — магазин работает и ночью, можно прийти прямо сейчас.' : '';
+}
+tick(); setInterval(tick, 30000);
+
+/* ---------- botanical drawing engine ---------- */
+function hash(s) { var h = 2166136261; for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+function rng(seed) { return function () { seed |= 0; seed = seed + 0x6D2B79F5 | 0; var t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+var f = function (n) { return Math.round(n * 10) / 10; };
+function scallop(r, n, b, rot) {
+  rot = rot || 0; var d = '';
+  for (var i = 0; i <= n; i++) {
+    var a = (rot + i * 360 / n) * Math.PI / 180, x = Math.cos(a) * r, y = Math.sin(a) * r;
+    if (!i) d += 'M' + f(x) + ' ' + f(y);
+    else { var am = (rot + (i - .5) * 360 / n) * Math.PI / 180; d += 'Q' + f(Math.cos(am) * r * (1 + b)) + ' ' + f(Math.sin(am) * r * (1 + b)) + ' ' + f(x) + ' ' + f(y); }
+  }
+  return d + 'Z';
+}
+function spiral(R) { var d = '', N = 18, px, py; for (var i = 0; i <= N; i++) { var th = i * .5, rr = R * (.08 + .92 * i / N), x = Math.cos(th) * rr, y = Math.sin(th) * rr; if (!i) d = 'M' + f(x) + ' ' + f(y); else d += 'Q' + f(px) + ' ' + f(py) + ' ' + f((px + x) / 2) + ' ' + f((py + y) / 2); px = x; py = y; } return d; }
+var petalD = function (l, w) { return 'M0 0Q' + f(w) + ' ' + f(-l * .5) + ' 0 ' + f(-l) + 'Q' + f(-w) + ' ' + f(-l * .5) + ' 0 0Z'; };
+function petals(n, l, w, rot, cls, off) {
+  var o = '';
+  for (var i = 0; i < n; i++) o += '<path class="' + (cls || 's') + '" d="' + petalD(l, w) + '" transform="rotate(' + f((rot || 0) + i * 360 / n) + ')' + (off ? ' translate(0 ' + f(-off) + ')' : '') + '"/>';
+  return o;
+}
+var tr = function (x, y, inner, rot) { return '<g transform="translate(' + f(x) + ' ' + f(y) + ')' + (rot ? ' rotate(' + f(rot) + ')' : '') + '">' + inner + '</g>'; };
+var bg = function (r) { return '<circle class="bg" r="' + f(r) + '"/>'; };
+var wash = function (r, t) { return t === 'none' ? '' : '<circle class="' + (t || 'w') + '" cx="2" cy="1.5" r="' + f(r) + '"/>'; };
+var G = {
+  rose: function (r, t) { return bg(r * .95) + wash(r * .78, t) + '<path class="s" d="' + scallop(r * .95, 5, .22, -90) + '"/><path class="s2" d="' + scallop(r * .66, 4, .28, -45) + '"/><path class="s" d="' + spiral(r * .46) + '"/>'; },
+  spray: function (r, t) { var s = r * .52; return tr(-r * .45, r * .22, G.rose(s, t)) + tr(r * .46, r * .18, G.rose(s * .9, t === 'none' ? 'none' : 'w')) + tr(0, -r * .38, G.rose(s, t)); },
+  peonyrose: function (r, t) { return bg(r) + wash(r * .82, t) + '<path class="s" d="' + scallop(r * .95, 8, .2) + '"/><path class="s" d="' + scallop(r * .66, 6, .24, 18) + '"/><path class="s" d="' + scallop(r * .38, 5, .3, 40) + '"/><path class="s2" d="M-3 0a3 3 0 0 1 6 0"/>'; },
+  peony: function (r, t) { var c = ''; for (var i = 0; i < 5; i++) { var a = i * 72 * Math.PI / 180; c += '<path class="s2" d="M0 0Q' + f(Math.cos(a + .5) * r * .2) + ' ' + f(Math.sin(a + .5) * r * .2) + ' ' + f(Math.cos(a) * r * .28) + ' ' + f(Math.sin(a) * r * .28) + '"/>'; } return bg(r * 1.05) + wash(r * .86, t) + '<path class="s" d="' + scallop(r, 10, .22) + '"/><path class="s" d="' + scallop(r * .72, 8, .25, 12) + '"/><path class="s" d="' + scallop(r * .46, 6, .3, 25) + '"/>' + c; },
+  ranunc: function (r, t) { var o = bg(r) + wash(r * .8, t); [1, .78, .57, .37, .18].forEach(function (k, i) { o += '<circle class="s" cx="' + f(i * r * .025) + '" cy="' + f(-i * r * .02) + '" r="' + f(r * k * .95) + '"/>'; }); return o; },
+  tulip: function (r, t) { return '<ellipse class="bg" rx="' + f(r * .62) + '" ry="' + f(r * .7) + '" cy="' + f(r * .1) + '"/>' + wash(r * .55, t) + '<path class="s" d="M' + f(-r * .55) + ' ' + f(-r * .35) + 'C' + f(-r * .62) + ' ' + f(r * .5) + ' ' + f(-r * .3) + ' ' + f(r * .75) + ' 0 ' + f(r * .75) + 'C' + f(r * .3) + ' ' + f(r * .75) + ' ' + f(r * .62) + ' ' + f(r * .5) + ' ' + f(r * .55) + ' ' + f(-r * .35) + 'L' + f(r * .26) + ' ' + f(-r * .08) + 'L0 ' + f(-r * .52) + 'L' + f(-r * .26) + ' ' + f(-r * .08) + 'Z"/><path class="s2" d="M0 ' + f(-r * .5) + 'C' + f(-r * .12) + ' 0 ' + f(-r * .06) + ' ' + f(r * .4) + ' 0 ' + f(r * .75) + '"/>'; },
+  eustoma: function (r, t) { return '<ellipse class="bg" rx="' + f(r * .75) + '" ry="' + f(r * .62) + '" cy="' + f(r * .05) + '"/>' + wash(r * .58, t) + '<path class="s" d="M' + f(-r * .72) + ' ' + f(-r * .15) + 'C' + f(-r * .78) + ' ' + f(r * .6) + ' ' + f(r * .78) + ' ' + f(r * .6) + ' ' + f(r * .72) + ' ' + f(-r * .15) + 'Q' + f(r * .36) + ' ' + f(-r * .58) + ' 0 ' + f(-r * .26) + 'Q' + f(-r * .36) + ' ' + f(-r * .62) + ' ' + f(-r * .72) + ' ' + f(-r * .15) + 'Z"/><path class="s2" d="M' + f(-r * .22) + ' ' + f(-r * .36) + 'C' + f(-r * .26) + ' ' + f(r * .1) + ' ' + f(-r * .1) + ' ' + f(r * .3) + ' 0 ' + f(r * .44) + 'M' + f(r * .3) + ' ' + f(-r * .32) + 'C' + f(r * .3) + ' 0 ' + f(r * .2) + ' ' + f(r * .25) + ' ' + f(r * .1) + ' ' + f(r * .42) + '"/>'; },
+  sunflower: function (r) { var o = bg(r) + petals(16, r, r * .2, 0, 's') + '<circle class="bg" r="' + f(r * .44) + '"/><circle class="wo" r="' + f(r * .42) + '"/><circle class="s" r="' + f(r * .42) + '"/>'; for (var i = 0; i < 7; i++) { var a = i * 51 * Math.PI / 180, d = i ? r * .22 : 0; o += '<circle class="dk" cx="' + f(Math.cos(a) * d) + '" cy="' + f(Math.sin(a) * d) + '" r=".9"/>'; } return o; },
+  chrys: function (r, t) { var o = bg(r) + wash(r * .7, t); for (var i = 0; i < 30; i++) { var a = i * 12 * Math.PI / 180, l = i % 2 ? r * .78 : r * .98; o += '<path class="' + (i % 2 ? 's2' : 's') + '" d="M' + f(Math.cos(a) * r * .18) + ' ' + f(Math.sin(a) * r * .18) + 'L' + f(Math.cos(a) * l) + ' ' + f(Math.sin(a) * l) + '"/>'; } return o + '<circle class="s" r="' + f(r * .16) + '"/>'; },
+  dahlia: function (r, t) { return bg(r) + wash(r * .8, t) + petals(12, r, r * .19, 0, 's') + petals(10, r * .62, r * .16, 18, 's') + '<circle class="s" r="' + f(r * .12) + '"/>'; },
+  hydrangea: function (r, t) { var o = bg(r) + wash(r * .86, t), P = [[0, 0]]; for (var i = 0; i < 6; i++) { var a = (i * 60 + 15) * Math.PI / 180; P.push([Math.cos(a) * r * .56, Math.sin(a) * r * .56]); } P.forEach(function (p, j) { o += tr(p[0], p[1], petals(4, r * .3, r * .15, 45 + j * 17, 's') + '<circle class="dk" r="1"/>'); }); return o; },
+  protea: function (r, t) { var o = '<ellipse class="bg" rx="' + f(r * .85) + '" ry="' + f(r * .8) + '"/>' + wash(r * .62, t); for (var a = -72; a <= 72; a += 24) o += '<path class="s" d="' + petalD(r * .9, r * .2) + '" transform="translate(0 ' + f(r * .35) + ') rotate(' + a + ')"/>'; o += '<ellipse class="bg" cy="' + f(-r * .06) + '" rx="' + f(r * .4) + '" ry="' + f(r * .46) + '"/><ellipse class="s" cy="' + f(-r * .06) + '" rx="' + f(r * .4) + '" ry="' + f(r * .46) + '"/>'; for (var k = -2; k <= 2; k++) o += '<path class="s2" d="M' + f(k * r * .12) + ' ' + f(r * .36) + 'Q' + f(k * r * .2) + ' ' + f(-r * .1) + ' ' + f(k * r * .1) + ' ' + f(-r * .48) + '"/>'; return o; },
+  matth: function (r, t) { var o = '<path class="s" d="M0 ' + f(r * .9) + 'L0 ' + f(-r * .95) + '"/>'; for (var i = 0; i < 6; i++) { var y = r * .6 - i * r * .3, s = r * (.34 - i * .03), x = (i % 2 ? 1 : -1) * r * .12; o += tr(x, y, '<circle class="bg" r="' + f(s * .9) + '"/>' + (t === 'none' ? '' : '<circle class="' + (t || 'w') + '" r="' + f(s * .7) + '"/>') + petals(4, s, s * .45, i * 20, 's')); } return o; },
+  amar: function (r, t) { var o = bg(r * .9) + wash(r * .7, t) + petals(6, r, r * .3, 30, 's'); for (var i = -1; i <= 1; i++) o += '<path class="s2" d="M0 0L' + f(i * r * .22) + ' ' + f(-r * .55) + '"/><circle class="dk" cx="' + f(i * r * .22) + '" cy="' + f(-r * .55) + '" r="1.2"/>'; return o; },
+  tanac: function (r) { var o = '', P = [[0, 0]]; for (var i = 0; i < 5; i++) { var a = (i * 72 - 90) * Math.PI / 180; P.push([Math.cos(a) * r * .55, Math.sin(a) * r * .55]); } P.forEach(function (p) { o += tr(p[0], p[1], '<circle class="bg" r="' + f(r * .26) + '"/><circle class="wo" r="' + f(r * .22) + '"/><circle class="s" r="' + f(r * .24) + '"/><circle class="dk" r="' + f(r * .06) + '"/>'); }); return o; },
+  phlox: function (r, t) { var o = bg(r * .9) + wash(r * .75, t), P = [[0, 0], [-r * .5, -r * .2], [r * .5, -r * .25], [-r * .25, r * .45], [r * .3, r * .42]]; P.forEach(function (p, j) { o += tr(p[0], p[1], petals(5, r * .3, r * .16, j * 23, 's') + '<circle class="dk" r=".9"/>'); }); return o; },
+  wax: function (r) { var o = '', P = [[0, 0], [-r * .55, -r * .1], [r * .5, -r * .3], [-r * .2, r * .5], [r * .35, r * .4], [-r * .1, -r * .6], [r * .7, r * .15]]; P.forEach(function (p, j) { o += tr(p[0], p[1], '<circle class="bg" r="' + f(r * .17) + '"/>' + petals(5, r * .17, r * .08, j * 30, 's')); }); return o; },
+  balloon: function (r, t) { return '<path class="s" d="M0 ' + f(r * .9) + 'C' + f(r * .3) + ' ' + f(r * 1.3) + ' ' + f(-r * .3) + ' ' + f(r * 1.6) + ' 0 ' + f(r * 2.2) + '"/><ellipse class="bg" rx="' + f(r * .7) + '" ry="' + f(r * .85) + '"/>' + (t === 'none' ? '' : '<ellipse class="' + (t || 'w') + '" cx="2" cy="1.5" rx="' + f(r * .6) + '" ry="' + f(r * .75) + '"/>') + '<ellipse class="s" rx="' + f(r * .7) + '" ry="' + f(r * .85) + '"/><path class="s2" d="M' + f(-r * .38) + ' ' + f(-r * .3) + 'Q' + f(-r * .3) + ' ' + f(-r * .6) + ' ' + f(-r * .05) + ' ' + f(-r * .66) + '"/><path class="s" d="M-3 ' + f(r * .85) + 'L3 ' + f(r * .85) + 'L0 ' + f(r * .95) + 'Z"/>'; }
+};
+function leaf(x, y, ang, len) { return tr(x, y, '<path class="lf" d="' + petalD(len, len * .3) + '"/><path class="s" d="' + petalD(len, len * .3) + '"/><path class="s2" d="M0 0L0 ' + f(-len * .85) + '"/>', ang); }
+function euc(x, y, ang, len) { var o = '<path class="s" d="M0 0Q' + f(len * .12) + ' ' + f(-len * .5) + ' 0 ' + f(-len) + '"/>'; for (var i = 1; i <= 5; i++) { var yy = -len * i / 5.6, side = i % 2 ? 1 : -1, rr = len * (.12 - i * .01); o += '<circle class="lf" cx="' + f(side * rr * 1.1) + '" cy="' + f(yy) + '" r="' + f(rr) + '"/><circle class="s" cx="' + f(side * rr * 1.1) + '" cy="' + f(yy) + '" r="' + f(rr) + '"/>'; } return tr(x, y, o, ang); }
+function ruscus(x, y, ang, len) { var o = '<path class="s" d="M0 0L0 ' + f(-len) + '"/>'; for (var i = 1; i <= 4; i++) o += tr((i % 2 ? 1 : -1) * 1, -len * i / 4.6, '<path class="lf" d="' + petalD(len * .3, len * .07) + '"/><path class="s" d="' + petalD(len * .3, len * .07) + '"/>', (i % 2 ? 40 : -40)); return tr(x, y, o, ang); }
+
+/* plant parser: real composition from title + description */
+var PL = [
+  [/гортенз/i, 'hydrangea', 'гортензия'],
+  [/пионовидн[а-яё]*\s+(кустов[а-яё]*\s+)?роз|роз[а-яё]*\s+пионовидн/i, 'peonyrose', 'пионовидная роза'],
+  [/кустов[а-яё]*\s+роз|роз[а-яё]*\s+кустов|кустовые|кустовая/i, 'spray', 'кустовая роза'],
+  [/пион(?!овидн)/i, 'peony', 'пион'],
+  [/тюльпан/i, 'tulip', 'тюльпан'],
+  [/эустом/i, 'eustoma', 'эустома'],
+  [/подсолнух/i, 'sunflower', 'подсолнух'],
+  [/хризантем|сантини/i, 'chrys', 'хризантема'],
+  [/проте/i, 'protea', 'протея'],
+  [/ранункулус/i, 'ranunc', 'ранункулус'],
+  [/матиол/i, 'matth', 'матиолла'],
+  [/танацетум/i, 'tanac', 'танацетум'],
+  [/флокс/i, 'phlox', 'флокс'],
+  [/амариллис/i, 'amar', 'амариллис'],
+  [/георгин/i, 'dahlia', 'георгин'],
+  [/ваксфлов/i, 'wax', 'ваксфловер'],
+  [/эвкалипт/i, 'euc', 'эвкалипт'],
+  [/рускус/i, 'ruscus', 'рускус'],
+  [/шар/i, 'balloon', 'шары'],
+  [/роз/i, 'rose', 'роза']
+];
+var FILL = { euc: 1, ruscus: 1 };
+function parsePlants(text) {
+  var s = text, out = [];
+  PL.forEach(function (p) { var m = s.match(p[0]); if (m) { out.push({ k: p[1], n: p[2], at: m.index }); s = s.replace(new RegExp(p[0].source, 'gi'), function (x) { return ' '.repeat(x.length); }); } });
+  out.sort(function (a, b) { return a.at - b.at; });
+  return out;
+}
+var clean = function (t) { return t.replace(/[\u{1F300}-\u{1FAFF}☀-➿]️?/gu, '').replace(/\s+,/g, ',').replace(/«\s+/g, '«').replace(/\s+»/g, '»').replace(/\.$/, '').replace(/^Водушный/, 'Воздушный').replace(/\s{2,}/g, ' ').trim(); };
+
+/* ---------- catalogue items ---------- */
+var ITEMS = [], TOPKEYS = BIZ.top.map(function (x) { return x.t + '|' + x.p; });
+BIZ.menu.forEach(function (c) { c.items.forEach(function (it) {
+  var raw = it.t + ' ' + (it.d || ''), name = clean(it.t), d = it.d ? clean(it.d) : '';
+  var v = it.v || (/^1\s?шт$/i.test(d) ? '1 шт.' : null); if (/^1\s?шт$/i.test(d)) d = '';
+  var pl = parsePlants(raw), lc = raw.toLowerCase();
+  var it2 = { t: name, p: it.p, v: v, d: d, cat: c.name, raw: raw, plants: pl, n: ITEMS.length + 1, key: 'i' + ITEMS.length, top: TOPKEYS.indexOf(it.t + '|' + it.p) };
+  it2.unit = it.p != null && it.p <= 1500 && v === '1 шт.';
+  it2.single = it.p != null && it.p <= 1950 && !/букет|охапк/i.test(name);
+  var has = function (k) { return pl.some(function (p) { return p.k === k; }); };
+  it2.tags = {
+    rose: has('rose') || has('spray') || has('peonyrose') ? 1 : 0,
+    red: /красн|бархат|red/i.test(lc) ? 1 : 0,
+    white: /бел|облачко|воздуш/i.test(lc) ? 1 : 0,
+    tender: /нежн|облачко|воздуш|эустом|пион|ранункулус|лаванд/i.test(lc) ? 1 : 0,
+    peony: has('peony') || has('peonyrose') ? 1 : 0,
+    field: /полев|сантини|подсолнух|танацетум|матиол|эустом/i.test(lc) ? 1 : 0,
+    bright: /ярк|микс|подсолнух|бомбастик|осенн|георгин/i.test(lc) ? 1 : 0,
+    grand: (/евро|\b51\b|101|65|80\s?см|корзин/i.test(lc) || it.p >= 20000) ? 1 : 0,
+    box: /коробк|корзин|ящик/i.test(lc) ? 1 : 0,
+    bride: /невест/i.test(lc) ? 1 : 0,
+    stem: it2.unit ? 1 : 0,
+    sorrow: (has('chrys') || /бел|ранункулус/i.test(lc)) ? 1 : 0,
+    balloon: has('balloon') ? 1 : 0,
+    huge: it.p >= 40000 ? 1 : 0
+  };
+  it2.tone = it2.tags.red ? 'wd' : /лаванд/i.test(lc) ? 'wl' : it2.tags.white ? 'none' : 'w';
+  ITEMS.push(it2);
+}); });
+var byKey = function (k) { return ITEMS.find(function (i) { return i.key === k; }); };
+
+/* default drawing mixes for items whose card has no composition */
+function drawTypes(it) {
+  var fl = it.plants.filter(function (p) { return !FILL[p.k]; }).map(function (p) { return p.k; });
+  var fil = it.plants.filter(function (p) { return FILL[p.k]; }).map(function (p) { return p.k; });
+  if (!fl.length) {
+    var t = it.raw.toLowerCase();
+    fl = /полев/.test(t) ? ['chrys', 'tanac', 'matth'] : /невест/.test(t) ? ['peonyrose', 'eustoma', 'wax'] : /облачко|воздуш/.test(t) ? ['hydrangea', 'spray', 'wax'] : /нежн/.test(t) ? ['peony', 'spray', 'eustoma'] : /ярк|сборн|микс/.test(t) ? ['dahlia', 'spray', 'chrys'] : ['rose', 'spray', 'eustoma'];
+    if (!fil.length && !/полев/.test(t)) fil = ['euc'];
+  }
+  return { fl: fl, fil: fil };
+}
+function bouquet(it, opt) {
+  opt = opt || {};
+  var R = rng(hash(it.key + it.t)), T = drawTypes(it), fl = T.fl, o = '', heads = [], fills = [];
+  var t = it.raw.toLowerCase(), cont = /корзин/.test(t) ? 'basket' : /коробк|ящик/.test(t) ? 'box' : 'wrap';
+  if (fl[0] === 'balloon') {
+    [[70, 70, 30], [128, 58, 32], [100, 100, 28]].forEach(function (b, i) { o += '<path class="s" d="M' + b[0] + ' ' + (b[1] + b[2] * 2.2) + 'Q' + (b[0] + (100 - b[0]) * .4) + ' 170 100 205"/>'; o += tr(b[0], b[1], G.balloon(b[2], i === 1 ? 'none' : 'w')); });
+    return { svg: o, heads: [] };
+  }
+  if (it.single) {
+    var k = fl[0], hr = k === 'matth' ? 52 : k === 'protea' ? 44 : 40, hy = k === 'matth' ? 92 : 80;
+    o += '<path class="s" d="M100 214C95 176 106 140 100 ' + (hy + hr * .5) + '"/>';
+    o += leaf(100, 176, -38, 44) + leaf(101, 150, 34, 38);
+    if (k === 'tulip') o += leaf(99, 200, -14, 70);
+    o += tr(100, hy, G[k] ? G[k](hr, it.tone) : G.rose(hr, it.tone), (R() - .5) * 10);
+    heads.push({ x: 100, y: hy, r: hr, k: k });
+    return { svg: o, heads: heads };
+  }
+  var big = it.p >= 15000, pos = big ? [[100, 56], [70, 70], [131, 68], [50, 96], [150, 94], [84, 102], [118, 104]] : [[100, 60], [71, 80], [130, 78], [85, 108], [117, 107]];
+  var dy = cont === 'wrap' ? 0 : 14;
+  var order = big ? [0, 1, 2, 0, 1, 2, 0] : [0, 1, 2, 1, 0];
+  pos = pos.map(function (p, i) { var k = fl[order[i] % fl.length]; return { x: p[0] + (R() - .5) * 6, y: p[1] + dy + (R() - .5) * 6, r: (i === 0 ? 25 : 22) * (.88 + R() * .2), k: k, rot: (R() - .5) * 40 }; });
+  // stem tails below the wrap
+  if (cont === 'wrap') for (var s = 0; s < 4; s++) o += '<path class="s" d="M' + (95 + s * 3.4) + ' 196L' + (92 + s * 5.2) + ' 216"/>';
+  // stems
+  pos.forEach(function (p) { o += '<path class="s2" d="M' + f(p.x) + ' ' + f(p.y + p.r * .5) + 'Q' + f((p.x + 100) / 2 + (p.x < 100 ? -4 : 4)) + ' ' + f((p.y + 160) / 2) + ' 100 160"/>'; });
+  // fillers
+  var fil = T.fil.length ? T.fil : ['leaf'];
+  [[40, 126, -58, 62], [160, 124, 58, 62], [98, 78, -4, 66]].forEach(function (z, i) {
+    var kind = fil[i % fil.length];
+    if (i === 2 && !big) return;
+    var x = z[0], y = z[1] + dy;
+    if (kind === 'euc') o += euc(x + (100 - x) * .35, y + 10, z[2], z[3]); else if (kind === 'ruscus') o += ruscus(x + (100 - x) * .35, y + 10, z[2], z[3]); else o += leaf(x + (100 - x) * .3, y + 8, z[2], z[3] * .7);
+    fills.push({ x: x, y: y - 20, k: kind });
+  });
+  if (cont === 'basket') o += '<path class="s" d="M52 ' + (126 + dy) + 'Q100 ' + (-20 + dy) + ' 148 ' + (126 + dy) + '"/>';
+  // container
+  if (cont === 'wrap') {
+    o += '<path class="pp" d="M54 124L100 200L146 124Q100 138 54 124Z"/><path class="s" d="M54 124L100 200L146 124"/><path class="s2" d="M54 124Q100 138 146 124M64 128L92 188M136 128L108 188"/>';
+    o += tr(100, 168, '<ellipse class="w" rx="9" ry="4.5" transform="rotate(-28) translate(-8 0)"/><ellipse class="s" rx="9" ry="4.5" transform="rotate(-28) translate(-8 0)"/><ellipse class="w" rx="9" ry="4.5" transform="rotate(28) translate(8 0)"/><ellipse class="s" rx="9" ry="4.5" transform="rotate(28) translate(8 0)"/><path class="s" d="M-2 2L-10 18M2 2L9 17"/>');
+  } else if (cont === 'box') {
+    o += '<rect class="pp" x="48" y="' + (128 + dy) + '" width="104" height="' + (78 - dy) + '"/><rect class="s" x="48" y="' + (128 + dy) + '" width="104" height="' + (78 - dy) + '"/><path class="s2" d="M48 ' + (142 + dy) + 'H152"/>';
+  } else {
+    var by = 126 + dy;
+    o += '<path class="pp" d="M48 ' + by + 'Q52 206 100 208Q148 206 152 ' + by + 'Z"/><path class="s" d="M48 ' + by + 'Q52 206 100 208Q148 206 152 ' + by + 'Z"/>';
+    for (var w = 1; w < 4; w++) o += '<path class="s2" d="M' + (49 + w * 2) + ' ' + (by + w * 18) + 'Q100 ' + (by + w * 18 + 10) + ' ' + (151 - w * 2) + ' ' + (by + w * 18) + '"/>';
+  }
+  // heads (back to front)
+  pos.slice().sort(function (a, b) { return a.y - b.y; }).forEach(function (p, i) {
+    var tone = it.tone === 'w' && fl.length > 1 && i % 3 === 2 ? 'none' : it.tone;
+    o += tr(p.x, p.y, (G[p.k] || G.rose)(p.r, tone), p.rot);
+    heads.push(p);
+  });
+  return { svg: o, heads: heads, fills: fills };
+}
+var CACHE = {};
+function art(it) { return CACHE[it.key] || (CACHE[it.key] = '<svg class="bq" viewBox="0 0 200 220" aria-hidden="true">' + bouquet(it).svg + '</svg>'); }
+
+/* ---------- hero plate: the #1 popular bouquet, drawn from its real composition ---------- */
+(function hero() {
+  var it = ITEMS.find(function (i) { return i.top === 0; }) || ITEMS[0];
+  var b = bouquet(it), sc = 1.62, ox = 38, oy = 20;
+  var o = '<g class="sway">' + '<g transform="translate(' + ox + ' ' + oy + ') scale(' + sc + ')">' + b.svg + '</g></g>';
+  // leader lines + numbers for each plant type in the real composition
+  var types = it.plants, seen = {}, n = 0, leg = [];
+  types.forEach(function (p) {
+    if (seen[p.k]) return; seen[p.k] = 1; n++;
+    var left = n % 2 === 1, cand = b.heads.filter(function (x) { return x.k === p.k; });
+    if (!cand.length && FILL[p.k] && b.fills) cand = b.fills.map(function (z) { return { x: z.x, y: z.y + 6, r: 4 }; });
+    if (!cand.length) { n--; return; }
+    var h = cand.sort(function (a, c) { return left ? a.x - c.x : c.x - a.x; })[0];
+    var hx = ox + h.x * sc, hy = oy + h.y * sc, lx = left ? 20 : 380, ly = [0, 70, 96, 170, 196][n] || (60 + n * 60);
+    o += '<path class="s2" d="M' + f(hx + (left ? -h.r * sc * .55 : h.r * sc * .55)) + ' ' + f(hy) + 'L' + f(left ? lx + 22 : lx - 22) + ' ' + f(ly) + 'H' + f(left ? lx + 9 : lx - 9) + '"/><circle class="dk" cx="' + f(hx + (left ? -h.r * sc * .55 : h.r * sc * .55)) + '" cy="' + f(hy) + '" r="1.6"/>';
+    o += '<circle class="bg" cx="' + lx + '" cy="' + f(ly) + '" r="9"/><circle class="s" cx="' + lx + '" cy="' + f(ly) + '" r="9"/><text class="num" x="' + lx + '" y="' + f(ly + 4) + '" text-anchor="middle">' + n + '</text>';
+    leg.push('<span><b>' + n + '</b>' + p.n + '</span>');
+  });
+  var fig = $('#heroFig');
+  fig.innerHTML = o;
+  if (!reduced) {
+    fig.querySelectorAll('.s,.s2').forEach(function (el) { el.setAttribute('pathLength', '1'); });
+    fig.classList.add('draw');
+    setTimeout(function () { fig.classList.remove('draw'); }, 4500);
+  }
+  $('#heroName').textContent = it.t + ' — самый популярный';
+  $('#heroPrice').textContent = rub(it.p);
+  $('#heroLegend').innerHTML = leg.join('');
+  var hs = $('#hero');
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { es.forEach(function (e) { hs.classList.toggle('paused', !e.isIntersecting); }); }).observe(hs);
+})();
+
+/* ---------- signature module: card → bouquet ---------- */
+var RECS = [
+  { id: 'love', l: 'Любимой', to: 'любимой', s: 'Любимая', ph: 'Например: Любимая', w: { red: 3, rose: 3, tender: 1, grand: 1 } },
+  { id: 'mom', l: 'Маме', to: 'маме', s: 'Мама', ph: 'Например: Мама', w: { tender: 3, peony: 2, field: 1, box: 1 } },
+  { id: 'friend', l: 'Подруге', to: 'подруге', s: '', ph: 'Имя, например: Аня', w: { bright: 3, field: 2, tender: 1 } },
+  { id: 'boss', l: 'Коллеге или начальнице', to: 'коллеге / начальнице', s: '', ph: 'Имя и отчество', vy: 1, w: { box: 3, grand: 1, tender: 1, field: 1 } },
+  { id: 'teacher', l: 'Учителю', to: 'учителю', s: '', ph: 'Имя и отчество', vy: 1, w: { field: 2, bright: 2, box: 1, tender: 1 } },
+  { id: 'bride', l: 'Невесте', to: 'невесте', s: '', ph: 'Имена: Аня и Илья', w: { bride: 6, white: 2, tender: 1 } },
+  { id: 'self', l: 'Себе', to: 'себе', s: '', ph: 'Можно оставить пустым', w: { field: 3, stem: 3, bright: 1 } }
+];
+var OCCS = [
+  { id: 'bday', l: 'День рождения', w: { bright: 1, tender: 1, grand: 1 },
+    ty: ['{s}с днём рождения! Пусть этот год будет таким же красивым, как этот букет.', '{s}с днём рождения! Спасибо, что ты есть. Это тебе — чтобы улыбнулась.', '{s}с днём рождения! Тепла, лёгкости и поводов радоваться каждый день.'],
+    vy: ['{s}с днём рождения! Здоровья, вдохновения и только приятных поводов для цветов.', '{s}с днём рождения! Пусть этот год будет щедрым на радость и успехи.', '{s}поздравляем с днём рождения! Спасибо за вашу поддержку.'] },
+  { id: 'just', l: 'Просто так', w: { field: 2, stem: 2, tender: 1 },
+    ty: ['{s}без повода. Просто думаю о тебе.', '{s}это тебе. Потому что можно.', '{s}пусть эти цветы постоят рядом и напомнят, что ты самая лучшая.'],
+    vy: ['{s}просто так — чтобы день был чуть светлее.', '{s}без повода, от всей души.', '{s}пусть этот букет поднимет вам настроение.'] },
+  { id: 'thanks', l: 'Спасибо', w: { box: 2, field: 1, tender: 1 },
+    ty: ['{s}спасибо тебе. За всё — и за сегодня особенно.', '{s}спасибо, что всегда рядом.', '{s}спасибо! Без тебя бы ничего не получилось.'],
+    vy: ['{s}спасибо за вашу помощь и внимание. Это от всей души.', '{s}огромное спасибо! Без вас бы не получилось.', '{s}спасибо за терпение, знания и тепло.'] },
+  { id: 'sorry', l: 'Прости', w: { red: 2, rose: 2, tender: 1 },
+    ty: ['{s}прости меня. Мне правда жаль.', '{s}прости. Давай начнём этот вечер заново?', '{s}я скучаю. Мир?'],
+    vy: ['{s}примите мои извинения. Мне искренне жаль.', '{s}простите за недоразумение — надеюсь, цветы скажут лучше слов.', '{s}приношу свои извинения.'] },
+  { id: 'wedding', l: 'Свадьба', w: { bride: 5, white: 3, tender: 1 },
+    ty: ['{s}с днём свадьбы! Любви, нежности и смеха — на долгие годы.', '{s}поздравляю! Пусть в вашем доме всегда будет тепло и цветы.', '{s}с главным днём! Будьте счастливы.'],
+    vy: ['{s}поздравляем со свадьбой! Пусть в вашем доме всегда будет тепло.', '{s}совет да любовь! Счастья вашей семье.', '{s}с днём свадьбы! Любви и взаимопонимания.'] },
+  { id: 'jub', l: 'Юбилей', w: { grand: 3, box: 2 },
+    ty: ['{s}с юбилеем! Пусть всё самое красивое только начинается.', '{s}с юбилеем! Ты — пример, как жить ярко.', '{s}с круглой датой! Здоровья и радости.'],
+    vy: ['{s}с юбилеем! Крепкого здоровья, сил и радости в каждом дне.', '{s}поздравляем с юбилеем! Спасибо, что вы с нами.', '{s}с юбилеем! Пусть каждый год приносит новые поводы для гордости.'] },
+  { id: 'sorrow', l: 'Сочувствие', sorrow: 1, w: { sorrow: 8, white: 3, red: -8, bright: -8, grand: -3, bride: -9, box: -2 },
+    ty: ['Помним. Скорбим вместе с вами.', 'Светлая память. Мы рядом.', 'Примите наши искренние соболезнования.'],
+    vy: ['Примите наши искренние соболезнования.', 'Светлая память. Скорбим вместе с вами.', 'Помним и любим.'] }
+];
+var saved = store.get('dari-card') || {};
+var st = {
+  rec: RECS.some(function (r) { return r.id === saved.rec; }) ? saved.rec : 'mom',
+  occ: OCCS.some(function (o) { return o.id === saved.occ; }) ? saved.occ : 'bday',
+  salut: null, salutEdited: false, sign: saved.sign || '', text: '', textEdited: false, variant: 0,
+  pick: null, pinned: null, qty: 15, off: 0, recv: 'pickup', addr: '', when: 'now', time: '10:00'
+};
+var REC = function () { return RECS.find(function (r) { return r.id === st.rec; }); };
+var OCC = function () { return OCCS.find(function (o) { return o.id === st.occ; }); };
+function save() { store.set('dari-card', { rec: st.rec, occ: st.occ, sign: st.sign }); }
+
+function chipsHTML(list, cur) { return list.map(function (x) { return '<button type="button" class="chip" data-v="' + x.id + '" aria-pressed="' + (x.id === cur) + '">' + x.l + '</button>'; }).join(''); }
+$('#recs').innerHTML = chipsHTML(RECS, st.rec);
+$('#occs').innerHTML = chipsHTML(OCCS, st.occ);
+function press(group, v) { [].forEach.call($(group).children, function (b) { b.setAttribute('aria-pressed', b.dataset.v === v); }); }
+
+function genText() {
+  var o = OCC(), r = REC(), list = r.vy ? o.vy : o.ty, tpl = list[st.variant % list.length], s = (st.salut || '').trim();
+  var t = tpl.replace('{s}', s ? s + ', ' : '');
+  return t.charAt(0).toUpperCase() + t.slice(1);
+}
+function syncText() { if (!st.textEdited) { st.text = genText(); $('#ctext').value = st.text; } }
+function setRec(id) {
+  st.rec = id; var r = REC();
+  if (!st.salutEdited) { st.salut = r.s; $('#salut').value = r.s; }
+  $('#salut').placeholder = r.ph;
+  if (id === 'bride') st.occ = 'wedding';
+  press('#recs', st.rec); press('#occs', st.occ);
+  $('#formality').textContent = r.vy ? 'на «вы»' : 'на «ты»';
+  st.off = 0; st.pick = null; st.textEdited = false; syncText();
+}
+$('#recs').addEventListener('click', function (e) { var b = e.target.closest('.chip'); if (!b) return; setRec(b.dataset.v); save(); render(true); });
+$('#occs').addEventListener('click', function (e) { var b = e.target.closest('.chip'); if (!b) return; st.occ = b.dataset.v; press('#occs', st.occ); st.off = 0; st.pick = null; st.textEdited = false; st.variant = 0; syncText(); save(); render(true); });
+$('#salut').addEventListener('input', function () { st.salut = this.value; st.salutEdited = true; syncText(); render(); });
+$('#sign').addEventListener('input', function () { st.sign = this.value; save(); render(); });
+$('#ctext').addEventListener('input', function () { st.text = this.value; st.textEdited = true; render(); });
+$('#another').addEventListener('click', function () { st.variant++; st.textEdited = false; syncText(); render(true); });
+
+function score(it) {
+  var w = REC().w, ow = OCC().w, s = 0, k;
+  for (k in w) s += (it.tags[k] || 0) * w[k];
+  for (k in ow) s += (it.tags[k] || 0) * ow[k];
+  if (it.tags.stem && !w.stem && !ow.stem && !OCC().sorrow) s -= 3;
+  if (it.tags.huge) s -= 2;
+  return s;
+}
+function ranked() {
+  var list = ITEMS.filter(function (i) { return i.p != null && !i.tags.balloon && (!i.single || i.unit); });
+  list = list.map(function (i) { return { i: i, s: score(i) }; }).sort(function (a, b) { return b.s - a.s || (a.i.top < 0) - (b.i.top < 0) || a.i.p - b.i.p; }).map(function (x) { return x.i; });
+  if (st.pinned) { var p = byKey(st.pinned); list = [p].concat(list.filter(function (x) { return x !== p; })); }
+  return list.slice(0, 12);
+}
+function currentPicks() { var r = ranked(), out = []; for (var j = 0; j < 3; j++) out.push(r[(st.off + j) % r.length]); return out; }
+function compText(it) { var nm = it.t.toLowerCase(), p = it.plants.filter(function (x) { return x.k !== 'balloon'; }).map(function (x) { return x.k === 'chrys' && /сантини/i.test(it.raw) ? 'сантини' : x.n; }); if (p.length === 1 && nm.indexOf(p[0].slice(0, 5)) >= 0) return ''; return p.length ? p.join(' · ') : ''; }
+function renderPicks() {
+  var pk = currentPicks();
+  if (!st.pick || !pk.some(function (i) { return i.key === st.pick; })) st.pick = pk[0].key;
+  $('#picks').innerHTML = pk.map(function (it) {
+    var c = compText(it);
+    return '<button type="button" class="pick" data-k="' + it.key + '" aria-pressed="' + (it.key === st.pick) + '"><div class="pa">' + art(it) + '</div><div><h4>' + esc(it.t) + '</h4>' +
+      '<div class="pp">' + rub(it.p) + (it.v ? ' <small>· ' + esc(it.unit ? 'за 1 шт.' : it.v) + '</small>' : '') + '</div>' +
+      (c ? '<div class="pd">' + esc(c) + '</div>' : it.d ? '<div class="pd">' + esc(it.d.slice(0, 70)) + '</div>' : '') +
+      '<span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>к открытке</span></div></button>';
+  }).join('');
+  $('#pickNote').textContent = st.pinned ? 'из атласа' : 'подобрали под повод';
+}
+$('#picks').addEventListener('click', function (e) { var b = e.target.closest('.pick'); if (!b) return; st.pick = b.dataset.k; [].forEach.call($('#picks').children, function (x) { x.setAttribute('aria-pressed', x === b); }); fixQty(); render(); });
+$('#morePicks').addEventListener('click', function () { st.off += 3; st.pick = null; renderPicks(); fixQty(); render(); });
+
+function fixQty() {
+  var it = byKey(st.pick), even = !!OCC().sorrow;
+  $('#qty').classList.toggle('on', !!(it && it.unit));
+  if (!it || !it.unit) return;
+  if (even && st.qty % 2) st.qty = st.qty + 1 > 100 ? st.qty - 1 : st.qty + 1;
+  if (!even && !(st.qty % 2)) st.qty = st.qty - 1 < 3 ? 3 : st.qty - 1;
+  $('#qVal').textContent = st.qty;
+  $('#qHint').textContent = (even ? 'Чётное число — для печального повода.' : 'Нечётное число — для радостного повода.') + ' ' + st.qty + ' шт. × ' + rub(it.p) + (it.d ? '. ' + it.d : '');
+}
+$('#qMinus').addEventListener('click', function () { st.qty = Math.max(OCC().sorrow ? 2 : 3, st.qty - 2); fixQty(); render(); });
+$('#qPlus').addEventListener('click', function () { st.qty = Math.min(OCC().sorrow ? 100 : 101, st.qty + 2); fixQty(); render(); });
+
+$('#recv').addEventListener('click', function (e) { var b = e.target.closest('.chip'); if (!b) return; st.recv = b.dataset.v; press('#recv', st.recv); $('#addrBox').classList.toggle('on', st.recv === 'delivery'); render(); });
+$('#when').addEventListener('click', function (e) { var b = e.target.closest('.chip'); if (!b) return; st.when = b.dataset.v; press('#when', st.when); $('#timeBox').classList.toggle('on', st.when !== 'now'); render(); });
+$('#addr').addEventListener('input', function () { st.addr = this.value; render(); });
+$('#time').addEventListener('input', function () { st.time = this.value; render(); });
+(function () { var n = mskNow(), h = (n.getHours() + 2) % 24; st.time = pad(h) + ':00'; $('#time').value = st.time; })();
+
+function itemLine(it) {
+  if (it.unit) return 'Цветы: «' + it.t + '» — ' + st.qty + ' шт. × ' + rub(it.p) + ' = ' + rub(it.p * st.qty);
+  return 'Букет: «' + it.t + '»' + (it.v && it.v !== '1 шт.' ? ' (' + it.v + ')' : '') + ' — ' + rub(it.p) + ' (№ ' + it.n + ' в атласе на сайте)';
+}
+function buildMsg() {
+  var it = byKey(st.pick), r = REC(), o = OCC(), L = [];
+  L.push('Здравствуйте! Пишу с сайта — хочу ' + (o.sorrow ? 'цветы' : 'букет') + ' с открыткой.');
+  L.push('');
+  if (it) L.push(itemLine(it));
+  L.push('Кому: ' + r.to + ' · повод: ' + o.l.toLowerCase());
+  var tx = (st.text || '').trim(), sg = (st.sign || '').trim();
+  if (tx || sg) { L.push('Текст открытки:'); L.push('«' + tx + (sg ? (tx ? '\n— ' : '') + sg : '') + '»'); } else L.push('Открытка не нужна.');
+  L.push('');
+  if (st.recv === 'pickup') L.push('Заберу сам(а) в магазине на Зубовском бульваре, 29.');
+  else L.push('Нужна доставка: ' + ((st.addr || '').trim() || 'адрес напишу') + '. Подскажите, пожалуйста, стоимость и время доставки.');
+  var d = mskNow(); d.setDate(d.getDate() + 1);
+  L.push('Когда: ' + (st.when === 'now' ? 'как можно скорее' : st.when === 'today' ? 'сегодня к ' + st.time : 'завтра, ' + d.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long' }) + ', к ' + st.time) + '.');
+  L.push('');
+  L.push('Есть ли этот ' + (it && it.unit ? 'цветок' : 'букет') + ' сейчас? Если нет — подберите, пожалуйста, похожий.');
+  return L.join('\n');
+}
+var sprig = '<path class="s" d="M10 58Q30 40 52 10"/>' + '<circle class="lf" cx="22" cy="44" r="5"/><circle class="s" cx="22" cy="44" r="5"/><circle class="lf" cx="34" cy="36" r="4.4"/><circle class="s" cx="34" cy="36" r="4.4"/><circle class="lf" cx="30" cy="24" r="4"/><circle class="s" cx="30" cy="24" r="4"/><circle class="lf" cx="44" cy="20" r="3.4"/><circle class="s" cx="44" cy="20" r="3.4"/>' + tr(52, 10, G.rose(9, 'w'));
+$('#nSpr').innerHTML = sprig;
+function render(bump) {
+  var tx = (st.text || '').trim();
+  $('#nText').textContent = tx || 'Здесь будет ваш текст…';
+  $('#nText').classList.toggle('empty', !tx);
+  $('#nSign').textContent = (st.sign || '').trim() ? '— ' + st.sign.trim() : '';
+  $('#count').textContent = (st.text || '').length + ' / 220';
+  var it = byKey(st.pick);
+  $('#nTo').textContent = REC().l + ' · ' + OCC().l.toLowerCase() + (it ? ' · ' + it.t : '');
+  $('#sumT').textContent = it ? rub(it.unit ? it.p * st.qty : it.p) : '—';
+  $('#sumL').textContent = it ? (it.unit ? st.qty + ' шт. по витрине' : 'Букет по витрине') : 'Итого';
+  var m = buildMsg();
+  $('#preview').textContent = m;
+  $('#send').href = wa(m);
+  if (bump && !reduced) { var n = $('#note'); n.classList.remove('bump'); void n.offsetWidth; n.classList.add('bump'); }
+}
+function full() { renderPicks(); fixQty(); render(true); }
+var _render = render;
+render = function (b) { if (b === true) { renderPicks(); fixQty(); } _render(b); };
+
+$('#sign').value = st.sign;
+setRec(st.rec);
+press('#occs', st.occ);
+syncText();
+full();
+
+/* ---------- atlas ---------- */
+var IDX = {};
+ITEMS.forEach(function (i) { i.plants.forEach(function (p) { var key = p.k === 'peonyrose' ? 'spray' : p.k; if (!IDX[key]) IDX[key] = { k: key, n: key === 'spray' ? 'кустовые и пионовидные розы' : p.n, items: [] }; if (IDX[key].items.indexOf(i) < 0) IDX[key].items.push(i); }); });
+var NAMES = { rose: 'Розы', spray: 'Кустовые розы', peony: 'Пионы', tulip: 'Тюльпаны', eustoma: 'Эустома', sunflower: 'Подсолнухи', chrys: 'Хризантемы', protea: 'Протея', ranunc: 'Ранункулюсы', matth: 'Матиолла', tanac: 'Танацетум', phlox: 'Флокс', amar: 'Амариллисы', dahlia: 'Георгины', wax: 'Ваксфловер', euc: 'Эвкалипт', ruscus: 'Рускус', hydrangea: 'Гортензия', balloon: 'Шары' };
+var idxList = Object.keys(IDX).map(function (k) { return IDX[k]; }).filter(function (x) { return x.k !== 'ruscus' && x.k !== 'wax'; }).sort(function (a, b) { return b.items.length - a.items.length; });
+var cst = { ix: 'all', sort: 'pop', all: false };
+$('#index').innerHTML = '<button type="button" class="ix" data-v="all" aria-pressed="true">Все<sup>' + ITEMS.length + '</sup></button>' +
+  idxList.map(function (x) { return '<button type="button" class="ix" data-v="' + x.k + '" aria-pressed="false">' + (NAMES[x.k] || x.n) + '<sup>' + x.items.length + '</sup></button>'; }).join('');
+$('#atlasCount').textContent = ITEMS.length + ' ' + plural(ITEMS.length, 'таблица', 'таблицы', 'таблиц');
+$('#index').addEventListener('click', function (e) { var b = e.target.closest('.ix'); if (!b) return; cst.ix = b.dataset.v; cst.all = false; [].forEach.call($('#index').children, function (x) { x.setAttribute('aria-pressed', x === b); }); renderGrid(); });
+$('#sort').addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; cst.sort = b.dataset.v; [].forEach.call($('#sort').querySelectorAll('button'), function (x) { x.setAttribute('aria-pressed', x === b); }); renderGrid(); });
+function gridList() {
+  var l = cst.ix === 'all' ? ITEMS.slice() : IDX[cst.ix].items.slice();
+  if (cst.sort === 'asc') l.sort(function (a, b) { return (a.p || 0) - (b.p || 0); });
+  else if (cst.sort === 'desc') l.sort(function (a, b) { return (b.p || 0) - (a.p || 0); });
+  else l.sort(function (a, b) { var ta = a.top < 0 ? 99 : a.top, tb = b.top < 0 ? 99 : b.top; return ta - tb || a.n - b.n; });
+  return l;
+}
+var LIMIT = 8;
+function renderGrid() {
+  var l = gridList(), show = cst.all ? l : l.slice(0, LIMIT);
+  $('#grid').innerHTML = show.map(function (it) {
+    var c = compText(it), ask = 'Здравствуйте! Пишу с сайта. Есть ли сейчас «' + it.t + '»' + (it.v && it.v !== '1 шт.' ? ' (' + it.v + ')' : '') + ' за ' + rub(it.p) + '?';
+    return '<article class="tab"><div class="tn"><span>Табл. ' + it.n + '</span>' + (it.top >= 0 ? '<em title="В списке популярного на Яндекс Картах">хит</em>' : '') + '</div>' + art(it) +
+      '<div class="tb"><h3>' + esc(it.t) + '</h3>' + (c ? '<div class="tc">' + esc(c) + '</div>' : it.d ? '<div class="tc">' + esc(it.d) + '</div>' : '') +
+      '<div class="tp">' + rub(it.p) + (it.v ? ' <small>· ' + esc(it.v) + '</small>' : '') + '</div>' +
+      '<div class="ta"><button type="button" class="tk" data-k="' + it.key + '">К открытке</button><a class="tw" href="' + wa(ask) + '" target="_blank" rel="noopener" aria-label="Спросить про «' + esc(it.t) + '» в WhatsApp">' + WAI + '</a></div></div></article>';
+  }).join('');
+  var btn = $('#showAll');
+  btn.parentNode.hidden = l.length <= LIMIT;
+  btn.textContent = cst.all ? 'Свернуть' : 'Показать все ' + l.length;
+}
+$('#showAll').addEventListener('click', function () { cst.all = !cst.all; renderGrid(); if (!cst.all) $('#atlas').scrollIntoView(); });
+$('#grid').addEventListener('click', function (e) {
+  var b = e.target.closest('.tk'); if (!b) return;
+  var it = byKey(b.dataset.k);
+  st.pinned = it.key; st.pick = it.key; st.off = 0;
+  renderPicks(); fixQty(); render(true);
+  b.textContent = 'Добавлено ✓';
+  setTimeout(function () { document.getElementById('card').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' }); }, 350);
+});
+renderGrid();
+
+/* extras from features + menu */
+var FEAT = [
+  [/поздравительные открытки/i, 'Открытки'], [/подарочная упаковка/i, 'Подарочная упаковка'], [/флорариум/i, 'Флорариумы'],
+  [/комнатные растения/i, 'Комнатные растения'], [/кашпо/i, 'Кашпо'], [/свадебная флористика/i, 'Свадебная флористика'],
+  [/подарочный сертификат/i, 'Подарочный сертификат'], [/^доставка$/i, 'Доставка — условия уточните'], [/способ оплаты/i, null],
+  [/^акции$/i, 'Скидки и акции — спросите'], [/wi-fi/i, 'Wi‑Fi'], [/инвалидной коляске/i, 'Вход для колясок']
+];
+var tags = [];
+FEAT.forEach(function (fx) { var ft = BIZ.features.find(function (x) { return fx[0].test(x.k) && x.v; }); if (!ft) return; tags.push(fx[1] || ('Оплата: ' + (typeof ft.v === 'string' ? ft.v : 'картой'))); });
+var balloon = ITEMS.find(function (i) { return i.tags.balloon; });
+if (balloon) tags.splice(3, 0, 'Гелиевые шары — ' + rub(balloon.p));
+var LEAF = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13C3 7 7 3 13 3c0 6-4 10-10 10zM3 13l6-6" fill="none" stroke="#5E8A6C" stroke-width="1.5" stroke-linecap="round"/></svg>';
+$('#tags').innerHTML = tags.map(function (t) { return '<span class="tag">' + LEAF + esc(t) + '</span>'; }).join('');
+
+/* ---------- reviews ---------- */
+$('#bigR').textContent = rVal;
+$('#bigStars').innerHTML = STAR.repeat(5);
+$('#bigC').textContent = rCnt + ' · ' + rRev + ' на Яндекс Картах';
+$('#names').innerHTML = 'В отзывах по именам благодарят <b>Акмала</b>, <b>Гулю</b> и <b>Надю</b> — и пишут, что заказывают через WhatsApp, а букеты собирают «молниеносно».';
+var gen = function (n) { var a = n % 100, b = n % 10; return b === 1 && a !== 11 ? 'упоминания' : 'упоминаний'; };
+$('#asp').innerHTML = BIZ.aspects.map(function (a) {
+  return '<li><span>' + esc(a.text) + '</span><em><b>' + a.positive + '</b> из ' + a.count + '</em><i style="--w:' + Math.round(a.positive / a.count * 100) + '%"></i></li>';
+}).join('');
+var PICK = ['Татьяна', 'Наталья М.', 'Дмитрий', 'Анна', 'valyan5242'];
+var revs = PICK.map(function (n) { return BIZ.reviews.find(function (r) { return r.a === n && r.r >= 5; }); }).filter(Boolean);
+$('#revs').innerHTML = revs.map(function (r) {
+  var x = r.x.length > 220 ? r.x.slice(0, r.x.lastIndexOf('.', 215) + 1) + ' …' : r.x;
+  x = x.charAt(0).toUpperCase() + x.slice(1);
+  return '<figure class="rev"><p>' + esc(x.trim()) + '</p><footer><span><b>' + esc(r.a) + '</b> · отзыв на Яндекс Картах</span><span>' + esc(r.d) + '</span></footer></figure>';
+}).join('');
+
+/* ---------- map ---------- */
+if (BIZ.mapEmbed) {
+  var mapEl = $('#map'), loadMap = function () { if (mapEl.dataset.on) return; mapEl.dataset.on = 1; mapEl.insertAdjacentHTML('beforeend', '<iframe loading="lazy" title="«Дари ей цветы» на карте" src="' + BIZ.mapEmbed + '"></iframe>'); };
+  if ('IntersectionObserver' in window) { var mo = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { loadMap(); mo.disconnect(); } }, { rootMargin: '400px' }); mo.observe(mapEl); } else loadMap();
+}
+
+/* ---------- reveal (with fail-safe) ---------- */
+if (!reduced && 'IntersectionObserver' in window) {
+  var rv = document.querySelectorAll('.sec-h, .tab, .rev, .addr, .step');
+  [].forEach.call(rv, function (el) { el.classList.add('reveal'); });
+  var ro = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.remove('pre'); ro.unobserve(e.target); } }); }, { rootMargin: '0px 0px -6% 0px' });
+  [].forEach.call(rv, function (el) { var r = el.getBoundingClientRect(); if (r.top > innerHeight) { el.classList.add('pre'); ro.observe(el); } });
+  setTimeout(function () { [].forEach.call(document.querySelectorAll('.pre'), function (el) { el.classList.remove('pre'); }); }, 2500);
+}
+})();
+</script>
+<script src="../map-fix.js" defer></script>
+</body>
+</html>
